@@ -6,3 +6,15 @@ a)10
 b)16
 c)17
 d)18
+a)Mickey
+b)Rato
+c)Mouse
+d)Teclado
+a)Eduardo
+b)Raul
+c)Matheus
+d)Todos acima
+a)SOAD
+b)Iron Maiden
+c)Megadeth
+d)Metallica
