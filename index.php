@@ -7,6 +7,7 @@
 <body>
 	<h1 style="text-align: center;color: #7cfc00;text-shadow: 2px 2px darkgreen">$how do Bilhão</h1>
 	<?php
+    
         $perg = fopen('perguntas.txt','r');
 		$perguntas = array();
         while ($line = fgets($perg)) {
@@ -20,7 +21,7 @@
         while ($line = fgets($resp)) {
             $i++;
             array_push($respostas_unica, $line);
-            if($i == 3){
+            if($i == 4){
                 $i = 0;
                 array_push($respostas, $respostas_unica);
                 $respostas_unica = array();
@@ -36,9 +37,10 @@
         fclose($gab);
 
 		foreach ($perguntas as $i => $info) {
-			echo "<h2>$i - $info<br></h2>";
+            $temp = $i +1;
+			echo "<h2>$temp - $info<br></h2>";
 			foreach ($respostas[$i] as $j => $info2) {
-				echo "$j) $info2<br>";
+				echo "$info2<br>";
 			}
 			echo "<br>";
 		}
