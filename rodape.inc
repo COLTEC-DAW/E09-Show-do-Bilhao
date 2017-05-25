@@ -1,0 +1,1 @@
+<footer> © Copyright Foca Corporation. Feito num pc da </footer>

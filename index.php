@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
+<?php require "functions.inc"; ?>
 <head>
 	<title>Show do Bilhão</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 	<meta charset="utf-8">
 </head>
 <body>
+    <?php include "menu.inc";?>
+
 	<h1 style="text-align: center;color: #7cfc00;text-shadow: 2px 2px darkgreen">$how do Bilhão</h1>
 	<?php
-    
+
         $perg = fopen('perguntas.txt','r');
 		$perguntas = array();
         while ($line = fgets($perg)) {
@@ -36,14 +42,9 @@
         }
         fclose($gab);
 
-		foreach ($perguntas as $i => $info) {
-            $temp = $i +1;
-			echo "<h2>$temp - $info<br></h2>";
-			foreach ($respostas[$i] as $j => $info2) {
-				echo "$info2<br>";
-			}
-			echo "<br>";
-		}
+		carregaPergunta($_GET["id"]);
 	?>
+
+        <?php include "rodape.inc"; ?>
 </body>
 </html>
