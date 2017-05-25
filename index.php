@@ -1,16 +1,17 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>SHOW DO MIÃO</title>
+        <title>$HOW DO BIÃO</title>
     </head>
     <body>
+        <h1>Bem vindo à prova conceito do Show do Bilhão</h1>
         <?php
-            $perguntas[];
-            $respostas[];
-            $corretas[];
+            $perguntas = [];
+            $respostas = [];
+            $corretas = [];
             for ($i=0; $i<20; $i++) $respostas[$i]=[];
 
-            $perguntas[0] = "Em qual país foi invetadi o brinquedo LEGO?";
+            $perguntas[0] = "Em qual país foi invetado o brinquedo LEGO?";
             $respostas[0][0] = "Estados Unidos";
             $respostas[0][1] = "Japão";
             $respostas[0][2] = "Itália";
@@ -31,7 +32,7 @@
             $respostas[2][3] = "Ao redor da Austrália";
             $corretas[2] = 2;
 
-            $perguntas[3] = "VHDEL é uma linguagem de:";
+            $perguntas[3] = "VHDL é uma linguagem de:";
             $respostas[3][0] = "Descrição";
             $respostas[3][1] = "Programação";
             $respostas[3][2] = "Tortura";
@@ -59,7 +60,7 @@
             $respostas[6][3] = "McGyverismo";
             $corretas[6] = 2;
 
-            $perguntas[7] = "Se a resposta dessa pergunta for a segunda bolinha você vai marcar?";
+            $perguntas[7] = "Se a resposta dessa pergunta fosse a segunda bolinha, qual você marcaria?";
             $respostas[7][0] = "A primeira";
             $respostas[7][1] = "A terceira";
             $respostas[7][2] = "A segunda";
@@ -120,7 +121,7 @@
             $respostas[15][1] = "The Beatles";
             $respostas[15][2] = "Led Zeppelin";
             $respostas[15][3] = "The White Stripes";
-            $corretas[] = ;
+            $corretas[15] = 3;
 
             $perguntas[16] = "O filme Shrek é de qual estúdio de animação?";
             $respostas[16][0] = "DreamWorks";
@@ -136,11 +137,11 @@
             $respostas[17][3] = "Arsene Lupin";
             $corretas[17] = 2;
 
-            $perguntas[18] = "Qual é o nome do mago de cinza em \"O Senhor dos Anéis\"?";
-            $respostas[18][0] = "Saruman";
-            $respostas[18][1] = "Patolino";
+            $perguntas[18] = "Mas o mago é...";
+            $respostas[18][0] = "Poderoso";
+            $respostas[18][1] = "Fedido";
             $respostas[18][2] = "Dumbledore";
-            $respostas[18][3] = "Gandalf";
+            $respostas[18][3] = "Implacável";
             $corretas[18] = 3;
 
             $perguntas[19] = "QUEM é \"O Senhor dos Anéis\" ao qual o título dos filmes e livros se refere?";
@@ -151,8 +152,25 @@
             $corretas[19] = 1;
 
             for($i = 0; $i<20; $i++){
-                echo $perguntas[i];
-                
+                echo $perguntas[$i];
+                echo nl2br("\n\n");
+            ?>
+            <FORM name="resposta" method="post" action="respostas.php">
+                <Input type = 'Radio' name = "<?php echo $i ?>" value=0>
+                    <?php echo $respostas[$i][0] ?>
+                    <br>
+                <Input type = 'Radio' name = "<?php echo $i ?>" value=1>
+                    <?php echo $respostas[$i][1] ?>
+                    <br>
+                <Input type = 'Radio' name = "<?php echo $i ?>" value=2>
+                    <?php echo $respostas[$i][2] ?>
+                    <br>
+                <Input type = 'Radio' name = "<?php echo $i ?>" value=3>
+                    <?php echo $respostas[$i][3] ?>
+                    <br>
+            </FORM>
+            <?php
+                echo nl2br("\n");
             }
         ?>
     </body>
