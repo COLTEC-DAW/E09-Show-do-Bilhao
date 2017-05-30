@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css"  href="style.css" />
         <title>Clarisse Scofield</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -12,12 +12,9 @@
     </head>
     <body>
 
-        <div id="header">
-            <h1>Show do bilhão</h1>
-            <h2 > Uma chance, um jogo!</h2>
-         </div>
 
         <?php
+            include "menu.inc";
             global $enunciados;
             global $alternativas;
             global $certa;
@@ -33,16 +30,13 @@
 
             //array(array("a-joao","b-gustavo","c-rodrigao","d-cuboalex"), array("a-rosa","b-purple","c-amarelo","d-invisivel"));
             $certa = array(3,2); //indice para a certa
-            for($j=0;$j<2;$j++){
-                echo "<p>Questao: $enunciados[$j] </p>";
-                echo "<br>";
-                for($i=0; $i<4;$i++){
-                     echo "<p>  " . $alternativas[$j][$i] . " </p>";
-                     echo "<br>";
-                }
-                
-            }
        
+            global $id;
+            $id = $_GET["id"];
+            echo    $id;
+            include "perguntas.inc";
+            carregaPergunta($id);
+            include "rodape.inc";
 
 
             
