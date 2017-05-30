@@ -32,7 +32,7 @@
             $alternativas[2][3] = 'Tratamento da caspa';
             $resposta[2] = 2;
 
-            $perguntas[3] = 'De que é feito o pé-de-moleque';
+            $perguntas[3] = 'De que é feito o pé-de-moleque?';
             $alternativas[3][0] = 'Amendoim';
             $alternativas[3][1] = 'Castanha';
             $alternativas[3][2] = 'Alcaparra';
@@ -46,7 +46,7 @@
             $alternativas[4][3] = 'Um crustáceo';
             $resposta[4] = 1;
 
-            $perguntas[5] = 'Qual destas palvras é sinônimo de equívoco';
+            $perguntas[5] = 'Qual destas palvras é sinônimo de equívoco?';
             $alternativas[5][0] = 'Acerto';
             $alternativas[5][1] = 'Equitação';
             $alternativas[5][2] = 'Engano';
@@ -55,10 +55,12 @@
 
             for($i=0; $i<count($perguntas); $i++){
 
-                echo "<h4>" . $perguntas[$i] . "</h4>"
+                echo "<h4>" . ($i+1) . ". " . $perguntas[$i] . "</h4>";
+                echo "<br>";
 
-                for($j=0; $j<6; $j++){
-                    echo $i . ". " . $alternativas[$i][$j];
+                for($j=0; $j<4; $j++){ 
+                    echo ($j+1) . ". " . $alternativas[$i][$j];
+                    echo "<br>";               
                 }
             }
         ?>

@@ -41,12 +41,16 @@
     $alternativas[5][3] = 'Cavalo';
     $resposta[5] = 2;
 
-    for($i=0; $i<count($perguntas); $i++){
-        
-        echo "<h4>" . $perguntas[$i] . "</h4>"
+    function carregaPergunta($id){
 
-        for($j=0; $j<6; $j++){
-            echo $i . ". " . $alternativas[$i][$j];
+        global $perguntas, $alternativas;
+        echo "<h4>" . ($id+1) . ". " . $perguntas[$id] . "</h4>";
+        echo "<br>";
+
+        for($j=0; $j<4; $j++){ 
+            echo ($j+1) . ". " . $alternativas[$id][$j];
+            echo "<br>";               
         }
+
     }
 ?>

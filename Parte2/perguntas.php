@@ -12,13 +12,21 @@
             require 'perguntas.inc';
 
             $id = $_GET["id"];
-            while($id<6){
-                carregaPergunta($id);
-                $id++;
+            carregaPergunta($id);
+            $id++;
+
+            if($id < 6){
+                echo "<a class='btn btn-primary btn-large' href='perguntas.php?id=" . $id . "'" . ">Próximo</a>" . "<br>" . "<br>";
+            }
+            else{
+                echo "<h3>Jogo terminado!</h3>" . "<br>" . "<br>";
             }
 
-            require 'rodape.inc';
+            require 'rodape.inc';            
+
         ?>
+
+
 
     </body>
 </html>
