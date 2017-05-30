@@ -7,8 +7,8 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Bem vindo ao $how do Bilhão</h1>
         <?php
+            include 'menu.inc';
             require 'dados.inc';
 
             global $perguntas, $alternativas, $respostas, $alt;
