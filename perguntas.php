@@ -14,7 +14,7 @@
 <body>
 	<?php include 'menu.inc'; ?>
 	
-	<main>
+	<main class="container">
 		<?php require 'perguntas.inc';
 			carregaPerguntas($_GET["id"]);
 		?>
