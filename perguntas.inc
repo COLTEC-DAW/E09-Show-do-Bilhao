@@ -57,11 +57,16 @@ function carregaPerguntas($id){
 	global $respostas;
 	global $respostas_certas;
 	
-  echo '<h3>'.$questoes[$id].'</h3>';
+
+  echo '
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>'.$questoes[$id].'</h4></li>
+  ';
   for ($k = 1; $k <= 5; ++$k){
-    echo $k == $respostas_certas[$id] ? '<p><b>'.$respostas[$id][$k].'</b><p>' :  '<p>'.$respostas[$id][$k].'<p>';
+    echo $k == $respostas_certas[$id] ? '<a href="#!" class="collection-item active">'.$respostas[$id][$k].'</a>' :  '<a href="#!" class="collection-item">'.$respostas[$id][$k].'</a>';
   }
 }
 
+  echo '</ul>'
 
 ?>
