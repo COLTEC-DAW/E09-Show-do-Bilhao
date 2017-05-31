@@ -6,7 +6,7 @@
         echo "<br>";
         echo $per[(int)$id]; 
         echo "<br>";
-        echo "<br>";
+            echo "<br>";
         for($j=0; $j<4; $j++){
             echo $alternativa[(int)$id][$j];
             echo "<br>";
@@ -23,7 +23,7 @@
         
 
         $per[1] = '2 - Qual o nome do mascote do Brasil nas copas?';
-        $alternativa[1][0] = 'a. Leãozinho';
+        $alternativa[1][0] = 'a.a Leãozinho';
         $alternativa[1][1] = 'b. Canarinho putasso';
         $alternativa[1][2] = 'c. Gatinho';
         $alternativa[1][3] = 'd. Matadorzinho de alemão';
