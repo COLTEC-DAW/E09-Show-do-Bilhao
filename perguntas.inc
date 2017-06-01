@@ -21,7 +21,7 @@
      $alt[3][0] = "1 - O Relâmpago Marquinhos";
      $alt[3][1] = "2 - Flow do spirnardi";
      $alt[3][2] = "3 - Luz";
-     $alt[3][3] = "4 - Usain Bolt";
+     $alt[3][3] = "4 - Asaian Bolt";
 
      $per[4] = "Q5. 'Danone' é o apelido usado para se referir a qual das seguintes bebidas populares?";
      $alt[4][0] = "1 - Vitamina de Morango com Açai e Banana";
