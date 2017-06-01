@@ -1,6 +1,5 @@
 <!Doctype html>
 <html>
-    <?php $num= $_GET["num"] ?>
     <head>
         <title>Bem vindo ao Show do Bilhão: <?php $num ?> </title>
     </head>
