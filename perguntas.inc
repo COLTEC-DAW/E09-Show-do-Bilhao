@@ -4,7 +4,7 @@
             $corretas = [];
             for ($i=0; $i<20; $i++) $respostas[$i]=[];
 
-            $perguntas[0] = "Em qual país foi invetado o brinquedo LEGO?";
+            $perguntas[0] = "Em qual país foi inventado o brinquedo LEGO?";
             $respostas[0][0] = "Estados Unidos";
             $respostas[0][1] = "Japão";
             $respostas[0][2] = "Itália";
@@ -144,3 +144,22 @@
             $respostas[19][3] = "Gollum";
             $corretas[19] = 1;
 ?>
+<?php
+            function carregaPergunta($id){
+                ?>
+                <h1>Pergunta <?php $num ?>: </h1>
+                <FORM name="resposta" method="post" action="respostas.php">
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=0>
+                        <?php echo $respostas[$num][0] ?>
+                        <br>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=1>
+                        <?php echo $respostas[$num][1] ?>
+                        <br>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=2>
+                        <?php echo $respostas[$num][2] ?>
+                        <br>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=3>
+                        <?php echo $respostas[$num][3] ?>
+                        <br>
+                </FORM>
+            <?php } ?>
