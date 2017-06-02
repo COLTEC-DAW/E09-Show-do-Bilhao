@@ -1,165 +1,202 @@
 <?php
             $perguntas = [];
-            $respostas = [];
+            $alternativas = [];
             $corretas = [];
-            for ($i=0; $i<20; $i++) $respostas[$i]=[];
+            for ($i=0; $i<20; $i++) $alternativas[$i]=[];
 
             $perguntas[0] = "Em qual país foi inventado o brinquedo LEGO?";
-            $respostas[0][0] = "Estados Unidos";
-            $respostas[0][1] = "Japão";
-            $respostas[0][2] = "Itália";
-            $respostas[0][3] = "Dinamarca";
+            $alternativas[0][0] = "Estados Unidos";
+            $alternativas[0][1] = "Japão";
+            $alternativas[0][2] = "Itália";
+            $alternativas[0][3] = "Dinamarca";
             $corretas[0] = 3;
 
             $perguntas[1] = "Qual desses astros ainda está vivo (24/05/2017)?";
-            $respostas[1][0] = "Elvis Presley";
-            $respostas[1][1] = "Paul McCartney";
-            $respostas[1][2] = "Michael Jackson";
-            $respostas[1][3] = "Prince";
+            $alternativas[1][0] = "Elvis Presley";
+            $alternativas[1][1] = "Paul McCartney";
+            $alternativas[1][2] = "Michael Jackson";
+            $alternativas[1][3] = "Prince";
             $corretas[1] = 1;
 
             $perguntas[2] = "Onde fica o Oceano Índico?";
-            $respostas[2][0] = "No Pólo Norte";
-            $respostas[2][1] = "Perto da Índia";
-            $respostas[2][2] = "Entre a Europa e a África";
-            $respostas[2][3] = "Ao redor da Austrália";
+            $alternativas[2][0] = "No Pólo Norte";
+            $alternativas[2][1] = "Perto da Índia";
+            $alternativas[2][2] = "Entre a Europa e a África";
+            $alternativas[2][3] = "Ao redor da Austrália";
             $corretas[2] = 2;
 
             $perguntas[3] = "VHDL é uma linguagem de:";
-            $respostas[3][0] = "Descrição";
-            $respostas[3][1] = "Programação";
-            $respostas[3][2] = "Tortura";
-            $respostas[3][3] = "Nenhuma das anteriores";
+            $alternativas[3][0] = "Descrição";
+            $alternativas[3][1] = "Programação";
+            $alternativas[3][2] = "Tortura";
+            $alternativas[3][3] = "Nenhuma das anteriores";
             $corretas[3] = 2;
 
             $perguntas[4] = "Por qual motivo você deve sempre identar seu código?";
-            $respostas[4][0] = "Os veteranos vão te matar se não fizer isso";
-            $respostas[4][1] = "Vale Ponto";
-            $respostas[4][2] = "As curvas ficam sexy";
-            $respostas[4][3] = "Todas as anteriores";
+            $alternativas[4][0] = "Os veteranos vão te matar se não fizer isso";
+            $alternativas[4][1] = "Vale Ponto";
+            $alternativas[4][2] = "As curvas ficam sexy";
+            $alternativas[4][3] = "Todas as anteriores";
             $corretas[4] = 3;
 
             $perguntas[5] = "Qual dos seguinte mitos sobre o Honda é verdade?";
-            $respostas[5][0] = "Ele mora sozinho no meio do nada";
-            $respostas[5][1] = "Ele teleporta";
-            $respostas[5][2] = "Ele mora com ninguém sabe quantos caras";
-            $respostas[5][3] = "Todas as anteriores";
+            $alternativas[5][0] = "Ele mora sozinho no meio do nada";
+            $alternativas[5][1] = "Ele teleporta";
+            $alternativas[5][2] = "Ele mora com ninguém sabe quantos caras";
+            $alternativas[5][3] = "Todas as anteriores";
             $corretas[5] = 3;
 
             $perguntas[6] = "Quando improvisando um quiz para um exercício, você usa skillz de:";
-            $respostas[6][0] = "Infação";
-            $respostas[6][1] = "Migué";
-            $respostas[6][2] = "Criatividade";
-            $respostas[6][3] = "McGyverismo";
+            $alternativas[6][0] = "Infação";
+            $alternativas[6][1] = "Migué";
+            $alternativas[6][2] = "Criatividade";
+            $alternativas[6][3] = "McGyverismo";
             $corretas[6] = 2;
 
             $perguntas[7] = "Se a resposta dessa pergunta fosse a segunda bolinha, qual você marcaria?";
-            $respostas[7][0] = "A primeira";
-            $respostas[7][1] = "A terceira";
-            $respostas[7][2] = "A segunda";
-            $respostas[7][3] = "A últimaa";
+            $alternativas[7][0] = "A primeira";
+            $alternativas[7][1] = "A terceira";
+            $alternativas[7][2] = "A segunda";
+            $alternativas[7][3] = "A últimaa";
             $corretas[7] = 2;
 
             $perguntas[8] = "Qual desses jogos é infame por ser difícil?";
-            $respostas[8][0] = "Super Mario World para SNES";
-            $respostas[8][1] = "O show do Milhão";
-            $respostas[8][2] = "Dark Souls para PS3, PC e XB360";
-            $respostas[8][3] = "The Legend of Zelda: Ocarina of Time para o N64";
+            $alternativas[8][0] = "Super Mario World para SNES";
+            $alternativas[8][1] = "O show do Milhão";
+            $alternativas[8][2] = "Dark Souls para PS3, PC e XB360";
+            $alternativas[8][3] = "The Legend of Zelda: Ocarina of Time para o N64";
             $corretas[8] = 2;
 
             $perguntas[9] = "8) Quantas perguntas já foram feitas?";
-            $respostas[9][0] = "10";
-            $respostas[9][1] = "9";
-            $respostas[9][2] = "8";
-            $respostas[9][3] = "7";
+            $alternativas[9][0] = "10";
+            $alternativas[9][1] = "9";
+            $alternativas[9][2] = "8";
+            $alternativas[9][3] = "7";
             $corretas[9] = 0;
 
             $perguntas[10] = "Em qual século Gandhi nasceu?";
-            $respostas[10][0] = "XIX";
-            $respostas[10][1] = "XV";
-            $respostas[10][2] = "XII";
-            $respostas[10][3] = "Nenhum. Ele é um personagem mítico";
+            $alternativas[10][0] = "XIX";
+            $alternativas[10][1] = "XV";
+            $alternativas[10][2] = "XII";
+            $alternativas[10][3] = "Nenhum. Ele é um personagem mítico";
             $corretas[10] = 0;
 
             $perguntas[11] = "Onde a pizza foi inventada?";
-            $respostas[11][0] = "Itália";
-            $respostas[11][1] = "Grécia";
-            $respostas[11][2] = "Estados Unidos";
-            $respostas[11][3] = "Austrália";
+            $alternativas[11][0] = "Itália";
+            $alternativas[11][1] = "Grécia";
+            $alternativas[11][2] = "Estados Unidos";
+            $alternativas[11][3] = "Austrália";
             $corretas[11] = 1;
 
             $perguntas[12] = "Em qual continente fica a Áustria?";
-            $respostas[12][0] = "África";
-            $respostas[12][1] = "Oceania";
-            $respostas[12][2] = "América Central";
-            $respostas[12][3] = "Europa";
+            $alternativas[12][0] = "África";
+            $alternativas[12][1] = "Oceania";
+            $alternativas[12][2] = "América Central";
+            $alternativas[12][3] = "Europa";
             $corretas[12] = 3;
 
             $perguntas[13] = "O Mediterrâneo é...";
-            $respostas[13][0] = "Uma cordilheira";
-            $respostas[13][1] = "Um mar";
-            $respostas[13][2] = "Um lago";
-            $respostas[13][3] = "Uma montanha";
+            $alternativas[13][0] = "Uma cordilheira";
+            $alternativas[13][1] = "Um mar";
+            $alternativas[13][2] = "Um lago";
+            $alternativas[13][3] = "Uma montanha";
             $corretas[13] = 1;
 
             $perguntas[14] = "Qual das seguintes músicas NÃO é dos Beatles?";
-            $respostas[14][0] = "Cry, Baby, Cry";
-            $respostas[14][1] = "Start me Up";
-            $respostas[14][2] = "Ob-la-di, Ob-la-da";
-            $respostas[14][3] = "Yellow Submarine";
+            $alternativas[14][0] = "Cry, Baby, Cry";
+            $alternativas[14][1] = "Start me Up";
+            $alternativas[14][2] = "Ob-la-di, Ob-la-da";
+            $alternativas[14][3] = "Yellow Submarine";
             $corretas[14] = 1;
 
             $perguntas[15] = "Qual das seguintes bandas NÃO é inglesa?";
-            $respostas[15][0] = "The Rolling Stones";
-            $respostas[15][1] = "The Beatles";
-            $respostas[15][2] = "Led Zeppelin";
-            $respostas[15][3] = "The White Stripes";
+            $alternativas[15][0] = "The Rolling Stones";
+            $alternativas[15][1] = "The Beatles";
+            $alternativas[15][2] = "Led Zeppelin";
+            $alternativas[15][3] = "The White Stripes";
             $corretas[15] = 3;
 
             $perguntas[16] = "O filme Shrek é de qual estúdio de animação?";
-            $respostas[16][0] = "DreamWorks";
-            $respostas[16][1] = "Disney";
-            $respostas[16][2] = "Sony";
-            $respostas[16][3] = "Pixar";
+            $alternativas[16][0] = "DreamWorks";
+            $alternativas[16][1] = "Disney";
+            $alternativas[16][2] = "Sony";
+            $alternativas[16][3] = "Pixar";
             $corretas[16] = 0;
 
             $perguntas[17] = "Qual é o nome do companheiro de Sherlock Holmes?";
-            $respostas[17][0] = "Moriarty";
-            $respostas[17][1] = "Poirot";
-            $respostas[17][2] = "Watson";
-            $respostas[17][3] = "Arsene Lupin";
+            $alternativas[17][0] = "Moriarty";
+            $alternativas[17][1] = "Poirot";
+            $alternativas[17][2] = "Watson";
+            $alternativas[17][3] = "Arsene Lupin";
             $corretas[17] = 2;
 
             $perguntas[18] = "Mas o mago é...";
-            $respostas[18][0] = "Poderoso";
-            $respostas[18][1] = "Fedido";
-            $respostas[18][2] = "Dumbledore";
-            $respostas[18][3] = "Implacável";
+            $alternativas[18][0] = "Poderoso";
+            $alternativas[18][1] = "Fedido";
+            $alternativas[18][2] = "Dumbledore";
+            $alternativas[18][3] = "Implacável";
             $corretas[18] = 3;
 
             $perguntas[19] = "QUEM é \"O Senhor dos Anéis\" ao qual o título dos filmes e livros se refere?";
-            $respostas[19][0] = "Frodo";
-            $respostas[19][1] = "Sauron";
-            $respostas[19][2] = "Gandalf";
-            $respostas[19][3] = "Gollum";
+            $alternativas[19][0] = "Frodo";
+            $alternativas[19][1] = "Sauron";
+            $alternativas[19][2] = "Gandalf";
+            $alternativas[19][3] = "Gollum";
             $corretas[19] = 1;
+
+            $acertos=0;
 ?>
 <?php
-            function carregaPergunta($id){
+            function carregaPergunta($num){
+                global $perguntas;
+                global $alternativas;
+                global $acertos;
+
+                if ($num !=0) {
+                    echo "anterior ";
+                    $reposta = $_POST["$num-1"];
+                    echo $resposta;
+                }
+                if ($num >= 20){
+                    
+                }
                 ?>
-                <h1>Pergunta <?php $num ?>: </h1>
-                <FORM name="resposta" method="post" action="respostas.php">
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=0>
-                        <?php echo $respostas[$num][0] ?>
+                <h1><?php echo $perguntas[$num] ?></h1>
+                <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=0 required>
+                        <?php echo $alternativas[$num][0] ?>
                         <br>
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=1>
-                        <?php echo $respostas[$num][1] ?>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=1 required>
+                        <?php echo $alternativas[$num][1] ?>
                         <br>
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=2>
-                        <?php echo $respostas[$num][2] ?>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=2 required>
+                        <?php echo $alternativas[$num][2] ?>
                         <br>
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=3>
-                        <?php echo $respostas[$num][3] ?>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=3 required>
+                        <?php echo $alternativas[$num][3] ?>
                         <br>
+                    <br>
+                    <Input type="submit" value="Próxima!">
                 </FORM>
             <?php } ?>
+<?php
+                function carregaPerguntaConceito($num){
+                global $perguntas;
+                global $alternativas;
+                ?>
+                <h1><?php echo $perguntas[$num] ?></h1>
+                <FORM name="resposta" method="post">
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=0>
+                        <?php echo $alternativas[$num][0] ?>
+                        <br>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=1>
+                        <?php echo $alternativas[$num][1] ?>
+                        <br>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=2>
+                        <?php echo $alternativas[$num][2] ?>
+                        <br>
+                    <Input type = 'Radio' name = "<?php echo $num ?>" value=3>
+                        <?php echo $alternativas[$num][3] ?>
+                        <br>
+                </FORM>
+            <?php }
