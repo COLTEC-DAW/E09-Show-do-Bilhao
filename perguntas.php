@@ -19,8 +19,10 @@
                 carregaPergunta($_GET["id"]);
                 $proxID = $_GET["id"]+1;
                 $link = "perguntas.php?id=".$proxID;
-                echo '<a class="btn btn-primary" href="'.$link.'">Próxima</a>';
- 				
+                //echo '<a class="btn btn-primary" href="'.$link.'">Próxima</a>';
+            }
+            else{
+              echo '<a class="btn btn-primary" href="gameover.php">Terminar Jogo</a>';
             }
           ?>
       </div>
