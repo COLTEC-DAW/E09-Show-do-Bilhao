@@ -7,21 +7,20 @@
 
 	<body>
 		<?php include("menu.inc"); ?>
-		<?php require 'perguntas.inc'; ?>
+		<?php require 'perguntas.php'; ?>
+		<?php require 'exibidor.php'; ?>
 
 		<?php
-			$id = $_GET["id"];
-			$dados = carregaPergunta($id);
+			//Pega o ID da pergunta
+			$id = $_COOKIE["id"];
 
-			//Exibicao
-			echo $id + 1 . ") " . $dados[0];
-			echo "<ul>";
-
-			for ($j = 0; $j < 5; $j++) { 
-				echo "<li>" . $dados[1][$j] . "</li>";
+			if(!$id) {
+				$id = 0;
+				setcookie("id", $id);
 			}
 
-			echo "</ul>";
+			$dados = carregaPergunta($id);
+			exibePergunta($id, $dados);				
 		?>
 
 		<?php include("rodape.inc"); ?>
