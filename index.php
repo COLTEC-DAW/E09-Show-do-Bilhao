@@ -11,16 +11,37 @@
 		<?php require 'exibidor.php'; ?>
 
 		<?php
-			//Pega o ID da pergunta
-			$id = $_COOKIE["id"];
+			//Inicia sessao
+			session_start();
 
-			if(!$id) {
-				$id = 0;
-				setcookie("id", $id);
+			//Verifica se ja ta logado
+			if(!$_SESSION["login"]) {
+				//Pega dados de login
+				$login = $_POST["login"];
+				$senha = $_POST["senha"];
+			} else {				
+				$login = $_SESSION["login"];
+				$senha = $_SESSION["senha"];
 			}
 
-			$dados = carregaPergunta($id);
-			exibePergunta($id, $dados);				
+			//Verifica se ta logado
+			if(!$login) {
+				//Redireciona para login
+				header("Location: login.php");
+			} else {
+				//Loga na sessao
+				$_SESSION["login"] = $login;
+				$_SESSION["senha"] = $senha;
+
+				//Pega cookies
+				$id = $_COOKIE["id"];
+				$lastScore = $_COOKIE["lastScore"];
+				$lastDate = $_COOKIE["lastDate"];
+
+				//Carrega e exibe a proxima pergunta
+				$dados = carregaPergunta($id);
+				exibePergunta($id, $dados);
+			}
 		?>
 
 		<?php include("rodape.inc"); ?>
