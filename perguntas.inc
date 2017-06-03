@@ -36,4 +36,14 @@
      $respostas[3] = 3;
      $respostas[4] = 3;
 
+     function carregaPergunta($id){
+		global $per;
+		global $alt;
+		echo "<h3>".$per[$id]."</h3>";
+		for($i=0;$i<4;$i++){
+			echo "<p>".$alt[$id][$i]."</p>";
+		}
+		echo "<br>";
+	}
+
 ?>
