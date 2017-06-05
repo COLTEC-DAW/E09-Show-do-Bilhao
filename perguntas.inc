@@ -152,35 +152,42 @@
                 global $alternativas;
                 global $acertos;
 
-                if ($num !=0) {
-                    echo "anterior ";
-                    $reposta = $_POST["$num-1"];
-                    echo $resposta;
-                }
                 if ($num >= 20){
-                    
+                    ?>
+                    <h1>VOCÊ CHEGOU AO FIM!!!</h1>
+                    <a href="fim.php">Ver Resultados</a>
+                    <?php
                 }
-                ?>
-                <h1><?php echo $perguntas[$num] ?></h1>
-                <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=0 required>
-                        <?php echo $alternativas[$num][0] ?>
+                else {
+                    if ($num !=0) {
+                        echo "anterior ";
+                        $reposta = $_POST["0"];
+                        echo $resposta;
+                    }
+                    ?>
+                    <h1><?php echo $perguntas[$num] ?></h1>
+                    <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
+                        <Input type = 'Radio' name = "<?= $num ?>" value=0 required>
+                            <?php echo $alternativas[$num][0] ?>
+                            <br>
+                        <Input type = 'Radio' name = "<?= $num ?>" value=1 required>
+                            <?php echo $alternativas[$num][1] ?>
+                            <br>
+                        <Input type = 'Radio' name = "<?= $num ?>" value=2 required>
+                            <?php echo $alternativas[$num][2] ?>
+                            <br>
+                        <Input type = 'Radio' name = "<?= $num ?>" value=3 required>
+                            <?php echo $alternativas[$num][3] ?>
+                            <br>
                         <br>
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=1 required>
-                        <?php echo $alternativas[$num][1] ?>
-                        <br>
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=2 required>
-                        <?php echo $alternativas[$num][2] ?>
-                        <br>
-                    <Input type = 'Radio' name = "<?php echo $num ?>" value=3 required>
-                        <?php echo $alternativas[$num][3] ?>
-                        <br>
-                    <br>
-                    <Input type="submit" value="Próxima!">
-                </FORM>
-            <?php } ?>
+                        <Input type="submit" value="Próxima!">
+                    </FORM>
+          <?php }
+            } ?>
+
+
 <?php
-                function carregaPerguntaConceito($num){
+            function carregaPerguntaConceito($num){
                 global $perguntas;
                 global $alternativas;
                 ?>
@@ -199,4 +206,4 @@
                         <?php echo $alternativas[$num][3] ?>
                         <br>
                 </FORM>
-            <?php }
+      <?php } ?>

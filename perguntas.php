@@ -6,8 +6,10 @@
     <body>
         <?php
         require "perguntas.inc";
+        include "menu.inc";
         $num= $_GET["num"];
         carregaPergunta($num);
+        include "rodape.inc";
         ?>
     </body>
 </html>
