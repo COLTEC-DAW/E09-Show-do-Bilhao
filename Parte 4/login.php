@@ -17,8 +17,13 @@
 				</div>
 				<div class="col-md-12">
 					<form action="verifica_login.php" method="post">
-						Login: <input type="text" name="nome"><br>
-						Senha: <input type="text" name="senha"><br>
+
+					   	<label>Login:</label>
+    					<input type="text" class="form-control" name="nome">
+
+					   	<label>Senha:</label>
+    					<input type="text" class="form-control" name="senha">
+
 						<input type="submit" name="Verificar">
 					</form>
 
