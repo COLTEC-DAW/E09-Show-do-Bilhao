@@ -39,15 +39,29 @@
      function carregaPergunta($id){
 		global $per;
 		global $alt;
+        //echo $id;
         $link = "perguntas.php?id=".$id;
-        echo "<form action="perguntas.php">";
+        //echo '<form action="trata.php" method="post">';
+        echo '<form action="'.$link.'" method="post">';
+        //echo '<form action="perguntas.php" method="post">';
         echo "<h3>".$per[$id]."</h3>";
         for($i=0;$i<4;$i++){
             //$name = "op".$id.$i;
-            echo '<input type="radio" name="'.$id.'">'.$alt[$id][$i].'<br>';           
+            //$valor = $alt[$id][$i];    
+            echo '<input type="radio" name="alternativa" value="'.$i.'">'.$alt[$id][$i].'<br>';           
 		}
         echo '<input type="submit" value="Responder">';
         echo"</form>";
-	}
+        //confirma();
+    }
+    function confirma(){
+        $ru = $_POST['alternativa'];
+        if($ru == $respostas[$id]){
+            echo 'ok';
+        }
+        else{
+            echo 'não';
+        }
+    }
 
 ?>

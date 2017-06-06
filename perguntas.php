@@ -17,13 +17,22 @@
             require'perguntas.inc';
             if($_GET["id"]<5){
                 carregaPergunta($_GET["id"]);
-                $proxID = $_GET["id"]+1;
-                $link = "perguntas.php?id=".$proxID;
-                //echo '<a class="btn btn-primary" href="'.$link.'">Próxima</a>';
+                $ru = $_POST['alternativa'];
+                if($ru == $respostas[$_GET["id"]]){
+                  echo 'ACERTOU !';
+                  $proxID = $_GET["id"]+1;
+                  $link = "perguntas.php?id=".$proxID;
+                  echo '<a class="btn btn-primary" href="'.$link.'">Próxima</a>';
+                  //echo 'ok';
+                }
+                else{
+                  echo 'ERROU';
+                  echo '<a class="btn btn-primary" href="gameover.php">Que Pena :(</a>';
+                  //echo 'não';
+                }
+                
             }
-            else{
-              echo '<a class="btn btn-primary" href="gameover.php">Terminar Jogo</a>';
-            }
+
           ?>
       </div>
     </div>
