@@ -23,7 +23,7 @@
             $alternativas[2][1] = "Perto da Índia";
             $alternativas[2][2] = "Entre a Europa e a África";
             $alternativas[2][3] = "Ao redor da Austrália";
-            $corretas[2] = 2;
+            $corretas[2] = 1;
 
             $perguntas[3] = "VHDL é uma linguagem de:";
             $alternativas[3][0] = "Descrição";
@@ -51,7 +51,7 @@
             $alternativas[6][1] = "Migué";
             $alternativas[6][2] = "Criatividade";
             $alternativas[6][3] = "McGyverismo";
-            $corretas[6] = 2;
+            $corretas[6] = 1;
 
             $perguntas[7] = "Se a resposta dessa pergunta fosse a segunda bolinha, qual você marcaria?";
             $alternativas[7][0] = "A primeira";
@@ -144,12 +144,14 @@
             $alternativas[19][3] = "Gollum";
             $corretas[19] = 1;
 
-            $acertos=0;
+            global $acertos;
+            $acertos = 0;
 ?>
 <?php
             function carregaPergunta($num){
                 global $perguntas;
                 global $alternativas;
+                global $corretas;
                 global $acertos;
 
                 if ($num >= 20){
@@ -160,29 +162,57 @@
                 }
                 else {
                     if ($num !=0) {
-                        echo "anterior ";
-                        $reposta = $_POST["0"];
-                        echo $resposta;
-                    }
-                    ?>
-                    <h1><?php echo $perguntas[$num] ?></h1>
-                    <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
-                        <Input type = 'Radio' name = "<?= $num ?>" value=0 required>
-                            <?php echo $alternativas[$num][0] ?>
+                        echo $acertos;
+                        $numAnterior = $num-1;
+                        $resposta = $_POST["$numAnterior"];
+                        if ($resposta != $corretas[$numAnterior]) {
+                            ?>
+                            <h1>Você errou... :(</h1>
+                            <a href="fim.php">Ver Resultados</a>
+                  <?php }
+                        else {
+                           $acertos++; ?>
+                            <h1><?php echo $perguntas[$num] ?></h1>
+                            <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
+                                <Input type="hidden" name="num" value=<?= $num ?>>
+                                <Input type = 'Radio' name = "<?= $num ?>" value=0 required>
+                                    <?php echo $alternativas[$num][0] ?>
+                                    <br>
+                                <Input type = 'Radio' name = "<?= $num ?>" value=1 required>
+                                    <?php echo $alternativas[$num][1] ?>
+                                    <br>
+                                <Input type = 'Radio' name = "<?= $num ?>" value=2 required>
+                                    <?php echo $alternativas[$num][2] ?>
+                                    <br>
+                                <Input type = 'Radio' name = "<?= $num ?>" value=3 required>
+                                    <?php echo $alternativas[$num][3] ?>
+                                    <br>
+                                <br>
+                                <Input type="submit" value="Próxima!">
+                            </FORM>
+                  <?php }
+                    } //Deve ter um jeito mais eficiente de fazer isso sem repetir o código do form
+                    else { ?>
+                        <h1><?php echo $perguntas[$num] ?></h1>
+                        <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
+                            <Input type="hidden" name="num" value=<?= $num ?>>
+                            <Input type = 'Radio' name = "<?= $num ?>" value=0 required>
+                                <?php echo $alternativas[$num][0] ?>
+                                <br>
+                            <Input type = 'Radio' name = "<?= $num ?>" value=1 required>
+                                <?php echo $alternativas[$num][1] ?>
+                                <br>
+                            <Input type = 'Radio' name = "<?= $num ?>" value=2 required>
+                                <?php echo $alternativas[$num][2] ?>
+                                <br>
+                            <Input type = 'Radio' name = "<?= $num ?>" value=3 required>
+                                <?php echo $alternativas[$num][3] ?>
+                                <br>
                             <br>
-                        <Input type = 'Radio' name = "<?= $num ?>" value=1 required>
-                            <?php echo $alternativas[$num][1] ?>
-                            <br>
-                        <Input type = 'Radio' name = "<?= $num ?>" value=2 required>
-                            <?php echo $alternativas[$num][2] ?>
-                            <br>
-                        <Input type = 'Radio' name = "<?= $num ?>" value=3 required>
-                            <?php echo $alternativas[$num][3] ?>
-                            <br>
-                        <br>
-                        <Input type="submit" value="Próxima!">
-                    </FORM>
-          <?php }
+                            <Input type="submit" value="Próxima!">
+                        </FORM>
+              <?php }
+                }
             } ?>
 
 
