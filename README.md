@@ -100,3 +100,23 @@ Segue alguns requisitos:
 * A pergunta deverá ser recuperada através de uma função chamada `carregaPergunta($id)` que irá acessar o vetor de perguntas, alternativas e respostas, e retornar os dados referentes a pergunta selecionada.
 * A função implementada anteriormente deverá ser armazenada em um partial chamado `perguntas.inc`. Esse partial conterá funções auxiliares que irão manipular as perguntas da página. É importante ressaltar que esse conjunto de funções é fundamental para o funcionamento do sistema.
 * A sua página conterá alguns trechos em HTML que poderão ser reaproveitados em outros momentos, como menu, rodapé, etc. Crie dois arquivos, chamados `menu.inc` e `rodape.inc` que irão armazenar o código HTML do menu e rodapé, e importe-os na página de perguntas. Diferentemente do arquivo `perguntas.inc`, o sistema pode tolerar eventuais problemas de carregamento do menu e rodapé.
+
+## Checando respostas
+
+Agora que as perguntas foram separadas por página. Você deverá implementar a lógica de evolução do jogo. Ao entrar na página inicial do jogo, a primeira pergunta deverá ser carregada. O usuário então seleciona a alternativa que ele julgar correta e submete a resposta. O sistema deverá verificar a resposta do usuário. Caso a resposta esteja correta, o usuário avança para a próxima pergunta. Caso contrário ele deverá ser redirecionado para uma página de game over.
+
+Segue alguns requisitos:
+* As alternativas para as perguntas deverão ser fornecidas por meio de um formulário, para possibilitar o envio da resposta ao servidor
+* Seu sistema deverá exibir um progresso do jogo (Quantas perguntas ele acertou, por exemplo).
+* Os dados deverão ser enviados através de requisições do tipo `POST`.
+
+*dica: você precisará enviar entre as requisições um identificador de qual pergunta será mostrada ao usuário. Pesquise sobre __hidden input fields__.*
+
+## Identificando o jogador
+
+Chegou a hora de seu programa identificar o jogador que está participando do jogo. Utilize os conceitos de sessões e cookies para identificar quem está jogando. O jogador que está jogando no momento deverá ser identificado por meio de sessão. Utilize cookies para mostrar ao usuário quando foi a última vez que ele jogou e qual foi sua última pontuação.
+
+Segue alguns requisitos:
+* O jogador não poderá acessar as perguntas se ele não tiver sido identificado antes. Ou seja, você precisará implementar um simples método de autenticação.
+* Deverá haver uma opção para que o jogador se desidentifique do jogo para que outro possa jogar. Ou seja, você precisará implementar uma rotina de logout.
+
