@@ -4,11 +4,12 @@
 		$i=0;
 		echo "<h3>" . ++$id . " - " . $perguntas[--$id] . "</h3><br>";
 ?>
-		<form action="checaresposta.php" method="GET">
+		<form action="checaResposta.php" method="POST">
+			<input type="hidden" name="pergunta" value="$id"> 
 <?php
 		foreach ($alternativas[$id] as $index2 => $info2) {
 ?>
-			<input type="radio" name="resposta" value="$id">)
+			<input type="radio" name="resposta" value="$i">)
 <?php
 			echo " " . $info2 . "<br>";
 			$i++;
