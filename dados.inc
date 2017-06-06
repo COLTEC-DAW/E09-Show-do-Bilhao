@@ -8,7 +8,6 @@
             for($j = 0; $j < 4; $j++){
                 echo "$alt[$j] $alter[$j]<br>";
             }
-            include 'rodape.inc';
         }
         else if($id == null){
             echo '<h2>Nenhuma pergunta foi selecionada</h2>';
@@ -16,5 +15,5 @@
         else{
             echo '<h3>Pergunta não existente</h3>';
         }
-    }
+    } 
 ?>

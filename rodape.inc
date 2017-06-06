@@ -1,3 +1,3 @@
 <?php
-    echo "<h4>Pense bem antes de responder!</h4>";
+    echo "<h4>Boa sorte e pense bem antes de responder!</h4>";
 ?>
