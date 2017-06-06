@@ -14,24 +14,28 @@
 <body>
 	<?php include 'menu.inc'; ?>
 	<?php
-		session_start();
-		if (!isset($_SESSION["username"])) {
-			echo "
-				<script>
-					window.location.replace('/login.php');
-				</script>
-			";			
+		//prompt function
+		function prompt($prompt_msg){
+			echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+
+			$answer = "<script type='text/javascript'> document.write(answer); </script>";
+			return($answer);
 		}
 
+		//program
+		$prompt_msg = "Parece que você não está autenticado. Insira seu username:";
+		$username = prompt($prompt_msg);
+		session_start();
+		$_SESSION["username"] = $username;
+		echo "
+				<script>
+					window.location.replace('/index.php');
+				</script>
+			";		
 	?>
 	<main>
 		<div class="container">
-			<h1 class="center-align">Vamos começar?</h1>
-			<div class="row">
-				<a class="waves-effect waves-light btn-large center-align col s12 green accent-4" href="perguntas.php?id=1">Bora.</a>
-			</div>
 		</div>
-		
 	</main>
 
 

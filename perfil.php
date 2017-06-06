@@ -22,16 +22,12 @@
 				</script>
 			";			
 		}
-
 	?>
 	<main>
 		<div class="container">
-			<h1 class="center-align">Vamos começar?</h1>
-			<div class="row">
-				<a class="waves-effect waves-light btn-large center-align col s12 green accent-4" href="perguntas.php?id=1">Bora.</a>
-			</div>
+			<p class="flow-text">Você está logado</p>
+			<a href="logout.php" class="btn">Logout</a>
 		</div>
-		
 	</main>
 
 

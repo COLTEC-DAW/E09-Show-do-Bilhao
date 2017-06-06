@@ -4,8 +4,9 @@
 		<nav class="black">
 			<div class="nav-wrapper">
 				<div class="container">
-					<a class="brand-logo center">Dá Bilhão?</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<a href="/" class="brand-logo center">Dá Bilhão?</a>
+					<ul class="right">
+						<li><a href="/perfil.php"><img src="images/joaquim.jpg" class="perfil" /></a></li>
 					</ul>
 				</div>		
 			</div>
