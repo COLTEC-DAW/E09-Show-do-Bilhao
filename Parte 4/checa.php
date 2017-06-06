@@ -1,12 +1,12 @@
 <?php
 
-	$valor = $_COOKIE['id'];
-	$proximo_id = $valor + 1;
+	$id_da_pergunta = $_POST['ids'];
+	$proximo_id = $id_da_pergunta + 1;
 
 	$resposta = $_COOKIE['resposta'];    //resposta certa
 	$resposta_marcada;
 
-	$newlink = "http://localhost/E09-Show-do-Bilhao-master/perguntas.php"."?id=".$proximo_id;
+	$newlink = "perguntas.php"."?id=".$proximo_id;
 
 
 	if(isset($_POST['optradio'])){
@@ -18,9 +18,9 @@
 		header("location:$redirect");
 	}
 	else{
-		setcookie('pontuacao', $valor);
+		setcookie('pontuacao', $id_da_pergunta);
 
-		$redirect = "http://localhost/E09-Show-do-Bilhao-master/gameover.php";
+		$redirect = "gameover.php";
 		header("location:$redirect");
 	}
 ?>

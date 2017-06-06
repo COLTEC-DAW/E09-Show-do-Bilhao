@@ -47,7 +47,7 @@
 		echo "<h3>".$enunciado[$id]."</h3>";
 		echo '<form action="checa.php" method="post">';
 ?>
-
+			<input type="hidden" name="ids" value=<?=$id?>>
 <?php
 		for($i=0;$i<4;$i++){
 ?>			<div class="radio">												

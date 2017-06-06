@@ -1,3 +1,7 @@
+<?php
+    ob_start(); // Initiate the output buffer
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
