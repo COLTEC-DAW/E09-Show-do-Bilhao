@@ -1,5 +1,15 @@
 <?php
     ob_start(); // Initiate the output buffer
+  	session_start();
+?>
+
+<?php
+	if($_SESSION["login"]=="lucas" && $_SESSION["senha"]=="123"){
+	}
+	else{
+		$redirect = "login.php";
+		header("location:$redirect");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +62,10 @@
 						setcookie('resposta', $resposta);
 					}
 				?>
+			</div>
+
+			<div class="col-md-12">
+				<a href = "deslogar.php"><button type="button" class="btn btn-primary">Deslogar</button></a>
 			</div>
 
 			<div id="footer" class="col-md-12">
