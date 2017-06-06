@@ -68,7 +68,19 @@
 				?>
 			</div>
 
-			<div class="col-md-12">
+			<div class="col-md-12m">
+				<?php
+					if($_COOKIE['ultima_pontuacao']){
+						echo '<h3>Ultima pontuação: '.$_COOKIE['pontuacao'].'</h3>';
+						echo '<h3>Jogou pela ultima vez '.$_COOKIE['data'].'</h3>';
+					}
+					else{
+						echo '<h3>Ultima pontuação: 0</h3>';
+					}
+				?>
+			</div>
+
+			<div id="deslogar" class="col-md-12" style="margin-bottom: 10px;">
 				<a href = "deslogar.php"><button type="button" class="btn btn-primary">Deslogar</button></a>
 			</div>
 
