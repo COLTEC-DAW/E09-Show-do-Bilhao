@@ -35,6 +35,10 @@
 
 				//Pega cookies
 				$id = $_COOKIE["id"];
+				if(!$id) {
+					$id = 0;
+				}
+				
 				$lastScore = $_COOKIE["lastScore"];
 				$lastDate = $_COOKIE["lastDate"];
 
