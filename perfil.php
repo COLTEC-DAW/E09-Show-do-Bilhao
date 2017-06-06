@@ -21,6 +21,12 @@
 					window.location.replace('/login.php');
 				</script>
 			";			
+		} else {
+		}
+
+			echo '<p id="aosdjfaosdk">'.$_SESSION["username"].'</p>' ;
+		if (isset($_COOKIE[$_SESSION["username"]])) {
+			echo $_SESSION["username"];
 		}
 	?>
 	<main>

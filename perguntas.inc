@@ -104,11 +104,19 @@ function carregaPerguntas($id){
 				echo '
 					<p class="flow-text center-align">Você ganhou. Porém, não fez mais que sua obrigação.</p>
 				';
+				session_start();
+				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.'5';
+				echo $bauducco;
+				setcookie($_SESSION["username"], $bauducco);
 			}
 		} else {
 			echo '
 					<p class="flow-text center-align">Você perdeu. Esperava mais de você.</p>
 				';
+				session_start();
+				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.($id-1);
+				echo $_SESSION["username"];
+				setcookie($_SESSION["username"], $bauducco);
 		}
 	}
 ?>

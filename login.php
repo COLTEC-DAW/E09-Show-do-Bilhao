@@ -16,22 +16,36 @@
 	<?php
 		//prompt function
 		function prompt($prompt_msg){
-			echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+			echo('
+				<form action="login.php" method="POST">
+					<input id="usrnmField" type="hidden" name="username" value="">
+					<input type="submit" name="Enviar" class="btn">
+				</form>
+				<script>
+					var answer = "";
+					answer = prompt("'.$prompt_msg.'");
+					alert(answer)
+					document.getElementById("usrnmField").value = answer;
 
-			$answer = "<script type='text/javascript'> document.write(answer); </script>";
+				</script>
+			');
 			return($answer);
 		}
 
-		//program
 		$prompt_msg = "Parece que você não está autenticado. Insira seu username:";
-		$username = prompt($prompt_msg);
+		prompt($prompt_msg);
+		$username = $_POST["username"];
 		session_start();
 		$_SESSION["username"] = $username;
 		echo "
-				<script>
-					window.location.replace('/index.php');
-				</script>
-			";		
+			<script>
+				/*document.forms[0].submit(function(e){
+					e.preventDefault();
+					this.submit();
+					//window.location.replace('/index.php');
+				})*/
+			</script>
+		";
 	?>
 	<main>
 		<div class="container">
