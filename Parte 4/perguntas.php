@@ -32,8 +32,12 @@
 
 			<div class="col-md-12">
 				<?php
-					$progresso = $_GET["id"] +1;
-					echo "<h4>Progresso: ".$progresso." de 5</h4>";
+					if($_GET["id"]==5)
+						echo "<h4>Progresso: 5 de 5</h4>";
+					else{
+						$progresso = $_GET["id"] +1;
+						echo "<h4>Progresso: ".$progresso." de 5</h4>";
+					}
 				?>
 			</div>
 

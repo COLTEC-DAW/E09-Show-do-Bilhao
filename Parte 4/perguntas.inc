@@ -46,8 +46,12 @@
 		global $alternativa;
 		echo "<h3>".$enunciado[$id]."</h3>";
 		echo '<form action="checa.php" method="post">';
+
+		$resp = retorna_resposta($id);
+
 ?>
 			<input type="hidden" name="ids" value=<?=$id?>>
+			<input type="hidden" name="certa" value=<?=$resp?>>
 <?php
 		for($i=0;$i<4;$i++){
 ?>			<div class="radio">												

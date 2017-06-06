@@ -3,7 +3,7 @@
 	$id_da_pergunta = $_POST['ids'];
 	$proximo_id = $id_da_pergunta + 1;
 
-	$resposta = $_COOKIE['resposta'];    //resposta certa
+	$resposta = $_POST['certa'];
 	$resposta_marcada;
 
 	$newlink = "perguntas.php"."?id=".$proximo_id;
