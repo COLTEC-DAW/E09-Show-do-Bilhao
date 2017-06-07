@@ -17,8 +17,7 @@
             require 'perguntas.inc';
 
             $id = $_GET["id"];
-            echo "ID:" .$id;
-            setcookie("id", $id);
+            setcookie("n_id", $id);
 
             echo "<p>Pontuação: " . $id . "</p>";
 

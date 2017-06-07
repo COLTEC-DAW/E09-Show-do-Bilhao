@@ -17,8 +17,8 @@
                     <p>Voce ganhou!</p>
                     <?php
                         require 'perguntas.inc';
-                        $pontuacao = $_POST['ident'];
-                        echo "<p>Pontuação: ".$_COOKIE['id']."</p>";
+
+                        echo "<p>Pontuação: ".($_COOKIE['n_id']+1)."</p>";
                     ?>
                 </div>
             </div>
