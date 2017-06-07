@@ -127,7 +127,7 @@
             $alternativas[17][0] = "Moriarty";
             $alternativas[17][1] = "Poirot";
             $alternativas[17][2] = "Watson";
-            $alternativas[17][3] = "Arsene Lupin";
+            $alternativas[17][3] = "Lupin";
             $corretas[17] = 2;
 
             $perguntas[18] = "Mas o mago é...";
@@ -154,6 +154,9 @@
                 global $corretas;
                 global $acertos;
 
+                if (!isset($_SESSION["login"])) header ("Location: login.php");
+                else $_SESSION["login"] = $_POST["login"];
+                
                 if ($num >= 20){
                     ?>
                     <h1>VOCÊ CHEGOU AO FIM!!!</h1>
@@ -190,6 +193,7 @@
                                 <br>
                                 <Input type="submit" value="Próxima!">
                             </FORM>
+                            <h2>Pergunta <?= $num?> de 20</h2>
                   <?php }
                     } //Deve ter um jeito mais eficiente de fazer isso sem repetir o código do form
                     else { ?>

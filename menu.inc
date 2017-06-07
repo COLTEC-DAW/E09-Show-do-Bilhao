@@ -1,9 +1,11 @@
 <div>
     <div>
-        <p>Bem vindo, usuário</p>
+        <p>Bem vindo, <?= $_SESSION["login"] ?></p>
     </div>
         <!-- Precisa completar isso aqui -->
-        <button>Sair</button>
+        <form method="get" action="logout.php">
+            <button type="submit">Sair</button>
+        </form>
     <div>
     </div>
 </div>

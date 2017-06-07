@@ -11,5 +11,6 @@
         else { ?>
             <h2>Parece que não foi hoje...</h2>
   <?php } ?>
+        <a href="logout.php"></a>
     </body>
 </html>
