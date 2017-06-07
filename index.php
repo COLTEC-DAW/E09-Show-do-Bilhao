@@ -42,7 +42,14 @@
         }
         fclose($gab);
 
-		carregaPergunta($_GET["id"]);
+        $id = $_GET["id"] || 'N';
+
+        if($id == 'N'){
+            login();
+        } else {
+		    carregaPergunta($id);            
+        }
+
 	?>
 
         <?php include "rodape.inc"; ?>
