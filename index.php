@@ -1,13 +1,16 @@
-<!Doctype>
-<?php session_start(); ?>
+<?php
+    session_start();
+    ob_start();
+?>
+<!DOCTYPE>
 <html>
     <head>
         <title>Bem vindo</title>
     </head>
     <body>
         <h1>BEM VINDO AO SHOW DO BILHÃO</h1>
-        <?php
-/*
+        <!-- <?php
+
         if (!$SESSION["login"]){ //Se o usuário já estiver logado
             $login = $_POST["login"];
             $senha = $_POST["senha"];
@@ -26,8 +29,8 @@
             $lastScore = $_COOKIE["lastScore"];
             $lastDate = $_COOKIE["lastDate"];
         }
-        */
-        ?>
+
+        ?> -->
         <p>As regras são claras! Responda às perguntas SEM ERRAR e ganhe UM BILHÃO</p>
         <form method="get" action="perguntas.php?num=0">
             <button type="submit">Começar</button>

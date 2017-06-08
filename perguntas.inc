@@ -149,7 +149,6 @@
 ?>
 <?php
             function carregaPergunta($num){
-                session_start();
                 global $perguntas;
                 global $alternativas;
                 global $corretas;
@@ -158,7 +157,10 @@
                 if (!isset($_SESSION["login"])&&!isset($_POST["login"])) header ("Location: login.php");
                 else {
                     $_SESSION["login"] = $_POST["login"];
-                    //header ("Location: perguntas.php?num=0");
+                    $id = $_COOKIE["id"];
+                    $lastScore = $_COOKIE["lastScore"];
+                    $lastDate = $_COOKIE["lastDate"];
+                    header ("Location: perguntas.php?num=0");
                 }
                 
                 if ($num >= 20){
