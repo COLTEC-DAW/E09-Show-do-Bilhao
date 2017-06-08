@@ -1,32 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>Show do Bilhão</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        
-        <?php
+<html>
+<head>
+ 	<title>Jogo do Bilhão</title>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  </head>
+   <body>
+		
+		<?php include 'topo.inc';?>
 
-        	include("topo.inc");
+        <button type="button" class="btn btn-success" onclick="location.href = 'perguntas.php?id=0' ;">INICIAR O JOGO</button>
 
-        	require 'perguntas.inc';
+        <?php include 'rodape.inc';?>
 
-        	for ($i = 0 ; $i < count($per) ; $i++)
-        	{
-            	echo "<h3>".$per[$i]."</h3>";
-            	echo "<ol>";
-            	for ($j=0 ; $j < 4 ; $j++)
-            	{
-	                echo "<li>".$alternativa[$i][$j]."</li>";
-            	}
-	            echo "</ol>";
-        	}
-			
-			include("rodape.inc");
-			
-		?>
-
-        </div>
-    </body>
+   </body>
 </html>

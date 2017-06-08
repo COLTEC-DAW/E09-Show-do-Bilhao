@@ -1,2 +1,1 @@
-﻿<h4>Foi divertido fazer esta atividade
-</h4>
+<h4>Foi divertido desenvolver esse game</h4>
