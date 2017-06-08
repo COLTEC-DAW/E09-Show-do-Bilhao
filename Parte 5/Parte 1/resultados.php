@@ -22,7 +22,9 @@
 					echo "<p>Você fez ".$pontos." pontos em 5 questões</p>";
 				?>
 			</div>
-
+			<div id="deslogar" class="col-md-12" style="margin-bottom: 10px;">
+				<a href = "deslogar.php"><button type="button" class="btn btn-primary">Deslogar</button></a>
+			</div>
 			<div id="footer" class="col-md-12">
 				<?php include 'rodape.inc';?>
 			</div>

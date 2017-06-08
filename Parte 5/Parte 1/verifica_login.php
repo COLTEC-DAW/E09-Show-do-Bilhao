@@ -6,8 +6,6 @@
 
 	$login = $_POST["nome"];
 	$senha = $_POST["senha"];
-	setcookie('login', $login);
-	setcookie('senha', $senha);
 
 	$permissao = 0;
 
@@ -36,11 +34,12 @@
 		$falha = 1;
 
 		setcookie('falha', $falha);
+		setcookie("usuario",$login);
 
 		$_SESSION["login"] = $login;
 		$_SESSION["senha"] = $senha;
 
-		$redirect = "perguntas.php?id=0";
+		$redirect = "info.php";
 		header("location:$redirect");
 	} else {
 		$falha = 0;

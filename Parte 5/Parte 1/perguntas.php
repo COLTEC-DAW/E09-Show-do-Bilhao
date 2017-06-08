@@ -60,6 +60,8 @@
 						$progresso = $_GET["id"] +1;
 						echo "<h4>Progresso: ".$progresso." de 5</h4>";
 					}
+					setcookie('pontuacao', $_GET["id"]);
+
 				?>
 			</div>
 
@@ -71,9 +73,8 @@
 						carregaPergunta($_GET["id"], $link);
 					}
 					else{
-						setcookie('pontuacao', $_GET["id"]);
 						echo '<h1>Você venceu!!</h1>';
-						echo '<div class="col-md-12" style="text-align: center;"><a id="result" class="btn btn-primary btn-large" href="resultados.php?id=0">Ver Resultados</a></div>';
+						echo '<div class="col-md-12" style="text-align: center;"><a id="result" class="btn btn-primary btn-large" href="resultados.php">Ver Resultados</a></div>';
 					}
 				?>
 			</div>
@@ -86,18 +87,6 @@
 						$resposta = retorna_resposta($id);
 						setcookie('id', $id);
 						setcookie('resposta', $resposta);
-					}
-				?>
-			</div>
-
-			<div class="col-md-12m">
-				<?php
-					if($_COOKIE['ultima_pontuacao']){
-						echo '<h3>Ultima pontuação: '.$_COOKIE['pontuacao'].'</h3>';
-						echo '<h3>Jogou pela ultima vez '.$_COOKIE['data'].'</h3>';
-					}
-					else{
-						echo '<h3>Ultima pontuação: 0</h3>';
 					}
 				?>
 			</div>
