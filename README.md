@@ -83,7 +83,7 @@ Manipular dados diretamente por meio de arquivos pode dar muito trabalho. Porém
 
 Caso você opte pelo formato `JSON`, sugiro a seguinte estruturação para usuários e perguntas:
 
-`usuários.txt`
+`usuários.json`
 
     [   
         ...
@@ -102,7 +102,7 @@ Caso você opte pelo formato `JSON`, sugiro a seguinte estruturação para usuá
         ...
     ]
 
-`perguntas.txt`
+`perguntas.json`
 
     [
         ...
