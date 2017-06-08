@@ -1,4 +1,7 @@
 <?php
+  ob_start();
+?>
+<?php
 	echo '
 		<footer class="page-footer grey lighten-1">
           <div class="container">

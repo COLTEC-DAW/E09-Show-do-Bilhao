@@ -1,4 +1,7 @@
 <?php
+	ob_start();
+?>
+<?php
 $questoes = [
   1 => 'No poema, aparece a palavra "só", corretamente acentuada. Assinale a alternativa que contenha apenas palavras corretamente acentuadas pela mesma regra.',
   2 => 'Renato pediu empréstimo ao banco para pagamento em um ano com taxa anual real de juros de 28%. Sabendo que a inflação prevista para o período é de 7%, a taxa aparente de juros é de, aproximadamente:',
@@ -106,7 +109,7 @@ function carregaPerguntas($id){
 				';
 				session_start();
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.'5';
-				<!-- echo $bauducco; -->
+				// echo $bauducco;
 				setcookie($_SESSION["username"], $bauducco);
 			}
 		} else {
@@ -115,7 +118,7 @@ function carregaPerguntas($id){
 				';
 				session_start();
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.($id-1);
-				<!-- echo $bauducco; -->
+				// echo $bauducco;
 				setcookie($_SESSION["username"], $bauducco);
 		}
 	}

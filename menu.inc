@@ -1,4 +1,7 @@
 <?php
+	ob_start();
+?>
+<?php
 	echo '
 	<header>
 		<nav class="black">
