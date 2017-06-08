@@ -23,6 +23,8 @@
                     <input type="submit" value="Submit">
                 </form>
                 
+                <br><br><a class='btn btn-primary btn-large' href='cadastro.php'>Cadastrar</a>;
+
                 </div>
             </div>
         </div>

@@ -15,17 +15,18 @@
             <div class="row">
                 <div class="col-md-12">
                     
-                    <h2>O Show do Bilhão!</h2>
-                    </br>
-                    <p>Voce ganhou!</p>
-                    <?php
-                        require 'perguntas.inc';
-
-                        echo "<p>Pontuação: ".($_COOKIE['n_id']+1)."</p><br><br>";
-                        setcookie("lastpt", ($_COOKIE['n_id']));
-                        echo "<br><br><a class='btn btn-primary btn-large' href='perguntas.php?id=0'>Reiniciar</a>";
-                        echo "<br><br><a class='btn btn-primary btn-large' href='logout.php'>Logout</a>";
-                    ?>
+                <form action="conf_cadastro.php" method="post">
+                    <label for="nome">Login: </label>
+                    <input type="text"name="nome"><br>
+                    <label for="email">Senha: </label>
+                    <input type="text" name="email"><br><br>
+                    <label for="login">Senha: </label>
+                    <input type="text" name="login"><br><br>
+                    <label for="senha">Senha: </label>
+                    <input type="password" name="senha"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+                
                 </div>
             </div>
         </div>
