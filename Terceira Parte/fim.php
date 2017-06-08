@@ -1,10 +1,23 @@
 <?php
-        $id = $_GET["id"];
-        $id = ($id+1) * 200000; 
-        $data =date("d.m.y"); 
-        setcookie("data", $data);
-        setcookie("pontos", $id);
-        echo "FINAL DO JOGO BITCHES";
+ $nome = $_COOKIE['nome']; 
+ autenticar($nome);
+ function autenticar ($nome) {
+ 
+  if (!isset($nome)) {
+   echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php'>";
+    session_destroy();
+    exit;
+  } else {
+      
+    echo "<p>Olá, $nome.</p>";
+ 
+  }
+}
+?>
+
+<?php
+
+        echo "FINAL DO JOGO ";
 
 ?>
 

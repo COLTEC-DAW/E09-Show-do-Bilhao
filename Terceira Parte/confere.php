@@ -1,7 +1,23 @@
+ <?php
+ $nome = $_COOKIE['nome']; 
+ autenticar($nome);
+ function autenticar ($nome) {
+ 
+  if (!isset($nome)) {
+   echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php'>";
+    session_destroy();
+    exit;
+  } else {
+      
+    echo "<p>Olá, $nome.</p>";
+ 
+  }
+}
+?>
+ 
  <?php 
     $perg = $_POST["num"]; 
     $id = (int)$perg; 
-    setcookie("pontos", $id); 
     $resp = $_POST["alternativas"];
    
 
