@@ -13,7 +13,7 @@
   margin: 0;
   padding-top: 50px;
   text-align: center;
-  animation-duration: 3s;
+  /*animation-duration: 3s;
   animation-name: slidein; /* animacao */
   color: white;
   font-size: 4em;
@@ -27,14 +27,14 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 100; }
 
-@keyframes slidein {
+/*@keyframes slidein {
   from {
     margin-left: 100%;
     width: 300%; }
   to {
     margin-left: 0%;
     width: 100%; } 
-}
+}*/
 
 p {
   font-family: 'Open Sans', sans-serif;
@@ -44,3 +44,12 @@ p {
   padding-left: 25%;
   padding-right: 25%;
   font-size: 1.3em; }
+
+button.btn {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+form {
+  padding-left: 10%;
+}

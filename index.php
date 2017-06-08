@@ -15,41 +15,17 @@
 
         <?php
             include "menu.inc";
-            global $enunciados;
-            global $alternativas;
-            global $certa;
-            $enunciados = array("Qual o nome do Madeira?", "Qual a cor do lab do 3?", "So uma opção está correta:");
-            $alternativas[0][0] = "a-joao";
-            $alternativas[0][1] = "b-gustavo";
-            $alternativas[0][2] = "c-rodrigao";
-            $alternativas[0][3] = "d-cuboalex";
-            $alternativas[1][0] = "a-rosa";
-            $alternativas[1][1] = "b-purple";
-            $alternativas[1][2] = "c-amarelo";
-            $alternativas[1][3] = "d-invisivel";
-            $alternativas[2][0] = "a-nutella";
-            $alternativas[2][1] = "b-doce de leite";
-            $alternativas[2][2] = "c-bolacha";
-            $alternativas[2][3] = "d-biscoito";
+            session_start();
+           
+            if(!isset($_SESSION["nome"]) && !isset($_SESSION["senha"])){ //testa se ja tem nome e senha
+                echo '<a href="jogador.inc"><button type="button" class="btn btn-success">Começar</button></a>'; //login
+            } else{
+                echo '<a href="perguntas.php?id=0"><button type="button" class="btn btn-success">Começar</button></a>';
+            }
 
-            //array(array("a-joao","b-gustavo","c-rodrigao","d-cuboalex"), array("a-rosa","b-purple","c-amarelo","d-invisivel"));
-            $certa[0] = 3; //indice para a certa
-            $certa[1] = 2;
-            $certa[2] = 1;
-            
-            echo '<a href="?id=0">oi</a>';
-            
-            global $id;
-            $id = $_GET["id"];
-      
-
-            include "perguntas.inc";
-            carregaPergunta($id);
+            echo '<a href="Errou.php"><button type="button" class="btn btn-danger">Sair</button></a>';
             include "rodape.inc";
-
-
-            
-            
+  
         ?>
         
     </body>
