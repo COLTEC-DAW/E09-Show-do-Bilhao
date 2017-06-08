@@ -1,19 +1,18 @@
 <?php
-    function pergunta($id){
-        global $perguntas, $alternativas, $alt;
-        if($id < sizeof($perguntas) && $id >= 0 && $id != null){
-            $id_novo = $id+1;
-            $alter = $alternativas[$id];
-            echo "<h3>$id_novo) $perguntas[$id]</h3>";
-            for($j = 0; $j < 4; $j++){
-                echo "$alt[$j] $alter[$j]<br>";
-            }
-        }
-        else if($id == null){
-            echo '<h2>Nenhuma pergunta foi selecionada</h2>';
-        }
-        else{
-            echo '<h3>Pergunta não existente</h3>';
-        }
-    } 
+    global $perguntas, $alternativas, $respostas, $alt, $certas;
+    $perguntas = array( "Como se chama o lago salgado, que é parte mais baixa da Terra, situado na Palestina?",
+                        "Qual o continente que tem mais países?",
+                        "A planície da Manchúria encontra-se em qual país?",
+                        "Na fronteira de quais países está o Everest, pico mais alto do mundo?",
+                        "O abacaxi é originário de que país?");
+    $alternativas = array(
+        array("Mar Morto", "Mar Cáspio", "Mar Mediterrâneo", "Mar do Caribe"),
+        array("Europa", "África", "Ásia", "América"),
+        array("China", "Mongólia", "Irã", "Angola"),
+        array("Suíça e Itália", "Nepal e China", "Chile e Argentina", "Brasil e Uruguai"),
+        array("Estados Unidos", "Brasil", "Colômbia", "Venezuela")
+    );
+    $respostas = array(0, 1, 0, 1, 1);
+    $alt = array("a)", "b)", "c)", "d)");
+    $certas = 0;
 ?>

@@ -1,4 +1,6 @@
 <?php
-    echo "<h1>Bem vindo ao \$how do Bilhão</h1>"
-
+    session_start();
+    $nome = $_SESSION["nome"];
+    echo "<h1>\$how do Bilhão</h1>";
+    echo "<h3>Boa sorte $nome!!</h3>";
 ?>

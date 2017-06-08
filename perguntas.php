@@ -8,30 +8,11 @@
     </head>
     <body>
         <?php
-            require 'dados.inc';
-
-            global $perguntas, $alternativas, $respostas, $alt;
-            $perguntas = array( "Como se chama o lago salgado, que é parte mais baixa da Terra, situado na Palestina?",
-                                "Qual o continente que tem mais países?",
-                                "A planície da Manchúria encontra-se em qual país?",
-                                "Na fronteira de quais países está o Everest, pico mais alto do mundo?",
-                                "O abacaxi é originário de que país?");
-            $alternativas = array(
-                array("Mar Morto", "Mar Cáspio", "Mar Mediterrâneo", "Mar do Caribe"),
-                array("Europa", "África", "Ásia", "América"),
-                array("China", "Mongólia", "Irã", "Angola"),
-                array("Suíça e Itália", "Nepal e China", "Chile e Argentina", "Brasil e Uruguai"),
-                array("Estados Unidos", "Brasil", "Colômbia", "Venezuela")
-            );
-            $respostas = array(0, 1, 0, 1, 1);
-            $alt = array("a)", "b)", "c)", "d)");
-
+            include 'menu.inc';
+            require 'functions.inc';
             $id_pergunta = $_GET["id"];
-            pergunta($id_pergunta);
-            global $new_id;
-            $new_id = $id_pergunta + 1;
+            carregaPergunta($id_pergunta);
+            include 'rodape.inc';
         ?>
-        <button onClick="<?php
-        header("Location: /perguntas.php?id=$new_id"); ?>">Continuar</button>
     </body>
 </html>
