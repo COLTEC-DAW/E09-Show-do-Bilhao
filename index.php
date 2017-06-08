@@ -1,4 +1,10 @@
+<?php
+    ob_start();  
+
+?>
+
 <html>
+
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css"  href="style.css" />
@@ -18,12 +24,12 @@
             session_start();
            
             if(!isset($_SESSION["nome"]) && !isset($_SESSION["senha"])){ //testa se ja tem nome e senha
-                echo '<a href="jogador.inc"><button type="button" class="btn btn-success">Começar</button></a>'; //login
+                echo '<a href="/jogador.html"><button type="button" class="btn btn-success">Começar</button></a>'; //login
             } else{
-                echo '<a href="perguntas.php?id=0"><button type="button" class="btn btn-success">Começar</button></a>';
+                echo '<a href="/perguntas.php?id=0"><button type="button" class="btn btn-success">Começar</button></a>';
             }
 
-            echo '<a href="Errou.php"><button type="button" class="btn btn-danger">Sair</button></a>';
+            echo '<a href="logout.php"><button type="button" class="btn btn-danger">Sair</button></a>';
             include "rodape.inc";
   
         ?>

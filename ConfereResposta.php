@@ -8,7 +8,7 @@
         header("Location: perguntas.php?id=$id ");
     }
     else{
-        header("Location: Errou.php"); //php do final do jogo ou se errar
+        header("Location: logout.php"); //php do final do jogo ou se errar
     }
     echo $_POST['alter'];
 

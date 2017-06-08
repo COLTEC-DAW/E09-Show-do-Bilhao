@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include "head.inc";
 	include "menu.inc";
 	global $id;

@@ -1,11 +1,16 @@
+<?php
+    ob_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-</head>
+<?php
+    include "head.inc";
+?>
 <body>
     <?php
-    include "head.inc";
+    
     function carregaPergunta($id){
         global $nomeLogin;
         $nomeLogin = $_COOKIE['Login'];
@@ -32,9 +37,17 @@
         $certa[0] = 3; //indice para a certa
         $certa[1] = 2;
         $certa[2] = 1;
+        
         global $pontuacao;
-        $pontuacao = $id;
-        setcookie("pont", $pontuacao);
+        $pontuacao = $id+1;
+        $_SESSION["pont"] = $pontuacao;
+
+
+        
+        
+        global $data;
+        $data = $_COOKIE['data'];
+        
         if($id!=null){
             echo "<p>Questao:  " .  $enunciados[$id] . " </p>";
             echo "<form action='/ConfereResposta.php' method='post'>"; 
@@ -47,8 +60,10 @@
             echo "<input type='submit' value='Submit'>";
             echo "<br>";
             echo "<input type='hidden' name='points' value'$pontuacao'>";
-            echo "<p> Pontuação " .$nomeLogin. ": " . $pontuacao . "</p>"; 
+            echo "<p> Pontuação " .$nomeLogin. ": " . $pontuacao . "</p>";
+            echo "<p> Data do último jogo: " . $data . "</p>";  
             echo "</form>";
+            echo '<a href="logout.php"><button type="button" class="btn btn-danger">Sair</button></a>';
         }
     }
 
