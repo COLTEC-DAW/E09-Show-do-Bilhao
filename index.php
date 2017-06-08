@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    ob_start();
+?>
 <!DOCTYPE html>
 <html>
 <?php require "functions.inc"; ?>
@@ -10,47 +14,33 @@
 </head>
 <body>
     <?php include "menu.inc";?>
-
-	<h1 style="text-align: center;color: #7cfc00;text-shadow: 2px 2px darkgreen">$how do Bilhão</h1>
 	<?php
 
-        $perg = fopen('perguntas.txt','r');
-		$perguntas = array();
+        $perg = fopen('perguntas.json','r');
+		$tudo = "";
         while ($line = fgets($perg)) {
-            array_push($perguntas, $line);
+            $tudo = $tudo . $line;
         }
+        $json = json_decode($tudo, true);
+
         fclose($perg);
 
-        $resp = fopen('respostas.txt','r');
-		$respostas = array();
-        $respostas_unica = array();
-        while ($line = fgets($resp)) {
-            $i++;
-            array_push($respostas_unica, $line);
-            if($i == 4){
-                $i = 0;
-                array_push($respostas, $respostas_unica);
-                $respostas_unica = array();
-            }
-        }
-        fclose($resp);
+        $id = $_GET["id"];
 
-        $gab = fopen('gabarito.txt', 'r');
-        $gabarito = array();
-        while ($line = fgets($gab)) {
-            array_push($gabarito, $gab);
-        }
-        fclose($gab);
-
-        $id = $_GET["id"] || 'N';
-
-        if($id == 'N'){
+        if($id == null){
             login();
         } else {
-		    carregaPergunta($id);            
-        }
+            $login = $_SESSION["login"];
 
+            ?> <p>Sessão: <?=$_SESSION["login"]?> </p> <?php
+
+            if($login != null)          
+		        carregaPergunta($id);
+            else
+                login();           
+        }
 	?>
+        <a href="logout.php">Logout</a>
 
         <?php include "rodape.inc"; ?>
 </body>

@@ -1,18 +1,28 @@
 <?php
+    session_start();
+    ob_start();
+
     $resposta = $_POST["resposta"];
     $id = $_POST["id"];
+    $gabarito = $_POST["gabarito"];
 
+    if($resposta == $gabarito){
+        if($id == 4){
+            setcookie("lastTime", date("d/m/Y h:i:s"));
+            setcookie("lastScore", $id+1);
 
-    $gab = fopen('gabarito.txt', 'r');
-        $gabarito = array();
-        while ($line = fgets($gab)) {
-            array_push($gabarito, $gab);
+            session_destroy();
+            header('location: '."http://localhost:3000/vitoria.php");
+        } else {
+            $id++;
+
+            header('location: '."http://localhost:3000?id=".$id);
         }
-    fclose($gab);
+    } else {
+        setcookie("lastTime", date("d/m/Y h:i:s"));
+   		setcookie("lastScore", $id);
 
-    if($resposta == $gab[$id]){
-        $id++;
-        header('location: '."http://localhost:3000?id=".$id);
+        session_destroy();
+        header('location: '."http://localhost:3000/gameover.php");
     }
-    header('location: '."http://localhost:3000/gameover.php");
 ?>
