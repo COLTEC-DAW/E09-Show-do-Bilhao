@@ -1,8 +1,9 @@
+<?php session_start(); ?>
 <div>
     <div>
-        <p>Bem vindo, <?= $_SESSION["login"] ?></p>
+        <?php if ($_GET["num"]!=0) ?> <p>Bem vindo, <?php echo $_SESSION["login"] ?></p>
+        <?php else ?> <p>Bem vindo, <?php echo $_POST["login"] ?></p>
     </div>
-        <!-- Precisa completar isso aqui -->
         <form method="get" action="logout.php">
             <button type="submit">Sair</button>
         </form>

@@ -149,13 +149,17 @@
 ?>
 <?php
             function carregaPergunta($num){
+                session_start();
                 global $perguntas;
                 global $alternativas;
                 global $corretas;
                 global $acertos;
 
-                if (!isset($_SESSION["login"])) header ("Location: login.php");
-                else $_SESSION["login"] = $_POST["login"];
+                if (!isset($_SESSION["login"])&&!isset($_POST["login"])) header ("Location: login.php");
+                else {
+                    $_SESSION["login"] = $_POST["login"];
+                    //header ("Location: perguntas.php?num=0");
+                }
                 
                 if ($num >= 20){
                     ?>

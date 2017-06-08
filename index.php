@@ -32,9 +32,6 @@
         <form method="get" action="perguntas.php?num=0">
             <button type="submit">Começar</button>
         </form>
-        <!--
-        <a href="perguntas.php?num=0">Iniciar</a>
-        -->
         <?php include "rodape.inc"; ?>
     </body>
 </html>
