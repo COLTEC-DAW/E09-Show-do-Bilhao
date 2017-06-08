@@ -70,7 +70,7 @@
 					if($_GET["id"]<5){
 						$proximo_id = $_GET["id"] + 1;
 						$link = "perguntas.php?id=".$proximo_id;
-						carregaPergunta($_GET["id"], $link);
+						perguntaArquivo($_GET["id"]);
 					}
 					else{
 						echo '<h1>Você venceu!!</h1>';

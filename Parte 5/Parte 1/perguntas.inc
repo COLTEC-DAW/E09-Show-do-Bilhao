@@ -4,7 +4,7 @@
 	$alternativa[0][0] = "1. BRÔNQUIOS";
 	$alternativa[0][1] = "2. BOCA";
 	$alternativa[0][2] = "3. FARINGE";
-	$alternativa[0][3] = "4. BRÔNQUIOS";
+	$alternativa[0][3] = "4. PÂNCREAS";
 	$certa[0] = 0;
 
 	//Questão 2
@@ -73,4 +73,44 @@
 		return $certa[$id];
 	}
 
+?>
+
+<?php
+	function perguntaArquivo($id){
+
+		$cont = 0;
+
+		$arquivo = fopen("perguntas.txt", "r");
+		while(!feof($arquivo)) {
+			$linha = fgets($arquivo);
+			if($linha!=null){
+				if($cont==$id){
+					$aux = json_decode($linha);
+					$resp = $aux->{'resposta'};
+					$enunciado = $aux->{'enunciado'};
+					echo "<h3>".$enunciado."</h3>";	
+					echo '<form action="checa.php" method="post">';
+					
+?>
+					<input type="hidden" name="ids" value=<?=$id?>>
+					<input type="hidden" name="certa" value=<?=$resp?>>
+<?php					
+					for($i=0;$i<4;$i++){
+						$alternativas = $aux->{'alternativas'};
+?>			
+						<div class="radio">												
+							<label><input type="radio" name="optradio" value="<?=$i?>"><?=$alternativas[$i]?></label>
+						</div>
+<?php
+					}
+?>
+				<input type="submit" name="Verificar">
+				</form>
+<?php
+				}
+				$cont++;
+			}
+		}
+		fclose($arquivo);
+	}
 ?>
