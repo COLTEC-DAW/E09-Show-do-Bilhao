@@ -13,42 +13,18 @@
 </head>
 <body>
 	<?php include 'menu.inc'; ?>
-	<?php
-		//prompt function
-		function prompt($prompt_msg){
-			echo('
-				<form action="login.php" method="POST">
-					<input id="usrnmField" type="hidden" name="username" value="">
-					<input type="submit" name="Enviar" class="btn">
-				</form>
-				<script>
-					var answer = "";
-					answer = prompt("'.$prompt_msg.'");
-					alert(answer)
-					document.getElementById("usrnmField").value = answer;
-
-				</script>
-			');
-			return($answer);
-		}
-
-		$prompt_msg = "Parece que você não está autenticado. Insira seu username:";
-		prompt($prompt_msg);
-		$username = $_POST["username"];
-		session_start();
-		$_SESSION["username"] = $username;
-		echo "
-			<script>
-				/*document.forms[0].submit(function(e){
-					e.preventDefault();
-					this.submit();
-					//window.location.replace('/index.php');
-				})*/
-			</script>
-		";
-	?>
 	<main>
 		<div class="container">
+			<?php require 'login.inc';
+				if ($_POST["usrnm"] != NULL) {
+					session_start();
+					$_SESSION["username"] = $_POST["usrnm"];
+					echo $_SESSION["username"];
+					header("Location: index.php");
+					exit;	
+				}
+
+			?>
 		</div>
 	</main>
 

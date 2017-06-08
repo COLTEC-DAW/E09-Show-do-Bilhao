@@ -16,21 +16,19 @@
 	<?php
 		session_start();
 		if (!isset($_SESSION["username"])) {
-			echo "
-				<script>
-					window.location.replace('/login.php');
-				</script>
-			";			
-		} else {
-		}
-
-			echo '<p id="aosdjfaosdk">'.$_SESSION["username"].'</p>' ;
-		if (isset($_COOKIE[$_SESSION["username"]])) {
-			echo $_SESSION["username"];
+			header("Location: login.php");
+			exit;				
 		}
 	?>
 	<main>
 		<div class="container">
+			<?php
+				$cookie = explode("+", $_COOKIE[$_SESSION["username"]]);
+				echo '
+					<p class="flow-text">Olá <b>'. ($_SESSION["username"]).'</b>, seu último jogo foi no dia <b>'.$cookie[0].'</b>, onde você fez <b>'.$cookie[1].'</b>  pontos</p>
+
+				';
+			?>
 			<p class="flow-text">Você está logado</p>
 			<a href="logout.php" class="btn">Logout</a>
 		</div>

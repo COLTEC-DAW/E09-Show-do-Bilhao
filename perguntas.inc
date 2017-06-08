@@ -106,7 +106,7 @@ function carregaPerguntas($id){
 				';
 				session_start();
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.'5';
-				echo $bauducco;
+				<!-- echo $bauducco; -->
 				setcookie($_SESSION["username"], $bauducco);
 			}
 		} else {
@@ -115,7 +115,7 @@ function carregaPerguntas($id){
 				';
 				session_start();
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.($id-1);
-				echo $_SESSION["username"];
+				<!-- echo $bauducco; -->
 				setcookie($_SESSION["username"], $bauducco);
 		}
 	}
