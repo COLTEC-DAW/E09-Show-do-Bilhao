@@ -6,12 +6,13 @@
 </head>
 <body>
 	<?php
+		session_start();
+
 		include 'menu.inc';
 		require 'functions.inc';
 		require 'dados.inc';
 
-		$numPergunta = $_GET["id"];
-		carregaPergunta($numPergunta);
+		carregaPergunta($_COOKIE['perguntaAtual']);
 
 		include 'rodape.inc';
 	?>

@@ -14,6 +14,5 @@ $alternativas = array(
 );
 
 global $respostas;
-$respostas = array(2, 1, 3, 2, 3);
-
+$respostas = array(1, 0, 2, 1, 0, 2);
 ?>
