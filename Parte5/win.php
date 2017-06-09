@@ -19,7 +19,13 @@
                     </br>
                     <p>Voce ganhou!</p>
                     <?php
+                        session_start();
+
                         require 'perguntas.inc';
+
+                        if(!isset($_SESSION["login"]) && !isset($_SESSION["senha"])){ //confere se ta logado
+                            header('Location: index.php');
+                        }
 
                         echo "<p>Pontuação: ".($_COOKIE['n_id']+1)."</p><br><br>";
                         setcookie("lastpt", ($_COOKIE['n_id']));

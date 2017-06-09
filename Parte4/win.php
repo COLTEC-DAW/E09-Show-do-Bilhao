@@ -19,6 +19,10 @@
                     </br>
                     <p>Voce ganhou!</p>
                     <?php
+                        session_start();
+                        if(!isset($_SESSION["login"]) && !isset($_SESSION["senha"])){
+                            header('Location: index.php');
+                        }
                         require 'perguntas.inc';
 
                         echo "<p>Pontuação: ".($_COOKIE['n_id']+1)."</p><br><br>";

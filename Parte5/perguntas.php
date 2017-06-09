@@ -17,26 +17,24 @@
     <body>
         
         <?php
+            
+            session_start();
+
+            if(!isset($_SESSION["login"]) && !isset($_SESSION["senha"])){ //confere se ta logado
+                header('Location: index.php');
+            }
+            
             require 'perguntas.inc';
 
             $id = $_GET["id"];
             setcookie("n_id", $id);
-
-
 
             $aux = carregaResposta($id);
             setcookie("rsp", $aux);
             
             carregaPergunta($id);
 
-            echo "<p>Pontuação: " . $id . "</p><br><br>";
-
-            echo "Último login: " . $_COOKIE['date'];
-            if(isset($_COOKIE['lastpt'])){
-                echo "<br><br>Última pontuação: ". $_COOKIE['lastpt'];
-            }
-
-            
+            echo "<p>Pontuação: " . $id . "</p><br><br>";          
             echo "<br><br><a class='btn btn-primary btn-large' href='logout.php'>Logout</a><br><br>";
 
             require 'rodape.inc';            

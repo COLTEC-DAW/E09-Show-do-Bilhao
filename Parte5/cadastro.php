@@ -16,11 +16,11 @@
                 <div class="col-md-12">
                     
                 <form action="conf_cadastro.php" method="post">
-                    <label for="nome">Login: </label>
+                    <label for="nome">Nome: </label>
                     <input type="text"name="nome"><br>
-                    <label for="email">Senha: </label>
+                    <label for="email">Email: </label>
                     <input type="text" name="email"><br><br>
-                    <label for="login">Senha: </label>
+                    <label for="login">Login: </label>
                     <input type="text" name="login"><br><br>
                     <label for="senha">Senha: </label>
                     <input type="password" name="senha"><br><br>
