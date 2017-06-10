@@ -15,24 +15,7 @@
       <div id="pergunta">
           <?php 
             require'perguntas.inc';
-            if($_GET["id"]<5){
-                carregaPergunta($_GET["id"]);
-                $ru = $_POST['alternativa'];
-                if($ru == $respostas[$_GET["id"]]){
-                  echo 'ACERTOU !';
-                  $proxID = $_GET["id"]+1;
-                  $link = "perguntas.php?id=".$proxID;
-                  echo '<a class="btn btn-primary" href="'.$link.'">Próxima</a>';
-                  //echo 'ok';
-                }
-                else{
-                  echo 'ERROU';
-                  echo '<a class="btn btn-primary" href="gameover.php">Que Pena :(</a>';
-                  //echo 'não';
-                }
-                
-            }
-
+            carregaPergunta($_GET["id"]);
           ?>
       </div>
     </div>

@@ -6,9 +6,9 @@
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        <h2 id="comeco">GAME OVER !</h2>
+        <h2 id="comeco">TEMOS UM VENCEDOR !</h2>
          <div class="col-md-12">
-                <button type="button" class="btn btn-primary center-block" onclick="location.href = 'index.php' ;">Tentar De Novo</button>
+                <button type="button" class="btn btn-success center-block" onclick="location.href = 'index.php' ;">Jogar De Novo</button>
             </div>
     </body>
 </html>

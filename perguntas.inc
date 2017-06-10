@@ -37,31 +37,27 @@
      $respostas[4] = 2;
 
      function carregaPergunta($id){
-		global $per;
-		global $alt;
-        //echo $id;
-        $link = "perguntas.php?id=".$id;
-        //echo '<form action="trata.php" method="post">';
-        echo '<form action="'.$link.'" method="post">';
-        //echo '<form action="perguntas.php" method="post">';
-        echo "<h3>".$per[$id]."</h3>";
-        for($i=0;$i<4;$i++){
-            //$name = "op".$id.$i;
-            //$valor = $alt[$id][$i];    
-            echo '<input type="radio" name="alternativa" value="'.$i.'">'.$alt[$id][$i].'<br>';           
-		}
-        echo '<input type="submit" value="Responder">';
-        echo"</form>";
-        //confirma();
-    }
-    function confirma(){
-        $ru = $_POST['alternativa'];
-        if($ru == $respostas[$id]){
-            echo 'ok';
+        global $per;
+        global $alt;
+        global $respostas;
+
+        if($id <= 4){
+            $id_novo = $id+1;
+            $alter = $alt[$id];
+            echo "<h3>".$per[$id]."</h3>";
+?>
+    <form action="checagem.php" method="POST">
+<?php
+            echo "<input type=\"hidden\" name=\"pergunta\" value=\"$id\">";
+            for($j = 0; $j < 4; $j++){
+                echo "<input type=\"radio\" name=\"alternativa\" value=\"$j\">$alter[$j]</br>";
+            }
+            echo "<input type=\"submit\" value=\"Enviar\">";
+
+            echo "<h4>Você já acertou:</h4>".$id;
         }
         else{
-            echo 'não';
+            header("location: venceu.php");
         }
     }
-
 ?>
