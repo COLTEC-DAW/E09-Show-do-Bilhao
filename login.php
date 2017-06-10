@@ -1,10 +1,8 @@
 <?php include("menu.inc"); ?>
-<?php session_destroy(); ?>
-
-<head>
-	<title>Show do Bilhão</title>
-	<meta charset="utf-8">
-</head>
+<?php
+	session_destroy();
+	setcookie('PHPSESSID');
+?>
 
 <form action="index.php" method="post">
 	Login: <input type="text" name="login"> <br>
@@ -12,5 +10,7 @@
 
 	<input type="submit" value="Entrar">
 </form>
+
+Novo aqui? <a href="/cadastro.php">Cadastre-se</a>
 
 <?php include("rodape.inc"); ?>

@@ -1,0 +1,27 @@
+[
+	{
+		"enunciado": "Qual a cor do cavalo branco de Napoleão?",
+		"alternativas": ["Azul", "Verde", "Marrom", "Preto", "Branco"],
+		"resposta": 4
+	},
+	{
+		"enunciado": "Qual a cor da lagoa do filme 'Lagoa Azul'?",
+		"alternativas": ["Azul", "Verde", "Marrom", "Preto", "Branco"],
+		"resposta": 0
+	},
+	{
+		"enunciado": "Qual a cor do Michael Jackson antes das cirurgias?",
+		"alternativas": ["Azul", "Verde", "Marrom", "Preto", "Branco"],
+		"resposta": 2
+	},
+	{
+		"enunciado": "Qual a cor do Michael Jackson depois das cirurgias?",
+		"alternativas": ["Azul", "Verde", "Marrom", "Preto", "Branco"],
+		"resposta": 4
+	},
+	{
+		"enunciado": "Qual a cor das cadeiras do Lab Verde?",
+		"alternativas": ["Azul", "Verde", "Marrom", "Preto", "Branco"],
+		"resposta": 1
+	}
+]

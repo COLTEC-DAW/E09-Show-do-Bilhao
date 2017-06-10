@@ -7,10 +7,11 @@
 
 	<body>
 		<?php include("menu.inc"); ?>
-		<?php require 'perguntas.php'; ?>
-		<?php require 'exibidor.php'; ?>
-
 		<?php
+			require 'perguntas.php';
+			require 'exibidor.php';
+			require 'validador.php';
+
 			//Inicia sessao
 			session_start();
 
@@ -19,7 +20,7 @@
 				//Pega dados de login
 				$login = $_POST["login"];
 				$senha = $_POST["senha"];
-			} else {				
+			} else {
 				$login = $_SESSION["login"];
 				$senha = $_SESSION["senha"];
 			}
@@ -28,7 +29,7 @@
 			if(!$login) {
 				//Redireciona para login
 				header("Location: login.php");
-			} else {
+			} else if(validar($login, $senha)) {
 				//Loga na sessao
 				$_SESSION["login"] = $login;
 				$_SESSION["senha"] = $senha;
@@ -45,9 +46,12 @@
 				//Carrega e exibe a proxima pergunta
 				$dados = carregaPergunta($id);
 				exibePergunta($id, $dados);
+			} else {
+				echo "<h2>Login ou senha incorretos</h2>";
+				echo "<a href='/login.php'>Tentar Novamente</a>";
 			}
-		?>
 
-		<?php include("rodape.inc"); ?>
+			include("rodape.inc");
+		?>
 	</body>
 </html>
