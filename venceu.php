@@ -7,8 +7,9 @@
     </head>
     <body>
         <h2 id="comeco">TEMOS UM VENCEDOR !</h2>
+        <?php setcookie("data", date("d/m/Y"));?>
          <div class="col-md-12">
-                <button type="button" class="btn btn-success center-block" onclick="location.href = 'index.php' ;">Jogar De Novo</button>
+                <button type="button" class="btn btn-success center-block" onclick="location.href = 'inicio.php' ;">Jogar De Novo</button>
             </div>
     </body>
 </html>

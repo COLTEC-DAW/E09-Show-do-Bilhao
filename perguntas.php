@@ -10,12 +10,20 @@
   <div class="row">
     <div class="col-md-12">
       <div id="topo">
+        
         <?php include 'menu.inc';?>
       </div>
       <div id="pergunta">
-          <?php 
+          <?php
+            //session_start(); 
             require'perguntas.inc';
-            carregaPergunta($_GET["id"]);
+            if($_GET["id"]== 0){
+              carregaPergunta($_GET["id"]);
+              setcookie("pontos",0);
+            }
+            else{
+              carregaPergunta($_GET["id"]);
+            }
           ?>
       </div>
     </div>

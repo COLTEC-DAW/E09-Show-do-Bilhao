@@ -4,6 +4,8 @@
     $resposta = $_POST["alternativa"];
     if($resposta == $respostas[$pergunta]){
         $pergunta++;
+        $pontos = $_COOKIE["pontos"] + 1;
+        setcookie("pontos",$pontos);
         header("location: perguntas.php?id=$pergunta");
     }
     else{
