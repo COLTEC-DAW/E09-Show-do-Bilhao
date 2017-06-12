@@ -1,4 +1,4 @@
-<?php
+﻿<?php
             $perguntas = [];
             $alternativas = [];
             $corretas = [];
@@ -57,7 +57,7 @@
             $alternativas[7][0] = "A primeira";
             $alternativas[7][1] = "A terceira";
             $alternativas[7][2] = "A segunda";
-            $alternativas[7][3] = "A últimaa";
+            $alternativas[7][3] = "A última";
             $corretas[7] = 2;
 
             $perguntas[8] = "Qual desses jogos é infame por ser difícil?";
@@ -154,7 +154,13 @@
                 global $corretas;
                 global $acertos;
 
-                if (!isset($_SESSION["login"])&&!isset($_POST["login"])) header ("Location: login.php");
+                if (!isset($_SESSION["login"])&&!isset($_POST["login"])){  //Se não houver alguém logado
+                    ?>
+                    <script>
+                        console.log("Redirect");
+                    </script>
+                    <?php
+                    header ("Location: login.php");
                 else {
                     $_SESSION["login"] = $_POST["login"];
                     $id = $_COOKIE["id"];
