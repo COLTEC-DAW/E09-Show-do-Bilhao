@@ -32,8 +32,6 @@
         } else {
             $login = $_SESSION["login"];
 
-            ?> <p>Sessão: <?=$_SESSION["login"]?> </p> <?php
-
             if($login != null)          
 		        carregaPergunta($id);
             else
