@@ -26,8 +26,8 @@
 					header("Location: index.php");
 					exit;	
 				}
-
 			?>
+			
 		</div>
 	</main>
 
