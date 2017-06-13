@@ -143,30 +143,24 @@
             $alternativas[19][2] = "Gandalf";
             $alternativas[19][3] = "Gollum";
             $corretas[19] = 1;
-
-            global $acertos;
-            $acertos = 0;
 ?>
 <?php
             function carregaPergunta($num){
                 global $perguntas;
                 global $alternativas;
                 global $corretas;
-                global $acertos;
 
+                $numReal = $num+1;
+                ?> <p>Pergunta <?= $numReal ?> de 20 <?php
                 if (!isset($_SESSION["login"])&&!isset($_POST["login"])){  //Se não houver alguém logado
-                    ?>
-                    <script>
-                        console.log("Redirect");
-                    </script>
-                    <?php
                     header ("Location: login.php");
+                }
                 else {
                     $_SESSION["login"] = $_POST["login"];
                     $id = $_COOKIE["id"];
                     $lastScore = $_COOKIE["lastScore"];
                     $lastDate = $_COOKIE["lastDate"];
-                    header ("Location: perguntas.php?num=0");
+                    $_COOKIE["score"] = 0;
                 }
                 
                 if ($num >= 20){
@@ -177,7 +171,7 @@
                 }
                 else {
                     if ($num !=0) {
-                        echo $acertos;
+                        echo $_COOKIE["score"];
                         $numAnterior = $num-1;
                         $resposta = $_POST["$numAnterior"];
                         if ($resposta != $corretas[$numAnterior]) {
@@ -186,7 +180,7 @@
                             <a href="fim.php">Ver Resultados</a>
                   <?php }
                         else {
-                           $acertos++; ?>
+                           $_COOKIE["score"]; ?>
                             <h1><?php echo $perguntas[$num] ?></h1>
                             <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
                                 <Input type="hidden" name="num" value=<?= $num ?>>

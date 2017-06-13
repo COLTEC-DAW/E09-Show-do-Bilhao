@@ -1,1 +1,14 @@
-null
+[
+    {
+        "nome": "a",
+        "email": "a@a",
+        "login": "a",
+        "senha": "a"
+    },
+    {
+        "nome": "chibata",
+        "email": "franciscofabneves@gmail.com",
+        "login": "chibata",
+        "senha": "123"
+    }
+]
