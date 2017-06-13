@@ -4,8 +4,8 @@
         <?php include "menu.inc"; ?>
         <h1>RESULTADOS</h1>
         <?php
-        if ($_POST["win"]) ?> <h2>PARABÉNS, VOCÊ GANHOU!!!</h2> <?php
-        else ?> <h2>Parece que não foi hoje...</h2> <?php
+        if ($_POST["win"]) echo "<h2>PARABÉNS, VOCÊ GANHOU!!!</h2>";
+        else echo "<h2>Parece que não foi hoje...</h2>";
         ?>
         <p>Número de acertos: <?= $_POST["pontos"] ?></p>
         <?php

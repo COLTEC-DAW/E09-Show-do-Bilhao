@@ -150,8 +150,6 @@
                 global $alternativas;
                 global $corretas;
 
-                $numReal = $num+1;
-                ?> <p>Pergunta <?= $numReal ?> de 20 <?php
                 if (!isset($_SESSION["login"])&&!isset($_POST["login"])){  //Se não houver alguém logado
                     header ("Location: login.php");
                 }
@@ -160,15 +158,16 @@
                     $id = $_COOKIE["id"];
                     $lastScore = $_COOKIE["lastScore"];
                     $lastDate = $_COOKIE["lastDate"];
-                    $_COOKIE["score"] = 0;
                 }
                 
-                if ($num >= 20){
-                    ?>
+                if ($num >= 20){ ?>
                     <h1>VOCÊ CHEGOU AO FIM!!!</h1>
-                    <a href="fim.php">Ver Resultados</a>
-                    <?php
-                }
+                    <form action="fim.php" method="post">
+                        <input type="hidden" name="pontos" value="<?= $num ?>">
+                        <input type="hidden" name="win" value="true">
+                        <button type="submit">Ver resultados</button>
+                    </form>
+          <?php }
                 else {
                     if ($num !=0) {
                         echo $_COOKIE["score"];
@@ -177,10 +176,15 @@
                         if ($resposta != $corretas[$numAnterior]) {
                             ?>
                             <h1>Você errou... :(</h1>
-                            <a href="fim.php">Ver Resultados</a>
+                            <form action="fim.php" method="post">
+                                <input type="hidden" name="pontos" value="<?= $num ?>">
+                                <input type="hidden" name="win" value="false">
+                                <button type="submit">Ver resultados</button>
+                            </form>
                   <?php }
-                        else {
-                           $_COOKIE["score"]; ?>
+                        else { 
+                            $_COOKIE["score"]++;
+                            $numReal = $num+1; ?>
                             <h1><?php echo $perguntas[$num] ?></h1>
                             <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
                                 <Input type="hidden" name="num" value=<?= $num ?>>
@@ -199,10 +203,13 @@
                                 <br>
                                 <Input type="submit" value="Próxima!">
                             </FORM>
-                            <h2>Pergunta <?= $num?> de 20</h2>
+                            <h2>Pergunta <?= $numReal?> de 20</h2>
                   <?php }
                     } //Deve ter um jeito mais eficiente de fazer isso sem repetir o código do form
-                    else { ?>
+                    else {
+                        $_COOKIE["score"] = 0;
+                        $numReal = $num+1; ?>
+                        <p>Pergunta <?= $numReal ?> de 20
                         <h1><?php echo $perguntas[$num] ?></h1>
                         <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
                             <Input type="hidden" name="num" value=<?= $num ?>>
