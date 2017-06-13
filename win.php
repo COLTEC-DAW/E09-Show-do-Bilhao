@@ -3,6 +3,7 @@
 <br><p>6/6 perguntas acertadas</p>
 
 <?php
+	date.date_timezone_set("AMERICA");
 	setcookie("ultimaHoraJogado", date("d/m/Y h:i:s"));
 ?>
 
