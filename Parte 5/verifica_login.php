@@ -13,7 +13,7 @@
 		LEITURA
 */
 
-	$arquivo = fopen("users.txt", "r");
+	$arquivo = fopen("users.json", "r");
 	while(!feof($arquivo)) {
 		$linha = fgets($arquivo);
 		if($linha!=null){

@@ -80,7 +80,7 @@
 
 		$cont = 0;
 
-		$arquivo = fopen("perguntas.txt", "r");
+		$arquivo = fopen("perguntas.json", "r");
 		while(!feof($arquivo)) {
 			$linha = fgets($arquivo);
 			if($linha!=null){

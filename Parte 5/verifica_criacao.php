@@ -13,10 +13,12 @@
 		ESCRITA
 */
 
-	$arquivo = fopen("users.txt", "a");
+	$arquivo = fopen("users.json", "a");
 	$arr = '{"Login":"'.$login.'","Senha":"'.$senha.'","Nome":"'.$nome.'","Email":"'.$email.'"}';
 	fwrite($arquivo, "$arr\n");
 	fclose($arquivo);
+
+	setcookie("acaboudecadastrar", 1);
 
 	$redirect = "login.php";
 	header("location:$redirect");

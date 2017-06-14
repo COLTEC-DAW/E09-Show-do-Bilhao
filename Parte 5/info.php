@@ -22,17 +22,28 @@
 				<div class="col-md-12">
 
 				<?php
+					if($_COOKIE['acaboudecadastrar']==1){
+					    date_default_timezone_set('America/Sao_Paulo');
 
-					$user = $_COOKIE['usuario'];
-					$aux = $user."data";
-					$aux2 = $user."ultima_pontuacao";
+						$data = date("d/m/Y H:i:s");
+						$pont = 0;
 
-					$data = $_COOKIE[$aux];
-					$pont = $_COOKIE[$aux2];
+						echo '<h3>Ultima pontuação: '.$pont.'</h3>';
+						echo '<h3>Jogou pela ultima vez '.$data.'</h3>';			
 
-					echo '<h3>Ultima pontuação: '.$pont.'</h3>';
-					echo '<h3>Jogou pela ultima vez '.$data.'</h3>';
+						setcookie("acaboudecadastrar", 0);
+					}
+					else{
+						$user = $_COOKIE['usuario'];
+						$aux = $user."data";
+						$aux2 = $user."ultima_pontuacao";
 
+						$data = $_COOKIE[$aux];
+						$pont = $_COOKIE[$aux2];
+
+						echo '<h3>Ultima pontuação: '.$pont.'</h3>';
+						echo '<h3>Jogou pela ultima vez '.$data.'</h3>';
+					}
 				?>
 
 				<div class="botao">
