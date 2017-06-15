@@ -34,5 +34,11 @@
         "email": "new",
         "login": "new",
         "senha": "nwe"
+    },
+    {
+        "nome": "testelogin",
+        "email": "testelogin",
+        "login": "testelogin",
+        "senha": "ab"
     }
 ]

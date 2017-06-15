@@ -19,11 +19,30 @@
 	<main>
 		<div class="container">
 			<?php require 'login.inc';
-				if ($_POST["usrnm"] != NULL) {
-					session_start();
-					$_SESSION["username"] = $_POST["usrnm"];
-					echo $_SESSION["username"];
-					header("Location: index.php");
+				if ($_POST["login"] != NULL) {
+					$usuarios_file = file_get_contents("files/usuarios.json");
+					$usuarios_file_decoded = json_decode($usuarios_file);
+
+					$usuario_existe = FALSE;
+
+					//Verifica login e senha
+					foreach ($usuarios_file_decoded as $usuario) {
+						var_dump($usuario->login);
+						if($usuario->login == $_POST["login"] && $usuario->senha == $_POST["senha"]) {
+							$usuario_existe = TRUE;
+							session_start();
+							$_SESSION["username"] = $_POST["login"];
+							header("Location: index.php");
+							exit;
+						}
+					}
+
+					if ($usuario_existe) {
+						echo '<h4 class="center-align">Ta errado isso ai.</h4>';
+					} else {
+						echo '<h4 class="center-align">Este usuario n existe.</h4>';
+					}
+
 					exit;	
 				}
 			?>
