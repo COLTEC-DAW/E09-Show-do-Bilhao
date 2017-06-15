@@ -1,0 +1,38 @@
+[
+    {
+        "nome": "aasd",
+        "email": "asdf",
+        "login": "as",
+        "senha": "afsd"
+    },
+    {
+        "nome": "Gustavo",
+        "email": "email",
+        "login": "login",
+        "senha": "senha"
+    },
+    {
+        "nome": "ds",
+        "email": "ds",
+        "login": "dsd",
+        "senha": "ds"
+    },
+    {
+        "nome": "ola",
+        "email": "ola",
+        "login": "ola",
+        "senha": "ola"
+    },
+    {
+        "nome": "novo",
+        "email": "novo",
+        "login": "novo",
+        "senha": "novo"
+    },
+    {
+        "nome": "new",
+        "email": "new",
+        "login": "new",
+        "senha": "nwe"
+    }
+]
