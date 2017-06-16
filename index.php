@@ -20,7 +20,11 @@
                 <div class="form-group">
                     Senha: <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Senha" name="senha">
                 </div>
-            <input type="submit" value="Entrar">
+            <input type="submit" class="btn btn-primary" value="Entrar">
+
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="location.href = 'cadastro.php' ;">CADASTRO</button>
         </form>
         </div>
         <div id=rodape>
