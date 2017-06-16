@@ -16,5 +16,17 @@
         "email": "eduardo.militao1410@gmail.com",
         "login": "Eduardo1014",
         "senha": "123456"
+    },
+    {
+        "nome": "Pedro",
+        "email": "pedro@gmail.com",
+        "login": "Pidrin",
+        "senha": "293031"
+    },
+    {
+        "nome": "Joao Lucio Fernandes da SIlva",
+        "email": "lucio.joao@ig.com.br",
+        "login": "Joao Lucio Fernandes",
+        "senha": "jhonny"
     }
 ]

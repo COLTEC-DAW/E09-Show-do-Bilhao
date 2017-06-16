@@ -1,4 +1,7 @@
 <?php
+	require 'classes.php';
+
+	$objetos = array();
 	$perguntas = array();
 	$alternativas = array();
 	$respostas = array();
@@ -15,20 +18,22 @@
 	//Decodifica JSON
 	$infoJSON = json_decode($info);
 	
-	//Armazena nas variaveis
+	//Transforma em objetos e armazena nas variaveis
 	for($i = 0; $i < count($infoJSON); $i++) {
-		array_push($perguntas, $infoJSON[$i]->enunciado);
-		array_push($alternativas, $infoJSON[$i]->alternativas);
-		array_push($respostas, $infoJSON[$i]->resposta);
+		//Transforma em objeto
+		$objeto = new Question($infoJSON[$i]->enunciado, $infoJSON[$i]->alternativas, $infoJSON[$i]->resposta);
+		array_push($objetos, $objeto);
+		
+		array_push($perguntas, $objeto->enunciado);
+		array_push($alternativas, $objeto->alternativas);
+		array_push($respostas, $objeto->resposta);
 	}
 	
 
 	//Funcao Carrega Pergunta
 	function carregaPergunta($id) {
-		global $perguntas;
-		global $alternativas;
-		global $respostas;
+		global $objetos;
 
-		return array($perguntas[$id], $alternativas[$id], $respostas[$id]);
+		return $objetos[$id];
 	}
 ?>

@@ -45,6 +45,7 @@
 
 				//Carrega e exibe a proxima pergunta
 				$dados = carregaPergunta($id);
+				//var_dump($dados);
 				exibePergunta($id, $dados);
 			} else {
 				echo "<h2>Login ou senha incorretos</h2>";

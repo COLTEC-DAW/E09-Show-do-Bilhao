@@ -1,12 +1,15 @@
 <?php
+	//Importa as classe do POO
+	require 'classes.php';
+
 	//Pega os posts
 	$nome = $_POST["nome"];
 	$email = $_POST["email"];
 	$login = $_POST["login"];
 	$senha = $_POST["senha"];
 
-	//Transforma em objeto
-	$dados = (object) array("nome" => $nome, "email" => $email, "login" => $login, "senha" => $senha);
+	//Transforma em objeto User
+	$usuario = new User($nome, $email, $login, $senha);
 
 	$arquivo = fopen("users.json", 'r');
 	$arquivoDados = "";
@@ -33,7 +36,7 @@
 	//Se nao houver login igual
 	if($originalidade) {
 		//Adiciona usuario novo no arquivo
-		array_push($arquivoDadosJSON, $dados);
+		array_push($arquivoDadosJSON, $usuario);
 		
 		$arquivo = fopen("users.json", 'w');
 		fwrite($arquivo, json_encode($arquivoDadosJSON, JSON_PRETTY_PRINT));

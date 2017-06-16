@@ -2,7 +2,7 @@
 	//Funcao de Exibicao
 	function exibePergunta($id, $dados) {
 		//Pergunta
-		echo $id + 1 . ") " . $dados[0] . "<br><br>";
+		echo $id + 1 . ") " . $dados->enunciado . "<br><br>";
 		
 		//Alternativas
 ?>
@@ -11,7 +11,7 @@
 <?php				
 			for ($j = 0; $j < 5; $j++) {
 ?>
-				<input type="radio" name="alternativa" value=<?=$j?>> <?=$dados[1][$j]?>
+				<input type="radio" name="alternativa" value=<?=$j?>> <?=$dados->alternativas[$j]?>
 				<br>
 <?php
 			}
