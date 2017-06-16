@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "No poema, aparece a palavra 'só', corretamente acentuada. Assinale a alternativa que contenha apenas palavras corretamente acentuadas pela mesma regra.",
+        "alternativas": ["vazio", "a) Cipó, quatí e dendê.", "b) Ipê, pó e pá.", "c) Pôs, nós e pó. CERTA", "d) Pó, pé e arára.", "e) Pá, pé e cipó."],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Renato pediu empréstimo ao banco para pagamento em um ano com taxa anual real de juros de 28%. Sabendo que a inflação prevista para o período é de 7%, a taxa aparente de juros é de, aproximadamente:",
+        "alternativas": ["vazio", "a) 33%", "b) 34%", "c) 35%", "d) 36%", "e) 37% CERTA"],
+        "resposta": 5
+    },
+    {
+        "enunciado": "Dos 50 detentos de um presídio, 17 cometeram o crime de latrocínio, 32 cometeram o crime de estupro e 25 cometeram o crime de estupro, mas não o de latrocínio. Nesse caso, é correto afirmar que",
+        "alternativas": ["vazio", "a) 40 detentos cometeram ou o crime de latrocínio ou o crime de estupro.", "b) 15 detentos cometeram o crime de latrocínio, mas não o de estupro.", "c) 5 detentos cometeram os crimes de latrocínio e de estupro.", "d) 45 detentos cometeram um ou os dois crimes (latrocínio e estupro).", "e) 8 detentos não cometeram nem o crime de latrocínio nem o de estupro. CERTA"],
+        "resposta": 5
+    },
+    {
+        "enunciado": "Considerando a anatomia humana, a cavidade abdominal é separada da torácica pelo",
+        "alternativas": ["vazio", "a) pericárdio.", "b) fígado.", "c) diafragma. CERTA", "d) hipogástrio.", "e) mediastino."],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Zeus trabalha há dois anos no posto de abastecimento de combustíveis Deuses do Olimpo Centro Automotivo, exercendo a função de frentista, executando o abastecimento de automóveis. Conforme normas de segurança e da medicina do trabalho, Zeus faz jus ao pagamento de adicional de:",
+        "alternativas": ["vazio", "a) insalubridade, no valor de 30% calculado sobre toda a sua remuneração.", "b) penosidade, no importe de 35% calculado sobre o salário-mínimo regional.", "c) periculosidade, no valor de 30% calculado sobre seu salário, sem os acréscimos resultantes de gratificações prêmios ou participação nos lucros da empresa. CERTA", "d) periculosidade, variando entre 10%, 20% ou 40% calculado sobre o salário-mínimo nacional.", "e) transferência e risco, no valor de 25% calculado sobre o seu salário-base, sem nenhum acréscimo."],
+        "resposta": 3
+    }
+]
