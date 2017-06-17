@@ -8,11 +8,19 @@
     </head>
     <body>
         <?php
-            include 'menu.inc';
-            require 'functions.inc';
-            $id_pergunta = $_GET["id"];
-            carregaPergunta($id_pergunta);
-            include 'rodape.inc';
+            if(isset($_COOKIE["pergunta"])){
+                include 'menu.inc';
+                require 'functions.inc';
+                $id_pergunta = $_COOKIE["pergunta"];
+                carregaPergunta($id_pergunta);
+                include 'rodape.inc';
+
+                echo "Última pontuação: ".$_COOKIE["pontos"];
+                echo "</br>Última vez jogada: ".$_COOKIE["tentativa"];
+            }
+            else{
+                echo "<h1>Favor identificar-se antes de jogar</h1>";
+            }
         ?>
     </body>
 </html>

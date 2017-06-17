@@ -5,9 +5,7 @@
             $id_novo = $id+1;
             $alter = $alternativas[$id];
             echo "<h3>$id_novo) $perguntas[$id]</h3>";
-?>
-    <form action="checagem.php" method="POST">
-<?php
+            echo "<form action=\"checagem.php\" method=\"POST\">";
             echo "<input type=\"hidden\" name=\"pergunta\" value=\"$id\">";
             for($j = 0; $j < 4; $j++){
                 echo "<input type=\"radio\" name=\"alternativa\" value=\"$j\">$alter[$j]</br>";

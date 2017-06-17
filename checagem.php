@@ -4,13 +4,12 @@
     $resposta = $_POST["alternativa"];
     if($resposta == $respostas[$pergunta]){
         $pergunta++;
-        echo "Resposta Correta";
-        header("location: perguntas.php?id=$pergunta");
+        setcookie("pergunta", $pergunta);
+        header("location: perguntas.php");
     }
     else{
         echo "<h3>Alternativa Errada</h3>";
         echo "<form action=\"gameover.php\" method=\"POST\">";
-        echo "<input type=\"hidden\" name=\"certas\" value=\"$pergunta\">";
         echo "<input type=\"submit\" value=\"Prosseguir\">";
         echo "</form>";
     }
