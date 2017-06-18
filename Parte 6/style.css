@@ -1,0 +1,25 @@
+h1, .final, .botao{
+	text-align: center;
+}
+
+p{
+	text-align: justify;
+}
+
+#footer{
+	color: white;
+	background-color: black;
+	padding: 3%;
+	text-align: center;
+}
+
+#result, #proximo{
+	text-align: center;
+	margin: 0;
+	margin-bottom: 2%;
+}
+
+#deslogar{
+	margin-bottom: 2%;
+	margin-bottom: 10px;
+}
