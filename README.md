@@ -120,3 +120,87 @@ Segue alguns requisitos:
 * O jogador não poderá acessar as perguntas se ele não tiver sido identificado antes. Ou seja, você precisará implementar um simples método de autenticação.
 * Deverá haver uma opção para que o jogador se desidentifique do jogo para que outro possa jogar. Ou seja, você precisará implementar uma rotina de logout.
 
+## Arquivos
+
+Agora que a mecânica principal do sistema está funcionando, podemos estender o sistema implementando rotinas para persistência de dados. 
+
+A persistência pode se dar basicamente por meio de **arquivos** e **banco de dados**. Nesse etapa nós iremos implementar nossa persistência no formato de **arquivos**.  
+
+### Parte 01: Usuários
+
+Você deverá implementar um módulo de cadastro e autenticação que irá gerenciar os usuários do sistema. Os dados dos usuários deverão ficar armazenados em um único arquivo, chamado `users.txt`.
+
+Os usuários deverão fornecer os seguintes dados para realizar o cadastro (que deverão ser armazenados no arquivo, obviamente):
+
+* Nome
+* E-mail
+* Login
+* Senha
+
+O login deverá ser feito através do login e senha do usuário. Durante o processo de login, o sistema deverá verificar se existe um usuário com este login e, caso exista, verificar se a senha é correta. Caso a autenticação falhe, uma mensagem de erro deverá ser retornada para o usuário.
+
+### Parte 02: Perguntas
+
+As perguntas também deverão ser manipuladas através de um arquivo texto. Você deverá implementar um módulo que irá fazer a leitura das perguntas de um arquivo chamado `perguntas.txt`.
+
+Cada pergunta armazenada no arquivo deverá conter:
+
+* Enunciado
+* Alternativas disponíveis
+* Alternativa correta
+
+### Dicas Gerais
+
+Manipular dados diretamente por meio de arquivos pode dar muito trabalho. Porém, você pode economizar muito trabalho se utilizar uma forma **estrutural** de armazenamento. Entre as formas estruturais disponíveis, o PHP fornece suporte nativo para [`JSON`](https://secure.php.net/manual/pt_BR/book.json.php) e [`XML`](https://www.w3schools.com/php/php_xml_simplexml_read.asp).
+
+Caso você opte pelo formato `JSON`, sugiro a seguinte estruturação para usuários e perguntas:
+
+`usuários.json`
+
+    [   
+        ...
+        {
+            "login": "valor",
+            "senha": "valor",
+            "email": "valor@v.com",
+            "nome": "valor"
+        },
+        {
+            "login": "valor",
+            "senha": "valor",
+            "email": "valor@v.com",
+            "nome": "valor"
+        }, 
+        ...
+    ]
+
+`perguntas.json`
+
+    [
+        ...
+        {
+            "enunciado": "bla bla bla",
+            "alternativas": ["alt1", "alt2", "alt3", ...],
+            "resposta": 1
+        },
+        {
+            "enunciado": "bla bla bla",
+            "alternativas": ["alt1", "alt2", "alt3", ...],
+            "resposta": 1
+        },
+        ...
+    ]
+
+## Modelando os dados no sistema
+
+Agora que os dados do nosso sistema foram modelados estruturalmente dentro dos arquivos, podemos replicar essa estrutura dentro do código do próprio sistema aplicando conceitos de POO.
+
+### Entidades Básicas
+
+Você deverá implementar as classes `User` e `Question` que deverão manipular os usuários e perguntas do sistema. Essas classes deverão possuir atributos para armazenar as informações contidas no arquivo de cada usuário.
+
+### Trafegando objetos no sistema
+
+Agora que os dados do nosso sistema estão encapsulados no formato de objetos, fica muito mais fácil trafegar essas informações entre as páginas e requisições.
+
+Você deverá encontrar os pontos do sistema onde os dados são manipulados separadamente e alterar de forma que esses dados estejam encapsulados em seus respectivos objetos e que a manipulação se dê por meio dos objetos criados.
