@@ -1,3 +1,35 @@
+
+
+
+<?php
+    ob_start(); // Initiate the output buffer
+    session_start();
+?>
+
+<?php
+    if($_SESSION["login"]=="dybala" && $_SESSION["senha"]=="dybalation")
+    {
+
+    }
+    else
+    {
+        header("location:login.php");
+    }
+?>
+
+<?php
+
+    $pontuacao = $_GET["id"];
+
+    if(isset($_COOKIE["ultima_pontuacao"])){
+        echo '<h3>Ultima pontuação: '.$_COOKIE['ultima_pontuacao'].'</h3>';
+        echo '<h3>Jogou pela ultima vez '.$_COOKIE['data'].'</h3>';
+    }
+    else{
+        echo '<h3>Ultima pontuação: 0</h3>';
+    }
+?>
+
 <?php
 
     function carregaPerguntas($id) {
@@ -23,6 +55,7 @@
         <br>
         <br>
         <p>Você acertou <?php echo $id; ?> respostas.</p>
+        <a href = "logout.php"><button>Fazer logout</button></a>
 <?php
     }
 

@@ -12,8 +12,10 @@
 
     		if($_GET["id"]<5){
 				carregaPerguntas($_GET["id"]);
+				setcookie('pontuacao', $_GET["id"]);
     		}
     		else {
+    			setcookie('pontuacao', $_GET["id"]);
 	        	echo "Acabou o jogo.";
 	    	}
 		?>
