@@ -1,0 +1,27 @@
+[
+    {
+        "enunciados": "De quantos anos é constituído um século?",
+        "alternativas": ["50", "100", "1000","1500"],
+        "resposta": "1"
+    },
+    {
+        "enunciados": "Qual é o coletivo de cães?",
+        "alternativas": ["MATILHA", "REBANHO", "CARDUME","MANADA"],
+        "resposta": "0"
+    },
+    {
+        "enunciados": "Quantas cores compõem o arco-íris?",
+        "alternativas": ["3", "7", "12","22"],
+        "resposta": "1"
+    },
+    {
+        "enunciados": "Em qual parte do corpo humano são implantadas as pontes de safena?",
+        "alternativas": ["ESTÔMAGO", "INTESTINO", "PULMÃO","CORAÇÃO"],
+        "resposta": "3"
+    },
+    {
+        "enunciados": "O que Rapunzel jogava pela janela?",
+        "alternativas": ["PERNA", "BRAÇO", "FAMILIA","TRANÇA"],
+        "resposta": "3"
+    }
+]
