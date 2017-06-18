@@ -1,23 +1,34 @@
 <?php
 
     function carregaPerguntas($id) {
+
         global $per;
         global $alternativa;
         echo "<br>";
-        echo $per[(int)$id]; 
+        echo $per[(int)$id];
         echo "<br>";
         echo "<br>";
-        for($j=0; $j<4; $j++){
-            echo $alternativa[(int)$id][$j];
-            echo "<br>";
-            echo "<br>";
-        }  
-        echo "<br>";
+
+?>
+        <form name="questionario" action="respostas.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="radio" name="alternativa" value="0"><?php echo $alternativa[$id][0]; ?></label>
+            <input type="radio" name="alternativa" value="1"><?php echo $alternativa[$id][1]; ?></label>
+            <input type="radio" name="alternativa" value="2"><?php echo $alternativa[$id][2]; ?></label>
+            <input type="radio" name="alternativa" value="3"><?php echo $alternativa[$id][3]; ?></label>
+            <br>
+            <br>
+            <input type="submit" value="Próxima" class="btn">
+        </form>
+        <br>
+        <br>
+        <p>Você acertou <?php echo $id; ?> respostas.</p>
+<?php
     }
 
         $per[0] = '1 - O que o Brasil será em 2018?';
-        $alternativa[0][0] = 'a. Hexa';
-        $alternativa[0][1] = 'b. Penta';
+        $alternativa[0][0] = 'a. Penta';
+        $alternativa[0][1] = 'b. Hexa';
         $alternativa[0][2] = 'c. Comunista';
         $alternativa[0][3] = 'd. Octa';
         
@@ -55,6 +66,4 @@
         $resposta[3] = 2;
         $resposta[4] = 3;
 
-
-     
 ?>
