@@ -1,0 +1,41 @@
+[{
+        "enunciado": "Qual o nome do autor?",
+        "alternativas": ["a)Matheus",
+                         "b)João",
+                         "c)Pedro",
+                         "d)Nenhum"],
+        "resposta": 0
+},
+{
+        "enunciado": "Quantos anos o autor tem?",
+        "alternativas": ["a)10",
+                         "b)16",
+                         "c)17",
+                         "d)18"],
+        "resposta": 2
+},
+{
+        "enunciado": "Qual das alternativas seguintes não é um animal?",
+        "alternativas": ["a)Mickey",
+                         "b)Rato",
+                         "c)Mouse",
+                         "d)Teclado"],
+        "resposta": 3
+},
+{
+        "enunciado": "Quem é o mito de info?",
+        "alternativas": ["a)Eduardo",
+                         "b)Raul",
+                         "c)Chico",
+                         "d)Todos acima"],
+        "resposta": 3
+},
+{
+        "enunciado": "Qual banda é a pior?",
+        "alternativas": ["a)SOAD",
+                         "b)Iron Maiden",
+                         "c)Megadeth",
+                         "d)Metallica"],
+        "resposta": 3
+}
+]
