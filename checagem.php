@@ -2,7 +2,9 @@
     require 'perguntas.inc';
     $pergunta = $_POST["pergunta"];
     $resposta = $_POST["alternativa"];
-    if($resposta == $respostas[$pergunta]){
+    require 'arquivos.inc';
+    $linhasdecode = decodeperguntas();
+    if($resposta == $linhasdecode[$pergunta]->resposta){
         $pergunta++;
         $pontos = $_COOKIE["pontos"] + 1;
         setcookie("pontos",$pontos);

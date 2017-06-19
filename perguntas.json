@@ -1,0 +1,52 @@
+[
+    {
+        "per": "Q1. Quantos Oscares tem Leonardo Di Caprio?",
+        
+        "alt": ["Nenhum",
+        "1",
+        "10",
+        "2"],
+ 		
+         "resposta": 1
+    },
+    {
+        "per": "Q2. Quem presidia o Brasil em 2001?",
+        
+        "alt": ["Lula",
+        "Itamar Franco",
+        "Silvio Santos",
+        "Fernando Henrique Cardoso"],
+ 		
+         "resposta": 3
+    },
+    {
+        "per": "Q3. A galinha usa saia e o galo?",
+        
+        "alt": ["Meia",
+        "Paletó",
+        "Samba-Canção",
+        "Gel Capilar"],
+ 		
+         "resposta": 1
+    },
+    {
+        "per": "Q4. Comple a musica: Contando os Plaque de ..., dentro de um Cintröen?",
+        
+        "alt": ["Casamento",
+        "Camaro",
+        "100",
+        "20"],
+ 		
+        "resposta": 2
+    },
+    {
+        "per": "Q5. 'Danone' é o apelido usado para se referir a qual das seguintes bebidas populares?",
+        
+        "alt": ["Vitamina de Morango com Açai e Banana",
+        "Vodka Barata",
+        "Cerveja",
+        "Suco do Bandex"],
+ 		
+        "resposta": 2
+    }
+]
