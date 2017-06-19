@@ -16,6 +16,7 @@
     <?php include "menu.inc";?>
 	<?php
 
+        $questoes = [];
         $perg = fopen('perguntas.json','r');
 		$tudo = "";
         while ($line = fgets($perg)) {
@@ -24,6 +25,12 @@
         $json = json_decode($tudo, true);
 
         fclose($perg);
+
+        foreach($json as $jsonPiece){
+            $questao = new Question($jsonPiece["enunciado"],$jsonPiece["alternativas"],$jsonPiece["resposta"]);
+
+            array_push($questoes, $questao);
+        }
 
         $id = $_GET["id"];
 

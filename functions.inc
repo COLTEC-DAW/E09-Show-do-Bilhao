@@ -1,19 +1,18 @@
 <?php
     function carregaPergunta($id){
-        global $json;
+        global $questoes;
         $i = 0;
 
             $temp = $id + 1;
 			?> 
-            <h2> <?= $temp?> - <?= $json[$id]["enunciado"] ?> <br></h2>
+            <h2> <?= $temp?> - <?= $questoes[$id]->enunciado ?> <br></h2>
             <FORM method="post" action="respostas.php">
-			<?php foreach ($json
-            [$id]["alternativas"] as $info2) { ?>
+			<?php foreach ($questoes[$id]->alternativas as $info2) { ?>
                 <Input type = 'Radio' name = "resposta" value= <?= $i ?>
 				<p><?= $info2 ?></p>
                 <?php $i++;
 			 } ?>
-               <input type = "hidden" name = "gabarito" value = <?= $json[$id]["resposta"]?>>
+               <input type = "hidden" name = "gabarito" value = <?= $questoes[$id]->resposta?>>
                <Input type = "hidden" name = "id" value = <?= $id ?>>
                <input type= "submit" value="Submit">
              </FORM>
@@ -46,4 +45,29 @@
     <?php
     }
 
+    class User{
+        var $nome;
+        var $senha;
+        var $email;
+        var $username;
+
+        function User($nome, $senha, $email, $username){
+            $this->nome = $nome;
+            $this->senha = $senha;
+            $this->email = $email;
+            $this->username = $username;
+        }
+    }
+
+    class Question{
+        var $enunciado;
+        var $alternativas;
+        var $resposta;
+
+        function Question($e, $a, $r){
+            $this->enunciado = $e;
+            $this->alternativas = $a;
+            $this->resposta = $r;
+        }
+    }
 ?>

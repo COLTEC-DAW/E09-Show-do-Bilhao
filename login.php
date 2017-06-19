@@ -1,6 +1,9 @@
+<?php require "functions.inc"; ?>
 <?php
 
     $acabou = false;
+
+    $usuarios = [];
 
     $perg = fopen('users.json','r');
     $tudo = "";
@@ -10,8 +13,14 @@
     $json = json_decode($tudo, true);
     fclose($perg);
 
-    foreach($json as $obj){
-        if($obj["user"] == $_POST["username"] && $obj["senha"] == $_POST["password"]){
+    foreach($json as $jsonPiece){
+        $usuario = new User($jsonPiece["nome"],$jsonPiece["senha"],$jsonPiece["email"],$jsonPiece["username"]);
+
+        array_push($usuarios, $usuario);
+    }
+
+    foreach($usuarios as $obj){
+        if($obj->username == $_POST["username"] && $obj->senha == $_POST["password"]){
             $acabou = true;
     
             session_start();        

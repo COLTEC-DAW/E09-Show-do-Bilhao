@@ -4,6 +4,8 @@
         cadastro();
     else{
 
+        $usuarios = [];
+
         $perg = fopen('users.json','r');
 		$tudo = "";
         while ($line = fgets($perg)) {
@@ -12,15 +14,17 @@
         $json = json_decode($tudo, true);
         fclose($perg);
 
-        $newjson = [];
-        $newjson["user"] = $_POST["username"];
-        $newjson["senha"] = $_POST["password"];
-        $newjson["email"] = $_POST["email"];
-        $newjson["nome"] = $_POST["nome"];
-        
-        array_push($json, $newjson);
+        foreach($json as $jsonPiece){
+            $usuario = new User($jsonPiece["nome"],$jsonPiece["senha"],$jsonPiece["email"],$jsonPiece["username"]);
 
-        $json = json_encode($json);
+            array_push($usuarios, $usuario);
+        }
+
+        $newuser = new User($_POST["nome"],$_POST["password"],$_POST["email"],$_POST["username"]);
+
+        array_push($usuarios, $newuser);
+
+        $json = json_encode($usuarios, JSON_PRETTY_PRINT);
 
         $perg = fopen('users.json', 'w');
         fwrite($perg, $json);
