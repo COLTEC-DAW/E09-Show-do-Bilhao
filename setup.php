@@ -6,6 +6,7 @@
 	$_SESSION["senha"] = $_POST['senha'];
 
 	setcookie("ultimaPontuacao", 0);
+	setcookie("perguntaAtual", null);
 
 	header("location: pergunta.php");
 ?>

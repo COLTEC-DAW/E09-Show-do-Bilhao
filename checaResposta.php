@@ -12,7 +12,7 @@
 		}
 		elseif($novaPergunta < 6){
 			$ultimaPontuacao = $pergunta++;
-			setcookie("ultimaPontuacao", $ultimaPontuacao);
+			setcookie("ultimaPontuacao", $ultimaPontuacao+1);
 			setcookie("perguntaAtual", $novaPergunta);
 			header("location: pergunta.php?id=" . $novaPergunta);
 		}

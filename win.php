@@ -5,6 +5,8 @@
 <?php
 	date.date_timezone_set("AMERICA");
 	setcookie("ultimaHoraJogado", date("d/m/Y h:i:s"));
+
+	setcookie("perguntaAtual", null);
 ?>
 
 <form action="logout.php">
