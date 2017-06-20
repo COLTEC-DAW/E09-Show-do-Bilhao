@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +10,7 @@
     <body>
         <?php
             session_start();
-            setcookie("pergunta"); //Unset do cookie pergunta
+            setcookie("pergunta", null); //Unset do cookie pergunta
             session_destroy(); ?>
         <form action="iniciaSessao.php" method="POST">
             Login: <input type="text" name="login"> <br>

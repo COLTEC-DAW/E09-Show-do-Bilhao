@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     function carregaPergunta($id){
         require 'dados.inc';
         if($id <= 4){
@@ -13,6 +14,9 @@
             echo "<input type=\"submit\" value=\"Enviar\">";
         }
         else{
+            date_default_timezone_set('America/Sao_Paulo');
+            setcookie("tentativa", date("d/m/Y - H:i:s"));
+            setcookie("pontos", $_COOKIE["pergunta"]);
             header("location: final.php");
         }
     }

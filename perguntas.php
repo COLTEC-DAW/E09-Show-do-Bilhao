@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +21,9 @@
             }
             else{
                 echo "<h1>Favor identificar-se antes de jogar</h1>";
+                echo "<form action=\"login.php\" method=\"POST\">";
+                echo "<input type=\"submit\" value=\"Prosseguir\">";
+                echo "</form>";
             }
         ?>
     </body>
