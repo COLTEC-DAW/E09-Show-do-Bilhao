@@ -12,13 +12,11 @@
         <?php
         // Verifica se login e a senha vem da sessao ou do post
 		if(!$_SESSION["login"]) {
-            echo "login vindo post";
-			$login = $_POST["login"];
+            $login = $_POST["login"];
 			$senha = $_POST["senha"];
 		}
         else {
-            echo "login vindo da session";
-			$login = $_SESSION["login"];
+            $login = $_SESSION["login"];
 			$senha = $_SESSION["senha"];
 		}
 
@@ -29,7 +27,8 @@
             $_SESSION["login"] = $login;
             ?>
             <p>As regras são claras! Responda às perguntas SEM ERRAR e ganhe UM BILHÃO</p>
-            <form method="get" action="perguntas.php?num=0">
+            <form method="get" action="perguntas.php">
+                <input type="hidden" name="num" value="0">
                 <button type="submit">Começar</button>
             </form>
             <?php

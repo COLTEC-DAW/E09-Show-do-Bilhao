@@ -150,15 +150,16 @@
                 global $alternativas;
                 global $corretas;
 
-                if (!isset($_SESSION["login"])&&!isset($_POST["login"])){  //Se não houver alguém logado
-                    header ("Location: login.php");
-                }
-                else {
-                    $_SESSION["login"] = $_POST["login"];
-                    $id = $_COOKIE["id"];
-                    $lastScore = $_COOKIE["lastScore"];
-                    $lastDate = $_COOKIE["lastDate"];
-                }
+                //if (!isset($_SESSION["login"])&&!isset($_POST["login"])){  //Se não houver alguém logado
+                //    header ("Location: login.php");
+                //}
+                //else {
+                //    $_SESSION["login"] = $_POST["login"];
+                //    $id = $_COOKIE["id"];
+                //    $lastScore = $_COOKIE["lastScore"];
+                //    $lastDate = $_COOKIE["lastDate"];
+                //}
+                // Tá bugando, dxa quieto
                 
                 if ($num >= 20){ ?>
                     <h1>VOCÊ CHEGOU AO FIM!!!</h1>
@@ -183,7 +184,6 @@
                             </form>
                   <?php }
                         else { 
-                            $_COOKIE["score"]++;
                             $numReal = $num+1; ?>
                             <h1><?php echo $perguntas[$num] ?></h1>
                             <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
@@ -207,8 +207,8 @@
                   <?php }
                     } //Deve ter um jeito mais eficiente de fazer isso sem repetir o código do form
                     else {
-                        $_COOKIE["score"] = 0;
-                        $numReal = $num+1; ?>
+                        $numReal = $num+1;
+                        $_SESSION["login"] = $_POST["login"]; ?>
                         <p>Pergunta <?= $numReal ?> de 20
                         <h1><?php echo $perguntas[$num] ?></h1>
                         <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">

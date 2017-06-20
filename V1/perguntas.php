@@ -1,14 +1,17 @@
-<?php session_start(); ?>
+<?php
+ob_start();
+session_start();
+require "perguntas.inc";
+include "menu.inc";
+$num= $_GET["num"];
+?>
 <!Doctype>
 <html>
     <head>
-        <title>Show do Bilhão: <?php $num ?> </title>
+        <title>Show do Bilhão: <?php $num+1 ?> </title>
     </head>
     <body>
         <?php
-        require "perguntas.inc";
-        include "menu.inc";
-        $num= $_GET["num"];
         carregaPergunta($num);
         include "rodape.inc";
         ?>
