@@ -24,6 +24,30 @@ function mostraPergunta($num, $json){
                 </form>
                 <?php
             }
+            else {
+                ?>
+                <h1><?= $json[$num]->pergunta ?></h1>
+                    <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
+                        <Input type = 'Radio' name = "<?= $num ?>" value=0 required>
+                            <?= $json[$num]->alternativas[0] ?>
+                            <br>
+                        <Input type = 'Radio' name = "<?= $num ?>" value=1 required>
+                            <?= $json[$num]->alternativas[1] ?>
+                            <br>
+                        <Input type = 'Radio' name = "<?= $num ?>" value=2 required>
+                            <?= $json[$num]->alternativas[2] ?>
+                            <br>
+                        <Input type = 'Radio' name = "<?= $num ?>" value=3 required>
+                            <?= $json[$num]->alternativas[3] ?>
+                            <br>
+                        <br>
+                        <Input type="submit" value="Próxima!">
+                    </FORM>
+                    <h2>Pergunta <?= $num+1?> de 20</h2>
+                <?php
+            }
+        }
+        else {
             ?>
             <h1><?= $json[$num]->pergunta ?></h1>
                 <FORM name="resposta" method="post" action="perguntas.php?num=<?php echo $num+1?>">
@@ -37,13 +61,13 @@ function mostraPergunta($num, $json){
                         <?= $json[$num]->alternativas[2] ?>
                         <br>
                     <Input type = 'Radio' name = "<?= $num ?>" value=3 required>
-                        <?= $json[$num]->alternativas[3] ?> ?>
+                        <?= $json[$num]->alternativas[3] ?>
                         <br>
-                    <br>
+                        <br>
                     <Input type="submit" value="Próxima!">
                 </FORM>
                 <h2>Pergunta <?= $num?> de 20</h2>
-            <?php
+        <?php            
         }
     }
 }

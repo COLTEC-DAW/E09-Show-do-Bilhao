@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-<!Doctype>
 <?php
     function validar($login, $senha){
         $arquivo = fopen("users.json", 'r');
@@ -12,23 +11,12 @@
         }
         return false;
     }
-?>
-<html>
-    <head>
-        <title>Bem vindo</title>
-    </head>
-    <body>
-        <h1>BEM VINDO AO SHOW DO BILHÃO</h1>
-        <p>As regras são claras! Responda às perguntas SEM ERRAR e ganhe UM BILHÃO</p>
-        <?php
         // Verifica se login e a senha vem da sessao ou do post
 		if(!$_SESSION["login"]) {
-            echo "login vindo post";
 			$login = $_POST["login"];
 			$senha = $_POST["senha"];
 		}
         else {
-            echo "login vindo da session";
 			$login = $_SESSION["login"];
 			$senha = $_SESSION["senha"];
 		}
@@ -41,9 +29,18 @@
 			$_SESSION["login"] = $login;
 			$_SESSION["senha"] = $senha;
             ?>
-            <form method="get" action="perguntas.php?num=0">
-                <button type="submit">Começar</button>
-            </form>
+            <!Doctype>
+            <html>
+                <head>
+                    <title>Bem vindo</title>
+                </head>
+                <body>
+                    <h1>BEM VINDO AO SHOW DO BILHÃO</h1>
+                    <p>As regras são claras! Responda às perguntas SEM ERRAR e ganhe UM BILHÃO</p>
+                    <form method="get" action="perguntas.php">
+                        <input type="hidden" name="num" value="0">
+                        <button type="submit">Começar</button>
+                    </form>
             <?php
         }
         else { //Senha incorreta

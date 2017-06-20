@@ -1,13 +1,16 @@
+<?php
+session_start();
+include "menu.inc";
+require "mostraPergunta.inc";
+$num = $_GET["num"];
+?>        
 <!Doctype>
 <html>
     <head>
-        <title>Show do Bilhão: <?php $num ?> </title>
+        <title>Show do Bilhão: <?= $num ?> </title>
     </head>
     <body>
         <?php
-        include "menu.inc";
-        require "mostraPergunta.inc"
-        $num= $_GET["num"];
         $arquivo = fopen("perguntas.json", 'r');
         $texto = "";
         while (!feof($arquivo)) $texto .= fgets($arquivo);

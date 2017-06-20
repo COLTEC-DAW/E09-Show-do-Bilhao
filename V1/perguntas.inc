@@ -177,7 +177,7 @@
                             ?>
                             <h1>Você errou... :(</h1>
                             <form action="fim.php" method="post">
-                                <input type="hidden" name="pontos" value="<?= $num ?>">
+                                <input type="hidden" name="pontos" value="<?= $num-1 ?>">
                                 <input type="hidden" name="win" value="false">
                                 <button type="submit">Ver resultados</button>
                             </form>
