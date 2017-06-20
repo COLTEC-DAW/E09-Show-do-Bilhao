@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <?php
     require 'perguntas.inc';
     $pergunta = $_POST["pergunta"];

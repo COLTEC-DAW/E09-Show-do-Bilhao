@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     require 'arquivos.inc';
     $usersdecode = decodeuser();
     
