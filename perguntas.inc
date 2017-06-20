@@ -1,7 +1,7 @@
 <?php
 	ob_start();
 ?>
-<?php
+<?php require 'classes.php';
 $perguntas_file = file_get_contents("files/perguntas.json");
 $perguntas_file_decoded = json_decode($perguntas_file);
 
@@ -9,12 +9,17 @@ $questoes = [0 => "vazio"];
 $respostas = [0 => "vazio"];
 $respostas_certas = [0 => "vazio"];
 
+$questoes_objetos = [];
+
 foreach ($perguntas_file_decoded as $questao) {
-	array_push($questoes, $questao->enunciado);
-	array_push($respostas, $questao->alternativas);
-	array_push($respostas_certas, $questao->resposta);
+	array_push($questoes_objetos, new Question($questao->enunciado, $questao->alternativas, $questao->resposta));
 }
 
+foreach ($questoes_objetos as $q) {
+	array_push($questoes, $q->enunciado);
+	array_push($respostas, $q->alternativas);
+	array_push($respostas_certas, $q->resposta);
+}
 
 function carregaPerguntas($id){
 	global $questoes;
@@ -69,6 +74,7 @@ function carregaPerguntas($id){
 					<p class="flow-text center-align">Você ganhou. Porém, não fez mais que sua obrigação.</p>
 				';
 				session_start();
+				error_reporting(0);
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.'5';
 				// echo $bauducco;
 				setcookie($_SESSION["username"], $bauducco);
@@ -78,6 +84,7 @@ function carregaPerguntas($id){
 					<p class="flow-text center-align">Você perdeu. Esperava mais de você.</p>
 				';
 				session_start();
+				error_reporting(0);
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.($id-1);
 				// echo $bauducco;
 				setcookie($_SESSION["username"], $bauducco);
