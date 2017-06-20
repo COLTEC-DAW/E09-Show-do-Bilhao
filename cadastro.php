@@ -18,14 +18,14 @@
 	<?php include 'menu.inc'; ?>
 	<main>
 		<div class="container">
-			<?php require 'cadastro.inc';
+			<?php require 'cadastro.inc'; require 'classes.php';
 				
 				if ($_POST["nome"] != NULL) {
 					$usuarios_file = file_get_contents("files/usuarios.json");
 					$decoded = json_decode($usuarios_file, TRUE);
 
 					// transformas os dados da form em obj
-					$novo_usuario = (object) array("nome" => $_POST["nome"], "email" => $_POST["email"], "login" => $_POST["login"], "senha" => $_POST["senha"]);
+					$novo_usuario = new User($_POST["nome"], $_POST["email"], $_POST["login"], $_POST["senha"]);
 
 					// verifica se o usuario ja existe
 					// https://stackoverflow.com/questions/4343596/parsing-json-file-with-php

@@ -40,5 +40,17 @@
         "email": "testelogin",
         "login": "testelogin",
         "senha": "ab"
+    },
+    {
+        "nome": "dark",
+        "email": "dark",
+        "login": "dark",
+        "senha": "dark"
+    },
+    {
+        "nome": "clear",
+        "email": "clear",
+        "login": "clear",
+        "senha": "clear"
     }
 ]
