@@ -1,4 +1,4 @@
-<?php
+<?php ob_start();
     session_start();
     $nome= $_POST["login"];
     $senha =  $_POST["senha"];
@@ -20,6 +20,7 @@
                     $_SESSION['usuario'] = $nome;
                     $_SESSION['senha'] = $senha;
                     setcookie("pontos", 0);
+                    date_default_timezone_set('America/Sao_Paulo');
                     setcookie("data", date("d/m/Y"));
                     header("location: inicio.php");
                 }

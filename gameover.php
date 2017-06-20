@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <html>
     <head>
         <title>Jogo do Bilhão</title>
@@ -7,7 +8,10 @@
     </head>
     <body>
         <h2 id="comeco">GAME OVER !</h2>
-        <?php setcookie("data", date("d/m/Y"));?>
+        <?php 
+            date_default_timezone_set('America/Sao_Paulo'); 
+            setcookie("data", date("d/m/Y"));
+        ?>
          <div class="col-md-12">
                 <button type="button" class="btn btn-primary center-block" onclick="location.href = 'inicio.php' ;">Tentar De Novo</button>
             </div>

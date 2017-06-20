@@ -1,4 +1,5 @@
 <?php
+     ob_start();
      function carregaPergunta($id){
         require 'arquivos.inc';
         $linhasdecode = decodeperguntas();
