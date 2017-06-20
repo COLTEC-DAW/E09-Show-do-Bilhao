@@ -20,4 +20,21 @@
             header("location: final.php");
         }
     }
+
+    function decodifica($arquivo){
+        $arq = fopen($arquivo, "r");
+        $linha = "";
+        while(!feof($arq)) {
+            $linha .= fgets($arq);
+        }
+        fclose($arq);
+        $decodificado = json_decode($linha);
+        return $decodificado;
+    }
+
+    function codifica($string, $arquivo){
+        $arq = fopen($arquivo, "w");
+        fwrite($arq, json_encode($string, JSON_PRETTY_PRINT));
+        fclose($arq);
+    }
 ?>
