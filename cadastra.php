@@ -27,7 +27,7 @@
         );
 
         array_push($usersdecode,$array);
-        fwrite($arquivo,json_encode($usersdecode));
+        fwrite($arquivo,json_encode($usersdecode,JSON_PRETTY_PRINT));
         fclose($arquivo);
         header("location: index.php");
     }
