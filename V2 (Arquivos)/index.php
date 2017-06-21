@@ -1,5 +1,6 @@
-<?php session_start(); ?>
 <?php
+session_start();
+
     function validar($login, $senha){
         $arquivo = fopen("users.json", 'r');
         $txt = "";

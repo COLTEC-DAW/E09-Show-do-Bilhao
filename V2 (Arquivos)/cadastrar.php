@@ -1,10 +1,11 @@
 <?php
+	require "classes.php";
 	$nome = $_POST["nome"];
 	$email = $_POST["email"];
 	$login = $_POST["login"];
 	$senha = $_POST["senha"];
 
-	$NovaPessoa = (object) array("nome" => $nome, "email" => $email, "login" => $login, "senha" => $senha);
+	$NovaPessoa = new Usuario($nome, $login, $email, $senha);
 	$arquivo = fopen("users.json", 'r');
 	$dados = "";
 	$novo = true;

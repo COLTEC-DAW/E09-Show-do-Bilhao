@@ -11,11 +11,15 @@ $num = $_GET["num"];
     </head>
     <body>
         <?php
+        $perguntas;
         $arquivo = fopen("perguntas.json", 'r');
         $texto = "";
         while (!feof($arquivo)) $texto .= fgets($arquivo);
         $json = json_decode($texto);
-        mostraPergunta($num, $json);
+        for ($i=0; $i < count($json); $i++){
+            $umaPergunta = new Pergunta($json[$i]->pergunta, $json[$i]->alternativas, $json[$i]->correta);
+            array_push($perguntas, $umaPergunta);
+        mostraPergunta($num, $perguntas);
         include "rodape.inc"; ?>
     </body>
 </html>
