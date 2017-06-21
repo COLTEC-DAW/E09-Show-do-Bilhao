@@ -8,8 +8,17 @@
 	$info = file_get_contents("users.json");
 	$jsonObj = json_decode($info);
 
-	for($i=0; $i<sizeof($jsonObj);$i++){
-		if($jsonObj[$i]->login == $nome && $jsonObj[$i]->senha == $senha){ //logou
+	require "classusuarios.php";
+	//Inserir informações do json na classe usuarios 
+	$Usuario = array();
+	for($i=0;$i<sizeof($jsonObj);$i++){ //cria objetos usuarios
+	    $Usuario[] = new Usuarios($jsonObj[$i]->nome,$jsonObj[$i]->email,$jsonObj[$i]->login,$jsonObj[$i]->senha);
+	}
+            
+
+	//manipular com os objetos usuarios
+	for($i=0; $i<sizeof($Usuario);$i++){
+		if($Usuario[$i]->login == $nome && $Usuario[$i]->senha == $senha){ //logou
 			session_start();
 			$_SESSION["nome"] = $nome;
 			$_SESSION["senha"] = $senha;
@@ -23,6 +32,7 @@
 	}
 
 	echo "<script>alert('Login ou senha inválidos! Tente novamente!');</script>";
+	echo "<script>window.location = 'jogador.html';</script>"; //volta para pag de login
 	fclose($fp);
 
 ?>

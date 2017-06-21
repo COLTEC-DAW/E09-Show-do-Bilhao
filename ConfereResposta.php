@@ -9,7 +9,6 @@
     $jsonObj = json_decode($info);
 
 
-
     if( $jsonObj[$id]->resposta == $_POST['alter']){  //resposta correta uhul uhul
         $id += 1; //passa para proxima pergunta
         fclose($fp);

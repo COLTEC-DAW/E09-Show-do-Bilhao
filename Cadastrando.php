@@ -18,10 +18,12 @@
     //decodifica o arquivo json
     $info = file_get_contents("users.json");
     $jsonObj = json_decode($info); 
-    array_push($jsonObj, $cadastro);
-    $newdados = json_encode($jsonObj);
-    fclose($fp);
-    $fp = fopen("users.json", "w");
+    
+    array_push($jsonObj, $cadastro); //concatena novo user com os usuarios antigos
+    $newdados = json_encode($jsonObj); //muda para json
+    fclose($fp); //fecha arquivo
+
+    $fp = fopen("users.json", "w"); //abre arquivo para escrita apagando tudo
    
     $escreve = fwrite($fp, $newdados); //escreve 
     echo $newdados;
