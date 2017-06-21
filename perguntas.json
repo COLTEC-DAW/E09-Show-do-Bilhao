@@ -1,0 +1,20 @@
+[
+	{
+		"enunciado": "Qual o nome do Madeira?",
+		"alternativas": ["a-joao","b-gustavo","c-rodrigao","d-cuboalex"],
+		"resposta": "3"
+		
+	},
+	{
+		"enunciado": "Qual a cor do lab do 3?",
+		"alternativas": ["a-rosa","b-purple","c-amarelo","d-invisivel"],
+		"resposta": "2"
+	},
+	{
+		"enunciado": "So uma opção está correta:",
+		"alternativas": ["a-nutella", "b-doce de leite", "c-bolacha","d-biscoito"],
+		"resposta": "0"
+	}
+
+
+]

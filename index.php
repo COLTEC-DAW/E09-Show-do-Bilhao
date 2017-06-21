@@ -24,12 +24,14 @@
             session_start();
            
             if(!isset($_SESSION["nome"]) && !isset($_SESSION["senha"])){ //testa se ja tem nome e senha
-                echo '<a href="/jogador.html"><button type="button" class="btn btn-success">Começar</button></a>'; //login
+                echo '<a href="/jogador.html"><button type="button" class="btn btn-success">Entrar</button></a>'; //login
+                echo '<a href="/cadastro.php"><button type="button" class="btn btn-success">Cadastrar</button></a>';  //cadastro
             } else{
                 echo '<a href="/perguntas.php?id=0"><button type="button" class="btn btn-success">Começar</button></a>';
+                echo '<a href="logout.php"><button type="button" class="btn btn-danger">Sair</button></a>';
             }
 
-            echo '<a href="logout.php"><button type="button" class="btn btn-danger">Sair</button></a>';
+            
             include "rodape.inc";
   
         ?>
