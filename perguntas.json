@@ -10,12 +10,12 @@
          "resposta": 1
     },
     {
-        "per": "Q2. Qual a capital do Acre?",
+        "per": "Q2. Qual time foi campeão da Copa do Brasil 2014 em cima do seu maior rival?",
         
-        "alt": ["Jurassic Park",
-        "Dinossaurolândia",
-        "Belo Horizonte",
-        "Rio Branco"],
+        "alt": ["Barcelona",
+        "íbis",
+        "Flamengo",
+        "Atlético-MG"],
  		
          "resposta": 3
     },
