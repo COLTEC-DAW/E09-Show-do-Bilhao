@@ -1,0 +1,121 @@
+[
+    {
+        "pergunta": "Em qual país foi inventado o brinquedo LEGO?",
+        "alternativas": ["Estados Unidos","Japão","Itália","Dinamarca"],
+        "correta": 3
+    },
+
+    {
+        "pergunta": "Qual desses astros ainda está vivo (11/06/2017)?",
+        "alternativas": ["Elvis Presley","Paul McCartney","Michael Jackson","Prince"],
+        "correta": 1
+    },
+    
+    {
+        "pergunta": "Onde fica o Oceano Índico?",
+        "alternativas": ["No Pólo Norte","Perto da Índia","Entre a Europa e a África","Ao redor da Austrália"],
+        "correta": 1
+    },
+    
+    {
+        "pergunta": "VHDL é uma linguagem de:",
+        "alternativas": ["Descrição","Programação","Tortura","Nenhuma das anteriores"],
+        "correta": 2
+    },
+    
+    {
+        "pergunta": "Por qual motivo você deve sempre identar seu código?",
+        "alternativas": ["Os veteranos vão te matar se não fizer isso","Vale Ponto","As curvas ficam sexy","Todas as anteriores"],
+        "correta": 3
+    },
+    
+    {
+        "pergunta": "Qual dos seguinte mitos sobre o Honda é verdade?",
+        "alternativas": ["Ele mora sozinho no meio do nada","Ele teleporta","Ele mora com ninguém sabe quantos caras","Todas as anteriores"],
+        "correta": 3
+    },
+    
+    {
+        "pergunta": "Quando improvisando um quiz para um exercício, você usa skillz de:",
+        "alternativas": ["Infação","Migué","Criatividade","McGyverismo"],
+        "correta": 1
+    },
+    
+    {
+        "pergunta": "Se a resposta dessa pergunta fosse a segunda bolinha, qual você marcaria?",
+        "alternativas": ["A primeira","A terceira","A segunda","A última"],
+        "correta": 2
+    },
+    
+    {
+        "pergunta": "Qual desses jogos é infame por ser difícil?",
+        "alternativas": ["Super Mario World para SNES","O show do Milhão","Dark Souls para PS3, PC e XB360","The Legend of Zelda: Ocarina of Time para o N64"],
+        "correta": 2
+    },
+    
+    {
+        "pergunta": "8) Quantas perguntas já foram feitas?",
+        "alternativas": ["10","9","8","7"],
+        "correta": 0
+    },
+    
+    {
+        "pergunta": "Em qual século Gandhi nasceu?",
+        "alternativas": ["XIX","XV","XII","Nenhum. Ele é um personagem mítico"],
+        "correta": 0
+    },
+    
+    {
+        "pergunta": "Onde a pizza foi inventada?",
+        "alternativas": ["Itália","Grécia","Estados Unidos","Austrália"],
+        "correta": 1
+    },
+    
+    {
+        "pergunta": "Em qual continente fica a Áustria?",
+        "alternativas": ["África","Oceania","América Central","Europa"],
+        "correta": 3
+    },
+    
+    {
+        "pergunta": "O Mediterrâneo é...",
+        "alternativas": ["Uma cordilheira","Um mar","Um lago","Uma montanha"],
+        "correta": 1
+    },
+    
+    {
+        "pergunta": "Qual das seguintes músicas NÃO é dos Beatles?",
+        "alternativas": ["Cry, Baby, Cry","Start me Up","Ob-la-di, Ob-la-da","Yellow Submarine"],
+        "correta": 1
+    },
+    
+    {
+        "pergunta": "Qual das seguintes bandas NÃO é inglesa?",
+        "alternativas": ["The Rolling Stones","The Beatles","Led Zeppelin","The White Stripes"],
+        "correta": 3
+    },
+    
+    {
+        "pergunta": "O filme Shrek é de qual estúdio de animação?",
+        "alternativas": ["DreamWorks","Disney","Sony","Pixar"],
+        "correta": 0
+    },
+    
+    {
+        "pergunta": "Qual é o nome do companheiro de Sherlock Holmes?",
+        "alternativas": ["Moriarty","Poirot","Watson","Lupin"],
+        "correta": 2
+    },
+    
+    {
+        "pergunta": "Mas o mago é...",
+        "alternativas": ["Poderoso","Fedido","Dumbledore","Implacável"],
+        "correta": 3
+    },
+    
+    {
+        "pergunta": "QUEM é \"O Senhor dos Anéis\" ao qual o título dos filmes e livros se refere?",
+        "alternativas": ["Frodo","Sauron","Gandalf","Gollum"],
+        "correta": 1
+    }
+]
