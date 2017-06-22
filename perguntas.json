@@ -1,0 +1,52 @@
+[
+    {
+        "per": "Q1. Quantos Oscares tem Leonardo Di Caprio?",
+        
+        "alt": ["Nenhum",
+        "1",
+        "10",
+        "2"],
+ 		
+         "resposta": 1
+    },
+    {
+        "per": "Q2. Qual time foi campeão da Copa do Brasil 2014 em cima do seu maior rival?",
+        
+        "alt": ["Barcelona",
+        "íbis",
+        "Flamengo",
+        "Atlético-MG"],
+ 		
+         "resposta": 3
+    },
+    {
+        "per": "Q3. A galinha usa saia e o galo?",
+        
+        "alt": ["Meia",
+        "Paletó",
+        "Samba-Canção",
+        "Calça"],
+ 		
+         "resposta": 1
+    },
+    {
+        "per": "Q4. Qual dos seguintes tradicionais filmes não é do diretor Quentin Tarantino?",
+        
+        "alt": ["Django Livre",
+        "Pulp Fiction",
+        "Clube da Luta",
+        "Jackie Brown"],
+ 		
+        "resposta": 2
+    },
+    {
+        "per": "Q5. 'Danone' é o apelido usado para se referir a qual das seguintes bebidas populares?",
+        
+        "alt": ["Água de Privada",
+        "Vodka Barata",
+        "Cerveja",
+        "Suco do Bandex"],
+ 		
+        "resposta": 2
+    }
+]

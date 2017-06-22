@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "wender",
+        "email": "vitornogueira502@gmail.com",
+        "login": "wender",
+        "senha": "123"
+    },
+    {
+        "nome": "vitor",
+        "email": "raulseixas@malucobeleza.com",
+        "login": "tocaraul",
+        "senha": "222"
+    },
+    {
+        "nome": "wender",
+        "email": "wender@123",
+        "login": "vtn",
+        "senha": "222"
+    },
+    {
+        "nome": "irineu",
+        "email": "123irineu@irineu",
+        "login": "irineu",
+        "senha": "111"
+    },
+    {
+        "nome": "Wender Vitor",
+        "email": "vitor@vitor..com",
+        "login": "vtnogueira",
+        "senha": "234"
+    }
+]

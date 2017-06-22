@@ -1,0 +1,24 @@
+#topo{
+    text-align: center;
+}
+#comeco{
+    padding: 10px;  
+    text-align: center;
+}
+#rodape{
+    padding: 10px;
+    text-align: center;
+}
+#pergunta{
+    padding: 10px;
+    text-align: center;
+}
+body{
+    background-color: navajowhite;
+}
+.btn{
+    padding: 10px;
+}
+audio{
+    display: none;
+}
