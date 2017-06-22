@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +5,6 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<?php
-		session_start();
-	?>
 	<form action="setup.php" method="POST">
 		Login: <input type="text" name="login"> <br>
 		Senha: <input type="password" name="senha"> <br>

@@ -1,4 +1,8 @@
-<?php ob_start(); ?>
+<?php ob_start();
+	//if(????){
+	//	header("location: logout.php");
+	//}
+?>
 <!DOCTYPE html>
 <html>
 <head>
