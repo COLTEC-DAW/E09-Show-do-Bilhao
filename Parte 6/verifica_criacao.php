@@ -21,7 +21,7 @@
 	fwrite($arquivo, "$arr\n");
 	fclose($arquivo);
 
-	setcookie("acaboudecadastrar", 1);
+	setcookie($login."acaboudecadastrar", 1);
 
 	$redirect = "login.php";
 	header("location:$redirect");
