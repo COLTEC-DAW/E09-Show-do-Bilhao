@@ -4,7 +4,16 @@
     $senha =  $_POST["senha"];
     
     require 'arquivos.inc';
-    $usuarios = decodeuser();
+    require 'classes.php';
+    $users = decodeuser();
+    $usuarios = [];
+        
+    $userqtd = Count($users);
+    for($i=0;$i<$userqtd;$i++){
+        $user = new User($users[$i]->nome,$users[$i]->email,$users[$i]->login,$users[$i]->senha);
+        array_push($usuarios,$user);
+    }
+
 
     if(empty($nome) || empty($senha)){
         header("location: index.php?id=404");

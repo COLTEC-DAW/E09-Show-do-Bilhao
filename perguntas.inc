@@ -1,13 +1,20 @@
 <?php
      ob_start();
-     function carregaPergunta($id){
+     function carregaPergunta($id){   
         require 'arquivos.inc';
-        $linhasdecode = decodeperguntas();
+        require 'classes.php';
+        $perguntas = decodeperguntas();
         
-        if($id <= 4){
+        $questoes = [];
+        for($i = 0 ; $i < 5; $i++){
+            $questao =  new Question($perguntas[$i]->per,$perguntas[$i]->alt,$perguntas[$i]->resposta);
+            array_push($questoes,$questao);
+        }
+
+        if($id <= 4){     
             $id_novo = $id+1;
-            $alter = $linhasdecode[$id]->alt;
-            echo "<h3>".$linhasdecode[$id]->per."</h3>";
+            $alter = $questoes[$id]->alt;
+            echo "<h3>".$questoes[$id]->per."</h3>";
 ?>
     <form action="checagem.php" method="POST">
 <?php

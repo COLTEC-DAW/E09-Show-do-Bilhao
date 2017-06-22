@@ -8,8 +8,16 @@
     <?php
         ob_start();
         require 'arquivos.inc';
+        require 'classes.php';
         $usersdecode = decodeuser();
+        $usuarios = [];
         
+        $userqtd = Count($usersdecode);
+        for($i=0;$i<$userqtd;$i++){
+            $user = new User($usersdecode[$i]->nome,$usersdecode[$i]->email,$usersdecode[$i]->login,$usersdecode[$i]->senha);
+            array_push($usuarios,$user);
+        }
+
         $nome= $_POST["name"];
         $email =  $_POST["email"];
         $login= $_POST["login"];
@@ -51,15 +59,9 @@
             else{
                 //CADASTRA O USUSARIO
                 $arquivo = fopen("usuarios.json","w");
-                $array = array(
-                    'nome' => $nome,
-                    'email' => $email,
-                    'login' => $login,
-                    'senha' => $senha
-                );
-
-                array_push($usersdecode,$array);
-                fwrite($arquivo,json_encode($usersdecode,JSON_PRETTY_PRINT));
+                $usuario = new User($nome,$email,$login,$senha);
+                array_push($usuarios,$usuario);
+                fwrite($arquivo,json_encode($usuarios,JSON_PRETTY_PRINT));
                 fclose($arquivo);
                 header("location: index.php");
             }

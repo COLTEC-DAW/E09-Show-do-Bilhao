@@ -10,12 +10,12 @@
          "resposta": 1
     },
     {
-        "per": "Q2. Quem presidia o Brasil em 2001?",
+        "per": "Q2. Qual a capital do Acre?",
         
-        "alt": ["Lula",
-        "Itamar Franco",
-        "Silvio Santos",
-        "Fernando Henrique Cardoso"],
+        "alt": ["Jurassic Park",
+        "Dinossaurolândia",
+        "Belo Horizonte",
+        "Rio Branco"],
  		
          "resposta": 3
     },
@@ -25,7 +25,7 @@
         "alt": ["Meia",
         "Paletó",
         "Samba-Canção",
-        "Gel Capilar"],
+        "Calça"],
  		
          "resposta": 1
     },
@@ -42,7 +42,7 @@
     {
         "per": "Q5. 'Danone' é o apelido usado para se referir a qual das seguintes bebidas populares?",
         
-        "alt": ["Vitamina de Morango com Açai e Banana",
+        "alt": ["Água de Privada",
         "Vodka Barata",
         "Cerveja",
         "Suco do Bandex"],
