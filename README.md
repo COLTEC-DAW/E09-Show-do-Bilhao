@@ -118,3 +118,17 @@ Caso você opte pelo formato `JSON`, sugiro a seguinte estruturação para usuá
         },
         ...
     ]
+
+## Modelando os dados no sistema
+
+Agora que os dados do nosso sistema foram modelados estruturalmente dentro dos arquivos, podemos replicar essa estrutura dentro do código do próprio sistema aplicando conceitos de POO.
+
+### Entidades Básicas
+
+Você deverá implementar as classes `User` e `Question` que deverão manipular os usuários e perguntas do sistema. Essas classes deverão possuir atributos para armazenar as informações contidas no arquivo de cada usuário.
+
+### Trafegando objetos no sistema
+
+Agora que os dados do nosso sistema estão encapsulados no formato de objetos, fica muito mais fácil trafegar essas informações entre as páginas e requisições.
+
+Você deverá encontrar os pontos do sistema onde os dados são manipulados separadamente e alterar de forma que esses dados estejam encapsulados em seus respectivos objetos e que a manipulação se dê por meio dos objetos criados.
