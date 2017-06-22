@@ -17,14 +17,19 @@
       </div>
       <div id="pergunta">
           <?php
-            //session_start(); 
+            session_start(); 
             require'perguntas.inc';
-            if($_GET["id"]== 0){
-              carregaPergunta($_GET["id"]);
-              setcookie("pontos",0);
+            if($_SESSION['usuario'] != null){
+              if($_GET["id"]== 0){
+                carregaPergunta($_GET["id"]);
+                setcookie("pontos",0);
+              }
+              else{
+                carregaPergunta($_GET["id"]);
+              }
             }
             else{
-              carregaPergunta($_GET["id"]);
+              header("location:index.php");
             }
           ?>
       </div>

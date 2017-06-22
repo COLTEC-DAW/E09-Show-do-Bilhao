@@ -1,3 +1,10 @@
+<head>
+            <title>Jogo do Bilhão</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body style = "background-color: navajowhite;">
 <?php ob_start();
     session_start();
     $nome= $_POST["login"];
@@ -36,12 +43,27 @@
             }
             
             else{
-                echo 'SENHA INCORRETA MERMAO';
+                ?>
+                    <div id="topo">
+                        <h3 style= "padding: 10px; text-align: center;">SSENHA INCORRETA</h3>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="location.href = 'index.php' ;">Voltar a tela de LOGIN</button>
+                    </div>
+            <?php
             }
         }
         else{
-            echo 'NÃO EXISTE O LOGIN NAO MERMAO';
+            ?>
+                    <div id="topo">
+                        <h3 style= "padding: 10px; text-align: center;">LOGIN INCORRETO</h3>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="location.href = 'index.php' ;">Voltar a tela de LOGIN</button>
+                    </div>
+            <?php
         }
         
     }
 ?>
+</body>

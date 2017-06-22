@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php ob_start(); 
+session_start();
+if($_SESSION['usuario'] != null){
+?>
 <html>
     <head>
         <title>Jogo do Bilhão</title>
@@ -17,3 +20,8 @@
             </div>
     </body>
 </html>
+<?php
+}
+else{
+    header("location: index.php");
+}?>

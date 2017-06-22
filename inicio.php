@@ -24,12 +24,17 @@
       <div id="comeco">
         <?php 
           session_start();
-          echo "<h3>Bem vindo {$_SESSION['usuario']}!</h3>";
-          echo "<br>";         
-          $pontos = $_COOKIE["pontos"];
-          $data = $_COOKIE["data"];
-          echo 'Ultima pontuação: '.$pontos.'<br>';
-          echo 'Ultima vez que jogou: '.$data.'<br>';  
+          if($_SESSION['usuario'] != null){
+            echo "<h3>Bem vindo {$_SESSION['usuario']}!</h3>";
+            echo "<br>";         
+            $pontos = $_COOKIE["pontos"];
+            $data = $_COOKIE["data"];
+            echo 'Ultima pontuação: '.$pontos.'<br>';
+            echo 'Ultima vez que jogou: '.$data.'<br>';
+          } 
+          else{
+            header("location: index.php");//forçar a logar
+          } 
         ?>
         <button type="button" class="btn btn-primary" onclick="location.href = 'perguntas.php?id=0' ;">INICIAR O JOGO</button>
       </div>
