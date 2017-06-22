@@ -1,5 +1,6 @@
+<?php session_start();
+session_destroy(); ?>
 <!DOCTYPE>
-<?php session_destroy(); ?>
 <html>
     <body>
         <p>Logout excutado</p>

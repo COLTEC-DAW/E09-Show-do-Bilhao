@@ -14,7 +14,7 @@ class Usuario {
 }
 class Pergunta {
     var $pergunta;
-    var $alternativas[];
+    var $alternativas;
     var $correta;
 
     function __construct($pergunta, $alternativas, $correta){

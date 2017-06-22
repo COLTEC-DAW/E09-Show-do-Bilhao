@@ -14,9 +14,11 @@ session_start();?>
         date_default_timezone_set("America/Sao_Paulo");
         echo "Sua última pontuação: ".$_COOKIE["lastScore"];
         setcookie("lastScore", $_POST["pontos"]);
-        echo "Sua última partida: ". date ("d/m/Y", $_COOKIE["lastDate"]); 
-        setcookie("lastDate", date("d/m/Y h:i:s"));
+        ?><br><?php
+        echo "Sua última partida: ". $_COOKIE["lastDate"]; 
+        setcookie("lastDate", date("d/m/Y h:i:s", time()));
         ?>
+        <br>
         <br>
         <form method="get" action="logout.php">
             <button type="submit">Sair</button>

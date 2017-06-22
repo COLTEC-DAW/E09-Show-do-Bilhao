@@ -10,5 +10,11 @@
         "email": "franciscofabneves@gmail.com",
         "login": "chibata",
         "senha": "123"
+    },
+    {
+        "nome": "foca",
+        "login": "foca",
+        "email": "foca@foca",
+        "senha": "1"
     }
 ]

@@ -18,7 +18,7 @@ function mostraPergunta($num, $perguntas){
             ?>
                 <h1>Você errou... :(</h1>
                 <form action="fim.php" method="post">
-                    <input type="hidden" name="pontos" value="<?= $num ?>">
+                    <input type="hidden" name="pontos" value="<?= $num-1 ?>">
                     <input type="hidden" name="win" value="false">
                     <button type="submit">Ver resultados</button>
                 </form>
@@ -66,7 +66,7 @@ function mostraPergunta($num, $perguntas){
                         <br>
                     <Input type="submit" value="Próxima!">
                 </FORM>
-                <h2>Pergunta <?= $num?> de 20</h2>
+                <h2>Pergunta 1 de 20</h2>
         <?php            
         }
     }

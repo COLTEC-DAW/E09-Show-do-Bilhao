@@ -2,6 +2,7 @@
 session_start();
 include "menu.inc";
 require "mostraPergunta.inc";
+require "classes.php";
 $num = $_GET["num"];
 ?>        
 <!Doctype>
@@ -11,7 +12,7 @@ $num = $_GET["num"];
     </head>
     <body>
         <?php
-        $perguntas;
+        $perguntas = [];
         $arquivo = fopen("perguntas.json", 'r');
         $texto = "";
         while (!feof($arquivo)) $texto .= fgets($arquivo);
@@ -19,6 +20,7 @@ $num = $_GET["num"];
         for ($i=0; $i < count($json); $i++){
             $umaPergunta = new Pergunta($json[$i]->pergunta, $json[$i]->alternativas, $json[$i]->correta);
             array_push($perguntas, $umaPergunta);
+        }
         mostraPergunta($num, $perguntas);
         include "rodape.inc"; ?>
     </body>
