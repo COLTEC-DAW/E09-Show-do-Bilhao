@@ -21,6 +21,10 @@
                     Senha: <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Senha" name="senha">
                 </div>
             <input type="submit" class="btn btn-primary" value="Cadastrar">
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" onclick="location.href = 'index.php' ;">VOLTAR A TELA DE LOGIN</button>
+                    
         </div>
     </body>
 </html>

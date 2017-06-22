@@ -30,12 +30,12 @@
          "resposta": 1
     },
     {
-        "per": "Q4. Comple a musica: Contando os Plaque de ..., dentro de um Cintröen?",
+        "per": "Q4. Qual dos seguintes tradicionais filmes não é do diretor Quentin Tarantino?",
         
-        "alt": ["Casamento",
-        "Camaro",
-        "100",
-        "20"],
+        "alt": ["Django Livre",
+        "Pulp Fiction",
+        "Clube da Luta",
+        "Jackie Brown"],
  		
         "resposta": 2
     },

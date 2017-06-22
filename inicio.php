@@ -1,4 +1,11 @@
 <?php ob_start(); ?>
+<head>
+            <title>Jogo do Bilhão</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<audio autoplay="true" src="theme.wav" loop="30"></audio>
 <html>
 <head>
     <title>Jogo do Bilhão</title>

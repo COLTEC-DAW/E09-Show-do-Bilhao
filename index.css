@@ -19,3 +19,6 @@ body{
 .btn{
     padding: 10px;
 }
+audio{
+    display: none;
+}
