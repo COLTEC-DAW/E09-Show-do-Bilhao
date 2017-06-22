@@ -2,6 +2,10 @@
 <?php
 	//session_start();
 
+	if($_SESSION["login"] == null){
+		header("location: anticheat.php");
+	}
+
 	$username = $_SESSION["login"];
 	echo "<h2>$username, quer ser um bilionário?</h2>";
 ?>
