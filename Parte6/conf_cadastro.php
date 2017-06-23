@@ -1,9 +1,11 @@
 <?php
-
+    require "classes.php";
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $login = $_POST["login"];
     $senha = $_POST["senha"];
+
+    $usuario = new User($nome, $email, $login, $senha);
     if(file_exists("users.json")){
         $dados = file_get_contents('users.json');
 
@@ -11,7 +13,7 @@
 
 
 
-        $json[] = array('nome'=>$nome, 'email'=>$email, 'login'=>$login, 'senha'=>$senha); //adiciona o login no array
+        $json[] = array('nome'=>$usuario->$nome, 'email'=>$usuario->$email, 'login'=>$usuario->$login, 'senha'=>$usuario->$senha); //adiciona o login no array
         
 
         $dados_json = json_encode($json, JSON_PRETTY_PRINT);
