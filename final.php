@@ -1,7 +1,7 @@
 <?php ob_start();?>
 <meta charset="utf-8">
 <?php
-    if($_COOKIE["pergunta"]){
+    if($_COOKIE["pergunta"] == 5){
         echo "<h1>VOCÊ VENCEU O SHOW DO BILHÃO!!</h1>";
         echo "<h3>Temos um novo bilionário entre nós!</h3>";
     }

@@ -1,10 +1,10 @@
 <?php ob_start();?>
 <meta charset="utf-8">
 <?php
-    require 'dados.inc';
     $pergunta = $_POST["pergunta"];
-    $resposta = $_POST["alternativa"];
-    if($resposta == $respostas[$pergunta]){
+    $alternativa = $_POST["alternativa"];
+    $resposta = $_POST["resposta"];
+    if($alternativa == $resposta){
         $pergunta++;
         setcookie("pergunta", $pergunta);
         header("location: perguntas.php");

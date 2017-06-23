@@ -1,13 +1,15 @@
 <?php
     ob_start();
     function carregaPergunta($id){
-        require 'dados.inc';
+        organizaPergunta();
+        global $alternativas, $perguntas, $respostas;
         if($id <= 4){
             $id_novo = $id+1;
             $alter = $alternativas[$id];
             echo "<h3>$id_novo) $perguntas[$id]</h3>";
             echo "<form action=\"checagem.php\" method=\"POST\">";
             echo "<input type=\"hidden\" name=\"pergunta\" value=\"$id\">";
+            echo "<input type=\"hidden\" name=\"resposta\" value=\"$respostas[$id]\">";
             for($j = 0; $j < 4; $j++){
                 echo "<input type=\"radio\" name=\"alternativa\" value=\"$j\">$alter[$j]</br>";
             }
@@ -36,5 +38,32 @@
         $arq = fopen($arquivo, "w");
         fwrite($arq, json_encode($string, JSON_PRETTY_PRINT));
         fclose($arq);
+    }
+
+    function UserRepetido($dado, $usuarios, $campo){
+        $length = count($usuarios);
+        for($i = 0; $i < $length; $i++){
+            if($usuarios[$i] -> $campo == $dado){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function organizaPergunta(){
+        $array = decodifica("perguntas.json");
+        global $perguntas;
+        $perguntas = array();
+        global $alternativas;
+        $alternativas = array();
+        global $respostas;
+        $respostas = array();
+
+        $length = count($array);
+        for($i = 0; $i < $length; $i++){
+            array_push($perguntas, $array[$i] -> {'pergunta'});
+            array_push($alternativas, $array[$i] -> {'alternativas'});
+            array_push($respostas, $array[$i] -> {'resposta'});
+        }
     }
 ?>

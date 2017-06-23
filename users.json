@@ -7,8 +7,20 @@
     },
     {
         "nome": "Joao",
-        "email": "joao123@gmail.com",
-        "login": "joaozinho",
-        "senha": "345543"
+        "email": "joaoteste@gmail.com",
+        "login": "joaozinho123",
+        "senha": "joao321"
+    },
+    {
+        "nome": "Lucas Macedo Bruzzi",
+        "email": "pen.evil@hotmail.com",
+        "login": "TurboelGamer",
+        "senha": "surucucu"
+    },
+    {
+        "nome": "Testonildo",
+        "email": "testonildo@bol.com",
+        "login": "testonildo321",
+        "senha": "testando123"
     }
 ]

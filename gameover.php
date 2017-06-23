@@ -1,7 +1,7 @@
 <?php ob_start();?>
 <meta charset="utf-8">
 <?php
-    $certa = $_COOKIE["pergunta"];
+    $certa = $_COOKIE["pontos"];
     
     echo "<h1>Fim de Jogo</h1>";
     echo "<h3>Você acertou $certa pergunta(s)</h3>";
