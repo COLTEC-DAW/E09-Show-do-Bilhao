@@ -10,7 +10,7 @@
 		
 		<?php include 'topo.inc';?>
 
-        <button type="button" class="btn btn-success" onclick="location.href = 'perguntas.php?id=0' ;">INICIAR O JOGO</button>
+        <button type="button" class="btn btn-success" onclick="location.href = 'login.php' ;">INICIAR O JOGO</button>
 
         <?php include 'rodape.inc';?>
 

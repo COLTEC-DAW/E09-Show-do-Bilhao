@@ -1,27 +1,69 @@
-
-
-
 <?php
-    ob_start(); // Initiate the output buffer
+
+    require 'classe.php';
+
+    function armazenaClasses($id){
+
+        $cont = 0;
+
+        $arquivo = fopen("perguntas.json", "r");
+        while(!feof($arquivo))
+        {
+            $linha = fgets($arquivo);
+            if($linha!=null){
+                if($cont==$id)
+                {
+                    $aux = json_decode($linha);
+                    $enunciado = $aux->{'enunciado'};
+                    $alternativas = $aux->{'alternativas'};
+                    $resp = $aux->{'resposta'};
+                    $questao = new Questao($enunciado, $alternativas, $resp);
+                    return $questao;
+                }
+                $cont++;
+            }
+        }
+        fclose($arquivo);
+    }
+
+    ob_start();
     session_start();
-?>
 
-<?php
-    if($_SESSION["login"]=="dybala" && $_SESSION["senha"]=="dybalation")
-    {
+    $permissao = 0;
 
-    }
-    else
-    {
-        header("location:login.php");
-    }
-?>
+    $login = $_SESSION["login"];
+    $senha = $_SESSION["senha"];
+
+        $arquivo = fopen("usuarios.json", "r");
+        while(!feof($arquivo)) {
+            $linha = fgets($arquivo);
+            if($linha!=null)
+            {
+                $aux = json_decode($linha);
+                $login_arq = $aux->{'Login'};
+                if($login_arq == $login){
+                    $senha_arq = $aux->{'Senha'};
+                    if($senha_arq == $senha){
+                        $permissao = 1;
+                    }
+                }
+            }
+        }
+        fclose($arquivo);
+
+        if ($permissao == 0)
+        {
+            $redirect = "login.php";
+            header("location:$redirect");
+        }
+    ?>
 
 <?php
 
     $pontuacao = $_GET["id"];
 
-    if(isset($_COOKIE["ultima_pontuacao"])){
+    if(isset($_COOKIE["ultima_pontuacao"]))
+    {
         echo '<h3>Ultima pontuação: '.$_COOKIE['ultima_pontuacao'].'</h3>';
         echo '<h3>Jogou pela ultima vez '.$_COOKIE['data'].'</h3>';
     }
@@ -32,7 +74,8 @@
 
 <?php
 
-    function carregaPerguntas($id) {
+    function carregaPerguntas($id)
+    {
 
         global $per;
         global $alternativa;
@@ -99,4 +142,33 @@
         $resposta[3] = 2;
         $resposta[4] = 3;
 
+?>
+
+<?php
+    function pedeArquivo($id,$dados)
+    {
+        echo "<h3>".$dados->enunciado."</h3>";  
+        echo '<form action="respostas.php" method="post">';
+        
+?>
+        <input type="hidden" name="ids" value=<?=$id?>>
+        <input type="hidden" name="certa" value=<?=$dados->resposta?>>
+<?php                   
+        for($i=0;$i<4;$i++)
+        {
+?>          
+            <div class="radio">                                          
+                <label><input type="radio" name="optradio" value="<?=$i?>"><?=$dados->alternativas[$i]?></label>
+            </div>
+
+<?php
+        }
+?>
+    <input type="submit" name="Verificar">
+    </form>
+
+    <p>Você acertou <?php echo $id; ?> respostas.</p>
+    <a href = "logout.php"><button>Fazer logout</button></a>
+<?php
+    }
 ?>

@@ -1,21 +1,27 @@
 <?php
 
-	$pergunta=$_POST[id];
-	$alternativa=$_POST[alternativa];
+	$id_da_pergunta = $_POST['ids'];
 
-	$respostas[0] = 1;
-    $respostas[1] = 1;
-    $respostas[2] = 2;
-    $respostas[3] = 2;
-    $respostas[4] = 3;
+	$resposta = $_POST['certa'];
+	$resposta_marcada;
 
-	if ($alternativa==$respostas[$pergunta]) {
+
+	if(isset($_POST['optradio']))
+	{
+	    $resposta_marcada = $_POST['optradio'];
+	}
+
+	if($resposta == $resposta_marcada)
+	{
 		$link='Location: /perguntas.php?id=0';
-		$link = str_replace('0',$_POST[id]+1, $link);
+		$link = str_replace('0',$_POST[ids]+1, $link);
 		header($link);
 	}
-	else{
+	else
+	{
+		setcookie('pontuacao', $id_da_pergunta);
+
 		$link='Location:/gameover.php';
 		header($link);
 	}
- ?>
+?>

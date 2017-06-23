@@ -10,14 +10,18 @@
 			include "menu.inc";
 			require 'perguntas.inc';
 
-    		if($_GET["id"]<5){
-				carregaPerguntas($_GET["id"]);
+			$geral = armazenaClasses($_GET["id"]);
+
+    		if($_GET["id"]<5)
+    		{
+				pedeArquivo($_GET["id"],$geral);
 				setcookie('pontuacao', $_GET["id"]);
     		}
-    		else {
+    		else
+    		{
     			setcookie('pontuacao', $_GET["id"]);
 	        	echo "Acabou o jogo.";
 	    	}
 		?>
  </body>
- </html> 
+ </html>
