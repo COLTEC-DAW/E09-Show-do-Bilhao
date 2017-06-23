@@ -1,0 +1,33 @@
+[
+
+    {
+        "enunciado": "Qual é o livro mais impresso do mundo?'",
+        "alternativas": ["Jubiabá", "Bíblia", "Gabriela, Cravo e Canela", "Terras do Sem Fim"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual é o nome do osso da coxa do ser humano?",
+        "alternativas": ["Fêmur", "Tíbia", "Perônio", "Úmero"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Um analgésico é um agente para:",
+        "alternativas": ["Tratamento do intestino", "Alívio de estresse", "Alívio da dor", "Tratamento da caspa"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "De que é feito o pé-de-moleque",
+        "alternativas": ["Amendoim", "Castanha", "Alcaparra", "Abacate"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "O que é a morsa?",
+        "alternativas": ["Um réptil", "Um mamífero", "Um peixe", "Um crustáceo"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual destas palvras é sinônimo de equívoco",
+        "alternativas": ["Acerto", "Equitação", "Engano", "Cavalo"],
+        "resposta": 2
+    }
+]
