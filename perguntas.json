@@ -1,0 +1,52 @@
+[
+    {
+        "pergunta": "Como se chama o lago salgado, que é parte mais baixa da Terra, situado na Palestina?",
+        "alternativas": [
+            "Mar Morto",
+            "Mar Cáspio",
+            "Mar Mediterrâneo",
+            "Mar do Caribe"
+        ],
+        "resposta": 0
+    },
+    {
+        "pergunta":"Qual o continente que tem mais países?",
+        "alternativas": [
+            "Europa",
+            "África",
+            "Ásia",
+            "América"
+        ],
+        "resposta": 1
+    },
+    {
+        "pergunta": "A planície da Manchúria encontra-se em qual país?",
+        "alternativas": [
+            "China",
+            "Mongólia",
+            "Irã",
+            "Angola"
+        ],
+        "resposta": 0
+    },
+    {
+       "pergunta": "Na fronteira de quais países está o Everest, pico mais alto do mundo?",
+       "alternativas": [
+           "Suíça e Itália",
+           "Nepal e China",
+           "Chile e Argentina",
+           "Brasil e Uruguai"
+       ],
+       "resposta": 1
+    },
+    {
+        "pergunta": "O abacaxi é originário de que país?",
+        "alternativas": [
+            "Estados Unidos",
+            "Brasil",
+            "Colômbia",
+            "Venezuela"
+        ],
+        "resposta": 1
+    }
+]

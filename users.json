@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "Victor",
+        "email": "victorhugosmoura@gmail.com",
+        "login": "victorh",
+        "senha": "123321"
+    },
+    {
+        "nome": "Joao",
+        "email": "joaoteste@gmail.com",
+        "login": "joaozinho123",
+        "senha": "joao321"
+    },
+    {
+        "nome": "Lucas Macedo Bruzzi",
+        "email": "pen.evil@hotmail.com",
+        "login": "TurboelGamer",
+        "senha": "surucucu"
+    },
+    {
+        "nome": "Testonildo",
+        "email": "testonildo@bol.com",
+        "login": "testonildo321",
+        "senha": "testando123"
+    },
+    {
+        "nome": "Eduardo Fernandes",
+        "email": "eduardo1410@gmail.com",
+        "login": "duduzin",
+        "senha": "coltecElite"
+    }
+]
