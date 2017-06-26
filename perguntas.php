@@ -12,8 +12,10 @@
             if(isset($_COOKIE["pergunta"])){
                 include 'menu.inc';
                 require 'functions.inc';
+
                 $id_pergunta = $_COOKIE["pergunta"];
-                carregaPergunta($id_pergunta);
+                $perguntas = organizaPergunta();
+                carregaPergunta($id_pergunta, $perguntas);
                 include 'rodape.inc';
 
                 echo "Última pontuação: ".$_COOKIE["pontos"];

@@ -22,5 +22,11 @@
         "email": "testonildo@bol.com",
         "login": "testonildo321",
         "senha": "testando123"
+    },
+    {
+        "nome": "Eduardo Fernandes",
+        "email": "eduardo1410@gmail.com",
+        "login": "duduzin",
+        "senha": "coltecElite"
     }
 ]

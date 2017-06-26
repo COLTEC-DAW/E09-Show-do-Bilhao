@@ -1,15 +1,16 @@
 <?php
     ob_start();
-    function carregaPergunta($id){
-        organizaPergunta();
-        global $alternativas, $perguntas, $respostas;
+    require 'classes.php';
+    function carregaPergunta($id, $perguntas){
         if($id <= 4){
+            $pergunta = $perguntas[$id];
             $id_novo = $id+1;
-            $alter = $alternativas[$id];
-            echo "<h3>$id_novo) $perguntas[$id]</h3>";
+            $alter = $pergunta->alternativas;
+
+            echo "<h3>$id_novo) $pergunta->enunciado</h3>";
             echo "<form action=\"checagem.php\" method=\"POST\">";
             echo "<input type=\"hidden\" name=\"pergunta\" value=\"$id\">";
-            echo "<input type=\"hidden\" name=\"resposta\" value=\"$respostas[$id]\">";
+            echo "<input type=\"hidden\" name=\"resposta\" value=\"$pergunta->resposta\">";
             for($j = 0; $j < 4; $j++){
                 echo "<input type=\"radio\" name=\"alternativa\" value=\"$j\">$alter[$j]</br>";
             }
@@ -26,9 +27,11 @@
     function decodifica($arquivo){
         $arq = fopen($arquivo, "r");
         $linha = "";
+
         while(!feof($arq)) {
             $linha .= fgets($arq);
         }
+
         fclose($arq);
         $decodificado = json_decode($linha);
         return $decodificado;
@@ -42,6 +45,7 @@
 
     function UserRepetido($dado, $usuarios, $campo){
         $length = count($usuarios);
+        
         for($i = 0; $i < $length; $i++){
             if($usuarios[$i] -> $campo == $dado){
                 return true;
@@ -52,18 +56,13 @@
 
     function organizaPergunta(){
         $array = decodifica("perguntas.json");
-        global $perguntas;
         $perguntas = array();
-        global $alternativas;
-        $alternativas = array();
-        global $respostas;
-        $respostas = array();
 
         $length = count($array);
         for($i = 0; $i < $length; $i++){
-            array_push($perguntas, $array[$i] -> {'pergunta'});
-            array_push($alternativas, $array[$i] -> {'alternativas'});
-            array_push($respostas, $array[$i] -> {'resposta'});
+            $pergunta = new Pergunta($array[$i]->pergunta, $array[$i]->alternativas, $array[$i]->resposta);
+            array_push($perguntas, $pergunta);
         }
+        return $perguntas;
     }
 ?>
