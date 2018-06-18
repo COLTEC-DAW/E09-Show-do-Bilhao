@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <?php 
+<?php 
     $enunciados=array(
         "Qual a cidade mais populosa da India?",
         "Qual a capital do Canadá?",
@@ -49,12 +40,16 @@
         )
     );
     $respostas=array(3,2,1,4,2);
+    
+    function carregaPergunta() {
+        global $enunciados, $alternativas, $respostas;
+        $id =$_GET["id"];
+        $pergunta = array(
+            "enunciado" => $enunciados[$id],
+            "alternativas" => $alternativas[$id],
+            "resposta" => $respostas[$id]
+        );
 
-
-    foreach($enunciados as $atual){
-        echo '<p>'.$atual.'</p>';
+        return $pergunta;
     }
-     
     ?> 
-</body>
-</html>
