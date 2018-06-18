@@ -7,3 +7,11 @@
 .pergunta{
     padding: 2% 10% 0% 10%;
 }
+
+footer{
+    background-color: black;
+    color: white;
+    margin-top: 2%; 
+    font-size: 120%;
+    text-align: center;
+}
