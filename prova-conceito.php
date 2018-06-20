@@ -13,14 +13,14 @@
     <?php include "menu.inc" ?>
 
     <div class="pergunta"> 
-        <form>
+        <form action="/perguntas.php" method="post">
 
             <?php 
                 require "perguntas.inc";           
                 carrega_perguntas($perguntas, $alternativas);
             ?>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Próximo</button>
         </form>
     </div>
     
