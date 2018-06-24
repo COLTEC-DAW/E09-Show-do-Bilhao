@@ -1,0 +1,88 @@
+body {
+    background-image: url("../assets/background.png");
+}
+p{
+    padding-left: 3%;
+    padding-top: 2%;
+}
+nav{
+    background: linear-gradient(to bottom right, #A60303 0%, #590202 100%);
+}
+#auxLine{
+    background-color: white;
+    height: 1px;
+}
+#claquete{
+    filter: brightness(0) invert(1);
+}
+#title{
+    font-size: 1.7em;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+#subtitle{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.1em;
+    color: rgb(205, 212, 208);
+}
+#mainCard{
+    padding: 0;
+    border-radius: 30px;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+.button{
+    border: none !important;
+    z-index: auto;
+    width: 100%;
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 30px;
+    text-align: left;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    font-size: 1.3em;
+    color:#590202;
+
+}
+.button:hover{
+    background-color: #590202;
+    color: white;
+    box-shadow: 3px 3px 15px 2px rgb(200, 187, 200);
+}
+.card-body{
+    background: linear-gradient(to bottom right, #A60303 0%, #590202 100%);
+    color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.lForm{
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-bottom: 2%;
+}
+.option{
+    padding: 0;
+    margin: 2%;
+    border: none;
+}
+.card-title{
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    font-size: 2em;
+}
+.rodape{
+    height: 120px;
+    background-color: #A60303;
+    color: white;
+}
+.line{
+    height: 20px;
+    background-color:#590202;
+}
+.vl {
+    border-left: 1px solid rgb(205, 212, 208);
+    height: 100px;
+
+}

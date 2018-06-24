@@ -3,7 +3,7 @@
     $perguntas[1] = 'Qual foi o único filme em preto e branco dirigido por Steven Spielberg?';
     $perguntas[2] = 'De que gênero "Calafrios" de David Cronenberg é "listado"?';
     $perguntas[3] = 'Qual desses filmes Tim Burton não dirigiu?';
-    $perguntas[4] = 'Qual foi o primeiro de Woody Allen feito fora dos Estados Unidos?';
+    $perguntas[4] = 'Qual foi o primeiro filme de Woody Allen feito fora dos Estados Unidos?';
 
 
     $alternativas = array(
@@ -20,7 +20,7 @@
     function carregaPergunta($id){
         global $perguntas;
         global $alternativas;
-        return [$perguntas[$id], $alternativas[$id]];
+        return [$perguntas[$id], $alternativas[$id], $respostas];
     }
 
 
