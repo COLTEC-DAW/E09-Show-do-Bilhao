@@ -39,11 +39,15 @@
             "Império Romano"
         )
     );
-    $respostas=array(3,2,1,4,2);
+    $respostas=array('3','2','1','4','2');
     
     function carregaPergunta() {
         global $enunciados, $alternativas, $respostas;
-        $id =$_GET["id"];
+        $id =$_POST["id"];
+
+ 
+        if(!$id) $id=0;
+
         $pergunta = array(
             "enunciado" => $enunciados[$id],
             "alternativas" => $alternativas[$id],
