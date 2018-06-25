@@ -28,19 +28,28 @@
     <h1>O show do bilhão</h1>
     <div class="perguntas">
         <?php
-            for($int = 0;$int<5;$int++){
-                $pergunta = $int + 1;
-                $repostas = $alternativas[$int];
-                echo "
+            $int = $_GET['pergunta'];
+            if($int==null) $int = 0;
+            $pergunta = $int + 1;
+            $repostas = $alternativas[$int];
+            echo "
                 <div>
                     <h2>$enunciados[$int]</h2>
-                    <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "a\">$repostas[0] <br>
-                    <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "b\">$repostas[1] <br>
-                    <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "c\">$repostas[2] <br>
-                    <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "d\">$repostas[3] <br>
+                    <form>
+                        <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "a\">$repostas[0] <br>
+                        <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "b\">$repostas[1] <br>
+                        <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "c\">$repostas[2] <br>
+                        <input type=\"radio\" name=\"p$pergunta\" id=\"p$pergunta" . "d\">$repostas[3] <br>
+                    </form>
+            ";
+            if($pergunta==5) echo"
+                    <a href=\"index.php?pergunta=0\">Reiniciar</a>
                 </div>
                 ";
-            }
+            else echo"
+                    <a href=\"index.php?pergunta=$pergunta\">Próxima</a>
+                </div>
+                ";
         ?>
     </div>
 </body>
