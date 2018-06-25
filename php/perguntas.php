@@ -22,6 +22,7 @@
         "8 minutos."
     );
 
+
     function carregaPergunta($id){
         global $perguntas;
         global $alternativas;
@@ -31,8 +32,14 @@
     function verificaPergunta($id, $alternativa){
         global $respostas;
         $query = 'Location: /gameover.php?score=' . ($id-1);
-        if($respostas[$id-1]!=$alternativa){
-            header($query);
+        $vitoriaquery = 'Location: /vitoria.php';
+        if($id<5){
+            if($respostas[$id-1]!=$alternativa){
+                header($query);
+            }    
+        }
+        else{
+            header($vitoriaquery);
         }
     }
 ?>

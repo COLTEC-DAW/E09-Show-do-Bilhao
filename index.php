@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <?php require "php/perguntas.php"; ?>
 <?php
+    session_start();
+    $sair =  $_COOKIE['sair'];
+    //Tratamento de redirecionamento
+
+    //Tratarmento do Login
+    if (isset($_POST['email']) && isset($_POST['passsword'])) {
+        $email = $_POST['email'];
+        $senha = $_POST['password'];
+        $_SESSION["email"] = $email;
+        $_SESSION["password"] = $senha;
+        setcookie("sair", 1);
+    } else {
+      if(!isset($_SESSION["email"]) && !isset($_SESSION["password"])) {
+        setcookie ("sair", 0);
+        header('Location: /login.php');
+      }
+      setcookie ("sair", 1);
+    }
+    
     //Tratamento do id
     if (isset($_POST['id'])) {
         $id = $_POST['id'];

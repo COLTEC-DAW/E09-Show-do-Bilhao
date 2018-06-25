@@ -1,12 +1,9 @@
 <!DOCTYPE html>
+<html lang="pt-br">
 <?php
-    if (isset($_GET['score'])) {
-        $score = $_GET['score'];
-    }
     session_start();
     $email = $_SESSION["email"];
 ?>
-<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +14,8 @@
 <body>
     <?php include "./php/partials/_menu.php" ?>
     <div class="container jumbotron">
-        <h1 class="text-center">Erouuuuuu!!!!!!!!</h1>
-        <h2 class="text-center"><?= $email ?> acertou <span class="text-success"> <?php echo $score ?> </span> perguntas!</h2>
+        <h1 class="text-center">Parabensss!!!</h1>
+        <h2 class="text-center">Voĉe acertou Todas as perguntas <?= $email ?> !</h2>
     </div>
     <?php include "./php/partials/_rodape.php" ?>
 </body>

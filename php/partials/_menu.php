@@ -6,5 +6,12 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
     </div>
+    
   </div>
+    <a href="/sair.php" style="<?php
+      $sair =  $_COOKIE['sair'];
+      if($sair == 0){
+        echo "display:none";
+      }
+    ?>">Sair</a>
 </nav>
