@@ -9,20 +9,20 @@ window.onload = function(){
         $("#boardScore").css("display", "block");
     });
 
-    // soundManager.setup({
-    //     // where to find flash audio SWFs, as needed
-    //     url: '/path/to/swf-files/',
-    //
-    //     onready: function() {
-    //
-    //         var sound = soundManager.createSound({
-    //             id: "mySound",
-    //             volume: 50,
-    //             autoPlay: true,
-    //             url: "../sound/win.mp3"
-    //         });
-    //
-    //         //soundManager.play('mySound');
-    //     }
-    // });
+    soundManager.setup({
+        // where to find flash audio SWFs, as needed
+        url: '/path/to/swf-files/',
+
+        onready: function() {
+
+            var sound = soundManager.createSound({
+                id: "mySound",
+                volume: 50,
+                autoPlay: true,
+                url: "../sound/win.mp3"
+            });
+
+            //soundManager.play('mySound');
+        }
+    });
 }

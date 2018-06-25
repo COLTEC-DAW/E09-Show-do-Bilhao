@@ -1,5 +1,15 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
-    background-image: url("../assets/background.png");
+    /* background-image: url("../assets/background.png"); */
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 p{
     padding-left: 3%;
@@ -30,7 +40,7 @@ nav{
     padding: 0;
     border-radius: 30px;
     margin-top: 10%;
-    margin-bottom: 2%;
+    margin-bottom: 160px;
 }
 .button{
     border: none !important;
@@ -74,8 +84,11 @@ nav{
 }
 .rodape{
     height: 120px;
-    background-color: #A60303;
+    width: 100%;
+    background: linear-gradient(to bottom right, #A60303 0%, #590202 100%);
     color: white;
+    bottom: 0;
+    margin: 0 auto;
 }
 .line{
     height: 20px;

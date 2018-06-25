@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Quem dirigiu 'O Exorcista'?",
+        "alternativas": ["Roman Polanski","Francis Ford Copolla","Steven Spielberg","William Friedkin","Andrew Davies"],
+        "resposta": "3"
+    },
+    {
+        "enunciado": "Qual foi o único filme em preto e branco dirigido por Steven Spielberg?",
+        "alternativas": ["A cor púrpura","A lista de Schindler","Tubarão","ET","Encurralado"],
+        "resposta": "1"
+    },
+    {
+        "enunciado": "De que gênero 'Calafrios' de David Cronenberg é 'listado'?",
+        "alternativas": ["Romance","Ação","Aventura","Horror","Drama"],
+        "resposta": "3"
+    },
+    {
+        "enunciado": "Qual desses filmes Tim Burton não dirigiu?",
+        "alternativas": ["Vincent","Os fantasmas se divertem","A fantástica fábrica de chocolate","Alice no país das maravilhas","Edward Mãos de Tesoura"],
+        "resposta": "0"
+    },
+    {
+        "enunciado": "Qual foi o primeiro de Woody Allen feito fora dos Estados Unidos?",
+        "alternativas": ["Vicky Cristina Barcelona","Meia-noite em Paris","Match Point","Para Roma com amor","Scoop"],
+        "resposta": "2"
+    }
+]
