@@ -11,6 +11,9 @@
     <script src="main.js"></script>
 </head>
 <body>
+
+    <?php include "menu.inc" ?>
+
     <h1>O show do bilhão</h1>
     <div class="perguntas">
         <?php
@@ -28,5 +31,8 @@
                 ";
         ?>
     </div>
+
+    <?php include "rodape.inc" ?>
+
 </body>
 </html>
