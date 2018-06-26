@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <?php include 'menu.inc'; 
+        <?php include './components/menu.inc'; 
         ?>
 
         <div class="ui grid">
@@ -19,8 +19,22 @@
             <div class="ten wide column">
                 <div class="left floated left aligned">
                     <div class="ui segment">
-                        <?php require 'perguntas.inc'; 
-                            carregaPergunta($_GET["id"]);
+                        <?php require './components/perguntas.inc'; 
+                            
+                            if($_POST["id"] < 5) {
+                                carregaPergunta($_POST["id"]);
+                            }
+
+                            if ($_POST["id"] > 0) {
+                                if(!checandoResposta($_POST["id"], $_POST["alternativa"])) {
+                                    $redirect = "error.php";
+                                    header("location:$redirect");
+                                } elseif($_POST["id"] == 5) {
+                                    $redirect = "winner.php";
+                                    header("location:$redirect");
+                                }  
+                            }
+                            
                         ?>
                     </div>
                 </div>
@@ -29,7 +43,7 @@
         </div>
 
         <div id="footer">
-            <?php include 'footer.inc'; 
+            <?php include './components/footer.inc'; 
             ?>
         </div> 
     </div>

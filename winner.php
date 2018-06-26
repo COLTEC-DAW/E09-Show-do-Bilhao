@@ -4,36 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.2/dist/semantic.min.css">
     <link rel="stylesheet" href="index.css">
-
-    <title>Show do bilhão</title>
+    <title>Show do Bilhão</title>
 </head>
 <body>
     <div class="container">
-        
         <?php include './components/menu.inc'; 
         ?>
-        
-        <div class="ui grid">
-            <div class="three wide column"></div>
-            <div class="ten wide column">
-                <div class="left floated left aligned">    
-                    <form action='perguntas.php' method='POST'>
-						<input type='hidden' name='id' value='0'>
-						<input type='submit' value='submit'/>
-					</form>
-                </div>
-            </div>
-            <div class="three wide column"></div>
-        </div>
-        
-        <div id="footer">
-            <?php include './components/footer.inc'; 
-            ?>
-        </div>
-        
+        <h1>Você ganhou</h1>
+    </div>
+    <div id="footer">
+        <?php include './components/footer.inc'; 
+        ?>
     </div>
 
     <script
@@ -41,6 +24,5 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.2/dist/semantic.min.js"></script>
-    
 </body>
 </html>
