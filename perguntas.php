@@ -7,41 +7,33 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.2/dist/semantic.min.css">
     <link rel="stylesheet" href="index.css">
-
     <title>Show do bilhão</title>
 </head>
 <body>
     <div class="container">
-        
         <?php include 'menu.inc'; 
         ?>
-        
+
         <div class="ui grid">
             <div class="three wide column"></div>
             <div class="ten wide column">
                 <div class="left floated left aligned">
                     <div class="ui segment">
-                    <div class="ui animated button" tabindex="0">
-                        <a href="perguntas.php?id=1">
-                            <div class="visible content">Próximo</div>
-                                <div class="hidden content">
-                                <i class="right arrow icon"></i> 
-                                </div>  
-                            </div>
-                        </a>
+                        <?php require 'perguntas.inc'; 
+                            carregaPergunta($_GET["id"]);
+                        ?>
                     </div>
                 </div>
             </div>
             <div class="three wide column"></div>
         </div>
-        
+
         <div id="footer">
             <?php include 'footer.inc'; 
             ?>
-        </div>
-        
+        </div> 
     </div>
-
+    
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
