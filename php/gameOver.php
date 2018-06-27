@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
+        <?php include "../components/menu.inc" ?>
         <h1>GameOver</h1>
     </body>
 </html>
