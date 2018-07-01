@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../index.css">
     <title>Show do bilhão</title>
 </head>
 <body>
     <div class="container">
-        <?php include './components/menu.inc'; 
+        <?php include '../components/menu.inc'; 
         ?>
 
         <div class="ui grid">
@@ -19,22 +19,20 @@
             <div class="ten wide column">
                 <div class="left floated left aligned">
                     <div class="ui segment">
-                        <?php require './components/perguntas.inc'; 
+                        <div class="ui teal progress active" id="example4">
+                            <div class="bar" style="width: <?php echo $_POST["id"]*20 ?>%">
+                                <div class="progress"></div>
+                            </div>  
+                            <div class="label">Adding Photos</div>
+                        </div>
+                        <?php require '../components/perguntas.inc'; 
                             
-                            if($_POST["id"] < 5) {
+                            if ($_POST['id'] < 5) {
                                 carregaPergunta($_POST["id"]);
+                            }  
+                            if ($_POST['id'] > 0) {
+                                checandoResposta($_POST["id"], $_POST["alternativa"]);
                             }
-
-                            if ($_POST["id"] > 0) {
-                                if(!checandoResposta($_POST["id"], $_POST["alternativa"])) {
-                                    $redirect = "error.php";
-                                    header("location:$redirect");
-                                } elseif($_POST["id"] == 5) {
-                                    $redirect = "winner.php";
-                                    header("location:$redirect");
-                                }  
-                            }
-                            
                         ?>
                     </div>
                 </div>
@@ -43,7 +41,7 @@
         </div>
 
         <div id="footer">
-            <?php include './components/footer.inc'; 
+            <?php include '../components/footer.inc'; 
             ?>
         </div> 
     </div>

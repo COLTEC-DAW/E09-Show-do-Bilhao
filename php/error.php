@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../index.css">
 
     <title>Show do Bilhão</title>
 </head>
 <body>
     <div class="container">
-        <?php include './components/menu.inc'; 
+        <?php include '../components/menu.inc'; 
         ?>
         <h1>Você perdeu</h1>
     </div>
     <div id="footer">
-        <?php include './components/footer.inc'; 
+        <?php include '../components/footer.inc'; 
         ?>
     </div>
         

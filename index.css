@@ -2,6 +2,10 @@ body {
     height: 100%;
 }
 
+.centre {
+    top: 50%;
+}    
+
 .container {
     min-height: 100%;
     position: relative;

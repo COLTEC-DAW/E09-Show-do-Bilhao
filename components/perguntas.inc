@@ -47,7 +47,7 @@
         2 => 1,
         3 => 3,
         4 => 2,
-    );
+    ); 
 
     function carregaPergunta($id) {
         global $enunciados;
@@ -62,8 +62,9 @@
                     foreach ($alternativas[$id] as $alternativa) {
                         echo "<div class='field'>";
                         echo "<div class='ui radio checkbox'>";
-                            echo "<input type='radio' name='alternativa' value='".$alternativa."' tabindex='0' class='hidden'>";
-                            echo "<label>". $alternativa ."</label>";
+                            echo "<input type='radio' name='alternativa' value='". $alternativa ."'   id='". $alternativa ."' tabindex='0' class='hidden'>";
+                            
+                            echo "<label for = '".$alternativa."'>". $alternativa ."</label>";
                         echo "</div>";
                         echo "</div>";
                     }
@@ -78,10 +79,24 @@
     function checandoResposta($id, $resp) {
         global $alternativaCorreta;
         global $alternativas;
+
         if($alternativas[$id-1][$alternativaCorreta[$id-1]] == $resp) {
-            return true;
+            if ($id == 5) {
+                $redirect = "winner.php";
+                header("location:$redirect");
+                timeAndScore($id);
+            }
         } else {
-            return false;
-        }
+            $redirect = "error.php";
+            header("location:$redirect");
+            timeAndScore($id);
+        }   
     }    
+
+    function timeAndScore($score){
+        date_default_timezone_set('America/Sao_Paulo');
+        $date = date('d/m/Y h:i:s a', time());
+        setcookie("score", $score, time() + (86400 * 30), "/"); // 86400 = 1 day  
+        setcookie("time", $date, time() + (86400 * 30), "/");       
+    }
 ?>  
