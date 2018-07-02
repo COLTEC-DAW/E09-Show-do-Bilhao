@@ -11,17 +11,10 @@
 <body>
     <?php session_start(); ?>
     
-    <div class="justify-content-center d-flex">    
-        <?php
-            if (!isset($_SESSION["login"])){
-                $_SESSION["login"] = $_POST["login"];
-                $_SESSION["senha"] = $_POST["senha"];
-            }
-
-            echo "Login: ". $_SESSION["login"] . "<br>Senha: ". $_SESSION["senha"]; 
-        ?>
+    <div class="text-center">    
+        <h1>Você não está logado!</h1>
         <br>
-        <a class="btn btn-primary" href="logoff.php">SAIR</a>
+        <a class="btn btn-primary" href="index.php">Fazer Login</a>
     </div>
 
 

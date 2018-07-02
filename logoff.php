@@ -10,11 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Bem vindo</title>
+    <title>Bye</title>
 </head>
 <body>
-
-    <h1 class="text-center">Bye</h1>
-    <?php session_destroy(); ?>
+    <?php
+    date_default_timezone_set('America/Sao_Paulo');
+    setcookie($_SESSION["login"], 'Último acesso:' . date('d/m/Y H:i:s', time()) . '<br>Progresso:' . $_SESSION["progess"] ."%");
+    include "menu.inc" ?>
+    <h2 class="text-center">Você saiu</h2>
+    <?php 
+    session_destroy();
+    include "footer.inc" ?>
 </body>
 </html>

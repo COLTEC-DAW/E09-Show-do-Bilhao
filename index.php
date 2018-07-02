@@ -9,11 +9,20 @@
     <title>Bem vindo</title>
 </head>
 <body>
+    <?php 
+     session_start();
+     if (isset($_SESSION["login"])){
+             header("Location:perguntas.php");
+             exit();
+     }else{
+         session_destroy();
+     }
 
+    include "menu.inc" ?>
     <h1 class="text-center">Bem vindo! Antes de continuar faça seu login</h1>
     
     <div class="justify-content-center d-flex">    
-        <form class="justify-content-center" action="logado.php" method="post">
+        <form class="justify-content-center" action="perguntas.php" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" name="login" placeholder="Login">
             <div class="form-group">
@@ -24,7 +33,7 @@
         </form>
     </div>
 
-
+    <?php include "footer.inc" ?>
 
 </body>
 </html>

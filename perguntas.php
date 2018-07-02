@@ -11,11 +11,27 @@
 </head>
 <body>  
     <?php 
+    session_start();
+    if (!isset($_SESSION["login"])){
+        if (!isset($_POST["login"])){ // Se não está logado
+            header("Location:nao_identificado.php");
+            exit();
+        }else{
+            $_SESSION["login"] = $_POST["login"];
+            $_SESSION["senha"] = $_POST["senha"];
+        }
+    }
     include "menu.inc" ?> 
+
+    <div class="welcome">
+        <?php       
+            echo "Bem-vindo: ". $_SESSION["login"] . "<br>". $_COOKIE[$_POST["login"]];
+        ?>
+    </div>
 
     <div class="pergunta">
         <div class="progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?php echo $_POST["id"]*20 ?>%" aria-valuenow="<?php echo $_POST["id"] ?>" aria-valuemin="0" aria-valuemax="5"></div>
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?php $_SESSION["progess"] = $_POST["id"]*20; echo $_SESSION["progess"]; ?>%" aria-valuenow="<?php echo $_POST["id"] ?>" aria-valuemin="0" aria-valuemax="5"></div>
         </div>
 
         <form action="perguntas.php", method="post">
