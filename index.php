@@ -1,42 +1,42 @@
 <?php
     $enunciados = [
-        "Enunciado 1",
-        "Enunciado 2",
-        "Enunciado 3",
-        "Enunciado 4",
-        "Enunciado 5"
+        "Quem traiu a cantora brasileira Joelma?",
+        "Na frase 'sabe de nada' do grande pensador contemporâneo Compadre Washington, o sujeito é:",
+        "Quem vai ganhar a Copa do Mundo 2018?",
+        "Um carro foda X Celta 2012, os dois a 80km, um fica do lado do outro?",
+        "Quem é o melhor rapper da atualidade?"
     ];
 
     $alternativas = [
-        "Enunciado 1" => [
-            "A",
-            "B",
-            "C",
-            "D"
+        $enunciados[0] => [
+            "A lua",
+            "O chimbinha",
+            "A lua e o chimbinha",
+            "Willian Bonner"
         ],
-        "Enunciado 2" => [
-            "E",
-            "F",
-            "G",
-            "H"
+        $enunciados[1] => [
+            "Simples",
+            "Indeterminado",
+            "Oculto",
+            "Inocente"
         ],
-        "Enunciado 3" => [
-            "I",
-            "J",
-            "K",
-            "L"
+        $enunciados[2] => [
+            "França",
+            "Brasil",
+            "Bélgica",
+            "Fagner"
         ],
-        "Enunciado 4" => [
-            "M",
-            "N",
-            "O",
-            "P"
+        $enunciados[3] => [
+            "Creio que não",
+            "Claro",
+            "Sim, 80km é 80km",
+            "Menino Ney"
         ],
-        "Enunciado 5" => [
-            "Q",
-            "R",
-            "S",
-            "T"
+        $enunciados[4] => [
+            "Drake (humildão)",
+            "Eminem",
+            "xis xis xis tentação deus do rap (RIP)",
+            "Post Malone"
         ]
     ];
 
