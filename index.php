@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php require "php/perguntas.php"; ?>
+<?php require "php/leitorJson.php"; ?>
+
 <?php
 
 ?>
@@ -27,6 +29,9 @@
                 //Pega dados de login
                 $login = $_POST["login"];
                 $senha = $_POST["senha"];
+
+
+
             } else {
                 $login = $_SESSION["login"];
                 $senha = $_SESSION["senha"];
@@ -34,7 +39,7 @@
             if(!$login) {
                 //Redireciona para login
                 header("Location: php/login.php");
-            } else if(true) {
+            } else if(validar($login, $senha)) {
                 //Loga na sessao
                 $_SESSION["login"] = $login;
                 $_SESSION["senha"] = $senha;
@@ -57,6 +62,9 @@
                 }
                 $id++;
                 $dados = carregaPergunta($id);
+
+                $lastScore = $_COOKIE["lastScore"];
+				$lastDate = $_COOKIE["lastDate"];
 
                 if($id == 0 || verificaPergunta($id, $clicked) == true){
                     include "components/quiz.inc";

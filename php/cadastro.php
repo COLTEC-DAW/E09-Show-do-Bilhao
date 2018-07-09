@@ -18,15 +18,31 @@
                 <h3 class="card-title text-center">Login</h3>
             </div>
 
-            <form class="mt-4" action="./../index.php" method="post">
+            <form class="mt-4" action="cadastrar.php" method="post">
                 <ul class="list-group justify-content-center">
 
                     <li class="row option list-group-item list-group-item-light">
                         <div class="button input-group">
                             <div class="input-group-prepend">
+                                <span class="input-group-text">Nome:</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Nome" name="nome" aria-label="Nome" aria-describedby="basic-addon1">
+                        </div>
+                    </li>
+                    <li class="row option list-group-item list-group-item-light">
+                        <div class="button input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">E-mail:</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="E-mail" name="email" aria-label="E-mail" aria-describedby="basic-addon1">
+                        </div>
+                    </li>
+                    <li class="row option list-group-item list-group-item-light">
+                        <div class="button input-group">
+                            <div class="input-group-prepend">
                                 <span class="input-group-text">Login:</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Username" name="login" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Login" name="login" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </li>
                     <li class="row option list-group-item list-group-item-light">
@@ -34,17 +50,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Senha:</span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password" name="password" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="password" class="form-control" placeholder="Senha" name="password" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </li>
 
-                    <li class="option align-self-center mb-4 lForm list-group-item list-group-item-light"> <input class="col-12 button px-4"  type="submit" value="Entrar"></li>
-                    <p  class="option- align-self-center lForm">Ainda não tem uma conta?</p>
+                    <li class="option align-self-center mb-4 lForm list-group-item list-group-item-light"> <input class="col-12 button px-4"  type="submit" value="Cadastrar"></li>
                 </ul>
             </form>
-            <form class="list-group justify-content-center" action="cadastro.php" method="post">
-                <li class="justify-content-center option align-self-center mb-4 lForm list-group-item list-group-item-light"> <input class="button px-4" width="100" type="submit" value="Cadastrar"></li>
-            </form>
+
         </div>
 
 

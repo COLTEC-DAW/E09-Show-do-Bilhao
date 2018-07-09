@@ -13,8 +13,6 @@
                 <img id="shia" src="/assets/shia.gif" alt="Loading" title="Loading" />
             </div>
         </div> -->
-        <?php include "../components/menu.inc" ?>
-
         <div id="col-12 row">
              <div class="col-6" id="curtain1"></div>
              <div class="offset-2 col-8" id="boardScore">

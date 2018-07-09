@@ -31,6 +31,22 @@ nav{
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
+#Points{
+    font-size: 1.7em;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+#logoff{
+    float: right;
+    color:#590202;
+
+}
+
+#logoff:hover{
+    border-color: white;
+    color: white !important;
+}
 #subtitle{
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.1em;
