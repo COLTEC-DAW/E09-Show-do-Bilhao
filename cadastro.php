@@ -18,22 +18,31 @@
          session_destroy();
      }
 
-    include "Includes/menu.inc" ?>
-    <h1 class="text-center">Bem vindo! Antes de continuar faça seu login</h1>
+    include "/Includes/menu.inc" ?>
+    <h1 class="text-center">Cadastre-se gratuitamente</h1>
     
-    <div class="justify-content-center d-flex">    
-        <form class="justify-content-center" action="logando.php" method="post">
+    <div class="container">    
+        <form class="justify-content-center" action="cadastrando.php" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="nome" placeholder="Nome">
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+                
             <div class="form-group">
                 <input type="text" class="form-control" name="login" placeholder="Login">
-            </div>    
+            </div>
+                
             <div class="form-group">
                 <input type="password" class="form-control" name="senha" placeholder="Senha">
             </div>
-            <button type="submit" class="btn btn-primary">ENTRAR</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
 
-    <?php include "Includes/footer.inc" ?>
+    <?php include "/Includes/footer.inc" ?>
 
 </body>
 </html>

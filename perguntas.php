@@ -21,22 +21,30 @@
             $_SESSION["senha"] = $_POST["senha"];
         }
     }
-    include "menu.inc" ?> 
+    include "Includes/menu.inc" ?> 
 
     <div class="welcome">
         <?php       
-            echo "Bem-vindo: ". $_SESSION["login"] . "<br>". $_COOKIE[$_POST["login"]];
+            echo "Bem-vindo ". $_SESSION["login"] . "<br>". $_COOKIE[$_POST["login"]];
         ?>
     </div>
 
     <div class="pergunta">
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?php $_SESSION["progess"] = $_POST["id"]*20; echo $_SESSION["progess"]; ?>%" aria-valuenow="<?php echo $_POST["id"] ?>" aria-valuemin="0" aria-valuemax="5"></div>
+        <div class="progress">            
+            <?php
+                require "Includes/perguntas.inc";
+                if ($_POST["pergunta".$_POST["id"]] != "alt".$certas[$_POST["id"] - 1]){ // Se errou 
+                   $_SESSION["progess"] = ($_POST["id"]-1)*20;
+                }else{
+                    $_SESSION["progess"] = $_POST["id"]*20;
+                }
+            ?> 
+                
+                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?php echo $_SESSION["progess"]; ?>%" aria-valuenow="<?php echo $_POST["id"] ?>" aria-valuemin="0" aria-valuemax="5"></div>
         </div>
 
         <form action="perguntas.php", method="post">
             <?php
-                require "perguntas.inc";
                 if($_POST["id"] == null){
                     carrega_pergunta($perguntas[0], $alternativas[0], 0);   
                 }else if ($_POST["pergunta".$_POST["id"]] != "alt".$certas[$_POST["id"] - 1]){
@@ -50,6 +58,6 @@
             ?>  
         </form>
     </div>
-    <?php include "footer.inc" ?>
+    <?php include "Includes/footer.inc" ?>
 </body>
 </html>

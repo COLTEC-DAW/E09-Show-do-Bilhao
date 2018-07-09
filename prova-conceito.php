@@ -10,13 +10,13 @@
 </head>
 <body>
 
-    <?php include "menu.inc" ?>
+    <?php include "Includes/menu.inc" ?>
 
     <div class="pergunta"> 
         <form action="/perguntas.php" method="post">
 
             <?php 
-                require "perguntas.inc";           
+                require "Includes/perguntas.inc";           
                 carrega_perguntas($perguntas, $alternativas);
             ?>
 
@@ -24,7 +24,7 @@
         </form>
     </div>
     
-    <?php include "footer.inc"; ?>
+    <?php include "Includes/footer.inc"; ?>
     
 </body>
 </html>

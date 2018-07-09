@@ -16,10 +16,11 @@
     <?php
     date_default_timezone_set('America/Sao_Paulo');
     setcookie($_SESSION["login"], 'Último acesso:' . date('d/m/Y H:i:s', time()) . '<br>Progresso:' . $_SESSION["progess"] ."%");
-    include "menu.inc" ?>
-    <h2 class="text-center">Você saiu</h2>
+    include "Includes/menu.inc" ?>
+    <h2 class="text-center">Volte sempre</h2>
+    <p>Clique em "Show do Bilhão" para jogar de novo</p>
     <?php 
     session_destroy();
-    include "footer.inc" ?>
+    include "Includes/footer.inc" ?>
 </body>
 </html>

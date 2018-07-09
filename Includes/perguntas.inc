@@ -50,11 +50,11 @@
     }
 
     function ganhou(){
-        include "ganhou.inc";
+        include "Includes/ganhou.inc";
     }
 
     function perdeu(){
-        include "perdeu.inc";
+        include "Includes/perdeu.inc";
     }
 
 ?>
