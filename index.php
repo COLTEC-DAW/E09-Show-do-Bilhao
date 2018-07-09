@@ -5,9 +5,9 @@
     <title>E09</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbarTOP" data-offset="0">
     <div class="container">
-      <h1 class="text-center">Prova de conceitos</h1>
+      <h1 class="text-center p-3">Prova de conceitos</h1>
       <?php
         include "perguntas.inc";
         $pos = (integer)$_GET["posPergunta"];
