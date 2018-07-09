@@ -1,5 +1,5 @@
 [
-    
+
     {
         "login": "valor",
         "senha": "valor",
@@ -11,6 +11,6 @@
         "senha": "valor",
         "email": "valor@v.com",
         "nome": "valor"
-    },
+    }
 
 ]

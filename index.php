@@ -23,7 +23,6 @@
         <?php
             //Inicia sessao
             session_start();
-
             //Verifica se ja ta logado
             if(!$_SESSION["login"]) {
                 //Pega dados de login
@@ -71,7 +70,7 @@
                 }
             }  else {
 				echo "<h2>Login ou senha incorretos</h2>";
-				echo "<a href='/login.php'>Tentar Novamente</a>";
+				echo "<a href='/php/login.php'>Tentar Novamente</a>";
 			}
         ?>
        <?php include "components/rodape.inc"; ?>
