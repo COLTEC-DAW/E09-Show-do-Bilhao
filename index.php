@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 <body>
     <?php 
      session_start();
-     if (isset($_SESSION["login"])){
+     if (isset($_SESSION["login"]) || $autenticado == 1){
              header("Location:perguntas.php");
              exit();
      }else{
@@ -21,8 +22,8 @@
     include "Includes/menu.inc" ?>
     <h1 class="text-center">Bem vindo! Antes de continuar faça seu login</h1>
     
-    <div class="justify-content-center d-flex">    
-        <form class="justify-content-center" action="logando.php" method="post">
+    <div class="container">    
+        <form action="perguntas.php" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" name="login" placeholder="Login">
             </div>    
@@ -31,6 +32,9 @@
             </div>
             <button type="submit" class="btn btn-primary">ENTRAR</button>
         </form>
+        <div class="text-center mt-3">
+            <a href="cadastro.php">Não é cadastrado? Junte-se à nós!</a>
+        </div>
     </div>
 
     <?php include "Includes/footer.inc" ?>

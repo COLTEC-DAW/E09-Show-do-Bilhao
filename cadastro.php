@@ -1,3 +1,38 @@
+<?php
+    $tudoOK = 0;
+    if (isset($_POST["nome"])){
+        $Pessoa->nome = $_POST["nome"];
+        $Pessoa->email = $_POST["email"];
+        $Pessoa->login = $_POST["login"];
+        $Pessoa->senha = $_POST["senha"];
+
+        $PessoaJSON = json_encode($Pessoa);
+        $ArquivoJSON = file_get_contents("Arquivos/users.json");
+
+        // Verifica login //
+        if (strpos($ArquivoJSON, "\"login\":\"".$Pessoa->login)){
+            echo "Nome de usuário já cadastrado";
+        // Verifica  email //
+        }else if (strpos($ArquivoJSON, "\"login\":\"".$Pessoa->login)){
+            echo "Nome de usuário já cadastrado";
+        }else{
+            if($ArquivoJSON == "[]"){
+                $ArquivoJSON = str_replace("[", "[".$PessoaJSON, $ArquivoJSON);
+            }else{
+                $ArquivoJSON = str_replace("[", "[".$PessoaJSON.",", $ArquivoJSON);
+            }
+        
+            $file = fopen("Arquivos/users.json", "w");
+            fwrite($file, $ArquivoJSON);
+            fclose($file); 
+
+            echo '<h1> Usuario Cadastrado com sucesso!<h1>';
+            header("Location:index.php");
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +44,11 @@
     <title>Bem vindo</title>
 </head>
 <body>
-    <?php 
-     session_start();
-     if (isset($_SESSION["login"])){
-             header("Location:perguntas.php");
-             exit();
-     }else{
-         session_destroy();
-     }
-
-    include "/Includes/menu.inc" ?>
+    <?php include "Includes/menu.inc" ?>
     <h1 class="text-center">Cadastre-se gratuitamente</h1>
     
     <div class="container">    
-        <form class="justify-content-center" action="cadastrando.php" method="post">
+        <form class="justify-content-center" action="cadastro.php" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" name="nome" placeholder="Nome">
             </div>
@@ -42,7 +68,6 @@
         </form>
     </div>
 
-    <?php include "/Includes/footer.inc" ?>
-
+    <?php include "Includes/footer.inc" ?>
 </body>
 </html>
