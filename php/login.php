@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php require "../components/user.inc" ?>
+<?php
+    if(isset($_POST["login"]) && isset($_POST["password"])) {
+        $logged = decodingLogin($_POST["login"], $_POST["password"]);
+        if ($logged == false) {
+            $mensagem = "Login incorreto";
+        } else {
+            $mensagem = null;
+            session_start();
+            $_SESSION["login"] = $_POST["login"];
+            $_SESSION["password"] = $_POST["password"];
+            header('Location: ../index.php');
+        }
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +25,8 @@
 </head>
 <body>
     <div class="container">
+        <?php include '../components/menu.inc'; 
+        ?>
         <div class="ui two column centre centered page grid">
             <div class="column">
                 <h2 class="ui teal image header">
@@ -17,12 +34,12 @@
                         Log-in
                     </div>
                 </h2>
-                <form class="ui large form" action="log.php" method="POST">
+                <form class="ui large form" action="login.php" method="POST">
                     <div class="ui stacked segment">
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="email" placeholder="Endereço de E-mail">
+                                <input type="text" name="login" placeholder="login">
                             </div>
                         </div>
                         <div class="field">
@@ -34,7 +51,9 @@
                         <button class="ui fluid large teal submit button" type="submit" value="submit">Login</button>
                     </div>
 
-                    <div class="ui error message"></div>
+                    <div class="ui error message">
+                        <?= $mensagem ?>
+                    </div>
 
                 </form>
             </div>

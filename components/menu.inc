@@ -1,28 +1,27 @@
 <!-- Following Menu -->
 <?php 
   session_start();
-  $email = $_SESSION["email"];
-  $password = $_SESSION["password"];
+
+  if(isset($_SESSION["login"]) && isset($_SESSION["password"])) {
+    $login = $_SESSION["login"];
+    $password = $_SESSION["password"];
+  }
 ?>
 <div class="ui large top inverted hidden menu">
   <div class="ui container">
     <a class="item" href="/index.php">Jogo</a>
     <div class="right menu">
       <?php 
-        if (isset($email) && isset($password)) {
+        if (isset($login) && isset($password)) {
           echo "<div class='item'>";
-          echo "<a class='ui' href='/php/profile.php'>Olá, ". $email ."</a>";
+          echo "<a class='ui' href='/php/profile.php'>Olá, ". $login ."</a>";
           echo "</div>";
         }
       ?>
       <div class="item">
-        <?php
-          if (!isset($email) && !isset($password)) {
-            echo "<a class='ui button' href='/php/login.php'>Entrar</a>";
-          } else {
-            echo "<a class='ui button' href='/php/logout.php'>Sair</a>";
-          }
-        ?>
+        <a class='ui button' href='/php/login.php'>Entrar</a>
+        <a class='ui button' href='/php/signUp.php'>Cadastrar</a>
+        <a class='ui button' href='/php/logout.php'>Sair</a>
       </div>
     </div>
   </div>
