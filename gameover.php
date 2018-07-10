@@ -2,20 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>E09</title>
+    <title>Game Over</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   </head>
-  <body data-spy="scroll" data-target="#navbarTOP" data-offset="0">
+  <body>
     <div class="container">
-      <?php
-        include "perguntas.inc";
-        $resposta = (integer)$_POST["alternativas"];
-        $pos = (integer)$_POST["posPergunta"];
-        carregaResposta($resposta, $pos);
-        include "menu.inc";
-        carregaPergunta($pos);
-        include "rodape.inc";
-      ?>
+      <img class="w-100" src="sefudeu.jpg" alt="Se fudeu">
+      <form class="form-group" action="index.php" method="post">
+        <button class="offset-5 col-2 btn btn-info p-3" type="submit">Voltar</button>
+      </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
