@@ -1,36 +1,6 @@
 <?php
-    $tudoOK = 0;
-    if (isset($_POST["nome"])){
-        $Pessoa->nome = $_POST["nome"];
-        $Pessoa->email = $_POST["email"];
-        $Pessoa->login = $_POST["login"];
-        $Pessoa->senha = $_POST["senha"];
-
-        $PessoaJSON = json_encode($Pessoa);
-        $ArquivoJSON = file_get_contents("Arquivos/users.json");
-
-        // Verifica login //
-        if (strpos($ArquivoJSON, "\"login\":\"".$Pessoa->login)){
-            echo "Nome de usuário já cadastrado";
-        // Verifica  email //
-        }else if (strpos($ArquivoJSON, "\"login\":\"".$Pessoa->login)){
-            echo "Nome de usuário já cadastrado";
-        }else{
-            if($ArquivoJSON == "[]"){
-                $ArquivoJSON = str_replace("[", "[".$PessoaJSON, $ArquivoJSON);
-            }else{
-                $ArquivoJSON = str_replace("[", "[".$PessoaJSON.",", $ArquivoJSON);
-            }
-        
-            $file = fopen("Arquivos/users.json", "w");
-            fwrite($file, $ArquivoJSON);
-            fclose($file); 
-
-            echo '<h1> Usuario Cadastrado com sucesso!<h1>';
-            header("Location:index.php");
-        }
-
-    }
+    require "Includes/autenticacao.inc";
+    $erro = verifica_cadastro($_POST["nome"], $_POST["login"], $_POST["email"], $_POST["senha"]);
 ?>
 
 <!DOCTYPE html>
@@ -54,11 +24,23 @@
             </div>
 
             <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email">
+                <?php if ($erro == "Email já cadastrado") {
+                        echo '<input type="email" class="form-control input-erro" name="email" placeholder="Email">';
+                        echo '<small class="form-text msg-erro">'.$erro.'</small>';
+                    }else{
+                        echo '<input type="email" class="form-control" name="email" placeholder="Email">';
+                    }
+                ?>
             </div>
                 
             <div class="form-group">
-                <input type="text" class="form-control" name="login" placeholder="Login">
+                <?php if ($erro == "Nome de usuário já cadastrado") {
+                        echo '<input type="text" class="form-control input-erro" name="login" placeholder="Login">';
+                        echo '<small class="form-text msg-erro">'.$erro.'</small>';
+                    }else{
+                        echo '<input type="text" class="form-control" name="login" placeholder="Login">';
+                    }
+                ?>    
             </div>
                 
             <div class="form-group">

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,15 @@
 <body>
     <?php 
      session_start();
-     if (isset($_SESSION["login"]) || $autenticado == 1){
+     require "Includes/autenticacao.inc";
+     $erro = verifica_login($_POST["login"], $_POST["senha"]);
+    
+    if ($erro == "nenhum"){
+        $_SESSION["login"] = $_POST["login"];
+        $_SESSION["senha"] = $_POST["senha"];
+    }
+     
+     if (isset($_SESSION["login"])){
              header("Location:perguntas.php");
              exit();
      }else{
@@ -23,13 +30,27 @@
     <h1 class="text-center">Bem vindo! Antes de continuar faça seu login</h1>
     
     <div class="container">    
-        <form action="perguntas.php" method="post">
-            <div class="form-group">
-                <input type="text" class="form-control" name="login" placeholder="Login">
+        <form action="index.php" method="post">
+            <div class="form-group">                
+                <?php if ($erro == "Login não cadastrado") {
+                        echo '<input type="text" class="form-control input-erro" name="login" placeholder="Login">';
+                        echo '<small class="form-text msg-erro">'.$erro.'</small>';
+                    }else{
+                        echo '<input type="text" class="form-control" name="login" placeholder="Login">';
+                    }
+                ?>
             </div>    
+            
             <div class="form-group">
-                <input type="password" class="form-control" name="senha" placeholder="Senha">
+                <?php if ($erro == "Senha Incorreta") {
+                        echo '<input type="password" class="form-control input-erro" name="senha" placeholder="Senha">';
+                        echo '<small class="msg-erro form-text">'.$erro.'</small>';
+                    }else{
+                        echo '<input type="password" class="form-control" name="senha" placeholder="Senha">';
+                    }
+                ?>
             </div>
+    
             <button type="submit" class="btn btn-primary">ENTRAR</button>
         </form>
         <div class="text-center mt-3">

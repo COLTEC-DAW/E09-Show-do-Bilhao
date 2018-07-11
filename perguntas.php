@@ -12,40 +12,17 @@
 <body>  
     <?php 
     session_start();
-    // Verifica Login
-    if($_POST["id"] == 0){
-        echo 'lala';
-        $autenticado = 0;
-        $usuarios = json_decode(file_get_contents("Arquivos/users.json"));
-        foreach ( $usuarios as $user){
-            echo $user->login;
-            if ($user->login == $_POST["login"] && $user->senha == $_POST["senha"]){
-                // Cadastrado
-                $autenticado = 1;
-                break;
-            }
-        }
-        if($autenticado == 0){
-            session_destroy();
-            header("Location:index.php");
-            exit();   
-        }
-    }
 
-    if (!isset($_SESSION["login"])){
-        if (!isset($_POST["login"])){ // Se não está logado
+    if (!isset($_SESSION["login"])){ // Se não está logado
             header("Location:nao_identificado.php");
             exit();
-        }else{
-            $_SESSION["login"] = $_POST["login"];
-            $_SESSION["senha"] = $_POST["senha"];
-        }
     }
+    
     include "Includes/menu.inc" ?> 
 
     <div class="welcome">
         <?php       
-            echo "Bem-vindo ". $_SESSION["login"] . "<br>". $_COOKIE[$_POST["login"]];
+            echo "Bem-vindo ". $_SESSION["login"] . "<br>". $_COOKIE[$_SESSION["login"]];
         ?>
     </div>
 
