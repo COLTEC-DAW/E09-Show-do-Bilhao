@@ -13,32 +13,79 @@
     
     <?php
         require("perguntas.inc");
-        $id =$_POST["id"];
-        if(!$id)$id=0;
-        $selecao_anterior = $_POST["selecao"];
-        $correta_anterior = $respostas[$id-1];
-        
         include("menu.inc");
-        if( $selecao_anterior == $correta_anterior ){ //se a alternativa selecionada pelo usuário na questão anterior for igual à resposta correta da questão anterior
-            $pergunta = carregaPergunta();             //cria o formulário da nova pergunta
+        session_start();
+        if(!$_SESSION ){
+            if(!isset($_POST["id"])){
+                echo "Digite seu nome:";
+                echo "<form action=\"perguntas.php\" method=\"post\">";
+                echo "<input type=\"text\" name=\"nome\" >";
+                echo "<input type=\"submit\" value=\"Pŕoximo\">";
+    
+            }else{
+                echo $_POST["id"];
+                $_SESSION["nome"]=$_POST["nome"];
+                $id=0;
+                $pergunta = carregaPergunta($id);             //cria o formulário da nova pergunta
+    
+                echo "<h3>".($id+1)."/5</h3>";
+                echo "<h3>".$pergunta["enunciado"]."</h3>";
+                echo "<form action=\"perguntas.php\" method=\"post\">";
+                $d=1; 
+                foreach($pergunta["alternativas"] as $alternativa){
+                    echo "<input type=\"radio\" name=\"selecao\" value=\"$d\">".$alternativa."<br>";
+                    $d++;
+                }
 
-            echo "<h3>".($id+1)."/5</h3>";
-            echo "<h3>".$pergunta["enunciado"]."</h3>";
-            echo "<form action=\"perguntas.php\" method=\"post\">";
-            $d=1; 
-            foreach($pergunta["alternativas"] as $alternativa){
-                echo "<input type=\"radio\" name=\"selecao\" value=\"$d\">".$alternativa."<br>";
-                $d++;
+                $_SESSION["id"]=$id;    
+                $id++;
+                echo "<input type=\"hidden\" name=\"id\"  value=\"$id\" >";
+                echo "<input type=\"submit\" value=\"Pŕoximo\">";
+    
             }
-
-            $id++;
-            echo "<input type=\"hidden\" name=\"id\"  value=\"$id\" >";
-
-            echo "<input type=\"submit\" value=\"Pŕoximo\">";
-        }elseif($id==5){
-            echo "<h3> Parabééns </h3>"; 
         }else{
-            echo "<h3> Você errou :( </h3>"; 
+            
+            if($_POST){
+                $id = $_POST["id"];
+                if($id>0 ){
+                    $selecao_anterior = $_POST["selecao"];
+                    $correta_anterior = $respostas[$id-1];
+                }else{
+                    $selecao_anterior = true;
+                    $correta_anterior = true;
+                }
+            }else{
+                $id = $_SESSION["id"];
+                $selecao_anterior = true;
+                $correta_anterior = true;
+            }
+            if( $selecao_anterior == $correta_anterior && $id < 5){ //se a alternativa selecionada pelo usuário na questão anterior for igual à resposta correta da questão anterior
+                $pergunta = carregaPergunta($id);             //cria o formulário da nova pergunta
+    
+                echo "<h3>".($id+1)."/5</h3>";
+                echo "<h3>".$pergunta["enunciado"]."</h3>";
+                echo "<form action=\"perguntas.php\" method=\"post\">";
+                $d=1; 
+                foreach($pergunta["alternativas"] as $alternativa){
+                    echo "<input type=\"radio\" name=\"selecao\" value=\"$d\">".$alternativa."<br>";
+                    $d++;
+                }
+
+                $_SESSION["id"]=$id;    
+                $id++;
+                echo "<input type=\"hidden\" name=\"id\"  value=\"$id\" >";
+                echo "<input type=\"submit\" value=\"Pŕoximo\">";
+    
+    
+            }elseif($selecao_anterior == $correta_anterior && $id==5){
+                echo "<h3> Parabééns </h3>"; 
+                session_destroy();
+            }else{
+                echo "<h3> Você errou :( </h3>";
+                session_destroy();
+            }
+    
+
 
         }
         include("rodape.inc");

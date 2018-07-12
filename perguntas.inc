@@ -41,13 +41,10 @@
     );
     $respostas=array('3','2','1','4','2');
     
-    function carregaPergunta() {
+    function carregaPergunta($id) {
         global $enunciados, $alternativas, $respostas;
-        $id =$_POST["id"];
-
- 
-        if(!$id) $id=0;
-
+        
+       
         $pergunta = array(
             "enunciado" => $enunciados[$id],
             "alternativas" => $alternativas[$id],
