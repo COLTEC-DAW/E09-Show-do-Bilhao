@@ -1,5 +1,19 @@
 <?php
-    $perguntas[] = "Quem é o melhor jogador de futebol?";
+
+    $perguntasJSON = json_decode(file_get_contents("Arquivos/perguntas.json"));
+    
+    $perguntas;
+    $certas;
+    $alternativas;
+
+
+    foreach ($perguntasJSON as $perguntaJSON){
+        $perguntas[] = $perguntaJSON->enunciado;
+        $certas[] = $perguntaJSON->resposta;
+        $alternativas[] = $perguntaJSON->alternativas;    
+    }
+
+/*    $perguntas[] = "Quem é o melhor jogador de futebol?";
     $perguntas[] = "Quantos dedos tem o Lula?";
     $perguntas[] = "Qual é a melhor série de livros?";
     $perguntas[] = "Qual é o melhor time de minas?";
@@ -17,7 +31,7 @@
     $alternativas[2] = array("Percy Jackson e os olimpianos", "As Crônicas de Gelo e Fogo", "Harry Potter", "50 tons de cinza");
     $alternativas[3] = array("Galão da massa", "Framengo", "Ameriquinha", "Marias");
     $alternativas[4] = array("Sílvio Santos", "Gugu", "Tiago Leifert", "Fausto Silva");
-
+*/
     function carrega_perguntas($perguntas, $alternativas){
         $indice = 0;
         foreach($perguntas as $pergunta){                   

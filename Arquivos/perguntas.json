@@ -1,0 +1,31 @@
+[
+    {
+        "enunciado": "Quem é o melhor jogador de futebol?",
+        "alternativas": ["CR7", "Neymar", "Messi", "Salah"],
+        "resposta": 3
+    },
+
+    {
+        "enunciado": "Quantos dedos tem o Lula?",
+        "alternativas": ["4", "9", "10", "19"],
+        "resposta": 4
+    },
+
+    {
+        "enunciado": "Qual é a melhor série de livros?",
+        "alternativas": ["Percy Jackson e os olimpianos", "As Crônicas de Gelo e Fogo", "Harry Potter", "50 tons de cinza"],
+        "resposta": 3
+    },
+
+    {
+        "enunciado": "Qual é o melhor time de minas?",
+        "alternativas": ["Galão da massa", "Framengo", "Ameriquinha", "Marias"],
+        "resposta": 1
+    },
+
+    {
+        "enunciado": "Qual é o melhor apresentador?",
+        "alternativas": ["Sílvio Santos", "Gugu", "Tiago Leifert", "Fausto Silva"],
+        "resposta": 4
+    }
+]
