@@ -1,29 +1,16 @@
 @charset "UTF-8";
 
 header {
-    background-color: rgb(21, 67, 126);
-    text-align: center
+    margin-bottom: 40px
 }
 
-.enunciado {
-    background-color: rgb(187, 47, 47);
-    padding: 10px;
-    border: 1px white;
-    border-radius: 20px;
-    color: white;
-    text-transform: uppercase
-}
-
-.container {
-    padding-left: 10%;
-    padding-right: 10%
-}
-
-.alternativa {
-    background-color: rgb(143, 143, 47);
-    color: white;
-    padding: 10px;
-    margin-left: 15px;
-    border-radius: 10px;
+.checkmark {
     display: inline-block;
 }
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
