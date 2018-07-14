@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+}
+
+.centre {
+    top: 50%;
+}    
+
+.container {
+    min-height: 100%;
+    position: relative;
+}
+
+#footer { 
+    position:absolute;
+    bottom:0;
+    right: 0;
+    left: 0;
+    width:100%;
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "enunciado": "De quem é a famosa frase “Penso, logo existo“",
+        "alternativas": [
+            "Platão", "Galileu Galilei", "Descartes", "Sócrates"    
+        ],
+        "alternativaCorreta":2
+    },
+    {
+        "enunciado": "De onde é a invenção do chuveiro elétrico?“",
+        "alternativas": [
+            "França", "Inglaterra", "Austrália", "Brasil"    
+        ],
+        "alternativaCorreta":3
+    },
+    {
+        "enunciado": "Qual o grupo em que todas as palavras foram escritas corretamente?",
+        "alternativas": [
+            "Asterístico, beneficiente, meteorologia, entertido", "Asterisco, beneficente, meteorologia, entretido", "Asterisco, beneficente, metereologia, entretido", "Asterisco, beneficiente, metereologia, entretido"    
+        ],
+        "alternativaCorreta":1
+    },
+    {
+        "enunciado": "Atualmente, quantos elementos químicos a tabela periódica possui?",
+        "alternativas": [
+            "92", "108", "109", "118"    
+        ],
+        "alternativaCorreta":3
+    },
+    {
+        "enunciado": "O que a palavra legend significa em português?",
+        "alternativas": [
+            "Legenda", "História", "Lenda", "Legendário"    
+        ],
+        "alternativaCorreta":2
+    }
+]
