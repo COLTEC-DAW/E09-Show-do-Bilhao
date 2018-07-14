@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<?php require "../components/user.inc" ?>
+<?php require "./models/User.php" ?>
 <?php
     if(isset($_POST["login"]) && isset($_POST["password"])) {
-        $logged = decodingLogin($_POST["login"], $_POST["password"]);
+        $user = new User(null, null, $_POST["login"], $_POST["password"]);
+        $logged = User::decodingLogin($user);
         if ($logged == false) {
             $mensagem = "Login incorreto";
         } else {
             $mensagem = null;
             session_start();
-            $_SESSION["login"] = $_POST["login"];
-            $_SESSION["password"] = $_POST["password"];
+            $_SESSION["login"] = $user->getLogin();
+            $_SESSION["password"] = $user->getPassword();
             header('Location: ../index.php');
         }
     }

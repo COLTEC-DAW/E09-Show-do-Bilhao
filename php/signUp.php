@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<?php require "../components/user.inc" ?>
+<?php require "./models/User.php" ?>
 <?php
     if(isset($_POST["login"]) 
         && isset($_POST["password"])
         && isset($_POST["email"])
         && isset($_POST["name"])) 
     {
-
-        $valid = decodingSignUp(
-                                $_POST["email"], 
-                                $_POST["name"],
-                                $_POST["login"], 
-                                $_POST["password"]
-                            );
+        $user = new User($_POST["email"], 
+                        $_POST["name"],
+                        $_POST["login"], 
+                        $_POST["password"]);
+        $valid = User::decodingSignUp($user);
 
         if ($valid == false) {
             $mensagem = "Login incorreto";

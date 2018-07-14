@@ -22,5 +22,11 @@
         "email": "G",
         "login": "g",
         "password": "g"
+    },
+    {
+        "name": "Germano",
+        "email": "germanobarcelo",
+        "login": "gh",
+        "password": "gh"
     }
 ]

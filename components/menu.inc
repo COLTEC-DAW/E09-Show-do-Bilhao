@@ -1,28 +1,30 @@
 <!-- Following Menu -->
 <?php 
   session_start();
-
-  if(isset($_SESSION["login"]) && isset($_SESSION["password"])) {
-    $login = $_SESSION["login"];
-    $password = $_SESSION["password"];
-  }
 ?>
-<div class="ui large top inverted hidden menu">
+<div class="ui large bordeless main menu inverted">
   <div class="ui container">
     <a class="item" href="/index.php">Jogo</a>
     <div class="right menu">
       <?php 
-        if (isset($login) && isset($password)) {
-          echo "<div class='item'>";
-          echo "<a class='ui' href='/php/profile.php'>Olá, ". $login ."</a>";
-          echo "</div>";
-        }
+        if (isset($_SESSION["login"]) && isset($_SESSION["password"])) { ?>
+          <div class='item'>
+            <a class='ui' href='/php/profile.php'>Olá, <?= $_SESSION["login"] ?></a>
+          </div>
+          <div class="item">
+            <a class='ui' href='/php/logout.php'>Sair</a>
+          </div>
+      <?php }
       ?>
-      <div class="item">
-        <a class='ui button' href='/php/login.php'>Entrar</a>
-        <a class='ui button' href='/php/signUp.php'>Cadastrar</a>
-        <a class='ui button' href='/php/logout.php'>Sair</a>
-      </div>
+      <?php 
+      if (!isset($_SESSION["login"]) && !isset($_SESSION["password"])) { ?>
+        <div class="item">
+          <a class='ui' href='/php/login.php'>Entrar</a>
+        </div>
+        <div class="item">
+          <a class='ui' href='/php/signUp.php'>Cadastrar</a>
+        </div>
+      <?php } ?>     
     </div>
   </div>
 </div>

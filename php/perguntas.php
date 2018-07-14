@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php require "./models/Question.php" ?>
+
+<?php
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+    } else {
+        $id = 0;
+    }
+   
+    $question = Question::carregaPergunta($id);
+    $alternativas = $question->getAlternativas();
+
+    if (isset($_POST['alternativa'])) {
+        $resp = $_POST['alternativa'];
+        $question = Question::carregaPergunta($id-1);
+        Question::checandoResposta($id, $resp, $question);
+    }  
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,20 +39,31 @@
                 <div class="left floated left aligned">
                     <div class="ui segment">
                         <div class="ui teal progress active" id="example4">
-                            <div class="bar" style="width: <?php echo $_POST["id"]*20 ?>%">
+                            <div class="bar" style="width: <?= $id*20 ?>%">
                                 <div class="progress"></div>
                             </div>  
-                            <div class="label">Adding Photos</div>
+                            <div class="label">Questionário preenchido</div>
                         </div>
-                        <?php require '../components/perguntas.inc'; 
-                            
-                            if ($_POST['id'] < 5) {
-                                carregaPergunta($_POST["id"]);
-                            }  
-                            if ($_POST['id'] > 0) {
-                                checandoResposta($_POST["id"], $_POST["alternativa"]);
-                            }
-                        ?>
+                        <div class = 'ui medium header'> <?= $question->getEnunciado() ?></div>
+                        <form action='perguntas.php' method='POST'>
+                            <div class='ui form'>
+                                <div class='grouped fields'>
+                                    <label>Selecione a alternativa correta:</label>
+                                    
+                                    <?php foreach ($alternativas as $alternativa) { ?>
+                                        <div class='field'>
+                                        <div class='ui radio checkbox'>
+                                        <input type='radio' name='alternativa' value= "<?=$alternativa?>"   id=<?= $alternativa ?> tabindex='0' class='hidden'>
+                                            <label for=<?= $alternativa ?>> <?=$alternativa?></label>
+                                        </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                
+                                <input type='hidden' name='id' value="<?= $id+1 ?>" >
+                                <button class='ui button' type='submit'>Próximo</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -23,17 +23,16 @@
             }    
         ?>
 
-        <div class="ui grid">
-            <div class="three wide column"></div>
-            <div class="ten wide column">
-                <div class="left floated left aligned">    
-                    <form action='./php/perguntas.php' method='POST'>
-						<input type='hidden' name='id' value='0'>
-						<input type='submit' value='submit'/>
-					</form>
-                </div>
-            </div>
-            <div class="three wide column"></div>
+        <div class=" centre centered page grid">
+            <div class="ui text container">
+                <h1 class="ui header">
+                    Começar a Jogar o Show do Bilhão
+                </h1>
+                <form action='./php/perguntas.php' method='POST'>
+                    <input type='hidden' name='id' value='0'>
+                    <button class="ui button primary button" type="submit">Começar<i class="right arrow icon"></i></button>
+                </form>
+            </div>   
         </div>
         
         <div id="footer">
