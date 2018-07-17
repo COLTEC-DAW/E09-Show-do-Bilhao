@@ -16,8 +16,8 @@
         <form action="/perguntas.php" method="post">
 
             <?php 
-                require "Includes/perguntas.inc";           
-                carrega_perguntas($perguntas, $alternativas);
+                require "Includes/perguntas.inc";            
+                carrega_perguntas($perguntas);
             ?>
 
             <button type="submit" class="btn btn-primary">Próximo</button>

@@ -1,6 +1,16 @@
 <?php
-    require "Includes/autenticacao.inc";
-    $erro = verifica_cadastro($_POST["nome"], $_POST["login"], $_POST["email"], $_POST["senha"]);
+    require "Models/User.php";
+    require "Models/UserDao.php";
+    
+    if (isset($_POST['login']) && isset($_POST['senha'])){
+        $novo_usuario = new User($_POST["nome"], $_POST["senha"], $_POST["login"], $_POST["email"]);
+        $erro = $novo_usuario->verifica_cadastro();
+        if ($erro == "nenhum"){
+            $dao = new UserDao();
+            $dao->insert($novo_usuario);
+            header("Location:index.php");
+        }
+    }
 ?>
 
 <!DOCTYPE html>

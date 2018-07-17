@@ -4,7 +4,7 @@
         var $correta;
         var $alternativas;
     
-        function __construct(){
+        function __construct($enunciado, $correta, $alternativas){
             $this->enunciado = $enunciado;
             $this->correta = $correta;
             $this->alternativas = $alternativas;

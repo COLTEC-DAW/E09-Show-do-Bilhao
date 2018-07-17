@@ -10,21 +10,34 @@
 </head>
 <body>
     <?php 
-     session_start();
-     require "Includes/autenticacao.inc";
-     $erro = verifica_login($_POST["login"], $_POST["senha"]);
+    session_start();
+    require "Models/UserDao.php";
+    require "Models/User.php";
     
-    if ($erro == "nenhum"){
-        $_SESSION["login"] = $_POST["login"];
-        $_SESSION["senha"] = $_POST["senha"];
+    $erro; // Armazena o erro ao fazer o login
+
+    if (isset($_POST["login"]) && isset($_POST["senha"])){
+        $dao = new UserDao();
+        $usuario = $dao->read($_POST["login"]); // Recupera usuario pelo login
+        if ($usuario == null){ // Se usuário não foi encontrado
+            $erro = "Usuário não encontrado";
+        }else if ($usuario->verifica_login( $_POST["senha"] )){ // Se senha == senha correta
+            $_SESSION["login"] = $_POST["login"];
+            $_SESSION["senha"] = $_POST["senha"];
+            $erro = "nenhum";
+        }else{
+            $erro = "Senha incorreta";
+        }
     }
      
-     if (isset($_SESSION["login"])){
-             header("Location:perguntas.php");
-             exit();
-     }else{
-         session_destroy();
-     }
+    
+    if (isset($_SESSION["login"])){
+        header("Location:perguntas.php");
+        exit();
+    }else{
+        session_destroy();
+    }
+     
 
     include "Includes/menu.inc" ?>
     <h1 class="text-center">Bem vindo! Antes de continuar faça seu login</h1>
@@ -32,7 +45,7 @@
     <div class="container">    
         <form action="index.php" method="post">
             <div class="form-group">                
-                <?php if ($erro == "Login não cadastrado") {
+                <?php if ($erro == "Usuário não encontrado") {
                         echo '<input type="text" class="form-control input-erro" name="login" placeholder="Login">';
                         echo '<small class="form-text msg-erro">'.$erro.'</small>';
                     }else{
@@ -42,7 +55,7 @@
             </div>    
             
             <div class="form-group">
-                <?php if ($erro == "Senha Incorreta") {
+                <?php if ($erro == "Senha incorreta") {
                         echo '<input type="password" class="form-control input-erro" name="senha" placeholder="Senha">';
                         echo '<small class="msg-erro form-text">'.$erro.'</small>';
                     }else{

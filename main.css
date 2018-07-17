@@ -1,3 +1,10 @@
+body{
+    min-height: 100vh; /* will cover the 100% of viewport */
+    display: block;
+    position: relative;
+    padding-bottom: 30px; 
+}
+
 .pergunta h3{
     color: white;
     background-color: black;
@@ -9,6 +16,7 @@
 }
 
 footer{
+    height: 30px;
     background-color: black;
     color: white;
     margin-top: 2%; 

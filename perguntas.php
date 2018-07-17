@@ -11,12 +11,14 @@
 </head>
 <body>  
     <?php 
+    
     session_start();
 
     if (!isset($_SESSION["login"])){ // Se não está logado
             header("Location:nao_identificado.php");
             exit();
     }
+    
     
     include "Includes/menu.inc" ?> 
 
@@ -30,11 +32,11 @@
         <div class="progress">            
             <?php
                 require "Includes/perguntas.inc";
-                if ($_POST["pergunta".$_POST["id"]] != "alt".$certas[$_POST["id"] - 1]){ // Se errou 
+                if ($_POST["pergunta".$_POST["id"]] != "alt".$perguntas[$_POST["id"] - 1]->correta){ // Se errou 
                    $_SESSION["progess"] = ($_POST["id"]-1)*20;
                 }else{
                     $_SESSION["progess"] = $_POST["id"]*20;
-                }
+                } 
             ?> 
                 
                 <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?php echo $_SESSION["progess"]; ?>%" aria-valuenow="<?php echo $_POST["id"] ?>" aria-valuemin="0" aria-valuemax="5"></div>
@@ -43,13 +45,13 @@
         <form action="perguntas.php", method="post">
             <?php
                 if($_POST["id"] == null){
-                    carrega_pergunta($perguntas[0], $alternativas[0], 0);   
-                }else if ($_POST["pergunta".$_POST["id"]] != "alt".$certas[$_POST["id"] - 1]){
+                    carrega_pergunta($perguntas[0], 0); 
+                }else if ($_POST["pergunta".$_POST["id"]] != "alt".$perguntas[$_POST["id"] - 1 ]->correta){
                     perdeu();
                 }else if ($_POST["id"] == 5){
                     ganhou();
                 }else{
-                    carrega_pergunta($perguntas[$_POST["id"]], $alternativas[$_POST["id"]], $_POST["id"]);
+                    carrega_pergunta($perguntas[$_POST["id"]], $_POST["id"]);
                 }
                 
             ?>  
