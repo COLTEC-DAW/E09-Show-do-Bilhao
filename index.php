@@ -5,14 +5,37 @@
     <title>E09</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   </head>
-  <body data-spy="scroll" data-target="#navbarTOP" data-offset="0">
+  <body>
     <div class="container">
       <?php
+        session_start();
+        if(!isset($_SESSION["nome"])) {
+          if(empty($_POST["nome"])) {
+            header("Location:logIn.php");
+          }
+          else {
+            $_SESSION["nome"] = $_POST["nome"];
+          }
+        }
+        include "menu.inc";
         include "perguntas.inc";
         $resposta = (integer)$_POST["alternativas"];
         $pos = (integer)$_POST["posPergunta"];
         carregaResposta($resposta, $pos);
-        include "menu.inc";
+        setcookie("ultimoLogin", date('l jS \of F Y h:i:s A'));
+        $ultimoLogin = $_COOKIE["ultimoLogin"];
+        if(empty($ultimoLogin)){
+          $ultimoLogin = "Primeira vez por aqui";
+        }
+        $ultimaPontuacao = $_COOKIE["ultimaPontuacao"];
+        if(empty($ultimaPontuacao)){
+          $ultimaPontuacao = "0";
+        }
+        echo "<h5 class=\"text-center\">Ultimo login: $ultimoLogin</h5>
+              <h5>Ultima pontuacao: $ultimaPontuacao</h5>
+              <form class=\"form-group\" action=\"logIn.php\" method=\"post\">
+                <button class=\"btn-danger btn\" type=\"submit\" name=\"nome\">Log out</button>
+              </form>";
         carregaPergunta($pos);
         include "rodape.inc";
       ?>

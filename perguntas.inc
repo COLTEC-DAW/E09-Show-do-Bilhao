@@ -19,9 +19,11 @@
     $pos--;
     if(!($respostas[$pos] == $resposta)){
       header("Location:gameover.php");
+      setcookie("ultimaPontuacao", $pos);
     }
     if($pos == 4){
       header("Location:goodgame.php");
+      setcookie("ultimaPontuacao", "4");
     }
   }
 ?>
