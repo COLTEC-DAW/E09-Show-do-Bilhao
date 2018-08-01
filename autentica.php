@@ -16,7 +16,24 @@
         session_start();
 
         function verificaCadastro($usuario, $senha){
+            $verificacao =  false;
 
+            $arquivo_str = file_get_contents("data/usuarios.json");
+
+            $usuarios = json_decode($arquivo_str);
+
+            foreach ($usuarios as $valor) {
+                if (($valor->usuario == $usuario) && ($valor->senha == $senha)) {
+                    $verificacao = true;
+                    header("location:perguntas.php");
+                    break;
+                }
+            }
+            
+            if (!$verificacao) {
+                session_destroy();
+                header("location:index.php");
+            }
         }
 
         $usuario = $_POST["EntradaUsuario"];
@@ -25,19 +42,7 @@
         $_SESSION["usuario"] = $usuario;
         $_SESSION["senha"] = $senha;
 
-        //$arquivo_str = file_get_contents("data\usuarios.json");
-
-        //$usuarios = json_decode($arquivo_str);
-
-        //foreach ($usuarios as $valor) {
-            if (($usuario == "Willian") && ($senha == "123")) {
-                header("location:perguntas.php");
-                echo "oi";
-            }
-        //}
-        session_destroy();
-        header("location:index.php");
-        //dando ruim aqui
+        verificaCadastro($usuario, $senha);
     ?>
 </body>
 </html>

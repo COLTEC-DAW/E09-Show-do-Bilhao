@@ -16,7 +16,7 @@
 
         //essa função evita cadastros com mesmo usuario
         function verificaCadastro($usuario, $email){
-            $arquivo_str = file_get_contents("data\usuarios.json");
+            $arquivo_str = file_get_contents("data/usuarios.json");
 
             $usuarios = json_decode($arquivo_str);
 
@@ -40,12 +40,11 @@
             $usuarioAtual_str = json_encode($usuarioAtual);
 
             //retira o colchete e coloca a vírgula no arquivo
-            $arquivo_str = file_get_contents("data\usuarios.json");
+            $arquivo_str = file_get_contents("data/usuarios.json");
             $arquivo_str_novo = str_replace("]", ",", $arquivo_str);
-            unlink("data\usuarios.json");
 
             //abre o arquivo
-            $usuarios = fopen("data\usuarios.json", "a");
+            $usuarios = fopen("data/usuarios.json", "w"); //sobreescreve
             fwrite($usuarios, $arquivo_str_novo . $usuarioAtual_str . "]");
             fclose($usuarios);
         }
