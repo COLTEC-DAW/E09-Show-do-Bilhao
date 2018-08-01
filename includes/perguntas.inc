@@ -41,10 +41,14 @@
         ]
     ];
 
-function carregaPergunta($id) {
+function carregaPergunta($id, $prova) {
         global $enunciados, $alternativas;
 
-        echo "<progress class='progress is-success' value='$id' max='5'>" . $id*20 . "</progress>";
+
+
+        if ($prova == false) {
+            echo "<progress class='progress is-success' value='$id' max='5'>" . $id*20 . "</progress>";
+        }
         echo "<article class='message is-6'>
         <div class='message-header'>
             <p>
@@ -56,7 +60,7 @@ function carregaPergunta($id) {
         echo "<div class='message-body'>";
 
         foreach($alternativas[$enunciados[$id]] as $alternativa) {
-            echo "<input type='radio' name='$enunciados[$id]' class=''>
+            echo "<input type='radio' name='$enunciados[$id]' class='resposta'>
                     <span class='checkmark'>" . 
                         $alternativa . 
                     "</span> <br>";
@@ -64,6 +68,10 @@ function carregaPergunta($id) {
 
         echo "</div>
         </article>";
+}
+
+function verificaResposta() {
+
 }
 
 ?>

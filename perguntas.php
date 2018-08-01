@@ -18,11 +18,19 @@
 
             <form action="perguntas.php">
 
-                <h1 class='title'> Bem vindo ao Show do Bilhão </h1>
-                <p class='subtitle'> Responda a várias perguntas e concorra a 1 Bilhão de Bitcoins! (ou não) </p>
-                
-                <button class="button is-success is-pulled-left" style="margin-top: 30px" type="submit">Começar</button>
-                <input type="hidden" name="id" value="0">
+                <?php require "includes/perguntas.inc";
+
+                    $id = $_GET["id"];
+
+                    carregaPergunta($_GET["id"], FALSE);
+
+                    $id++;
+
+                    echo "<input type='hidden' name='id' value='$id'>";
+
+                    echo "<button type='submit' class='button is-success'> Próxima </button>";
+
+                ?>
 
             </form>
 

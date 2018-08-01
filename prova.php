@@ -17,20 +17,21 @@
 
             <div class="container">
 
-            <?php require "includes/perguntas.inc";
+                <h1 class="title has-text-centered is-2"> Prova de conceitos </h1> <br>
 
-                for ($i = 0; $i < 5; $i++) {
-                    carregaPergunta($i);
-                }
+                <?php require "includes/perguntas.inc";
 
-            ?>
+                    for ($i = 0; $i < 5; $i++) {
+                        carregaPergunta($i,TRUE);
+                    }
+
+                ?>
+
+                <a class="button is-success">Enviar</a>
 
             </div>
 
         </div>
-
-        <!-- Rodapé -->
-        <?php include "includes/rodape.inc"; ?>
 
     </body>
 </html>
