@@ -1,54 +1,50 @@
-<?php
-        $enunciados = [ "Primeira pergunta",
-                        "Segunda pergunta",
-                        "Terceira pergunta",
-                        "Quarta pergunta",
-                        "Quinta pergunta"];
+    <?php
 
-        $respostas = [3, 2, 1, 0, 3]; //contém os índices das respostas corretas.
+        $arquivo_str = file_get_contents("data/conteudo.json");
 
-        $perguntas = [];
+        $conteudo = json_decode($arquivo_str);
 
-        $perguntas[0] = [   "Alternativa A0",
-                            "Alternativa B",
-                            "Alternativa C",
-                            "Alternativa D"];
+        //carrega todas as perguntas
+        function carregaPerguntas($conteudo) {
+            $id_pergunta = @$_POST["id"];
+            $id_alternativaEscolhida = $_POST["alternativa"];
         
-        $perguntas[1] = [   "Alternativa A1",
-                            "Alternativa B",
-                            "Alternativa C",
-                            "Alternativa D"];
-        
-        $perguntas[2] = [   "Alternativa A2",
-                            "Alternativa B",
-                            "Alternativa C",
-                            "Alternativa D"];
-        
-        $perguntas[3] = [   "Alternativa A3",
-                            "Alternativa B",
-                            "Alternativa C",
-                            "Alternativa D"];
-        
-        $perguntas[4] = [   "Alternativa A4",
-                            "Alternativa B",
-                            "Alternativa C",
-                            "Alternativa D"];
+            if ($id_pergunta == NULL) {
+                carregaPergunta($conteudo, 0);
+            }
+            elseif (($id_pergunta != NULL) && ($id_pergunta < 4)) {
+                if ($id_alternativaEscolhida == $conteudo[$id_pergunta]->resposta) {
+                    $id_pergunta++;
+                    carregaPergunta($conteudo, $id_pergunta);
+                }
+                else{
+                    echo $id_alternativaEscolhida;
+                    echo $conteudo[$id_pergunta]->resposta;
+                    require "game_over.inc";
+                }
+            }
+            elseif (($id_pergunta != NULL) && ($id_pergunta >= 4)) {
+                require "vencedor.inc";
+            }
+            return $id_pergunta;    
+        }
 
-        function carregaPergunta($enunciados, $perguntas, $id) {
-            $id_alternativa = 0;
+        //carrega uma pergunta
+        function carregaPergunta($conteudo, $id) {
+            $id_alternativa = 1;
             echo 
             '<form action="/perguntas.php" method="post">
                 <!--enunciado-->
                 <div>
-                    <h5>'. ($id+1) .' - ' . $enunciados[$id] . '</h5>
+                    <h5>'. ($id+1) .' - ' . $conteudo[$id]->enunciado . '</h5>
                 </div>';
         
-            foreach ($perguntas[$id] as $value) {
+            foreach ($conteudo[$id]->alternativas as $valor) {
                 echo
                     '<!--alternativas-->
                     <div class="form-check">
                         <input class="form-check-input" name="alternativa" type="radio" value="'. $id_alternativa .'">
-                        <label for="alternativa_a">a) ' . $value . '</label>
+                        <label for="alternativa_a">a) ' . $valor . '</label>
                     </div>';
                 
                 $id_alternativa++;
@@ -64,25 +60,5 @@
             ';
         }
 
-        function carregaPerguntas($enunciados, $perguntas, $respostas) {
-            $id_pergunta = @$_POST["id"];
-            $id_alternativa = $_POST["alternativa"];
-        
-            if ($id_pergunta == NULL) {
-                carregaPergunta($enunciados, $perguntas, 0);
-            }
-            elseif (($id_pergunta != NULL) && ($id_pergunta < 4)) {
-                if ($id_alternativa == $respostas[$id_pergunta]) {
-                    $id_pergunta++;
-                    carregaPergunta($enunciados, $perguntas, $id_pergunta);
-                }
-                else{
-                    require "game_over.inc";
-                }
-            }
-            elseif (($id_pergunta != NULL) && ($id_pergunta >= 4)) {
-                require "vencedor.inc";
-            }
-            return $id_pergunta;    
-        }
-?>
+
+    ?>

@@ -43,7 +43,7 @@
 
         require "perguntas.inc";
 
-        $id = carregaPerguntas($enunciados, $perguntas, $respostas); //carrega as perguntas corretas
+        $id = carregaPerguntas($conteudo); //carrega as perguntas corretas
         $valorProgresso = idTratado($id)+1; //recebe o id tratado corretamente
 
         barraProgresso($valorProgresso);
