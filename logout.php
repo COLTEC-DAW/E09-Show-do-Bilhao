@@ -14,7 +14,21 @@
     <?php
         session_start();
 
+        //registra a data e horário da desconexão
+        function gravaDesconexao () {
+            date_default_timezone_set("America/Sao_Paulo");
+            setcookie("data", date("Y/m/d"));
+            setcookie("horario", date("h:i:sa"));
+        }
+
+        function gravaPontuacao () {
+            $pontuacao = $_POST["id"];
+            setcookie("pontuacao", $pontuacao);
+        }
+
         if (isset($_SESSION["usuario"])) {
+            gravaDesconexao();
+            gravaPontuacao();
             session_destroy();
             header("location:index.php");
         }

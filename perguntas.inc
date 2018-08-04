@@ -51,7 +51,7 @@
             }
             echo'
                 <input type="hidden" name="id" value="'. $id .'">
-                    <button type="submit" class="btn btn-primary">Próximo</button>
+                <button type="submit" class="btn btn-primary">Próximo</button>
                 </form>
 
                 <form action="/logout.php" method="post">

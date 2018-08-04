@@ -34,9 +34,29 @@
 
         function barraProgresso ($valorProgresso){
             echo 
-            '<div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="'. (($valorProgresso*100)/6) .'%" aria-valuemin="0" aria-valuemax="100" style="width: '. (($valorProgresso*100)/6) .'%"></div>
-            </div>'; //barra de progresso;
+                '<div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="'. (($valorProgresso*100)/6) .'%" aria-valuemin="0" aria-valuemax="100" style="width: '. (($valorProgresso*100)/6) .'%"></div>
+                </div>'; //barra de progresso;
+            }
+
+        function ultimaConexao () {
+            if (!is_null(@$_COOKIE["data"])) {
+                $horarioCompleto = "Última desconexão: " . $_COOKIE["data"] . " às " . $_COOKIE["horario"];
+                return $horarioCompleto;
+            }
+            else {
+                return "Última desconexão: Sem registros :(";
+            }
+        }
+
+        function ultimaPontuacao () {
+            if (!is_null(@$_COOKIE["pontuacao"])) {
+                $ultima = "Última pontuação: " . $_COOKIE["pontuacao"] . "/5";
+                return $ultima;
+            }
+            else {
+                return "Última pontuação: Sem registros :(";
+            }
         }
 
         include "menu.inc";
@@ -47,6 +67,9 @@
         $valorProgresso = idTratado($id)+1; //recebe o id tratado corretamente
 
         barraProgresso($valorProgresso);
+        echo ultimaConexao() . "<br/>";
+        echo ultimaPontuacao();
+
  
         include "rodape.inc";
     ?>
