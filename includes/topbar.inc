@@ -1,5 +1,5 @@
 <header>
-            <nav class="navbar is-link">
+            <nav class="navbar is-dark">
                 <div class="navbar-brand">
                         <a class="navbar-item" href="index.php">
                             <img src="images/show.jpg" alt="Show do bilhão, por Bryan Santos" width="112" height="100">

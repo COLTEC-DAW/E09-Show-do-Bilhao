@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Style CSS -->
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/bulma.min.css">
+        
         <title>Show do Bilhão - 2018</title>
     </head>
 
@@ -16,20 +20,32 @@
 
         <div class="container">
 
-            <form action="perguntas.php">
+            <form action="perguntas.php" method="POST">
 
                 <?php require "includes/perguntas.inc";
 
-                    $id = $_GET["id"];
+                    global $respostas;
 
-                    carregaPergunta($_GET["id"], FALSE);
+                    $id = $_POST["id"];
 
-                    $id++;
+                    if ($id != 0) {
+                        $resposta = $_POST["resposta"];
+                        verificaResposta($id-1,$resposta);
+                    }
 
-                    echo "<input type='hidden' name='id' value='$id'>";
+                    if ($id < 4) {
 
-                    echo "<button type='submit' class='button is-success'> Próxima </button>";
+                        carregaPergunta($id, FALSE);
+                        echo "<button type='submit' class='button is-success'> Próxima </button>";    
 
+                    } else {
+
+                        carregaPergunta($id, FALSE);
+                        echo "<a href='winner.php' class='button is-success'> Próxima </a>";    
+
+                    }
+
+                    
                 ?>
 
             </form>
