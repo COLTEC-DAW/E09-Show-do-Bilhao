@@ -5,7 +5,6 @@
         <title>login</title>
     </head>
     <body>
-        <!-- <a href="../controller/login.php?user=dener&pass=rened">send -> dener:rened</a> -->
         <form class="" action="../controller/login.php" method="post">
             Username: <input type="text" name="user" value="">
             Password: <input type="password" name="pass" value="">
