@@ -9,18 +9,13 @@
     <div class="container">
       <?php
         session_start();
-        if(!isset($_SESSION["nome"])) {
-          if(empty($_POST["nome"])) {
-            header("Location:logIn.php");
-          }
-          else {
-            $_SESSION["nome"] = $_POST["nome"];
-          }
+        if(!isset($_SESSION["login"])) {
+          header("Location:logIn.php");
         }
-        include "menu.inc";
-        include "perguntas.inc";
         $resposta = (integer)$_POST["alternativas"];
         $pos = (integer)$_POST["posPergunta"];
+        include "menu.inc";
+        include "perguntas.inc";
         carregaResposta($resposta, $pos);
         setcookie("ultimoLogin", date('l jS \of F Y h:i:s A'));
         $ultimoLogin = $_COOKIE["ultimoLogin"];
@@ -33,7 +28,7 @@
         }
         echo "<h5 class=\"text-center\">Ultimo login: $ultimoLogin</h5>
               <h5>Ultima pontuacao: $ultimaPontuacao</h5>
-              <form class=\"form-group\" action=\"logIn.php\" method=\"post\">
+              <form class=\"form-group\" action=\"logOut.php\" method=\"post\">
                 <button class=\"btn-danger btn\" type=\"submit\" name=\"nome\">Log out</button>
               </form>";
         carregaPergunta($pos);

@@ -10,12 +10,35 @@
       <?php
         include "menu.inc";
         session_destroy();
-        echo "<form class=\"form-group text-center p-4\" action=\"index.php\" method=\"post\">
-                <input class=\"offset-4 form-control col-4 p-2\" type=\"text\" name=\"nome\" placeholder=\"Nome\">
-                <input class=\"btn-success btn p-2\" type=\"submit\" name=\"nome\">
-              </form>";
-        include "rodape.inc";
+        if(isset($_POST["login"]) && isset($_POST["senha"])) {
+          $json = file_get_contents('usuarios.json');
+          $json_data = json_decode($json, true);
+          foreach ($json_data as $user) {
+            if ($user["login"] == $_POST["login"] && $user["senha"] == $_POST["senha"]) {
+              session_start();
+              $_SESSION["login"] = $user["login"];
+              $_SESSION["senha"] = $user["senha"];
+              header("Location:index.php");
+            }
+          }
+          echo "<h3 class=\"text-center m-3\" style=\"background-color: red;\">Senha Invalida!</h3>";
+        }
       ?>
+      <div class="row">
+        <form class="col-6 form-group text-center p-4" action="logIn.php" method="post">
+          <input class="col-12 form-control col-4 p-3 mb-3" type="text" name="login" placeholder="Login">
+          <input class="col-12 form-control col-4 p-3 mb-3" type="password" name="senha" placeholder="Senha">
+          <input class="col-6 btn-success btn p-2" type="submit" value="Log In">
+        </form>
+        <form class="col-6 form-group text-center p-4" action="cadastro.php" method="post">
+          <input class="col-12 form-control col-4 p-3 mb-3" type="text" name="login" placeholder="Login">
+          <input class="col-12 form-control col-4 p-3 mb-3" type="password" name="senha" placeholder="Senha">
+          <input class="col-12 form-control col-4 p-3 mb-3" type="email" name="email" placeholder="E-mail">
+          <input class="col-12 form-control col-4 p-3 mb-3" type="name" name="nome" placeholder="Nome">
+          <input class="col-6 btn-success btn p-2" type="submit" value="Cadastrar">
+        </form>
+      </div>
+      <?php include "rodape.inc"; ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
