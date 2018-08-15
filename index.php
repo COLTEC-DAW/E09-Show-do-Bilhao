@@ -6,18 +6,27 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/dist/footer.min.css">
+        <link rel="stylesheet" href="/css/dist/progress.min.css">
 
     </head>
     <body>
 
-        <?php include 'partials/nav.inc' ?>
+        <?php
+            $logged = false;
+            include 'partials/nav.inc'
+        ?>
 
-        <div class="container-fluid">
+        <div class="container">
+            <?php
+                $cadastro = 0;
+                $jogo = 0;
+                $premio = 0;
+                include 'partials/progresso.inc'
+            ?>
             <a href="pages/perguntas.html">Perguntas</a>
-            <a href="pages/quiz.php">Quiz</a>
         </div>
 
-        <?php include 'partials/footer.inc' ?>
+        <?php include 'partials/footer.inc'; ?>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
