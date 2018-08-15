@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Show do milhão</title>
+	<title>Dá Bilhão?</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -18,22 +18,12 @@
 	<?php include 'menu.inc'; ?>
 	<?php
 		session_start();
-		if (!isset($_SESSION["username"])) {
-			header("Location: login.php"); //not-loged.php
-			exit;		
-		}
-
+		session_destroy();
 	?>
 	<main>
-		
-	<div class="container">
-			<h1 class="center-align">Logado com sucesso !!!</h1>
-			<div class="row">
-				<a class="center-align btn-large col s12 green " href="perguntas.php?id=1">Jogar </a>
-			</div>
+		<div class="container">
+			<h1>Hasta luego</h1>
 		</div>
-		
-
 	</main>
 
 

@@ -1,0 +1,51 @@
+<?php
+$questoes = [
+  1 => 'Quem era o homem mais sedutor do mundo?',
+  2 => 'Qual é inseto que transmite doença de Chagas?',
+  3 => 'Quem é a namorada do Mickey?',
+  4 => 'Quem é o patrono do exército brasileiro?',
+  5 => 'No desenho “Papa-léguas” qual é o som feito pela ave corredora?',
+];
+$respostas = [
+  1 => [
+    1 => "a) Dom Juan CERTA",
+    2 => "b) Dom Antônio",
+    3 => "c) Dom Marco ",
+    4 => "d) Dom Casmurro",
+  ],
+  2 => [
+    1 => "a) Barata",
+    2 => "b) Pulga",
+    3 => "c) Barbeiro CERTA",
+    4 => "d) Abelha",
+  ],
+  3 => [
+    1 => "a) Margarina",
+    2 => "b) Minnie CERTA",
+    3 => "c) Pequena Seria",
+    4 => "d) Olívia Palito",
+  ],
+
+  4 => [
+    1 => "a) Duque De Caxias CERTA",
+    2 => "b) Marechal Rondon",
+    3 => "c) Dom Pedro II",
+    4 => "d) Marechal Deodoro",
+  ],
+
+  5 => [
+    1 => "a) PING! PING!",
+    2 => "b) UGA! UGA",
+    3 => "c) BIP! BIP! CERTA",
+    4 => "d) VRUM! VRUM!",
+  ],
+
+];
+$respostas_certas = [
+  1 => 1,
+  2 => 3,
+  3 => 2, 
+  4 => 1,
+  5 => 3,
+];
+?>

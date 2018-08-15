@@ -2,7 +2,7 @@
 	ob_start();
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Show do milhão</title>
@@ -16,29 +16,19 @@
 </head>
 <body>
 	<?php include 'menu.inc'; ?>
-	<?php
-		session_start();
-		if (!isset($_SESSION["username"])) {
-			header("Location: login.php"); //not-loged.php
-			exit;		
-		}
-
-	?>
-	<main>
-		
-	<div class="container">
-			<h1 class="center-align">Logado com sucesso !!!</h1>
-			<div class="row">
-				<a class="center-align btn-large col s12 green " href="perguntas.php?id=1">Jogar </a>
-			</div>
-		</div>
-		
+	
+	<main class="container">
+		<?php require 'perguntas.inc';
+			if ($_GET["id"] != 1) {
+				verificaResposta($_POST["questao_id"], $_POST["resposta"]);
+			} else {
+				carregaPerguntas($_GET["id"]);
+			}
+		?>
 
 	</main>
 
-
-	<?php include 'rodape.inc';	?>
-
+	<?php include 'rodape.inc'; ?>
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>

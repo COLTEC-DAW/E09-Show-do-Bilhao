@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Show do milhão</title>
+	<title>Dá Bilhão?</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -19,21 +19,22 @@
 	<?php
 		session_start();
 		if (!isset($_SESSION["username"])) {
-			header("Location: login.php"); //not-loged.php
-			exit;		
+			header("Location: not-loged.php");
+			exit;				
 		}
-
 	?>
 	<main>
-		
-	<div class="container">
-			<h1 class="center-align">Logado com sucesso !!!</h1>
-			<div class="row">
-				<a class="center-align btn-large col s12 green " href="perguntas.php?id=1">Jogar </a>
-			</div>
-		</div>
-		
+		<div class="container">
+			<?php
+				$cookie = explode("+", $_COOKIE[$_SESSION["username"]]);
+				echo '
+					<p class="flow-text">Olá <b>'. ($_SESSION["username"]).'</b>, seu último jogo foi no dia <b>'.$cookie[0].'</b>, onde você fez <b>'.$cookie[1].'</b>  pontos</p>
 
+				';
+			?>
+			<p class="flow-text">Você está logado</p>
+			<a href="logout.php" class="btn">Logout</a>
+		</div>
 	</main>
 
 

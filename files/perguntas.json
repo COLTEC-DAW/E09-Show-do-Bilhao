@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Quem era o homem mais sedutor do mundo ?",
+        "alternativas": ["vazio", "a) Dom Juan", "b) Dom Antônio", "c) Dom Marco", "d) Dom Casmurro"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual é inseto que transmite doença de Chagas ?",
+        "alternativas": ["vazio", "a) Barata", "b) Pulga", "c) Barbeiro", "d) Abelha"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Quem é a namorada do Mickey ?",
+        "alternativas": ["vazio", "a) Margarina ", "b) Minnie", "c) Pequena Seria ", "d) Olívia Palito"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Quem é o patrono do exército brasileiro ?",
+        "alternativas": ["vazio", "a) Duque De Caxias", "b) Marechal Rondon", "c) Dom Pedro II", "d) Marechal Deodoro"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "No desenho “Papa-léguas” qual é o som feito pela ave corredora ?",
+        "alternativas": ["vazio", "a) PING! PING!", "b) UGA! UGA!", "c) BIP! BIP!", "d) VRUM! VRUM!"], 
+        "resposta": 3
+    }
+]
