@@ -11,7 +11,7 @@
                 <a class='btn btn-outline-success $in' href='' data-toggle='modal' data-target='#login-modal'>Entrar</a>
             </div>
             <div class='nav-item'>
-                <a class='nav-link $in' href=''>Criar conta</a>
+                <a class='nav-link $in' href='' data-toggle='modal' data-target='#signup-modal'>Criar conta</a>
             </div>
             <div class='nav-item'>
                 <a class='nav-link $out' href='../controllers/logout.php'>Sair</a>

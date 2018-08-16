@@ -25,3 +25,39 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Criar conta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user">Usuário:</label>
+                    <input type="text" class="form-control" id="user" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Senha:</label>
+                    <input type="password" class="form-control" id="pass" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm">Confirmar senha:</label>
+                    <input type="password" class="form-control" id="confirm" required>
+                </div>
+                <button class="btn btn-primary" id="btn-signup">Criar</button>
+            </div>
+        </div>
+    </div>
+</div>
