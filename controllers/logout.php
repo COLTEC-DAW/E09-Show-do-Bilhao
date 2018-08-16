@@ -6,7 +6,6 @@
     session_destroy();
 
     setcookie("user");
-    setcookie("pass");
-    
+
     header("Location: ../index.php");
 ?>

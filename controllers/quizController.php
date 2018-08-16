@@ -1,14 +1,12 @@
 <?php
-    $file = "../data/questoes.json";
-    $json = file_get_contents($file);
-    $data = json_decode($json);
+    require '../models/dao/questoesDAO.php';
+    require '../models/classes/questoesClass.php';
 
-    $perg = $_POST["id"];
+    $perg = (int)$_POST["id"];
     $resp = $_POST["radio"];
 
-    $desejada = $data->{'respostas'}[(int)$perg];
-    if($resp == $desejada) {
-        if((int)$perg != 4) {
+    if(Questoes::verificaResposta($perg, $resp) == 0) {
+        if($perg != 4) {
             $location = "Location: ../pages/quiz.php?id=" . ($perg + 1);
             header($location);
         } else {

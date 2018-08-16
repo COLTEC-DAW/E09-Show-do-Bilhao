@@ -9,7 +9,7 @@ $(document).ready(function() {
                 $('#erro-login').removeClass('d-none')
             } else {
                 $('#erro-login').addClass('d-none')
-                $(location).attr('href', '../pages/quiz.php')
+                $(location).attr('href', '../pages/quiz.php?id=0')
             }
         })
     })

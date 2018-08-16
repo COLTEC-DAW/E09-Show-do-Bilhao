@@ -10,8 +10,7 @@
 
     foreach ($data as $value) {
         if(strcmp($value->{'username'}, $user) == 0 and strcmp($value->{'password'}, $pass) == 0) {
-            setcookie("user", $user);
-            setcookie("pass", $pass);
+            setcookie("usuario", $user);
             session_start();
             $erro = 0;
         }

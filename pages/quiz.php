@@ -28,7 +28,7 @@
             <div class="jumbotron py-3">
                 <h1 class="display-4 mb-3"><?= carregaPergunta( (int)$perg ); ?></h1>
 
-                <form class="container-fluid" action="../controllers/quiz.php" method="post">
+                <form class="container-fluid" action="../controllers/quizController.php" method="post">
                     <?php
                         echo "<input type='hidden' name='id' value='$perg'>";
                         $opt = carregaOpcoes( (int)$perg );
