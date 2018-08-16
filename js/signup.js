@@ -7,10 +7,25 @@ $(document).ready(function() {
             'pass': $('#pass').val(),
             'confirm': $('#confirm').val()
         }).done(function(result) {
-            if(result == '0') {
-                $(location).attr('href','../index.php');
+            var erro = parseInt(result)
+
+            if(erro == 0) {
+                $(location).attr('href', '../index.php')
+                return;
+            }
+
+            if(erro >= 2) {
+                $('#erro-cadastro-usuario').removeClass('d-none')
+                erro -= 2;
             } else {
-                console.log(result);
+                $('#erro-cadastro-usuario').addClass('d-none')
+            }
+
+            if(erro >= 1) {
+                $('#erro-cadastro-senha').removeClass('d-none')
+                erro -= 1;
+            } else {
+                $('#erro-cadastro-senha').addClass('d-none')
             }
         })
     })

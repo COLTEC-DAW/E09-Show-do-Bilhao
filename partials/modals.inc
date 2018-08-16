@@ -10,17 +10,18 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="" action="../controllers/login.php" method="post">
-                    <div class="form-group">
-                        <label for="username">Usuário:</label>
-                        <input type="text" class="form-control" id="username" name="user" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Senha:</label>
-                        <input type="password" class="form-control" id="password" name="pass" required>
-                    </div>
-                    <input class="btn btn-primary" type="submit" value="Entrar">
-                </form>
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" class="form-control" id="username" name="user" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" id="password" name="pass" required>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <span class="span-warn d-none" id="erro-login">* Email ou senha incorretos</span>
+                </div>
+                <button class="btn btn-primary" id="btn-login">Entrar</button>
             </div>
         </div>
     </div>
@@ -46,6 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label for="user">Usuário:</label>
+                    <span class="ml-1 span-warn d-none" id="erro-cadastro-usuario">* Esse nome de usuário já existe</span>
                     <input type="text" class="form-control" id="user" required>
                 </div>
                 <div class="form-group">
@@ -54,6 +56,7 @@
                 </div>
                 <div class="form-group">
                     <label for="confirm">Confirmar senha:</label>
+                    <span class="ml-1 span-warn d-none" id="erro-cadastro-senha">* Senhas não correspondem</span>
                     <input type="password" class="form-control" id="confirm" required>
                 </div>
                 <button class="btn btn-primary" id="btn-signup">Criar</button>

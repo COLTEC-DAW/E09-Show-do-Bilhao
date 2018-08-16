@@ -2,10 +2,20 @@
     $user = htmlspecialchars($_POST["user"]);
     $pass = htmlspecialchars($_POST["pass"]);
 
-    setcookie("user", $user);
-    setcookie("pass", $pass);
+    $file = "../data/usuarios.json";
+    $json = file_get_contents($file);
+    $data = json_decode($json);
 
-    session_start();
+    $erro = 1;
 
-    header("Location: ../pages/quiz.php");
+    foreach ($data as $value) {
+        if(strcmp($value->{'username'}, $user) == 0 and strcmp($value->{'password'}, $pass) == 0) {
+            setcookie("user", $user);
+            setcookie("pass", $pass);
+            session_start();
+            $erro = 0;
+        }
+    }
+
+    echo $erro;
 ?>

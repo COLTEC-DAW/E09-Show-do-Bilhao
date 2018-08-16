@@ -1,9 +1,9 @@
 <?php
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $user = $_POST['user'];
-    $pass = $_POST['pass'];
-    $confirm = $_POST['confirm'];
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $user = htmlspecialchars($_POST['user']);
+    $pass = htmlspecialchars($_POST['pass']);
+    $confirm = htmlspecialchars($_POST['confirm']);
 
     $file = "../data/usuarios.json";
     $json = file_get_contents($file);
@@ -16,7 +16,7 @@
     }
 
     foreach ($data as $value) {
-        if(strcmp($value{'username'}, $user)) {
+        if(strcmp($value->{'username'}, $user) == 0) {
             $erro += 2;
             break;
         }
@@ -31,11 +31,9 @@
             'password' => $pass
         );
 
-        $arrayData = (array)$data;
-        array_push($arrayData, $newUser);
-        $data = (object)$arrayData;
-
+        array_push($data, $newUser);
         $save = json_encode($data);
+
         fwrite($fp, $save);
     }
 
