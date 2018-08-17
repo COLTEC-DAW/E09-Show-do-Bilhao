@@ -13,36 +13,11 @@
 </head>
 <body>
     <?php
-        session_start();
 
-        function verificaCadastro($usuario, $senha){
-            $verificacao =  false;
+    require "User.php";
 
-            $arquivo_str = file_get_contents("data/usuarios.json");
+    $U = new User ();
 
-            $usuarios = json_decode($arquivo_str);
-
-            foreach ($usuarios as $valor) {
-                if (($valor->usuario == $usuario) && ($valor->senha == $senha)) {
-                    $verificacao = true;
-                    header("location:perguntas.php");
-                    break;
-                }
-            }
-            
-            if (!$verificacao) {
-                session_destroy();
-                header("location:index.php");
-            }
-        }
-
-        $usuario = $_POST["EntradaUsuario"];
-        $senha = $_POST["EntradaSenha"];
-
-        $_SESSION["usuario"] = $usuario;
-        $_SESSION["senha"] = $senha;
-
-        verificaCadastro($usuario, $senha);
     ?>
 </body>
 </html>
