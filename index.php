@@ -12,26 +12,32 @@
         if(!isset($_SESSION["login"])) {
           header("Location:logIn.php");
         }
-        $resposta = (integer)$_POST["alternativas"];
-        $pos = (integer)$_POST["posPergunta"];
         include "menu.inc";
         include "perguntas.inc";
-        carregaResposta($resposta, $pos);
         setcookie("ultimoLogin", date('l jS \of F Y h:i:s A'));
-        $ultimoLogin = $_COOKIE["ultimoLogin"];
-        if(empty($ultimoLogin)){
+        if(empty($_COOKIE["ultimoLogin"])){
           $ultimoLogin = "Primeira vez por aqui";
+        } else {
+          $ultimoLogin = $_COOKIE["ultimoLogin"];
         }
-        $ultimaPontuacao = $_COOKIE["ultimaPontuacao"];
-        if(empty($ultimaPontuacao)){
+        if(empty($_COOKIE["ultimaPontuacao"])){
           $ultimaPontuacao = "0";
+        } else {
+          $ultimaPontuacao = $_COOKIE["ultimaPontuacao"];
         }
         echo "<h5 class=\"text-center\">Ultimo login: $ultimoLogin</h5>
               <h5>Ultima pontuacao: $ultimaPontuacao</h5>
               <form class=\"form-group\" action=\"logOut.php\" method=\"post\">
                 <button class=\"btn-danger btn\" type=\"submit\" name=\"nome\">Log out</button>
               </form>";
-        carregaPergunta($pos);
+        if(!empty($_POST)){
+          $resposta = (integer)$_POST["alternativas"];
+          $pos = (integer)$_POST["posPergunta"];
+          carregaResposta($resposta, $pos);
+          carregaPergunta($pos);
+        } else {
+          carregaPergunta(0);
+        }
         include "rodape.inc";
       ?>
     </div>

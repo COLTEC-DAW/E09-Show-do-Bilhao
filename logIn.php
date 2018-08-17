@@ -9,23 +9,9 @@
     <div class="container">
       <?php
         include "menu.inc";
-        session_destroy();
-        if(isset($_POST["login"]) && isset($_POST["senha"])) {
-          $json = file_get_contents('usuarios.json');
-          $json_data = json_decode($json, true);
-          foreach ($json_data as $user) {
-            if ($user["login"] == $_POST["login"] && $user["senha"] == $_POST["senha"]) {
-              session_start();
-              $_SESSION["login"] = $user["login"];
-              $_SESSION["senha"] = $user["senha"];
-              header("Location:index.php");
-            }
-          }
-          echo "<h3 class=\"text-center m-3\" style=\"background-color: red;\">Senha Invalida!</h3>";
-        }
       ?>
       <div class="row">
-        <form class="col-6 form-group text-center p-4" action="logIn.php" method="post">
+        <form class="col-6 form-group text-center p-4" action="checkUser.php" method="post">
           <input class="col-12 form-control col-4 p-3 mb-3" type="text" name="login" placeholder="Login">
           <input class="col-12 form-control col-4 p-3 mb-3" type="password" name="senha" placeholder="Senha">
           <input class="col-6 btn-success btn p-2" type="submit" value="Log In">
