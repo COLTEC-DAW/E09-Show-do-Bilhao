@@ -1,6 +1,6 @@
 <?php
     class QuestoesDAO {
-        private static $path = '../../data/questoes.json';
+        private static $path = '../data/questoes.json';
 
         public static function getPergunta($id) {
             $perguntas = QuestoesDAO::getData()->{'perguntas'};
