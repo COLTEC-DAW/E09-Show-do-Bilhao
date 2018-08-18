@@ -2,6 +2,7 @@
     require 'models/dao/usuariosDAO.php';
     require 'models/classes/usuariosClass.php';
     $placar = Usuarios::getPlacar($user);
+
     if(isset($_COOKIE['usuario'])) {
         header("Location: pages/quiz.php?id=" . $placar);
     }

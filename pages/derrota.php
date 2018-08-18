@@ -10,9 +10,13 @@
             $logged = true;
             include '../partials/nav.inc'
         ?>
-        <h1>voce perdeu</h1>
+
+        <div class="container text-center">
+            <p class="mt-5 display-2">Poxa.. Que pena, não foi desta vez..</p>
+            <p class="mt-5 display-4">Acesse seu perfil para ver sua pontuação.</p>
+        </div>
 
         <?php include '../partials/footer.inc'; ?>
-        <?php include 'partials/scrypts.inc' ?>
+        <?php include '../partials/scrypts.inc' ?>
     </body>
 </html>

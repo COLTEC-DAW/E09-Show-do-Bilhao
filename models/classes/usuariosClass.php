@@ -5,13 +5,15 @@
         private $usuario;
         private $senha;
         private $placar;
+        private $perdeu;
 
-        public function __construct($nome, $email, $usuario, $senha, $placar = 0) {
+        public function __construct($nome, $email, $usuario, $senha, $placar = 0, $lose = false) {
             $this->nome = $nome;
             $this->email = $email;
             $this->usuario = $usuario;
             $this->senha = $senha;
             $this->placar = $placar;
+            $this->perdeu = $lose;
         }
 
         public function adicionarUsuario($confirm) {
@@ -30,7 +32,25 @@
 
         public static function atualizarPlacar($usuario, $valor) {
             $antigo = Usuarios::getDAO()->getUsuarioByUsername($usuario);
-            $novo = new Usuarios($antigo->{'nome'}, $antigo->{'email'}, $antigo->{'usuario'}, $antigo->{'senha'}, $valor);
+            $novo = new Usuarios(
+                $antigo->{'nome'},
+                $antigo->{'email'},
+                $antigo->{'usuario'},
+                $antigo->{'senha'},
+                $valor,
+                $antigo->{'perdeu'});
+            Usuarios::getDAO()->atualizarUsuario($usuario, $novo->toArray());
+        }
+
+        public static function atualizarPerdeu($usuario, $valor) {
+            $antigo = Usuarios::getDAO()->getUsuarioByUsername($usuario);
+            $novo = new Usuarios(
+                $antigo->{'nome'},
+                $antigo->{'email'},
+                $antigo->{'usuario'},
+                $antigo->{'senha'},
+                $antigo->{'placar'},
+                $valor);
             Usuarios::getDAO()->atualizarUsuario($usuario, $novo->toArray());
         }
 
@@ -40,7 +60,8 @@
                 'email' => $this->email,
                 'usuario' => $this->usuario,
                 'senha' => $this->senha,
-                'placar' => $this->placar
+                'placar' => $this->placar,
+                'perdeu' => $this->perdeu
             );
         }
 
@@ -56,12 +77,17 @@
                 'email' => $user->{'email'},
                 'usuario' => $user->{'usuario'},
                 'senha' => $user->{'senha'},
-                'placar' => $user->{'placar'}
+                'placar' => $user->{'placar'},
+                'perdeu' => $user->{'perdeu'}
             );
         }
 
         public static function getPlacar($usuario) {
             return Usuarios::getDAO()->getUsuarioByUsername($usuario)->{'placar'};
+        }
+
+        public static function perdeu($usuario) {
+            return Usuarios::getDAO()->getUsuarioByUsername($usuario)->{'perdeu'};
         }
 
         private static function getDAO() {

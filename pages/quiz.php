@@ -1,15 +1,27 @@
 <?php
     require '../models/dao/usuariosDAO.php';
     require '../models/classes/usuariosClass.php';
+    require '../models/dao/questoesDAO.php';
+    require '../models/classes/questoesClass.php';
+
+    $quest = new Questoes();
     $perg = (int)$_GET['id'];
+
     if($perg == 5) {
-        header("Location: vitoria.php");
+        header("Location: premio.php");
     }
+
     if(!isset($_COOKIE['usuario'])) {
         header("Location: ../index.php");
     }
+
     $user = $_COOKIE['usuario'];
     $placar = Usuarios::getPlacar($user);
+
+    if(Usuarios::perdeu($user)) {
+        header("Location: derrota.php");
+    }
+
     if($perg != $placar) {
         header("Location: quiz.php?id=" . $placar);
     }
@@ -22,11 +34,6 @@
         <?php include '../partials/links.inc' ?>
     </head>
     <body>
-        <?php
-            require '../models/dao/questoesDAO.php';
-            require '../models/classes/questoesClass.php';
-            $quest = new Questoes();
-        ?>
         <?php
             $logged = true;
             include '../partials/nav.inc'

@@ -10,7 +10,9 @@
     $quest = new Questoes();
 
     if($quest->verificaResposta($perg, $resp)) {
-        Usuarios::atualizarPlacar($user, $perg+1);
+        if(!Usuarios::perdeu($user)) {
+            Usuarios::atualizarPlacar($user, $perg+1);
+        }
         if($perg != 4) {
             $location = "Location: ../pages/quiz.php?id=" . ($perg + 1);
             header($location);
@@ -19,7 +21,7 @@
             header($location);
         }
     } else {
-        $location = "Location: ../pages/derrota.php";
+        $location = "Location: loseController.php";
         header($location);
     }
 ?>

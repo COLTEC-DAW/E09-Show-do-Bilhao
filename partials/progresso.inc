@@ -22,7 +22,7 @@
                 Retire seu bilhao
             </div>
             <div class='progress'>
-                <div class='progress-bar bg-success' role='progressbar' style='width: $premio;' aria-valuenow='$premio' aria-valuemin='0' aria-valuemax='100'></div>
+                <div class='progress-bar bg-success' role='progressbar' style='width: $premio%;' aria-valuenow='$premio' aria-valuemin='0' aria-valuemax='100'></div>
             </div>
         </div>
     </div>";
