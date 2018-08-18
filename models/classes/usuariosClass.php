@@ -28,9 +28,10 @@
             return $erro;
         }
 
-        public function atualizarPlacar($valor) {
-            $this->placar = $valor;
-            Usuarios::getDAO()->atualizarUsuario($this->usuario, $this->toArray());
+        public static function atualizarPlacar($usuario, $valor) {
+            $antigo = Usuarios::getDAO()->getUsuarioByUsername($usuario);
+            $novo = new Usuarios($antigo->{'nome'}, $antigo->{'email'}, $antigo->{'usuario'}, $antigo->{'senha'}, $valor);
+            Usuarios::getDAO()->atualizarUsuario($usuario, $novo->toArray());
         }
 
         public function toArray() {
@@ -46,6 +47,21 @@
         public static function autentica($usuario, $senha) {
             $data = Usuarios::getDAO()->getUsuarioByUsername($usuario);
             return strcmp($data->{'senha'}, $senha);
+        }
+
+        public static function getArray($usuario) {
+            $user = Usuarios::getDAO()->getUsuarioByUsername($usuario);
+            return array(
+                'nome' => $user->{'nome'},
+                'email' => $user->{'email'},
+                'usuario' => $user->{'usuario'},
+                'senha' => $user->{'senha'},
+                'placar' => $user->{'placar'}
+            );
+        }
+
+        public static function getPlacar($usuario) {
+            return Usuarios::getDAO()->getUsuarioByUsername($usuario)->{'placar'};
         }
 
         private static function getDAO() {

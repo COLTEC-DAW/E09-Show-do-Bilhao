@@ -1,4 +1,4 @@
 <?php ?>
-<footer class="container-fluid py-4 text-center border-top bg-light">
-    askdljfh çjlh iuhiuiugug uuuug iugiugiugiugipug
+<footer class="container-fluid py-3 text-center border-top bg-light">
+    Desenvolvido por Dener V. Ribeiro.
 </footer>

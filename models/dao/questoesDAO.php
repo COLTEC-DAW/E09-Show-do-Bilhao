@@ -1,7 +1,7 @@
 <?php
     class QuestoesDAO {
         private $data;
-        public $path;
+        private $path;
 
         public function __construct() {
             $this->path = $_SERVER['DOCUMENT_ROOT'] . '/data/questoes.json';

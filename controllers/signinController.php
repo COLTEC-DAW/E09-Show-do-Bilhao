@@ -7,8 +7,7 @@
     $erro = Usuarios::autentica($user, $pass);
 
     if($erro == 0) {
-        setcookie('usuario', $user);
-        session_start();
+        setcookie('usuario', $user, time() + 3600, '/');
     }
 
     echo $erro;

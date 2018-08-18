@@ -1,5 +1,4 @@
 <?php
-
     $in = $logged ? 'd-none' : '';
     $out = !$logged ? 'd-none' : '';
 
@@ -14,7 +13,10 @@
                 <a class='nav-link $in' href='' data-toggle='modal' data-target='#signup-modal'>Criar conta</a>
             </div>
             <div class='nav-item'>
-                <a class='nav-link $out' href='../controllers/logout.php'>Sair</a>
+                <a class='nav-link $out' href='../pages/perfil.php'>Perfil</a>
+            </div>
+            <div class='nav-item'>
+                <a class='nav-link $out' href='../controllers/logoutController.php'>Sair</a>
             </div>
         </nav>
     </nav>";

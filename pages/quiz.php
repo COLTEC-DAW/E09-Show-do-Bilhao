@@ -1,15 +1,31 @@
+<?php
+    require '../models/dao/usuariosDAO.php';
+    require '../models/classes/usuariosClass.php';
+    $perg = (int)$_GET['id'];
+    if($perg == 5) {
+        header("Location: vitoria.php");
+    }
+    if(!isset($_COOKIE['usuario'])) {
+        header("Location: ../index.php");
+    }
+    $user = $_COOKIE['usuario'];
+    $placar = Usuarios::getPlacar($user);
+    if($perg != $placar) {
+        header("Location: quiz.php?id=" . $placar);
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>Show do Bilhão</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/dist/footer.css">
+        <?php include '../partials/links.inc' ?>
     </head>
     <body>
         <?php
-            require '../partials/pergunta.inc';
-            $perg = $_GET["id"];
+            require '../models/dao/questoesDAO.php';
+            require '../models/classes/questoesClass.php';
+            $quest = new Questoes();
         ?>
         <?php
             $logged = true;
@@ -17,32 +33,20 @@
         ?>
 
         <div class="container">
-
             <?php
-            $cadastro = 100;
-            $jogo = 20*$perg;
-            $premio = 0;
-            include '../partials/progresso.inc'
+                $cadastro = 100;
+                $jogo = 20*$perg;
+                $premio = 0;
+                include '../partials/progresso.inc'
             ?>
 
             <div class="jumbotron py-3">
-                <h1 class="display-4 mb-3"><?= carregaPergunta( (int)$perg ); ?></h1>
+                <h1 class="display-4 mb-3">
+                    <?= $quest->carregaPergunta($perg)?>
+                </h1>
 
                 <form class="container-fluid" action="../controllers/quizController.php" method="post">
-                    <?php
-                        echo "<input type='hidden' name='id' value='$perg'>";
-                        $opt = carregaOpcoes( (int)$perg );
-                        for ($i=0; $i < 5; $i++) {
-                            $check = ($i == 0 ? 'checked' : '');
-                            echo "
-                            <div class='form-check'>
-                                <input class='form-check-input' type='radio' name='radio' id='option$i' value='$i' $check>
-                                <label class='form-check-label' for='option$i'>
-                                    $opt[$i]
-                                </label>
-                            </div>";
-                        }
-                    ?>
+                    <?= $quest->carregaOpcoes($perg); ?>
                     <div class="d-flex">
                         <input class="btn btn-primary btn-lg mt-3 mx-auto" type="submit" value="Responder">
                     </div>
@@ -51,9 +55,6 @@
         </div>
 
         <?php include '../partials/footer.inc'; ?>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <?php include '../partials/scrypts.inc' ?>
     </body>
 </html>
