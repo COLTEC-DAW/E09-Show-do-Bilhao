@@ -1,10 +1,13 @@
 <?php
+    require '../models/dao/questoesDAO.php';
     require '../models/classes/questoesClass.php';
 
     $perg = (int)$_POST["id"];
     $resp = $_POST["radio"];
 
-    if(Questoes::verificaResposta($perg, $resp)) {
+    $quest = new Questoes();
+
+    if($quest->verificaResposta($perg, $resp)) {
         if($perg != 4) {
             $location = "Location: ../pages/quiz.php?id=" . ($perg + 1);
             header($location);

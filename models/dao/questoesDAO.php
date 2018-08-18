@@ -1,27 +1,28 @@
 <?php
     class QuestoesDAO {
-        private static $path = '../data/questoes.json';
+        private $data;
+        public $path;
 
-        public static function getPergunta($id) {
-            $perguntas = QuestoesDAO::getData()->{'perguntas'};
+        public function __construct() {
+            $this->path = $_SERVER['DOCUMENT_ROOT'] . '/data/questoes.json';
+            $json = file_get_contents($this->path);
+            $this->data = json_decode($json);
+        }
+
+        public function getPergunta($id) {
+            $perguntas = $this->data->{'perguntas'};
             $perg = $perguntas[$id];
             return $perg;
         }
 
-        public static function getOpcoes($id) {
-            $opcoes = QuestoesDAO::getData()->{'alternativas'}[$id];
+        public function getOpcoes($id) {
+            $opcoes = $this->data->{'alternativas'}[$id];
             return $opcoes;
         }
 
-        public static function getResposta($id) {
-            $resposta = QuestoesDAO::getData()->{'respostas'}[$id];
+        public function getResposta($id) {
+            $resposta = $this->data->{'respostas'}[$id];
             return $resposta;
-        }
-
-        private static function getData() {
-            $json = file_get_contents(QuestoesDAO::$path);
-            $data = json_decode($json);
-            return $data;
         }
     }
 ?>

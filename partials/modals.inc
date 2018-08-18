@@ -19,7 +19,7 @@
                     <input type="password" class="form-control" id="password" name="pass" required>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <span class="span-warn d-none" id="erro-login">* Email ou senha incorretos</span>
+                    <span class="span-warn d-none" id="erro-login">* Usuário ou senha incorretos</span>
                 </div>
                 <button class="btn btn-primary" id="btn-login">Entrar</button>
             </div>

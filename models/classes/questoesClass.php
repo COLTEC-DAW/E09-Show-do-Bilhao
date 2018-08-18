@@ -1,9 +1,13 @@
 <?php
-    require '../models/dao/questoesDAO.php';
     class Questoes {
-        function verificaResposta($id_perg, $resp) {
-            $resp_correta = QuestoesDAO::getResposta($id_perg);
+
+        public function verificaResposta($id_perg, $resp) {
+            $resp_correta = Questoes::getDAO()->getResposta($id_perg);
             return $resp == $resp_correta;
+        }
+
+        private static function getDAO() {
+            return new QuestoesDAO();
         }
     }
 ?>

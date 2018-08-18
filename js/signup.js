@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#btn-signup').click(function() {
-        $.post('../controllers/signup.php', {
+        $.post('../controllers/signupController.php', {
             'name': $('#name').val(),
             'email': $('#email').val(),
             'user': $('#user').val(),
