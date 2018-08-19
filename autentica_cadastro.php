@@ -14,55 +14,11 @@
 <body>
     <?php
 
-        //essa função evita cadastros com mesmo usuario
-        function verificaCadastro($usuario, $email){
-            $arquivo_str = file_get_contents("data/usuarios.json");
+        require "User.php";
 
-            $usuarios = json_decode($arquivo_str);
-
-            foreach ($usuarios as $valor) {
-                if ($valor->usuario == $usuario) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        //adiciona o usuario no arquivo .json
-        function adicionaUsuario($usuario, $senha, $nome, $email) {
-            $usuarioAtual = array(
-                "usuario"=>$usuario,
-                "senha"=>$senha,
-                "nome"=>$nome,
-                "email"=>$email
-            );
-
-            $usuarioAtual_str = json_encode($usuarioAtual);
-
-            //retira o colchete e coloca a vírgula no arquivo
-            $arquivo_str = file_get_contents("data/usuarios.json");
-            $arquivo_str_novo = str_replace("]", ",", $arquivo_str);
-
-            //abre o arquivo
-            $usuarios = fopen("data/usuarios.json", "w"); //sobreescreve
-            fwrite($usuarios, $arquivo_str_novo . $usuarioAtual_str . "]");
-            fclose($usuarios);
-        }
-
-        $usuario = $_POST["EntradaUsuario"];
-        $senha = $_POST["EntradaSenha"];
-        $nome = $_POST["EntradaNome"];
-        $email = $_POST["EntradaEmail"];
-
-        $resultadoVerificacao = verificaCadastro($usuario, $senha);
-
-        if ($resultadoVerificacao == true) {
-            adicionaUsuario($usuario, $senha, $nome, $email);
-            header("location:index.php");
-        }
-        elseif ($resultadoVerificacao == false) {
-            header("location:cadastro.php");
-        }
+        $u = new User($_POST["EntradaUsuario"], $_POST["EntradaSenha"], $_POST["EntradaNome"], $_POST["EntradaEmail"]);
+        $u->VerificaCadastro();
+        $u = NULL;
 
     ?>
 </body>

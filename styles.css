@@ -1,0 +1,56 @@
+body {
+    background-color: #252526;
+    color: aliceblue;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #4D97E8;
+    text-align: right;
+    padding-right: 1%;
+ }
+
+ @media (min-width: 576px) {
+    /* by default 540px */
+     .container {
+       max-width: 670px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    /* by default 720px */
+    .container {
+    max-width: 670px;
+    }
+}
+  
+  @media (min-width: 992px) {
+    /* by default 960px */
+    .container {
+      max-width: 670px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    /* by default 1140px */
+    .container {
+      max-width: 670px;
+    }
+  }
+
+  #formulario_cadastro{
+    max-width: 400px;
+  }
+
+  #formulario_login{
+    max-width: 400px;
+  }
+
+
+.card {
+    background-color: #252526 !important;
+    border-color:#5f536d !important;
+}

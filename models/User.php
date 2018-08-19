@@ -1,22 +1,20 @@
 <?php
     class User{
-        private var $usuario = $_POST["EntradaUsuario"];
-        private var $senha = $_POST["EntradaSenha"];
-        private var $nome = $_POST["EntradaNome"];
-        private var $email = $_POST["EntradaEmail"];
+        private $usuario;
+        private $senha;
+        private $nome;
+        private $email;
 
         function User($usuario, $senha, $nome, $email) {
             $this->usuario = $usuario;
             $this->senha = $senha;
             $this->nome = $nome;
             $this->email = $email;
-            $this->usuarioLogin = $usuarioLogin;
-            $this->senhaLogin = $senhaLogin;
         }
         
 
         //essa função evita cadastros com mesmo usuario
-        private function verificaCadastro($usuario, $email){
+        function verificaCadastro(){
             $arquivo_str = file_get_contents("data/usuarios.json");
 
             $usuarios = json_decode($arquivo_str);
@@ -24,13 +22,13 @@
             $resultado = true;
 
             foreach ($usuarios as $valor) {
-                if ($valor->usuario == $usuario) {
+                if ($valor->usuario == $this->usuario) {
                     $resultado = false;
                 }
             }
 
             if ($resultado == true) {
-                adicionaUsuario($usuario, $senha, $nome, $email);
+                $this->adicionaUsuario();
                 header("location:index.php");
             }
             elseif ($resultado == false) {
@@ -39,12 +37,12 @@
         }
 
         //adiciona o usuario no arquivo .json
-        private function adicionaUsuario($usuario, $senha, $nome, $email) {
+        function adicionaUsuario() {
             $usuarioAtual = array(
-                "usuario"=>$usuario,
-                "senha"=>$senha,
-                "nome"=>$nome,
-                "email"=>$email
+                "usuario"=>$this->usuario,
+                "senha"=>$this->senha,
+                "nome"=>$this->nome,
+                "email"=>$this->email
             );
 
             $usuarioAtual_str = json_encode($usuarioAtual);
@@ -60,11 +58,11 @@
         }
 
         //Verifica nos arquivos o usúario que está logando
-        function verificaUsuario($usuario, $senha){
+        function verificaUsuario(){
             session_start();
 
-            $_SESSION["usuario"] = $usuario;
-            $_SESSION["senha"] = $senha;
+            $_SESSION["usuario"] = $this->usuario;
+            $_SESSION["senha"] = $this->senha;
 
             $verificacao =  false;
 
@@ -73,7 +71,7 @@
             $usuarios = json_decode($arquivo_str);
 
             foreach ($usuarios as $valor) {
-                if (($valor->usuario == $usuario) && ($valor->senha == $senha)) {
+                if (($valor->usuario == $this->usuario) && ($valor->senha == $this->senha)) {
                     $verificacao = true;
                     header("location:perguntas.php");
                     break;

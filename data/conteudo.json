@@ -1,27 +1,27 @@
 [
     {
-        "enunciado": "Pergunta 1",
-        "alternativas": ["1aAlternativa", "1bAlternativa", "1cAlternativa", "1dAlternativa"],
-        "resposta": "4"
-    },
-    {
-        "enunciado": "Pergunta 2",
-        "alternativas": ["2aAlternativa", "2bAlternativa", "2cAlternativa", "2dAlternativa"],
-        "resposta": "3"
-    },
-    {
-        "enunciado": "Pergunta 3",
-        "alternativas": ["3aAlternativa", "3bAlternativa", "3cAlternativa", "3dAlternativa"],
+        "enunciado": "Quem é o inimigo do Piu-Piu nos desenhos animados?",
+        "alternativas": ["a) Tom", "b) Frajola", "c) Felix", "d) Mingau"],
         "resposta": "2"
     },
     {
-        "enunciado": "Pergunta 4",
-        "alternativas": ["4aAlternativa", "4bAlternativa", "4cAlternativa", "4dAlternativa"],
+        "enunciado": "Quem foi técnico da Seleção brasileira de futebol na Copa de 98?",
+        "alternativas": ["a) Zagallo", "b) Luxemburgo", "c) Carpegianni", "d) Scolari"],
         "resposta": "1"
     },
     {
-        "enunciado": "Pergunta 6",
-        "alternativas": ["5aAlternativa", "5bAlternativa", "5cAlternativa", "5dAlternativa"],
-        "resposta": "4"
+        "enunciado": "Em que cidade é realizada a corrida de São Silvestre?",
+        "alternativas": ["a) São Paulo", "b) Salvador", "c) Belo Horizonte", "d) Rio de Janeiro"],
+        "resposta": "1"
+    },
+    {
+        "enunciado": "O dromedário tem quantas corcovas?",
+        "alternativas": ["a) Quatro", "b) Três", "c) Uma", "d) Duas"],
+        "resposta": "3"
+    },
+    {
+        "enunciado": "Em qual estádio Pelé marcou seu milésimo gol?",
+        "alternativas": ["a) Morumbi", "b) Maracanã", "c) Pacaembu", "d) Vila Belmiro"],
+        "resposta": "2"
     }
 ]

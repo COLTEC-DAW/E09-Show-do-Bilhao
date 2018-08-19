@@ -14,10 +14,11 @@
 <body>
     <?php
 
-    require "User.php";
+        require "User.php";
 
-    $U = new User ();
-
+        $u = new User($_POST["LoginUsuario"], $_POST["LoginSenha"], NULL, NULL);
+        $u->VerificaUsuario();
+        $u = NULL;
     ?>
 </body>
 </html>
