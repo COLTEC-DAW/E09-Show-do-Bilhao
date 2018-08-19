@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Quem é o inimigo do Piu-Piu nos desenhos animados?",
+        "alternativas": ["a) Tom", "b) Frajola", "c) Felix", "d) Mingau"],
+        "resposta": "2"
+    },
+    {
+        "enunciado": "Quem foi técnico da Seleção brasileira de futebol na Copa de 98?",
+        "alternativas": ["a) Zagallo", "b) Luxemburgo", "c) Carpegianni", "d) Scolari"],
+        "resposta": "1"
+    },
+    {
+        "enunciado": "Em que cidade é realizada a corrida de São Silvestre?",
+        "alternativas": ["a) São Paulo", "b) Salvador", "c) Belo Horizonte", "d) Rio de Janeiro"],
+        "resposta": "1"
+    },
+    {
+        "enunciado": "O dromedário tem quantas corcovas?",
+        "alternativas": ["a) Quatro", "b) Três", "c) Uma", "d) Duas"],
+        "resposta": "3"
+    },
+    {
+        "enunciado": "Em qual estádio Pelé marcou seu milésimo gol?",
+        "alternativas": ["a) Morumbi", "b) Maracanã", "c) Pacaembu", "d) Vila Belmiro"],
+        "resposta": "2"
+    }
+]
