@@ -64,7 +64,7 @@
 
         include "includes/menu.inc";
 
-        require "Question.php";
+        require "models/Question.php";
 
         $q = new Question(@$_POST["id"], @$_POST["alternativa"]);
         $id = $q->carregaPerguntas();

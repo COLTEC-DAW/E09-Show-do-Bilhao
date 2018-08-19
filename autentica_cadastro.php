@@ -14,7 +14,7 @@
 <body>
     <?php
 
-        require "User.php";
+        require "models/User.php";
 
         $u = new User($_POST["EntradaUsuario"], $_POST["EntradaSenha"], $_POST["EntradaNome"], $_POST["EntradaEmail"]);
         $u->VerificaCadastro();

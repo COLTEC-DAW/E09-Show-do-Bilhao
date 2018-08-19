@@ -14,7 +14,7 @@
 <body>
     <?php
 
-        require "User.php";
+        require "models/User.php";
 
         $u = new User($_POST["LoginUsuario"], $_POST["LoginSenha"], NULL, NULL);
         $u->VerificaUsuario();
