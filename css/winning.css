@@ -1,0 +1,52 @@
+html{
+    height: 100%;
+}
+body{
+    padding: 0;
+    background-color: #F7F7F7;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img{
+}
+#title{
+    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chairs{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
+#gif{
+    padding: 20px;
+}
+#boardScore{
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 55vh;
+    border-radius: 15px;
+    display: none;
+}
+#score{
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.3em;
+}
+#curtain1{
+    top:0px;
+    position:absolute;
+    left:0px;
+    height:100%;
+    background: linear-gradient(to bottom, #A60303 0%, #590202 100%);
+    padding: 0;
+}
+#curtain2{
+    top:0px;
+    position:absolute;
+    height:100%;
+    right:0px;
+    background: linear-gradient(to bottom, #A60303 0%, #590202 100%);
+    padding: 0;
+}
