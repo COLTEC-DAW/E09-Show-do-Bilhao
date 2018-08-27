@@ -18,7 +18,7 @@
 	<?php include 'menu.inc'; ?>
 	<main>
 		<div class="container">
-			<?php require 'login.inc';
+			<?php
 
 			
 				if ($_POST["login"] != NULL) {
@@ -27,7 +27,7 @@
 
 					$usuario_existe = FALSE;
 
-					//L ogin e senha
+					//Login e senha
 					foreach ($usuarios_file_decoded as $usuario) {
 						var_dump($usuario->login);
 						if($usuario->login == $_POST["login"] && $usuario->senha == $_POST["senha"]) {
@@ -39,22 +39,25 @@
 						}
 					}
 
-					if ($usuario_existe) {
-						echo '<h4 class="center-align">Senha ou usuário inválidos.</h4>';
-					} else {
-						echo '<h4 class="center-align">Não existe esse usuário.</h4>';
+						if ($usuario_existe) {
+							echo '<h4 class="center-align">Senha ou usuário inválidos.</h4>';
+					}
+						
+						else {
+							echo '<h4 class="center-align">Não existe esse usuário.</h4>';
 					}
 
-					exit;	
-				}
+						exit;	
+					}
 			?>
 			<main>
 
 <center>
 	 
 
-	 <h5 class="indigo-text">Please, login into your account</h5>
-	 <div class="section"></div>
+	 <h5 class="indigo-text">Por favor,faça o login</h5>
+	 
+	 <div class="section"></div> 
 
 	 <div class="container">
 	   <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
@@ -67,7 +70,7 @@
 
 		   <div class='row'>
 			 <div class='input-field col s12'>
-			 <input id="login" type="text">
+			 <input name="login" type="text">
 			 <label for="login" class="">Digite seu Login</label>
 			 </div>
 		   </div>
@@ -78,8 +81,8 @@
 			   <label for='senha'>Digite sua senha</label>
 			 </div>
 			 <label style='float: right;'>
-							   <a class='pink-text' href='usuarios.json'><b>Esqueceu a senha?</b></a>
-						   </label>
+				<a class='pink-text' href='usuarios.json'><b>Esqueceu a senha?</b></a>
+			</label>
 		   </div>
 
 		   <br />

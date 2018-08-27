@@ -22,14 +22,13 @@
 			header("Location: login.php"); //not-loged.php
 			exit;		
 		}
-
 	?>
 	<main>
 		
 	<div class="container">
 			<h1 class="center-align">Logado com sucesso !!!</h1>
 			<div class="row">
-				<a class="center-align btn-large col s12 green " href="perguntas.php?id=1">Jogar </a>
+				<a class="col s12 btn btn-large waves-effect indigo " href="perguntas.php?id=1">Jogar </a>
 			</div>
 		</div>
 		

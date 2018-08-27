@@ -52,11 +52,8 @@
 
 						echo 'Usuario cadastrado,<a href="login.php" class=""> Clique aqui para logar</a>';
 					}
-
-
 				}
-			?>
-			
+			?>	
 		</div>
 	</main>
 

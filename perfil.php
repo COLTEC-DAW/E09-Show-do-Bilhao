@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Dá Bilhão?</title>
+	<title>Show do Milhão</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -19,7 +19,7 @@
 	<?php
 		session_start();
 		if (!isset($_SESSION["username"])) {
-			header("Location: not-loged.php");
+			header("Location: login.php");
 			exit;				
 		}
 	?>
@@ -28,7 +28,7 @@
 			<?php
 				$cookie = explode("+", $_COOKIE[$_SESSION["username"]]);
 				echo '
-					<p class="flow-text">Olá <b>'. ($_SESSION["username"]).'</b>, seu último jogo foi no dia <b>'.$cookie[0].'</b>, onde você fez <b>'.$cookie[1].'</b>  pontos</p>
+					<p class="flow-text">Olá <b>'. ($_SESSION["username"]).'</b>, seu último jogo foi no dia <b>'.$cookie[0].'<br><br></b> Pontuação : <b>'.$cookie[1].'</b>  pts</p>
 
 				';
 			?>
@@ -36,7 +36,6 @@
 			<a href="logout.php" class="btn">Logout</a>
 		</div>
 	</main>
-
 
 	<?php include 'rodape.inc';	?>
 

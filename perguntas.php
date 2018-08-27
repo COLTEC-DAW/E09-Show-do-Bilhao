@@ -21,9 +21,11 @@
 		<?php require 'perguntas.inc';
 			if ($_GET["id"] != 1) {
 				verificaResposta($_POST["questao_id"], $_POST["resposta"]);
-			} else {
+			} 
+			
+			else {
 				carregaPerguntas($_GET["id"]);
-			}
+		  }
 		?>
 
 	</main>

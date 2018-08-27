@@ -57,7 +57,7 @@ function carregaPerguntas($id){
 
 <br><br>
 		<input type="hidden" name="questao_id" value="'.$id.'">
-		<input type="submit" name="Enviar" class="btn">
+		<input type="submit" name= "Enviar" class="btn">
 	</form>
     
 	';
@@ -68,17 +68,20 @@ function carregaPerguntas($id){
 		if ($respostas_certas[$id] == $alternativa){
 			if ($id != 5) {
 				carregaPerguntas($id+1);
-			} else {
+			} 
+			
+			else {
 				echo '
-					<h1 class="flow-text center-align">Você ganhou!!! </h1>
+					<h1 class="flow-text center-align"> Você ganhou!!! </h1>
 				';
 				session_start();
 				error_reporting(0);
 				$bauducco = getdate()[mday].'/'.getdate()[mon].'/'.getdate()[year].'+'.'5';
-				// echo $bauducco;
 				setcookie($_SESSION["username"], $bauducco);
 			}
-		} else {
+		} 
+		
+		else {
 			echo '
 					<p class="flow-text center-align">Você perdeu.Tente outra vez.</p>
 				';

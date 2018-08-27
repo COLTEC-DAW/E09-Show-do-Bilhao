@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Dá Bilhão?</title>
+	<title>Show do Milhão</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -22,7 +22,7 @@
 	?>
 	<main>
 		<div class="container">
-			<h1>Hasta luego</h1>
+			<h1 >Foi de base xD </h1>
 		</div>
 	</main>
 
