@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado":"Qual a Capital da Belgica?",
+        "respostas":["Brasilia.","Tokyo.","Bruxelas.","Buenos Aires."],
+        "correta":"Bruxelas."
+    },
+    {
+        "enunciado":"Quem jogou mais na copa de 1958?",
+        "respostas":["Garrincha.", "Pelé.", "Dida.", "Zagallo."],
+        "correta":"Pelé."
+    },
+    {
+        "enunciado":"Qual o primeiro nome do Ayrton Senna?",
+        "respostas":["Bob.","João.","Ayrton.","Fernando."],
+        "correta":"Ayrton."
+    },
+    {
+        "enunciado":"Normalmente, quantos litros de sangue uma pessoa tem?",
+        "respostas":["Menos que 1","Mais que 10.","Entre 7 a 8 litros.","Entre 4 a 6 litros."],
+        "correta":"Entre 4 a 6 litros."
+    },
+    {
+        "enunciado":"Quanto tempo a luz do Sol demora para chegar à Terra?",
+        "respostas":["12 minutos.", "1 dia.", "12 horas.", "8 minutos."],
+        "correta":"8 minutos."
+    }
+]
