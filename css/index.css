@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+header {
+    margin-bottom: 40px
+}
+
+.checkmark {
+    display: inline-block;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
