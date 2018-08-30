@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta encoding="utf-8">
@@ -6,10 +5,11 @@
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="initial-scale=1.0, width=device-width"/> 
     </head>
-    <nav>
-        TESTE
-    </nav>
+    <?php include "menu.inc"; ?>
+    <?php $id = $_GET["id"]; ?>
     <body>
-        <h1>Show do Bilhão</h1>
+        <h1> Você perdeu na pergunta <?php echo ($id+1);?> de 5 </h1>
     </body>
+    
+    <?php include  "rodape.inc"; ?>
 </html>
