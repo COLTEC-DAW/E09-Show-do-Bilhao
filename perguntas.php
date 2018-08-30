@@ -20,10 +20,10 @@
                 echo "Digite seu nome:";
                 echo "<form action=\"perguntas.php\" method=\"post\">";
                 echo "<input type=\"text\" name=\"nome\" >";
+                echo "<input type=\"hidden\" name=\"id\"  value=\"-1\" >";
                 echo "<input type=\"submit\" value=\"Pŕoximo\">";
-    
+                
             }else{
-                echo $_POST["id"];
                 $_SESSION["nome"]=$_POST["nome"];
                 $id=0;
                 $pergunta = carregaPergunta($id);             //cria o formulário da nova pergunta
