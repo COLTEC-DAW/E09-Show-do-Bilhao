@@ -41,3 +41,23 @@ body{
     border: 1px solid black;
     border-radius: 10px;
 }
+
+#QOneCard{
+    margin-left:    2%;
+    margin-right:   2%;
+    margin-bottom:  1%;
+    margin-top:     1%;
+    font-size: 1.2em;
+}
+
+/*footer{
+    height: 30px;
+    background-color: black;
+    color: white;
+    margin-top: 2%; 
+    font-size: 120%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}*/
