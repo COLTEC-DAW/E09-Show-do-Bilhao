@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+#Cabecalho{
+    border: 5px solid black;
+    border-radius: 20px;
+    margin-left:    2%;
+    margin-right:   2%;
+    margin-bottom:  1%;
+    margin-top:     1%;
+
+    text-align: center;
+}
+
+#title{
+    text-align: center;
+    font-style: italic;
+    text-shadow: 5px 5px 5px #FF0000;
+    font-size: 2.8em;
+}
+
+#ContainerTitle{
+    font-size: 1.5em;
+    text-align: center;
+    font-style: italic;
+}
+
+.container{
+    overflow: hidden;
+    border: 5px solid;
+    border-radius: 10px;
+
+    margin-left:    1%;
+    margin-right:   1%;
+}
+
+.Qcard{
+    float: left;
+    border: 1px solid black;
+    border-radius: 10px;
+}
