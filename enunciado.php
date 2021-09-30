@@ -39,4 +39,4 @@
         "D) Dolar",
         )
     );
-    $respostas = array("0","1","2","3","4");
+    $respostas = array("0","2","3","2","1");
