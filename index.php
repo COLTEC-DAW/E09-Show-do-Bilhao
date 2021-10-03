@@ -33,6 +33,7 @@
         for($index = 0; $index <= 4; $index++){
             echo($perguntas[$index]);
             echo("<br/>");
+            
             echo($opcoes[$index]);
             echo("<br/>");
         }
