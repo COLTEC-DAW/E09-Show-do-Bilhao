@@ -26,6 +26,8 @@
                         c) 206 <br/>
                         d) 300 <br/> <br/>'));
 
+    $respostas = array(3, 3, 1, 0, 2);
+    
     function mostrarQuestoes(){
         global $perguntas;
         global $opcoes;
