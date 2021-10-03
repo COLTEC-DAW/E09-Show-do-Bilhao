@@ -1,0 +1,25 @@
+
+#cabecalho{
+    background-color: #5333ed;
+    height: 80px;
+    margin-top: -30px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+#titulo{
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    font-size: 2.75em;
+    font-family:'Courier New', Courier, monospace;
+}
+
+#questoes{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 25px;
+    color: #6E7076;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
