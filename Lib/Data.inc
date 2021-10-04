@@ -33,7 +33,7 @@ $Alternativas = [
 ];
 
 // Opção correta
-$IndexCorreta = [1,0,2,4,3,4,4,3,0,4,0,2,3];
+$IndexCorreta = [1,0,2,4,3,4,3,3,0,4,0,2,3];
 
 // Retorna a string formatada com a pergunta.
 function GetQuestion_Completo($index){

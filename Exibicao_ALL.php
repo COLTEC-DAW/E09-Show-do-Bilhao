@@ -1,8 +1,8 @@
 <?php 
     // Inclusão dos dados das pergunstas.
-    include "Lib\Data.inc";
+    include "Lib\\Data.inc";
     // Inclusão do menu superior..
-    include "Lib\Menu.inc";
+    include "Lib\\Menu.inc";
     // Inclusão do footer.
     include "Lib\\rodape.inc"; 
 ?>
@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show do bilhão</title>
+    <title>Quests</title>
 
     <!-- Estilo do jogo -->
     <link rel="stylesheet" href="./style.css">
