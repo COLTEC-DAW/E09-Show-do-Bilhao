@@ -8,28 +8,28 @@ $enunciados = array(
 );
 $alternativas = array(
     array(
-        "a. Tem entre 2 a 4 litros. São retirados 450 mililitros",
-        "b. Tem entre 4 a 6 litros. São retirados 450 mililitros",
-        "c. Tem 10 litros. São retirados 2 litros",
-        "d. Tem 7 litros. São retirados 1,5 litros"
+        "a) Tem entre 2 a 4 litros. São retirados 450 mililitros",
+        "b) Tem entre 4 a 6 litros. São retirados 450 mililitros",
+        "c) Tem 10 litros. São retirados 2 litros",
+        "d) Tem 7 litros. São retirados 1,5 litros"
     ),
     array(
-        "a. Platão",
-        "b. Galileu Galilei",
-        "c. Descartes",
-        "d. Sócrates"
+        "a) Platão",
+        "b) Galileu Galilei",
+        "c) Descartes",
+        "d) Sócrates"
     ),
     array(
-        "a. França",
-        "b. Inglaterra",
-        "c. Brasil",
-        "d. Austrália"
+        "a) França",
+        "b) Inglaterra",
+        "c) Brasil",
+        "d) Austrália"
     ),
     array(
-        "a. Vaticano e Rússia",
-        "b. Nauru e China",
-        "c. Mônaco e Canadá",
-        "d. Malta e Estados Unidos"
+        "a) Vaticano e Rússia",
+        "b) Nauru e China",
+        "c) Mônaco e Canadá",
+        "d) Malta e Estados Unidos"
     )
 );
 
@@ -42,7 +42,7 @@ function exibePerguntas()
     global $enunciados, $alternativas, $altsCorretas;
     for ($i = 0; $i < count($enunciados); $i++) {
         // Imprime o enunciado da pergunta, em negrito e destacado
-        echo "<h3>" . ($i + 1) . ": $enunciados[$i]</h3>";
+        echo "<h3>" . ($i + 1) . ". $enunciados[$i]</h3>";
 
         // Imprime as alternativas
         for ($j = 0; $j < count($alternativas); $j++) {
