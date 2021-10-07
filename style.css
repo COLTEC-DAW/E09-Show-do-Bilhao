@@ -51,6 +51,12 @@ body{
     align-items: center;
 }
 
+.loginForm{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
 /*footer{
     height: 30px;
     background-color: black;

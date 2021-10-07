@@ -6,23 +6,36 @@
     // Inclusão do footer.
     include "Lib\\rodape.inc";
 
+    session_start();
     SortIndexs();
+
+    if(isset($_POST['username'])) login();
+    if(!isset($_COOKIE['UltimoJogo_Data'])){
+        setcookie("UltimoJogo_Data", "Primeira partida");
+        setcookie("UltimoJogo_Pontos", 0);
+    }
+    if(isset($_GET['Logout'])) session_destroy();
+
+    function login(){
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['password'] = $_POST['password'];
+    }
 
     function Destino(){
         return "perguntas.php?id=" . explode('/', $GLOBALS["indices"])[0];
-        
     }
 
     function SortIndexs(){
         $GLOBALS["indices"] = "";
-
         $count = 0;
         
         while($count != 5){
             $random = random_int(0, (Count($GLOBALS["Quests"])-1));
             $validate = true;
-            for($i=0;$i<$count;$i++){
-                if($GLOBALS["indices"][$i] == $random){
+            $aux = explode('/', $GLOBALS["indices"]);
+            for($i=0;$i<(strlen($GLOBALS["indices"]) - $count);$i++){
+                if($aux[$i] == $random){
                     $validate = false;
                     break;
                 }
@@ -44,7 +57,7 @@
     <title>Show do bilhão</title>
 
     <!-- Estilo do jogo -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -64,7 +77,7 @@
         <input type="hidden" id="JaSorteados" name="JaSorteados" value=<?php echo $GLOBALS["indices"]?>> 
         <input type="hidden" id="Alternativa" name="Alternativa" value='-1'>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Iniciar">
     </form>
 
     <!-- Parte inferior -->
