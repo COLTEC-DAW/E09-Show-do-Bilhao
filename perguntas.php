@@ -34,17 +34,18 @@
         <form>
             <?php
                 $i = 0;
-                $numPerg = ((int) $_GET['id'] -1);
-                echo "<fieldset>";
-                echo "<legend> $perguntas[$numPerg] </legend>";
+                foreach ($perguntas as $pergunta){
+                    echo "<fieldset>";
+                    echo "<legend> $pergunta </legend>";
 
-                foreach($alternativas[$numPerg] as $key => $value){
+                    foreach($alternativas[$i] as $key => $value){
 
-                    echo "<input type=\"radio\" name=\"pergunta$i\" value=\"$key\">$value<br>";
+                        echo "<input type=\"radio\" name=\"pergunta$i\" value=\"$key\">$value<br>";
+                    }
+
+                    echo "</fieldset> <br>";
+                    $i++;
                 }
-
-                echo "</fieldset> <br>";
-                $i++;
             ?>
         </form>
     </body>
