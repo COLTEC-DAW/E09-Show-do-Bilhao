@@ -1,10 +1,27 @@
 <?php 
-    // Inclusão do menu superior.
+    // Importe de classes
+    require "Models\\User.php";
+
+    // Importe de funcionalidades
     include "Lib\\Menu.inc"; 
-    // Inclusão do footer.
     include "Lib\\rodape.inc";
 
+    // Inicialização da sessão
     session_start();
+
+    // Exibe um aviso de sucesso na criação da conta
+    if(isset($_GET['code'])){
+        echo "Conta criada com sucesso! Agora efetue seu login.";
+    }
+
+    // Exibe um aviso de erro na criação da conta
+    if(isset($_GET['error'])){
+        if($_GET['error'] == 0){
+            echo "Email/senha inválidos.";
+        }else if($_GET['error'] == 1){
+            echo "O nome de usuário " . $_GET['user'] . " não foi encontrado.";;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +52,7 @@
         </form>
     </div>
 
+    Não possui uma conta? Clique <a href="cadastro.php">aqui</a> para criar uma!
     <!-- Parte inferior -->   
     <?php echo GetFooter() ?>
 </body>

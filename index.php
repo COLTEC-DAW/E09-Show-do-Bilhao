@@ -1,40 +1,57 @@
 <?php 
-    // Inclusão dos dados das pergunstas.
+    // Importe de classes
+    require "Models\\Question.php";
+    require "Models\\User.php";
+    require "Models\\GameData.php";
+
+    // Importe de funcionalidades
     include "Lib\\Data.inc";
-    // Inclusão do menu superior.
     include "Lib\\Menu.inc"; 
-    // Inclusão do footer.
     include "Lib\\rodape.inc";
 
+    // Inicio da sessão.
     session_start();
+
+    // Chamada da função para realizar o sorteio das perguntas
     SortIndexs();
 
-    if(isset($_POST['username'])) login();
-    if(!isset($_COOKIE['UltimoJogo_Data'])){
-        setcookie("UltimoJogo_Data", "Primeira partida");
-        setcookie("UltimoJogo_Pontos", 0);
-    }
+    //Finaliza a sessão caso o usuário pressione o botão Logout
     if(isset($_GET['Logout'])) session_destroy();
 
+    // Realiza o processo de login(verifica as informações
+    if(isset($_POST['username'])) login();
     function login(){
-        $_SESSION['username'] = $_POST['username'];
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['password'] = $_POST['password'];
+        $FilePath = "DataBase\\Usuarios\\" . $_POST['username'] . ".json";
+        $error = "";
+        if(file_exists($FilePath)){
+            $User = json_decode(file_get_contents($FilePath));
+
+            if($_POST['password'] == $User->Password && $_POST['email'] == $User->Email){
+                $_SESSION['PlayerData'] = $User;
+            }else{
+                header('Location: login.php?error=0');
+            }
+            return;
+        }else{
+            header('Location: login.php?error=1&user='.$_POST['username']);
+        }
     }
 
+    // Concatena a proxima página ao id da pergunta
     function Destino(){
-        return "perguntas.php?id=" . explode('/', $GLOBALS["indices"])[0];
+        return "perguntas.php?id=" . $_SESSION['GameData']->IndicesQuestoes[0];
     }
 
+    // Realiza o sorteio das perguntas que serão utilizadas no jogo
     function SortIndexs(){
-        $GLOBALS["indices"] = "";
+        $aux = [];
         $count = 0;
         
-        while($count != 5){
-            $random = random_int(0, (Count($GLOBALS["Quests"])-1));
+        while($count != 6){
+            $random = random_int(0, Count($GLOBALS["Perguntas"])-1);
             $validate = true;
-            $aux = explode('/', $GLOBALS["indices"]);
-            for($i=0;$i<(strlen($GLOBALS["indices"]) - $count);$i++){
+            
+            for($i=0;$i<$count;$i++){
                 if($aux[$i] == $random){
                     $validate = false;
                     break;
@@ -42,11 +59,16 @@
             }
 
             if($validate){
-                $GLOBALS["indices"] = $GLOBALS["indices"] . $random . "/";
+                $aux[] = $random;
                 $count++;
             }
         }
+
+        return $aux;
     }
+
+    // Inicializa os dados na sessão(Game Data)
+    $_SESSION['GameData'] = new GameData(SortIndexs());
 ?>
 
 <!DOCTYPE html>
@@ -70,13 +92,7 @@
         <p>O jogo termina quando o candidato responde uma pergunta incorretamente. Após o término do jogo o sistema calcula a pontuação final do candidato. Sua pontuação é dada pela quantidade de perguntas respondidas corretamente pelo candidato.</p>
     </div>
 
-    <form action=<?php echo Destino()?> method="post">
-        <input type="hidden" id="Pontos" name="Pontos" value='0'>
-        <input type="hidden" id="LastIndex" name="LastIndex" value='-1'>
-        <input type="hidden" id="FinalP" name="FinalP" value='5'>
-        <input type="hidden" id="JaSorteados" name="JaSorteados" value=<?php echo $GLOBALS["indices"]?>> 
-        <input type="hidden" id="Alternativa" name="Alternativa" value='-1'>
-
+    <form action=<?php echo Destino()?> method="post">    
         <input type="submit" value="Iniciar">
     </form>
 

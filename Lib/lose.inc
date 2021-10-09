@@ -1,10 +1,11 @@
 <?php
 
+// Retorna o HTML da página de erro
 function GetLoseHtml(){
-    $str = ' <!-- Venceu -->
+    $str = ' <!-- Perdeu -->
     <div id="Cabecalho">
         <h1 id="title"> Você fracassou miserávelmente!!! </h1>
-        <img src="./rsc/LoseImage.png" alt="some text" width=550 height=425>
+        <img src="./rsc/LoseImage.png" alt="some text" width=40% height=auto>
     </div>';
 
     return $str;

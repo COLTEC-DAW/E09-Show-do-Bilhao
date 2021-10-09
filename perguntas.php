@@ -1,68 +1,71 @@
 <?php 
-    // Inclusão dos dados das pergunstas.
+    // Importe de classes
+    require "Models\\Question.php";
+    require "Models\\User.php";
+    require "Models\\GameData.php";
+
+    // Importe de funcionalidades
     include "Lib\\Data.inc";
-    // Inclusão do menu superior..
     include "Lib\\Menu.inc"; 
-    // Inclusão do footer.
     include "Lib\\rodape.inc";
-    // Inclusão do método de formatação da pergunta.
     include "Lib\\perguntas.inc";
-    // Inclusão da tela de sucesso.
     include "Lib\\win.inc";
-    // Inclusão da tela de um fracasso miserável.
     include "Lib\\lose.inc";
 
+    // Inicialização da sessão
     session_start();
 
-    $_POST["Pontos"] = (int) $_POST["Pontos"];
-    $_POST["FinalP"] = (int) $_POST["FinalP"];
-    $_POST["LastIndex"] = (int) $_POST["LastIndex"];
-    $_POST["Alternativa"] = (int) $_POST["Alternativa"];
-    $Index_s = (array) explode('/', $_POST["JaSorteados"]);
-
-    function GetAction(){
-        return "perguntas.php?id=" . $GLOBALS["Index_s"][($_POST["Pontos"]+1)];
+    if(!isset($_POST["Alternativa"])){
+        $_POST["Alternativa"] = -1;
     }
 
+    // Concatena a proxima página ao id da pergunta.
+    function GetAction(){
+        return "perguntas.php?id=" . $_SESSION['GameData']->IndicesQuestoes[$_SESSION['GameData']->RoundAtual];
+    }
+
+    // Faz a verificação dos dados atuais, adiciona ponto e/ou encerra o jogo.
     function QuestUpdate(){
-        if($_POST["LastIndex"] != -1){
-            if($GLOBALS["IndexCorreta"][$_POST["LastIndex"]] == $_POST["Alternativa"]){
+        if($_SESSION['GameData']->RoundAtual != 0){
+            if($GLOBALS["Perguntas"][$_SESSION['GameData']->LastIndex]->Resposta == $_POST["Alternativa"]){
                 // Acertou
-                $_POST["Pontos"]++;
+                $_SESSION['GameData']->Pontuacao++;
             }else{
                 // Errou
                 echo GetLoseHtml();
                 
-
                 $data = date('d/m/Y H:i');
                 setcookie("UltimoJogo_Data", $data);
-                setcookie("UltimoJogo_Pontos", $_POST["Pontos"]);
+                setcookie("UltimoJogo_Pontos", $_SESSION['GameData']->Pontuacao);
                 return;
             }
 
-            if($_POST["Pontos"] == 5){
+            // Jogo completo
+            if($_SESSION['GameData']->Pontuacao == 5){
                 echo GetWinHtml();
-                session_destroy();
 
                 $data = date('d/m/Y H:i');
                 setcookie("UltimoJogo_Data", $data);
-                setcookie("UltimoJogo_Pontos", $_POST["Pontos"]);
+                setcookie("UltimoJogo_Pontos", $_SESSION['GameData']->Pontuacao);
                 return;
             }
         }
 
-        if(!isset($_SESSION['username'])) {
+        if(!isset($_SESSION['PlayerData'])) {
             echo "</br>" . "Você precisa fazer o <a href='login.php'>Login</a> para acessar as perguntas!" . "</br></br>";
             return;
         }
 
-        $_POST["LastIndex"] = $_GET["id"];
+        $_SESSION['GameData']->RoundAtual++;
+        $_SESSION['GameData']->LastIndex = $_GET["id"];
+
         return carregaPergunta($_GET["id"]);
     }
 
+    // Retorna o número de acertos atual.
     function GetScore(){
-        if($_POST["LastIndex"] == -1) return 0;
-        return ($GLOBALS["IndexCorreta"][$_POST["LastIndex"]] == $_POST["Alternativa"]) ? $_POST["Pontos"] + 1 : $_POST["Pontos"];
+        if($_SESSION['GameData']->LastIndex == -1) return 0;
+        return ($GLOBALS["Perguntas"][$_SESSION['GameData']->LastIndex]->Resposta == $_POST["Alternativa"]) ? $_SESSION['GameData']->Pontuacao + 1 : $_SESSION['GameData']->Pontuacao;
     }
 ?>
 <!DOCTYPE html>

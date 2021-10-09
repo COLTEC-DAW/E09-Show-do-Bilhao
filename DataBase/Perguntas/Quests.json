@@ -1,0 +1,62 @@
+[
+    {
+        "enunciado": "Normalmente, quantos litros de sangue uma pessoa tem?",
+        "alternativas": ["Entre 2 a 4 litros.","Entre 4 a 6 litros.","10 litros.","7 litros.","0,5 litros."],
+        "resposta": 1
+    },
+    {
+        "enunciado": "De quem é a famosa frase “Penso, logo existo”?",
+        "alternativas": ["Descartes","Platão","Galileu Galilei","Sócrates","Francis Bacon"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "De onde é a invenção do chuveiro elétrico?",
+        "alternativas": ["França","Inglaterra","Brasil","Austrália","Itália"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Quantas casas decimais tem o número PI?",
+        "alternativas": ["Duas","Centenas","Vinte","Milhares","Infinitas"],
+        "resposta": 4
+    },
+    {
+        "enunciado": "Quanto tempo a luz do Sol demora para chegar à Terra?",
+        "alternativas": ["12 minutos","1 dia","12 horas","8 minutos","2 segundos"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
+        "alternativas": ["Jânio Quadros","Jacinto Anjos","Getúlio Vargas","João Figueiredo","João Goulart"],
+        "resposta": 4
+    },
+    {
+        "enunciado": "Como se chamam os vasos que transportam sangue do coração para a periferia do corpo?",
+        "alternativas": ["veias","átrios","ventrículos","artérias","aurículos"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual a velocidade da luz?",
+        "alternativas": ["300 000 000 (m/s)","150 000 000 (m/s)","199 792 458 (m/s)","299 792 458 (m/s)","30 000 000  (m/s)"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Quem é o autor de “O Príncipe”?",
+        "alternativas": ["Maquiavel","Antoine de Saint-Exupéry","Montesquieu","Thomas Hobbes","Rousseau"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual foi o recurso utilizado inicialmente pelo homem para explicar a origem das coisas?",
+        "alternativas": ["A Filosofia","A Biologia","A Matemática","A Astronomia","A Mitologia"],
+        "resposta": 4
+    },
+    {
+        "enunciado": "Qual o tema do famoso discurso Eu Tenho um Sonho, de Martin Luther King?",
+        "alternativas": ["Igualdade das raças","Justiça para os menos favorecidos","Intolerância religiosa","Prêmio Nobel da Paz","Luta contra o Apartheid"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "As pessoas de qual tipo sanguíneo são consideradas doadores universais?",
+        "alternativas": ["Tipo A","Tipo B","Tipo O","Tipo AB","Tipo ABO"],
+        "resposta": 2
+    }
+]

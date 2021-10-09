@@ -1,10 +1,23 @@
 <?php 
-    // Inclusão dos dados das pergunstas.
+    // Importe de classes
+    require "Models\\Question.php";
+    require "Models\\User.php";
+
+    // Importe de funcionalidades
     include "Lib\\Data.inc";
-    // Inclusão do menu superior..
-    include "Lib\\Menu.inc";
-    // Inclusão do footer.
-    include "Lib\\rodape.inc"; 
+    include "Lib\\Menu.inc"; 
+    include "Lib\\rodape.inc";
+
+    // Inicialização da sessão
+    session_start();
+
+    if(!isset($_SESSION['PlayerData'])){
+        echo "Você precisa estar logado para acessar todas as perguntas.";
+        $GLOBALS["Validate"] = false;
+    }else if($_SESSION['PlayerData']->UserName != "admin"){
+        echo "Você precisa estar logado como adminstrador para acessas todas as perguntas.";
+        $GLOBALS["Validate"] = false;
+    }
 ?>
 
 <!DOCTYPE html>
