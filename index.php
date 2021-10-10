@@ -1,50 +1,35 @@
-<?php 
-    $perguntas = array("a",
-                    "b",
-                    "c",
-                    "d",
-                    "e",
-                    "f",
-                    "g",
-                    "h",
-                    "i",
-                    "j");
-
-    $alternativas = array(array("a","b","c","d"),
-                          array("i","o","i","o"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"),
-                          array("a","b","c","d"));
-
-    $altCorreta[] = array("","","","","","","","","","");
-?>
-
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>Jogo do Bilhão</title>
     </head>
     <body>
-        <form>
+        <form action="" method="post">
+            
             <?php
-                $i = 0;
-                foreach ($perguntas as $pergunta){
-                    echo "<fieldset>";
-                    echo "<legend> $pergunta </legend>";
 
-                    foreach($alternativas[$i] as $key => $value){
+                require "perguntas.inc";
+    
+                // Pega os valores da pergunta anterior e a alternativa selecionada anteriormente ( ifs são para não dar warning na primeira pergunta)
+                if ( !empty($_POST['perguntaAnterior'])) {  $numPerg = (int)$_POST['perguntaAnterior'];}
+                if ( !empty($_POST['alternativa'])) {  $altMarcada = (int)$_POST['alternativa'];}
 
-                        echo "<input type=\"radio\" name=\"pergunta$i\" value=\"$key\">$value<br>";
-                    }
 
-                    echo "</fieldset> <br>";
-                    $i++;
+                // Checa se as variáveis estão indefinidas, e as preenche com 0 (para não dar warning na primeira pergunta)
+                if ( empty($numPerg)) {  $numPerg = 0; }
+                if ( empty($altMarcada)) {  $altMarcada = 0; }
+
+
+                // Confere se a opção anterior estava correta
+                if (autenticaOpcao($altMarcada, $numPerg) == true ){
+
+                    carregaProgresso($numPerg);
+                    // e, se sim, carrega a próxima pergunta
+                    carregaPergunta($numPerg);
+
+                }
+                else {
+                    echo "<p> oops, something went wrong :( </p>";
                 }
             ?>
         </form>
