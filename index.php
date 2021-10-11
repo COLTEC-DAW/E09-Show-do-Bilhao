@@ -1,7 +1,3 @@
-<?php
-    require "perguntas.inc";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +13,10 @@
         include "./menu.inc";
     ?> 
 
-    <form action="perguntas.php" method="post">
-         <p id="questoes">
-            <?php echo carregaPergunta($_GET["id"]) ?>
-        </p>
-    </form>
-
+    <div>
+        <h1 style="color: #6E7076">Responda 5 perguntas corre e concorra a 1 bilhão de reais!</h1>
+        <a href="./perguntas.php?id=0" style="background-color: #fc4518; color: white; font-size: 30px">Começar</a>
+    </div>
 
     <?php
         include "./rodape.inc";
