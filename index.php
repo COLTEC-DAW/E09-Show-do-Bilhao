@@ -12,9 +12,6 @@
     // Inicio da sessão.
     session_start();
 
-    // Chamada da função para realizar o sorteio das perguntas
-    SortIndexs();
-
     //Finaliza a sessão caso o usuário pressione o botão Logout
     if(isset($_GET['Logout'])) session_destroy();
 

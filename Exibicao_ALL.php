@@ -12,10 +12,12 @@
     session_start();
 
     if(!isset($_SESSION['PlayerData'])){
-        echo "Você precisa estar logado para acessar todas as perguntas.";
+        echo "Você precisa estar logado para acessar todas as perguntas. </br>";
+        echo "Primeiro acesso? <a href='cadastro.php'>Crie uma conta</a> com o nome de usuário admin! </br>";
         $GLOBALS["Validate"] = false;
     }else if($_SESSION['PlayerData']->UserName != "admin"){
-        echo "Você precisa estar logado como adminstrador para acessas todas as perguntas.";
+        echo "Você precisa estar logado como adminstrador para acessar todas as perguntas. </br>";
+        echo "Primeiro acesso? <a href='cadastro.php'>Crie uma conta</a> com o nome de usuário admin! </br>";
         $GLOBALS["Validate"] = false;
     }
 ?>

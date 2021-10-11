@@ -22,9 +22,9 @@ function GetMenu(){
 
     if(isset($_SESSION['PlayerData']) && !isset($_GET['Logout'])){
         $Bisc8 = "";
-        if(isset($_COOKIE['UltimoJogo_Data'])){
-            $Bisc8 = "Ultimo acesso: " . $_COOKIE['UltimoJogo_Data'] . "</br>" .
-                    "Pontuação anterior: " . $_COOKIE['UltimoJogo_Pontos'] . "</br>";
+        if(isset($_COOKIE[$_SESSION['PlayerData']->UserName . '_UltimoJogo_Data'])){
+            $Bisc8 = "Ultimo acesso: " . $_COOKIE[$_SESSION['PlayerData']->UserName .'_UltimoJogo_Data'] . "</br>" .
+                    "Pontuação anterior: " . $_COOKIE[$_SESSION['PlayerData']->UserName . '_UltimoJogo_Pontos'] . "</br>";
         }
         $format = $format .
         "<div>

@@ -35,8 +35,8 @@
                 echo GetLoseHtml();
                 
                 $data = date('d/m/Y H:i');
-                setcookie("UltimoJogo_Data", $data);
-                setcookie("UltimoJogo_Pontos", $_SESSION['GameData']->Pontuacao);
+                setcookie($_SESSION['PlayerData']->UserName . "_UltimoJogo_Data", $data);
+                setcookie($_SESSION['PlayerData']->UserName . "UltimoJogo_Pontos", $_SESSION['GameData']->Pontuacao);
                 return;
             }
 
@@ -45,8 +45,8 @@
                 echo GetWinHtml();
 
                 $data = date('d/m/Y H:i');
-                setcookie("UltimoJogo_Data", $data);
-                setcookie("UltimoJogo_Pontos", $_SESSION['GameData']->Pontuacao);
+                setcookie($_SESSION['PlayerData']->UserName . "_UltimoJogo_Data", $data);
+                setcookie($_SESSION['PlayerData']->UserName . "_UltimoJogo_Pontos", $_SESSION['GameData']->Pontuacao);
                 return;
             }
         }

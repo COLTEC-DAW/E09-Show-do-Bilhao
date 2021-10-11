@@ -15,7 +15,6 @@
         if(file_exists($FilePath)){
             echo "O Nome de usuário " . $_POST['username'] . " já está em uso. Tente novamente!";
         }else{
-            echo $_POST['name'];
             $NovoUser = new User($_POST['name'],$_POST['username'],$_POST['email'],$_POST['password']);
             file_put_contents($FilePath,json_encode($NovoUser));
             header('Location: login.php?code=create');
