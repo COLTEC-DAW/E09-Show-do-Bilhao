@@ -32,12 +32,15 @@
 
     function carregaPergunta($numPerg){
 
+        global $usuario;
+        echo "<p> Olá, $usuario</p>";
+
         global $perguntas;
         global $alternativas;
         global $altCorretas;
 
-        echo "<fieldset>";
-        echo "<legend> $perguntas[$numPerg] </legend>";
+        echo "<fieldset>
+            <legend> $perguntas[$numPerg] </legend>";
 
         foreach($alternativas[$numPerg] as $key => $value){
 
@@ -45,9 +48,10 @@
         }
 
         $numPerg++;
-        echo "<input type=\"hidden\" name=\"perguntaAnterior\" value=\"$numPerg\">";
-        echo "<input type=\"submit\" name=\"Enviar\">";
-        echo "</fieldset> <br>";
+        echo "<input type=\"hidden\" name=\"perguntaAnterior\" value=\"$numPerg\">
+              <input type=\"hidden\" name=\"title\" value=\"false\">
+              <input type=\"submit\" name=\"Enviar\">
+              </fieldset> <br>";
     }
 
     function autenticaOpcao($opcaoEscolhida, $numPergunta){
