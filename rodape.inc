@@ -1,10 +1,8 @@
 <?php
+
     function getRodape(){
-        $texto = '
-                <footer>Desenvolvido por Guilherme Rodrigues COLTEC-UFMG</footer>
-                ';
+        $texto = '<div id=footer>Desenvolvido por Guilherme Rodrigues COLTEC-UFMG</div>' ;
+                
         return $texto;
     }
-
-
 ?> 

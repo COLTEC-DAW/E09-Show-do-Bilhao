@@ -1,6 +1,5 @@
 <?php include "menu.inc";?> 
 <?php include "rodape.inc";?>   
-<?php require "perguntas.inc";?> 
 <!DOCTYPE html>
     <!--Guilherme Rodrigues Souza Macieira-->
 <html lang="pt-br" dir="ltr">
@@ -34,9 +33,16 @@
                                                                     ),
                                     "enunciado" => array ( "1) qual a linguagem de programação representada por um mascote de elefante?",
                                                     ),
-                                    );
-
-
+                                                                                );
+                echo $pergunta0["enunciado"][0]; 
+                echo "<br>";
+                for($i=0;$i<=2;$i++){
+                    echo $pergunta0["alternativas"][$i];     
+                    echo" <button>selecionar</button>";             
+                    echo "<br>";
+                }
+                                 echo "<br>";
+                                 echo "<br>";
                                 $pergunta1 = array ( "alternativas"  => array ( 0 => " a) Guilherme Rodrigues",
                                                        1 => " b) Sílvio Santos",
                                                        2 => " c) Jemaf",
@@ -44,7 +50,15 @@
                                     "enunciado" => array ( "2) qual o dono do SBT?",
                                                     ),
                                                                                 );
-
+                echo $pergunta1["enunciado"][0]; 
+                echo "<br>";
+                for($i=0;$i<=2;$i++){
+                    echo $pergunta1["alternativas"][$i];     
+                    echo" <button>selecionar</button>";             
+                    echo "<br>";
+                }
+                                                 echo "<br>";
+                                                 echo "<br>";
                                                 $pergunta2 = array ( "alternativas"  => array ( 0 => " a) show do milhão",
                                                        1 => " b) show do bilhão",
                                                        2 => " c) show dos mil reais",
@@ -52,7 +66,15 @@
                                     "enunciado" => array ( "3) qual o nome do programa?",
                                                     ),
                                                                                 );
-
+                echo $pergunta2["enunciado"][0]; 
+                echo "<br>";
+                for($i=0;$i<=2;$i++){
+                    echo $pergunta2["alternativas"][$i];     
+                    echo" <button>selecionar</button>";             
+                    echo "<br>";
+                }
+                                                echo "<br>";
+                                                 echo "<br>";
                                                 $pergunta3 = array ( "alternativas"  => array ( 0 => " a) Guilherme Rodrigues",
                                                        1 => " b) Otaviano Costa",
                                                        2 => " c) Elon Musk",
@@ -60,14 +82,13 @@
                                     "enunciado" => array ( "4) qual o criador deste site?",
                                                     ),
                                                                                 );
-            
-                $result = array ( 0 => $pergunta0, 1 => $pergunta1, 2 => $pergunta2, 3 => $pergunta3);
-                $id=pegaID();
-                $tmp= escolhePergunta(pegaID(),$result);
-                carregaPergunta($tmp);
-                $gabarito=array( 0,1,1,0);
-                print_r($gabarito);
-
+                echo $pergunta3["enunciado"][0]; 
+                echo "<br>";
+                for($i=0;$i<=2;$i++){
+                    echo $pergunta3["alternativas"][$i];     
+                    echo" <button>selecionar</button>";             
+                    echo "<br>";
+                }
             ?>
     </div>
     <?php 
