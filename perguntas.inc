@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $enunciados = array(
     "Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?",
     "De quem é a famosa frase “Penso, logo existo”?",
@@ -37,6 +37,7 @@ $altsCorretas = array(
     1, 2, 2, 0
 );
 
+
 function carregaPergunta($id)
 {
     global $enunciados, $alternativas, $altsCorretas;
@@ -56,27 +57,53 @@ function exibePergunta($id)
     $pergunta = carregaPergunta($id);
     $enunciado = $pergunta["enunciado"];
     $alternativas = $pergunta["alternativas"];
-    $resposta = $pergunta["resposta"];
+
     echo "<h3>" . ($id + 1) . ". $enunciado </h3>";
+
+    echo "<form method='post'>";
 
     // Imprime as alternativas
     for ($j = 0; $j < count($alternativas); $j++) {
-        // A alternativa certa será impressa em negrito
-        if ($j == $resposta) {
-            $alternativas[$j] = "<b>" . $alternativas[$j] . "</b>";
-        }
+        echo "<input type='radio' name='alternativa' value='" . $j . "'>";
         echo "&nbsp&nbsp" . $alternativas[$j] . "<br>";
+    }
+    echo "<br>";
+    echo "<input type='hidden' id='id' name='id' value='" . ($id + 1) . " '>";
+    echo "<button>Enviar</button>";
+    echo "</form>";
+}
+
+function verificaResposta($id, $alternativa)
+{
+    $pergunta = carregaPergunta($id - 1);
+    $resposta = $pergunta["resposta"];
+
+    if ($alternativa == $resposta) {
+        if ($id >= 4) {
+            defineCookies($id);
+            header("Location: /win.php");
+        }
+    } else {
+        defineCookies($id);
+        header("Location: /gameOver.php");
     }
 }
 
 function verificaID($id)
 {
     global $enunciados;
-    // Se o valor não for numérico, for -1 (código enviado quando não se quer nenhuma pergunta)
-    // ou estiver fora do tamanho do array, a pergunta não é impressa
-    if (!(is_numeric($id)) || $id == "-1" || $id >= count($enunciados)) {
+    // Se o valor não for numérico, for negativo ou estiver fora
+    // do tamanho do array, a pergunta não é impressa
+    if (!(is_numeric($id)) || $id < 0 || $id > count($enunciados)) {
         return false;
     }
 
     return true;
+}
+
+function defineCookies($id)
+{
+    date_default_timezone_set('America/Sao_Paulo');
+    setcookie(("lastGame" . $_SESSION["name"]), date("j.n.Y, g:i a"), time() + (86400 * 30), '/');
+    setcookie(("lastScore" . $_SESSION["name"]), $id - 1, time() + (86400 * 30), '/');
 }

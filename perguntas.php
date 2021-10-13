@@ -1,5 +1,21 @@
 <?php
 require "./perguntas.inc";
+
+// Se o jogo estiver começando, define a primeira pergunta como a ser exibida
+if (!isset($_POST["id"]) || !isset($_POST["alternativa"])) {
+    $_POST["id"] = 0;
+} else {
+    // Se o ID for válido, verifica a resposta; caso contrário, vai pra página de erro
+    if (verificaID(intval(($_POST["id"])))) {
+        verificaResposta(intval($_POST["id"]), $_POST["alternativa"]);
+    } else {
+        header("Location: /gameOver.php");
+    }
+}
+
+$id = intval(($_POST["id"]));
+$numAcertos = $id;
+
 ?>
 
 <!DOCTYPE html>
@@ -16,38 +32,17 @@ require "./perguntas.inc";
     <?php
     include "./menu.inc";
     ?>
-
-    <div class="col_12">
-        <h2>Pergunta desejada:</h2>
-        <div class="perguntas">
-            <form method="get">
-                <select name="id">
-                    <option value="0">Primeira pergunta</option>
-                    <option value="1">Segunda pergunta</option>
-                    <option value="2">Terceira pergunta</option>
-                    <option value="3">Quarta pergunta</option>
-                    <option value="-1">(Nenhuma)</option>
-                </select>
-                &nbsp
-                <button>Selecionar</button>
-            </form>
-        </div>
-
-        <br>
-        <hr>
-
-        <div>
-            <?php
-            if (isset($_GET["id"])) {
-                if (verificaID($_GET["id"])) {
-                    echo "<h2>Pergunta selecionada:</h2>";
-                    exibePergunta($_GET["id"]);
-                    echo "<br> <hr>";
-                }
-            }
-            ?>
-        </div>
+    <br>
+    <hr>
+    <!-- Se chegou até aqui, tá tudo certo! -->
+    <div class="content">
+        <p><b>Número de acertos: <?= $numAcertos ?></b> </p>
+        <h2>Pergunta:</h2>
+        <?php exibePergunta($id); ?>
     </div>
+
+    <br>
+    <hr>
 
     <?php
     include "./rodape.inc";
