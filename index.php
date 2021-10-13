@@ -2,6 +2,32 @@
     include "Info\data.inc";
     include "Info\menu.inc";
     include "Info\Rodape.inc";
+
+    SorteiaIndex();
+
+    function Destino(){
+        return "perguntas.php?id=" . explode('/', $GLOBALS["indices"])[0];
+    }
+
+    function SorteiaIndex(){
+        $GLOBALS["indices"] = "";
+        $contador = 0;
+
+        while($contador != 5){
+            $random = random_int(0, (Count($GLOBALS["Perguntas"])-1));
+            $valida = true;
+            for($i = 0; $i < $contador; $i++){
+                if($GLOBALS["indices"][$i] == $random){
+                    $valida = false;
+                    break;
+                }
+            }
+            if($valida){
+                $GLOBALS["indices"] = $GLOBALS["indices"] . $random . "/";
+                $contador++;
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +42,23 @@
 
 <body>
     <?php echo Menu()?>
-    <div id="Superior">
-        <h1 id="Titulo">Show do Bilhão </h1>
+    <div>
+        <h1>Show do Bilhão </h1>
         <h2>Edição Marvel</h2>
         <p>O Show do Bilhão é um programa idealizado pela emissora SBT (Sistema Belo-Horizontino de Televisão). Neste programa, um candidato escolhido da audiência é submetido a uma sequência de 5 perguntas de conhecimento geral. A medida em que o candidato responde cada pergunta ele avança no jogo.</p>
         
     </div>
+
+    <form action=<?php echo Destino() ?> method="post">
+        <input type="hidden" id="Pontos" name="Pontos" value='0'>
+        <input type="hidden" id="UltimoIndex" name="UltimoIndex" value='-1'>
+        <input type="hidden" id="Final" name="Final" value='5'>
+        <input type="hidden" id="Sorteados" name="Sorteados" value=<?php echo $GLOBALS["indices"]?>> 
+        <input type="hidden" id="Opcao" name="Opcao" value='-1'>
+
+        <input type="submit" value="Começar" id="Botao">
+    </form>
+
     <?php echo Rodape()?>
 </body>
 

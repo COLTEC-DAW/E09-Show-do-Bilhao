@@ -3,6 +3,41 @@
     include "Info\menu.inc"; 
     include "Info\perguntas.inc";
     include "Info\Rodape.inc"; 
+    include "Info\perdeu.inc";
+    include "Info\Venceu.inc";
+
+    $_POST["Pontos"] = (int) $_POST["Pontos"];
+    $_POST["Final"] = (int) $_POST["Final"];
+    $_POST["UltimoIndex"] = (int) $_POST["UltimoIndex"];
+    $_POST["Opcao"] = (int) $_POST["Opcao"];
+    $Index_s = (array) explode('/', $_POST["Sorteados"]);
+
+    function Acao(){
+        return "perguntas.php?id=" . $GLOBALS["Index_s"][($_POST["Pontos"]+1)];
+    }
+
+    function atualizaPergunta(){
+        if($_POST["UltimoIndex"] != -1){
+            if($GLOBALS["IndiceCorreta"][$_POST["UltimoIndex"]] == $_POST["Opcao"]){
+                $_POST["Pontos"]++;
+            }else{
+                echo perdeuHtml();
+                return;
+            }
+
+            if($_POST["Pontos"] == 5){
+                echo venceuHtml();
+                return;
+            }
+        }
+        $_POST["UltimoIndex"] = $_GET["id"];
+        return carregaPergunta($_GET['id']);
+    }
+
+    function pontuacao(){
+        if($_POST["UltimoIndex"] == -1) return 0;
+        return ($GLOBALS["IndiceCorreta"][$_POST["UltimoIndex"]] == $_POST["Opcao"]) ? $_POST["Pontos"] + 1 : $_POST["Pontos"];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,7 +50,11 @@
 </head>
 <body>
     <?php echo Menu() ?>
-    <?php echo carregaPergunta($_GET["id"]); ?>
+    <div class="progress">
+        <?php echo pontuacao() . " pontos"?>
+    </div>
+    <?php echo atualizaPergunta(); ?>
+    <div></div>
     <?php echo Rodape()?>
 </body>
 </html> 
