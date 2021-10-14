@@ -1,0 +1,33 @@
+.container{
+    width: 92%;
+    margin: auto;
+}
+
+/*
+ *  Definindo o tamanho das colunas para o layout responsivo;
+ *
+ */ 
+@for $i from 1 to 12{
+    .col_#{$i}{ 
+        float: left;
+        width: ($i * 8%) - 2%;
+        padding: 1%;
+    }   
+}
+/* 
+ *  Parte do layout responsivo 
+ *
+**/
+@media (min-width: 1024px){
+    @import 'arquivo';
+}
+@media (max-width: 648px){
+    @import 'arquivo';
+    /* para mostrar apenas 1 por vez. */
+    .col_4{ width: 95%; }
+}
+@media (max-width: 1024px) and (min-width: 648px){
+    @import 'arquivo';
+}
+    
+
