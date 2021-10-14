@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Qual é o nome do martelo de Thor?",
+        "alternativas": ["Vanir", "Mjolnir", "Aesir", "Norn"],
+        "correta": 1
+    },
+    {
+        "enunciado": "Qual é a raça alienígena que Loki envia para invadir a Terra em Os Vingadores?",
+        "alternativas": ["Skrulls","Chitauri", "Kree", "Flerkens"],
+        "correta": 1
+    },
+    {
+        "enunciado": "Qual nome falso Natasha Romanoff utiliza quando conhece Tony Stark?",
+        "alternativas": ["Natalie Rushman", "Natalia Romanoff", "Nicole Rohan", "Naya Rabe"],
+        "correta": 0
+    },
+    {
+        "enunciado": "Que tipo de médico é Stephen Strange?",
+        "alternativas": ["Cirurgião cardiotorácico", "Cirurgião de trauma", "Cirurgião plástico","Neurocirurgião"],
+        "correta": 3
+    },
+    {
+        "enunciado": "Sobre que cidade Hawkeye e Black Widow costumam relembrar?",
+        "alternativas": ["Praga", "Istambul", "Budapeste", "Sokovia"],
+        "correta": 2
+    }
+]

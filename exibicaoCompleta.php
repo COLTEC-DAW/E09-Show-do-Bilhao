@@ -1,7 +1,19 @@
 <?php 
+    require "Models\Pergunta.php";
+    require "Models\Usuario.php";
     include "Info\data.inc";
     include "Info\menu.inc";
     include "Info\Rodape.inc";
+
+    session_start();
+    if(!isset($_SESSION['UsuarioDados'])){
+        echo "Faça login para acessar as perguntas!";
+        $GLOBALS["Valida"] = false;
+    }
+    else if($_SESSION["UsuarioDados"]->NomeUsuario != "admin"){
+        echo "Você precisa ser um admin para acessar as perguntas!";
+        $GLOBALS["Valida"] = false;
+    }
 ?>
 
 <!DOCTYPE html>

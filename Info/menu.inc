@@ -19,12 +19,16 @@ function Menu(){
         </div>
     </nav>';
 
-    if(isset($_SESSION['usuario']) && !isset($_GET['Logout'])){
+    if(isset($_SESSION['UsuarioDados']) && !isset($_GET['Logout'])){
+        $Data = "";
+        if(isset($_COOKIE['ultimoJogo'])){
+            $Data = "Ultimo acesso: " . $_COOKIE['ultimoJogo'] . "</br>" .
+                    "Pontuação anteriro: " . $_COOKIE['ultimoJogoPontos'] . "</br>";
+        }
         $format = $format .
         "<div>
-            Olá ". $_SESSION['usuario'] .  ",</br>" .
-            "Ultimo acesso: " . $_COOKIE['ultimoJogo'] . "</br>" .
-            "Pontuação anterior: " . $_COOKIE['ultimoJogoPontos'] .  "</br>" .
+            Olá ". $_SESSION['UsuarioDados']->Nome .  ",</br>" 
+            . $Data .
         "</div>";
     }
 
