@@ -1,0 +1,52 @@
+[
+    {
+        "enunciado":"Qual bicho transmite Doença de Chagas?",
+        "alternativas": ["Abelha","Barata","Pulga","Barbeiro"],
+        "resposta": 3
+    },
+    {
+        "enunciado":"Qual fruto é conhecido no Norte e Nordeste como 'jerimum'?",
+        "alternativas": ["Caju","Abóbora","Chuchu","Coco"],
+        "resposta": 1
+    },
+    {
+        "enunciado":"Qual é o coletivo de cães?",
+        "alternativas": ["Matilha","Rebanho","Alcateia","Manada"],
+        "resposta": 0
+    },
+    {
+        "enunciado":"Qual é o triângulo que tem todos os lados diferentes?",
+        "alternativas": ["Equilátero","Isóceles","Escaleno","Trapézio"],
+        "resposta": 2
+    },
+    {
+        "enunciado":"Qual é o antônimo de 'malograr'?",
+        "alternativas": ["Desprezar","Conseguir","Perder","Fracassar"],
+        "resposta": 1
+    },
+    {
+        "enunciado":"Em que país nasceu Carmem Miranda?",
+        "alternativas": ["Espanha","Brasil","Portugal","Argentina"],
+        "resposta": 2
+    },
+    {
+        "enunciado":"Que nome se dá à purificação por meio da água?",
+        "alternativas": ["Abolição","Abdução","Abrupção","Ablução"],
+        "resposta": 3
+    },
+    {
+        "enunciado":"Em que parte do corpo se encontra a epiglote?",
+        "alternativas": ["Estômago","Pâncreas","Rim","Boca"],
+        "resposta": 3
+    },
+    {
+        "enunciado":"Qual montanha se localiza entre a fronteira do Tibet com o Nepal?",
+        "alternativas": ["Monte Everest","Monte Carlo","Monte Fuji","Monte Branco"],
+        "resposta": 0
+    },
+    {
+        "enunciado":"Na história do programa apenas uma pessoa levou o prêmio máximo.\nA pergunta valendo 1 milhão de reais foi:\nEm que dia nasceu e em que dia foi registrado o Presidente Lula?",
+        "alternativas": ["6 e 27 de outubro","8 e 27 de outubro","9 e 26 de outubro","7 e 23 de outubro"],
+        "resposta": 0
+    }
+]

@@ -1,6 +1,5 @@
 <?php
     session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -13,27 +12,24 @@
             
             <?php
 
+                // quando o jogador perde, ele decide se vai jogar novamente ou fazer logout e a opção escolhida
+                // é enviada com o nome "ação".
+
                 if  ( isset($_POST['acao'])) {
+
+                    //se a ação escolhida for o logout, a sessão é destruída:
 
                     if ($_POST['acao'] == 'logout'){
 
-                        echo "<p> saiu </p>";
                         session_destroy();
-
                     }
                 }
 
-                if ( !isset($_POST['title'])) {  $_POST['title'] = 'true'; }
 
-                if($_POST['title'] == 'true'){
+                // Se as perguntas não tiverem começado ou se o jogador tiver escolhido 'try again' depois de perder, a tela de menu aparece:
+                if((!isset($_POST['indexPerguntaAtual'])) || ((isset($_POST['acao'])) && ($_POST['acao'] == 'try again'))){
 
-                    echo "
-                    <p>bem vindo ao jogo do bilhao!</p>
-                    <form action=\"\">
-                        <input type=\"hidden\" name=\"title\" value=\"false\">
-                        <input type=\"submit\" value=\"começar\">
-                    </form>
-                    ";
+                    require "./lib/menuInicial.inc";
                 }
                 else{
                     
@@ -44,56 +40,42 @@
                     if (empty($_SESSION['usuario'])) {
     
                         //se não estiver, o formulário para receber o nome aparece:
-                        echo "
-                        <form action=\"\" method=\"post\">
-                            <p>Quem está jogando?</p>
-                            <input type=\"text\" name=\"nome\">
-                            <input type=\"hidden\" name=\"title\" value=\"false\">
-                            <input type=\"submit\" name =\"enviar\">
-                        </form>";
+
+                        require "./lib/login.inc";
                     }
                     else{
     
             
-                        require ".\lib\perguntas.inc";
+                        require "./lib/perguntas.inc";
 
                         $usuario = $_SESSION['usuario'];
                         
             
-                        // Pega os valores da pergunta anterior e a alternativa selecionada anteriormente ( ifs são para não dar warning na primeira pergunta)
-                        if ( isset($_POST['perguntaAnterior'])) {  $numPerg = (int)$_POST['perguntaAnterior'];}
+                        // Pega os valores da pergunta anterior e a alternativa selecionada anteriormente
+                        // ( ifs são para não dar warning na primeira pergunta)
+                        if ( isset($_POST['indexPerguntaAtual'])) {  $numPerg = (int)$_POST['indexPerguntaAtual'];}
                         if ( isset($_POST['alternativa'])) {  $altMarcada = (int)$_POST['alternativa'];}
     
     
                         // Checa se as variáveis estão indefinidas, e as preenche com 0 (para não dar warning na primeira pergunta)
-                        if ( !isset($numPerg)) {  $numPerg = 0; }
+                        if (  !isset($numPerg)  ) {  $numPerg = 0; }
                         if ( !isset($altMarcada)) {  $altMarcada = 0; }
     
-    
+                        $dados = json_decode(file_get_contents('./dados/perguntas.json'), true);
+
                         // Confere se a opção anterior estava correta
-                        if (autenticaOpcao($altMarcada, $numPerg) == true ){
-
-
+                        if (autenticaOpcao($altMarcada, $numPerg, $dados) == true ){
                             
+                            echo "<p> Olá, $usuario</p>";
                             carregaProgresso($numPerg);
                             // e, se sim, carrega a próxima pergunta
-                            carregaPergunta($numPerg);
+                            carregaPergunta($numPerg, $dados[$numPerg]);
     
                         }
                         else {
                             
-                        
+                        require "./lib/gameover.inc";
 
-                            echo "
-                                <p> game over :) </p>
-                                <form action=\"\" method=\"post\">
-    
-                                    <input type=\"hidden\" name=\"title\" value=\"true\">
-                                    <input type=\"submit\" name=\"acao\" value=\"try again\">
-                                    <input type=\"submit\" name=\"acao\" value=\"logout\">
-                                </form>
-                            ";
-                        
                         }
                     }
                 }
