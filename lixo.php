@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Show do bilhão </title>
     </head>
-
+    "require_once'".$link2."'"; 
    
     <div class="sidebar">
     <button>Click Aqui</button>

@@ -23,7 +23,19 @@
 
     <div class="body-text">  
     <?php 
+     $gabarito=array( 'a','b','b','a');
       echo GetMenu();
+      if(@$_GET['id']==4){
+        header('Location:gameover.php?id=4'); 
+     }
+      if(@$_GET['id']!=0){
+        
+        $pontos=@$_GET['id'];
+        $pontos=$pontos-1;
+        $pontos=verifica_resposta($gabarito,$pontos);
+        echo $pontos;  
+      }
+
     ?>  
            <?php
                   echo "<br>";
@@ -64,10 +76,13 @@
                 $result = array ( 0 => $pergunta0, 1 => $pergunta1, 2 => $pergunta2, 3 => $pergunta3);
                 $id=pegaID();
                 $tmp= escolhePergunta(pegaID(),$result);
-                carregaPergunta($tmp);
-                $gabarito=array( 0,1,1,0);
+                carregaPergunta($tmp,$id);                                                              
+               
                 print_r($gabarito);
-
+                echo $_POST["id"];        
+                echo $_POST["resposta"];  
+                
+                                                                      
             ?>
     </div>
     <?php 

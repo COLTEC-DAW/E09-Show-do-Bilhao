@@ -1,5 +1,6 @@
 <?php include "menu.inc";?> 
 <?php include "rodape.inc";?>   
+<?php include "perguntas.inc";?> 
 <!DOCTYPE html>
     <!--Guilherme Rodrigues Souza Macieira-->
 <html lang="pt-br" dir="ltr">
@@ -17,6 +18,15 @@
     <div class="body-text">  
     <?php 
       echo GetMenu();
+      $valor=pegaID();
+      if ($valor<4){
+        echo '<h1>VOCE PERDEU</h1>';
+        echo '<h1>SUA PONTUAÇÃO FOI:'.$valor.'</h1>';
+      }else{
+        echo '<h1>PARABENS, VOCÊ GANHOU!</h1>';
+        echo '<h1>SUA PONTUAÇÃO FOI:'.$valor.'</h1>';
+      }
+      
     ?>  
 
     </div>

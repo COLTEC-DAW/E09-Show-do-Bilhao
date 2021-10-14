@@ -1,6 +1,5 @@
 <?php
     function GetMenu(){
-
         $menu = 
         '<div>
             <a href="perguntas.php?id=0" >Pagina de perguntas</a>
