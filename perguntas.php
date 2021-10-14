@@ -1,5 +1,20 @@
 <?php
     require "perguntas.inc";
+    
+    function GetHeader(){
+        $id = $_GET['id'];
+        $id = $id + 1;
+
+        $redirect = "Location: /ShowDoBilhao/winner.php";
+
+        if($id > 5){
+            header($redirect);
+        }
+
+        return "perguntas.php?id=" . $id;
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +32,8 @@
         include "./menu.inc";
     ?> 
 
-    <form action="perguntas.php" method="post">
-         <p id="questoes">
+    <form action=<?php echo GetHeader() ?>  method="post">
+        <p id="questoes">
             <?php echo carregaPergunta($_GET["id"]) ?>
         </p>
     </form>

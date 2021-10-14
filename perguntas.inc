@@ -1,3 +1,4 @@
+
 <?php
     $perguntas = array("Quais são as fases da Lua? <br/>", 
                             "Qual a montanha mais alta do mundo? <br/>", 
@@ -36,6 +37,9 @@
         global $opcoes;
         global $perguntas;
 
+        exibeProgresso($id);
+        echo ("<br/> <br/> <br/>");
+
         echo($perguntas[$id]);
         echo("<br/>");
 
@@ -48,6 +52,7 @@
         echo("<input type='submit' value='Enviar'>");
 
         if (isset($_POST['alternativa'])) {
+            echo('string'. $_POST['alternativa']);
             $alternativa = $_POST['alternativa'];
             verificaPergunta($id, $alternativa);
         }
@@ -55,12 +60,30 @@
 
     function verificaPergunta($id, $alternativa){
         global $respostas;
-        $var = $id;
-        $var = $var + 1;
 
-        $redirect = "Location: /ShowDoBilhao/perguntas.php?id=$var";
+        $redirect = "Location: /ShowDoBilhao/perguntas.php?id=" . $id;
+        $gameover = "Location: /ShowDoBilhao/gameover.php";
 
-        if($respostas[$id]==$alternativa){
+        if($respostas[$id - 1]==$alternativa){
             header($redirect);
         }
+        else{
+          header($gameover);
+        }
     }
+
+    function exibeProgresso($id){
+        $progresso = $id;
+
+        if($id == 0){
+
+        }
+        else if($id == 1){
+            echo("Você acertou " . $progresso . " pergunta");
+        }
+        else{
+            echo("Você acertou " . $progresso . " perguntas");
+        }
+    }
+
+?>
