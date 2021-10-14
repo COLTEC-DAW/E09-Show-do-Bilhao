@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Bilhao</title>
-    <?php require "perguntas.php"; ?>
+    <?php include "menu.inc"; ?>
+    <?php require "perguntas.inc"; ?>
 </head>
 <body>
     <?php 
@@ -17,5 +18,6 @@
             echo "<br>Resposta Correta: ".$alternativas[$i][$respostas[$i]]."<br><br>";
         }
     ?>
+    <?php include "rodape.inc"; ?>
 </body>
 </html>
