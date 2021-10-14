@@ -3,7 +3,21 @@
     include "Info\menu.inc";
     include "Info\Rodape.inc";
 
+    session_start();
     SorteiaIndex();
+
+    if(isset($_POST['usuario'])) login();
+    if(!isset($_COOKIE['ultimoJogo'])){
+        setcookie("ultimoJogo", "Primeira rodada");
+        setcookie("ultimoJogoPontos", 0);
+    }
+    if(isset($_GET['Logout'])) session_destroy();
+
+    function login(){
+        $_SESSION['usuario'] = $_POST['usuario'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['senha'] = $_POST['senha'];
+    }
 
     function Destino(){
         return "perguntas.php?id=" . explode('/', $GLOBALS["indices"])[0];
@@ -16,8 +30,9 @@
         while($contador != 5){
             $random = random_int(0, (Count($GLOBALS["Perguntas"])-1));
             $valida = true;
-            for($i = 0; $i < $contador; $i++){
-                if($GLOBALS["indices"][$i] == $random){
+            $auxiliar = explode('/', $GLOBALS["indices"]);
+            for($i = 0; $i < (strlen($GLOBALS["indices"]) - $contador); $i++){
+                if($auxiliar[$i] == $random){
                     $valida = false;
                     break;
                 }

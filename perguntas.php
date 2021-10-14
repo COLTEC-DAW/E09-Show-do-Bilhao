@@ -6,6 +6,8 @@
     include "Info\perdeu.inc";
     include "Info\Venceu.inc";
 
+    session_start();
+
     $_POST["Pontos"] = (int) $_POST["Pontos"];
     $_POST["Final"] = (int) $_POST["Final"];
     $_POST["UltimoIndex"] = (int) $_POST["UltimoIndex"];
@@ -22,15 +24,26 @@
                 $_POST["Pontos"]++;
             }else{
                 echo perdeuHtml();
+                $data = date('d/m/Y H:i');
+                setcookie("ultimoJogo", $data);
+                setcookie("ultimoJogoPontos", $_POST["Pontos"]);
                 return;
             }
 
             if($_POST["Pontos"] == 5){
                 echo venceuHtml();
+                session_destroy();
+                $data = date('d/m/Y H:i');
+                setcookie("ultimoJogo", $data);
+                setcookie("ultimoJogoPontos", $_POST["Pontos"]);
                 return;
             }
         }
-        $_POST["UltimoIndex"] = $_GET["id"];
+        if(!isset($_SESSION['usuario'])){
+            echo "</br>" . "Faça <a href='login.php'>login</a> para jogar!" . "</br></br>";
+            return;
+        }
+        $_POST['UltimoIndex'] = $_GET['id'];
         return carregaPergunta($_GET['id']);
     }
 
