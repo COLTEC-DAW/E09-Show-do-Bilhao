@@ -12,8 +12,8 @@
 
         echo "<fieldset> <legend> {$dadosPergunta["enunciado"]} </legend>";
 
-        foreach($alternativas as $key => $value){
 
+        foreach($alternativas as $key => $value){
             echo "<input type=\"radio\" name=\"alternativa\" value=\"$key\">$value<br>";
         }
 

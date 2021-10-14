@@ -1,10 +1,13 @@
-<html>
-    <body>
-        <form action="" method="post">
-            <p>Quem está jogando?</p>
-            <input type="text" name="nome">
-            <input type="hidden" name="indexPerguntaAtual" value="0">
-            <input type="submit" name ="enviar">
-        </form>
-    </body>
-</html>
+
+<?php
+
+    function autenticaLogin($usuarios, $loginAtual){
+
+        foreach ($usuarios as $usuarioCadastrado){
+            if ($usuarioCadastrado == $loginAtual){
+                return true;
+            }
+        }
+        return false;
+    }
+?>

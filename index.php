@@ -34,14 +34,40 @@
                 else{
                     
                     //checa pra ver se o nome do usuário já foi inserido:
-                    if  ( isset($_POST['nome'])) {$_SESSION['usuario'] = $_POST['nome'];}
+
+                    if  ( isset($_POST['nome'])) {
+
+                        require "./lib/login.inc";
+
+                        $loginAtual = array("login" => $_POST['login'], "nome" => $_POST['nome'], "senha" => $_POST['senha'], "email" => $_POST['email']); 
+                        $dadosUsuarios = json_decode(file_get_contents('./dados/usuarios.json'), true);
+
+                        if (isset($_POST['cadastro'])){
+
+                            $dadosUsuarios[] = $loginAtual;
+                            file_put_contents('./dados/usuarios.json', json_encode($dadosUsuarios));
+                            $_SESSION['usuario'] = $_POST['nome'];
+                        }
+                        else if (autenticaLogin($dadosUsuarios, $loginAtual) == true){
+
+                            $_SESSION['usuario'] = $_POST['nome'];
+
+                        }
+                        else{
+
+                            echo "<p> Usuário não encontrado! Faça seu cadastro: </p>
+                                    <input type=\"hidden\" formmethod=\"post\" name=\"cadastro\" value=\"true\">";
+
+                        }
+                    }
                 
                     //e se ele já está na sessão.
                     if (empty($_SESSION['usuario'])) {
     
-                        //se não estiver, o formulário para receber o nome aparece:
+                        //se não estiver, o formulário para fazer o login aparece:
 
-                        require "./lib/login.inc";
+                        require "./views/login.inc";
+                        
                     }
                     else{
     
@@ -61,26 +87,27 @@
                         if (  !isset($numPerg)  ) {  $numPerg = 0; }
                         if ( !isset($altMarcada)) {  $altMarcada = 0; }
     
-                        $dados = json_decode(file_get_contents('./dados/perguntas.json'), true);
+
+                        // pega o arquivo com as informações das perguntas:
+                        $dadosPerguntas = json_decode(file_get_contents('./dados/perguntas.json'), true);
+
 
                         // Confere se a opção anterior estava correta
-                        if (autenticaOpcao($altMarcada, $numPerg, $dados) == true ){
+                        if (autenticaOpcao($altMarcada, $numPerg, $dadosPerguntas) == true ){
                             
                             echo "<p> Olá, $usuario</p>";
                             carregaProgresso($numPerg);
                             // e, se sim, carrega a próxima pergunta
-                            carregaPergunta($numPerg, $dados[$numPerg]);
+                            carregaPergunta($numPerg, $dadosPerguntas[$numPerg]);
     
                         }
                         else {
                             
-                        require "./lib/gameover.inc";
+                        require "./views/gameover.inc";
 
                         }
                     }
                 }
-                
-
             ?>
         </form>
     </body>
