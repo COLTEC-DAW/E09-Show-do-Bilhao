@@ -37,8 +37,10 @@
         global $opcoes;
         global $perguntas;
 
+        echo("<p style='color: red'>");
         exibeProgresso($id);
-        echo ("<br/> <br/> <br/>");
+        echo("</p>");
+        echo ("<br/> <br/>");
 
         echo($perguntas[$id]);
         echo("<br/>");
@@ -66,9 +68,11 @@
 
         if($respostas[$id - 1]==$alternativa){
             header($redirect);
+            defineCookies($id);
         }
         else{
-          header($gameover);
+            header($gameover);
+            defineCookies($id);
         }
     }
 
@@ -84,6 +88,16 @@
         else{
             echo("Você acertou " . $progresso . " perguntas");
         }
+    }
+
+    function defineCookies($id){
+        $usuario = $_SESSION['usuario'];
+        $id = $id - 1;
+
+        $data = date('d/m/Y');
+    
+        setcookie("ultimoJogo" . $usuario, $data);
+        setcookie("pontuacao" . $usuario, $id);
     }
 
 ?>

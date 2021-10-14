@@ -8,6 +8,7 @@
         $redirect = "Location: /ShowDoBilhao/winner.php";
 
         if($id > 5){
+            defineCookies($id);
             header($redirect);
         }
 
@@ -33,9 +34,9 @@
     ?> 
 
     <form action=<?php echo GetHeader() ?>  method="post">
-        <p id="questoes">
+        <div id="questoes">
             <?php echo carregaPergunta($_GET["id"]) ?>
-        </p>
+        </div>
     </form>
 
 
