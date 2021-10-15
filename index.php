@@ -23,7 +23,7 @@
     <div>
         <?php
             if (isset($_COOKIE["pontuacao" . $_SESSION["usuario"]]) && isset($_COOKIE["ultimoJogo" . $_SESSION["usuario"]])) { ?>
-                <h2 style='color: #fc4518; font-size: 18px'>Último jogo: <?= $_COOKIE["ultimoJogo" . $_SESSION["usuario"]] ?></h2>
+                <h2 style='color: #fc4518; font-size: 18px'>Último acesso: <?= $_COOKIE["ultimoJogo" . $_SESSION["usuario"]] ?></h2>
                 <h2 style='color: #fc4518; font-size: 18px'>Última pontuação: <?= $_COOKIE["pontuacao" . $_SESSION["usuario"]] ?></h2>
         <?php } ?>
         
