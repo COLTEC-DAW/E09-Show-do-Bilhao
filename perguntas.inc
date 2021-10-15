@@ -48,51 +48,26 @@
 
     $alternativasCorretas = [1, 3, 2, 3, 0];
 
-    function exibirPerguntas_Alternativas_E_AlternativasCorretas()
+    function carregaPergunta($id)
     {
         global $perguntas, $alternativas, $alternativasCorretas;
+        $increment = 0;
         echo "<p>A resposta em <strong>NEGRITO</strong> é a CORRETA.</p>";
-        
-        for ($i = 0; $i < count($perguntas); $i++) 
+
+        echo $perguntas[$id]."<br><br>";
+        foreach($alternativas[$id] as $elemento)
         {
-            //Imprime uma pergunta
-            echo ($i + 1) . "° Pergunta: $perguntas[$i]<br><br>";
-    
-            // Imprime as alternativas
-            for ($j = 0; $j < count($alternativas); $j++) 
+            if($increment == $alternativasCorretas[$id])
             {
-                // A alternativa certa será impressa em negrito
-                if ($j == $alternativasCorretas[$i]) 
-                {
-                    echo "<strong>".$alternativas[$i][$j]."</strong><br>";
-                }
-                else
-                {
-                    echo $alternativas[$i][$j]."<br>";
-                }
+                echo "<strong>".$elemento."</strong><br>";
+                $increment++;
             }
-            echo "<br>";
+            else
+            {
+                echo $elemento."<br>";
+                $increment++;
+            }
         }
+
     }
-
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show do Bilhão</title>
-</head>
-<body>
-    <h1>Seja Bem Vindo ao Show do Bilhão</h1>
-    <div>
-        <?php
-            exibirPerguntas_Alternativas_E_AlternativasCorretas();
-        ?>
-    </div>
-    
-</body>
-</html>
