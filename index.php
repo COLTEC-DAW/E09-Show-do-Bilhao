@@ -7,7 +7,6 @@
     <title>Show Do Bilhão</title>
     <link rel="stylesheet" href="./detalhes.sass" />
     <link rel="stylesheet" href="./arquivo.sass" />
-    <link rel="stylesheet" href="./respostas.php" />
 </head>
 <body class="body" name="pageInitial">
     <section class="cabecalho">
@@ -17,10 +16,8 @@
     <div class="container">
         <section>
             <form class="form" action="perguntas.php" method="get">
-                Primeira pergunta: <input type="checkbox" name="id" value="0"> <br>
-                Segunda pergunta: <input type="checkbox" name="id" value="1"> <br>
-                Terceira pergunta: <input type="checkbox" name="id" value="2"> <br>
-                <input type="submit" name="Enviar"><br>
+                <input type="hidden" name="id" value="0">
+                <input type="submit" value="Start"><br>
             </form>
         </section>
     </div>

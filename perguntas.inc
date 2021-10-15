@@ -1,11 +1,10 @@
 <?php
-
     $enunciados = array(
-        0 => "Biologia:\nExiste pessoas com determinado tipo sanguíneo que são consideradas doadores universais.<br>
-        Que tipo sanguíneo essa pessoa possui?<br>",
-        1 => "English:\nChoose the alternative that indicates the plural of the words: fish, life, woman.<br>",
-        2 => "História:\nA formação dos Estados Modernos fez desaparecer os laços de suserania e vassalagem e, <br>
-        com isso, foram formado(as), na Europa:<br>"
+        0 => '<br><br> Biologia: Existe pessoas com determinado tipo sanguíneo que são consideradas doadores universais.<br>
+        Que tipo sanguíneo essa pessoa possui?<br> <br>',
+        1 => 'English: Choose the alternative that indicates the plural of the words: fish, life, woman.<br> <br>',
+        2 => 'História: A formação dos Estados Modernos fez desaparecer os laços de suserania e vassalagem e, <br>
+        com isso, foram formado(as), na Europa:<br> <br>'
     );
     $alternativas = array(
         0 => array(
@@ -73,16 +72,25 @@
                 // então compara o $escolha da resposta escolhida com o valor da resposta certa
                 if($value == $escolha){
                     // resposta certa
+                    echo '<br>';
                     echo("RESPOSTA... CERTA");
-                    echo ' <a href="./index.php"> Clique aqui!';
                     $aux++;
                 }
             }
         }
         if($aux == 0){
-            //nao bateu nenhuma resposta
+            //errou a resposta.
             gameOver();
+            return false;
         }
+    }
+    /**
+     * Função que mostra ao jogador que ele venceu o jogo e retorna a página inicial.
+     */
+    function acabarJogo(){
+        echo("VOCÊ VENCEU O JOGO! PARABÉNS.");
+        echo '</br>';
+        echo '<a href="./index.php" /> Clique aqui. </a> ';
     }
     /**
      * Função que redireciona para a página do GameOVer.

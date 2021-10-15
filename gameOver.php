@@ -12,7 +12,6 @@
     <div class="container">
         <section class="gameOver">
         <h1 class="col_12" id="titulo"> Game Over </h1>
-        <a href="./index.php"> Página inicial </a>
         </section>
     </div>
 </body>

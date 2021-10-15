@@ -11,7 +11,8 @@
     /**
      * Procedimentos 
      */
-    if($id != null){ carregaPergunta($id, $enunciados, $alternativas);  }
+    if($id != null){ carregaPergunta($id, $enunciados, $alternativas);  } 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,15 +24,16 @@
     <link rel="stylesheet" href="./detalhes.sass" />
     <link rel="stylesheet" href="./arquivo.sass" />
 </head>
-<body>
+<body class="body">
     <div class="container">
         <section>
+            <br>
             <form class="form" action="functions.php" method="post">
-                (a) <input type="checkbox" name="escolha" value="a">  
-                (b) <input type="checkbox" name="escolha" value="b"> 
-                (c) <input type="checkbox" name="escolha" value="c">  
-                (d) <input type="checkbox" name="escolha" value="d"> <br>
-                <input type="hidden" name="pergunta" value=<?=$id?> />
+                (a) <input type="checkbox" name="escolha" value="a">  <br>
+                (b) <input type="checkbox" name="escolha" value="b">  <br>
+                (c) <input type="checkbox" name="escolha" value="c">  <br>
+                (d) <input type="checkbox" name="escolha" value="d">  <br>
+                <input type="hidden" name="pergunta" value=<?=$id?> /> <br>
                 <input type="submit" name="Enviar"><br>
             </form>
         </section>
