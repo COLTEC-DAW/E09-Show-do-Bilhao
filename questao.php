@@ -2,7 +2,7 @@
 
 require "perguntas.inc";
 
-$id = htmlspecialchars($_POST['id']);
+$id = htmlspecialchars($_GET['id']);
 
 $questao = carregaPergunta($id);
 

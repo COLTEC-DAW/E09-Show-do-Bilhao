@@ -30,7 +30,7 @@
         corretamente pelo candidato.</p>
     
     <!-- Formulário para seleção de questão -->
-    <form action="questao.php" method="post" name="QuestionID">
+    <form action="questao.php" method="get" name="QuestionID">
         Índice da questão desejada: 
         <input type="text" name="id">
         <input type="submit" value="Enviar">
