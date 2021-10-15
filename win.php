@@ -11,7 +11,12 @@
 <body>
     <h1>Parabéns!! Você ganhou o SHOW DO BILHÃO!!!!</h1>
     <?php $_POST = array(); ?>
-    <a href="perguntas.php"><button>Jogar novamente</button></a>
+    <a href="perguntas.php"><button>Jogar novamente</button></a><br><br>
+    <a href="logout.php"><button>Sair</button></a>
+    <br>
+    <?php
+    include "./rodape.inc";
+    ?>
 </body>
 
 </html>

@@ -1,11 +1,3 @@
-<!-- <?php
-        if (isset($_POST["play"])) {
-            if (strval($_POST["play"]) == "yes") {
-                header("Location: /login.php");
-            }
-        }
-        ?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +10,17 @@
 
 <body>
     <?php include "./menu.inc"; ?>
+    <br>
+    <hr>
     <h1>Fim de jogo</h1>
     <h2>Que pena... você errou!</h2>
     <?php $_POST = array(); ?>
-    <a href="perguntas.php"><button>Jogar novamente</button></a>
+    <a href="perguntas.php"><button>Jogar novamente</button></a><br><br>
+    <a href="logout.php"><button>Sair</button></a>
+    <br>
+    <?php
+    include "./rodape.inc";
+    ?>
 </body>
 
 </html>
