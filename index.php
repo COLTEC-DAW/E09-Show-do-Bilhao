@@ -13,18 +13,16 @@
     <section class="cabecalho">
         <h1 class="col_12" id="titulo"> O show do Bilhão </h1>
         <p class="col_12" id="subtitulo"> </p> 
-    </section>
-    
+    </section>  
     <div class="container">
         <section>
-            <form class="form" action="perguntas.php" method="post">
+            <form class="form" action="perguntas.php" method="get">
                 Primeira pergunta: <input type="checkbox" name="id" value="0"> <br>
                 Segunda pergunta: <input type="checkbox" name="id" value="1"> <br>
                 Terceira pergunta: <input type="checkbox" name="id" value="2"> <br>
                 <input type="submit" name="Enviar"><br>
             </form>
         </section>
-
     </div>
     <footer class="col_12" id="footer">
         <p> Desenvolvimento de Aplicações Web - COLTEC/UFMG </p>

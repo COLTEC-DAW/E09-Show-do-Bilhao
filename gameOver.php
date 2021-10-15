@@ -12,12 +12,8 @@
     <div class="container">
         <section class="gameOver">
         <h1 class="col_12" id="titulo"> Game Over </h1>
-        <p> <a href="./index.php"> Página inicial </a></p>
+        <a href="./index.php"> Página inicial </a>
         </section>
     </div>
-    <footer class="col_12" id="footer">
-        <p> Desenvolvimento de Aplicações Web - COLTEC/UFMG </p>
-        <p> Laiza Ferreira Lage </p>
-    </footer>
 </body>
 </html>
