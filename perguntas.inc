@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function pegaID(){
      $valor= @$_GET['id'];
      return $valor;
@@ -15,7 +16,8 @@
         require_once $link;
     }
     function carregaPergunta($pergunta,$id){
-    
+        
+                echo "<br>";
                 echo $pergunta["enunciado"][0]; 
                 echo "<br>";
                
@@ -37,20 +39,27 @@
                                      echo "<br>";  
                                                    
     }
+     function seta_cookies($pontos){
+            date_default_timezone_set('America/Sao_Paulo');
+            setcookie(("lastGame" . $_SESSION["name"]), date("j.n.Y, g:i a"), time() + (86400 * 30), '/');
+            setcookie(("lastScore" . $_SESSION["name"]), $pontos, time() + (86400 * 30), '/');
+      }    
    function verifica_resposta($gabarito,$pontos){
       $id=$_POST["id"];
       $link2= "Location:gameover.php?id=";
       $link="perguntas.php?id=".$_POST["id"]; 
       if($_POST["resposta"]==$gabarito[$id-1]){
         $pontos=$pontos+1;
+        seta_cookies($pontos);
          return $pontos;
       }else{      
            $pontos=strval($pontos);
            $link2=($link2. $pontos);
+           seta_cookies($pontos);
            header($link2); 
            
       }
-     
+
       
     }
 ?> 

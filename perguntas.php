@@ -15,18 +15,22 @@
     </head>
 
    
-    <div class="sidebar">
-    <button>Click Aqui</button>
-    <button>Click Aqui</button>
-    <button>Click Aqui</button>
-    </div>
-
     <div class="body-text">  
+    <?php
+        if (session_status() == PHP_SESSION_NONE) {
+          session_start();
+        }
+
+        if (!isset($_SESSION["name"]) || !isset($_SESSION["verifica"])) {
+            header("Location:login.php?");
+        }
+    ?>
     <?php 
-     $gabarito=array( 'a','b','b','a');
+     $gabarito=array( 'a','b','b','a','c');
       echo GetMenu();
-      if(@$_GET['id']==4){
-        header('Location:gameover.php?id=4'); 
+      
+      if(@$_GET['id']==5){
+        header('Location:gameover.php?id=5'); 
      }
       if(@$_GET['id']!=0){
         
@@ -37,9 +41,9 @@
       }
 
     ?>  
+    <h1>PAGINA DE PERGUNTAS</h1>
+    
            <?php
-                  echo "<br>";
-                  echo "<br>";
                 $pergunta0 = array ( "alternativas"  => array ( 0 => " a) php",
                                                        1 => " b) c#",
                                                        2 => " c) japones",
@@ -72,18 +76,28 @@
                                     "enunciado" => array ( "4) qual o criador deste site?",
                                                     ),
                                                                                 );
+                                                 $pergunta4 = array ( "alternativas"  => array ( 0 => " a) Colômbia",
+                                                       1 => " b) Chile",
+                                                       2 => " c) Peru",
+                                                                    ),
+                                    "enunciado" => array ( "5) Onde se localiza Machu Picchu?",
+                                                    ),
+                                                                                );
             
-                $result = array ( 0 => $pergunta0, 1 => $pergunta1, 2 => $pergunta2, 3 => $pergunta3);
+                $result = array ( 0 => $pergunta0, 1 => $pergunta1, 2 => $pergunta2, 3 => $pergunta3, 4 => $pergunta4);
                 $id=pegaID();
+            ?>    
+                <h2>pergunta numero: <?php echo $id+1 ?> </h2>
+            <?php    
                 $tmp= escolhePergunta(pegaID(),$result);
                 carregaPergunta($tmp,$id);                                                              
-               
                 print_r($gabarito);
                 echo $_POST["id"];        
                 echo $_POST["resposta"];  
                 
                                                                       
             ?>
+            
     </div>
     <?php 
        echo getRodape();

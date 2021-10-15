@@ -1,6 +1,5 @@
-<?php include "menu.inc";?> 
+
 <?php include "rodape.inc";?>   
-<?php include "perguntas.inc";?> 
 <!DOCTYPE html>
     <!--Guilherme Rodrigues Souza Macieira-->
 <html lang="pt-br" dir="ltr">
@@ -13,27 +12,15 @@
         <title> Show do bilhão </title>
     </head>
 
-   
-
+        
     <div class="body-text">  
-    <?php 
-      echo GetMenu();
-      
-      $valor=pegaID();
-      if ($valor<5){
-        echo '<h1>VOCE PERDEU</h1>';
-        echo '<h1>SUA PONTUAÇÃO FOI:'.$valor.'</h1>';
-      }else{
-        echo '<h1>PARABENS, VOCÊ GANHOU!</h1>';
-        echo '<h1>SUA PONTUAÇÃO FOI:'.$valor.'</h1>';
-      }
-      
-    ?>  
-     <h1>PAGINA DE FIM DE JOGO</h1>
-     <br>
 
+     <h2>OCORREU UM ERRO AO CARREGAR O JOGO, CLIQUE NO BOTÃO E TENTE NOVAMENTE</h2>
+     <a href="logout.php"><button>CLIQUE AQUI</button></a>
+    </div>
     </div>
         <?php 
        echo getRodape();
     ?>     
+
 </html> 
