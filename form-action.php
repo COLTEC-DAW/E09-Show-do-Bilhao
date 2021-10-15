@@ -1,0 +1,36 @@
+<?php
+include "perguntas.inc";
+
+
+
+$resposta = $_POST['Question'];
+
+
+# Apartir deste ponto, entra em cena a lógica de seu programa.
+# Em outras palavras, é o que faremos com os dados recebidos.
+
+$id = getID($resposta);
+
+function checaresposta(){
+
+
+    if(strcmp($GLOBALS['resposta'], $GLOBALS['arrayalt'][$GLOBALS['id']][$GLOBALS['gabarito'][$GLOBALS['id']]]) == 0){
+        echo("Resposta certaa<br>");
+        $ID = $GLOBALS['id'] + 2; //Isso é feito pois o ID da página é 1 inteiro maior que o do índice
+                                  //aí toda vez é somado +2 a ele para se ir para a próxima pergunta
+        if($ID <= 5){
+            header ("location: http://localhost/hello-php/perguntas.php?id=$ID"); 
+        }else if($ID >= 6){
+            header ("location: http://localhost/hello-php/win.html");             
+        }
+
+    }else{
+        header ("location: http://localhost/hello-php/gameover.html"); 
+
+    }
+}
+
+checaresposta();
+
+
+?>

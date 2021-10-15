@@ -1,9 +1,11 @@
+
 <?php
     /*Inclusões*/
-    
+    //header('Location: '. 'perguntas.php?id=1');
+
     include "Menu.inc";
     include "rodape.inc";
-    include "perguntas.inc"
+    include "perguntas.inc";
 
 ?> 
 
@@ -17,16 +19,25 @@
     </head>
 
     <?php 
+        
         echo(getMenu());
 
         $id = $_GET["id"];
         $id = $id - 1;
-        echo(getPergunta($id));
-
-        //echo(mostraquestoes);
-        //echo(mostragabarito);
         
+        echo(getPergunta($id));
+        $acertos = $id;
+        echo('<br>');
+        echo("Número de acertos: $acertos/5");
+        
+
+
+        //echo(mostraquestoes());
+        //echo(mostragabarito());
+
         echo(getRodape());
+
+
 
     ?>
 

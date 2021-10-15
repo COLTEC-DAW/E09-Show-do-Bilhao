@@ -1,4 +1,6 @@
 <?php 
+
+
 $array1 = [
     1 => "bar",
     2 => "foo",
@@ -31,23 +33,28 @@ $gabarito = array(
 
 
 function mostraquestoes(){
-    foreach ($array as $key => $value) {
-        echo("$value");
+    $Questoes = '';
+    foreach ($GLOBALS["arrayper"] as $key => $value) {
+        $Questoes = $Questoes . $value;
         for($i = 0; $i < 4; $i++){
-            echo($arrayalt[$key][$i]);
-        }
+            $Questoes = $Questoes . $GLOBALS['arrayalt'][$key][$i];
+        }   
     }
+    return $Questoes;
 } 
 
 function mostragabarito(){
-    echo("<p>Gabarito: </p>");
+    $Gabarito = "<h2>Gabarito: </h2>";
+    $quebralinha = "<br>";
     $j = 1;
-    foreach($gabarito as $key2 => $resposta){
+    foreach($GLOBALS['gabarito'] as $key2 => $resposta){
 
-        echo("$j :");
-        echo($arrayalt[$key2][$resposta]);
+        $Gabarito = $Gabarito . $j . '- ';
+        $Gabarito = $Gabarito . $GLOBALS['arrayalt'][$key2][$resposta];
         $j++;
     }
+
+    return $Gabarito;
 }
 
 
@@ -61,16 +68,43 @@ function getPergunta($id){
     $inicio = "<div>";
     $fim = "</div>";
     $quebralinha = '<br>';
+    $forminicio = '<form action = "form-action.php" method = "post">';
+    $formfinal = '</form>';
+    $submit = '<input type="reset" value="Limpar"><input type="submit" value="Enviar">';
+
 
     $questao = $inicio . $GLOBALS["arrayper"][$id] . $quebralinha;
 
+    $questao = $questao . $forminicio ;
     for($i = 0; $i < $GLOBALS["numalternativas"]; $i++){
-        $questao = $questao . $GLOBALS["arrayalt"][$id][$i] . $quebralinha;
+        $questao = $questao  . '<input type="radio" name="Question" value="'. $GLOBALS['arrayalt'][$id][$i]. '">'
+         . '<label>' . $GLOBALS["arrayalt"][$id][$i] . '</label'. $quebralinha;
     }
 
-    return $questao;
+    $questao = $questao . $formfinal . $submit;
 
+
+    return $questao;
 }
+
+//Descobre e retorna o ID da pergunta recebendo uma de suas alternativas
+function getID($alternativa){
+    for($i = 0; $i < 5; $i++){
+        for($j = 0; $j < 4; $j++){
+            if(strcmp($alternativa, $GLOBALS['arrayalt'][$i][$j]) == 0){
+                return $i;
+            }
+        }
+    }
+
+    return -1;
+}
+
+    
+
+
+
+
             
 ?>
 
