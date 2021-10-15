@@ -72,8 +72,9 @@
                 // então compara o $escolha da resposta escolhida com o valor da resposta certa
                 if($value == $escolha){
                     // resposta certa
-                    echo '<br>';
-                    echo("RESPOSTA... CERTA");
+                    echo("<br> RESPOSTA... CERTA <br>");
+                    echo("Perguntas respondidas corretamente: ");
+                    echo(++$pergunta);
                     $aux++;
                 }
             }
@@ -83,6 +84,7 @@
             gameOver();
             return false;
         }
+        return true;
     }
     /**
      * Função que mostra ao jogador que ele venceu o jogo e retorna a página inicial.
