@@ -1,19 +1,35 @@
 
 <?php
 
+    require './models/Pergunta.php';
+    $dadosPerguntas = json_decode(file_get_contents('./dados/perguntas.json'), false);
+
+    function getPergunta ($indexPergunta){
+
+        global $dadosPerguntas;
+
+        if (isset($dadosPerguntas[$indexPergunta])){
+
+            $tmp = $dadosPerguntas[$indexPergunta];
+            $pergunta = new Pergunta($tmp->enunciado, $tmp->alternativas, $tmp->resposta);
+            return $pergunta;
+        }
+
+        return null;
+    }
+
     function carregaProgresso($numPerg){
         
         echo "<p>Acertos: $numPerg/10</p>";
     }
 
-    function carregaPergunta($numPerg, $dadosPergunta){
+    function carregaPergunta($numPerg){
 
-        $alternativas = $dadosPergunta['alternativas'];
+        $dadosPergunta = getPergunta($numPerg);
 
-        echo "<fieldset><legend> {$dadosPergunta["enunciado"]} </legend><br>";
+        echo "<fieldset><legend> {$dadosPergunta->enunciado} </legend><br>";
 
-
-        foreach($alternativas as $key => $value){
+        foreach($dadosPergunta->alternativas as $key => $value){
             echo "<input type=\"radio\" name=\"alternativa\" value=\"$key\">$value<br>";
         }
 
@@ -23,17 +39,17 @@
               </fieldset> <br>";
     }
 
-    function autenticaOpcao($opcaoEscolhida, $numPergunta, $dados){
+    function autenticaOpcao($opcaoEscolhida, $numPergunta){
 
         
-        if (((int)$numPergunta) == 0){
+        if (((int)$numPergunta) <= 0){
             return true;
         }
         else{
 
-            $dadosPergunta = $dados[($numPergunta -1)];
+            $dadosPergunta = getPergunta($numPergunta - 1);
 
-            if((int)$dadosPergunta['resposta'] == (int)$opcaoEscolhida) return true;
+            if((int)$dadosPergunta->resposta == (int)$opcaoEscolhida) return true;
             else return false;
         }
     }
