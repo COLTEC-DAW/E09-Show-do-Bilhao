@@ -10,7 +10,7 @@
 
         $alternativas = $dadosPergunta['alternativas'];
 
-        echo "<fieldset> <legend> {$dadosPergunta["enunciado"]} </legend>";
+        echo "<fieldset><legend> {$dadosPergunta["enunciado"]} </legend><br>";
 
 
         foreach($alternativas as $key => $value){
@@ -19,7 +19,7 @@
 
         $numPerg++;
         echo "<input type=\"hidden\" name=\"indexPerguntaAtual\" value=\"$numPerg\">
-              <input type=\"submit\" name=\"Enviar\">
+              <br><input type=\"submit\" name=\"Enviar\">
               </fieldset> <br>";
     }
 
@@ -33,14 +33,8 @@
 
             $dadosPergunta = $dados[($numPergunta -1)];
 
-            if((int)$dadosPergunta['resposta'] == (int)$opcaoEscolhida){
-                
-                return true;
-            }
-            else{
-                return false;
-            }
+            if((int)$dadosPergunta['resposta'] == (int)$opcaoEscolhida) return true;
+            else return false;
         }
     }
-
 ?>

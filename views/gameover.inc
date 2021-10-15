@@ -1,7 +1,7 @@
 <html>
     <head>
         <p> game over :) </p>
-        <form action="" method="post">
+        <form method="post">
 
             <input type="submit" value="try again">
             <input type="submit" name="acao" value="logout">
