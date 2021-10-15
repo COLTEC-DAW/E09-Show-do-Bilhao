@@ -68,6 +68,7 @@
                 $increment++;
             }
         }
+        echo "<br>";
 
     }
 ?>
