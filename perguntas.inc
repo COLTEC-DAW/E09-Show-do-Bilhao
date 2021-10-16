@@ -48,27 +48,61 @@
 
     $alternativasCorretas = [1, 3, 2, 3, 0];
 
+    /*Eu estava fazendo para sortear a pergunta, mas perguntei para alguns colegas e li novamente
+    as instruções e segundo o entendimento que tive, as perguntas deveriam ser feitas 
+    na ordem em que estão pré-organizadas
+
+    $perguntasQueJaForamFeitasIndices = array();
+    $numeroDePerguntasFeitas = 1;
+    $perguntaQueSeraMostrada;
+
+
+    function sorteiaPergunta()
+    {
+        global $perguntasQueJaForamFeitasIndices, $perguntaQueSeraMostrada;
+
+        $perguntaQueSeraMostrada = mt_rand(0,4);
+
+        foreach($perguntasQueJaForamFeitasIndices as $elemento)
+        {
+            if($perguntaQueSeraMostrada == $elemento)
+            {
+                sorteiaPergunta();
+            }
+        }
+        array_push($perguntasQueJaForamFeitasIndices, $perguntaQueSeraMostrada);
+        return $perguntaQueSeraMostrada;
+    }
+    */
+
+    $perguntaQueSeraMostrada = 0;
+
     function carregaPergunta($id)
     {
         global $perguntas, $alternativas, $alternativasCorretas;
-        $increment = 0;
-        echo "<p>A resposta em <strong>NEGRITO</strong> é a CORRETA.</p>";
+        $string = "resposta";
 
         echo $perguntas[$id]."<br><br>";
-        foreach($alternativas[$id] as $elemento)
-        {
-            if($increment == $alternativasCorretas[$id])
-            {
-                echo "<strong>".$elemento."</strong><br>";
-                $increment++;
-            }
-            else
-            {
-                echo $elemento."<br>";
-                $increment++;
-            }
-        }
-        echo "<br>";
+        echo ("<form action ='http://localhost/DAW-E09/checandoRespostas.php' method = 'post' >
 
+                <input type = 'checkbox' id='pergunta0' name = ".$string." value = 0>
+                <label for = 'pergunta0'> ".$alternativas[$id][0]."</label><br>
+
+                <input type = 'checkbox' id='pergunta1' name = ".$string." value = 1>
+                <label for = 'pergunta1'> ".$alternativas[$id][1]."</label><br>
+
+                <input type = 'checkbox' id='pergunta2' name = ".$string." value = 2>
+                <label for = 'pergunta2'> ".$alternativas[$id][2]."</label><br>
+
+                <input type = 'checkbox' id='pergunta3' name = ".$string." value = 3>
+                <label for = 'pergunta3'> ".$alternativas[$id][3]."</label><br><br>
+
+                <input type = 'image' src = 'http://localhost/DAW-E09/Imagens/submitButtom.png' alt='Submit' style = 'max-widht:32px; max-height:32px;'>
+                <input type = 'hidden' id = 'qualPergunta' name = 'pergunta' value = ".$id.">
+                <input type = 'hidden' id = 'respostaCorreta' name = 'respostaCorreta' value = ".$alternativasCorretas[$id].">
+
+            </form>");
     }
+
 ?>
+

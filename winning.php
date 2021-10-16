@@ -12,22 +12,16 @@
     </div>
 
     <div>
-        <?php 
-            require "perguntas.inc"; 
-            if(empty($_GET))
-            {
-                carregaPergunta(0); 
-            }
-            else
-            {
-                carregaPergunta($_GET["id"]); 
-            }
-        ?>
+        <img src="http://localhost/DAW-E09/Imagens/YouWon.jpg" alt="Você Ganhou">
+    </div>
+
+    <div>
+        <h3>"WE ARE THE CHAMPIONS, MY FRIENDS AND WE'LL KEEP ON FIGHTING TILL THE END !!!!!"<br>
+        VOCÊ GANHOUUUUUUUUUU !!! PARABÉNS !!!!</h3>
     </div>
 
     <div>
         <?php include "rodape.inc"; ?>
     </div>
-    
 </body>
 </html>
