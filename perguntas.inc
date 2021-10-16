@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 
 $array1 = [
@@ -83,8 +84,10 @@ function getPergunta($id){
 
     $questao = $questao . $formfinal . $submit;
 
+    $agora = date('d/m/Y H:i');
 
     return $questao;
+
 }
 
 //Descobre e retorna o ID da pergunta recebendo uma de suas alternativas
@@ -98,6 +101,11 @@ function getID($alternativa){
     }
 
     return -1;
+}
+
+function validaCookies($pontuacao, $datahora){
+    setcookie(("ultima-pontuacao"), $pontuacao);
+    setcookie(("ultimo-login" ), $datahora);
 }
 
     

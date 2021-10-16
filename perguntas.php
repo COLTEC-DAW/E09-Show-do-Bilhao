@@ -19,21 +19,58 @@
     </head>
 
     <?php 
-        
-        echo(getMenu());
-
         $id = $_GET["id"];
         $id = $id - 1;
         
-        echo(getPergunta($id));
-        $acertos = $id;
-        echo('<br>');
-        echo("Número de acertos: $acertos/5");
-        
+        if($id == -1){ //Se o ID é igual a -1, significa que é o primeiro acesso, então o jogador deve ser
+                       //direcionado para o menu
+            echo("Clique no link para ser direcionado ao menu: ");
+            echo(getmenu());
+
+        }else{ //se o id é valido ele segue para a lógica padrão do jogo
+            echo(getMenu());
 
 
-        //echo(mostraquestoes());
-        //echo(mostragabarito());
+
+            
+            echo(getPergunta($id));
+
+            echo("<br>");
+
+            //COOKIES
+            /*echo("Pontuacao: ");
+            echo($_COOKIE['Pontuacao']);
+            echo("<br>");
+            echo("Ultimo Log-in: ");
+            echo($_COOKIE['Ultimo-login']);
+            echo("<br>");
+            */
+            $acertos = $id;
+
+
+
+            echo('<br>');
+            echo("Número de acertos: $acertos/5");
+            echo("<br>");
+
+            echo("Ultima pontuacao: ");
+            if($_COOKIE['ultima-pontuacao']){
+                echo($_COOKIE['ultima-pontuacao']);
+            }
+            echo("<br>");
+            echo("Ultimo acesso: ");
+            echo($_COOKIE['ultimo-login']);
+
+
+
+            echo('<br>');
+            echo('Usuário: ');
+            echo('<b>');
+            echo($_SESSION['nome']);
+            echo('</b>');
+            //echo(mostraquestoes());
+            //echo(mostragabarito());
+        }
 
         echo(getRodape());
 
