@@ -6,6 +6,9 @@
     $pergTotais = 2;
     $escolha = $_POST['escolha'];
     $pergunta = $_POST['pergunta'];
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
+
     $boo = confere($escolha, $respostasCertas, $pergunta);
     
 ?>
@@ -24,7 +27,7 @@
     <div class="container">
         <br>
         <section>
-            <form class="form" action="perguntas.php" method="get">
+            <form class="form" action="perguntas.php" method="post">
                 <?php 
                     $pergunta++;
                     if($pergunta > $pergTotais){
@@ -32,6 +35,8 @@
                         $pergunta = -1;
                     } 
                 ?>
+                <input type="hidden" name="login" value=<?=$login?>>
+                <input type="hidden" name="senha" value=<?=$senha?>> <br>
                 <input type="hidden" name="id" value=<?=$pergunta?>>
                 <?php 
                     if($pergunta == -1){

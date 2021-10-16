@@ -15,9 +15,23 @@
     </section>  
     <div class="container">
         <section>
-            <form class="form" action="perguntas.php" method="get">
+            <!-- Usuário já cadastrado -->
+            <form class="form" action="login.php" method="post">
+                <br> Se você já tem cadastro: <br><br>
+                Login: <input type="text" name="login"><br>
+                Senha: <input type="password" name="senha"><br>
                 <input type="hidden" name="id" value="0">
-                <input type="submit" value="Start"><br>
+                <br><input type="submit" value="Realizar Login"><br>
+            </form>
+
+            <!-- cadastro de usuário -->
+            <form class="form" action="cadastro.php" method="post">  
+                <br> Se você não tiver cadastro: <br><br>
+                Nome: <input type="text" name="nome"><br>
+                Email: <input type="text" name="email"><br>
+                Login: <input type="text" name="login"><br>
+                Senha: <input type="password" name="senha"><br>
+                <br><input type="submit" value="Realizar Cadastro"><br>
             </form>
         </section>
     </div>

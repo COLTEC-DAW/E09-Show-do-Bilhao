@@ -1,16 +1,18 @@
 <?php
-    /**
-     * Inclusões
-     */
+    /** Inclusões */
     include 'perguntas.inc';
+    
+    /** Variáveis: */
+    $id = $_POST['id']; //id da pergunta
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
 
-    /**
-     * Variáveis:
-     */
-    $id = $_GET['id']; //id da pergunta
-    /**
-     * Procedimentos 
-     */
+    $arquivo = fopen("users.txt", "r");
+    $info = verificaUser($arquivo, $login); // var info contem a string com as informações do user;
+    $infoArray = explode(" ", $info); // passa de string pra array;
+    atualizaArquivo($infoArray, $id);
+
+    /** Procedimentos */
     if($id != null){ carregaPergunta($id, $enunciados, $alternativas);  } 
 
 ?>
@@ -28,13 +30,18 @@
     <div class="container">
         <section>
             <br>
-            <form class="form" action="functions.php" method="post">
+            <form class="form" action="respostas.php" method="post">
                 (a) <input type="checkbox" name="escolha" value="a">  <br>
                 (b) <input type="checkbox" name="escolha" value="b">  <br>
                 (c) <input type="checkbox" name="escolha" value="c">  <br>
                 (d) <input type="checkbox" name="escolha" value="d">  <br>
                 <input type="hidden" name="pergunta" value=<?=$id?> /> <br>
+                <input type="hidden" name="login" value=<?=$login?>>
+                <input type="hidden" name="senha" value=<?=$senha?>>
                 <input type="submit" name="Enviar"><br>
+            </form>
+            <form class="form" action="index.php">
+                <input type="submit" name="Sair" value="Sair"><br>
             </form>
         </section>
     </div>
