@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     if(!isset($_SESSION['usuario'])){
         if(isset($_POST['entrar'])){
 
@@ -13,7 +15,7 @@
 
                         foreach($usersDecodificado as $user){
                             if($user['usuario'] == $_POST['usuario'] && $user['senha'] == $_POST['senha']){
-                                session_start();
+                               // session_start();
                                 $_SESSION['usuario'] = $user['usuario'];
                                 $_SESSION['senha'] = $user['senha'];
                                 header('Location: /ShowDoBilhao/index.php');

@@ -51,12 +51,22 @@
             echo ("<br/>");
         }
     
-        echo("<input type='submit' value='Enviar'>");
+        echo("<input type='submit' name='enviar' value='Enviar'>");
 
         if (isset($_POST['alternativa'])) {
             echo('string'. $_POST['alternativa']);
             $alternativa = $_POST['alternativa'];
             verificaPergunta($id, $alternativa);
+        }
+        else{
+            if(isset($_POST['enviar'])){
+                $id = $_GET['id'];
+
+                if(empty($_POST['alternativa'])){
+                    $id = $id - 1;
+                    header("Location: /ShowDoBilhao/perguntas.php?id=" . $id);
+                }
+            }
         }
     }
 
