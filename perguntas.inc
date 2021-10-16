@@ -127,7 +127,7 @@
     function atualizaArquivo($array, $id){ 
         // atua a pontuação e o dia;
         $array[4] = date("d/m/Y");
-        $array[5] = $id; 
+        $array[5] = ++$id; 
 
         $arquivo = fopen("users.txt", "a+"); 
         
