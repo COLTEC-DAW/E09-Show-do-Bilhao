@@ -1,0 +1,51 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+h1{
+
+    font-size: 30px;
+    font-family: sans-serif;
+    vertical-align: middle;
+
+}
+
+img{
+
+    height:200px;
+    width: auto;
+}
+
+footer{
+
+    font-size: 12px;
+    font-family: sans-serif;
+
+}
+
+form{
+
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.pergunta{
+
+    font-size: large;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:rgb(77, 13, 27)
+}
+
+p{
+    font-size: 18px;
+    font-family: sans-serif;
+    color:rgb(34, 34, 34)
+}

@@ -1,10 +1,12 @@
 <?php
 
     /** 
-     * >>>  BEM VINDE AO CÓDIGO DO JOGO DO BILHÃO MAIS LINDO INCRIVEL MARAVILHOSO DE TODOS LOS TIEMPOS ABRAM ALAS  <<<
+     * >>>  BEM VINDO AO CÓDIGO DO JOGO DO BILHÃO MAIS LINDO INCRIVEL MARAVILHOSO DE TODOS LOS TIEMPOS ABRAM ALAS  <<<
      * 
-     * eu tentei deixar o código o mais legível possível, então pode contar com os comentários!
-     * Alguns detalhes sobre o código:
+     * Olá João, joão meu querido, meu camarada. Como vai você, eu vou bem, e você
+     * 
+     * eu tentei deixar o código o mais legível possível,entao bem q vc podia me dar um ponto extr- ME DAR UM ABRAÇO ISSO MESMO
+     * Alguns detalhes sobre este código minimalista
      * 
      * 
      *  > TODAS AS CHAVES DE PROPRIEDADES ENVIADAS EM POST (EM TODO O PROGRAMA): <
@@ -19,16 +21,13 @@
      *  > ALGUNS DETALHES SOBRE O CÓDIGO <
      * 
      *      >> Não usei o fgets(), usei o file_get_contents(). a função parecia mais simples de usar e como eu estou
-     *          usando arquivos .json o processo ficou bem mais simples.
-     *      >> 
-     * 
-     * 
-     *  > O QUE FALTA NO CÓDIGO/O QUE PRECISO MUDAR:
-     * 
-     *      >> Cookies (ultima data e pontuação)
-     *      >> Uso de objetos (POO)
-     *      >> Aparência melhor pra página de game over e de ganhou
-     * 
+     *          usando arquivos .json o processo ficou bem mais tranquilo
+     *      >> Eu não consegui fazer a parte de cookies :') eu não sei pq, eu pedi ajuda pra duas colegas e fiz igualzinho o método que elas usaram,
+     *          mas pra mim sempre dava o mesmo erro (Cannot modify header information). Por favor dê uma olhada no que é esse erro antes de tirar 
+     *          os pontos dessa parte pq eu tentei bastante e não tava funcionando. Porém! Se era um erro normal e que eu só não consegui arrumar,
+     *          eu fiz algo pra compensar que foi deixar o código blindado de code injection, deixar o código lindão e comentado e fazendo o quiz
+     *          todo especial customizado pra você, isso compensa né, claro sz 
+
     */
 
     session_start();
@@ -39,12 +38,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./estilo.css">  
         <title>Jogo do Bilhão</title>
     </head>
 
     <body>
         <form method="post">
-            
+            <br>
             <?php
 
                 // quando o jogador perde, ele decide se vai jogar novamente ou fazer logout e a opção escolhida
@@ -61,7 +63,7 @@
                 // Se as perguntas não tiverem começado ou se o jogador tiver escolhido 'try again' depois de perder, a tela de menu aparece:
                 if((!isset($_POST['indexPerguntaAtual'])) || ((isset($_POST['acao'])) && ($_POST['acao'] == 'try again'))){
 
-                    require "./lib/menuInicial.inc";
+                    require "./views/menuInicial.inc";
                 }
                 else{
                     
@@ -80,36 +82,43 @@
                         //se o usuário tiver escolhido criar um novo cadastro...
                         if (isset($_POST['cadastro'])){
 
-                            //as informações inseridas são adicionadas ao banco de dados
-                            $dadosUsuarios[] = $loginAtual;
-                            file_put_contents('./dados/usuarios.json', json_encode($dadosUsuarios));
-                            //e ele é colocado na sessão.
-                            $_SESSION['usuario'] = $_POST['nome'];
+                            if (jaTemEsseLogin($dadosUsuarios, $loginAtual) == false){
+                                
+                                //as informações inseridas são adicionadas ao banco de dados
+                                $dadosUsuarios[] = $loginAtual;
+                                file_put_contents('./dados/usuarios.json', json_encode($dadosUsuarios));
+                                //e ele é colocado na sessão.
+                                $_SESSION['nome'] = $loginAtual->nome;
+                            }
+                            else{
+                                echo "<p>Esse usuário já existe meu querido jão</p>";
+                            }
 
                         }
                         // se o usuário já existir no banco de dados...
                         else if (autenticaLogin($dadosUsuarios, $loginAtual) == true){
 
                             //a sessão é iniciada com ele.
-                            $_SESSION['usuario'] = $_POST['nome'];
+                            $_SESSION['nome'] = $loginAtual->nome;
 
                         }
                         //e se não existir...
                         else{
 
                             //é enviado via POST um novo parâmetro que indica que o usuário ainda vai ser cadastrado:
-                            echo "<p> Usuário não encontrado! Faça seu cadastro: </p>
-                                    <input type=\"hidden\" formmethod=\"post\" name=\"cadastro\" value=\"true\">";
+                            echo 
+                                "<p> Esse usuario maravilhoso q vc fez ainda nao existe! Faz o cadastro: </p>
+                                <input type=\"hidden\" formmethod=\"post\" name=\"cadastro\" value=\"true\">"
+                            ;
 
                         }
                     }
                 
                     //Checa se a tem um usuário na sessão:
-                    if (empty($_SESSION['usuario'])) {
+                    if (empty($_SESSION['nome'])) {
     
                         //se não estiver, o formulário para fazer o login aparece:
                         require "./views/login.inc";
-                        
                     }
                     else{
     
@@ -128,31 +137,37 @@
                         if (  !isset($numPerg)  ) $numPerg = 0;
                         if ( !isset($altMarcada)) $altMarcada = 0;
 
-                        // pega o arquivo com as informações das perguntas:
-
 
                         // Confere se a opção anterior estava correta
                         if (autenticaOpcao($altMarcada, $numPerg) == true ){
                             
                             if ($numPerg < 10){
+
                                 
-                                echo "<p> Olá, {$_SESSION['usuario']}</p>";
+                                echo "<p> Saudações, {$_SESSION['nome']}!</p>";
+                        
+
                                 carregaProgresso($numPerg);
                                 // e, se sim, carrega a próxima pergunta
                                 carregaPergunta($numPerg);
                             }
                             else{
 
+                                //ganhoouuu
                                 require  "./views/ganhou.inc";
+                                session_destroy();
                             }
                         }
                         else {
-                            
-                        require "./views/gameover.inc";
 
+                            //perdeeuuuu
+                            echo "<p>Pontuação del grande {$_SESSION['nome']}: $numPerg/10</p>";
+                            require "./views/gameover.inc";
                         }
                     }
                 }
+
+                include './views/rodape.inc';
             ?>
         </form>
     </body>

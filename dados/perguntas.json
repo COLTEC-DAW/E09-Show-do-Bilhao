@@ -10,19 +10,19 @@
         "resposta": 1
     },
     {
-        "enunciado":"Qual é o coletivo de cães?",
-        "alternativas": ["Matilha","Rebanho","Alcateia","Manada"],
+        "enunciado":"Qual é o professor maioral, o grandioso, o imbatível?",
+        "alternativas": ["jemaf","professor xavier","leandro","professor Raimundo"],
         "resposta": 0
-    },
-    {
-        "enunciado":"Qual é o triângulo que tem todos os lados diferentes?",
-        "alternativas": ["Equilátero","Isóceles","Escaleno","Trapézio"],
-        "resposta": 2
     },
     {
         "enunciado":"Qual é o antônimo de 'malograr'?",
         "alternativas": ["Desprezar","Conseguir","Perder","Fracassar"],
         "resposta": 1
+    },
+    {
+        "enunciado":"Qual é o melhor nome de criança de todos?",
+        "alternativas": ["Tobias","Larissa","Juvenal","Gabriel"],
+        "resposta": 3
     },
     {
         "enunciado":"Em que país nasceu Carmem Miranda?",
@@ -35,8 +35,8 @@
         "resposta": 3
     },
     {
-        "enunciado":"Em que parte do corpo se encontra a epiglote?",
-        "alternativas": ["Estômago","Pâncreas","Rim","Boca"],
+        "enunciado":"Qual é o monumento mais importante da história da humanidade?",
+        "alternativas": ["As pirâmides","O Cristo Redentor","A Torre Eifel","A Casa do Jemaf"],
         "resposta": 3
     },
     {
@@ -45,8 +45,8 @@
         "resposta": 0
     },
     {
-        "enunciado":"Na história do programa apenas uma pessoa levou o prêmio máximo.\nA pergunta valendo 1 milhão de reais foi:\nEm que dia nasceu e em que dia foi registrado o Presidente Lula?",
-        "alternativas": ["6 e 27 de outubro","8 e 27 de outubro","9 e 26 de outubro","7 e 23 de outubro"],
+        "enunciado":"Na história do programa apenas uma pessoa levou o prêmio máximo.\nA pergunta valendo 1 bilhão de reais foi:\nEm que dia nasceu o bebê mais lindo do planeta?",
+        "alternativas": ["8 de setembro","8 de fevereiro","24 de abril","7 de outubro"],
         "resposta": 0
     }
 ]

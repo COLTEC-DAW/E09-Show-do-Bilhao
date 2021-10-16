@@ -1,10 +1,8 @@
 <html>
-    <head>
-        <p> game over :) </p>
-        <form method="post">
+    <p> Voce perdeu, mas nao se preocupe, voce consegue</p>
+    <form method="post">
 
-            <input type="submit" value="try again">
-            <input type="submit" name="acao" value="logout">
-        </form>
-    </head>
+        <input type="submit" value="try again">
+        <input type="submit" name="acao" value="logout">
+    </form>
 </html>

@@ -8,10 +8,10 @@
 
         public function __construct ($login, $nome, $senha, $email){
 
-            $this->login = $login;
-            $this->nome = $nome;
-            $this->senha = $senha;
-            $this->email = $email;
+            $this->login = htmlspecialchars($login);
+            $this->nome = htmlspecialchars($nome);
+            $this->senha = htmlspecialchars($senha);
+            $this->email = htmlspecialchars($email);
         }
     }
 ?>  

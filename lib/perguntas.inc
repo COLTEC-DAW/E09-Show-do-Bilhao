@@ -4,6 +4,7 @@
     require './models/Pergunta.php';
     $dadosPerguntas = json_decode(file_get_contents('./dados/perguntas.json'), false);
 
+    // recebe um index (de 0 a 9) e retorna um objeto Pergunta.
     function getPergunta ($indexPergunta){
 
         global $dadosPerguntas;
@@ -20,14 +21,15 @@
 
     function carregaProgresso($numPerg){
         
-        echo "<p>Acertos: $numPerg/10</p>";
+        echo "<p>Progresso de sua jornada: $numPerg/10</p>";
     }
 
+    //Mostra a tela de uma nova pergunta a partir de um index.
     function carregaPergunta($numPerg){
 
         $dadosPergunta = getPergunta($numPerg);
 
-        echo "<fieldset><legend> {$dadosPergunta->enunciado} </legend><br>";
+        echo "<fieldset><legend class=\"pergunta\"> {$dadosPergunta->enunciado} </legend><br>";
 
         foreach($dadosPergunta->alternativas as $key => $value){
             echo "<input type=\"radio\" name=\"alternativa\" value=\"$key\">$value<br>";
@@ -39,6 +41,7 @@
               </fieldset> <br>";
     }
 
+    //Confere a resposta inserida pelo usuário estava correta (retorna true ou false)
     function autenticaOpcao($opcaoEscolhida, $numPergunta){
 
         
@@ -48,9 +51,15 @@
         else{
 
             $dadosPergunta = getPergunta($numPergunta - 1);
+            
+            if((int)$dadosPergunta->resposta == (int)$opcaoEscolhida){
 
-            if((int)$dadosPergunta->resposta == (int)$opcaoEscolhida) return true;
-            else return false;
+                return true;
+            }
+            else {
+                return false;  
+            } 
         }
     }
+
 ?>
