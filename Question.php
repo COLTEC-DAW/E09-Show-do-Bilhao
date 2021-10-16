@@ -2,7 +2,7 @@
     class Question{
 
         var $enunciado;
-        var $alternativas;
+        var $alternativas = [];
         var $resposta;
 
         public function __construct ($enunciado, $alternativas, $resposta){

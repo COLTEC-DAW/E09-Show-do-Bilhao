@@ -13,16 +13,23 @@
                         $users = file_get_contents('users.json');
                         $usersDecodificado = json_decode($users, true);
 
+                         require "User.php";
+
                         foreach($usersDecodificado as $user){
-                            if($user['usuario'] == $_POST['usuario'] && $user['senha'] == $_POST['senha']){
-                               // session_start();
-                                $_SESSION['usuario'] = $user['usuario'];
-                                $_SESSION['senha'] = $user['senha'];
-                                header('Location: /ShowDoBilhao/index.php');
+                            $usuario = [];
+                            for($i = 0; $i < sizeof($usersDecodificado); $i++){
+                                $usuario[] = new User($usersDecodificado[$i]->nome, $usersDecodificado[$i]->usuario, $usersDecodificado[$i]->email, $usersDecodificado[$i]->senha);
                             }
 
-                            else{
-                                echo("Usuário ou senha inválidos");
+                            for($j = 0; $j < sizeof($usuario); $j++){
+                                if($usuario[$j]->usuario == $usuario && $usuario[$j] == $senha){
+                                    $_SESSION['usuario'] = $user['usuario'];
+                                    $_SESSION['senha'] = $user['senha'];
+                                    header('Location: /ShowDoBilhao/index.php');
+                                }
+                                else{
+                                    echo("Usuário ou senha inválidos");
+                                }
                             }
                         }
                     }

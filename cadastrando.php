@@ -14,15 +14,10 @@
     );
 
     $users = fopen("users.json", "a+"); 
-
     $dadosJson = file_get_contents("users.json");
     $usersDecodificado = json_decode($dadosJson, true); 
     array_push($usersDecodificado, $dadosCadastro);
-    
     $dadosCodificados = json_encode($usersDecodificado);
-    fclose($users);
-    $users = fopen("users.json", "w");
-
     $escreve = fwrite($users, $dadosCodificados);
     echo $dadosCodificados;
     header("Location: inicio.php");

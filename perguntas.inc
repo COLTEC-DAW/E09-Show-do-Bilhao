@@ -2,6 +2,8 @@
 <?php
  
     function carregaPergunta($id){
+        require "Question.php";
+
         echo("<p style='color: red'>");
         exibeProgresso($id);
         echo("</p>");
@@ -11,11 +13,17 @@
         $questoes = file_get_contents("perguntas.json");
         $questoesDecodificadas = json_decode($questoes);
 
-        echo($questoesDecodificadas[$id]->enunciado);
-        echo ("<br/> <br/>");
+        $questao = [];
+
+        for($i = 0; $i < 5; $i++){ 
+            $questao[] = new Question($questoesDecodificadas[$i]->enunciado,$questoesDecodificadas[$i]->alternativas,$questoesDecodificadas[$i]->resposta);
+        }
+
+        echo ($questao[$id]->enunciado);
+        echo("</br> <br/>");
 
         for($j = 0; $j <= 3; $j++){
-            echo ("<input type='radio' name='alternativa' value='$j'>"  . $questoesDecodificadas[$id]->alternativas[$j]);
+            echo ("<input type='radio' name='alternativa' value='$j'>"  . $questao[$id]->alternativas[$j]);
             echo ("<br/> <br/>"); 
         }
         
