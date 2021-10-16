@@ -1,79 +1,32 @@
 <?php
-    $enunciados = array(
-        0 => '<br><br> Biologia: Existe pessoas com determinado tipo sanguíneo que são consideradas doadores universais.<br>
-        Que tipo sanguíneo essa pessoa possui?<br> <br>',
-        1 => 'English: Choose the alternative that indicates the plural of the words: fish, life, woman.<br> <br>',
-        2 => 'História: A formação dos Estados Modernos fez desaparecer os laços de suserania e vassalagem e, <br>
-        com isso, foram formado(as), na Europa:<br> <br>'
-    );
-    $alternativas = array(
-        0 => array(
-            0 => '(a) O+ <br>',
-            1 => '(b) O- <br>', 
-            2 => '(c) AB+ <br>', 
-            3 => '(d) AB- <br>' 
-        ),
-        1 => array(
-            0 => '(a) Fishes, lifes, woman. <br>',
-            1 => '(b) Fishs, lives, woman. <br>',
-            2 => '(c) Fish, lives, women. <br>',
-            3 => '(d) Fish, lifes, women. <br>'    
-        ),
-        2 => array(
-            0 => '(a) os exércitos nacionais. <br>',
-            1 => '(b) os burgos. <br>',
-            2 => '(c) as Cruzadas. <br>',
-            3 => '(d) os cavaleiros da luz. <br>'  
-        )
-    );
-    $respostasCertas = array(
-        0 => "b",
-        1 => "c",
-        2 => "a"
-    );
     /**
      * Função que imprime cada pergunta separadamente; Ou seja, função escolhida anteriormente.
      * @param $id // = chave da pergunta
-     * @param $enunciados
-     * @param $alternativas
+     * @param $perguntas
      */
-    function carregaPergunta($id, $enunciados, $alternativas){
-        foreach($enunciados as $key => $value){
-            if($key == $id){
-                echo("$value");
-                for($i = 0; $i <= 3; $i++){
-                    echo($alternativas[$key][$i]);
-                }
-            }
-        }
+    function carregaPergunta($id, $perguntas){
+        echo($perguntas[$id]->enunciado);
+        echo($perguntas[$id]->alternativas);
     }
     /**
      * Função que compara a resposta do candidato com a resposta certa. 
      * @param $id
-     * @param $respostasCertas
+     * @param $perguntas
      * @param $pergunta
      */
-    function confere($escolha, $respostasCertas, $pergunta){
+    function confere($escolha, $perguntas, $id){
         $aux = 0;
-        foreach($respostasCertas as $key => $value){
-            if($key == $pergunta){
-                // se a chave das respostas certas for igual a $pergunta, que é a chave das $alternativas, 
-                // então compara o $escolha da resposta escolhida com o valor da resposta certa
-                if($value == $escolha){
-                    // resposta certa
-                    echo("<br> RESPOSTA... CERTA <br>");
-                    echo("Perguntas respondidas corretamente: ");
-                    echo(++$pergunta);
-                    $aux++;
-                }
-            }
-        }
-        if($aux == 0){
-            //errou a resposta.
+        if($perguntas[$id]->resposta == $escolha){
+            // acertou
+            echo("<br> RESPOSTA... CERTA <br>");
+            echo("Perguntas respondidas corretamente: ");
+            echo(++$id); 
+            return true;   
+        } else {
+            //errou
             gameOver();
             return false;
         }
-        return true;
     }
     /**
      * Função que mostra ao jogador que ele venceu o jogo e retorna a página inicial.

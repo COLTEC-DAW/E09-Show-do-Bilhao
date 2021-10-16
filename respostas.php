@@ -3,13 +3,17 @@
      * Inclusões:
      */
     include 'perguntas.inc';
+
     $pergTotais = 2;
     $escolha = $_POST['escolha'];
-    $pergunta = $_POST['pergunta'];
+    $IDpergunta = $_POST['pergunta'];
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-    $boo = confere($escolha, $respostasCertas, $pergunta);
+    $json = file_get_contents("perguntas.json");
+    $perguntas = json_decode($json);
+
+    $boo = confere($escolha, $perguntas, $IDpergunta);
     
 ?>
 <!DOCTYPE html>
@@ -29,22 +33,23 @@
         <section>
             <form class="form" action="perguntas.php" method="post">
                 <?php 
-                    $pergunta++;
-                    if($pergunta > $pergTotais){
+                    $IDpergunta++;
+                    if($IDpergunta > $pergTotais){
                         // aqui significa que já respondeu todas as perguntas do jogo;
-                        $pergunta = -1;
+                        $IDpergunta = -1;
                     } 
                 ?>
                 <input type="hidden" name="login" value=<?=$login?>>
                 <input type="hidden" name="senha" value=<?=$senha?>> <br>
-                <input type="hidden" name="id" value=<?=$pergunta?>>
+                <input type="hidden" name="id" value=<?=$IDpergunta?>>
                 <?php 
-                    if($pergunta == -1){
+                    if($boo == false){
+                        // significa que deu game over;
+                        echo '<a href="./index.php"> Clique aqui. </a> ';                        
+                    } elseif ($IDpergunta == -1){
+                        // aqui significa que ganhou
                         acabarJogo();
-                    } elseif ($boo == false){
-                        // aqui é sinal que perdeu o jogo;
-                        echo '<a href="./index.php"> Página inicial </a>';
-                    } else{
+                    } else {
                         echo '<input type="submit" value="Próxima"><br>';
                     }
                 ?>

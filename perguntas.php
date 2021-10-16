@@ -12,8 +12,12 @@
     $infoArray = explode(" ", $info); // passa de string pra array;
     atualizaArquivo($infoArray, $id);
 
+    // manipulando através do jason
+    $json = file_get_contents("perguntas.json");
+    $perguntas = json_decode($json);
+
     /** Procedimentos */
-    if($id != null){ carregaPergunta($id, $enunciados, $alternativas);  } 
+    if($id != null){ carregaPergunta($id, $perguntas);  } 
 
 ?>
 <!DOCTYPE html>
