@@ -16,10 +16,12 @@
             require "perguntas.inc"; 
             if(empty($_GET))
             {
+                echo "Início de Jogo, nenhuma pergunta respondida até o momento.<br><br>";
                 carregaPergunta(0); 
             }
             else
             {
+                echo $_GET["id"]."/5 Respostas Corretas.<br><br>"; 
                 carregaPergunta($_GET["id"]); 
             }
         ?>
