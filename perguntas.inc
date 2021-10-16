@@ -41,14 +41,14 @@
     }
      function seta_cookies($pontos){
             date_default_timezone_set('America/Sao_Paulo');
-            setcookie(("lastGame" . $_SESSION["name"]), date("j.n.Y, g:i a"), time() + (86400 * 30), '/');
-            setcookie(("lastScore" . $_SESSION["name"]), $pontos, time() + (86400 * 30), '/');
+            setcookie(("lastGame" . $_SESSION["login"]),date("j.n.Y, g:i a"), time() + (86400 * 30), '/');
+            setcookie(("lastScore" . $_SESSION["login"]),$pontos, time() + (86400 * 30), '/');
       }    
-   function verifica_resposta($gabarito,$pontos){
+   function verifica_resposta($pergunta,$pontos){
       $id=$_POST["id"];
       $link2= "Location:gameover.php?id=";
-      $link="perguntas.php?id=".$_POST["id"]; 
-      if($_POST["resposta"]==$gabarito[$id-1]){
+      $link="perguntas.php?id=".$_POST["id"];   
+      if($_POST["resposta"]==$pergunta["resposta"][0]){
         $pontos=$pontos+1;
         seta_cookies($pontos);
          return $pontos;

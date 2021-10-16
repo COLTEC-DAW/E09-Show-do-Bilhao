@@ -1,4 +1,4 @@
-
+<?php require "login.inc";?> 
 <?php include "rodape.inc";?>   
 <!DOCTYPE html>
     <!--Guilherme Rodrigues Souza Macieira-->
@@ -14,7 +14,7 @@
 
         
     <div class="body-text">  
-
+   
      <h2>OCORREU UM ERRO AO CARREGAR O JOGO, CLIQUE NO BOTÃO E TENTE NOVAMENTE</h2>
      <a href="logout.php"><button>CLIQUE AQUI</button></a>
     </div>

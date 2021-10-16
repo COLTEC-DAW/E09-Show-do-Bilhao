@@ -16,6 +16,7 @@
    
 
     <div class="body-text">  
+    <h1>PAGINA DE FIM DE JOGO</h1>
     <?php 
       echo GetMenu();
       
@@ -29,7 +30,7 @@
       }
       
     ?>  
-     <h1>PAGINA DE FIM DE JOGO</h1>
+    
      <br>
 
     </div>

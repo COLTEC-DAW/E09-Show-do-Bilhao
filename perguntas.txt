@@ -1,0 +1,67 @@
+[
+   {
+      "alternativas":[
+         " a) php",
+         " b) c#",
+         " c) japones"
+      ],
+      "enunciado":[
+         "1) qual a linguagem de programa\u00e7\u00e3o representada por um mascote de elefante?"
+      ],
+      "resposta":[
+         "a"
+      ]
+   },
+   {
+      "alternativas":[
+         " a) Guilherme Rodrigues",
+         " b) S\u00edlvio Santos",
+         " c) Jemaf"
+      ],
+      "enunciado":[
+         "2) qual o dono do SBT?"
+      ],
+      "resposta":[
+         "b"
+      ]
+   },
+   {
+      "alternativas":[
+         " a) show do milh\u00e3o",
+         " b) show do bilh\u00e3o",
+         " c) show dos mil reais"
+      ],
+      "enunciado":[
+         "3) qual o nome do programa?"
+      ],
+      "resposta":[
+         "b"
+      ]
+   },
+   {
+      "alternativas":[
+         " a) Guilherme Rodrigues",
+         " b) Otaviano Costa",
+         " c) Elon Musk"
+      ],
+      "enunciado":[
+         "4) qual o criador deste site?"
+      ],
+      "resposta":[
+         "a"
+      ]
+   },
+   {
+      "alternativas":[
+         " a) Col\u00f4mbia",
+         " b) Chile",
+         " c) Peru"
+      ],
+      "enunciado":[
+         "5) Onde se localiza Machu Picchu?"
+      ],
+      "resposta":[
+         "c"
+      ]
+   }
+]

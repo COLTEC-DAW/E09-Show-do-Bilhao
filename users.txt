@@ -1,0 +1,2 @@
+[{"name":"Guilherme Rodrigues Souza Macieira","email":"g@gmail.com","login":"GuilhermeRSM","senha":"guilherme","verifica":"4","tag":"f3rfjp9kh70jr69n8sk2fgvkni"},
+{"name":"Pedro","email":"pedro","login":"pedro","senha":"pedro","verifica":"4","tag":"oe8f56vi9ibu7r0qaelag7b45l"},]

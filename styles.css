@@ -1,27 +1,33 @@
 
 .sidebar {
     height: 100%;
-    width: 1050px;
+    width: 150px;
     position: absolute;
     left: 0;
     top: 0;
     padding-top: 40px;
-    background-color: lavender;
-    }
+    background-color: #281C42 ;
     
+   
+    }
+    html{
+        
+        //background-color: #E6E6FA;
+    }
+    .body-text{
+
+        margin-left: 1100px; 
+        margin-right: 835px; 
+    }
     .sidebar div {
     padding: 8px;
     font-size: 24px;
     display: block;
     }
-    
-    .body-text {
-        margin-left: 1100px; 
-        margin-right: 835px; 
-    }
+
     #footer {
         font-size: 200%;
-        background-color: whitesmoke;
+
         height: 100px;
         width: 1000px;
         position: absolute;

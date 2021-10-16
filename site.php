@@ -19,17 +19,30 @@
       echo GetMenu();
       
     ?>  
+        <?php
+    
+    if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+    }
+
+    if (!isset($_SESSION["name"]) || !isset($_SESSION["verifica"])) {
+        header("Location:cadastro.php");
+    }
+?>
      <h1>PERFIL DE JOGADOR</h1>
      <br>
+     <h2>Informações do jogador</h2>
      <h3>nome: <?= $_SESSION["name"] ?></h3>
      <h3>email: <?= $_SESSION["email"] ?></h3>
      <h3>login: <?= $_SESSION["login"] ?></h3>
+     <h3>senha: <?= $_SESSION["senha"] ?></h3>
      <?php
-    if (isset($_COOKIE["lastScore" . $_SESSION["name"]]) && isset($_COOKIE["lastGame" . $_SESSION["name"]])) { 
+     
+    if (isset($_COOKIE["lastScore" . $_SESSION["login"]]) && isset($_COOKIE["lastGame" . $_SESSION["login"]])) { 
         ?>
         <h2>Informações do último jogo</h2>
-        <h3>Data: <?= $_COOKIE["lastGame" . $_SESSION["name"]] ?></h3>
-        <h3>Pontuação: <?= $_COOKIE["lastScore" . $_SESSION["name"]] ?></h3>
+        <h3>Data: <?= $_COOKIE["lastGame" . $_SESSION["login"]] ?></h3>
+        <h3>Pontuação: <?= $_COOKIE["lastScore" . $_SESSION["login"]] ?></h3>
     <?php }else{
                 echo '<h3>Este perfil ainda não jogou nenhuma partida</h3>';
                 } 

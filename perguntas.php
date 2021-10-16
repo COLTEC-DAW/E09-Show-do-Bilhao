@@ -1,6 +1,7 @@
 <?php include "menu.inc";?> 
 <?php include "rodape.inc";?>   
 <?php require "perguntas.inc";?> 
+
 <!DOCTYPE html>
     <!--Guilherme Rodrigues Souza Macieira-->
 <html lang="pt-br" dir="ltr">
@@ -17,16 +18,25 @@
    
     <div class="body-text">  
     <?php
+    
         if (session_status() == PHP_SESSION_NONE) {
           session_start();
         }
 
         if (!isset($_SESSION["name"]) || !isset($_SESSION["verifica"])) {
-            header("Location:login.php?");
+            header("Location:cadastro.php");
         }
     ?>
     <?php 
-     $gabarito=array( 'a','b','b','a','c');
+     $arquivo_perguntas= 'perguntas.txt';
+     if ( file_exists( $arquivo_perguntas)) {
+        $abertura_arquivo_perguntas = fopen($arquivo_perguntas, "r");
+        $ler_perguntas = fread($abertura_arquivo_perguntas,filesize($arquivo_perguntas) );
+         $result= json_decode(file_get_contents("perguntas.txt"), true); ;
+        fclose($abertura_arquivo_perguntas);
+    }
+     
+    
       echo GetMenu();
       
       if(@$_GET['id']==5){
@@ -36,64 +46,25 @@
         
         $pontos=@$_GET['id'];
         $pontos=$pontos-1;
-        $pontos=verifica_resposta($gabarito,$pontos);
-        echo $pontos;  
+        $tmp= escolhePergunta(pegaID()-1,$result);
+        $pontos=verifica_resposta($tmp,$pontos);
       }
 
     ?>  
     <h1>PAGINA DE PERGUNTAS</h1>
     
            <?php
-                $pergunta0 = array ( "alternativas"  => array ( 0 => " a) php",
-                                                       1 => " b) c#",
-                                                       2 => " c) japones",
-                                                                    ),
-                                    "enunciado" => array ( "1) qual a linguagem de programação representada por um mascote de elefante?",
-                                                    ),
-                                    );
 
-
-                                $pergunta1 = array ( "alternativas"  => array ( 0 => " a) Guilherme Rodrigues",
-                                                       1 => " b) Sílvio Santos",
-                                                       2 => " c) Jemaf",
-                                                                    ),
-                                    "enunciado" => array ( "2) qual o dono do SBT?",
-                                                    ),
-                                                                                );
-
-                                                $pergunta2 = array ( "alternativas"  => array ( 0 => " a) show do milhão",
-                                                       1 => " b) show do bilhão",
-                                                       2 => " c) show dos mil reais",
-                                                                    ),
-                                    "enunciado" => array ( "3) qual o nome do programa?",
-                                                    ),
-                                                                                );
-
-                                                $pergunta3 = array ( "alternativas"  => array ( 0 => " a) Guilherme Rodrigues",
-                                                       1 => " b) Otaviano Costa",
-                                                       2 => " c) Elon Musk",
-                                                                    ),
-                                    "enunciado" => array ( "4) qual o criador deste site?",
-                                                    ),
-                                                                                );
-                                                 $pergunta4 = array ( "alternativas"  => array ( 0 => " a) Colômbia",
-                                                       1 => " b) Chile",
-                                                       2 => " c) Peru",
-                                                                    ),
-                                    "enunciado" => array ( "5) Onde se localiza Machu Picchu?",
-                                                    ),
-                                                                                );
             
-                $result = array ( 0 => $pergunta0, 1 => $pergunta1, 2 => $pergunta2, 3 => $pergunta3, 4 => $pergunta4);
+                
                 $id=pegaID();
             ?>    
                 <h2>pergunta numero: <?php echo $id+1 ?> </h2>
             <?php    
                 $tmp= escolhePergunta(pegaID(),$result);
                 carregaPergunta($tmp,$id);                                                              
-                print_r($gabarito);
-                echo $_POST["id"];        
-                echo $_POST["resposta"];  
+ 
+               
                 
                                                                       
             ?>
