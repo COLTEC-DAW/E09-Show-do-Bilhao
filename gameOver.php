@@ -8,7 +8,10 @@
     <title>GAME OVER</title>
 </head>
 <body>
-    <h1 style="color: red; font-size: 11em; text-align: center">GAME OVER</h1>
-    <h2 style="color: gray; font-size: 9em; text-align: center"> Você perdeu! </h2>
+    <div style="text-align: center">
+        <h1 style="color: red; font-size: 11em">GAME OVER</h1>
+        <h2 style="color: gray; font-size: 9em"> Você perdeu! </h2>
+        <a href="inicio.php" style="color: white; background-color: red; font-size: 28px"> JOGAR NOVAMENTE </a>
+    </div>
 </body>
 </html>

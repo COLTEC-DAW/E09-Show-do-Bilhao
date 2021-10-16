@@ -1,13 +1,15 @@
 <?php
     require "perguntas.inc";
     
+    session_start();
+
     function GetHeader(){
         $id = $_GET['id'];
         $id = $id + 1;
 
         $redirect = "Location: /ShowDoBilhao/winner.php";
 
-        if($id > 5){
+        if($id >= 5){
             defineCookies($id);
             header($redirect);
         }

@@ -20,7 +20,7 @@
         include "./menu.inc";
     ?> 
 
-    <div>
+    <div style="text-align: center">
         <?php
             if (isset($_COOKIE["pontuacao" . $_SESSION["usuario"]]) && isset($_COOKIE["ultimoJogo" . $_SESSION["usuario"]])) { ?>
                 <h2 style='color: #fc4518; font-size: 18px'>Último acesso: <?= $_COOKIE["ultimoJogo" . $_SESSION["usuario"]] ?></h2>
@@ -31,13 +31,11 @@
         <a href="./perguntas.php?id=0" style="background-color: #fc4518; color: white; font-size: 30px">Começar</a>
         
         <?php 
-
-            echo("</br> </br> </br> </br> </br> </br> </br> </br>");
-            echo("<a href='inicio.php?logout'>
-                <button style='background-color: #fc4518; border-color: #fc4518; color: white; font-size: 20px'> Sair </button>
-                </a>")
-
+            echo("</br> </br> </br> </br> </br> </br>");
         ?>
+        <a href='inicio.php?logout'>
+                <button style='background-color: #fc4518; border-color: #fc4518; color: white; font-size: 20px'> Sair </button>
+        </a>
     </div>
 
     <?php

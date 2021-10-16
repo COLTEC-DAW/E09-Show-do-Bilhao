@@ -2,26 +2,26 @@
     {
         "enunciado":"Quais são as fases da Lua?",
         "alternativas": ["Nova, cheia e superlua","Penumbral, lunar parcial, lunar total e cheia","Nova, cheia, minguante e lua de sangue","Nova, crescente, cheia e minguante"],
-        "resposta": 3
+        "resposta": "3"
     },
     {
         "enunciado":"Qual a montanha mais alta do mundo?",
         "alternativas": ["Mauna Kea","Dhaulagiri","Monte Chimborazo","Monte Everest"],
-        "resposta": 3
+        "resposta": "3"
     },
     {
         "enunciado":"Onde se localiza Machu Picchu?",
         "alternativas": ["Colômbia","Peru","Bolívia","Índia"],
-        "resposta": 1
+        "resposta": "1"
     },
     {
         "enunciado":"Que país tem o formato de uma bota?",
         "alternativas": ["Itália","Brasil","Portugal","México"],
-        "resposta": 0
+        "resposta": "0"
     },
     {
         "enunciado":"Quantos ossos temos no nosso corpo?",
         "alternativas": ["126","100","206","300"],
-        "resposta": 2
+        "resposta": "2"
     }
 ] 

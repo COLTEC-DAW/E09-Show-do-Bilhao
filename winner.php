@@ -7,7 +7,10 @@
     <title>VOCÊ VENCEU!</title>
 </head>
 <body>
-    <h1 style="color: red; font-size: 11em; text-align: center">VOCÊ VENCEU!</h1>
-    <h2 style="color: gray; font-size: 9em; text-align: center"> FIM DE JOGO! </h2>
+    <div style="text-align: center">
+        <h1 style="color: red; font-size: 11em">VOCÊ VENCEU!</h1>
+        <h2 style="color: gray; font-size: 9em"> FIM DE JOGO! </h2>
+        <a href='inicio.php' style='color: red; background-color: white; font-size: 28px'> JOGAR NOVAMENTE </a>
+    </div>
 </body>
 </html>
