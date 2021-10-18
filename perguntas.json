@@ -1,0 +1,22 @@
+[
+    {
+        "enunciado": "Um enunciado!",
+        "alternativas": [
+            "A primera alternativa!",
+            "A segunda alternativa!",
+            "A terceira alternativa!",
+            "A quarta alternativa!"
+        ],
+        "indexAlternativaCorreta": 1
+    },
+    {
+        "enunciado": "Outro enunciado!",
+        "alternativas": [
+            "A primera alternativa!",
+            "A segunda alternativa!",
+            "A terceira alternativa!",
+            "A quarta alternativa!"
+        ],
+        "indexAlternativaCorreta": 3
+    }
+]

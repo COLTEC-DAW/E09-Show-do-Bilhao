@@ -1,73 +1,76 @@
 <!DOCTYPE html>
 
 <?php 
-
 require_once "perguntas.inc";
 
-global $vetorEnunciados;
-global $matrizAlternativas;
-global $vetorAlternativasCorretas;
+global $idPergunta;
 
-$idPerguntaAtual = $_POST['id'] ?? ($_GET['id'] ?? 0);
-$idAntePergunta = $idPerguntaAtual - 1;
-$idProxPergunta = $idPerguntaAtual + 1;
-$isRespostaCorreta = isset($_POST['resposta']) ? ($_POST['resposta'] == GetPerguntaAlternativasCorretaId($idAntePergunta)) : true;
+$GLOBALS['idPergunta'] = $_POST['idPergunta'] ?? ($_GET['idPergunta'] ?? 0);
+if (isset($_POST['resposta']))
+{
+    if (Perguntas::CheckResposta($GLOBALS['idPergunta'], $_POST['resposta']))
+    {
+        $GLOBALS['question'] = "RIGHT_ANSWER";
+        $GLOBALS['idPergunta']++;
+    }
+    else
+    {
+        $GLOBALS['question'] = "WRONG_ANSWER";
+    }
+}
+
 ?>
 
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>O SHOW DO BILHAO</title>
+        <title>Pergunta</title>
     </head>
     <body>
         <?php
-        if ($idPerguntaAtual == NUM_PERGUNTAS and $isRespostaCorreta)
+        if (($GLOBALS['question'] ?? null) == "WRONG_ANSWER")
         {
-            include "gameoverwin.inc";
+            include_once "gameoverlose.inc";
         }
-        elseif ($idPerguntaAtual == 0 or $isRespostaCorreta)
+        elseif ($GLOBALS['idPergunta'] == Perguntas::GetNumPerguntas())
         {
-            $pergunta = GetPergunta($idPerguntaAtual);
-
-            $textoEnunciado = $pergunta[0];
-            $alternativas = $pergunta[1];
+            include_once "gameoverwin.inc";
+        }
+        else
+        {
+            $textoEnunciado = Perguntas::GetEnunciado($idPergunta);
             ?>
 
             <div class="pergunta">
+            
                 <h2 class="enunciado"><?php echo "$textoEnunciado" ?></h2>
-                <form action="perguntas.php" method="post">
+
+                <form action="index.php" method="post">
+                    <input type="hidden" name="action" value="question">
+                    <input type="hidden" name="idPergunta" value="<?php echo "$idPergunta" ?>">
+
                     <?php
-                    for ($idAlternativa = 0; $idAlternativa < NUM_ALTERNATIVAS; $idAlternativa++)
+                    for ($idAlternativa = 0; $idAlternativa < Perguntas::GetNumAlternativas($GLOBALS['idPergunta']); $idAlternativa++)
                     {
-                        $textoAlternativa = $alternativas[$idAlternativa];
+                        $textoAlternativa = Perguntas::GetAlternativa($GLOBALS['idPergunta'], $idAlternativa);
                         ?>
-                        
                         <p class="alternativa">
-                            <input type="radio" name="resposta" id="<?php echo "$idAlternativa" ?>" value="<?php echo "$idAlternativa" ?>" onclick="enableSubmit()">
-                            <input type="hidden" name="id" value="<?php echo "$idProxPergunta" ?>">
-                            <label for="<?php echo "$idAlternativa" ?>"><?php echo "$textoAlternativa" ?></label>
+                            <input type="radio" name="resposta" id="<?php echo "Alternativa$idAlternativa" ?>" value="<?php echo "$idAlternativa" ?>" onclick="enableSubmit()">
+                            <label for="<?php echo "Alternativa$idAlternativa" ?>"><?php echo "$textoAlternativa" ?></label>
                         </p>
                         <?php
-                    }
-                    ?>
+                    }?>
                     <input type="submit" id="enviaResposta" value="Com minha conta em risco, reposta final." disabled>
                 </form>
             </div>
             <?php
-        }
-        else
-        {
-            include "gameoverlose.inc";
-        }
-        ?>
+        }?>
+        
 
         <div class="progresso">
             <h3>
                 <?php
-                $numPerguntas = NUM_PERGUNTAS;
-                $numRespostasCorretas = $isRespostaCorreta ? $idPerguntaAtual : $idPerguntaAtual - 1; 
+                $numPerguntas = Perguntas::GetNumPerguntas();
+                $numRespostasCorretas = $idPergunta; 
                 echo "$numRespostasCorretas de $numPerguntas perguntas respondidas corretamente.";
                 ?>
             </h3>
