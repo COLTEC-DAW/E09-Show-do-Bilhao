@@ -1,7 +1,7 @@
 <?php
 
 require "perguntas.inc";
-require "enunciado.php";
+require "dados.php";
 require "menu.inc";
 require "rodape.inc";
 
