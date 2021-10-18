@@ -1,0 +1,3 @@
+Control.php é usado pra saber se tem uma sessao ainda ativa na hora de iniciar.
+Os codigos que fazem uso de manipulacao de sessions e cookies não precisam ter "session_start()" declarada no inicio porque ela ja esta
+declarada no arquivo de funcoes "sessoesCookies.inc" que esta incluido nesses outros arquivos que manipulam sessions e cookies.

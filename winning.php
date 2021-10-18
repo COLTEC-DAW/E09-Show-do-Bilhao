@@ -17,8 +17,15 @@
 
     <div>
         <h3>"WE ARE THE CHAMPIONS, MY FRIENDS AND WE'LL KEEP ON FIGHTING TILL THE END !!!!!"<br>
-        VOCÊ GANHOUUUUUUUUUU !!! PARABÉNS !!!!</h3>
+        VOCÊ GANHOUUUUUUUUUU !!! PARABÉNS !!!!</h3><br><br>
     </div>
+    <div>
+        <?php
+            echo "Caso você deseje jogar novamente, clique no link a seguir: <a href='http://localhost/DAW-E09/telaInicio.php'>Jogar Novamente</a>";
+        ?>
+           <br><br>
+            Caso queira fazer logout de sua sessão, clique no link a seguir: <a href="http://localhost/DAW-E09/logout.php">Logout</a>
+        </div>
 
     <div>
         <?php include "rodape.inc"; ?>

@@ -97,7 +97,7 @@
                 <input type = 'checkbox' id='pergunta3' name = ".$string." value = 3>
                 <label for = 'pergunta3'> ".$alternativas[$id][3]."</label><br><br>
 
-                <input type = 'image' src = 'http://localhost/DAW-E09/Imagens/submitButtom.png' alt='Submit' style = 'max-widht:32px; max-height:32px;'>
+                <input type = 'image' src = 'http://localhost/DAW-E09/Imagens/submitButtom.png' alt='Submit' style = 'max-width:48px; max-height:48px;'>
                 <input type = 'hidden' id = 'qualPergunta' name = 'pergunta' value = ".$id.">
                 <input type = 'hidden' id = 'respostaCorreta' name = 'respostaCorreta' value = ".$alternativasCorretas[$id].">
 
@@ -105,4 +105,3 @@
     }
 
 ?>
-

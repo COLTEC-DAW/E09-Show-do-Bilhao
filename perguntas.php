@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +18,18 @@
     <div>
         <?php 
             require "perguntas.inc"; 
-            if(empty($_GET))
+            if(empty($_GET["id"]))
             {
                 echo "Início de Jogo, nenhuma pergunta respondida até o momento.<br><br>";
+                echo "Jogador(a): ". $_SESSION["user"];
+                echo "<br>";
                 carregaPergunta(0); 
             }
             else
             {
                 echo $_GET["id"]."/5 Respostas Corretas.<br><br>"; 
+                echo "Jogador(a): ". $_SESSION["user"];
+                echo "<br>";
                 carregaPergunta($_GET["id"]); 
             }
         ?>
