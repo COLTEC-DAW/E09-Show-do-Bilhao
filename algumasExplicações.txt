@@ -1,3 +1,6 @@
-Control.php é usado pra saber se tem uma sessao ainda ativa na hora de iniciar.
 Os codigos que fazem uso de manipulacao de sessions e cookies não precisam ter "session_start()" declarada no inicio porque ela ja esta
 declarada no arquivo de funcoes "sessoesCookies.inc" que esta incluido nesses outros arquivos que manipulam sessions e cookies.
+Constatei a não necessidade de "control.php" e o exclui nessa "versão 2.0".
+Na versão 2.0, detalhes como mostrar o ultimo acesso mesmo quando a pessoa já fez um novo acesso e já jogou uma nova partida 
+foram alterados para ficarem visualmente melhores. Desta forma, apenas quando ocorre o login é mostrado o último acesso. 
+Após jogar uma partida (já estando logado), será mostrado apenas o resultado da última partida.

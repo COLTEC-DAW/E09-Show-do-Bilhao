@@ -21,11 +21,14 @@
         <?php
             echo "Olá ". $_SESSION["user"] .".<br>";
 
-            if(isset($_COOKIE["lastAcess". $_SESSION["user"]]) && isset($_COOKIE["lastGame". $_SESSION["user"]]))
+            if (isset($_GET["place"]))
+            {
+                echo "No último jogo você acertou ". $_COOKIE["lastGame". $_SESSION["user"]]."/5 perguntas.<br>";
+            }
+            else if (isset($_COOKIE["lastAcess". $_SESSION["user"]]) && isset($_COOKIE["lastGame". $_SESSION["user"]]))
             {
                 echo "No último jogo você acertou ". $_COOKIE["lastGame". $_SESSION["user"]]."/5 perguntas.<br>";
                 echo "Seu último acesso foi em ". $_COOKIE["lastAcess". $_SESSION["user"]]. ".<br>";
-
             }
             else if (isset($_COOKIE["lastGame". $_SESSION["user"]]))
             {

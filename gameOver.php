@@ -17,7 +17,7 @@
 
         <div>
             <h3>Infelizmente você perdeu!! Espero que tenha aproveitado o jogo!</h3><br><br>
-            Caso você deseje jogar novamente, clique no link a seguir: <a href="http://localhost/DAW-E09/telaInicio.php">Jogar Novamente</a>
+            Caso você deseje jogar novamente, clique no link a seguir: <a href="http://localhost/DAW-E09/telaInicio.php?place=1">Jogar Novamente</a>
             <br><br>
             Caso queira fazer logout de sua sessão, clique no link a seguir: <a href="http://localhost/DAW-E09/logout.php">Logout</a>
         </div>
