@@ -1,38 +1,32 @@
+<?php session_start() ?>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
--->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Jogo Do Bilhao</title>
-        <?php 
-        include "menu.inc";
-        include "rodape.inc";
-        ?>
+        <title>Login</title>
     </head>
     <body>
-        <!-- Menu -->
-        <?php   
-            echo menu(
-                "<a href='index.php'>Home</a>",
-                "<a href='provaDeConceito.php'>Prova de Conceito</a>"
-            );
+        <?php 
+            if(!isset($_SESSION['login'])){
+                if(isset($_POST['action'])){
+                    $_SESSION['login'] = htmlspecialchars($_POST['login']);
+                    header('Location: index.php');
+                }   
+                include('login.php');   
+            }else{
+                if(isset($_GET['logout'])){
+                    unset($_SESSION['login']);
+                    session_destroy();
+                    header('Location: index.php');
+                }
+                setcookie('dateLastPlay', date('d/m/Y'));
+                include('home.php');
+            }
         ?>
-        <form action="jogo.php" method="post">
-            <input type="hidden" name="questAtual" value="0">
-            <input type="submit" value="Start Game">
-        </form>
-        <!-- Rodapé -->
-    <?php 
-        echo rodape("Developed by ",
-            "O incrível",
-            "O inigualável",
-            "O magnânimo",
-            "O inexorável",
-            "O estupendo",
-            "IAGO!!!");
-    ?>
     </body>
 </html>
+
+
+
+
+

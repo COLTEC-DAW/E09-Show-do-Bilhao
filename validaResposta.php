@@ -10,15 +10,17 @@
             if($questAtual >= $numeroQuest){
                 echo "[VOCÊ VENCEU O JOGO, PARABÉNS!!]<br><br>";
                 echo "[questões acertadas: $questAtual]";
-                
+                setcookie('lastPonctuation',$questAtual);
             }else{
                 echo "[ACERTOU!!]<br><br>";
                 echo "[questões acertadas: $questAtual de $numeroQuest]";
                 $linkDeRetorno = "jogo.php";
             }                
         }else{
+            $questAtual -= 1;
             echo "[GAME OVER, OTÁRIO!!]<br><br>";              
-            echo "[questões acertadas: $questAtual de um total de $numeroQuest]";            
+            echo "[questões acertadas: $questAtual de um total de $numeroQuest]";
+            setcookie('lastPonctuation',$questAtual);
         }      
     }
  ?>
