@@ -1,6 +1,7 @@
 <?php 
 
         define("NumeroPerguntas", 5);
+        define("zerado", 0);
 
 
         function carregaPergunta ($id){
@@ -63,12 +64,67 @@
         return $Pergunta;
         }  
          
-        if(isset($_GET["id"])){
-        $Pergunta = carregaPergunta($_GET["id"]);
+        function gameOver(){
+            //zera a poontuação
+            $_POST["pontuacao"] = zerado;
+            header('Location: /gameOver.php');
+        }
+        //Se existe a pergunta printa ela na tela do USER
+        if(isset($_POST["id"])){
+
+        echo "Pontuação:", $_POST["pontuacao"], "<br>";
+        $Pergunta = carregaPergunta($_POST["id"]);
         echo $Pergunta["Pergunta"], "\n\n<br><br>";
         echo "A:",$Pergunta["Respostas"]["A"], "\n<br>";
         echo "B:",$Pergunta["Respostas"]["B"], "\n<br>";
         echo "C:",$Pergunta["Respostas"]["C"], "\n<br>";
         echo "D:",$Pergunta["Respostas"]["D"], "\n<br>";      
         }
+
+   
     ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="Perguntas.php" method="POST">
+            <input type="text" name="resposta">
+
+            <input type="hidden" name="id" value
+            = <?php 
+            $Resposta = intval($_POST["id"])+1;
+            if($Resposta <= NumeroPerguntas){
+            echo $Resposta;
+            }else{
+                echo 1;
+            }
+            ?>
+            >
+
+            <input type="hidden" name = "pontuacao" value = <?php
+             if((intval($_POST["id"])-1) > 0){
+             $Pergunta2 = carregaPergunta(intval($_POST["id"])-1);
+                if($Pergunta2["RespostaCerta"] == $_POST["resposta"]){ 
+                  echo intval($_POST["pontuacao"])+1;  
+                }else{
+                    gameOver();
+                }
+             }else{
+                 //Pontuação será igual a zero
+                 echo 1; 
+             }
+            ?>
+            >
+
+            <input type="submit">
+
+        </form>
+
+    </body>
+    </html>

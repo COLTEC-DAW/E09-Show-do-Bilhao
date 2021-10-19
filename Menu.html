@@ -13,10 +13,9 @@
       text-align: center;
     }
     h3#regras{
-      color: red;
+      color: blue;
     }
     div#Texto{
-      color: white;
       text-align: center;
     }
     input{
@@ -39,9 +38,14 @@
         </p>
      </div>
 
-     <form action="Perguntas.php" method="GET" >
-      <input type = "text" name = "id">
+     <form action="Perguntas.php" method="POST" >
+      <input type = "hidden" name = "id" value= 1>
+      <input type = "hidden" name = "pontuacao" value= 0> 
+      <input type ="submit" name = "botao" value="GO">
     </form> 
-
+<script>
+  var texto = window.document.getElementById("Texto");
+  texto.style.color = 'red';
+</script>
  </body>
 </html>
