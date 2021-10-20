@@ -1,51 +1,26 @@
 <?php 
 session_start();
-$perguntas = fopen("./perguntas.txt", "a+");
+include("./Question.php");
 
 $numperguntas = 5;
 
 $numalternativas = 4;
 
-//Pega os dados das perguntas contidos no arquivo "perguntas.txt" e salva em arrays
-$j = 0;
+$json_str = file_get_contents("./perguntas.json");
+$perguntas = json_decode($json_str, true);
 
- while(!feof($perguntas)){
+$PerguntasObj = array();
+foreach($perguntas as $pergunta){
+    $newPergunta = new Question($pergunta["enunciado"], $pergunta["alternativas"], $pergunta["gabarito"]);
 
-        $linha = fgets($perguntas);
-        $dados = explode(",", $linha);
-        $arraypertxt[] = '<p>' . $dados[0] . '<br>';
-        for($i = 1; $i < $numperguntas; $i++){
-                $arrayalttxt[$j][] = $dados[$i] . '<br>';
-        }
-        $gabaritotxt[] = (int)$dados[5];
+    $PerguntasObj[] = $newPergunta;
 
-        $j++;
 }
+
  
 function mostraquestoes(){
-    $Questoes = '';
-    foreach ($GLOBALS["arraypertxt"] as $key => $value) {
-        $Questoes = $Questoes . $value;
-        for($i = 0; $i < 4; $i++){
-            $Questoes = $Questoes . $GLOBALS['arrayalttxt'][$key][$i];
-        }   
-    }
-    return $Questoes;
+   $GLOBALS['PerguntasObj'][0]->imprime();
 } 
-
-function mostragabarito(){
-    $Gabarito = "<h2>Gabarito: </h2>";
-    $quebralinha = "<br>";
-    $j = 1;
-    foreach($GLOBALS['gabaritotxt'] as $key2 => $resposta){
-
-        $Gabarito = $Gabarito . $j . '- ';
-        $Gabarito = $Gabarito . $GLOBALS['arrayalttxt'][$key2][$resposta];
-        $j++;
-    }
-
-    return $Gabarito;
-}
 
 
 function validaCookies($pontuacao, $datahora){
@@ -54,8 +29,8 @@ function validaCookies($pontuacao, $datahora){
 }
 
 
-function getPerguntatxt($id){
-    if($id > count($GLOBALS["arraypertxt"]) || $id < 0){
+function getPergunta($id){
+    if($id > count($GLOBALS["PerguntasObj"]) || $id < 0){
         return "O Id" . $id . "é inválido fera";
     }
     $inicio = "<div>";
@@ -66,13 +41,13 @@ function getPerguntatxt($id){
     $submit = '<input type="reset" value="Limpar"><input type="submit" value="Enviar">';
 
 
-    $questao = $inicio . $GLOBALS["arraypertxt"][$id] . $quebralinha;
+    $questao = $inicio . $GLOBALS["PerguntasObj"][$id]->enunciado . $quebralinha;
 
     $questao = $questao . $forminicio ;
 
     for($i = 0; $i < $GLOBALS["numalternativas"]; $i++){
-        $questao = $questao  . '<input type="radio" name="Question" value="'. $GLOBALS['arrayalttxt'][$id][$i]. '">'
-         . '<label>' . $GLOBALS["arrayalttxt"][$id][$i] . '</label'. $quebralinha;
+        $questao = $questao  . '<input type="radio" name="Question" value="'. $GLOBALS['PerguntasObj'][$id]->alternativas[$i]. '">'
+         . '<label>' . $GLOBALS["PerguntasObj"][$id]->alternativas[$i] . '</label'. $quebralinha . $quebralinha;
     }
     $questao = $questao . '<input type="hidden" id="id" name="id" value="' . ($id) . ' ">';
 

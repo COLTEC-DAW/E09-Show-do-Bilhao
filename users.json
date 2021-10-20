@@ -1,0 +1,27 @@
+[
+    {
+        "nome": "Joao",
+        "email": "Joao@email.com",
+        "login": "jaovitor",
+        "senha": "admin"
+    },
+    {
+        "nome": "Ze Colmeia",
+        "email": "ZC@gmail.com",
+        "login": "ZC",
+        "senha": "affehozc"
+    },
+    {
+        "nome": "Jo\u00e3o Victor Martins dos Anjos",
+        "email": "2019951945@teiacoltec.org",
+        "login": "2019951945",
+        "senha": "senha"
+    },
+    {
+        "nome": "lucas",
+        "email": "lukinhas@gmail.com",
+        "login": "2019952992",
+        "senha": "lucas"
+    }
+
+]

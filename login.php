@@ -1,43 +1,21 @@
 <?php 
+
 include "perguntas.inc";
+include "User.php";
 
-$arquivo = fopen("./users.txt", "r");
+//Usuário de teste que serve apenas para checar o cadastro e não é salvo no arquivo
+$usert = new User('teste', 'teste', 'teste', 'teste');
 
-function checacadastro($arquivo, $login, $senha){
-    $i = 0;
-    while(!feof($arquivo)){
 
-        $linha = fgets($arquivo);
-        $dados = explode(",", $linha);
-        echo('<br>');
-        $copialogin = $dados[2];
-        $copiasenha = $dados[3];
-
-        
-        //Verifica se existe esse login no cadastro
-        if(strcmp($copialogin, $login)==0){
-            //Verifica se a senha bate com a senha de cadastro
-            if(strcmp($copiasenha, $senha) == 0){
-                //Se sim, retorna 0 indicando que o usuário existe
-                return 0;
-            }else{
-                //mesmo login senha diferentes, por enquanto não levanta um erro
-            }
-        }
-        $i++;
-    }
-
-    //Se chegou até aqui é porque a senha ou o login não batem, retorna -1 indicando erro
-    return -1;
-}
-
-session_start();
+//session_start();
 
 if (isset($_POST["nome"])){
 
 
     if(strlen($_POST["nome"])!= 0){
-        if(checacadastro($arquivo, $_POST['nome'], $_POST['senha']) == 0){
+        //Se o usuário digitou ao menos um caracter checa se existe este usuário no cadastro e se 
+        //a senha está correta
+        if($usert->checacadastro($_POST['nome'], $_POST['senha']) == 0){
             $_SESSION["nome"] = $_POST["nome"];
             $_SESSION["id00"] = session_id();
             header("Location: ./perguntas.php");
@@ -50,7 +28,6 @@ if (isset($_POST["nome"])){
     }
 }
 
-fclose($arquivo);
 ?>
 
 
@@ -66,7 +43,7 @@ fclose($arquivo);
 
     <body>
         <form  method ="post">
-            <label for="nome">Nome: </label>
+            <label for="nome">Login: </label>
             <input type="text" name="nome"><br>
             <label for="senha">Senha: </label>
             <input type="password" name="senha"><br>

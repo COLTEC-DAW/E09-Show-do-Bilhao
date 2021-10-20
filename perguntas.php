@@ -17,24 +17,30 @@
         <title>Show do Bilhão - Perguntas</title>
     </head>
 
-    <?php 
+    <?php
+    if($_GET){
         $id = $_GET["id"];
         $id = $id - 1;
+    }else{
+        $id = -1;
+    }
         
         //echo(getperguntatxt($id));
         if($id == -1){ //Se o ID é igual a -1, significa que é o primeiro acesso, então o jogador deve ser
                        //direcionado para o menu
-            echo("<h1>Clique no link para ser direcionado ao menu: </h1>");
+            echo("<h3>Clique no link para ser direcionado ao menu:");
             echo(getmenu());
+            echo('</h3>');
 
         }else{ //se o id é valido ele segue para a lógica padrão do jogo
-            echo('<h3> VOLTAR PARA O MENU INICIAL: </h3>');
+            echo('<h1> VOLTAR PARA O MENU INICIAL:');
             echo(getMenu());
+            echo('</h1>');
 
 
 
             
-            echo(getperguntatxt($id));
+            echo(getpergunta($id));
 
             echo("<br>");
 
@@ -67,8 +73,8 @@
         }
 
         echo(getRodape());
+        
 
-        fclose($GLOBALS['perguntas']);
     ?>
 
 </html>

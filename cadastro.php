@@ -1,34 +1,30 @@
 <?php 
-    
 
-    $arquivo = fopen("./users.txt", "a+");
+    //Inclusões
+    include("./user.php");
 
-    if(!$arquivo){
-        echo("ERRO NA ABERTURA DO ARQUIVO");
-    }
+    $Users = array();    
+
 
     if (isset($_POST["nome"]) && isset($_POST["e-mail"]) && isset($_POST["login"]) && isset($_POST["senha"])){
         if((strlen($_POST["nome"])!= 0) && (strlen($_POST['e-mail']) != 0) && (strlen($_POST['login']) != 0) && (strlen($_POST['senha']) != 0)){
-            $STRING = $_POST['nome'];
-            $STRING = $STRING . ',' . $_POST['e-mail']. ',' . $_POST['login'] . ',' . $_POST['senha'] . ',' . "\n";
-            echo($STRING);
+            $newUser = new User($_POST["nome"], $_POST["e-mail"], $_POST["login"], $_POST["senha"]);
+
+            $Users[] = $newUser->cadastra();
     
-            fwrite($arquivo, $STRING, strlen($STRING));
+            //fwrite($arquivo, $STRING, strlen($STRING));
             //Se chegou aqui é porque correu tudo bem, e ele pode voltar para a pag de  login
             header("Location: ./login.php");
 
         }else{
             echo("ERRO: Você precisa digitar pelo menos uma letra para cadastrar<br>");
-            echo("Digite seus dados novamente por favor:<br>");
+            echo("Digite seus dados novamente por favor:<br>");echo('a');
         }
     }
 
     
     unset($_POST);
-    fclose($arquivo);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">

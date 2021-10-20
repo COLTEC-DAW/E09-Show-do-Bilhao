@@ -1,0 +1,54 @@
+[
+    {
+        "enunciado": "Quem foi o navegador que chegou primeiro ao Brasil?",
+        "alternativas": [
+            "(A) Pedro Álvares Cabral",
+            "(B) Cristovão Colombo",
+            "(C) Américo Vespúcio",
+            "(D) Jojo Toddynho"
+        ],
+        "gabarito": 0
+    },
+    {
+        "enunciado": "Qual destes animais é conhecido pela habilidade de se camuflar?",
+        "alternativas": [
+            "(A) Golfinho",
+            "(B) Cobra coral",
+            "(C) Lula",
+            "(D) Camaleão"
+        ],
+        "gabarito": 3
+    },
+    {
+        "enunciado": "Quem foi o campeão da Copa Libertadores do ano de 2013?",
+        "alternativas": [
+            "(A) Cruzeiro",
+            "(B) Internacional de Porto Alegre",
+            "(C) Atlético Mineiro",
+            "(D) River Plate"
+        ],
+        "gabarito": 2
+    },
+    {
+        "enunciado": "Qual a organela celular responsável por transportar energia para as células?",
+        "alternativas": [
+            "(A) Ribossomos",
+            "(B) RNA",
+            "(C) Complexo de Golgi",
+            "(D) Mitocôndria"
+        ],
+        "gabarito": 3
+    },
+    {
+        "enunciado" : "Qual destes renomados cientistas é considerado o pai da física quântica?",
+        "alternativas": [
+            "A) Max Planck",
+            "(B) Stephen Hawking",
+            "(C) Albert Einstein",
+            "(D) Ernest Rutherford"
+        ],
+        "gabarito": 0 
+    }
+] 
+
+
