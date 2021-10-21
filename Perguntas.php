@@ -110,7 +110,7 @@
             <input type="hidden" name = "pontuacao" value = <?php
              if((intval($_POST["id"])-1) > 0){
              $Pergunta2 = carregaPergunta(intval($_POST["id"])-1);
-                if($Pergunta2["RespostaCerta"] == $_POST["resposta"]){ 
+                if($Pergunta2["RespostaCerta"] == strtoupper($_POST["resposta"])){ 
                   echo intval($_POST["pontuacao"])+1;  
                 }else{
                     gameOver();
@@ -124,6 +124,12 @@
 
             <input type="submit">
 
+        </form>
+        <form action="Logout.php" method="GET">
+            <input type="submit" value="Sair">
+        </form>
+        <form action="Menu.php" method="GET">
+            <input type="submit" value="Menu">
         </form>
 
     </body>

@@ -12,9 +12,17 @@
         color: red;
         text-align: center;
     }
+    form#Voltar{
+        text-align: center;
+    }
     </style>
 </head>
 <body>
     <h1>GAME OVER</h1>
+    <form action="Menu.php" id="Voltar" >
+        
+        <input type="submit" value="Voltar">
+        
+    </form>
 </body>
 </html>
