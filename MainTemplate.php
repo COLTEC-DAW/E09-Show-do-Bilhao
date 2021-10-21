@@ -2,7 +2,7 @@
   include "perguntas.inc";
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html>
     <head>
 
@@ -16,7 +16,7 @@
         <?php include "menu.inc";?>
 
         <div class="container">
-            <?php echo PegarPerguntaIndividual($_GET["id"]) ?>
+            <?php echo MostrarTodasQuestoes() ?>
         </div>
    
     </body>
