@@ -14,7 +14,7 @@ class Usuario
         $this->username = $username;
         $this->password = $password;
     }
-    
+
     public function Validar($username, $password)
     {
         return ($username == $this->username && $password == $this->password);
@@ -28,14 +28,11 @@ class Usuarios
 
     private static function SyncUsuarios()
     {
-        if (file_exists(self::$USERS_FILE))
-        {
+        if (file_exists(self::$USERS_FILE)) {
             self::$users = array();
             $usersAssociativeArray = json_decode(file_get_contents(self::$USERS_FILE), true);
-            if (isset($usersAssociativeArray))
-            {
-                foreach ($usersAssociativeArray as $user)
-                {
+            if (isset($usersAssociativeArray)) {
+                foreach ($usersAssociativeArray as $user) {
                     self::$users[$user['username']] = new Usuario($user['name'], $user['email'], $user['username'], $user['password']);
                 }
             }
@@ -44,8 +41,7 @@ class Usuarios
 
     private static function SyncArquivo()
     {
-        if (unlink(self::$USERS_FILE) or fopen(self::$USERS_FILE, "x"))
-        {
+        if (unlink(self::$USERS_FILE) or fopen(self::$USERS_FILE, "x")) {
             file_put_contents(self::$USERS_FILE, json_encode(self::$users));
         }
     }
@@ -59,15 +55,16 @@ class Usuarios
     public static function RegistraUser(string $name, string $email, string $username, string $password)
     {
         self::SyncUsuarios();
-        if (!self::ValidaUser($username))
-        {
+        if (!self::ValidaUser($username)) {
             self::$users[$username] = new Usuario($name, $email, $username, $password);
             self::SyncArquivo();
-        }
-        else return false;
+        } else return false;
 
         return true;
     }
-}
 
-?>
+    public static function GetUser(string $username)
+    {
+        return self::$users[$username];
+    }
+}

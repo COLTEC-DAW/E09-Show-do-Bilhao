@@ -1,1 +1,14 @@
-{"":{"name":"","email":"","username":"","password":""},"a":{"name":"a","email":"a@a","username":"a","password":"a"}}
+{
+	"": {
+		"name": "",
+		"email": "",
+		"username": "",
+		"password": ""
+	},
+	"LucasRozado": {
+		"name": "Lucas Bento Rozado",
+		"email": "2019953077@teiacoltec.org",
+		"username": "LucasRozado",
+		"password": "lucasrozado123"
+	}
+}

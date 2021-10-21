@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registrar</title>
+	</head>
+
+	<body>
+		<form action="index.php" method="post">
+			<input type="hidden" name="action" value="register" /> Nome:
+
+			<br />
+			<input type="text" name="name" /><br />
+			Email:
+			<br />
+			<input type="email" name="email" /><br />
+			Nome de Usuário (Único):<br />
+			<input type="text" name="username" /><br />
+			Senha:
+			<br />
+			<input type="password" name="password" /><br />
+
+			<input type="submit" value="Registrar Usuário" />
+		</form>
+
+		<form action="index.php" method="get">
+			<input type="hidden" name="action" value="login" />
+
+			<input type="submit" value="Voltar" />
+		</form>
+	</body>
+</html>

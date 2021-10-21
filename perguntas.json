@@ -1,22 +1,52 @@
 [
-    {
-        "enunciado": "Um enunciado!",
-        "alternativas": [
-            "A primera alternativa!",
-            "A segunda alternativa!",
-            "A terceira alternativa!",
-            "A quarta alternativa!"
-        ],
-        "indexAlternativaCorreta": 1
-    },
-    {
-        "enunciado": "Outro enunciado!",
-        "alternativas": [
-            "A primera alternativa!",
-            "A segunda alternativa!",
-            "A terceira alternativa!",
-            "A quarta alternativa!"
-        ],
-        "indexAlternativaCorreta": 3
-    }
+	{
+		"enunciado": "PERGUNTA 1: Qual foi a inspiração que gerou o nome do pássaro bem-te-vi?",
+		"alternativas": [
+			"A) A forma como canta",
+			"B) Suas cores mais comuns",
+			"C) A anatomia de suas penas",
+			"D) A cantiga \"Bem me quer, mal me quer\""
+		],
+		"indexAlternativaCorreta": 0
+	},
+	{
+		"enunciado": "PERGUNTA 2: Em uma pergunta qualquer com quatro alternativas, cuja resposta foi selecionada aleatoriamente, qual a chance de a resposta ser a letra C?",
+		"alternativas": [
+			"A) 0%",
+			"B) 25%",
+			"C) 50%",
+			"D) 100%"
+		],
+		"indexAlternativaCorreta": 1
+	},
+	{
+		"enunciado": "PERGUNTA 3: Qual Pedro descobriu o Brasil?",
+		"alternativas": [
+			"A) Pedro Bandeira",
+			"B) Pedro Alvares Cabral",
+			"C) Pedro I",
+			"D) Pedro II"
+		],
+		"indexAlternativaCorreta": 1
+	},
+	{
+		"enunciado": "PERGUNTA 4: Na mitologia grega, quem é a filha favorita de Zeus?",
+		"alternativas": [
+			"A) Ártemis",
+			"B) Ares",
+			"C) Afrodite",
+			"D) Athena"
+		],
+		"indexAlternativaCorreta": 3
+	},
+	{
+		"enunciado": "PERGUNTA 5: Que cor pode ser percebida quando uma superfície branca é iluminada por uma fonte de luz azul e outra fonte de luz vermelha?",
+		"alternativas": [
+			"A) Roxo",
+			"B) Amarelo",
+			"C) Magenta",
+			"D) Marrom"
+		],
+		"indexAlternativaCorreta": 2
+	}
 ]

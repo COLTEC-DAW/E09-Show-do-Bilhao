@@ -1,140 +1,109 @@
 <!DOCTYPE html>
 <?php
+session_start();
+
 require_once "usuarios.inc";
+require_once "perguntas.inc";
 
-$GLOBALS['action'] = $_POST['action'] ?? ($_GET['action'] ?? "login");
+$action = $_POST['action'] ?? ($_GET['action'] ?? "login");
 
-if ($GLOBALS['action'] == "login")
-{
-    if (isset($_POST['username'], $_POST['password']))
-    {
-        if (($_POST['username'] != "") && ($_POST['password'] != ""))
-        {
-            if (Usuarios::ValidaUser($_POST['username'], $_POST['password']))
-            {
-                $GLOBALS['login'] = "SUCCESS";
-                $GLOBALS['action'] = "question";
+if ($action == "login") {
+    if (isset($_POST['username'], $_POST['password'])) {
+        if (($_POST['username'] != "") && ($_POST['password'] != "")) {
+            if (Usuarios::ValidaUser($_POST['username'], $_POST['password'])) {
+                $_SESSION['login'] = "SUCCESS";
+                $action = "question";
+                $_SESSION['name'] = Usuarios::GetUser($_POST['username'])->name;
+            } else {
+                $_SESSION['login'] = "ERRO_INVALID_CREDENTIALS";
             }
-            else
-            {
-                $GLOBALS['login'] = "ERRO_INVALID_CREDENTIALS";
-            }
+        } else {
+            $_SESSION['login'] = "ERRO_MISSING_FIELD";
         }
-        else
-        {
-            $GLOBALS['login'] = "ERRO_MISSING_FIELD";
-        }
+    } else {
+        session_destroy();
+        session_start();
+        $_SESSION['login'] = "SHOW";
     }
-    else
-    {
-        $GLOBALS['login'] = "SHOW";
+} elseif ($action == "register") {
+    if (isset($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password'])) {
+        if (($_POST['name'] != "") && ($_POST['email'] != "") && ($_POST['username'] != "") && ($_POST['password'] != "")) {
+            if (Usuarios::RegistraUser($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password'])) {
+                $_SESSION['register'] = "SUCCESS";
+                $action = "login";
+            } else {
+                $_SESSION['register'] = "ERRO_INVALID_CREDENTIALS";
+            }
+        } else {
+            $_SESSION['register'] = "ERRO_MISSING_FIELD";
+        }
+    } else {
+        $_SESSION['register'] = "SHOW";
     }
 }
-elseif ($GLOBALS['action'] == "register")
-{
-    if (isset($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']))
-    {
-        if (($_POST['name'] != "") && ($_POST['email'] != "") && ($_POST['username'] != "") && ($_POST['password'] != ""))
-        {
-            if (Usuarios::RegistraUser($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']))
-            {    
-                $GLOBALS['register'] = "SUCCESS";
-                $GLOBALS['action'] = "login";
-            }
-            else
-            {
-                $GLOBALS['register'] = "ERRO_INVALID_CREDENTIALS";
-            }
-        }
-        else
-        {
-            $GLOBALS['register'] = "ERRO_MISSING_FIELD";
-        }
-    }
-    else
-    {
-        $GLOBALS['register'] = "SHOW";    
-    }
-}
-
 
 ?>
 
 <html>
+
     <head>
         <title>O Show do Milhão</title>
     </head>
+
     <body>
         <?php
-        include_once "menu.inc";
-        ?>
+    include "menu.inc";
+    ?>
 
         <div>
             <?php
-            if ($GLOBALS['action'] == "login")
-            {
-                include "login.inc";
-            }
-            elseif ($GLOBALS['action'] == "register")
-            {
-                include "register.inc";
-            }
-            elseif ($GLOBALS['action'] == "question")
-            {
-                include "perguntas.php";
-            }
+        if ($action == "login") {
+            include "login.html";
+        } elseif ($action == "register") {
+            include "register.html";
+        } elseif ($action == "question") {
+            include "perguntas.php";
+        }
 
-            echo "<p>";
+        echo "<p>";
 
-            if (($GLOBALS['login'] ?? null) == "SHOW")
-            {
-                if (($GLOBALS['register'] ?? false) == "SUCCESS")
-                {
+        if (($_SESSION[$action] ?? false) == "ERRO_MISSING_FIELD") {
+            echo "Todos os campos devem ser preenchidos!";
+        } elseif ($_SESSION['login'] ?? false) {
+            if ($_SESSION['login'] == "SHOW") {
+                if (($_SESSION['register'] ?? false) == "SUCCESS") {
                     echo "Usuário registrado com sucesso!";
                 }
-            }
-
-            if (($GLOBALS[$GLOBALS['action']] ?? null) == "ERRO_MISSING_FIELD")
-            {
-                echo "Todos os campos devem ser preenchidos!";
-            }
-            
-            if (($GLOBALS[$GLOBALS['action']] ?? null) == "ERRO_INVALID_CREDENTIALS" && $GLOBALS['action'] == "login")
-            {
+            } elseif ($_SESSION['login'] == "ERRO_INVALID_CREDENTIALS") {
                 echo "Usuário ou senha incorretos.";
             }
-            
-            if (($GLOBALS[$GLOBALS['action']] ?? null) == "ERRO_INVALID_CREDENTIALS" && $GLOBALS['action'] == "register")
-            {
-                echo "Nome de Usuário indisponível.";
-            }
-            echo "</p>";
-            ?>
-        
-        
+        } elseif (($_SESSION['register'] ?? false) == "ERRO_INVALID_CREDENTIALS") {
+            echo "Nome de Usuário indisponível.";
+        }
+
+        echo "</p>";
+        ?>
+
             <p>
                 <?php
-                if (!($isAllFieldsFilled ?? true))
-                {?>
-                    Preencha todos os campos para que a ação seja realizada.
-                    <?php
-                }
-                elseif ($isRegisterSuccessful ?? false)
-                {?>
-                    Usuário registrado com sucesso!
-                    <?php
-                }
-                elseif (!($isRegisterSuccessful ?? true))
-                {?>
-                    O nome de usuário fornecido já está em uso!
-                    <?php
-                }?>
+            if (!($isAllFieldsFilled ?? true)) { ?>
+                Preencha todos os campos para que a ação seja realizada.
+                <?php
+            } elseif ($isRegisterSuccessful ?? false) { ?>
+                Usuário registrado com sucesso!
+                <?php
+            } elseif (!($isRegisterSuccessful ?? true)) { ?>
+                O nome de usuário fornecido já está em uso!
+                <?php
+            }
+            ?>
             </p>
         </div>
 
         <?php
-        include_once "rodape.inc";
-        ?>
+    include_once "rodape.inc";
+    ?>
 
     </body>
+
 </html>
