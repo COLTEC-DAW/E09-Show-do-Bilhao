@@ -1,0 +1,31 @@
+* {
+    font-style: italic;
+    color: rgb(6, 5, 49); 
+}
+
+h1{
+    font-size: 40;
+    text-align: center;
+    margin: 5% 0;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    background-color: rgb(252, 1, 1);
+    padding: 10px;
+}
+
+h3{
+    padding-left: 2cm;
+    color: black;
+    font-weight: bolder;
+    margin: 2.5% 0;
+    text-shadow: 5px 5px 5px red;
+}
+
+p{
+    font-family: Arial;
+    text-align: justify;
+}
+
+p::first-letter{
+    font-size: 250%;
+}
