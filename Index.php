@@ -6,10 +6,10 @@
 */ -->
 <?php
 
-    include "PerguntasDados.php";
-    include "Menu.php";
-    include "Perguntas.php";
-    include "Rodape.php";
+    include "PerguntasDados.inc";
+    include "Menu.inc";
+    include "Perguntas.inc";
+    include "Rodape.inc";
 
 ?>
 

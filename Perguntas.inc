@@ -10,7 +10,7 @@
  function carregaPergunta($id){
 
         if($id > count($GLOBALS["Enunciados"]) || $id < 0 || $id == null){
-            return "O Id" . $id . "é inválido ou inexistente";
+            return "O Id " . $id . " é inválido ou inexistente";
         }
 
         $inicio = "<div>";
