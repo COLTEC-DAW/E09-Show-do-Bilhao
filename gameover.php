@@ -8,9 +8,22 @@
     <body>
         <div>
             <h1>Game Over meu amigo!</h1>
+            <form method="get" action="logoff.php">
+            <button type="submit">Logoff</button>
+            </form>
+            <form method="get" action="perguntas.php">
+            <button type="submit">Jogar mais!!</button>
+            </form>
         </div>
         <div>
-            <?php include "rodape.inc"; ?>
+            <?php 
+                include "rodape.inc";
+                if(isset($_COOKIE["nome"]) && isset($_COOKIE["pontos"])){
+                    setcookie("nome", "", time()-3600);
+                    setcookie("pontos", "", time()-3600);
+                }
+                include "cookies.php";
+            ?>
         </div>
     </body>
 </html>  

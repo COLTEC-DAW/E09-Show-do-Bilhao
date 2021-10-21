@@ -5,6 +5,7 @@
     $resposta = $_POST["resposta"];
 
     if ($alternativa == $resposta){
+        $_SESSION['pontos'] ++;
         if(($id + 1) == count($GLOBALS["alternativas"])){
             header("Location: venceu.php");    
         }else{

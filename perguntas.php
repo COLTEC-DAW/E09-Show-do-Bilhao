@@ -1,3 +1,17 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['controle'])){
+        $_SESSION['controle'] = 1;
+        header("Location: login.php");
+        $_SESSION['pontos'] = 0;
+    }
+    if(isset($_POST["login"]) && isset($_POST["senha"])){
+        $_SESSION['login'] = $_POST["login"];
+        $_SESSION['senha'] = $_POST["senha"];
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +21,13 @@
 </head>
 <body>
     <?php
-        include "./menu.inc";
+        include "./menu.php";
     ?>
+
     <div>
         <?php
             require "./perguntas.inc";
-            
+
             if(empty($_GET)){
                 mostra_pergunta(0);
             }else{
@@ -23,6 +38,9 @@
     </div>
     <?php
         include "./rodape.inc";
+        if(isset($_COOKIE["nome"]) && isset($_COOKIE["pontos"])){
+            echo "Ultimo Jogador: " . $_COOKIE["nome"] . " Pontos Ultimo Jogador: " . $_COOKIE["pontos"]; 
+        }
     ?>
 
 </body>
