@@ -17,6 +17,7 @@ $alternativas =  array(
 $respostas = [1,2,0,3];
 $indices = ["A: ", "B: ", "C: ", "D: "];
 
+
 function mostra_pergunta($id){
 
     global $perguntas, $alternativas, $respostas, $indices;

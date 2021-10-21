@@ -8,8 +8,11 @@
     if(isset($_POST["login"]) && isset($_POST["senha"])){
         $_SESSION['login'] = $_POST["login"];
         $_SESSION['senha'] = $_POST["senha"];
+        if(!isset($_COOKIE["nome"]) || !isset($_COOKIE["pontos"])){
+            setcookie("nome", $_SESSION['login'], time()+3600);
+            setcookie("pontos", $_SESSION['pontos'], time()+3600);
+        }
     }
-    
 ?>
 
 <!DOCTYPE html>
