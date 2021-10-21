@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require "./perguntas.inc";
     $id = $_POST["id"];
     $alternativa = $_POST["forms"];
