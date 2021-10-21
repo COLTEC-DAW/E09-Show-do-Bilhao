@@ -64,7 +64,7 @@
 
     $answers = array(3,3,1,2,0);
 
-    function mostraPerguntas(){
+    /*function mostraPerguntas(){
 
         global $questions, $options, $answers;
         $j = 0;
@@ -91,7 +91,7 @@
 
             echo "\n";
         }
-    }
+    }*/
 
 
 ?>
@@ -117,7 +117,7 @@
 
                 <?php
 
-                    mostraPerguntas();
+                    //mostraPerguntas();
 
                 ?>
 

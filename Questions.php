@@ -10,7 +10,7 @@ require "./questions.inc";
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IaE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Show do Real</title>
@@ -20,13 +20,26 @@ require "./questions.inc";
 <body>
 
     <?php
-    include "menu.inc";
+        include "menu.inc";
+        require_once "questions.inc";
 
-    if(verificaID($_GET["id"])){
+        if(empty($_GET)){
 
-        exibePergunta($_GET["id"]);
+            mostraPergunta(0);
+            
 
-    }
+        }else{
+
+            mostraPergunta($_GET['id']);            
+
+        }
+
+    //if(verificaID($_GET["id"])){
+
+    //    exibePergunta($_GET["id"]);
+
+    //}
+    
     ?>
 
     <?php

@@ -63,58 +63,6 @@
 
     $answers = array(3,3,1,2,0);
 
-    function mostraPerguntas(){
-
-        global $questions, $options, $answers;
-        $j = 0;
-        
-        for ($i = 0; $i < count($questions); $i++) {
-
-            echo "<h3>"  . " $questions[$i]</h3>" . "\n \n";
-
-            
-
-            for ($j = 0; $j < 4; $j++) {
-
-                
-
-                if ($j == $answers[$i]) {
-
-                    $options[$i][$j] = "<b>" . $options[$i][$j] . "</b>";
-
-                }
-                
-                echo $options[$i][$j] . "\n";
-
-            }
-
-            echo "\n";
-        }
-    }
-
-    function mostraPergunta($id){
-
-        $pergunta = carregaPergunta($id);
-
-        $enunciado = $pergunta["pergunta"];
-        $alternativas = $pergunta["alternativas"];
-        $resposta = $pergunta["resposta"];
-        
-        echo "<h3>" . " $enunciado </h3>";
-
-        for ($j = 0; $j < count($alternativas); $j++) {
-        
-            if ($j == $resposta) {
-
-             $alternativas[$j] = "<b>" . $alternativas[$j] . "</b>";
-
-            }
-
-        echo $alternativas[$j] . "\n";
-
-        }
-    }
-
     function loadQuestion($id)
     {
 
@@ -135,6 +83,41 @@
 
 
 
+    function mostraPergunta($id){
+
+        $pergunta = loadQuestion($id);
+
+        $enunciado = $pergunta["pergunta"];
+        $alternativas = $pergunta["alternativas"];
+        $resposta = $pergunta["resposta"];
+        
+        echo "<h3>" . " $enunciado </h3>";
+
+        echo "<form action = 'resposta.php' method = 'post'>";
+
+        for ($j = 0; $j < count($alternativas); $j++) {
+
+            echo ("<input type = 'radio' id=". $j ." name = 'option' value=" .$j. ">
+                <label for = ".$j."> ".$alternativas[$j]."</label><br>");
+
+            
+        
+        }
+
+        echo "<br>";
+        echo "<input type = 'hidden' name = 'id' value = '$id'>";
+        echo "<input type = 'hidden' name = 'resposta' value = ".$pergunta['resposta'].">";
+        echo "<input type = 'submit' value='Enviar'>";
+        echo "</form>";
+
+    }
+
+
+
+    
+
+
+
     function verificaID($id)
     {
         global $questions;
@@ -145,4 +128,10 @@
 
         return true;
     }
+
+
+
+  
+
+
 ?>
