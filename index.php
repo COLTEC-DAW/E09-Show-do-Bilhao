@@ -15,7 +15,7 @@
             <?php require "show.inc";
             if(empty($_GET))
             {
-                carregaPergunta(0); 
+                carregaPergunta(1); 
             }
             else
             {
