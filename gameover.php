@@ -17,12 +17,12 @@
         </div>
         <div>
             <?php 
+                session_start();
                 include "rodape.inc";
                 if(isset($_COOKIE["nome"]) && isset($_COOKIE["pontos"])){
-                    setcookie("nome", "", time()-3600);
-                    setcookie("pontos", "", time()-3600);
+                    setcookie("nome", $_SESSION["login"], time()+3600);
+                    setcookie("pontos", $_SESSION["pontos"], time()+3600);
                 }
-                include "cookies.php";
             ?>
         </div>
     </body>
