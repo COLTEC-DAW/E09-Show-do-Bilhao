@@ -1,34 +1,28 @@
-
 <?php
 /**
-* @file   Perguntas.php
-* @brief  Arquivo com as perguntas e respostas do "Show do Bilhão"
+* @file   Perguntas.inc
+* @brief  Arquivo com o  partial que conterá funções auxiliares que irão manipular as perguntas da página.
 * @author Bruna Pérez
-* @date   2021-10-04
+* @date   2021-10-05
 */
 
-//Introdução: Prova de conceito
-//Implemente uma página em PHP que carregue e exiba as perguntas (Todas na mesma página).
+//uma função que irá acessar o vetor de perguntas, alternativas e respostas, e retornar os dados referentes a pergunta selecionada.
+ function carregaPergunta($id){
 
-//Vetor com enunciados das perguntas
-$Enunciados = [
-"Qual bicho transmite Doença de Chagas?",
-"Qual fruto é conhecido no Norte e Nordeste como 'jerimum'?",
-"Qual é o coletivo de cães?",
-"Qual é o triângulo qye tem todos os lados diferentes?", 
-"Quem compos o hino da independencia?",
-"Qual é o antônimo de malograr?"
-];
+        if($id > count($GLOBALS["Enunciados"]) || $id < 0 || $id == null){
+            return "O Id" . $id . "é inválido ou inexistente";
+        }
 
-//matriz com as Alternativas
-$Alternativas = [
-    ["Abelha", "Barata", "Pulga", "Barbeiro"],
-    ["Caju", "Abobora", "Chuchu", "Côco"],
-    ["Matilha", "Rebanho", "Alcateia", "Manada"],
-    ["Equilatero", "Isoceles", "Escaleno", "Trapezio"],
-    ["Dom Pedro I", "Manuel bandeira", "Castro Alvez", "Carlos Gomez"],
-    ["Perder", "Fracassar", "Conseguir", "Desprezar"]
-];
+        $inicio = "<div>";
+        
+        $pergunta = $inicio . $GLOBALS["Enunciados"][$id] . "<br>";
 
-//vetor com o índice para a alternativa certa
-$AlternativaCerta = [3, 1, 0, 2, 0, 2];
+        $alternativas = ["A", "B", "C", "D"];
+
+        for($i = 0; $i < 4; $i++){
+            $pergunta = $pergunta . '<input type="radio" name="options" value="' . $i . '"></input> ' .$alternativas[$i] . ")" . $GLOBALS["Alternativas"][$id][$i] . "</br>";
+        }
+
+        return $pergunta;
+    }
+?> 
