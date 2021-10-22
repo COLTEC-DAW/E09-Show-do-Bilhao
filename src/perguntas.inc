@@ -17,7 +17,7 @@ $Alternativas = [
 ];
     
 $IndexRespostas = [0,3,1,3,4];
-$LetrasAlternativas = ["A-","B-","C-","D-","E-"];
+$LetrasAlternativas = ["A","B","C","D","E"];
 
 function carregaPergunta($index){
     // Declarando as variáveis globais que serão utilizadas
@@ -25,16 +25,43 @@ function carregaPergunta($index){
     global $LetrasAlternativas;
     global $Alternativas;
 
+    $proxIndex = $index+1;
+
     $inicioDefault = "<br><hr><br> ";
-    $string = $inicioDefault . ($index+1) . " - " . $Perguntas[$index] . '<br>';
+    $string = $inicioDefault . ($proxIndex) . " - " . $Perguntas[$index] . '<br>';
     
-    // Loop para adicionar as alternativas à string final
+    // Loop para adicionar as alternativas à string final 
+    $string .= '<form action="perguntas.php?id=' . ($proxIndex) . '" method="post">'; 
     for ($count = 0; $count < 5; ++$count){
-        $string .= $LetrasAlternativas[$count] . " ";
+        $string .= $LetrasAlternativas[$count] . " - ";
+        $string .= '<input type="radio" name = "alternativa" value="' . $LetrasAlternativas[$count] . '">';
         $string .= $Alternativas[$index][$count] . '<br>';
     }
+    $string .= '<input type="submit" name="resposta">';
+    // Hidden input informando qual o index da pergunta
+    $string .= '<input type="hidden" name="indexPergunta" value="' . $index .'">';
+    $string .= '</form>';
 
     return $string;
 }
+
+function confereResposta(){
+    global $LetrasAlternativas;
+    global $IndexRespostas;
+
+    $indexPergunta = $_POST["indexPergunta"];
+    $alternativa = $_POST["alternativa"];
+    $respostaCerta = $LetrasAlternativas[$IndexRespostas[$indexPergunta]];
+
+    // Se a resposta estiver errada, retorna o html da página de derrota
+    if ($respostaCerta != $alternativa){
+        return false;
+    } 
+    else {
+        return true;
+    }
+}
+
+
 
 ?>

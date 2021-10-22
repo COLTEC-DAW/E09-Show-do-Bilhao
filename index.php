@@ -17,7 +17,7 @@
     <?php echo exibeMenu(); ?>
     <h1>Show do Bilhao</h1>
     <p> O Show do Bilhão é um programa idealizado pela emissora SBT (Sistema Belo-Horizontino de Televisão). Neste programa, um candidato escolhido da audiência é submetido a uma sequência de 5 perguntas de conhecimento geral. A medida em que o candidato responde cada pergunta ele avança no jogo. </p>
-    
+    <a href="perguntas.php?id=0"> Comece o jogo! </a>
     <?php echo exibeRodape(); ?>
 
 </body>
