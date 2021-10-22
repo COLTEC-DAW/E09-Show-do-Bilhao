@@ -13,10 +13,19 @@
 
     <body>
 
+    <div id = "Rotulo">
+            <h3> Responda as 5 perguntas corretamente para ganhar o show e desfrutar da vida de Burgues Safado:</h3>
+    </div>
+
         <?php include "menu.inc";?>
 
         <div class="container">
-            <?php echo PegarPerguntaIndividual($_GET["id"]) ?>
+            <?php 
+                if(empty($_GET)){
+                    $_GET['id'] = 0;
+                }
+                PegarPerguntaIndividual($_GET['id']);
+            ?>
         </div>
    
     </body>

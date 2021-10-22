@@ -18,28 +18,25 @@ $perguntas =  [ "Qual bicho transmite Doença de Chagas?",
 
     function PegarPerguntaIndividual($id)
 {
-    if($id<0 || $id==null)
-    {
-        
-        return "Id não corresponde a nenhuma pergunta do Jogo :(.";
-
-    }
-
     $comeco = '<div>';
     $fim = "</div>\n";
 
-    $pergunta = $comeco . $GLOBALS["perguntas"][$id] . "</br>";
+    $pergunta = $comeco . $GLOBALS["perguntas"][$id] . "<form action = AvaliaResposta.php method = 'post' >" . "</br>";
 
     $letras = ["A","B","C","D"];
 
     for($i=0;$i<4;$i++)
     {
-        $pergunta = $pergunta . '<input type="radio" name="options" value="'.$i.'"></input> '.$letras[$i] .") ".$GLOBALS["respostas"][$id][$i] . "</br>";
+        $pergunta = $pergunta . '<input type="radio" name="option" value="'.$i.'"></input> '.$letras[$i] .") ".$GLOBALS["respostas"][$id][$i] . "</br>";
     }
+
+    $pergunta = $pergunta . '<input type = "hidden" name = "id" value = '.$id."> \n"
+        . '<input type ="hidden" name = "gabaritoQ" value = '.$GLOBALS["gabarito"][$id]."> \n"
+        . '<input type ="submit" value="Enviar"> </form>'."\n";
 
     $pergunta = $pergunta."</br></br>".$fim;
 
-    return $pergunta;
+    echo $pergunta;
 }
 
     function PegarPergunta($num)

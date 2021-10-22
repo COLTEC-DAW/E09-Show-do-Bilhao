@@ -15,8 +15,7 @@
 
     <div id = "Rotulo">
             <h1>Bem Vindo ao Show do Bilhão (O melhor de BH e região) !!</h1>
-            <h3> Responda as 5 perguntas corretamente para ganhar o show e desfrutar da vida de Burgues Safado:</h3>
-        </div>
+    </div>
 
     <?php include "menu.inc";?>
    

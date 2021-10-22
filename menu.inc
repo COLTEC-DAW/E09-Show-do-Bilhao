@@ -6,7 +6,7 @@
 
         <ul>
         <li >
-            <a class="nav-link" href="MainTemplate.php">Perguntas</a>
+            <a href="perguntas.php">Jogo</a>
         </li>
         </ul>
 
