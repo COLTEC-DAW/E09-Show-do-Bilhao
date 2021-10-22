@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <link rel="stylesheet" href="estilo.css">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,9 @@
     <body>
         <div>  
             <h1>Voce venceu meu amigo!</h1>
+            <audio id="audio" autoplay>
+            <source src="parabens_3.mp3" type="audio/mp3" />
+            </audio>
             <form method="get" action="logoff.php">
             <button type="submit">Logoff</button>
             </form>
@@ -19,10 +23,8 @@
             <?php 
                 session_start();
                 include "rodape.inc";
-                if(isset($_COOKIE["nome"]) && isset($_COOKIE["pontos"])){
-                    setcookie("nome", $_SESSION["login"], time()+3600);
-                    setcookie("pontos", $_SESSION["pontos"], time()+3600);
-                }
+                setcookie("nome", $_SESSION["login"], time()+3600);
+                setcookie("pontos", $_SESSION["pontos"], time()+3600);
              ?>
         </div>
     </body>

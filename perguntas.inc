@@ -1,41 +1,47 @@
 <?php
+class Perguntas{
+    private $pergunta;
+    private $alternativas;
+    private $resposta;
 
-$perguntas = array(
-    "Qual o nome do melhor canal da Angola ?",
-    "Qual a religião do Sergio ?",
-    "Qual minha banda favorita ?",
-    "Qual meu professor favorito no coltec ?"
-);
+    public function __construct($pergunta, $alternativas, $resposta){
+        $this->pergunta = $pergunta;
+        $this->alternativas = $alternativas;
+        $this->resposta = $resposta;
+    }
 
-$alternativas =  array(
-    array("Gabriel Mine", "Rei do Kuduro", "Vsauce", "Buzlaitir"),
-    array("Umbanda", "Satanismo", "Evangelicalismo", "Cristianismo"),
-    array("Black Sabbath", "Death", "Bee Gees", "Gordão do Pc"),
-    array("Talin", "Jemaf", "ZéDu", "LEANDRO MAIA")
-);
+    public function GetPergunta(){
+        return $this->pergunta;
+    }
 
-$respostas = [1,2,0,3];
-$indices = ["A: ", "B: ", "C: ", "D: "];
+    public function GetAlternativas(){
+        return $this->alternativas;
+    }
 
-
+    public function GetResposta(){
+        return $this->resposta;
+    }   
+}
 function mostra_pergunta($id){
 
-    global $perguntas, $alternativas, $respostas, $indices;
+    $dadosJson = file_get_contents('perguntas.json');
+    $dadosJsonDecode = json_decode($dadosJson, true);
 
-    $pergunta = array(
-        "pergunta" => $perguntas[$id],
-        "alternativas" => $alternativas[$id],
-        "resposta" => $respostas[$id],
-    );  
+    $pergunta = new Perguntas(
+        $dadosJsonDecode["perguntas"][$id]["Pergunta"],
+        $dadosJsonDecode["perguntas"][$id]["alternativas"],
+        $dadosJsonDecode["perguntas"][$id]["resposta"]
+    ); 
 
     echo ("<form action = respostas.php method = 'post' >");
-    echo $pergunta["pergunta"] . "<br>";
-    for($j = 0;$j<count($pergunta["alternativas"]);$j++){
+    echo $pergunta->GetPergunta() . "<br>";
+    for($j = 0;$j<count($pergunta->GetAlternativas());$j++){
+        $alternativas_aux = $pergunta->GetAlternativas();
         echo ("<input type = 'radio' id=". $j ." name = 'forms' value=" .$j. ">
-                <label for = ".$j."> ".$pergunta["alternativas"][$j]."</label><br>");
+                <label for = ".$j."> ".$alternativas_aux[$j]."</label><br>");
     }
     echo (" <input type = 'hidden' name = 'id' value = ".$id.">
-            <input type = 'hidden' name = 'resposta' value = ".$pergunta["resposta"].">
+            <input type = 'hidden' name = 'resposta' value = ".$pergunta->GetResposta().">
             <input type = 'submit' value='Enviar'>
             </form>");
 }

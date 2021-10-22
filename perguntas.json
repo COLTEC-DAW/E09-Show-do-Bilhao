@@ -1,0 +1,45 @@
+{
+    "perguntas":
+    [
+        {
+            "Pergunta": "Qual o nome do melhor canal da Angola ?",
+            "alternativas": [
+                "Gabriel Mine", 
+                "Rei do Kuduro", 
+                "Vsauce", 
+                "Buzlaitir" 
+            ],
+            "resposta": 1  
+        },  
+        {
+            "Pergunta": "Qual a religião do Sergio ?",
+            "alternativas": [ 
+                "Umbanda", 
+                "Satanismo", 
+                "Evangelicalismo", 
+                "Cristianismo"
+            ],
+            "resposta": 2 
+        },
+        {
+            "Pergunta": "Qual minha banda favorita ?",
+            "alternativas": [
+                "Black Sabbath", 
+                "Death", 
+                "Bee Gees", 
+                "Gordão do Pc"
+            ], 
+            "resposta": 0 
+        },
+        {
+            "Pergunta": "Qual meu professor favorito no coltec ?",
+            "alternativas": [
+                "Talin", 
+                "Jemaf", 
+                "ZéDu", 
+                "LEANDRO MAIA"
+            ],
+            "resposta": 3
+        }
+    ]
+}
