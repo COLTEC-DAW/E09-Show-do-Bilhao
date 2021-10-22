@@ -8,9 +8,23 @@
     <body>
         <div>
             <h1>gulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulu<br>gulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulugulu <br>ganho!</h1>
+            <br><br><br>
+
+            <a href="questions.php"><button>Tentar novamente</button></a>
+            <a href="logout.php"><button>Logout</button></a>
+
         </div>
         <div>
-            <?php include "rodape.inc"; ?>
+
+            
+            <?php 
+            
+            echo "\n\n\n\n\n";
+            
+            include "rodape.inc"; 
+            
+            ?>
+
         </div>
     </body>
 </html>   

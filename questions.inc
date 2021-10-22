@@ -108,6 +108,7 @@
         echo "<input type = 'hidden' name = 'id' value = '$id'>";
         echo "<input type = 'hidden' name = 'resposta' value = ".$pergunta['resposta'].">";
         echo "<input type = 'submit' value='Enviar'>";
+        echo "<br><br><br><br>";
         echo "</form>";
 
     }

@@ -4,7 +4,7 @@
 
     <body>
 
-        <footer> tira o olho do meu programa <footer>
+        <footer> tira o olho do meu programa, Feito por Sergio Silva <footer>
 
     </body>
 

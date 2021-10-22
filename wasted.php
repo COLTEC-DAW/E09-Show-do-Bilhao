@@ -7,10 +7,25 @@
     </head>
     <body>
         <div>
+            
             <h1>HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA PERDEU</h1>
+            <br><br><br>
+            <a href="questions.php"><button>Tentar novamente</button></a>
+            <a href="logout.php"><button>Logout</button></a>
+
         </div>
         <div>
-            <?php include "rodape.inc"; ?>
+
+          
+            <?php 
+            
+            echo "\n\n\n\n\n";
+            
+            include "rodape.inc";
+            
+            
+            ?>
+        
         </div>
     </body>
 </html>   

@@ -1,6 +1,14 @@
 <?php
 
-require "./questions.inc";
+require "questions.inc";
+if (session_status() == PHP_SESSION_NONE) session_start();
+
+if(isset($_POST["login"])){
+
+    $_SESSION["user"] = $_POST["login"];
+    $_SESSION["points"] = 0;
+
+}
 
 ?>
 
@@ -20,30 +28,44 @@ require "./questions.inc";
 <body>
 
     <?php
-        include "menu.inc";
+
         require_once "questions.inc";
 
         if(empty($_GET)){
+
+            echo "Jogador: ". $_SESSION["user"];
+            echo "<br>";
 
             mostraPergunta(0);
             
 
         }else{
 
-            mostraPergunta($_GET['id']);            
-
+            echo $_GET["id"] . "/5 Respondidos corretamente<br><br>";
+            echo "Jogador: ". $_SESSION["user"];
+            echo "<br>";
+            
+            mostraPergunta($_GET['id']);  
         }
-
-    //if(verificaID($_GET["id"])){
-
-    //    exibePergunta($_GET["id"]);
-
-    //}
-    
+               
     ?>
 
     <?php
+        if (isset($_COOKIE["lastPoints" . $_SESSION["user"]]) && isset($_COOKIE["lastGame" . $_SESSION["user"]])) { ?>
+
+            <h3>Último jogo: <?= $_COOKIE["lastGame" . $_SESSION["user"]] ?></h3>
+
+            <h3>Última pontuação: <?= $_COOKIE["lastPoints" . $_SESSION["user"]] ?></h3>
+
+    <?php } ?>
+
+  
+
+    <?php
+    echo "\n\n\n\n\n";
+
     include "rodape.inc";
+
     ?>
 </body>
 
