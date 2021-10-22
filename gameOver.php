@@ -11,6 +11,9 @@
             <h1><strong>VOCÊ ERROU, SUA EXECUÇÃO SERÁ AMANHÃ AO MEIO DIA.</strong></h1>
         </div>
         <div>
+            <?php include "botaoSair.inc"; ?>
+        </div>
+        <div>
             <?php include "rodape.inc"; ?>
         </div>
     </body>

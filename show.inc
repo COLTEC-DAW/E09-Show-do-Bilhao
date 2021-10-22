@@ -18,7 +18,7 @@
     {
         global $perguntas, $alternativas, $altCorretas;
         $perguntaAtual = $id - 1;
-        echo("<div>" . $perguntaAtual."000 pontos</div><br>");
+        echo("<div>" . $_SESSION['HobbesfaelMartins']."000 pontos</div><br>");
 
         echo ("<form action = checaResposta.php method = 'post' >");
         echo ($id) . " - $perguntas[$perguntaAtual]<br>";

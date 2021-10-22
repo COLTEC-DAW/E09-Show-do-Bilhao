@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['JohnOliver'])){
+        $_SESSION['HobbesfaelMartins'] = 0;
+        $_SESSION['JohnOliver'] = "Leandro Martins Maiachado";
+        header("Location: loginPage.php");
+    }if(isset($_POST['login'])){
+        $_SESSION['usuario'] = $_POST['login'];
+    }
+?>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -23,6 +34,19 @@
             }
             ?>
         </p>
+    </div>
+    <div>
+        <?php
+            if (isset($_COOKIE["lastScore" . $_SESSION["usuario"]]) && isset($_COOKIE["lastGame" . $_SESSION["usuario"]])) { ?>
+                <h3> Dados da ultima sessão:</h3>
+                <h5>Jogo: <?= $_COOKIE["lastGame" . $_SESSION["usuario"]] ?></h5>
+                <h5>Pontuação: <?= $_COOKIE["lastScore" . $_SESSION["usuario"]] ?></h5><?php 
+            } 
+        ?>
+        <br>
+    </div>
+    <div>
+        <?php include "botaoSair.inc"; ?>
     </div>
     <div>
         <?php include "rodape.inc"; ?>

@@ -11,6 +11,9 @@
             <h1><strong>VOCÊ ACERTOU TODAS, SUA VIDA SERÁ POUPADA.</strong></h1>
         </div>
         <div>
+            <?php include "botaoSair.inc"; ?>
+        </div>
+        <div>
             <?php include "rodape.inc"; ?>
         </div>
     </body>
