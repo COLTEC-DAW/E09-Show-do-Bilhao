@@ -1,0 +1,13 @@
+Neste commit, para facilitar a execução das tarefas pedidas e facilitar a correção, resolvi executar as orientações da parte "Arquivos"
+e da parte "Modelando os dados do Sistema" ao mesmo tempo. Desta forma, os arquivos utilziados são de extensão JSON e o armazenamento
+de dados na forma de POO foi priorizado.
+O arquivo para iniciar o funcionamento/teste dos códigos deve ser o "telaLogin.php". Este arquivo tem as conexões que levam à utilização
+completa e correta dos códigos do projeto Show do Bilhão.
+*ATENÇÃO: O arquivo "users.json" não aparece entre os arquivos do exercício/projeto porque ele será criado a partir do momento que 
+tiver o primeiro cadastro no sistema.
+As referências dos arquivos dos outros commits eram todas absolutas. Neste commit, alterei várias para relativa, principalmente as 
+referentes ao arquivo "users.json" que será criado durante a execução dos códigos, para evitar alguns possíveis erros.
+Utilizo no código um sistema de validação para emails, mesmo não tendo sido pedido. Lembrando que o script apenas verifica se 
+a digitação do e-mail é válida, contudo não quer dizer que o e-mail realmente exista.
+Documentação PHP utilizada para implementar a validação:
+"https://www.php.net/manual/en/filter.filters.validate.php".

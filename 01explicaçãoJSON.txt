@@ -1,0 +1,12 @@
+As alternativas corretas serão representadas com números de 0 a 3 (são 4 o número de possíveis alternativas corretas) 
+para facilitar a utilização no código.
+As informações de "user.json" e "perguntas.json" são armazenadas na forma de um vetor de objetos.
+Página que usei para aprender como manipular arquivos JSON :
+"https://www.webtutorial.com.br/como-ler-um-arquivo-json-e-decodificar-para-um-objeto-php/",
+
+Documentação PHP utilizada para aprender a manipular JSON:
+"https://www.php.net/manual/pt_BR/function.file-put-contents.php",
+"https://www.php.net/manual/pt_BR/function.file-get-contents.php",
+"https://www.php.net/manual/pt_BR/function.json-decode.php",
+"https://www.php.net/manual/pt_BR/function.json-encode.php".
+

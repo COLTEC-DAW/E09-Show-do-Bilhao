@@ -1,0 +1,61 @@
+[
+    {
+        "enunciado": "Em qual ano ocorreu a Apollo 11, primeiro voo espacial a pousar na lua?",
+        "alternativas": 
+        [
+            "A) 1968",
+            "B) 1969", 
+            "C) 1970",
+            "D) 1971"
+        ],
+        "alternativaCorreta": 1
+    },
+
+    {
+        "enunciado": "O macarrão instantâneo foi inventado nos anos 1950, no Japão, por:",
+        "alternativas": 
+        [
+            "A) Shuji Nakamura",
+            "B) Yoshiro Nakamatsu",
+            "C) Fujio Masuoka",
+            "D) Momofuku Ando"
+        ],
+        "alternativaCorreta": 3
+    },
+
+    {
+        "enunciado": "Qual é o coletivo de cães?",
+        "alternativas": 
+        [
+            "A) Alcateia",
+            "B) Manada",
+            "C) Matilha",
+            "D) Rebanho"
+        ],
+        "alternativaCorreta": 2
+    },
+
+    {
+        "enunciado": "Quantos noves tem de 0 a 100?",
+        "alternativas": 
+        [
+            "A) 10",
+            "B) 11",
+            "C) 19",
+            "D) 20"
+        ],
+        "alternativaCorreta": 3
+    },
+
+    {
+        "enunciado": "Qual o maior artilheiro da Champions League?",
+        "alternativas": 
+        [
+            "A) Cristiano Ronaldo",
+            "B) Lionel Messi",
+            "C) Raúl González",
+            "D) Ruud van Nistelrooy"
+        ],
+        "alternativaCorreta": 0
+    }
+]

@@ -1,6 +1,7 @@
 <?php
     include "sessoesCookies.inc";
     newSession();
+    
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +45,7 @@
     </div>
     <div>
         <?php
-        echo "<br>";
+            echo "<br>";
             include "rodape.inc";
         ?>
     </div>

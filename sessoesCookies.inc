@@ -21,9 +21,9 @@
 
     function newSession()
     {
-        if(isset($_POST["type"]))
+        if(isset($_GET["name"]))
         {
-            $_SESSION["user"] = $_POST["user"];
+            $_SESSION["user"] = $_GET["name"];
         }
     }
 ?>

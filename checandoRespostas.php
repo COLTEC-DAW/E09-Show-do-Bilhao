@@ -1,6 +1,6 @@
 <?php
     include "sessoesCookies.inc";
-    //Pega o valor da chave answer;
+    //Pega o valor da chave resposta;
     $resposta = $_POST["resposta"];
 
     //Pega o valor da pergunta atual que veio através do hidden input fields.
