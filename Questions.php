@@ -3,13 +3,6 @@
 require "questions.inc";
 if (session_status() == PHP_SESSION_NONE) session_start();
 
-if(isset($_POST["login"])){
-
-    $_SESSION["user"] = $_POST["login"];
-    $_SESSION["points"] = 0;
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +24,12 @@ if(isset($_POST["login"])){
 
         require_once "questions.inc";
 
+
         if(empty($_GET)){
 
             echo "Jogador: ". $_SESSION["user"];
             echo "<br>";
+            
 
             mostraPergunta(0);
             
@@ -44,8 +39,11 @@ if(isset($_POST["login"])){
             echo $_GET["id"] . "/5 Respondidos corretamente<br><br>";
             echo "Jogador: ". $_SESSION["user"];
             echo "<br>";
+            echo $_SESSION["points"];
             
             mostraPergunta($_GET['id']);  
+
+            
         }
                
     ?>
@@ -62,9 +60,9 @@ if(isset($_POST["login"])){
   
 
     <?php
-    echo "\n\n\n\n\n";
+        echo "\n\n\n\n\n";
 
-    include "rodape.inc";
+        include "rodape.inc";
 
     ?>
 </body>

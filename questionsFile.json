@@ -1,0 +1,33 @@
+{
+
+    "perguntas":
+
+    [
+
+        {
+            "enunciado": "1) Quantas perguntas tem no jogo?",
+            "alternativas": ["A: 3", "B: 4", "C: 6", "D: 5"],
+            "resposta": 3
+        },
+        {
+            "enunciado": "2) Rei do pix: vai cem volta...?",
+            "alternativas": ["A: 1000", "B: 50", "C: 200", "D: Nada por conta de golpe"],
+            "resposta": 3
+        },
+        {
+            "enunciado": "3) Qual o nome do maior jogador de BloonsTD6?",
+            "alternativas": ["A: Pedro ping", "B: Buzz Ligthyear", "C: LGL", "D: Gaules"],
+            "resposta": 1
+        },
+        {
+            "enunciado": "4) Quem é o crack da putaria?",
+            "alternativas": ["A: Gui marques", "B: Mc rick", "C: Gordão do PC", "D: Paulo Cardoso"],
+            "resposta": 2
+        },
+        {
+            "enunciado": "5) Complete o nome: Gui marques ...",
+            "alternativas": ["A: canalhão", "B: cadeludo", "C: maladeza", "D: MC"],
+            "resposta": 0
+        }
+    ]
+}

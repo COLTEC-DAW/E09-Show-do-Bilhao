@@ -10,18 +10,25 @@
             
             <h1>HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA PERDEU</h1>
             <br><br><br>
+            <?php
+
+                session_start();
+                $_SESSION["points"] = 0;
+
+            ?>
             <a href="questions.php"><button>Tentar novamente</button></a>
             <a href="logout.php"><button>Logout</button></a>
-
+            
         </div>
         <div>
 
           
             <?php 
-            
-            echo "\n\n\n\n\n";
-            
-            include "rodape.inc";
+
+                
+                echo "\n\n\n\n\n";
+                
+                include "rodape.inc";
             
             
             ?>

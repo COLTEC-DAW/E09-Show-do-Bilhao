@@ -1,0 +1,32 @@
+[
+    {
+        "login": "eu",
+        "senha": "123",
+        "email": "123@gmail.com",
+        "nome": "sergio"
+    },
+    {
+        "login": "ping",
+        "senha": "123",
+        "email": "pinggay@gmail.com",
+        "nome": "pedro"
+    },
+    {
+        "nome": "pedro",
+        "email": "mamaocoma\u00e7ucar@gmail.com",
+        "login": "pao",
+        "senha": "123"
+    },
+    {
+        "nome": "p\u00e3o de cebola",
+        "email": "paozinho@gmail.com",
+        "login": "paodemel",
+        "senha": "123"
+    },
+    {
+        "nome": "Sergio Gon\u00e7alves da Silva Junior",
+        "email": "netinhobbking@gmail.com",
+        "login": "pao@",
+        "senha": "123"
+    }
+]

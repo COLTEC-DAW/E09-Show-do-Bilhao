@@ -1,5 +1,5 @@
 <?php
-
+    
     require_once "questions.inc";
     require_once "sessions.php";
 
@@ -9,11 +9,12 @@
     $option = $_POST["option"];
     $nextquestion = $id + 1;
 
-    
+
 
     if ($option == $resposta) {
 
         $_SESSION["points"]++;
+        
 
         if ($id >= 4) {
                 
@@ -22,13 +23,13 @@
 
         } else {
 
-            
             header("Location: questions.php?id=" . $id + 1);
 
         }
 
     } else {
-        
+
+        //$_SESSION["points"] = 0;
         defineCookies();
         header("Location: wasted.php");
 
