@@ -1,0 +1,47 @@
+[
+    {
+        "header": "Quantas perguntas tem nessa merda?",
+        "options": ["6","7","8","9", "10"],
+        "answer": 3
+    },
+    {
+        "header": "Quando foi o ultimo brasileiro que o monotitulo mineiro ganhou?",
+        "options": ["1970", "1971", "1972", "1973", "1974"],
+        "answer": 1
+    },
+    {
+        "header": "Escolha uma",
+        "options": ["Mia Khalifa", "Asa Akira", "Candy Love", "Lisa Ann", "Sasha Grey"],
+        "answer": 4
+    },
+    {
+        "header": "Neymar aparece pelado com uma pizza na sua casa",
+        "options": ["A pizza é de que sabor?","....... ?????? M-MANO","Como tudo","Tiro uma foto", "Viro de costas e empino"],
+        "answer": 4
+    },
+    {
+        "header": "Quantas copas do mundo o messi tem?",
+        "options": ["0","1 - 1","0 + 0","Zero", "2"],
+        "answer": 0
+    },
+    {
+        "header": "Roubei 150 reais e sai com lucro de 480 apostando esse valor roubado... Voltei na loja depois de um tempo e gastei 240 reais em compra. Qual foi o prejuizo pro dono?",
+        "options": ["Sim", "Muito dinheiro", "90", "390", "150"],
+        "answer": 4
+    },
+    {
+        "header": "Quantos reais o Show do Bilhão premia?",
+        "options": ["Dinheiro", "Acho que 10000mil", "Acho que 1000 milhões", "100cem mil"],
+        "answer": 2
+    },
+    {
+        "header": "Se uma mulher entrega um bebê em 9 meses, em quantos meses 9 mulheres entregam um bebê?",
+        "options": ["81 meses", "8,1 meses", "9 meses", "1 mes", "81 filhos"],
+        "answer": 2
+    },
+    {
+        "header": "O que aconteceria se todos os seres humanos no planeta dessem as maos ao redor do Equador?",
+        "options": ["Todos afogariam", "Não há pessoas suficiente pra completar a órbita", "As pessoas da parte debaixo do globo iriam cair pro espaço", "Ninguém iria se afogar"],
+        "answer": 2
+    }
+]
