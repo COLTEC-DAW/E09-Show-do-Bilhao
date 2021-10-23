@@ -1,0 +1,31 @@
+{
+    "perguntas":
+
+    [
+        {
+            "enunciado": "Qual é a linguagem de programação que come criancinhas?",
+            "opcoes": ["A)Java Script", "B)Java sem script", "C)C#", "D)C", "E)Pudim de Pão"],
+            "gabarito": 0
+        },    
+        {
+            "enunciado": "Quem é o presidente do Brasil?",
+            "opcoes": ["A)Salnorabo", "B)Bozonaro", "C)Vagabundo", "D)Bolsonaro", "E)Micto"],
+            "gabarito": 3
+        },
+        {
+            "enunciado": "Quem é Leandro Maia?",
+            "opcoes": ["A)Professor de programação", "B)O terror das novinhas", "C)Muleke piranha", "D)Aquele que não deve ser nomeado", "E)Para o cego, é a luz. Para o faminto, é o pão. Para o sedento, é a fonte de água limpa. Para o morto, é a vida. Para o enfermo, é a cura. Para o prisioneiro, é a liberdade. Para o solitário, é o companheiro. Para o viajante, é o caminho. Para o sábio, é a sabedoria."],
+            "gabarito": 4
+        },
+        {
+            "enunciado": "Quem descobriu o Brasil?",
+            "opcoes": ["A)Pedro das quebradas", "B)Cristovão com o Lombo", "C)Pedro Alvares Cabral", "D)Os indios", "E)Shrek Terceiro"],
+            "gabarito": 2
+        },
+        {
+            "enunciado": "Como usar uma crase?",
+            "opcoes": ["A)Para concatenar facilmente strings em Js", "B)Odeio portugues", "C)Eu não sei nem usar virgula", "D)Não sei como passei de ano em portugues", "E)Socorro!"],
+            "gabarito": 0
+        }
+    ]
+}
