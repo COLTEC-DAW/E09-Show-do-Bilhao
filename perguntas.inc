@@ -25,7 +25,7 @@
             "C) JAPAO"
         ],
         ];
-    $altCorret = [1, 0, 1, 1, 2];
+    $altCorret = [1, 0, 1];
  
     function carregaPerguntas($id)
     {
