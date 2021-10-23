@@ -1,0 +1,26 @@
+[
+    {
+        "email": "euMesmo@gmail.com",
+        "login": "euMesmo",
+        "senha": "4321",
+        "nome": "Raphas"
+    },
+    {
+        "email": "izarodrigues@gmail.com",
+        "login": "Iza_Luz",
+        "senha": "wasd321",
+        "nome": "Iza"
+    },
+    {
+        "email": "Marquinhos32@gmail.com",
+        "login": "Marquinhos32",
+        "senha": "Marquinhos32",
+        "nome": "Marquinhos"
+    },
+    {
+        "email": "Jemaf_Prof@gmail.com",
+        "login": "Jemaf_Prof",
+        "senha": "1234",
+        "nome": "Jemaf"
+    }
+]

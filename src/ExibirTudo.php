@@ -1,5 +1,5 @@
 <?php
-  include "perguntas.inc";
+  include '../Inc/perguntas.inc';
 ?>
 
 <!DOCTYPE html >
@@ -13,7 +13,7 @@
 
     <body>
 
-        <?php include "menu.inc";?>
+        <?php include "../Inc/menu.inc";?>
 
         <div class="container">
             <?php echo MostrarTodasQuestoes() ?>
@@ -21,6 +21,6 @@
    
     </body>
 
-    <?php include "rodape.inc";?>
+    <?php include '../Inc/rodape.inc';?>
 
 </html>

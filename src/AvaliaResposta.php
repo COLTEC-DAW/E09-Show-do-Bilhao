@@ -1,14 +1,20 @@
 <?php
 
+    require "./sessão.php";
+
     $perguntaAtual =$_POST["id"];
     $respostaQ =$_POST["option"];
     $resCorretaQ =$_POST["gabaritoQ"];
 
     if ($respostaQ == $resCorretaQ)
     {
+
+        $_SESSION["points"]++;
+
         if($perguntaAtual == 4)
         {
-            header("Location: VoceVenceu.inc");
+            SetCookies();
+            header("Location: ../Inc/VoceVenceu.inc");
         }
         else
         {
@@ -17,6 +23,7 @@
     }
     else
     {
-        header("Location: PerdeuAmigao.inc");
+        SetCookies();
+        header("Location: ../Inc/PerdeuAmigao.inc");
     }
 ?>

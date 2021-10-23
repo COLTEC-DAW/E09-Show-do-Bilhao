@@ -1,0 +1,31 @@
+{
+    "perguntas":
+    
+    [
+        {
+            "enunciado": "1) Qual bicho transmite Doença de Chagas?",
+            "opcoes": ["A) Abelha","B) Barata","C) Pulga","D) Barbeiro"],
+            "gabarito": 3
+        },
+        {
+            "enunciado": "2) Qual fruto é conhecido no Norte e Nordeste como jerimum?",
+            "opcoes": ["A) Caju","B) Abóbora","C) Chuchu","D) Côco"],
+            "gabarito": 1
+        },
+        {
+            "enunciado": "3) Qual é o coletivo de cães?",
+            "opcoes": ["A) Matilha","B) Rebanho","C) Alcateia","D) Manada"],
+            "gabarito": 0
+        },
+        {
+            "enunciado": "4) Qual é o triângulo que tem todos os lados diferentes?",
+            "opcoes": ["A) Equilátero","B) isóceles","C) Escaleno","D) Trapézio"],
+            "gabarito": 2
+        },
+        {
+            "enunciado": "5) Quem compôs o Hino da Independência?",
+            "opcoes": ["A) Dom Pedro I","B) Manuel Bandeira","C) Caperguntao Alvez","D) Carlos Gomes"],
+            "gabarito": 0
+        }
+    ]
+} 

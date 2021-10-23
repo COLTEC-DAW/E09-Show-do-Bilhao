@@ -1,5 +1,5 @@
 <?php
-  include "perguntas.inc";
+  include '../Inc/perguntas.inc';
 ?>
 
 <!DOCTYPE html >
@@ -17,10 +17,10 @@
             <h1>Bem Vindo ao Show do Bilhão (O melhor de BH e região) !!</h1>
     </div>
 
-    <?php include "menu.inc";?>
+    <?php include '../Inc/menu.inc';?>
    
     </body>
 
-    <?php include "rodape.inc";?>
+    <?php include '../Inc/rodape.inc';?>
 
 </html>
