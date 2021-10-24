@@ -45,7 +45,7 @@ $alternativas = array(
 );
 
 $opCorreta = array(
-    2, 4, 4, 0, 0
+    2, 3, 3, 0, 0
 );
 
 function carregaPergunta($id)
@@ -53,17 +53,17 @@ function carregaPergunta($id)
     if (verificaID($id)) {
             echo "<h2>Pergunta selecionada:</h2>";
             exibePergunta($id);
-            echo "<br> <hr>";
+            //echo "<br> <hr>";
     }
 }
 
 function chamapergunta($id){
-    global $perguntas, $alternativas, $altsCorretas;
+    global $perguntas, $alternativas, $opCorreta;
 
     $pergunta = array(
         "enunciado" => $perguntas[$id],
         "alternativas" => $alternativas[$id],
-        "correta" => $opCorretas[$id]
+        "correta" => $opCorreta[$id]
     );
 
     return $pergunta;
@@ -74,19 +74,25 @@ function exibePergunta($id)
     $enunciado = $pergunta["enunciado"];
     $alternativas = $pergunta["alternativas"];
     $correta = $pergunta["correta"];
-    echo "<h3>" . ($id + 1) . ". $enunciado </h3>";
+    echo ("<div>" . ($id) . "000 pontos</div><br>");
 
-    for ($j = 0; $j < count($alternativas); $j++) {
-        if ($j == $correta) {
-            $alternativas[$j] = "<b>" . $alternativas[$j] . "</b>";
-        }
-        echo "&nbsp&nbsp" . $alternativas[$j] . "<br>";
+    echo ("<form action = confereResposta.php method = 'post' >");
+    echo ($id+1) . " - $enunciado<br>";
+    for ($j = 0; $j < count($alternativas) - 1; $j++) {
+        echo ("<input type = 'radio' id=" . $j . " name = 'forms' value=" . $j . ">
+                   <label for = " . $j . "> " . $alternativas[$j] . "</label><br>");
     }
+    echo (" <input type = 'hidden' name = 'id' value = " . $id . ">
+                <input type = 'hidden' name = 'opCorreta' value = " . $correta . ">
+                <input type = 'submit' value='Enviar'>
+                </form>");
 }
 
 function verificaID($id)
 {
     global $perguntas;
+    // Se o valor não for numérico, for -1 (código enviado quando não se quer nenhuma pergunta)
+    // ou estiver fora do tamanho do array, a pergunta não é impressa
     if (!(is_numeric($id)) || $id == "-1" || $id >= count($perguntas)) {
         return false;
     }
