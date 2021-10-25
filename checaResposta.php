@@ -5,7 +5,6 @@ $resposta = $_POST["formulario"];
 $resCorreta = $_POST["altCorreta"];
 
 if ($resposta == $resCorreta){
-    $_SESSION['HobbesfaelMartins']++;
     if($pergunta == 5){
         defineCookies($pergunta);
         header("Location: vitoria.php");

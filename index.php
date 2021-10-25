@@ -5,6 +5,7 @@
         $_SESSION['JohnOliver'] = "Leandro Martins Maiachado";
         header("Location: loginPage.php");
     }if(isset($_POST['login'])){
+        $_SESSION['HobbesfaelMartins'] = 0;
         $_SESSION['usuario'] = $_POST['login'];
     }
 ?>
@@ -26,10 +27,12 @@
             <?php require "show.inc";
             if(empty($_GET))
             {
+                $_SESSION['HobbesfaelMartins'] = 0;
                 carregaPergunta(1); 
             }
             else
             {
+                $_SESSION['HobbesfaelMartins'] = $_GET['id'] - 1;
                 carregaPergunta($_GET['id']); 
             }
             ?>
