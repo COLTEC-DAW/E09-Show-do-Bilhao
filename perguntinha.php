@@ -1,31 +1,7 @@
  <?php 
+    require "perguntas.inc";
     // array com os enunciados
-    $enunciados = array(
-        "<p>Em qual língua o Death Note está escrito?</p>",
-        "<p>Qual o nome verdadeiro de Kira?</p>",
-        "<p>Onde Light Yagami estava quando viu o Death Note pela primeira vez?</p>",
-        "<p>Quem L escolheu como seu Sucessor?</p>",
-        "<p>Qual o nome do Shinigami que entregou o caderno a Misa Amane?</p>",
-    );
-    
-    // matriz com as alternativas
-    $alternativas = array(
-        array("Inglês","Português","Japonês","Espanhol"),
-        array("Mikami","Light Yagami","Matsuda","Soichiro Yagami"),
-        array("Em sua Casa","Numa Loja de Conveniência","Na Escola","Numa Cafeteria"),
-        array("Near","Mello","Watari","Ele Não Se Decidiu"),
-        array("Gelus","Rem","Ryuk","Sidoh"),
-        
-    );
-
-    $respostas = array(0,1,2,3,1);
-    
-    $keys = array_keys($alternativas);
-
-    function letraResposta($indice){
-        $letra = array("A","B","C","D");
-        return $letra[$indice];
-    }
+    $id = $_GET["id"];
 ?>
 
 <!DOCTYPE html>
@@ -39,50 +15,21 @@
 </head>
 <body>
     <div class="container">
+        <?php include "menu.inc" ?>
         <div class="row">
-            <h2 class="col">Perguntas : </h2>
+            <h2 class="col">Pergunta <?php $numeroPergunta = $id + 1; echo "$numeroPergunta:" ?> </h2>
             <div class="container">
-                <ol>
-                    <?php
-                        foreach ($enunciados as $chave => $enunciado) {
-                            echo "<li>";
-                                echo "<strong>{$enunciado}</strong>";
-                                echo "<ol type = 'A'>";
-                                    foreach ($alternativas[$keys[$chave]] as $alternativa) {
-                                        echo "<li>$alternativa</li>";
-                                    }
-                                echo "</ol>";
-                            echo "</li>";
-                        }
-                    ?>
-                </ol>
+                <?php
+                    echo $carregaPergunta($id);
+                ?>
             </div>
         </div>
-        <div class="row col-3">
-            <h2>Gabarito: </h2>
-            <table class="table table-bordered border-dark">
-                <thead>
-                    <tr>
-                        <th>Questao</th>
-                        <th>Resposta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                        foreach ($respostas as $chave => $indiceResposta) {
-                            echo "<tr>";
-                                $numeroPergunta = $chave + 1;
-                                echo "<td>{$numeroPergunta}</td>";
+        <footer>
+            <?php include "rodape.inc"?>
+        </footer>
 
-                                $letra = letraResposta($indiceResposta);
-                                echo "<td>$letra</td>";
-                            echo "</tr>";
-                        }
-                    ?>
-                </tbody>
-            </table>
-        </div> 
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
