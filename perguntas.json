@@ -1,0 +1,20 @@
+[   
+    {
+        "id" : "0",
+        "enunciado" : "<br><br> Biologia: Existe pessoas com determinado tipo sanguíneo que são consideradas doadores universais.<br> Que tipo sanguíneo essa pessoa possui?<br> <br>",
+        "alternativas" : "(a) O+ <br> (b) O- <br> (c) AB+ <br> (d) AB- <br> ",
+        "resposta" : "b"
+    },
+    {
+        "id" : "1",
+        "enunciado" : "English: Choose the alternative that indicates the plural of the words: fish, life, woman.<br> <br>",
+        "alternativas" : "(a) Fishes, lifes, woman. <br> (b) Fishs, lives, woman. <br> (c) Fish, lives, women. <br> (d) Fish, lifes, women. <br>",
+        "resposta" : "c"
+    },
+    {
+        "id" : "2",
+        "enunciado" : "História: A formação dos Estados Modernos fez desaparecer os laços de suserania e vassalagem e, <br> com isso, foram formado(as), na Europa:<br> <br>",
+        "alternativas" : "(a) os exércitos nacionais. <br> (b) os burgos. <br> (c) as Cruzadas. <br> (d) os cavaleiros da luz. <br>",
+        "resposta" : "a"
+    } 
+]
