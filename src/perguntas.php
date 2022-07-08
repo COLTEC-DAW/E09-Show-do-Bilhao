@@ -36,8 +36,9 @@
     $respostas = [1,3,1,0,1];
 
     function verificaParametroIdPergunta($parametro){
+        $intval = (int) $parametro;
+        if (!(strval($parametro) == $intval)) return false;
         $parametro = intval($parametro);
-        if(!is_int($parametro)) return false;
         if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
         return true;
     }
