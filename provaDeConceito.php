@@ -14,7 +14,7 @@
         // mas achei mais eficiente salvar a pergunta 
         // como chave do array e o array de respostas
         // como valor.  
-        // Qualquer coisa, posso refazer, mas acredito
+        // Qualquer coisa posso refazer, mas acredito
         // que atende à proposta da atividade.
 
         $questions = [
