@@ -11,14 +11,18 @@
             $menu = "partials/menu.inc";
             $footer = "partials/rodape.inc";
             $questions = "partials/perguntas.inc";
-
-            if (is_readable($menu)) include $menu;
-            if (is_readable($questions)) include $questions;
+        ?>
+        <?php
+            if (is_readable($menu)) include $menu; 
+        ?>
+        <?php
+            if (is_readable($questions)) require $questions;
             else echo "Não foi possível carregar as perguntas.";
 
             if ((isset($_GET["id"])) && (($_GET["id"]) <= count($GLOBALS["questions"])) && ($_GET["id"]) >= 0) carregaPergunta($_GET["id"]);
             else echo "ID inválido";
-
+        ?>
+        <?php
             if (is_readable($footer)) include $footer;
         ?>
     </body> 
