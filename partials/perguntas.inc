@@ -39,7 +39,7 @@ $questions = [
 ];
 
 function carregaPergunta($id){
-    $question = array_keys($array)[$id];
+    $question = array_keys($questions)[$id];
 
     echo "<h2>$question</h2>";
     echo "<ol type='a'>";
