@@ -1,0 +1,19 @@
+body {
+    background-color: #f5f5f5;
+}
+
+h1 {
+    border: 5px solid #3300ff;
+    text-align: center;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
