@@ -14,10 +14,10 @@
 
             if (is_readable($menu)) include $menu;
             if (is_readable($questions)) include $questions;
-            else echo "<p>Não foi possível carregar as perguntas.</p>";
+            else echo "Não foi possível carregar as perguntas.";
 
             if ((isset($_GET["id"])) && (($_GET["id"]) <= count($GLOBALS["questions"])) && ($_GET["id"]) >= 0) carregaPergunta($_GET["id"]);
-            else echo "<p>ID inválido</p>";
+            else echo "ID inválido";
 
             if (is_readable($footer)) include $footer;
         ?>
