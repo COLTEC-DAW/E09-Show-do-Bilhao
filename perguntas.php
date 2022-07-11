@@ -19,7 +19,7 @@
             if (is_readable($questions)) require $questions;
             else echo "Não foi possível carregar as perguntas.";
 
-            if ((isset($_GET["id"])) && (($_GET["id"]) <= count($GLOBALS["questions"])) && ($_GET["id"]) >= 0) carregaPergunta($_GET["id"]);
+            if ((isset($_GET["id"])) && ((intval($_GET["id"])) <= count($GLOBALS["questions"])) && (intval($_GET["id"])) >= 0) carregaPergunta(intval($_GET["id"]));
             else echo "ID inválido";
         ?>
         <?php
