@@ -1,0 +1,19 @@
+
+[
+   
+    {
+        "enunciado1": "Qual bicho transmite Doença de Chagas ?",
+        "alternativas": [
+            "Abelha",
+            "Barata",
+            "Pulga",
+            "Barbeiro"],
+        "resposta": 3
+    },
+    {
+        "enunciado2": "bla bla bla",
+        "alternativas": ["alt1", "alt2", "alt3", ],
+        "resposta": 1
+    }
+    
+]
