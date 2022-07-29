@@ -96,7 +96,7 @@ body{
   background-color: var(--color4);
   border-top: solid black 2px;
   bottom: 0;
-  position: absolute;
+  position: fixed;
 }
 
 h1{
