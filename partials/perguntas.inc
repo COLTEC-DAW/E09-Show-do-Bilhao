@@ -1,11 +1,15 @@
 <?php
+include "partials/menu.inc";
 function carregaPergunta($id, $enunciados, $alternativas){
+    echo '<div class="col8" id="perguntas">';
     echo "<h3> {$enunciados[$id]} </h3>";
     echo "<ol type='A'>";
     for($y = 0; $y < count($alternativas[$id]); $y++){
         echo "<li>{$alternativas[$id][$y]} </li>";
     }
     echo "</ol>";
+    echo "</div>";
+    include "partials/rodape.inc";
 }
 $enunciados = [
     "Qual bicho transmite Doença de Chagas?",

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css"/>
     <title>Show do Bilhão</title>
 </head>
 <body>
@@ -26,12 +30,14 @@
     $respostas = [3,1,0,2,0];
 
     for($x = 0; $x < count($enunciados); $x++){
+        echo '<div class="col8" id="perguntas">';
         echo "<h3> {$enunciados[$x]} </h3>";
         echo "<ol type='A'>";
         for($y = 0; $y < count($alternativas[$x]); $y++){
             echo "<li>{$alternativas[$x][$y]} </li>";
         }
         echo "</ol>";
+        echo "</div>";
     }
     include "partials/rodape.inc";
     ?>
