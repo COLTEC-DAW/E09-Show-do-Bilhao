@@ -133,3 +133,39 @@ h1, p{
     height: 60vh;
     justify-content: center; 
 }
+
+h3{
+  text-align: center;
+}
+
+input{
+  float:right;
+}
+
+#alternativas{
+  background-color: inherit;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+ol {
+  padding-left: 0.5em;
+}
+
+ol li {
+  margin-left: 1em; 
+}  
+
+button{
+  background-color: white;
+  margin-left: 41%;
+}
+
+#enviar{
+  background-color: inherit;
+}
+
+form {
+  background-color: inherit;
+}

@@ -1,13 +1,17 @@
 <?php
 include "partials/menu.inc";
 function carregaPergunta($id, $enunciados, $alternativas){
+    $x = $id + 1;
+    $resp = $_POST['resposta'];
+    echo "<form action='pergunta.php?id=$x' method='post'>";
+    $x++;
     echo '<div class="col16" id="holder">';
         echo '<div class="col8" id="perguntas">';
             echo "<h3> {$enunciados[$id]} </h3>";
             echo "<ol type='A'>";
                 for($y = 0; $y < count($alternativas[$id]); $y++){
                     echo '<div class="col16" id="alternativas">';
-                        echo "<input type='radio' name='y$'> <li>{$alternativas[$id][$y]} </li>";
+                        echo "<input type='radio' name='resposta' value='$y'> <li>{$alternativas[$id][$y]} </li>";
                     echo "</div>";
                 }
             echo "</ol>";
@@ -16,6 +20,7 @@ function carregaPergunta($id, $enunciados, $alternativas){
             echo "</div>";
         echo "</div>";
     echo "</div>";
+    echo "</form>";
     include "partials/rodape.inc";
 }
 $enunciados = [
