@@ -103,7 +103,7 @@ h1{
   font-family: 'Rampart One', cursive;
 }
 
-p, li, h3{
+p, li, h3, h2{
   font-family: 'Dosis', sans-serif;
 }
 
@@ -112,6 +112,7 @@ p, li, h3{
   border-radius: 10px;
   margin: auto;
   background-color: var(--color5);
+  height: 55%;
 }
 
 :not(p, li, ol, h3, h1){
@@ -162,10 +163,30 @@ button{
   margin-left: 41%;
 }
 
-#enviar{
+#enviar, form{
   background-color: inherit;
 }
 
-form {
+#derrota-vitoria-box{
+  background-color: var(--color5);
+  border: solid black 1px;
+  border-radius: 10px;
+  height:fit-content;
+  margin-top: 10%;
+}
+
+h2{
   background-color: inherit;
+  margin-left: 41%;
+}
+
+#acertou{
+  height: fit-content;
+  margin: auto;
+  border-radius: 5px;
+  border: solid black 1px;
+  background-color: var(--color4);
+  margin-left: 26%;
+  margin-top: 10%;
+  text-align: center;
 }
