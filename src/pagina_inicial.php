@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -43,18 +44,8 @@
         return true;
     }
 
-
+    carregaPergunta(0, $enunciados, $alternativas);
     
-    if($respostas[$_POST['pergunta']] == $_POST['alternativa']){
-        if($_POST['pergunta'] == count($enunciados) - 1){
-            header("Location: ganhaste.html", TRUE, 301);
-            exit(1);
-        } 
-        carregaPergunta($_POST['pergunta'] + 1, $enunciados, $alternativas);
-    } else {
-        header("Location: game_over.html", TRUE, 301);
-    }
-
     ?>
     <?php
     if (is_readable($rodape)) include $rodape;
