@@ -112,10 +112,10 @@ p, li, h3, h2{
   border-radius: 10px;
   margin: auto;
   background-color: var(--color5);
-  height: 55%;
+  height: fit-content;
 }
 
-:not(p, li, ol, h3, h1){
+:not(p, li, ol, h3, h1, input){
   background-color: var(--color2);
 }
 
@@ -124,14 +124,14 @@ h1, p{
 }
 
 #footer{
-  position: fixed;
+  position: sticky;
   left: 0;
   bottom: 0; 
 }
 
 #holder{
     display: flex;
-    height: 60vh;
+    height: 80vh;
     justify-content: center; 
 }
 
@@ -139,7 +139,7 @@ h3{
   text-align: center;
 }
 
-input{
+#alternativas input{
   float:right;
 }
 
@@ -160,33 +160,66 @@ ol li {
 
 button{
   background-color: white;
-  margin-left: 41%;
 }
 
 #enviar, form{
   background-color: inherit;
 }
-
+#enviar{
+  text-align: center;
+}
 #derrota-vitoria-box{
   background-color: var(--color5);
   border: solid black 1px;
   border-radius: 10px;
   height:fit-content;
   margin-top: 10%;
+  text-align: center;
+}
+
+#derrota-vitoria-box p {
+  background-color: inherit;
 }
 
 h2{
   background-color: inherit;
-  margin-left: 41%;
+  text-align: center;
 }
 
 #acertou{
   height: fit-content;
-  margin: auto;
   border-radius: 5px;
   border: solid black 1px;
   background-color: var(--color4);
-  margin-left: 26%;
-  margin-top: 10%;
   text-align: center;
+  margin-right: 1%;
+  margin-left: 0.8%;
+  margin-top: 1%;
+}
+
+#loginbox{
+  background-color: var(--color5);
+  border: solid black 1px;
+  border-radius: 10px;
+  height:fit-content;
+  text-align: center;
+  height: fit-content;
+  margin-left: 31%;
+}
+
+#loginbox input, button {
+  margin-top: 5px;
+}
+
+#logintext{
+  color: white;
+  height: fit-content;
+  margin-top: 6%;
+}
+
+#logoff{
+  background-color: transparent;
+  margin-left: 25.5%;
+  margin-top: -2%;
+  height: fit-content;
 }

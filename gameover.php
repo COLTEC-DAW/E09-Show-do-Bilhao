@@ -9,16 +9,22 @@
 </head>
 <body>
     <?php
+    session_start();
     include "partials/menu.inc";
     echo '<div class="col16" id="holder">';
     echo '<div class="col8" id="derrota-vitoria-box">';
-        echo "<h2>Você Ganhou.</h2>";
+        $premiacao = $_SESSION["premiacao"];
+        echo "<p>Premiação: R$ $premiacao </p>";
         echo "<form action='showdobilhao.php?id=0' method='post'>";
         echo '<button type="submit">Jogar Novamente</button>';
         echo "</form>";
+        $time = time();
+        setcookie("premiacao", $premiacao);
+        setcookie("time", $time);
     echo "</div>";    
     echo "</div>";    
     include "partials/rodape.inc";
+    $_SESSION["premiacao"] = 0;
     ?>
 </body>
 </html>
