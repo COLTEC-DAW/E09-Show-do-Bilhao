@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="perdeu.jpg" alt="" srcset="">
+<?php
+    session_start();
+    session_destroy();
+    echo "LOG-OUT COM SUCESSO";
+?>   
+
+<br><br>
+    <a href="login.php"><button>Voltar para a página inicial.</button></a>
+
 </body>
 </html>

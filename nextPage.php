@@ -19,20 +19,31 @@
         if (is_readable($menu)) include $menu;
         if (is_readable($enunciados)) include $enunciados;
 
+        session_start();
+
         if($gabarito[$_POST['question']] == $_POST['answer']){
 
             if($_POST['question'] == count($perguntas) - 1){
 
-                header("Location: ganhou.html");
+                header("Location: ganhou.php");
 
             }
 
             carregaPergunta($_POST['question'] + 1, $perguntas, $alternativas);
+            $acertadas = $_POST['question'] + 1;
+        
+            echo "<br>Acertou {$acertadas} perguntas!!!";
 
         } else {
 
-            header("Location: perdeu.html");
+            header("Location: perdeu.php");
         }
+
+        echo "<form action='logout.php' method='GET'>
+        <br>    
+        <button type='submit'>Log-Out</button>
+        </form>";
+
 
         if (is_readable($rodape)) include $rodape;
     

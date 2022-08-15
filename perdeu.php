@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>GANHOU!!!!</h1>
-    <img src="ganhou.jpg" alt="" srcset="">
+    <img src="perdeu.jpg" alt="" srcset="">
+    <form action='logout.php' method='GET'>
+        <br>    
+        <button type='submit'>Log-Out</button>
+    </form> 
 </body>
 </html>

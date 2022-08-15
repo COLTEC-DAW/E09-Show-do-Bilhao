@@ -20,20 +20,28 @@
         if (is_readable($menu)) include $menu;
         if (is_readable($enunciados)) include $enunciados;
 
-        if (isset($_GET["id"]) && (intval($_GET["id"]) >=0 && intval($_GET["id"]) < count($GLOBALS["perguntas"]))){
+        session_start();
 
-            carregaPergunta($_GET["id"], $perguntas, $alternativas);
-            
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        }else if (isset($_GET["id"]) && (intval($_GET["id"]) < 0 || intval($_GET["id"]) >= count($GLOBALS["perguntas"]))){
-
-            echo "Esse ID é inválido";
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['password'] = $_POST['password'];
         }
-
-        if (!isset($_GET["id"])){
-
-            carregaPergunta(0, $perguntas, $alternativas);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            if(!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
+                header("Location: login.php");
+            }
         }
+        $_SESSION['finalLogin'] = date('d/m/Y | h:i', strtotime('-3 hours'));
+    
+        echo "Utimo login em {$_SESSION['finalLogin']}";
+
+        carregaPergunta(0, $perguntas, $alternativas);
+       
+        echo "<form action='logout.php' method='GET'>
+        <br>    
+        <button type='submit'>Log-Out</button>
+        </form>";
 
         if (is_readable($rodape)) include $rodape;
     
