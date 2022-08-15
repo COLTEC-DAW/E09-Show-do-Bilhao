@@ -12,6 +12,8 @@
     $menu = "partials/menu.inc";
     $rodape = "partials/rodape.inc";
     $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
+    $logout = "partials/logout.inc";
+
     
     if (is_readable($menu)) include $menu;
     if (is_readable($caminho_arquivo_partials_perguntas)) include $caminho_arquivo_partials_perguntas; 
@@ -36,16 +38,32 @@
     ];
     $respostas = [1,3,1,0,1];
 
-    function verificaParametroIdPergunta($parametro){
-        $intval = (int) $parametro;
-        if (!(strval($parametro) == $intval)) return false;
-        $parametro = intval($parametro);
-        if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
-        return true;
+    // function verificaParametroIdPergunta($parametro){
+    //     $intval = (int) $parametro;
+    //     if (!(strval($parametro) == $intval)) return false;
+    //     $parametro = intval($parametro);
+    //     if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
+    //     return true;
+    // }
+
+    session_start();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $_SESSION['username'] = $_POST['username'];
     }
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        if(!isset($_SESSION["username"])) {
+            header("Location: cadastro.php", TRUE, 301);
+        }
+    }
+    $_SESSION['lastlogin'] = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
+
+    echo "Seu ultimo login foi em {$_SESSION['lastlogin']}";
 
     carregaPergunta(0, $enunciados, $alternativas);
-    
+
+    if (is_readable($logout)) include $logout;
+
     ?>
     <?php
     if (is_readable($rodape)) include $rodape;

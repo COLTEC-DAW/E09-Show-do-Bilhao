@@ -11,6 +11,7 @@
     $menu = "partials/menu.inc";
     $rodape = "partials/rodape.inc";
     $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
+    $logout = "partials/logout.inc";
     
     if (is_readable($menu)) include $menu;
     if (is_readable($caminho_arquivo_partials_perguntas)) include $caminho_arquivo_partials_perguntas; 
@@ -43,17 +44,21 @@
         return true;
     }
 
+    session_start();
 
-    
     if($respostas[$_POST['pergunta']] == $_POST['alternativa']){
         if($_POST['pergunta'] == count($enunciados) - 1){
-            header("Location: ganhaste.html", TRUE, 301);
+            header("Location: ganhaste.php", TRUE, 301);
             exit(1);
-        } 
+        }
         carregaPergunta($_POST['pergunta'] + 1, $enunciados, $alternativas);
+        $acerto_pergunta = $_POST['pergunta'] + 1;
+        echo "você ja acertou {$acerto_pergunta} perguntas";
     } else {
-        header("Location: game_over.html", TRUE, 301);
+        header("Location: game_over.php", TRUE, 301);
     }
+
+    if (is_readable($logout)) include $logout;
 
     ?>
     <?php

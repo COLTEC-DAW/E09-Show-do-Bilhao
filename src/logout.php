@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GANHOU</title>
+    <title>LOGOUT</title>
 </head>
 <body>
-    <img src="Assets/ganhou.png">
+    <?php
+    session_start();
+    session_destroy();
+    echo "voce deslogou";
+    ?>
+    <br>
+    <a href="pagina_inicial.php"><button>Voltar para pagina inicial</button></a>
 </body>
 </html>
