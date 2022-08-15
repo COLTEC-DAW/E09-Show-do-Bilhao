@@ -11,22 +11,28 @@
 
     <?php 
 
-        include 'perguntas.php';
+        $conteudo = 'perguntas.php';
         $menu = "menu.inc";
         $enunciados = "perguntas.inc";
         $rodape = "rodape.inc";
 
+        if (is_readable($conteudo)) include $conteudo;
         if (is_readable($menu)) include $menu;
         if (is_readable($enunciados)) include $enunciados;
 
         if (isset($_GET["id"]) && (intval($_GET["id"]) >=0 && intval($_GET["id"]) < count($GLOBALS["perguntas"]))){
 
-            carregaPergunta($_GET["id"], $perguntas, $alternativas, $gabarito);
+            carregaPergunta($_GET["id"], $perguntas, $alternativas);
             
 
-        }else{
+        }else if (isset($_GET["id"]) && (intval($_GET["id"]) < 0 || intval($_GET["id"]) >= count($GLOBALS["perguntas"]))){
 
             echo "Esse ID é inválido";
+        }
+
+        if (!isset($_GET["id"])){
+
+            carregaPergunta(0, $perguntas, $alternativas);
         }
 
         if (is_readable($rodape)) include $rodape;
