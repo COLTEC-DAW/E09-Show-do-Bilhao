@@ -1,1 +1,0 @@
-<p id="title">SHOW DO BILHÃO</p>
