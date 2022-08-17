@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--CSS-->
+  <link rel="stylesheet" href="style.css"/>
+  
+  <title>teste do show do bilhao</title>
+</head>
+<body>
 <?php
   
   /*-------Variáveis-------*/
@@ -32,14 +45,19 @@
     echo "<div class=\"pergunta\">
       <h1>$perguntasGlobal[$id]</h3>;
     </div>";
-    echo "<div class=\"alternativas\">
-      ";
+    echo "<form>";
+    echo "<div class=\"alternativas\">";
     foreach ($alternativasGlobal[$id] as $alternativa){
       echo "<div class=\"alternativa\">
-        <h3>$alternativa</h3>
+        <input type=\"radio\" name=\"alternativa\">$alternativa</h3>
       </div>";
     }
+    echo "<br>";
     echo "</div>";
+    echo "<div class=\"submeter\">";
+    echo "<input type=\"submit\" id=\"responder\" name=\"enviar\" class=\"submeterBotao\">";
+    echo "</div>";
+    echo "</form>";
   }
   
   /*-------Chamadas-------*/
@@ -53,3 +71,5 @@
   //Carregando perguntas
   carregaPergunta($perguntaAtual);
 ?>
+</body>
+</html>
