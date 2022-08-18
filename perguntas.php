@@ -1,5 +1,7 @@
 <?php 
+    $id = 0;
     $id = $_GET["id"];
+    $acertos = $_POST["acertos"];
     $enunciados = array(
         "Qual bicho transmite Doença de Chagas?", 
         "Que nome se dá à purificação por meio da água?", 
@@ -23,10 +25,12 @@
     <body>
         <?php include "src/menu.inc"?>
         <div>
-            <?php 
+            <?php
                 require "src/perguntas.inc";
-                carregaPergunta($id, $enunciados, $alternativas);
-            ?>
+                if ($acertos == 4) Redirect("http://localhost:8050/vitoria.php");
+                else if($acertos < $id-1 && $acertos != null) Redirect("http://localhost:8050/gameover.php?acertos={$acertos}");
+                else carregaPergunta($id, $enunciados, $alternativas, $gabarito);
+            ?>            
         </div>
     </body>
     <footer>
