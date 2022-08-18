@@ -10,7 +10,7 @@
     <?php
     session_start();
     session_destroy();
-    echo "voce deslogou";
+    echo "Você deslogou";
     ?>
     <br>
     <a href="pagina_inicial.php"><button>Voltar para pagina inicial</button></a>

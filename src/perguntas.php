@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Bilhão</title>
 </head>
 <body>
@@ -12,6 +12,7 @@
     $rodape = "partials/rodape.inc";
     $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
     $logout = "partials/logout.inc";
+    $verifica_esta_logado = "partials/verifica_esta_logado.inc.php";
     
     if (is_readable($menu)) include $menu;
     if (is_readable($caminho_arquivo_partials_perguntas)) include $caminho_arquivo_partials_perguntas; 
@@ -45,7 +46,7 @@
     }
 
     session_start();
-
+    if (is_readable($verifica_esta_logado)) include $verifica_esta_logado;
     if($respostas[$_POST['pergunta']] == $_POST['alternativa']){
         if($_POST['pergunta'] == count($enunciados) - 1){
             header("Location: ganhaste.php", TRUE, 301);

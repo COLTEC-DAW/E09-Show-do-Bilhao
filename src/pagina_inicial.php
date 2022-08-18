@@ -13,6 +13,7 @@
     $rodape = "partials/rodape.inc";
     $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
     $logout = "partials/logout.inc";
+    $verifica_esta_logado = "partials/verifica_esta_logado.inc.php";
 
     
     if (is_readable($menu)) include $menu;
@@ -47,18 +48,10 @@
     // }
 
     session_start();
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $_SESSION['username'] = $_POST['username'];
-    }
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        if(!isset($_SESSION["username"])) {
-            header("Location: cadastro.php", TRUE, 301);
-        }
-    }
+    if (is_readable($verifica_esta_logado)) include $verifica_esta_logado;
     $_SESSION['lastlogin'] = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
 
-    echo "Seu ultimo login foi em {$_SESSION['lastlogin']}";
+    echo "Seu último login foi em {$_SESSION['lastlogin']}";
 
     carregaPergunta(0, $enunciados, $alternativas);
 
