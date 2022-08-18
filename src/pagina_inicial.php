@@ -13,8 +13,6 @@
     $rodape = "partials/rodape.inc";
     $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
     $logout = "partials/logout.inc";
-    $verifica_esta_logado = "partials/verifica_esta_logado.inc.php";
-
     
     if (is_readable($menu)) include $menu;
     if (is_readable($caminho_arquivo_partials_perguntas)) include $caminho_arquivo_partials_perguntas; 
@@ -48,10 +46,32 @@
     // }
 
     session_start();
-    if (is_readable($verifica_esta_logado)) include $verifica_esta_logado;
-    $_SESSION['lastlogin'] = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $_SESSION['username'] = $_POST['username'];
+    }
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        if(!isset($_SESSION['username'])) {
+            header('Location: cadastro.php', TRUE, 301);
+        }
+    }    
+    
+    $now = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
+    $LoginUser = $_SESSION['username'];
+    $LoginUser .= 'lastlogin';
+    $AcertosUser = $_SESSION['username'];
+    $AcertosUser .= 'acertos';
+    
+    if(!isset($_COOKIE[$LoginUser])) {
+        setcookie($LoginUser, $now);
+        echo "Bem-vindo(a) {$_SESSION['username']}";
+    } else {
+        echo "Bem-vindo(a) {$_SESSION['username']}, seu último login foi em {$_COOKIE[$LoginUser]}.";
+        $lastLogin = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
+        setcookie($LoginUser, $lastLogin);
+    }
 
-    echo "Seu último login foi em {$_SESSION['lastlogin']}";
+    if(isset($_COOKIE[$AcertosUser])) echo " Você havia acertado {$_COOKIE[$AcertosUser]} na ultima tentativa";
 
     carregaPergunta(0, $enunciados, $alternativas);
 

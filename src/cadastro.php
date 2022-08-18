@@ -9,7 +9,7 @@
 <body>
     <form action="pagina_inicial.php" method='post'>
 
-       <label for="username"></label></label><input id="username" type="text" name="username">
+       <label for="username">Username: </label><input id="username" type="text" name="username">
 
        <button type="submit">Enviar</button>
 

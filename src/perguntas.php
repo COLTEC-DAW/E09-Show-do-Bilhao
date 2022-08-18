@@ -12,7 +12,6 @@
     $rodape = "partials/rodape.inc";
     $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
     $logout = "partials/logout.inc";
-    $verifica_esta_logado = "partials/verifica_esta_logado.inc.php";
     
     if (is_readable($menu)) include $menu;
     if (is_readable($caminho_arquivo_partials_perguntas)) include $caminho_arquivo_partials_perguntas; 
@@ -37,24 +36,37 @@
     ];
     $respostas = [1,3,1,0,1];
 
-    function verificaParametroIdPergunta($parametro){
-        $intval = (int) $parametro;
-        if (!(strval($parametro) == $intval)) return false;
-        $parametro = intval($parametro);
-        if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
-        return true;
-    }
+    // function verificaParametroIdPergunta($parametro){
+    //     $intval = (int) $parametro;
+    //     if (!(strval($parametro) == $intval)) return false;
+    //     $parametro = intval($parametro);
+    //     if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
+    //     return true;
+    // }
 
     session_start();
-    if (is_readable($verifica_esta_logado)) include $verifica_esta_logado;
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(!isset($_SESSION['username'])) header('Location: cadastro.php', TRUE, 301);
+    }
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        if(!isset($_SESSION['username'])) {
+            header('Location: cadastro.php', TRUE, 301);
+        }
+    }
+
+    $AcertosUser = $_SESSION['username'];
+    $AcertosUser .= 'acertos';
+    
     if($respostas[$_POST['pergunta']] == $_POST['alternativa']){
+        $acerto_pergunta = $_POST['pergunta'] + 1;
+        setcookie($AcertosUser, $acerto_pergunta);
         if($_POST['pergunta'] == count($enunciados) - 1){
             header("Location: ganhaste.php", TRUE, 301);
             exit(1);
         }
         carregaPergunta($_POST['pergunta'] + 1, $enunciados, $alternativas);
-        $acerto_pergunta = $_POST['pergunta'] + 1;
-        echo "você ja acertou {$acerto_pergunta} perguntas";
+        echo "Você já acertou {$acerto_pergunta} perguntas.";
     } else {
         header("Location: game_over.php", TRUE, 301);
     }
