@@ -18,7 +18,9 @@ function carregaPergunta($id, $enunciados, $alternativas){
         }
     } 
     if ($id > $numperguntas){
-        $_SESSION["premiacao"] *= 2;
+        if ($resposta == $respostas[$id]){
+            $_SESSION["premiacao"] *= 2;
+        }
         header("Location: /gameover.php");
     }
     $x = $id + 1;
