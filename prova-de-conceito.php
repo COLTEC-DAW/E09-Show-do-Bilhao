@@ -38,6 +38,7 @@
             echo "</ol>";
         echo "</div>";
     }
+    echo "<style>#footer { position: absolute }</style>"; 
     include "partials/rodape.inc";
     ?>
 </body>
