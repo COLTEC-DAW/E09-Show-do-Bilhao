@@ -16,6 +16,9 @@
         $enunciados = "perguntas.inc";
         $rodape = "rodape.inc";
 
+        $name = htmlspecialchars($_POST['username']);
+        setcookie('username', $name);
+
         if (is_readable($conteudo)) include $conteudo;
         if (is_readable($menu)) include $menu;
         if (is_readable($enunciados)) include $enunciados;
@@ -34,7 +37,7 @@
         }
         $_SESSION['finalLogin'] = date('d/m/Y | h:i', strtotime('-3 hours'));
     
-        echo "Utimo login em {$_SESSION['finalLogin']}";
+        echo "Utimo login de $name em {$_SESSION['finalLogin']}";
 
         carregaPergunta(0, $perguntas, $alternativas);
        
