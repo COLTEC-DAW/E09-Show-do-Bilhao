@@ -16,8 +16,8 @@
             if (is_readable($menu)) include $menu; 
         ?>
         <?php
-            //if ((isset($_GET["id"])) && (($_GET["id"]) <= count($GLOBALS["questions"])) && ($_GET["id"]) >= 0) carregaPergunta($_GET["id"]);
-            //else echo "ID inválido";
+            //if ((isset($_GET["id"])) && ((intval($_GET["id"])) <= count($GLOBALS["questions"])) && (intval($_GET["id"])) >= 0) carregaPergunta(intval($_GET["id"]));
+            //else echo "ID inválido";;
 
             session_start();
             //session_regenerate_id();
