@@ -41,12 +41,25 @@ $questions = [
 function carregaPergunta($id){
     $question = array_keys($questions)[$id];
 
+    echo "<form action='perguntas.php' method='post'>";
     echo "<h2>$question</h2>";
+    echo "<input type='hidden' value='{$id}' name='question'>";    
+    foreach($question => $answers as $answer){
+        echo "<div>
+            <input type='radio' id='{array_keys($answers, $answer)}' name='answer' value='{array_keys($answers, $answer)}>
+            <label for='{array_keys($answers, $answer)}'>{$answer}</label>
+        </div>";
+    }
+    echo "<br>";
+    echo "<button type='submit'>Enviar</button>";
+    echo "</form>";
+
+    /*echo "<h2>$question</h2>";
     echo "<ol type='a'>";
     foreach ($question => $answers as $answer) {
         echo "<li> $answer</li>";
     }
-    echo "</ol>";
+    echo "</ol>";*/
 }
 
 ?>
