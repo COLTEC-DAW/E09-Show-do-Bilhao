@@ -10,13 +10,13 @@
     <form action="handle_cadastro.php" method='post'>
 
        <label for="nome">Nome: </label>
-       <input id="nome" type="text" name="nome">
+       <input style="margin: 2px;" id="nome" type="text" name="nome"> <br>
        <label for="email">E-mail:</label>
-       <input type="email" id="email" name="email">
+       <input style="margin: 2px;" type="email" id="email" name="email"> <br>
        <label for="login">Login:</label>
-       <input type="text" id="login" name="login">
+       <input style="margin: 2px;" type="text" id="login" name="login"> <br>
        <label for="senha">Senha:<label>
-       <input type="password" id="senha" name="senha">
+       <input style="margin: 2px;" type="password" id="senha" name="senha"> 
        <button type="submit">Enviar</button>
 
     </form>

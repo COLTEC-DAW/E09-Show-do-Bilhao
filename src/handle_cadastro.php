@@ -1,15 +1,18 @@
 <?php
-    function insert_into_json($object, $nome_arquivo){
-	    $arquivo = fopen($nome_arquivo, 'w');
-            $primeira_linha = fgets($arquivo);
-	     
-	    fclose($arquivo);
+    function insert_into_json($nome_arquivo, $append_data){
+        $old_data = json_decode(file_get_contents($nome_arquivo));
+        array_push($old_data, $append_data);
+        file_put_contents($nome_arquivo, json_encode($old_data, JSON_PRETTY_PRINT), LOCK_EX);
     }
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-    $login = $_POST["login"];
-    $dado_usuario = json_encode(array('nome' => $nome, 'email' => $email, 'senha' => $senha, 'login' => $login));
-    var_dump($dado_usuario);
 
+    $login_data = array(
+        "nome" => $_POST["nome"],
+        "email" => $_POST["email"],
+        "senha" => $_POST["senha"],
+        "login" => $_POST["login"],
+    );
+
+    insert_into_json("usuarios.json", $login_data);
+
+    header("Location: login.php", TRUE, 301);
 ?>

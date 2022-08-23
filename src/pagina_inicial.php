@@ -37,42 +37,35 @@
     ];
     $respostas = [1,3,1,0,1];
 
-    // function verificaParametroIdPergunta($parametro){
-    //     $intval = (int) $parametro;
-    //     if (!(strval($parametro) == $intval)) return false;
-    //     $parametro = intval($parametro);
-    //     if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
-    //     return true;
-    // }
-
     session_start();
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION["senha"] = $_POST["senha"];
+        $_SESSION["login"] = $_POST["login"];
     }
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        if(!isset($_SESSION['username'])) {
-            header('Location: cadastro.php', TRUE, 301);
+        if(!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
+            header('Location: login.php', TRUE, 301);
         }
     }    
     
     $now = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
-    $LoginUser = $_SESSION['username'];
-    $LoginUser .= 'lastlogin';
-    $AcertosUser = $_SESSION['username'];
-    $AcertosUser .= 'acertos';
+    $LoginUser = $_SESSION['login'] . 'lastlogin';
+    $AcertosUser = $_SESSION['login'] . 'acertos';
     
     if(!isset($_COOKIE[$LoginUser])) {
         setcookie($LoginUser, $now);
-        echo "Bem-vindo(a) {$_SESSION['username']}";
+        echo "Bem-vindo(a) {$_SESSION['login']}";
     } else {
-        echo "Bem-vindo(a) {$_SESSION['username']}, seu último login foi em {$_COOKIE[$LoginUser]}.";
+        echo "Bem-vindo(a) {$_SESSION['login']}, seu último login foi em {$_COOKIE[$LoginUser]}.";
         $lastLogin = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
         setcookie($LoginUser, $lastLogin);
     }
 
-    if(isset($_COOKIE[$AcertosUser])) echo " Você havia acertado {$_COOKIE[$AcertosUser]} na ultima tentativa";
-
+    if(isset($_COOKIE[$AcertosUser])){ 
+        if($_COOKIE[$AcertosUser] != 5) echo " Você havia acertado {$_COOKIE[$AcertosUser]} na ultima tentativa";
+        else echo " Você havia ganhado na ultima tentativa!";
+    }
     carregaPergunta(0, $enunciados, $alternativas);
 
     if (is_readable($logout)) include $logout;

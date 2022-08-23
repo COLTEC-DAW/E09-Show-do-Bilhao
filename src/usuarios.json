@@ -1,8 +1,14 @@
 [
     {
-         "nome": "jean",
-	 "email": "2020952097@teiacoltec.org",
-	 "login": "jeanzinXD",
-	 "senha": "123quemleueG"
+        "nome": "jean",
+        "email": "2020952097@teiacoltec.org",
+        "senha": "123quemleueG",
+        "login": "jeanzinXD"
+    },
+    {
+        "nome": "jean",
+        "email": "jeanberlyy@gmail.com",
+        "senha": "ssssss",
+        "login": "jeanberl"
     }
 ]

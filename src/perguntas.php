@@ -36,37 +36,26 @@
     ];
     $respostas = [1,3,1,0,1];
 
-    // function verificaParametroIdPergunta($parametro){
-    //     $intval = (int) $parametro;
-    //     if (!(strval($parametro) == $intval)) return false;
-    //     $parametro = intval($parametro);
-    //     if($parametro < 0 || $parametro > count($GLOBALS["enunciados"])) return false;
-    //     return true;
-    // }
-
     session_start();
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if(!isset($_SESSION['username'])) header('Location: cadastro.php', TRUE, 301);
+        if(!isset($_SESSION['login']) && !isset($_SESSION['senha'])) header('Location: cadastro_usuario.php', TRUE, 301);
     }
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        if(!isset($_SESSION['username'])) {
-            header('Location: cadastro.php', TRUE, 301);
-        }
+        if(!isset($_SESSION['login']) && !isset($_SESSION['senha'])) header('Location: cadastro_usuario.php', TRUE, 301);
     }
 
-    $AcertosUser = $_SESSION['username'];
-    $AcertosUser .= 'acertos';
+    $AcertosUser = $_SESSION['login'] . 'acertos';
     
     if($respostas[$_POST['pergunta']] == $_POST['alternativa']){
-        $acerto_pergunta = $_POST['pergunta'] + 1;
-        setcookie($AcertosUser, $acerto_pergunta);
+        $respostas_acertadas = $_POST['pergunta'] + 1;
+        setcookie($AcertosUser, $respostas_acertadas);
         if($_POST['pergunta'] == count($enunciados) - 1){
             header("Location: ganhaste.php", TRUE, 301);
             exit(1);
         }
         carregaPergunta($_POST['pergunta'] + 1, $enunciados, $alternativas);
-        echo "Você já acertou {$acerto_pergunta} perguntas.";
+        echo "Você já acertou {$respostas_acertadas} perguntas.";
     } else {
         header("Location: game_over.php", TRUE, 301);
     }
