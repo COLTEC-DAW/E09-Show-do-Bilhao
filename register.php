@@ -1,9 +1,3 @@
-<?php 
-    include ("./validate.php");
-
-    setcookie("{$_POST['username']}ScoreMax", "5");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +8,18 @@
     <title>Jogo do Bilhão</title>
 </head>
 <body>
-    <?php 
-        include ("./components/header.php");
-    ?>
+    <div class="login">
+        <h2>Indentifique-se</h2>
+        <form action="validate.php" method="post">
+            Nome: <input type="text" name="username">
+            
+            <br>
+            <br>
 
-    <div class="content">
-        <h1>GG</h1>
-        <p>Parabens, você acertou todas as perguntas</p>
+            <input type="submit" name="enter" value="Entrar">
+        </form>
+
+        <br>
     </div>
-
-    <?php 
-        include ("./components/footer.php");
-    ?>
 </body>
 </html>

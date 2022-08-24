@@ -1,10 +1,11 @@
 <?php 
+
     function loadQuestion($id, $statements, $alternatives) {
         echo "<form action='question.php' method='post'>";
         echo $statements[$id];
 
         echo "<br>";
-        echo "<input type='hidden' name='question' value='{$id}'";
+        echo "<input type='hidden' name='question' value='{$id}'>";
         echo "<br>";
 
         for($j = 0; $j < sizeof($alternatives); $j++) {

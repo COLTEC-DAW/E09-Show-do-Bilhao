@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION['username'])) {
+        header("location: register.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +21,19 @@
     ?>
 
     <div class="content">
-        <h1>Bem-vindo ao Jogo do Bilhão</h1>
+        <h1>
+            Bem-vindo ao Jogo do Bilhão, <?php echo "{$_SESSION['username']}";?>
+        </h1>
         <h2>Versão Lingua Portuguesa</h2>
         <br>
+
+        <?php 
+           $lastTimeOnline = $_COOKIE["{$_SESSION['username']}LastLogin"];
+           $ScoreMax = $_COOKIE["{$_SESSION['username']}ScoreMax"];
+
+           echo "Última vez online: {$lastTimeOnline}<br>";
+           echo "Pontuação máxima: {$ScoreMax}";
+        ?>
 
         <form method="post">
             <Input type="submit" name="startButton" value="COMEÇAR">
@@ -77,7 +95,7 @@
     </div>
 
     <?php 
-        include("./components/footer.php")
+        include("./components/footer.php");
     ?>
 </body>
 </html>

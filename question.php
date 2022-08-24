@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +65,8 @@
                 $answers = array(2, 3, 4, 3, 3);
 
                 include("./components/questions.php");
-
+                
+                $hits = 0;
                 if($answers[$_POST['question']] == $_POST['alternative']) {
                     if($_POST['question'] == count($statements) - 1){
                         echo "<script> window.location.href = 'win.php' </script>";
@@ -72,9 +77,10 @@
                     $hits = $_POST['question'] + 1;
                     echo "Acertos: {$hits}/5";
                 } else {
-                    echo "Opa";
+                    $hits = $_POST['question'];
                     echo "<script> window.location.href = 'gameOver.php' </script>";
                 }
+                $_SESSION['hits'] = $hits;
             ?>
     </div>
 

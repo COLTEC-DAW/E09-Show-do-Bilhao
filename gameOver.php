@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+
+    $username = $_SESSION['username'];
+
+    if($_SESSION['hits'] > (int) $_COOKIE["{$username}ScoreMax"]) {
+        setcookie("{$username}ScoreMax", (string) $_SESSION['hits']);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +25,10 @@
     <div class="content">
         <h1>F</h1>
         <p>Não foi dessa vez...</p>
+        <?php 
+            $username = $_SESSION['username'];
+            echo "Quantidade de acertos: {$_SESSION['hits']}";
+        ?>
         <a href="index.php">tente novamente</a>
     </div>
 
