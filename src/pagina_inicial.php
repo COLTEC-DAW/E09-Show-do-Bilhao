@@ -39,10 +39,9 @@
 
     session_start();
     
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $_SESSION["senha"] = $_POST["senha"];
-        $_SESSION["login"] = $_POST["login"];
-    }
+    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // }
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if(!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
             header('Location: login.php', TRUE, 301);

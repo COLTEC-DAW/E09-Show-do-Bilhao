@@ -7,16 +7,11 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="pagina_inicial.php" method='post'>
+    <form action="handle_login.php" method='post'>
 
-       <label for="username">Login: </label><input id="username" type="text" name="login"> <br>
-       <label for="username">Senha: </label><input id="username" type="password" name="senha">
+       <label for="login">Login: </label><input id="login" type="text" name="login" required> <br>
+       <label for="senha">Senha: </label><input id="senha" type="password" name="senha" required>
 
-        <?php 
-        // verificar no json se o login e senha existem
-        // true -> redirecionar para a pagina inicial
-        // false -> redirecionar para o cadastro do usuario
-        ?>
        <button type="submit">Enviar</button>
     
     </form>
