@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,13 +49,14 @@
         else echo " Você havia ganhado na ultima tentativa!";
     }
     $question = carregaPergunta(0, "perguntas.json");
+    var_dump($question);
     ?>
 
-    <h2><?= $question["enunciado"] ?></h2>
+    <h2><?= $question->enunciado ?></h2>
     <form action="perguntas.php" method="post">
         <input hidden name="pergunta" value="0">
-        <?php for($j = 0; $j < count($question["alternativas"]); $j++){
-        echo "<div><input type='radio' id='{$j}' name='alternativa' value='{$j}'><label for='{$j}'>{$question["alternativas"][$j]}</label></div>";
+        <?php for($j = 0; $j < count($question->alternativas[0]); $j++){
+        echo "<div><input type='radio' id='{$j}' name='alternativa' value='{$j}'><label for='{$j}'>{$question->alternativas[$j]}</label></div>";
         }?>
         <br>
         <input type="submit" value="Enviar">

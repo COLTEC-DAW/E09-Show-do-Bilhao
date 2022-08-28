@@ -33,8 +33,10 @@
     $AcertosUser = $_SESSION['login'] . 'acertos';
 
     $question = carregaPergunta($_POST['pergunta'] + 1, "perguntas.json");
+
+    $resposta_anterior = $question->resposta[$id == 0 ? 0 : $id - 1];
     
-    if($question["resposta_anterior"] == $_POST['alternativa']){
+    if($resposta_anterior == $_POST['alternativa']){
         $respostas_acertadas = $_POST['pergunta'] + 1;
         setcookie($AcertosUser, $respostas_acertadas);
         if($_POST['pergunta'] == NUMERO_PERGUNTAS){
@@ -49,11 +51,11 @@
 
     ?>
 
-    <h2><?= $question["enunciado"] ?></h2>
+    <h2><?= $question->enunciado ?></h2>
     <form action="perguntas.php" method="post">
         <input hidden name="pergunta" value=<?=$_POST["pergunta"] + 1?>>
-        <?php for($j = 0; $j < count($question["alternativas"]); $j++){
-        echo "<div><input type='radio' id='{$j}' name='alternativa' value='{$j}'><label for='{$j}'>{$question["alternativas"][$j]}</label></div>";
+        <?php for($j = 0; $j < count($question->alternativas); $j++){
+        echo "<div><input type='radio' id='{$j}' name='alternativa' value='{$j}'><label for='{$j}'>{$question->alternativas[$j]}</label></div>";
         }?>
         <br>
         <input type="submit" value="Enviar">
