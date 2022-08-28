@@ -9,10 +9,10 @@
 </head>
 <body>
     <?php
-    $menu = "partials/menu.inc";
-    $rodape = "partials/rodape.inc";
-    $caminho_arquivo_partials_perguntas = "partials/perguntas.inc";
-    $logout = "partials/logout.inc";
+    $menu = "partials/menu.inc.php";
+    $rodape = "partials/rodape.inc.php";
+    $caminho_arquivo_partials_perguntas = "partials/perguntas.inc.php";
+    $logout = "partials/logout.inc.php";
     
     if (is_readable($menu)) include $menu;
     if (is_readable($caminho_arquivo_partials_perguntas)) include $caminho_arquivo_partials_perguntas; 
@@ -20,22 +20,6 @@
         echo "Página fora do ar";
         exit(1);
     }
-    
-    $enunciados = [
-        "Segundo a gramática, 'y' é uma/um:",
-        "Bandex?",
-        "Segundo o ICP, qual é o maior mal da atualidade?",
-        "Ao ouvir o tema de grafos, quem é a pessoa mais provável de estar falando sobre:",
-        "Qual das alternativas a seguir 'dá shape': "
-    ];
-    $alternativas = [
-        ["Vogal","Depende","Semivogal","Consoante"],
-        ["No almoço", "No almoço e jantar", "Eu prefiro comer na Engenharia", "No café da manhã, almoço e jantar"],
-        ["Eliezer/Esquerda", "Astrologia", "Bebida", "Neoliberalismo"],
-        ["Ullas", "Moras", "Amanda", "Éric"],
-        ["Fruta", "Bandex", "Café", "Corote"]
-    ];
-    $respostas = [1,3,1,0,1];
 
     session_start();
     
@@ -65,8 +49,20 @@
         if($_COOKIE[$AcertosUser] != 5) echo " Você havia acertado {$_COOKIE[$AcertosUser]} na ultima tentativa";
         else echo " Você havia ganhado na ultima tentativa!";
     }
-    carregaPergunta(0, $enunciados, $alternativas);
+    $question = carregaPergunta(0, "perguntas.json");
+    ?>
 
+    <h2><?= $question["enunciado"] ?></h2>
+    <form action="perguntas.php" method="post">
+        <input hidden name="pergunta" value="0">
+        <?php for($j = 0; $j < count($question["alternativas"]); $j++){
+        echo "<div><input type='radio' id='{$j}' name='alternativa' value='{$j}'><label for='{$j}'>{$question["alternativas"][$j]}</label></div>";
+        }?>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <?php
     if (is_readable($logout)) include $logout;
 
     ?>

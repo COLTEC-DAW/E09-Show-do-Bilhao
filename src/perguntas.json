@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Segundo a gramática, 'y' é uma/um:",
+        "alternativas": ["Vogal","Depende","Semivogal","Consoante"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Bandex?",
+        "alternativas": ["No almoço", "No almoço e jantar", "Eu prefiro comer na Engenharia", "No café da manhã, almoço e jantar"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Segundo o ICP, qual é o maior mal da atualidade?",
+        "alternativas": ["Eliezer/Esquerda", "Astrologia", "Bebida", "Neoliberalismo"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Ao ouvir o tema de grafos, quem é a pessoa mais provável de estar falando sobre:",
+        "alternativas": ["Ullas", "Moras", "Amanda", "Éric"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual das alternativas a seguir 'dá shape': ",
+        "alternativas": ["Fruta", "Café", "Bandex", "Corote"],
+        "resposta": 2
+    }
+]

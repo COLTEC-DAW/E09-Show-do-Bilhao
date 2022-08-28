@@ -9,7 +9,7 @@
 <body>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtIJpUnSZFDRhvsLZ3c7Vz0XDDvGBe4Qqmqg&usqp=CAU">
     <?php 
-        $logout = "partials/logout.inc";
+        $logout = "partials/logout.inc.php";
         if (is_readable($logout)) include $logout;
     ?>
     <a href="pagina_inicial.php"><button>Voltar para pagina inicial</button></a>

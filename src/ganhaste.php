@@ -9,7 +9,7 @@
 <body>
     <img src="Assets/ganhou.png">
     <?php 
-        $logout = "partials/logout.inc";
+        $logout = "partials/logout.inc.php";
         if (is_readable($logout)) include $logout;
     ?>
     <a href="pagina_inicial.php"><button>Voltar para pagina inicial</button></a>
