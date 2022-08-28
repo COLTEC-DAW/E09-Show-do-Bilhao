@@ -1,5 +1,5 @@
 <?php 
-    class Question {
+    class QuestionModel {
         private $statement;
         private $alternatives;
 
