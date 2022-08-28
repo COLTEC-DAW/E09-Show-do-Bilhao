@@ -6,11 +6,11 @@ final class User{
     public string $email;
     public string $nome;
 
-    public function __construct($login, $senha, $email, $nome){
-        $login = $this->login;
-        $senha = $this->senha;
-        $email = $this->email;
-        $nome = $this->nome;
+    public function __construct(string $login, string $senha, string $email, string $nome){
+        $this->login = $login;
+        $this->senha = $senha;
+        $this->email = $email;
+        $this->$nome = $nome;
     }
 
 }

@@ -32,11 +32,9 @@
 
     $AcertosUser = $_SESSION['login'] . 'acertos';
 
-    $question = carregaPergunta($_POST['pergunta'] + 1, "perguntas.json");
-
-    $resposta_anterior = $question->resposta[$id == 0 ? 0 : $id - 1];
+    $question = carregaPergunta($_POST['pergunta'], "perguntas.json");
     
-    if($resposta_anterior == $_POST['alternativa']){
+    if($question->resposta == $_POST['alternativa']){
         $respostas_acertadas = $_POST['pergunta'] + 1;
         setcookie($AcertosUser, $respostas_acertadas);
         if($_POST['pergunta'] == NUMERO_PERGUNTAS){

@@ -5,10 +5,10 @@ final class Question{
     public array $alternativas;
     public int $resposta;
 
-    public function __construct($enunciado, $alternativas, $resposta){
-        $enunciado = $this->$enunciado;
-        $alternativas = $this->$alternativas;
-        $resposta = $this->$resposta;
+    public function __construct(string $enunciado, array $alternativas, int $resposta){
+        $this->enunciado = $enunciado;
+        $this->alternativas = $alternativas;
+        $this->resposta = $resposta;
     }
 }
 ?>
