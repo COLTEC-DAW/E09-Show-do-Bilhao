@@ -18,5 +18,6 @@
     <div>
         <?php include "rodape.inc"; ?>
     </div>
+    <a href="perguntas.php?id=0">Recomeçar</a>
 </body>
 </html>
