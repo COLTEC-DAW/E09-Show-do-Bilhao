@@ -10,5 +10,23 @@
         "email": "jeanberlyy@gmail.com",
         "senha": "ssssss",
         "login": "jeanberl"
+    },
+    {
+        "login": "rangel",
+        "senha": "rangel123",
+        "email": "rangel@gmail.com",
+        "rangel": "rangel"
+    },
+    {
+        "login": "rangel1",
+        "senha": "rangel123",
+        "email": "rangel@gmail.com",
+        "rangel": "rangel"
+    },
+    {
+        "login": "rangel2",
+        "senha": "rangel123",
+        "email": "rangel@a.com",
+        "rangel": "rangel"
     }
 ]
