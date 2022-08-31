@@ -1,0 +1,42 @@
+[
+    {
+        "pergunta": "Quem pintou o quadro Mona Lisa?",
+        "alternativas": [
+            "a) Leonardo DiCaprio",
+            "b) Leonardo da Vinci",
+            "c) Van Gogh",
+            "d) Tarsila do Amaral"
+        ],
+        "resposta": 1
+    },
+    {
+        "pergunta":"Quem é o autor da série literária Sítio do Picapau Amarelo?",
+        "alternativas": [
+            "a) Walcyr Carrasco",
+            "b) Neil Gaiman",
+            "c) Monteiro Lobato",
+            "d) Clarice Lispector"
+        ],
+        "resposta": 2
+    },
+    {
+        "pergunta": "Qual fruta envenenada comeu a Branca de Neve?",
+        "alternativas": [
+            "a) Uva",
+            "b) Banana",
+            "c) Maçã",
+            "d) Morango"
+        ],
+        "resposta": 2
+    },
+    {
+        "pergunta": "Qual artista é conhecido como o Rei do Pop?",
+        "alternativas": [
+            "a) Michael Jackson",
+            "b) Olivia Rodrigo",
+            "c) Bruno Mars",
+            "d) Matuê"
+        ],
+        "resposta": 0
+    }
+]
