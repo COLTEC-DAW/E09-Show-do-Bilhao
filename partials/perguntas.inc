@@ -7,7 +7,7 @@ if(!isset($_SESSION["user"])){
  
 function carregaPergunta($id, $enunciados, $alternativas){
     $respostas = [0,3,1,0,2,0];   
-    $numperguntas = 4;
+    $numperguntas = 5;
     if (!isset($_SESSION["user"])){
         header("Location: /login.php");
     }
@@ -17,7 +17,7 @@ function carregaPergunta($id, $enunciados, $alternativas){
             header("Location: /gameover.php");
         }
     } 
-    if ($id > $numperguntas){
+    if ($id >= $numperguntas){
         if ($resposta == $respostas[$id]){
             $_SESSION["premiacao"] *= 2;
         }
@@ -25,20 +25,30 @@ function carregaPergunta($id, $enunciados, $alternativas){
     }
     $x = $id + 1;
     echo "<form id=form action='showdobilhao.php?id=$x' method='post'>";
-    echo '<div class="col16" id="holder">';
-        echo '<div class="col8" id="perguntas">';
+    ?>
+    <div class="col16" id="holder">
+        <div class="col8" id="perguntas">
+            <?php
             echo "<h3> {$enunciados[$id]} </h3>";
-            echo "<ol type='A'>";
+            ?>
+            <ol type='A'>
+                <?php
                 for($y = 0; $y < count($alternativas[$id]); $y++){
-                    echo "<div class='col16 $y' id='alternativas'>";
-                        echo "<input type='radio' name='resposta' value='$y' required='required'>"; 
+                ?> 
+                    <div class='col16' id='alternativas'>
+                        <?php
+                        echo "<input type='radio' name='resposta' value='$y' required='required'>";
                         echo "<li>{$alternativas[$id][$y]} </li>";
-                    echo "</div>";
+                        ?>
+                    </div>
+                <?php    
                 }
-            echo "</ol>";
-            echo '<div class="col16" id="enviar">';
-                echo '<button type="submit" id="confirmar">Confirmar</button>';
-            echo "</div>";
+                ?>    
+            </ol>
+            <div class="col16" id="enviar">
+                <button type="submit" id="confirmar">Confirmar</button>
+            </div>
+            <?php
             if(!isset($_SESSION["premiacao"]) && $id == 0) {
                 $_SESSION["premiacao"] = 0;
             }   
@@ -48,16 +58,23 @@ function carregaPergunta($id, $enunciados, $alternativas){
                 } else {
                     $_SESSION["premiacao"] *= 2;
                 }    
-                echo "</script>";
             }    
             $jogador = htmlspecialchars($_SESSION["user"]);
-            echo '<div class="col8" id="acertou">';
-            echo "<p>Usuário: $jogador </p>";
-            echo "</div>";
+            ?>
+            <div class="col8" id="acertou">
+                <?php
+                echo "<p>Usuário: $jogador </p>";
+                ?>
+            </div>
+            <?php
             $premiacao = $_SESSION["premiacao"];
-            echo '<div class="col8" id="acertou">';
-            echo "<p>Premiação: R$ $premiacao </p>";
-            echo "</div>";
+            ?>
+            <div class="col8" id="acertou">
+                <?php
+                echo "<p>Premiação: R$ $premiacao </p>";
+                ?>
+            </div>
+            <?php
             if(isset($_COOKIE['time']) && isset($_COOKIE['premiacao'])){
                 $time = $_COOKIE['time'];
                 $nowtime = time();
@@ -79,25 +96,34 @@ function carregaPergunta($id, $enunciados, $alternativas){
                     $ret[] = 'atrás.';
                     return join(' ', $ret);
                 }
-                echo '<div class="col8" id="acertou">';
-                $timepast = time_elapsed($nowtime-$time);
-                echo "<p> Último jogo: $timepast </p>";
-                echo "</div>";
-                echo '<div class="col8" id="acertou">';
-                echo "<p> Última premiação: $ultimapremiacao </p>";
-                echo "</div>";
+                ?>
+                <div class="col8" id="acertou">
+                    <?php
+                    $timepast = time_elapsed($nowtime-$time);
+                    echo "<p> Último jogo: $timepast </p>";
+                    ?>
+                </div>
+                <div class="col8" id="acertou">
+                    <?php
+                    echo "<p> Última premiação: $ultimapremiacao </p>";
+                    ?>
+                </div>
+            <?php
             }
-            echo "</div>";
-    echo "</div>";
-    echo "</form>";
-    echo '<div class="col1" id="logoff">';
-    echo '<form method="post">';
-    echo '<button type="submit" name="logoff">Sair</button>';
-    echo "</form>";
-    echo "</div>";
-    echo "</div>";
+            ?>
+        </div>
+    </div>
+    </form>
+    <div class="col1" id="logoff">
+        <form method="post">
+        <button type="submit" name="logoff">Sair</button>
+        </form>
+    </div>
+    <?php
     if (isset($_POST["logoff"])){
         session_destroy();
+        setcookie("falhaLogin");
+        setcookie("mensagemErro");
         header("Location: /login.php");
     }
     include "partials/rodape.inc";
@@ -122,4 +148,38 @@ $alternativas = [
     ["Dom Pedro I", "Manuel Bandeira", "Castro Alvez", "Carlos Gomes"]
 ];
 $respostas = [0,3,1,0,2,0];    
+
+function checaLogin($user, $senha){
+
+    $arquivo = fopen("usuarios.json", "r");
+    $users = file_get_contents("usuarios.json"); 
+    $usuariosmatriz = json_decode($users, TRUE); 
+    $userValido = false;
+    $senhaValida = false;
+    foreach ($usuariosmatriz as $objeto) { 
+        if ($_POST["user"] == $objeto["user"]) { // percorre a matriz, se achar o usuário tudo certo
+            $userValido = true;
+            if ($_POST["senha"] == $objeto["senha"]){
+                $senhaValida = true;
+            }
+        }
+    }
+    if ($userValido == false){ // se não achar o usuário, envia uma mensagem de erro e redireciona pra página de login
+        $falhaLogin = true;
+        $mensagemErro = "Usuário não encontrado.";
+        setcookie("falhaLogin", $falhaLogin);
+        setcookie("mensagemErro", $mensagemErro);
+        header("Location: /login.php");
+        session_destroy(); 
+    } else {
+    if ($senhaValida == false){ // se não achar a senha, envia uma mensagem de erro e redireciona pra página de login
+        $falhaLogin = true;
+        $mensagemErro = "Senha inválida.";
+        setcookie("falhaLogin", $falhaLogin);
+        setcookie("mensagemErro", $mensagemErro);
+        header("Location: /login.php");
+        session_destroy(); 
+    }
+}
+}
 ?>

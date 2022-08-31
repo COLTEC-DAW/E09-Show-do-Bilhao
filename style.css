@@ -220,6 +220,12 @@ h2{
 #logoff{
   background-color: transparent;
   margin-left: 25.5%;
-  margin-top: -8%;
+  margin-top: -2%;
   height: fit-content;
+}
+
+#mensagemErro, #mensagemErro p{
+  text-align: center;
+  background-color: var(--color5);
+  color: red;
 }

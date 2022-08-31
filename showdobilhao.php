@@ -13,8 +13,12 @@
 <body>
     <?php
     include "partials/perguntas.inc"; 
-    redireciona(($_GET["id"]));
-    carregaPergunta(($_GET["id"]), $enunciados, $alternativas);  
+
+    redireciona($_GET["id"]);
+    if (isset($_POST["user"]) && isset($_POST["senha"])){
+        checaLogin($_POST["user"], $_POST["senha"]);
+    }
+    carregaPergunta($_GET["id"], $enunciados, $alternativas);  
     ?>
 </body>
 </html>

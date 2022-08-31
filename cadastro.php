@@ -1,65 +1,33 @@
-<?php
-require "./usuario.php";
-$erro = null;
-$temp = true;
-if (isset($_POST["nome"]) && isset($_POST["login"]) && isset($_POST["senha"]) && isset($_POST["email"])) {
-    foreach ($_POST as $elemento) {
-        if (empty($elemento)) {
-            $temp = false;
-            $erro = "Coloque os dados corretamente";
-        }
-    }
-
-    if ($temp != false) {
-        $usuario_novo = new User($_POST["nome"], $_POST["login"], $_POST["senha"], $_POST["email"]);
-        if (!($usuario_novo->cadastra_usuario())) {
-            $erro = "O email ou o login ja existem";
-        } else {
-            header("Location: ./login.php");
-        }
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Show do Bilhão</title>
 </head>
-
-<body class="container">
-    <h1>Show do Bilhão</h1>
-    <h2>Cadastro</h2>
+<body>
     <?php
-    if ($erro != null) echo "<h3>" . $erro . "</h3>";
+    include "partials/menu.inc";
     ?>
-    <div class="form">
-        <form method="post">
-            <p>Nome: </p>
-            <input type="text" name="nome" tabindex="0"><br>
-            <p>Login: </p>
-            <input type="text" name="login" tabindex="0"><br>
-            <p>Senha: </p>
-            <input type="password" name="senha" tabindex="0"><br><br>
-            <p>Email: </p>
-            <input type="email" name="email" tabindex="0"><br>
-            <button>Enviar</button>
+    <div class="col16" id="logintext">
+        <h2>CADASTRO</h2>
+    </div>
+    <div class="col6" id="loginbox">
+        <form action='login.php' method='post'>
+            <input type='text' placeholder='Nome' name='nome' class=col16></input>
+            <input type='email' placeholder='E-mail' name='email' class=col16></input>
+            <input type='text' placeholder='Usuário' name='user' class=col16></input>
+            <input type='password' placeholder='Senha' name='senha' class=col16></input>
+            <button type="submit">Enviar</button>
         </form>
-    </div>
-    <br>
-    <hr>
-    <div class="login">
-        <p>Se ja tiver uma conta, faça login:</p>
-        <a href="login.php"><button>Login</button></a>
-    </div>
-
-    <?php
-    include "./rodape.inc";
+    </div>   
+    <style>#footer { position: absolute }</style>
+    <?php 
+    include "partials/rodape.inc";
+    setcookie("falhaLogin");
+    setcookie("mensagemErro");
     ?>
 </body>
-
 </html>

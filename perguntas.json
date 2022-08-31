@@ -1,42 +1,27 @@
 [
     {
-        "pergunta": "Quem pintou o quadro Mona Lisa?",
-        "alternativas": [
-            "a) Leonardo DiCaprio",
-            "b) Leonardo da Vinci",
-            "c) Van Gogh",
-            "d) Tarsila do Amaral"
-        ],
+        "enunciado": "Qual bicho transmite Doença de Chagas?",
+        "alternativas": ["Abelha","Barata","Pulga","Barbeiro"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual fruto é conhecido no Norte e Nordeste como jerimum?",
+        "alternativas": ["Caju", "Abóbora", "Chuchu", "Coco"],
         "resposta": 1
     },
     {
-        "pergunta":"Quem é o autor da série literária Sítio do Picapau Amarelo?",
-        "alternativas": [
-            "a) Walcyr Carrasco",
-            "b) Neil Gaiman",
-            "c) Monteiro Lobato",
-            "d) Clarice Lispector"
-        ],
+        "enunciado": "Qual é o coletivo de cães?",
+        "alternativas": ["Matilha", "Rebanho", "Alcateia", "Manada"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual é o triângulo que tem todos os lados diferentes?",
+        "alternativas": ["Equilátero", "Isóceles", "Escaleno", "Trapézio"],
         "resposta": 2
     },
     {
-        "pergunta": "Qual fruta envenenada comeu a Branca de Neve?",
-        "alternativas": [
-            "a) Uva",
-            "b) Banana",
-            "c) Maçã",
-            "d) Morango"
-        ],
-        "resposta": 2
-    },
-    {
-        "pergunta": "Qual artista é conhecido como o Rei do Pop?",
-        "alternativas": [
-            "a) Michael Jackson",
-            "b) Olivia Rodrigo",
-            "c) Bruno Mars",
-            "d) Matuê"
-        ],
+        "enunciado": "Quem compôs o Hino da Independência?",
+        "alternativas": ["Dom Pedro I", "Manuel Bandeira", "Castro Alvez", "Carlos Gomes"],
         "resposta": 0
     }
 ]
