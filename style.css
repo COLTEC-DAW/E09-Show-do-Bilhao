@@ -7,7 +7,24 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
 h4 {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#cadastro {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }

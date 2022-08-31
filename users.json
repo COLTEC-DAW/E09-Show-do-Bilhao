@@ -1,0 +1,14 @@
+[   
+    {
+        "login": "thiago123",
+        "senha": "123",
+        "email": "thiago@coltec.com",
+        "nome": "Thiago"
+    },
+    {
+        "login": "gustavo123",
+        "senha": "gustavo",
+        "email": "gustavo@ufmg.br",
+        "nome": "Gustavo"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "enunciado": "Qual bicho transmite Doença de Chagas?",
+        "alternativas": ["Abelha", "Barata", "Pulga", "Barbeiro"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Que nome se dá à purificação por meio da água?",
+        "alternativas": ["Abolição", "Abnegação", "Ablução", "Abrupção"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Em que dia nasceu e em que dia foi registrado o Presidente Lula?",
+        "alternativas": ["6 e 27 de outubro", "8 e 27 de outubro", "9 e 26 de outubro", "7 e 23 de outubro"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual o nome do presidente da República Tcheca?",
+        "alternativas": ["Andrej Babiš", "Václav Klaus", "Kateřina Zemanová", "Miloš Zeman"],
+        "resposta": 3
+    }
+
+]
