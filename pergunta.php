@@ -17,24 +17,20 @@
         $previous_answer = $_POST["answer"];
         $previous_option_selected = $_POST["option"];
 
-        // atualiza cookie com score máximo
         $score = $question_id;
         if (isset($_COOKIE[$user . "-max"]) && $_COOKIE[$user . "-max"] > $score) {
             $score = $_COOKIE[$user . "-max"];
         }
         setcookie($user . "-max", $score);
 
-        // se diferente, então resposta é incorreta
         if ($previous_answer != $previous_option_selected) {
             header("Location: perdeu.php");
         }
-        // se igual a cinco, então ele respondeu todas corretamente!
-        if ($question_id == 5) {
+        if ($question_id == 4) {
             header("Location: win.php");
         }
     }
 
-    // carrega a questão a ser renderizada na tela
     $question = load_question($question_id);
 ?>
 
@@ -60,7 +56,7 @@
         <label for="2"><?= $question["options"][2] ?></label> <br>
         <input type="radio" name="option" value="3" id="">
         <label for="3"><?= $question["options"][3] ?></label> <br>
-        <input type="hidden" name="answer" value="<?= $question["answer"] ?>">
+        <input type="hidden" name="answer" value="<?= $question["answer"] ?>"> <br>
         <input type="submit" value="Enviar!">
     </form>
 

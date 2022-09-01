@@ -1,7 +1,3 @@
-<?php
-   
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,15 +10,15 @@
 <body>
     <h1>Show do Bilhão</h1> 
     <h3>Cadastre-se agora mesmo :)</h3>
-    <form action="cadastro.php" method='post'>
+    <form action="testCadastro.php" method='post'>
        <label for="nome">Nome</label>
-       <input id="nome" type="text" name="nome"> <br><br>
+       <input id="nome" type="text" name="nome" required> <br><br>
        <label for="email">E-mail</label>
-       <input type="email" id="email" name="email"> <br><br>
+       <input type="email" id="email" name="email" required> <br><br>
        <label for="login">Login</label>
-       <input type="text" id="login" name="login"> <br><br>
+       <input type="text" id="login" name="login" required> <br><br>
        <label for="senha">Senha<label>
-       <input type="password" id="senha" name="senha"> <br><br>
+       <input type="password" id="senha" name="senha" required> <br><br>
        <input type="submit" value="Entrar">
     </form>
 </body>

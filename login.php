@@ -1,7 +1,6 @@
 <?php
 $redirect_to = "index.php";
 
-// se POST, então usuário quer realizar login
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
 
@@ -18,5 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// redireciona para a página após verificações
 header("Location: $redirect_to");

@@ -23,10 +23,19 @@ h3 {
     justify-content: center;
 }
 
+a {
+    display: flex;
+    justify-content: center;
+}
+
 #cadastro {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+}
+
+#erro {
+    size: 140%;
 }
 
 footer {
