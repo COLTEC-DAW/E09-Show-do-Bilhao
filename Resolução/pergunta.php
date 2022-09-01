@@ -29,7 +29,7 @@
             header("Location: perdeu.php");
         }
         // se igual a cinco, então ele respondeu todas corretamente!
-        if ($question_id == 5) {
+        if ($question_id == 5 && $previous_answer == $previous_option_selected) {
             header("Location: win.php");
         }
     }
