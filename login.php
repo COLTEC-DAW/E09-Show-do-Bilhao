@@ -9,15 +9,9 @@
 </head>
 <body>
     <div class="login">
-        <h2>Registro</h2>
-        <form action="validate.php" method="post">
+        <h2>Login</h2>
+        <form action="">
             <div class="loginInputs">
-                <div>
-                    Nome: <input type="text" name="username">
-                </div>
-                <div>
-                    E-mail: <input type="text" name="email">
-                </div>
                 <div>
                     Login: <input type="text" name="login">
                 </div>
@@ -28,10 +22,8 @@
 
             <br>
 
-            <input type="submit" name="enter" value="Registrar">
+            <input type="submit" name="enter" value="Entrar">
         </form>
-
-        <p>Já tem uma conta criada? <a href="/login.php">Login</a></p>
     </div>
 </body>
 </html>

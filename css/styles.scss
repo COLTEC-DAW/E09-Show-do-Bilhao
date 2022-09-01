@@ -11,6 +11,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: 10px;
+    }
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        margin: 10px;
+    }
 }
 
 .header {

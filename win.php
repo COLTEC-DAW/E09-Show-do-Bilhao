@@ -1,5 +1,9 @@
 <?php 
-    include ("./validate.php");
+    session_start();
+    
+    if(!isset($_SESSION['username'])) {
+        header("location: register.php");
+    }
 
     setcookie("{$_POST['username']}ScoreMax", "5");
 ?>

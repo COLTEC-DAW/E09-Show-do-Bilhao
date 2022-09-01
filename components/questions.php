@@ -1,5 +1,4 @@
-<?php 
-
+<?php
     function loadQuestion($id, $statements, $alternatives) {
         echo "<form action='question.php' method='post'>";
         echo $statements[$id];
