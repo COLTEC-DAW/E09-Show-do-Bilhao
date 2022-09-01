@@ -17,24 +17,20 @@
         $previous_answer = $_POST["answer"];
         $previous_option_selected = $_POST["option"];
 
-        // atualiza cookie com score máximo
         $score = $question_id - 1;
         if (isset($_COOKIE[$user . "-max"]) && $_COOKIE[$user . "-max"] > $score) {
             $score = $_COOKIE[$user . "-max"];
         }
         setcookie($user . "-max", $score);
 
-        // se diferente, então resposta é incorreta
         if ($previous_answer != $previous_option_selected) {
             header("Location: perdeu.php");
         }
-        // se igual a cinco, então ele respondeu todas corretamente!
         if ($question_id == 5) {
             header("Location: win.php");
         }
     }
 
-    // carrega a questão a ser renderizada na tela
     $question = load_question($question_id, "json/perguntas.json");
 ?>
 

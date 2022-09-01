@@ -5,7 +5,7 @@
     <a href="logout.php"><button>Sair</button></a>
 </p>
 <p>
-    Olá <?=  $user ?>
+    Olá <?=$user?>
 </p>
 
 <?php if (isset($_COOKIE[$user . "-max"])) { ?>

@@ -30,10 +30,14 @@ body{
     display: flex;
     font-size: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 10px;
 
     input{
 
         padding: 6px;
+        margin-bottom: 15px;
+        margin-top: 5px;
+        width: 100%;
 
     }
 }
@@ -75,6 +79,7 @@ body{
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px;
+    text-align: justify;
     font-size: 17px;
 }
 
@@ -105,12 +110,6 @@ body{
     display: flex;
 }
 
-input{
-  
-    margin-bottom: 8px;
-    margin-top: 5px;
-    width: 100%;
-}
 
 .cadastrar{
 
