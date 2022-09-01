@@ -112,4 +112,25 @@ body {
 .contentFinal img {
   margin-bottom: 10px;
 }
+
+.footer {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+input {
+  margin-bottom: 8px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.cadastrar {
+  margin-top: 20px;
+  background-color: #40529b;
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+}
 /*# sourceMappingURL=style.css.map */

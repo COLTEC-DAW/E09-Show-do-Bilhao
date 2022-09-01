@@ -45,7 +45,7 @@ body{
     background-color: #40529b;
     color: white;
     border: 1px solid white;
-}
+}   
 
 .content{
 
@@ -103,4 +103,20 @@ body{
 .footer{
     text-align: center;
     display: flex;
+}
+
+input{
+  
+    margin-bottom: 8px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.cadastrar{
+
+    margin-top: 20px;
+    background-color: #40529b;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
 }
