@@ -25,7 +25,7 @@
 
     <form action="login.php" method="post">
         <label for="login">Username:</label>
-        <input type="text" name="login" id="">
+        <input type="text" name="login" id="" required>
         <br>
         <input type="submit" class="submit" value="Entrar">
     </form>
