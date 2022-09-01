@@ -34,6 +34,15 @@
     </form>
 
     </div>
+    <div class="user">
+    <form action="cadastro.php" method="post">
+
+        <input type="submit" class="cadastrar" value="Cadastrar">
+
+    </form>
+
+    </div>
+    
 
     </div>
 
