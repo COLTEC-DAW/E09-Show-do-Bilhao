@@ -13,10 +13,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head> 
 <body>
+    <div class="finished">
+    <div class="contentFinal">
     <h1>Parabéns!!</h1>
     <img src="imgs/ganhou.jpg">
     <div>
         <a href="pergunta.php"><button>Recomeçar</button></a>
+    </div>
+    </div>
     </div>
 </body>
 </html>

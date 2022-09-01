@@ -9,11 +9,15 @@
 </head>
 <body>
 
+    <div class="finished">
+    <div class="contentFinal">
     <h1>PERDEU!!</h1>
     <img src="imgs/perdeu.jpg">
 
     <div>
         <a href="pergunta.php"><button>Recomeçar</button></a>
+    </div>
+    </div>
     </div>
 </body>
 </html>

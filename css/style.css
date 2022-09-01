@@ -88,4 +88,28 @@ body {
   padding: 10px;
   font-size: 17px;
 }
+
+.finished {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.contentFinal {
+  border: white dotted 3px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.contentFinal img {
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=style.css.map */
