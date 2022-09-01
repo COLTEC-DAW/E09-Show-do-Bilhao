@@ -35,7 +35,7 @@
     }
 
     // carrega a questão a ser renderizada na tela
-    $question = load_question($question_id);
+    $question = load_question($question_id, "json/perguntas.json");
 ?>
 
 <!DOCTYPE html>
@@ -59,20 +59,20 @@
 
             <div class="question">
 
-                <h2><?= $question["question"] ?></h2>
+                <h2><?= $question->question ?></h2>
 
             </div>
             <div class="options">
             <form action="pergunta.php?id=<?= $question_id + 1 ?>" method="post">
             <input type="radio" name="option" value="0" id="" required>
-            <label for="0"><?= $question["options"][0] ?></label> <br>
+            <label for="0"><?= $question->options[0] ?></label> <br>
             <input type="radio" name="option" value="1" id="">
-            <label for="1"><?= $question["options"][1] ?></label> <br>
+            <label for="1"><?= $question->options[1] ?></label> <br>
             <input type="radio" name="option" value="2" id="">
-            <label for="2"><?= $question["options"][2] ?></label> <br>
+            <label for="2"><?= $question->options[2] ?></label> <br>
             <input type="radio" name="option" value="3" id="">
-            <label for="3"><?= $question["options"][3] ?></label> <br>
-            <input type="hidden" name="answer" value="<?= $question["answer"] ?>">
+            <label for="3"><?= $question->options[3] ?></label> <br>
+            <input type="hidden" name="answer" value="<?= $question->answer ?>">
             <br>
             <input type="submit" value="Enviar">
             </form>

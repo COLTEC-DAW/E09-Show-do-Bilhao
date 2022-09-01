@@ -1,6 +1,10 @@
 <?php
-
-function load_question($id) {
+require "question.php";
+function load_question($id, $fileName){
+    $file = json_decode(file_get_contents($fileName));
+    return new Question($file[$id]->question, $file[$id]->options, $file[$id]->answer);
+}
+/*function load_question($id) {
     $questions = [
         "Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?",
         "De quem é a famosa frase “Penso, logo existo”?",
@@ -22,6 +26,6 @@ function load_question($id) {
         "options" => $options[$id],
         "answer" => $answers[$id]
     );
-}
+}*/
 
 ?>

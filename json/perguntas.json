@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?",
+        "options": ["Tem entre 2 a 4 litros. São retirados 450 mililitros","Tem entre 4 a 6 litros. São retirados 450 mililitros","Tem 10 litros. São retirados 2 litros","Tem 7 litros. São retirados 1,5 litros"],
+        "answer": 1
+    },
+    {
+        "question": "De quem é a famosa frase “Penso, logo existo”?",
+        "options": ["Platão", "Galileu Galilei", "Descartes", "Sócrates"],
+        "answer": 2
+    },
+    {
+        "question": "Quais o menor e o maior país do mundo?",
+        "options": ["Vaticano e Rússia", "Nauru e China", "Mônaco e Canadá", "Malta e Estados Unidos"],
+        "answer": 0
+    },
+    {
+        "question": "Atualmente, quantos elementos químicos a tabela periódica possui?",
+        "options": ["113", "109", "108", "118"],
+        "answer": 3
+    },
+    {
+        "question":  "Quais os países que têm a maior e a menor expectativa de vida do mundo?:",
+        "options": ["Japão e Serra Leoa", "Austrália e Afeganistão", "Itália e Chade", "Brasil e Congo"],
+        "answer": 0
+    }
+
+]
