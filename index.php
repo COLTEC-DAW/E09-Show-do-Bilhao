@@ -27,6 +27,9 @@
         <label for="login">Username:</label>
         <input type="text" name="login" id="" required>
         <br>
+        <label for="password">Password:</label>
+        <input type="text" name="password" id="" required>
+        <br>
         <input type="submit" class="submit" value="Entrar">
     </form>
 
