@@ -2,7 +2,7 @@
 
 require "user.php";
 
-function VerificaLoginOuEmailUsuarioExistente($fileName, User $data){
+function VerificaLoginOuEmailUsuarioExistente($fileName, $data){
 
     $fileUsers = json_decode(file_get_contents($fileName));
 
@@ -14,7 +14,7 @@ function VerificaLoginOuEmailUsuarioExistente($fileName, User $data){
     return FALSE;
 }
 
-function InsereUsuarioNoArquivo($fileName, User $data){
+function InsereUsuarioNoArquivo($fileName, $data){
 
     $fileUsers = json_decode(file_get_contents($fileName));
     $contentData = $fileUsers;
