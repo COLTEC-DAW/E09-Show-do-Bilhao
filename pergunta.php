@@ -68,8 +68,6 @@
             <label for="0"><?= $question->options[0] ?></label> <br>
             <input type="radio" name="option" value="1" id="">
             <label for="1"><?= $question->options[1] ?></label> <br>
-
-
             <input type="radio" name="option" value="2" id="">
             <label for="2"><?= $question->options[2] ?></label> <br>
             <input type="radio" name="option" value="3" id="">
