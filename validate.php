@@ -1,17 +1,17 @@
 <?php 
-    if(isset($_POST["enter"])) {
-        session_start();
+    $filePath = "./dataBase/users.json";
 
-        $_SESSION['username'] = $_POST["username"];
-        $username = $_SESSION['username'];
+    $login = $_POST["login"];
+    $password = $_POST["password"];
 
-        if(!isset($_COOKIE["{$username}LastLogin"])) {
-            setcookie("{$username}ScoreMax", "0");
-            setcookie("{$username}LastLogin", date('d/m/Y | h:i:sa', strtotime('-3 hours')));
+    //abre o arquivo e lê todos os usuários existentes
+    $file = fopen($filePath, "r+");
+    $users = json_decode(fread($file, filesize($filePath)));
 
-            header("location: index.php");
-        } else {
-            header("location: index.php");
+    //OBS: há um usuário default: login: admin / password: admin
+    foreach($users as $user) {
+        if($user->login == $login) {
+            echo "<script>alert('Usuário já existente')</script>";
         }
-    } 
+    }
 ?>
