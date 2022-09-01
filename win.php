@@ -10,12 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GANHOU!!</title>
+    <link rel="stylesheet" href="css/style.css">
 </head> 
 <body>
     <h1>Parabéns!!</h1>
     <img src="imgs/ganhou.jpg">
     <div>
-        <a href="pergunta.php">Recomeçar</a>
+        <a href="pergunta.php"><button>Recomeçar</button></a>
     </div>
 </body>
 </html>

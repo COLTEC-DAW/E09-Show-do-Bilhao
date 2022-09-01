@@ -1,0 +1,79 @@
+body{
+
+    background-color: #1d2440;
+    color: white;
+    
+}
+
+.container{
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+
+.title{
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white
+}
+  
+.user{
+  
+    justify-content: center;
+    color: white;
+    align-items: center;
+    display: flex;
+    font-size: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    input{
+
+        padding: 6px;
+
+    }
+}
+
+.submit{
+
+    width: 100%;
+    margin-top: 20px;
+    background-color: #40529b;
+    color: white;
+    border: 1px solid white;
+}
+
+.content{
+
+    width: max-content;
+    padding: 20px;
+    border: 2px white dotted;
+    border-radius: 20px;
+}
+
+.img{
+
+    display: flex;
+    justify-content: center;
+
+    img{
+
+        border-radius: 12px;
+        width: 70%;
+        border: white solid 2px;
+        margin-bottom: 20px;
+
+    }
+}
+
+.main-content{
+
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+    font-size: 17px;
+}

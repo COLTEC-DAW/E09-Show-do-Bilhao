@@ -1,11 +1,11 @@
-<div class="header">
-    <h1>BEM-VINDO AO SHOW DO BILHÃO</h1>
+<div class="title">
+    <h1>SHOW DO BILHÃO</h1>
 </div>
 <p>
-    <a href="logout.php">Sair</a>
+    <a href="logout.php"><button>Sair</button></a>
 </p>
 <p>
-    Olá <?=  $user ?>, dá bilhão?
+    Olá <?=  $user ?>
 </p>
 
 <?php if (isset($_COOKIE[$user . "-max"])) { ?>

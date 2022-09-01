@@ -45,24 +45,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Bilhão</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php include "partials/header.inc"; ?>
 
-    <h2><?= $question["question"] ?></h2>
-    <form action="pergunta.php?id=<?= $question_id + 1 ?>" method="post">
-        <input type="radio" name="option" value="0" id="" required>
-        <label for="0"><?= $question["options"][0] ?></label> <br>
-        <input type="radio" name="option" value="1" id="">
-        <label for="1"><?= $question["options"][1] ?></label> <br>
-        <input type="radio" name="option" value="2" id="">
-        <label for="2"><?= $question["options"][2] ?></label> <br>
-        <input type="radio" name="option" value="3" id="">
-        <label for="3"><?= $question["options"][3] ?></label> <br>
-        <input type="hidden" name="answer" value="<?= $question["answer"] ?>">
-        <input type="submit" value="Enviar!">
-    </form>
+    <div class="container">
 
-    <?php include "partials/footer.inc"; ?>
+        <div class="content">
+
+           <div class="main-content">
+
+            <?php include "partials/header.inc"; ?>
+
+            <div class="question">
+
+                <h2><?= $question["question"] ?></h2>
+
+            </div>
+            <div class="options">
+            <form action="pergunta.php?id=<?= $question_id + 1 ?>" method="post">
+            <input type="radio" name="option" value="0" id="" required>
+            <label for="0"><?= $question["options"][0] ?></label> <br>
+            <input type="radio" name="option" value="1" id="">
+            <label for="1"><?= $question["options"][1] ?></label> <br>
+            <input type="radio" name="option" value="2" id="">
+            <label for="2"><?= $question["options"][2] ?></label> <br>
+            <input type="radio" name="option" value="3" id="">
+            <label for="3"><?= $question["options"][3] ?></label> <br>
+            <input type="hidden" name="answer" value="<?= $question["answer"] ?>">
+            <br>
+            <input type="submit" value="Enviar">
+            </form>
+            </div>
+            <?php include "partials/footer.inc"; ?>
+
+          </div>
+ 
+        </div>
+    </div>
 </body>
 </html>
