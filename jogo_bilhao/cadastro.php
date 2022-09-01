@@ -19,19 +19,19 @@
 
     <div class="cadastro">
 
-        <form id ="formularioEntrar" action="login.php" method="POST">
+        <form id ="formularioEntrar" action="cadastro_confirmar.php" method="POST">
 
             <label class="titulo-input">Nome</label><br>
             <input name="nome" class="input" type="text" maxlength="100" required><br><br>
 
             <label class="titulo-input">Email</label><br>
-            <input name="Email" class="input" type="email" maxlength="100" required><br><br>
+            <input name="email" class="input" type="email" maxlength="100" required><br><br>
 
             <label class="titulo-input">Login</label><br>
-            <input name="Login" class="input" type="text" maxlength="100" required><br><br>
+            <input name="login" class="input" type="text" maxlength="100" required><br><br>
 
             <label class="titulo-input">Senha</label><br>
-            <input name="Senha" class="input" type="password" maxlength="100" required><br><br>
+            <input name="senha" class="input" type="password" maxlength="100" required><br><br>
 
             <button type="submit" class="btn btn-dark">
                 Cadastrar

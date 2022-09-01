@@ -14,9 +14,38 @@
 </head>
 <body>
     
-    <h1 class="texto" id="titulo">Bem vindo ao Show do Bilhão</h1>
-    <h3 class="texto">Login</h3>
+    <?php 
+    
+    session_start();
 
+    $verificador = 0;
+
+    if (isset($_SESSION["verificadorLogin"])){
+
+        $verificador = $_SESSION["verificadorLogin"];
+
+    }
+
+    if ($verificador == 0){
+
+        $texto = "Login";
+
+    } else if ($verificador == 1){
+
+        $texto = "Senha Incorreta";
+
+    } elseif ($verificador == 2){
+
+        $texto = "Usuário inexistente";
+
+    }
+
+    ?>
+
+    <h1 class="texto" id="titulo">Bem vindo ao Show do Bilhão</h1>
+    <h3 class="texto"><?= $texto ?></h3>
+
+    
     <div class="cadastro">
 
         <form id ="formularioEntrar" action="jogo_bilhao.php" method="POST">
@@ -25,7 +54,7 @@
             <input name="nome" class="input" type="text" maxlength="100" required><br><br>
 
             <label class="titulo-input">Senha</label><br>
-            <input name="nome" class="input" type="password" maxlength="100" required><br><br>
+            <input name="senha" class="input" type="password" maxlength="100" required><br><br>
 
             <button type="submit" class="btn btn-dark">
                 Entrar

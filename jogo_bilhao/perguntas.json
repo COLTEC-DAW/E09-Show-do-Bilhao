@@ -1,0 +1,27 @@
+[
+    {
+        "pergunta":"De onde é a invenção do chuveiro elétrico?",
+        "alternativas":["França","Inglaterra","Brasil","Austrália"],
+        "resposta":2
+    },
+    {
+        "pergunta":"Em que cidade ocorreu a Eco-92, a Conferência das Nações Unidas sobre ambiente e desenvolvimento?",
+        "alternativas":["Amsterdã", "Rio de Janeiro", "Montevidéu", "Frankfurt"],
+        "resposta":1
+    },
+    {
+        "pergunta":"Única capital europeia fora da Europa",
+        "alternativas":["Otawa", "Hong Kong", "Istambul", "Rio de Janeiro"],
+        "resposta":3
+    },
+    {
+        "pergunta":"Qual o livro mais vendido no mundo a seguir à Bíblia?",
+        "alternativas":["O Senhor dos Anéis", "Dom Quixote", "Harry Potter", "O Pequeno Príncipe"],
+        "resposta":1
+    },
+    {
+        "pergunta":"Qual foi o menor período que alguém ocupou a cadeira de presidente",
+        "alternativas":["3 dias", "1 mês", "7 horas", "2 semanas"],
+        "resposta":0
+    }
+]

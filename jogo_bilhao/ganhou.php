@@ -10,7 +10,7 @@
 
     <title>Document</title>
 </head>
-<body>
+<body class="content">
     
 <?php
 
@@ -22,7 +22,7 @@ session_destroy();
 <h1 class = "texto"> Ganhastes </h1>
 
 <br><br>
-<a href="login.html"><button id="botao_sair" type="button" class="btn btn-dark">Menu principal</button></a>
+<a href="login.php"><button id="botao_sair" type="button" class="btn btn-dark">Menu principal</button></a>
 
 </body>
 </html>

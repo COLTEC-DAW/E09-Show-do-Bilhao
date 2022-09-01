@@ -1,18 +1,13 @@
 <?php 
-                
-    function pergunta($num_pergunta, $perguntas, $alternativas){
 
-        $dados = [];
+    require "questao.php";
 
-        array_push($dados, $perguntas[$num_pergunta]);
+    function carregaQuestao($num_pergunta, $arquivoEndereco){
 
-        for($i = 0; $i < count($alternativas[$num_pergunta]); $i++){
-                    
-            array_push($dados, $alternativas[$num_pergunta][$i]);
-
-        }
-
-        return $dados;
+        $arquivo = json_decode(file_get_contents($arquivoEndereco));
+    
+        return new Questao($arquivo[$num_pergunta]->pergunta, $arquivo[$num_pergunta]->alternativas, $arquivo[$num_pergunta]->resposta);
 
     }
+
 ?>
