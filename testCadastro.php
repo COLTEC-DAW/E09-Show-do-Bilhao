@@ -13,18 +13,18 @@ function testUser($login, $senha, $arquivo) {
 function addUser($login, $senha, $email, $nome, $arquivo) {
     $users = json_decode(file_get_contents($arquivo));
     $userIsSet = testUser($login, $senha, $arquivo);
-    array_push($users, 
-    ["login"=> $login,
-    "senha"=> $senha,
-    "email"=> $email,
-    "nome"=> $nome]);
 
-    file_put_contents($arquivo, json_encode($users, JSON_PRETTY_PRINT));
-    if(!$userIsSet) {
-        return "login.php";
+    if($userIsSet) {
+        return "cadastroExistente.php";
     }
     else {
-        return "cadastroExistente.php";
+        array_push($users, 
+        ["login"=> $login,
+        "senha"=> $senha,
+        "email"=> $email,
+        "nome"=> $nome]);
+        file_put_contents($arquivo, json_encode($users, JSON_PRETTY_PRINT));
+        return "login.php";
     }
 }
 
