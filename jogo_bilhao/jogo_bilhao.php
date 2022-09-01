@@ -25,7 +25,7 @@
     " integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="jogo_bilhao.css">
 
-    <title>Jogo do Bilhão</title>
+    <title>Document</title>
 </head>
     <body>
 

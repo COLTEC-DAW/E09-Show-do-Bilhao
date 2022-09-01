@@ -39,7 +39,7 @@ body{
 
 }
 
-#cadastro{
+.cadastro{
 
     border-radius: 1em;
     background-color: rgb(155, 0, 0);
@@ -53,5 +53,16 @@ body{
     padding-left: 12.5%;
     padding-top: 2em;
     padding-bottom: 2em;
+
+}
+
+#botao-cadastrar{
+
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-right: 5%;
+    margin-left: -5%;
 
 }
