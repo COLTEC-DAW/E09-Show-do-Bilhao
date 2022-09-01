@@ -9,7 +9,7 @@
         header("Location: http://localhost/O-Show-do-Bilhao/perguntas.php?id=".($perguntaAtual+1)."");
     }
     else{
-        header("Location: http://localhost/O-Show-do-Bilhao/gameOver.php");
+        header("Location: http://localhost:8000/gameOver.php");
 
     }
 ?> 

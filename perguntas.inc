@@ -18,7 +18,7 @@ function carregaPergunta($id){
       $string = "resposta";
       echo $perguntas[$id]."<br><br>";
       $increment = 0;
-      echo ("<form action ='http://localhost/O-Show-do-Bilhao/confereRespostas.php' method = 'post' >
+      echo ("<form action ='http://localhost:8000/confereRespostas.php' method = 'post' >
                 <input type = 'checkbox' id='pergunta0' name = ".$string." value = 0>
                 <label for = 'pergunta0'> ".$respostas[$id][0]."</label><br>
                 <input type = 'checkbox' id='pergunta1' name = ".$string." value = 1>
