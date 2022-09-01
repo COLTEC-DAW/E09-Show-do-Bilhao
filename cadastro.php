@@ -13,7 +13,7 @@
 <div class="content">
 
  <div class="title">
-     <h1>Casastro</h1>
+     <h1>Cadastro</h1>
  </div>
 
  <div class="img">
@@ -22,7 +22,7 @@
 
  <div class="user">
 
- <form action="login.php" method="post">
+ <form action="testCadastro.php" method="post">
      <label for="login">Username:</label>
      <input type="text" name="login" id="" required>
      <br>
@@ -30,10 +30,10 @@
      <input type="password" name="password" id="" required>
      <br>
      <label for="password">Nome:</label>
-     <input type="text" name="password" id="" required>
+     <input type="text" name="name" id="" required>
      <br>
      <label for="password">Email:</label>
-     <input type="email" name="password" id="" required>
+     <input type="email" name="email" id="" required>
      <br>
      <input type="submit" class="submit" value="Entrar">
  </form>
