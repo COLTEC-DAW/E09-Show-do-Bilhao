@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Pergunta 1",
+        "alternativas": ["Alternativa 1A *", "Alternativa 2A", "Alternativa 3A", "Alternativa 4A"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Pergunta 2",
+        "alternativas": ["Alternativa 1B", "Alternativa 2B *", "Alternativa 3B", "Alternativa 4B"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Pergunta 3",
+        "alternativas": ["Alternativa 1C", "Alternativa 2C", "Alternativa 3C *", "Alternativa 4C"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Pergunta 4",
+        "alternativas": ["Alternativa 1D", "Alternativa 2D", "Alternativa 3D", "Alternativa 4D *"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Pergunta 5",
+        "alternativas": ["Alternativa 1E *", "Alternativa 2E", "Alternativa 3E", "Alternativa 4E"],
+        "resposta": 0
+    }
+]
