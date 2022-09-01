@@ -13,11 +13,11 @@
         </header>
         <main>
              <form method = "post" action= "autenticador.php">
-                <label>User:
-                    <input name="user" type= "text"/>
+                <label>Login:
+                    <input name="user[login]" type= "text"/>
                 </label>   
                 <label>Password:
-                    <input name="pass" type= "password"/>
+                    <input name="user[senha]" type= "password"/>
                 </label>   
                 <button type = "submit">Entrar</button>
              </form>
