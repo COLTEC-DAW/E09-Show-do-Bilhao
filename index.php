@@ -7,10 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="imgs/perdeu.jpg">
+    <h1>Show do Bilhão</h1>
 
-    <div>
-        <a href="pergunta.php">Recomeçar</a>
-    </div>
+    <h3>Dá Bilhão????</h3>
+
+    <form action="login.php" method="post">
+        <label for="login">Login</label>
+        <input type="text" name="login" id="">
+        <input type="submit" value="Entrar">
+    </form>
 </body>
 </html>
