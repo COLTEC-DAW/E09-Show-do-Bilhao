@@ -9,5 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $redirect_to = "pergunta.php?id=0";
 }
 
+
 // redireciona para a página após verificações
 header("Location: $redirect_to");
