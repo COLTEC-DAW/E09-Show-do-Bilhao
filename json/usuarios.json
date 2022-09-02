@@ -1,8 +1,8 @@
 [
     {
-        "nome": "nome",
-        "email": "email@email",
-        "login": "usuario",
-        "senha": "senha"
+        "nome": "name",
+        "email": "email@e",
+        "usuario": "user",
+        "senha": "1"
     }
 ]

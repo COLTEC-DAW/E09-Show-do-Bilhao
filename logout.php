@@ -1,6 +1,8 @@
 <?php
     session_start();
-    setcookie($_SESSION["user"] . "-lastLogin", time());
+    date_default_timezone_set('Brazil/East');
+    $lastSession = date('d/m/Y, H:i:s');
+    setcookie($_SESSION["user"] . "-lastLogin", $lastSession);
     session_destroy();
     header("Location: index.php");
 ?>

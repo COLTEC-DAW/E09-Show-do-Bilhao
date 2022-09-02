@@ -34,7 +34,11 @@ function ArmazenaUsuario($fileName, $data){
 $user = new User($_POST['name'], $_POST['email'], $_POST['login'], $_POST['password']);
 $insert = ArmazenaUsuario("json/usuarios.json", $user);
 
-if($insert)header("Location: loginExistente.php");
-else header("Location: index.php");
+if($insert){
+    header("Location: loginExistente.php");
+}
+else{
+    header("Location: index.php");
+}
 
 ?>

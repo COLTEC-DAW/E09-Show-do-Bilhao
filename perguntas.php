@@ -18,7 +18,7 @@
         $previous_option_selected = $_POST["option"];
 
         // atualiza cookie com score máximo
-        $score = $question_id;
+        $score = $question_id - 1;
         if(isset($_COOKIE[$user."-max"]) && $_COOKIE[$user."-max"] > $score){
             $score = $_COOKIE[$user."-max"];
         }
@@ -44,11 +44,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f294d9b5b8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Perguntas</title>
 </head>
 <body>
     <?php include "partials/cabecalho.inc"; ?>
+    <br/>
     <h2><?= $question->enunciado ?></h2>
     <form action="perguntas.php?id=<?= $question_id+1?>" method="post">
         <input hidden name="pergunta" value="$question_id">
@@ -59,6 +62,8 @@
         <input type="hidden" name="answer" value="<?= $question->resposta?>">
         <input type="submit" value="Enviar">
     </form>
+    <br/>
     <?php include "partials/rodape.inc"; ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
