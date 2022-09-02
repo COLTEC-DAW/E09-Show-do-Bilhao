@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "teste",
+        "email": "teste7@teiacoltec.org",
+        "senha": "teste7",
+        "login": "testeXD"
+    },
+    {
+        "login": "Lucas123",
+        "senha": "123",
+        "email": "lucas123@email.com",
+        "Lucas": "Lucas"
+    },
+    {
+        "login": "pedrominecraft",
+        "senha": "123",
+        "email": "pdero12@minecraft.123",
+        "pedro": "pedro"
+    }
+]
