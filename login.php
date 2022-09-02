@@ -24,7 +24,6 @@
 
         $usuariosmatriz[] = ["user" => $user, "email" => $email, "nome" => $nome, "senha" => $senha]; // cria um novo objeto no final da matriz
         $usuariosjson = json_encode($usuariosmatriz, JSON_PRETTY_PRINT); // passa a matriz pro formato json
-
         file_put_contents("usuarios.json", $usuariosjson); // coloca o json no arquivo
     }
     fclose($arquivo);
@@ -47,9 +46,10 @@
         if (isset($_COOKIE["falhaLogin"]) && isset($_COOKIE["mensagemErro"])){
             $falhaLogin = $_COOKIE["falhaLogin"];
             $mensagemErro = $_COOKIE["mensagemErro"];
-            echo '<div class="col16" id="mensagemErro">';
-                echo "<p> $mensagemErro </p>";
-            echo'</div>';  
+            ?>
+            <div class="col16" id="mensagemErro">
+                <?php echo "<p> $mensagemErro </p>"; ?>
+            </div>
         }
         ?>
     </div>   
