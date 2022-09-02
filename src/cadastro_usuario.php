@@ -18,8 +18,8 @@
        <input style="margin: 2px;" type="text" id="login" name="login"> <br>
        <label for="senha">Senha:<label>
        <input style="margin: 2px;" type="password" id="senha" name="senha"> 
-       <button type="submit">Enviar</button>
-
+       <button type="submit">Cadastrar</button>
     </form>
+    <a style="position: absolute; top: 50px; right: 50px;" href="login.php"><button>Login</button></a>
 </body>
 </html>

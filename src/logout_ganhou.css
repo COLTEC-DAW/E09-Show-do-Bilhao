@@ -1,0 +1,16 @@
+body{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(12, 12, 12);
+    overflow: hidden;
+    color: rgb(162, 0, 255);;
+}
+button{
+    background-color:rgb(162, 0, 255);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}

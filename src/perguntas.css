@@ -22,7 +22,7 @@ form{
     border-image-slice: 1;
     padding: 10px 20px;
 }
-form button{
+button{
     background-color:rgb(162, 0, 255);
     border: none;
     padding: 5px 10px;
