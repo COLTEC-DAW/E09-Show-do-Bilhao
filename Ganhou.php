@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -9,8 +9,14 @@
   <body>
   
       <div>
-          <h3> Você acaba de ganhar R$1.000.000.000 em barras de ouro, que valem mais do que dinheiro! </h3>
+          <h2> Você acaba de ganhar R$1.000.000.000 em barras de ouro, que valem mais do que dinheiro! </h2>
       </div>
-  
+
+      <div>
+        <?php include('rodape.inc'); ?>
+        <a href="login.php"><br>Recomeçar</a>
+        <a href="cadastro.php"><br>Recadastrar</a>
+
+      </div>
   </body>
   </html>

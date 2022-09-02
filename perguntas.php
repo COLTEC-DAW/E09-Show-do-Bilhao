@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+// session_start();
+// if(!isset($_SESSION["usuario_logado"])){
+//     header("Location: index.php");
+//     $question_id = 0;
+//     if (isset($_GET["id"])) {
+//         $question_id = $_GET["id"];
+//     } 
+// }
+?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,19 +18,19 @@
 </head>
 <body>
     <div>
-        <?php include('menu.inc'); ?>
+        <?php //include "menu.inc"; ?>
     </div>
 
     <div>
         <?php 
-            require('perguntas.inc'); 
-            carregaPergunta($_GET['id']); 
+        //require "perguntas.inc"; 
+            //carregaPergunta($_GET['id']); 
         ?>
     </div>
 
     <div>
-        <?php include('rodape.inc'); ?>
+        <?php //include "rodape.inc"; ?>
     </div>
-
+    
 </body>
-</html>
+</html>  -->
