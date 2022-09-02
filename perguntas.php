@@ -8,18 +8,18 @@
 </head>
 <body>
     <div>
-        <?php include "menu.inc"; ?>
+        <?php include('menu.inc'); ?>
     </div>
 
     <div>
         <?php 
-            require "perguntas.inc"; 
+            require('perguntas.inc'); 
             carregaPergunta($_GET['id']); 
         ?>
     </div>
 
     <div>
-        <?php include "rodape.inc"; ?>
+        <?php include('rodape.inc'); ?>
     </div>
 
 </body>
