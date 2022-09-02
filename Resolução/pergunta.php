@@ -42,12 +42,6 @@ if (isset($_POST["answer"])) {
         exit();
     }
 
-    // $score = $question_id - 1;
-    // if (isset($_COOKIE[$user . "-max"]) && $_COOKIE[$user . "-max"] > $score) {
-    //     $score = $_COOKIE[$user . "-max"];
-    // }
-    // setcookie($user . "-max", $score);
-
 }
 
 
@@ -85,6 +79,8 @@ $resposta = $question->load_answer($question_id);
         <input type="hidden" name="answer" value="<?= $resposta ?>">
         <input type="submit" value="Enviar">
     </form>
+
+    <!-- <?php $question->formulario($question_id, $resposta);?> -->
 
     <?php include "partials/footer.inc"; ?>
 </body>
