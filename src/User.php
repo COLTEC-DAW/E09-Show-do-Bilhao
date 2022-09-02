@@ -10,7 +10,7 @@ final class User{
         $this->login = $login;
         $this->senha = $senha;
         $this->email = $email;
-        $this->$nome = $nome;
+        $this->nome = $nome;
     }
 
 }

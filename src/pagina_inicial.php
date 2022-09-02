@@ -21,16 +21,13 @@
     }
 
     session_start();
-    
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // }
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if(!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
             header('Location: login.php', TRUE, 301);
         }
     }    
-    
+
     $now = date('d/m/Y | h:i:sa', strtotime('-3 hours'));
     $LoginUser = $_SESSION['login'] . 'lastlogin';
     $AcertosUser = $_SESSION['login'] . 'acertos';
