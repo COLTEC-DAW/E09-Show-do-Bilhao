@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Segundo Éric Catarina Parreiras qual desses números é equivalente a 5?",
+        "alternativas": ["1000101","2","100","60"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Quanto custa um pão de queijo na Engenharia?",
+        "alternativas": ["R$ 1,25", "R$ 5,21", "R$ 2,15", "R$ 1,52"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual o coletivo de peixes?",
+        "alternativas": ["Matilha", "Alcateia", "Rebanho", "Cardume"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Quem é o Debatec?",
+        "alternativas": ["Linguini", "Moreira", "Braga", "Éric"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Perdi a criatividade então essa aqui é na sorte. ",
+        "alternativas": ["A", "B", "C", "D"],
+        "resposta": 2
+    }
+]
