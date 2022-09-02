@@ -16,6 +16,6 @@
         }
     }
 
-    echo 'Não foi achado o seu cadastro <br> Voltar à pagina de login: <a href="login.php"><button>Voltar</button></a>';
+    echo 'Não foi achado o seu cadastro/Você errou a senha <br> Voltar à pagina de login: <a href="login.php"><button>Voltar</button></a>';
 
 ?>
