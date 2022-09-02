@@ -1,6 +1,6 @@
 <?php
 
-require 'usuario.php';
+require "usuario.php";
 
 function UsuarioExiste($conteudo, $caminhoArquivo){
 
@@ -8,32 +8,41 @@ function UsuarioExiste($conteudo, $caminhoArquivo){
 
     foreach($arquivo as $usuario){
 
-        if($usuario->email == $conteudo->email || $usuario->login == $conteudo->login) return TRUE;
-        
+        if($usuario->email == $conteudo->email || $usuario->login == $conteudo->login){
+            
+            return TRUE;
+        }
+            
     }
     return FALSE;
 }
 
-function EscreveNoArquivo($conteudo, $caminhoArquivo){
+function EscreveArquivo($dados, $caminhoArquivo){
 
     $arquivoJSON = json_decode(file_get_contents($caminhoArquivo));
     $arquivo = $arquivoJSON;
-    $UsuarioExiste = UsuarioExiste($conteudo, $caminhoArquivo);
+    $usuarioExiste = UsuarioExiste($dados, $caminhoArquivo);
 
-    if($UsuarioExiste)return TRUE;
-    else{
+    if($usuarioExiste){
+        
+        return TRUE;
+
+    } else{
         
         array($arquivo);
-        array_push($arquivo,$conteudo);
+        array_push($arquivo,$dados);
         file_put_contents($caminhoArquivo, json_encode($arquivo, JSON_PRETTY_PRINT));
     }
 }
 
-$dados = new Usuario($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']);
+$dados = new Usuario($_POST["nome"], $_POST["email"], $_POST["login"], $_POST["senha"]);
 
-$UsuarioJaCadastrado = EscreveNoArquivo($dados, 'usuarios.json');
+$UsuarioCadastrado = EscreveArquivo($dados, "usuarios.json");
 
-if ($UsuarioJaCadastrado)header("Location: erroCadastro.php");
-else header("Location: login.php");
+if ($UsuarioCadastrado){
+    
+    header("Location: erroCadastro.php");
+
+}else header("Location: login.php");
 
 ?>
