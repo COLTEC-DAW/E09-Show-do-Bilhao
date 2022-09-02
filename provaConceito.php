@@ -9,10 +9,10 @@
          array("Bolacha", "Manteiga", "Gemas", "Pimenta"),
          array("Desenho Animado", "Livro Antigo", "Livro de Receitas", "Carta Geográfica"),
          array("Fluminense", "Paulistano", "Sergipano", "Gaúcho"));
-     
+
          $respostascorretas = [2,3,0,0];
          $keys = array_keys($respostas);
-        
+
 // oi wanessa, casada???
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
         <h1>Olá, jogadores!!!</h1>
         <p>
          <?php
-         
+
              foreach ($perguntas as $chave => $enunciado) {
                 echo "<li>";
                     echo "<strong>{$enunciado}</strong>";
@@ -38,10 +38,10 @@
                     echo "</ol>";
                 echo "</li>";
             }
-           
+
          ?>
         </p>
-      
+
 
 <input type="submit" value="Ver resultado">
     </body>

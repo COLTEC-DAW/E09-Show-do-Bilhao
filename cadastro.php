@@ -1,26 +1,40 @@
+<?php require("register.class.php") ?>
 <?php
-  
-   $users = @json_decode(file_get_contents('users.json'), true);
-   if(!$users)
-       $users = array();
-       if (isset($_POST['user'])) {
-           $users[] = $_POST['user'];
- 
-           $file = fopen('users.json', 'w');
-   
-           fwrite($file, json_encode($users));
-   
-           fclose($file);
-       }
- 
+   if(isset($_POST['submit'])){
+      $user = new RegisterUser($_POST['username'], $_POST['password'], $_POST['email'], $_POST['name']);
+   }
 ?>
-<form action="" method="post">
-   <input type="text" placeholder="Login" name="user[login]">
-   <input type="password " placeholder="Senha" name="user[senha]">
-   <input type="text" placeholder="Email" name="user[email]">
-   <input type="text" placeholder="Nome" name="user[nome]">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+   <title>CADASTRO</title>
+</head>
+<body>
+     
+   <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+      <h2>CADASTRO</h2>
+      <h4>Both fields are <span>required</span></h4>
  
-   <input type="submit">
-</form>
+      <label>Username</label>
+      <input type="text" name="username">
+ 
+      <label>Password</label>
+      <input type="text" name="password">
+       
+      <label>Email</label>
+      <input type="text" name="email">
 
-<a href="login.php">Login</a>
+      <label>Name</label>
+      <input type="text" name="name">
+ 
+      <button type="submit" name="submit">Register</button>
+ 
+      <p class="error"><?php echo @$user->error ?></p>
+      <p class="success"><?php echo @$user->success ?></p>
+      <a href="login.php">Login</a>
+   </form>
+</body>
+</html>

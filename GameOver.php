@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Show do Bilhão</title>
+        <title>O Show do Bilhão</title>
     </head>
     <body>
         <div>
@@ -12,11 +12,11 @@
         </div>
 
         <div>
-            <h3>Infelizmente você perdeu!! Espero que tenha aproveitado o jogo!</h3>
+            <img src="http://localhost/Show-do-Bilhao/GameOver.jpg" alt="Game Over">
         </div>
 
         <div>
-            <?php include "rodape.inc"; ?>
+            <h3>Perdeu!</h3>
         </div>
     </body>
 </html> 

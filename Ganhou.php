@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +19,6 @@
     <div>
         <?php include "rodape.inc"; ?>
     </div>
-    <a href="perguntas.php?">Recomeçar</a>
+    <a href="pergunta.php?id=0">Recomeçar</a>
 </body>
 </html>
