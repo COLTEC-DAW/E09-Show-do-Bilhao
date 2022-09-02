@@ -3,11 +3,9 @@
     <a href="logout.php">Sair</a>
 </p>
 <p>
-    Olá <?=  $user ?>,tens o que é necessário?
+    Olá <?=  $user->__getUsername();  ?>,tens o que é necessário?
 </p>
 
-<?php if (isset($_COOKIE[$user . "-max"])) { ?>
     <p>
-        Sua maior pontuação foi: <?= $_COOKIE[$user . "-max"] ?>
+        Sua maior pontuação foi: <?=  $user->__getPontuacao();  ?> 
     </p>
-<?php } ?>

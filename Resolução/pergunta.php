@@ -1,69 +1,92 @@
 <?php
-    require "partials/questions.inc";
+require "classes/questions.php";
+require "classes/user.php";
 
-    session_start();
-    if (!isset($_SESSION["user"])) { 
-        header("Location: index.php");
-    }
-    $user = $_SESSION["user"];
+session_start();
+if (!isset($_SESSION["user"])) {
+    header("Location: index.php");
+}
+$username =  $_SESSION["user"];
+$user = new Usuario($username);
 
-    $question_id = 0;
+$question_id = 0;
 
-    if (isset($_GET["id"])) {
-        $question_id = $_GET["id"];
-    } 
+$question = new Questions;
+$pergunta = $question->load_question($question_id);
+$alternativas = $question->load_option($question_id);
+$resposta = $question->load_answer($question_id);
 
-    if (isset($_POST["answer"])) {
-        $previous_answer = $_POST["answer"];
-        $previous_option_selected = $_POST["option"];
+if (isset($_GET["id"])) {
+    $question_id = $_GET["id"];
+}
 
-        // atualiza cookie com score máximo
-        $score = $question_id - 1;
-        if (isset($_COOKIE[$user . "-max"]) && $_COOKIE[$user . "-max"] > $score) {
-            $score = $_COOKIE[$user . "-max"];
-        }
-        setcookie($user . "-max", $score);
+if (isset($_POST["answer"])) {
+    $previous_answer = $_POST["answer"];
+    $previous_option_selected = $_POST["option"];
 
-        // se diferente, então resposta é incorreta
-        if ($previous_answer != $previous_option_selected) {
-            header("Location: perdeu.php");
-        }
-        // se igual a cinco, então ele respondeu todas corretamente!
-        if ($question_id == 5 && $previous_answer == $previous_option_selected) {
-            header("Location: win.php");
+    // atualiza cookie com score máximo
+
+    if ($previous_answer == $previous_option_selected) {
+        if ($user->__getPontuacao() < 5) {
+            $user->aumentarPontuacao();
         }
     }
 
-    // carrega a questão a ser renderizada na tela
-    $question = load_question($question_id);
+    if ($previous_answer != $previous_option_selected) {
+        header("Location: perdeu.php");
+        exit();
+    }
+
+    if ($question_id == 5 && $previous_answer == $previous_option_selected) {
+        header("Location: win.php");
+        exit();
+    }
+
+    // $score = $question_id - 1;
+    // if (isset($_COOKIE[$user . "-max"]) && $_COOKIE[$user . "-max"] > $score) {
+    //     $score = $_COOKIE[$user . "-max"];
+    // }
+    // setcookie($user . "-max", $score);
+
+}
+
+
+$question = new Questions;
+$pergunta = $question->load_question($question_id);
+$alternativas = $question->load_option($question_id);
+$resposta = $question->load_answer($question_id);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Bilhão</title>
 </head>
+
 <body>
     <?php include "partials/header.inc"; ?>
 
-    <h2><?= $question["question"] ?></h2>
-    
+    <br>
+    <h2><?= $pergunta ?></h2>
+
     <form action="pergunta.php?id=<?= $question_id + 1 ?>" method="post">
         <input type="radio" name="option" value="0" id="">
-        <label for="0"><?= $question["options"][0] ?></label> <br>
+        <label for="0"><?= $alternativas[0] ?></label> <br>
         <input type="radio" name="option" value="1" id="">
-        <label for="1"><?= $question["options"][1] ?></label> <br>
+        <label for="1"><?= $alternativas[1] ?></label> <br>
         <input type="radio" name="option" value="2" id="">
-        <label for="2"><?= $question["options"][2] ?></label> <br>
+        <label for="2"><?= $alternativas[2] ?></label> <br>
         <input type="radio" name="option" value="3" id="">
-        <label for="3"><?= $question["options"][3] ?></label> <br>
-        <input type="hidden" name="answer" value="<?= $question["answer"] ?>">
+        <label for="3"><?= $alternativas[3] ?></label> <br>
+        <input type="hidden" name="answer" value="<?= $resposta ?>">
         <input type="submit" value="Enviar">
     </form>
 
     <?php include "partials/footer.inc"; ?>
 </body>
+
 </html>

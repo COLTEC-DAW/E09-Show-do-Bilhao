@@ -11,10 +11,11 @@
 
     <h3>Tens o que é necessário para ganhar um bilhão??</h3>
 
-    <form action="login.php" method="post">
-        <label for="login">Login</label>
-        <input type="text" name="login" id="">
-        <input type="submit" value="Entrar">
-    </form>
+
+    <a href="pagina_login.php">Clique aqui para ir para o formulario de Login</a>
+    <br>
+    <a href="pagina_registro.php">Clique aqui para ir para o formulario de Registro</a>
+
+    
 </body>
 </html>
