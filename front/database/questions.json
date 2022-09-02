@@ -1,0 +1,54 @@
+[
+    {
+      "statement": "Droga, é a",
+      "alternatives": [
+        "Insituição Ulisses Drummond",
+        "Loud",
+        "Lele",
+        "Noia"
+      ],
+      "answer": 1
+    },
+    {
+      "statement": "Bandex?",
+      "alternatives": [
+        "É o catabolizas",
+        "Sim.",
+        "Vitão0808",
+        "Carne na engenharia e pratão no bandex",
+        "Janta no bandex?"
+      ],
+      "answer": 0
+    },
+    {
+      "statement": "ICP significa:",
+      "alternatives": [
+        "Instituto de Ciências Políticas",
+        "Instituto de Criadores de Ponteiros",
+        "Instituto de Criadores de Pessoas",
+        "Instituto Catarina Parreiras",
+        "International Center of Problems"
+      ],
+      "answer": 3
+    },
+    {
+      "statement": "A call é:",
+      "alternatives": [
+        "Comer frutos",
+        "Marmitar caloura",
+        "Pod e alcool",
+        "Catabolizar e tomar anabolizantes para anabolizar o que você catabolizou"
+      ],
+      "answer": 3
+    },
+    {
+      "statement": "Complete a frase corretamente: Só o _____ ",
+      "alternatives": [
+        "Necessário",
+        "Essencial",
+        "Básico",
+        "Fundamental"
+      ],
+      "answer": 2
+    }
+  ]
