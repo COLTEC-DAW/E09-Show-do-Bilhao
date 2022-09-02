@@ -1,0 +1,34 @@
+body{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(12, 12, 12);
+    overflow: hidden;
+    color: rgb(162, 0, 255);;
+}
+div{
+    width: 100%;
+    padding: 5px 0;
+}
+form{
+    display: grid;
+    position: relative;
+    place-items: center;
+    margin: 0 auto;
+    background-color: #302244;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+    padding: 10px 20px;
+}
+form button{
+    background-color:rgb(162, 0, 255);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+form div{
+    color: white;
+}

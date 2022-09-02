@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="perguntas.css">
     <title>Show do Bilhão</title>
 </head>
 <body>
@@ -53,7 +54,11 @@
     <form action="perguntas.php" method="post">
         <input hidden name="pergunta" value=<?=$_POST["pergunta"] + 1?>>
         <?php for($j = 0; $j < count($question->alternativas); $j++){
-        echo "<div><input type='radio' id='{$j}' name='alternativa' value='{$j}'><label for='{$j}'>{$question->alternativas[$j]}</label></div>";
+        echo "
+            <div>
+                <input type='radio' id='{$j}' name='alternativa' value='{$j}'>
+                <label for='{$j}'>{$question->alternativas[$j]}</label>
+            </div>";
         }?>
         <br>
         <input type="submit" value="Enviar">
