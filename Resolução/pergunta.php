@@ -26,19 +26,30 @@ if (isset($_POST["answer"])) {
 
     // atualiza cookie com score máximo
 
+    
+
     if ($previous_answer == $previous_option_selected) {
-        if ($user->__getPontuacao() < 5) {
-            $user->aumentarPontuacao();
-        }
+        
+            $user->aumentarPontuacaoAtual();
+        
+    }
+
+    if($user->checaPontuacao()==true)
+    {
+        $user->aumentarPontuacaoMaxima();
     }
 
     if ($previous_answer != $previous_option_selected) {
+        $user->zeraPontuacaoAtual();
         header("Location: perdeu.php");
         exit();
     }
 
     if ($question_id == 5 && $previous_answer == $previous_option_selected) {
+
+        $user->zeraPontuacaoAtual();
         header("Location: win.php");
+        
         exit();
     }
 
@@ -58,6 +69,7 @@ $resposta = $question->load_answer($question_id);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Show do Bilhão</title>
 </head>
 

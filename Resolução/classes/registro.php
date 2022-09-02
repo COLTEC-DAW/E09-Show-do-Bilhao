@@ -6,7 +6,8 @@ class RegisterUser
 	private $username;
 	private $raw_password;
 	private $encrypted_password;
-	private $pontuacao = 0;
+	private $pontuacao_max= 0;
+	private $pontuacao_atual = 0;
 	public $error;
 	public $success;
 	private $storage = "partials/users.json";
@@ -32,7 +33,8 @@ class RegisterUser
 			"email" => $this->email,
 			"username" => $this->username,
 			"password" => $this->encrypted_password,
-			"pontuacao" => $this->pontuacao,
+			"pontuacao_max" => $this->pontuacao_max,
+			"pontuacao_atual" => $this->pontuacao_atual,
 		];
 
 		if($this->checkFieldValues()){

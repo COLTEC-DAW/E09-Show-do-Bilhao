@@ -12,6 +12,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
 </head>
 
@@ -21,7 +22,7 @@ if (isset($_POST['submit'])) {
     <h3>Tens o que é necessário para ganhar um bilhão??</h3>
 
 
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
 
         <h2>Não esqueça da sua senha!</h2>
 
@@ -41,7 +42,7 @@ if (isset($_POST['submit'])) {
         <br>
 
         <label>Senha</label>
-        <input type="text" name="password">
+        <input type="password" name="password">
 
         <button type="submit" name="submit">Registrar</button>
 

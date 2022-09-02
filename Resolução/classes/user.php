@@ -2,21 +2,59 @@
 class Usuario
 {
     private $username;
-    private $pontuacao;
+    private $pontuacao_max;
+    private $pontuacao_atual;
     private $storage = "partials/users.json";
     private $stored_users;
     private $loop = 0;
 
-    public function aumentarPontuacao()
-    {
+    public function checaPontuacao(){
         foreach ($this->stored_users as $user) {
             if ($user['username'] == $this->username) {
-                $this->pontuacao = $user['pontuacao'];
-                $this->stored_users[$this->loop]['pontuacao'] += 1;
+                if($this->pontuacao_atual >= $this->pontuacao_max)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public function aumentarPontuacaoAtual(){
+        $this->pontuacao_atual+=1;
+        foreach ($this->stored_users as $user) {
+            if ($user['username'] == $this->username) {
+                $this->stored_users[$this->loop]['pontuacao_atual'] = $this->pontuacao_atual;
             }
             $this->loop++;
         }
-        $this->loop = 0;
+        $this->loop=0;
+        $newJsonString = json_encode($this->stored_users);
+        file_put_contents('partials/users.json', $newJsonString);
+    }
+
+    public function zeraPontuacaoAtual(){
+        foreach ($this->stored_users as $user) {
+            if ($user['username'] == $this->username) {
+                $this->stored_users[$this->loop]['pontuacao_atual'] = 0;
+            }
+            $this->loop++;
+        }
+        $this->loop=0;
+        $newJsonString = json_encode($this->stored_users);
+        file_put_contents('partials/users.json', $newJsonString);
+
+    }
+
+    public function aumentarPontuacaoMaxima()
+    {
+        foreach ($this->stored_users as $user) {
+            if ($user['username'] == $this->username) {
+                $this->stored_users[$this->loop]['pontuacao_max'] = $this->pontuacao_atual;
+            }
+            $this->loop++;
+        }
+        $this->loop=0;
         $newJsonString = json_encode($this->stored_users);
         file_put_contents('partials/users.json', $newJsonString);
     }
@@ -28,7 +66,7 @@ class Usuario
 
     public function __getPontuacao()
     {
-        return $this->pontuacao;
+        return $this->pontuacao_max;
     }
     public function __construct($username)
     {
@@ -36,7 +74,8 @@ class Usuario
         $this->stored_users = json_decode(file_get_contents($this->storage), true);
         foreach ($this->stored_users as $user) {
             if ($user['username'] == $this->username) {
-                $this->pontuacao = $user['pontuacao'];
+                $this->pontuacao_atual = $user['pontuacao_atual'];
+                $this->pontuacao_max = $user['pontuacao_max'];
             }
         }
     }

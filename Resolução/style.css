@@ -1,0 +1,24 @@
+h1{
+    text-align: left;
+    font-family: fantasy;
+    font-size: 100px;
+    color:rgba(4, 0, 228, 0.863);
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: rgb(1, 2, 102); 
+    margin-bottom: 5px;
+}
+
+body{
+    background-color: rgb(131, 182, 248);
+    font-family:'Georgia', Times New Roman, Times, serif;
+    color:rgb(59, 0, 0);
+    text-align:left;
+    padding-left: 5%;
+
+}
+
+h3{
+    font-family: 'Georgia', Times New Roman, Times, serif;
+    font-size: 22px;
+    color:rgb(0, 2, 112);
+}
