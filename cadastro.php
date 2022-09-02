@@ -2,7 +2,7 @@
 <?php
    if(isset($_POST['submit'])){
       // se a requisição do submit foi recebida, criamos um novo usuárioq a partir do método RegisterUser
-      $user = new RegisterUser($_POST['username'], $_POST['password'], $_POST['email'], $_POST['name']);
+      $user = new RegisterUser($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']);
    }
 ?>
 <!DOCTYPE html>
@@ -18,26 +18,38 @@
    <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
       <h2>CADASTRO</h2>
       <h4>Todos os campos são obrigatórios</h4>
- 
-      <label>Nome de usuário</label>
+
+
+      <label>Nome</label>
       <br>
-      <input type="text" name="username" required>
+      <input type="text" name="name" required>
       <br>
- 
-      <label>Senha</label>
-      <br>
-      <input type="password" name="password" required>
-      <br>
-       
+      
       <label>Email</label>
       <br>
       <input type="email" name="email" required>
       <br>
 
-      <label>Nome</label>
+      <label>Nome de usuário</label>
       <br>
-      <input type="text" name="name" required>
-      <br><br>
+      <input type="text" name="username" required>
+      <br>
+
+      <label>Senha</label>
+      <br>
+      <input type="password" name="password" required>
+      <br>
+
+        
+      
+
+     
+
+      
+       
+      
+
+      
  
       <button type="submit" name="submit">Cadastrar</button>
  

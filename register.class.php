@@ -12,7 +12,7 @@ class RegisterUser{
    private $storage = "users.json";
    private $stored_users; // array
    private $new_user; // array
-   public function __construct($username, $password, $name, $email){
+   public function __construct($name, $email, $username, $password){
     $this->name = filter_var(trim($name), FILTER_SANITIZE_STRING);
    //  filtramos os dados da variável nome
     $this->email = filter_var(trim($email), FILTER_SANITIZE_STRING);
