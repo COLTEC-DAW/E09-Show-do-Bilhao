@@ -5,7 +5,7 @@
         header("location: register.php");
     }
 
-    setcookie("{$_POST['username']}ScoreMax", "5");
+    setcookie("{$_SESSION['username']}ScoreMax", "5");
 ?>
 
 <!DOCTYPE html>

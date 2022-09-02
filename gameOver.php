@@ -4,12 +4,6 @@
     if(!isset($_SESSION['username'])) {
         header("location: register.php");
     }
-
-    $username = $_SESSION['username'];
-
-    if($_SESSION['hits'] > (int) $_COOKIE["{$username}ScoreMax"]) {
-        setcookie("{$username}ScoreMax", (string) $_SESSION['hits']);
-    }
 ?>
 
 <!DOCTYPE html>

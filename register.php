@@ -13,7 +13,7 @@
         <form action="validate.php" method="post">
             <div class="loginInputs">
                 <div>
-                    Nome: <input type="text" name="username">
+                    Nome: <input type="text" name="name">
                 </div>
                 <div>
                     E-mail: <input type="text" name="email">
@@ -28,7 +28,7 @@
 
             <br>
 
-            <input type="submit" name="enter" value="Registrar">
+            <input type="submit" name="register" value="Registrar">
         </form>
 
         <p>Já tem uma conta criada? <a href="/login.php">Login</a></p>

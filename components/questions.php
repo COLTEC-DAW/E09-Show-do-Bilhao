@@ -1,20 +1,12 @@
 <?php
-    function loadQuestion($id, $statements, $alternatives) {
-        echo "<form action='question.php' method='post'>";
-        echo $statements[$id];
+    function loadQuestion($id) {
+        $filePath = "./dataBase/questions.json";
 
-        echo "<br>";
-        echo "<input type='hidden' name='question' value='{$id}'>";
-        echo "<br>";
+        $file = fopen($filePath, "r");
+        $questions = json_decode(fread($file, filesize($filePath)));
 
-        for($j = 0; $j < sizeof($alternatives); $j++) {
-            echo "<input type='radio' id='{$j}' name='alternative' value='{$j}'>";
-            echo "<label for='{$j}'>{$alternatives[$id][$j]}</label>";
-            echo "<br>";
-        }
+        fclose($file);
 
-        echo "<br>";
-        echo "<button type='submit'>Enviar</button>";
-        echo "</form>";
+        return $questions[$id];
     }
 ?>

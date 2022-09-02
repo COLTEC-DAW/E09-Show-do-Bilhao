@@ -1,8 +1,1 @@
-[
-    {
-        "login": "admin",
-        "password": "admin",
-        "email": "admin@admin.com",
-        "name": "ADM"
-    }
-]
+[{"login":"admin","password":"admin","email":"admin@admin.com","name":"ADM"},{"name":"Gabriel","email":"gabrielbegnami1@gmail.com","login":"gab123","password":"pa\u00e7oca"},{"name":"adilson","email":"adilson@adilson.com","login":"adilson","password":"123"}]

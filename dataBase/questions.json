@@ -1,0 +1,27 @@
+[
+    {
+        "statement": "Quantos mg de cafeina a Amanda toma por dia?",
+        "alternatives": ["200mg", "400mg", "800mg", ">1000mg"],
+        "answer": "3"
+    },
+    {
+        "statement": "Como a dona Janaina chama o Machado?",
+        "alternatives": ["Gab", "Gabriel", "Gabi", "Biel"],
+        "answer": "0"
+    },
+    {
+        "statement": "Qual o maior sonho do Ullas?",
+        "alternatives": ["Ser engenheiro de compiladores na Google", "Fazer doutorado", "Ala...", "Criar uma linguagem de programação"],
+        "answer": "2"
+    },
+    {
+        "statement": "Qual a frase mais marcante do Eric?",
+        "alternatives": ["Gracinha fofurinha", "Comam frutos crianças", "Só o básico", "SAAAAFE!"],
+        "answer": "2"
+    },
+    {
+        "statement": "O que o Cordeiro faz melhor?",
+        "alternatives": ["Resolução de questões de matemática", "Média", "Supino", "Macetar"],
+        "answer": "1"
+    }
+]

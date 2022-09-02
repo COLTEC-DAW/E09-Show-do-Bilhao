@@ -9,8 +9,6 @@
 
 
         echo "<script> window.location.href = 'register.php' </script>";
-        exit(1);
-        
     }
 ?>
 
