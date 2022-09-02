@@ -1,48 +1,56 @@
 <?php
 
-function Login(){
-    echo "<form action='jogo.php' method='post'>";
-    echo "<p>Por favor, informe seu nome de Usuario: </p>";
-    echo "<input type=text name='user'><br><br>";
-    echo "<input type=submit name='login' value='Login'></form>";
+function Login($usuario, $senha){
+    $listaDeUsuarios = json_decode(file_get_contents("usuarios.json"));
+
+    foreach ($listaDeUsuarios as $usuarios){
+        
+        if($usuarios->Usuario == $usuario){
+            if($usuarios->Senha == $senha){
+                session_start();
+                $_SESSION['usuario'] = $usuario;
+                header("Location: jogo.php");
+            }else{
+                return "Senha incorreta.";
+            }
+        }
+    }
+
+    return "Usuario incorreto.";
 }
 
-function Perguntar($id, $perguntas, $respostas){
+function CarregaPergunta($id){
+    $listaDePerguntas = json_decode(file_get_contents("perguntas.json"));
+
+    return new Pergunta($listaDePerguntas[$id]->Pergunta, $listaDePerguntas[$id]->Respostas, $listaDePerguntas[$id]->Gabarito);
+}
+
+function Perguntar($id, $pergunta){
     echo "<form action='jogo.php' method='post'>";
+    echo "<input type=hidden value='{$id}' name='pergunta'><p>{$pergunta->pergunta}</p>";
 
-    echo "<input type=hidden value='{$_SESSION['user']}' name='user'>";
-    echo "<input type=hidden value='{$id}' name='pergunta'><p>{$perguntas[$id]}</p>";
-    echo "<br>";
+    for($i = 0; $i <= 3; $i++){
+        echo "<input type=radio value='{$i}' name='resposta'><label>{$pergunta->respostas[$i]}</label></input><br>";
+    }
 
-    echo "<input type=checkbox value='0' name='resposta'>  <span>A) {$respostas[$id][0]}</span> </input>  <br>";
-    echo "<input type=checkbox value='1' name='resposta'>  <span>B) {$respostas[$id][1]}</span> </input>  <br>";
-    echo "<input type=checkbox value='2' name='resposta'>  <span>C) {$respostas[$id][2]}</span> </input>  <br>";
-    echo "<input type=checkbox value='3' name='resposta'>  <span>D) {$respostas[$id][3]}</span> </input>  <br>";
-    echo "<br>";
-
+    echo "<input type=hidden value='{$pergunta->gabarito}' name='gabarito'><br>";
     echo "<input type=submit></form>";
 }
 
 function Ganhou(){
     echo "<h2>Voce Ganhou!!!</h2>";
-    echo "Você acertou todas as perguntas!";
+    echo "<p>Você acertou todas as perguntas!</p>";
 
     echo "<form action='jogo.php' method='post'>";
-        echo "<input type=hidden value='{$_SESSION['user']}' name='user'>";
-        echo "<input type=submit name='voltar' value='Voltar'></form>";
+    echo "<input type=submit name='voltar' value='Voltar'></form>";
 }
 
 function Perdeu(){
     echo "<h2>Voce Perdeu...</h2>";
-
-    $_SESSION['pergunta'] = $_SESSION['pergunta'] - 1;
-    echo "Você acertou {$_SESSION['pergunta']} pergunta(s).";
+    echo "<p>Você acertou {$_POST['pergunta']} pergunta(s).</p>";
 
     echo "<form action='jogo.php' method='post'>";
-        echo "<input type=hidden value='{$_SESSION['user']}' name='user'>";
-        echo "<input type=hidden value='{$_SESSION['pergunta']}' name='pergunta'>";
-        echo "<input type=hidden value='voltar' name='resposta'>";
-        echo "<input type=submit name='voltar' value='Voltar'></form>";
+    echo "<input type=submit name='voltar' value='Voltar'></form>";
 }
 
 ?>

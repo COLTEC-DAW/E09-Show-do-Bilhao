@@ -1,5 +1,5 @@
 <footer>
-    <br><form action='jogo.php' method='post'>
+    <br><form action='login.php' method='post'>
     <?php 
         session_destroy();
         unset($_POST['user']); 

@@ -7,40 +7,35 @@
 
 <body>
     <div><?php 
-        include "funcoes.php";
-        include "perguntas.inc";
+        require "pergunta.class.php";
+        require "funcoes.php";
+        include "titulo.inc";
 
-        if(!isset($_POST['user'])){
-            Login();
-    
+        if(!isset($_POST['pergunta'])){
+            $pergunta = CarregaPergunta(0);
+            Perguntar(0, $pergunta);
+
         }else{
-            session_start();
-            $_SESSION['user'] = $_POST['user'];
 
-            include "titulo.inc";
+            if(!isset($_POST['resposta'])){
+                $pergunta = CarregaPergunta($_POST['pergunta']);
+                Perguntar($_POST['pergunta'], $pergunta);
 
-            if(!isset($_POST['pergunta'])){
-                Perguntar(1, $perguntas, $respostas);
-
-            }else{
-                $_SESSION['pergunta'] = $_POST['pergunta'];
-
-                if($gabarito[$_POST['pergunta']] == $_POST['resposta']){
-                    if($_POST['pergunta'] >= 3){
-                        Ganhou();
-                    }else{
-                        Perguntar(($_POST['pergunta'] + 1), $perguntas, $respostas);
-                    }
-                }else if($_POST['resposta'] == "voltar"){
-                    Perguntar(($_POST['pergunta'] + 1), $perguntas, $respostas);
-
+            }else if($_POST['resposta'] == $_POST['gabarito']){
+                $_POST['pergunta'] += 1;
+                if($_POST['pergunta'] >= 10){
+                    Ganhou();
                 }else{
-                    Perdeu();
+                    $pergunta = CarregaPergunta($_POST['pergunta']);
+                    Perguntar($_POST['pergunta'], $pergunta);
                 }
+            }else{
+                Perdeu();
             }
-            
-            include "rodape.inc";
         }
+        
+        include "rodape.inc";
+
     ?></div>
 </body>
 </html>

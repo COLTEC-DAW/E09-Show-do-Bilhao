@@ -1,0 +1,52 @@
+[
+    {
+        "Pergunta": "1 - Qual bicho transmite a Doença de Chagas?",
+        "Respostas": ["Abelha", "Barata", "Pulga", "Barbeiro"],
+        "Gabarito": 3
+    },
+    {
+        "Pergunta": "2 - Qual é o coletivo de cães?",
+        "Respostas": ["Matilha", "Rebanho", "Alcateia", "Manada"],
+        "Gabarito": 0
+    },
+    {
+        "Pergunta": "3 - Qual é o triângulo que tem todos os lados diferentes?",
+        "Respostas": ["Equilátero", "Isóceles", "Escaleno", "Trapézio"],
+        "Gabarito": 2
+    },
+    {
+        "Pergunta": "4 - Que animal da fauna brasileira está retratado na nota de dez reais?",
+        "Respostas": ["Jabuti", "Onça", "Arara", "Tucano"],
+        "Gabarito": 2
+    },
+    {
+        "Pergunta": "5 - Quando começou a Primeira Guerra Mundial?",
+        "Respostas": ["1914", "1902", "1920", "1912"],
+        "Gabarito": 0
+    },
+    {
+        "Pergunta": "6 - Que profissional usa uma ferramenta chamada formão?",
+        "Respostas": ["Carpinteiro", "Relojoeiro", "Confeiteiro", "Bombeiro"],
+        "Gabarito": 2
+    },
+    {
+        "Pergunta": "7 - O samba é uma dança originária de onde?",
+        "Respostas": ["Europa", "África", "Ásia", "América do Sul"],
+        "Gabarito": 1
+    },
+    {
+        "Pergunta": "8 - Como se chama o estudo entre palavras e significados?",
+        "Respostas": ["Fonética", "Semântica", "Filosofia", "Psiquiatria"],
+        "Gabarito": 1
+    },
+    {
+        "Pergunta": "9 - Que país da Europa é conhecido como Países Baixos?",
+        "Respostas": ["Holanda", "Áustria", "Bélgica", "Hungria"],
+        "Gabarito": 0
+    },
+    {
+        "Pergunta": "10 - O que é a Via Láctea?",
+        "Respostas": ["Civilização Antiga", "Carro", "Galáxia", "Marca de Leite"],
+        "Gabarito": 2
+    }
+]
