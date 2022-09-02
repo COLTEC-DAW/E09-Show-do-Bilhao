@@ -35,7 +35,7 @@
      <label for="password">Email:</label>
      <input type="email" name="email" id="" required>
      <br>
-     <input type="submit" class="submit" value="Entrar">
+     <input type="submit" class="submit" value="Cadastrar">
  </form>
 
  </div>
