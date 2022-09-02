@@ -34,5 +34,10 @@ class Usuario
     {
         $this->username = $username;
         $this->stored_users = json_decode(file_get_contents($this->storage), true);
+        foreach ($this->stored_users as $user) {
+            if ($user['username'] == $this->username) {
+                $this->pontuacao = $user['pontuacao'];
+            }
+        }
     }
 }
