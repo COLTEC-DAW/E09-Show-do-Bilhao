@@ -7,7 +7,7 @@ function VerificarUsuario($fileName, $data){
     $fileUsers = json_decode(file_get_contents($fileName));
 
     foreach ($fileUsers as $usuarios){
-        if($usuarios->login == $data->login || $usuarios->email == $data->email){
+        if($usuarios->usuario == $data->usuario || $usuarios->email == $data->email){
             return TRUE;
         }
     }
