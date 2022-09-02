@@ -1,0 +1,45 @@
+{
+    "perguntas":
+    [
+        {
+            "Pergunta": "Em qual estado nasceu o criador do primeiro avião:",
+            "alternativas": [
+                "Sâo Paulo", 
+                "Minas Gerais", 
+                "Santa Catarina", 
+                "Rio de Janeiro" 
+            ],
+            "resposta": 1  
+        },  
+        {
+            "Pergunta": "Qual o ano da proclamação da republica:",
+            "alternativas": [ 
+                "1889", 
+                "1888", 
+                "1890", 
+                "1887"
+            ],
+            "resposta": 0 
+        },
+        {
+            "Pergunta": "Quem descobriu o Brasil:",
+            "alternativas": [
+                "Índios", 
+                "Cristóvão Colombo", 
+                "Pedro Álvares Cabral", 
+                "MC Rick"
+            ], 
+            "resposta": 2 
+        },
+        {
+            "Pergunta": "Em qual ano o Brasil conquistou a primeira Copa do Mundo:",
+            "alternativas": [
+                "1954", 
+                "1962", 
+                "1950", 
+                "1958"
+            ],
+            "resposta": 3
+        }
+    ]
+}
