@@ -35,6 +35,6 @@ $user = new User($_POST['login'], $_POST['password'], $_POST['name'], $_POST['em
 $insert = InsereUsuarioNoArquivo("json/usuarios.json", $user);
 
 if($insert)header("Location: login_cadastrado.php");
-else header("Location: index.php");
+else header("Location: cadastrado.php");
 
 ?>
