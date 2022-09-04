@@ -1,3 +1,4 @@
+
 <?php
         $perguntas = [
         "As árvores que não perdem suas folhas no outono, são também chamadas de:",

@@ -9,6 +9,9 @@ try{
                 if($users['senha'] == $usuario['senha']){
                     $_SESSION["usuario_logado"] = $user['login'];
                     header("Location: perguntas.php?id=0");
+                }else {
+                    header("Location: login.php?falhou=true");
+                
                 }
             }
         }

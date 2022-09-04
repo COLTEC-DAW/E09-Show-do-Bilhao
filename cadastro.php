@@ -9,32 +9,51 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="style.css">
    <title>CADASTRO</title>
 </head>
 <body>
-     
-   <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
-      <h2>CADASTRO</h2>
-      <h4>Both fields are <span>required</span></h4>
- 
-      <label>Username</label>
-      <input type="text" name="username">
- 
-      <label>Password</label>
-      <input type="text" name="password">
-       
-      <label>Email</label>
-      <input type="text" name="email">
+   <div class="central">
+      <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+         <h2>Cadastro</h2>
+         <h4>Preencha todos<span> os requisitos</span></h4>
+         <div class="cadastro">
+            <label>Username:</label>
+            <input class="preencher" type="text" name="username">
+            <br/>
+            <br/>
 
-      <label>Name</label>
-      <input type="text" name="name">
- 
-      <button type="submit" name="submit">Register</button>
- 
-      <p class="error"><?php echo @$user->error ?></p>
-      <p class="success"><?php echo @$user->success ?></p>
-      <a href="login.php">Login</a>
-   </form>
+            <label>Password:</label>
+            <input class="preencher" type="password" name="password">
+            <br/>
+            <br/>
+
+            <label>Email:</label>
+            <input class="preencher" type="text" name="email">
+            <br/>
+            <br/>
+
+            <label>Name:</label>
+            <input class="preencher" type="text" name="name">
+            <br/>
+            <br/>
+
+            <button type="submit" name="submit">Registrar</button>
+      
+            <p class="error"><?php echo @$user->error ?></p>
+            <p class="success"><?php echo @$user->success ?></p>
+            <br/>
+            <p>Já é cadastrado?</p>
+            <button type="submit" name="submit">
+               <a href="login.php">Login</a>
+            </button>
+            <br/><br/>
+            <button type="submit" name="submit">
+               <a href="paginaInicial.php">Voltar</a>
+            </button>
+            <br/><br/>
+         </div>
+      </form>
+   </div>
 </body>
 </html>

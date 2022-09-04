@@ -9,13 +9,16 @@ class LoginUser{
    private $stored_users;
  
    // class methods -----------------------------------------
+   //constroi a classe
    public function __construct($username, $password){
       $this->username = $username;
       $this->password = $password;
+      //virou um vetor associativo
       $this->stored_users = json_decode(file_get_contents($this->storage), true);
       $this->login();
    }
  
+   //faz o login
    private function login(){
       foreach ($this->stored_users as $user) {
          if($user['username'] == $this->username){
