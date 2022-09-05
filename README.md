@@ -1,4 +1,4 @@
-# PHP: O Show do Bilhão
+# PHP: O Show do Ericao
 
 Nesta série de exercícios iremos praticar o uso da linguagem PHP desenvolvendo uma aplicação web de perguntas e respostas denominado *Show do Bilhão*.
 
