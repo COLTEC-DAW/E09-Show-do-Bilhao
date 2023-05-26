@@ -4,6 +4,12 @@ include "perguntas.inc";
 
 $id = $_GET['id'] - 1;
 
+$dadosPergunta = carregaPergunta($id);
+
+$pergunta = $dadosPergunta[0];
+$alt = $dadosPergunta[1];
+$resposta = $dadosPergunta[2];
+
 ?>
 
 
@@ -14,21 +20,13 @@ $id = $_GET['id'] - 1;
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Show do Bilhão</title>
+        <title>Pergunta <?php echo ($id + 1) ?> - Show do Bilhão</title>
     </head>
 
     <body>
         <?php include "menu.inc"?>
 
         <main>
-            <?php
-                $dadosPergunta = carregaPergunta($id);
-
-                $pergunta = $dadosPergunta[0];
-                $alt = $dadosPergunta[1];
-                $resposta = $dadosPergunta[2];
-            ?>
-
             <div class="questao">
                 <h2 class="enunciado"> <?php echo $pergunta ?> </h2>
                 <?php
