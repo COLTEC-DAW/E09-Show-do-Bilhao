@@ -34,11 +34,9 @@ $resposta = $dadosPergunta[2];
 
                     echo "<input type='radio' name='alt' id='alt-$index'>
                     <label for='alt-$index'> $alternativa </label><br>";
-
                 }
                 ?>
                 
-
             </div>
             
         </main>
