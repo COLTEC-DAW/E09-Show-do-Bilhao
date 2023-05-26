@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PHP</title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<?php
+        $id = $_GET['id'];
+        include("perguntas.php");
+
+        if($id != NULL){
+            $out = carregarPergunta($id);
+            $resp = $out[1];
+            echo "<h1>$out[0]</h1>";
+            echo "<ui>";
+            for($i = 0; $i < count($resp); $i++){
+                echo "<li><a href='/points.php?id=" .$id ."&op=" . $resp[$i] ."'>
+                $resp[$i] </a></li>";
+            }
+            echo "</ui>";
+        }
+
+    ?>
+</body>
+</html>
