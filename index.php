@@ -29,13 +29,12 @@ $resposta = $dadosPergunta[2];
         <main>
             <div class="questao">
                 <h2 class="enunciado"> <?php echo $pergunta ?> </h2>
-                <?php
-                foreach($alt as $index => $alternativa){
+                <?php foreach($alt as $index => $alternativa){ ?>
 
-                    echo "<input type='radio' name='alt' id='alt-$index'>
-                    <label for='alt-$index'> $alternativa </label><br>";
-                }
-                ?>
+                    <input type='radio' name='alt' id='alt-<?php echo $index ?>'>
+                    <label for='alt-<?php echo $index ?>'> <?php echo $alternativa ?> </label><br>
+
+                <?php } ?>
                 
             </div>
             
