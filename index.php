@@ -1,10 +1,15 @@
 <?php require "gameStructure.inc" ?>
 <?php require "questions.inc" ?>
+
 <?php
     //Game
     $game = new Game();
     $game->questions = [$question1, $question2, $question3, $question4, $question5];
+
+    
 ?>
+
+<?php require "questions-function.inc" ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,14 +20,9 @@
 </head>
 <body>
     <?php include "header.inc"; ?>
-    <?php
-        foreach($game->questions as $question){
-            echo "<h3>$question->enunciado</h3>";
-            foreach($question->alternativas as $alternativa){
-                echo "<h5>[$alternativa->letter] $alternativa->enunciado</h5>";
-            }
-            echo "<h6>$question->alternativaCertaIndex</h6>";
-        }
-    ?>
+    <form action="index.php" method="post">
+        <?php loadCurrentQuestion(); ?>
+        <button type="submit" name="submit">Responder</button>
+    </form>
 </body>
 </html>
