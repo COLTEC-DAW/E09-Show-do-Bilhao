@@ -13,11 +13,15 @@
 </head>
 <body>
     <?php include "menu.inc";?>
-    <?php require "perguntas.inc";?>
+    <h1>Qual pergunta deseja acessar?</h1>
+    <ul>
+        <li><a href="http://localhost:8000/perguntas.php?id=1">Pergunta 1</a></li>
+        <li><a href="http://localhost:8000/perguntas.php?id=2">Pergunta 2</a></li>
+        <li><a href="http://localhost:8000/perguntas.php?id=3">Pergunta 3</a></li>
+        <li><a href="http://localhost:8000/perguntas.php?id=4">Pergunta 4</a></li>
+        <li><a href="http://localhost:8000/perguntas.php?id=5">Pergunta 5</a></li>
+    </ul>
     <?php 
-    $id=$_GET["id"];
-    $perguntaTeste=carregaPerguntas(3);
-
     for($i=0;$i<5;$i++){
         echo "<h2>$enunciados[$i]</h2>";
         for($j=0;$j<4;$j++){
