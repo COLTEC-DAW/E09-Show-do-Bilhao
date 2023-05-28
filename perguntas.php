@@ -19,6 +19,7 @@
         echo "<h1>Pergunta $idPergunta </h1>";
         $pergunta=carregaPerguntas($id);
     ?>
+    <p>Acertos: <?php echo"$id/5" ?></p>
     <h2><?php echo "$pergunta->enunciado"?></h2>
     
     <form action="processaPergunta.php" method="post">
@@ -29,7 +30,6 @@
         }
         ?>
         <input type='hidden' name="pergunta" value="<?php echo $id?>"/> 
-
         <button type= "submit">Enviar resposta</button>
     </form>
     
