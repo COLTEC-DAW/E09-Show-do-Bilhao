@@ -1,4 +1,4 @@
-!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,30 +7,33 @@
     <title>Document</title>
 </head>
 <body>
+
     <?php
+        $perguntas= array("Quem é Taylor Swift?","Qual a data de nascimento da cantora?","Onde ela nasceu?","Com quantos anos fez seu primeiro album?","Quantos albuns publicados ela tem?");
+        $respostas=["a", "d","c","b","a"];
 
-        $perguntas[0]= "";
-        $perguntas[1]= "";
-        $perguntas[2]= "";
-        $perguntas[3]= "";
-        $perguntas[4]= "";
+        $perg1=["Cantora-Compositora","Cozinheira","Cineasta","Jogadora de vôlei"];
+        $perg2=["18/05/1989","15/08/1999","23/06/1999","13/12/1989"];
+        $perg3=["Estados Unidos","Canadá","Pensilvania","Inglaterra"];
+        $perg4=["19","16","17","15"];
+        $perg5=["10","8","7","11"];
+        $alternativas=[$perg1, $perg2, $perg3, $perg4, $perg5];
 
-        $alternativa[0]= "a";
-        $alternativa[1]= "c";
-        $alternativa[2]= "d";
-        $alternativa[3]= "b";
-        $alternativa[4]= "a";
+        function carregaPergunta($id){
+            global $perguntas;
+            global $respostas;
+            global $alternativas;
 
-
+            for($i=1; $i<=5; $i++){
+                if($id==$i){
+                    $return = [$perguntas[$i-1], $respostas[$i-1], $alternativas[$i-1][0], $alternativas[$i-1][1],
+                    $alternativas[$i-1][2], $alternativas[$i-1][3]];
+                    return $return;
+                } 
+            }
+        }
     ?>
 
-    <ul>
-        <?php
-            foreach($matriz as $linha) {
-                echo "<li>$linha[0]<\li>" 
-            }
-        ?>
-    </ul>
 </body>
 </html>
 
