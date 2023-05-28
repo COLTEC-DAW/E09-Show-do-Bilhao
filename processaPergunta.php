@@ -6,9 +6,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $pergunta = $_POST["pergunta"];
 
     if($resposta==$alternativasCorretas[$pergunta]){
-        $proximaPagina=$pergunta+1;
-        header("Location: http://localhost:8000/perguntas.php?id=$proximaPagina");
-        exit;
+        if($pergunta==4){
+            header("Location: http://localhost:8000/voceGanhou.html");
+            exit;
+        }else{
+            $proximaPagina=$pergunta+1;
+            header("Location: http://localhost:8000/perguntas.php?id=$proximaPagina");
+            exit;
+
+        }
     }else{
         header("Location: http://localhost:8000/gameOver.html");
     }

@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php include "menu.inc";?>
-    <a href="http://localhost:8000/perguntas.php?id=0">Vamos começar? -></a>
+    <h2><a href="http://localhost:8000/perguntas.php?id=0">Vamos começar? -></a></h2>
 
 
     <?php 
