@@ -13,24 +13,25 @@
 </head>
 <body>
     <?php include "menu.inc";?>
+    <?php require "perguntas.inc";?>
     <?php 
-    $enunciados=array("Qual bicho transmite a Doença de Chagas?", "Qual fruto é no Norte e Nordeste conhecido como jerimum?", "Qual é o coletivo de cães?", "Qual pe o triângulo que tem todos os lados diferentes?", "Quem compôs o hino da independência?");
-    $alternativas = array(array("abelha", "barata", "pulga", "barbeiro"), array("caju", "abobora", "chuchu", "côco"), array("matilha", "rebanho", "alcateia", "manada"), array("equilátero", "isósceles", "escaleno", "trapézio"), array("Dom Pedro I.", "Manuel Bandeira", "Castro Alves", "Carlos Gomes"));
-    $alternativasCorretas = array(3, 1, 0, 2, 0);
+    $id=$_GET["id"];
+    $perguntaTeste=carregaPerguntas(3);
+
     for($i=0;$i<5;$i++){
         echo "<h2>$enunciados[$i]</h2>";
         for($j=0;$j<4;$j++){
-            echo $alternativas[$i][$j]; 
-            echo "<br>"; 
+            $alternativaGeral= $alternativas[$i][$j];
+            echo "<p>$alternativaGeral</p>"; 
         }
     }
 
-    echo "GABARITO <br>";
+    echo "<h3>GABARITO</h3>";
     for($i=0;$i<5;$i++){
-        echo "Questão $i: ";
-        echo $alternativas[$i][$alternativasCorretas[$i]];
-        echo "<br>";
+        $alternativaCorreta=$alternativas[$i][$alternativasCorretas[$i]];
+        echo "<p>Questão $i: $alternativaCorreta</p>";
     }
-?>
+    ?>
+    <?php include "rodape.inc";?>
 </body>
 </html>
