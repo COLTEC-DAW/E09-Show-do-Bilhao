@@ -1,4 +1,4 @@
 
 <footer>
-    <p>Show do Bilhão &reg;</p>
+    <p>Otakus coorporation &reg;</p>
 </footer>

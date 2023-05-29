@@ -1,9 +1,13 @@
 <?php
-    $gabarito = ["A", "B", "C", "D", "E"];
+    $gabarito = ["B", "B", "C", "D", "E"];
 
-    $enunciados = ["enun 1", "enun 2", "enun 3", "enun 4", "enun 5"];
+    $enunciados = ["Qual o maior sonho de Isagi Yoichi, de Blue Lock: ", 
+                    "enum 2", 
+                    "enun 3", 
+                    "enun 4", 
+                    "enun 5"];
 
-    $alternativas = [["alt 1 p1", "alt 2 p1", "alt 3 p1", "alt 4 p1"],
+    $alternativas = [["Se tornar o melhor goleiro do mundo.", "Se tornar o melhor atancante do mundo.", "Se tornar o melhor ala do mundo.", "Se tornar o melhor assassino do mundo."],
                     ["alt 1 p2", "alt 2 p2", "alt 3 p2", "alt 4 p2"],
                     ["alt 1 p3", "alt 2 p3", "alt 3 p3", "alt 4 p3"],
                     ["alt 1 p4", "alt 2 p4", "alt 3 p4", "alt 4 p4"],
