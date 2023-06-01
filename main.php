@@ -4,15 +4,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Vai começar o Show do Milho </h1>
+    <h1> Vai começar o Show do Milho Grande </h1>
     <br>
     <?php
-        require('data.inc.php');
-
-        foreach($questions as $quest)
-        {
-            $quest->ShowQuestion();
-        }
+        require('quiz.inc');
+        $id = $_GET['id'];
+        
+        loadQuestion($id)->ShowQuestion();
     ?>
 </body>
 </html>
