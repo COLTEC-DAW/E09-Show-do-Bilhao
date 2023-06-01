@@ -11,12 +11,14 @@
     $resp = $out[2];
     $alt = $out[1];
     if($op == $alt[$resp]){
+        echo "A resposta foi correta";
         $_SESSION['point'] ++;
+    }else{
+        echo "Resposta incorreta";
     }
 
-    echo $_SESSION['point'];
-
-    if($id == 5){
+    if($id >= 5){
+        echo "A sua pontuação no teste foi ". $_SESSION['point'];
         $prox = 0;
     }else{
         $prox = $id + 1;

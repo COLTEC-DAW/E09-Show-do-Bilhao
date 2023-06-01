@@ -9,7 +9,12 @@
         $id = $_GET['id'];
         include("perguntas.php");
 
-        if($id != NULL){
+        if($id == NULL){
+            header("Location: /?id=0");
+        }elseif($id > 6){
+            
+        }
+        else{
             $out = carregarPergunta($id);
             $resp = $out[1];
             echo "<h1>$out[0]</h1>";
