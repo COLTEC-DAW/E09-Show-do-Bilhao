@@ -11,16 +11,19 @@
     $resp = $out[2];
     $alt = $out[1];
     if($op == $alt[$resp]){
-        echo "A resposta foi correta";
+        echo "<p>A resposta foi correta</p>";
         $_SESSION['point'] ++;
     }else{
-        echo "Resposta incorreta";
+        echo "<p>Resposta incorreta</p>";
     }
 
     if($id >= 5){
         echo "A sua pontuação no teste foi ". $_SESSION['point'];
         $prox = 0;
+        setcookie("last", $_SESSION["point"]);
+        setcookie("time", date("Y-m-d h:i:sa"));
     }else{
+        
         $prox = $id + 1;
     }
 
