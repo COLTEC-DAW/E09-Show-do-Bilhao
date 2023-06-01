@@ -9,6 +9,10 @@
         $id = $_GET['id'];
         include("perguntas.php");
 
+        if($_COOKIE["login"] == NULL){
+            header("Location: /login.html");
+        }
+
         if($id == NULL){
             header("Location: /?id=0");
         }elseif($id > 6){
