@@ -7,10 +7,12 @@
     <h1> Vai começar o Show do Milho Grande </h1>
     <br>
     <?php
-        require('quiz.inc');
-        $id = $_GET['id'];
+        include('menu.inc');
         
-        loadQuestion($id)->ShowQuestion();
+        require('quiz.inc');
+        loadQuestion($_GET['id'])->ShowQuestion();
+        
+        include('footer.inc');
     ?>
 </body>
 </html>

@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.footer{
+    width: 100%;
+    background-color: rgb(25, 90, 110);
+}
+
 .quest{
     text-align: justify;
 }
