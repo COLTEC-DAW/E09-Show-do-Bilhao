@@ -10,8 +10,9 @@
         // include('menu.inc.php');
         
         require('quiz.inc.php');
-        $id = (int)$_GET['id'];
-        LoadFromXML($id)->ShowQuestion();
+        $quest = LoadFromXML((int)$_GET['id']);
+        if($quest != null)
+            $quest->ShowQuestion();
         
         include('footer.inc.php');
     ?>
