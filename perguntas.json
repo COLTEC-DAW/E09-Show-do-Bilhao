@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Você pinta como eu pinto?",
+        "options": [
+            "Sim",
+            "Não",
+            "Pinto",
+            "Lá ele"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Quanto é 1+1 em binário?",
+        "options": [
+            "2",
+            "10",
+            "11",
+            "Depende do humor do javascript"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "Qual é o nome do 50cent brasileiro?",
+        "options": [
+            "R$ 2,61",
+            "R$ 4.294.967.295",
+            "Vários reais",
+            "R$ 3.4028235E+38"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Em uma situação em que você e sua dupla têm 10 pontos no truco mineiro, e você possui em sua mão o 'zap' e o 'sete de copas', assinale a jogada incorreta:",
+        "options": [
+            "Apenas seguir o fluxo do jogo ",
+            "Pedir truco bem alto",
+            "Mostrar a mão completa, você já ganhou mesmo",
+            "Perguntar ao adversário 'Qual que é o nome do jogo?', vai que ele cai"
+        ],
+        "answer": 4
+    }
+]
