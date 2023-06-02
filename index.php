@@ -1,6 +1,5 @@
 <!-- Importações -->
-<?php require "PerguntaMaker.inc" ?>
-<?php require "Pergunta.inc" ?>
+<?php require "PerguntaMaker.inc"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
