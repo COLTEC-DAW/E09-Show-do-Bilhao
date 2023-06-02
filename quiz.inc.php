@@ -7,6 +7,8 @@
 
     function LoadFromXML($id)
     {
+        $id = $id != null ? $id : 0;
+
         $file = simplexml_load_file("data.xml")
             or die("Erro ao abir XML das perguntas");
         $options = [];
