@@ -5,7 +5,6 @@
 
 * {
     font-family: "Qaranta";
-    text-align: center;
     background-color: rgb(33, 159, 168) ;
 }
 
@@ -14,6 +13,7 @@ body{
 }
 
 .title{
+    text-align: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -23,6 +23,7 @@ body{
 }
 
 .footer{
+    text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -46,16 +47,38 @@ body{
     transform: translate(-50%, -50%);
     text-align: justify;
 }
-.quest h1 {
+.quest form input.submit-btn{
+    margin-left: 35%;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 150%;
+    height: 55px;
+    width: 200px;
+    padding-bottom: 32px;
+    background-color: rgb(29, 111, 136);
+}
+.quest > * h1 {
     font-size: 25px;
 }
-.quest input{
+.quest > * input{
+    text-align: right;
     width: 5%;
     margin-left: 10%;
     height: 25px;
 }
-.quest label{
+.quest > * label{
+    text-align: right;
     margin-left: 0;
     width: 80%;
     font-size: 25px;
+}
+
+.error{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
 }
