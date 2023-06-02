@@ -1,3 +1,3 @@
-<php?
-  echo '<div class="footer"> <h3>Caio César [CostaCesar] 2023 </h3> </div>';
+<?php
+  echo '<div class="footer"> <h1>Caio César [CostaCesar] 2023© </h1> </div>';
 ?>

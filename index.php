@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Vai começar o Show do Milho Grande </h1>
+    <h1 class="title"> Vai começar o Show do Milho Grande </h1>
     <br>
     <?php
         // include('menu.inc.php');
