@@ -1,12 +1,5 @@
 <?php
-    require('data.inc.php');
-
-    function LoadQuestion($id)
-    {
-        global $data;
-        return $data[$id];
-    }
-
+    require('question.inc.php');
     function QuestionNotFound()
     {
         echo '<div class="error"> <h2>Ops! A pergunta que você procura não existe :(</h2> </div>';
