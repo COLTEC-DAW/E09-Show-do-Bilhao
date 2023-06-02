@@ -1,6 +1,7 @@
 <?php
-    require "Dados/question.inc";
-    $marked = htmlspecialchars($_POST["marked"]);
+    require "question.inc";
+    $id = $_GET["id"];
+    $question = load_question($id,"perguntas.json");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<?php
-$question = load_question($,"perguntas.json");
-?>
 <h2><?= $question->question ?></h2>
 
 <form action="loadQuestion.php" method="post">
@@ -21,11 +20,10 @@ $question = load_question($,"perguntas.json");
     for ($i=0; $i < sizeof($question->options); $i++) { 
 
         echo "<div><input type='radio' id='{$i}' name='alternativa' value='{$i}'><label for='{$i}'>{$question->options[$i]}</label></div>";
-          
     }
     ?>
-    <br>
-            <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar">
+
 </form>
     
 </body>

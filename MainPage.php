@@ -1,8 +1,3 @@
-<?php
-require "Dados/question.inc";
-$id = 0;
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +8,12 @@ $id = 0;
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <h1>Jogo do Bixo</h1>
 
+    <form action="loadQuestion.php" method="get">
+        <input type="submit" value="Jogar">
+        <input type="hidden" name="id" value="0">
+    </form>
 
 </body>
 </html>
