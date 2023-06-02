@@ -1,0 +1,30 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menu--titulo{
+    font-size: 2em;
+    margin: auto;
+    display: inline;
+}
+.menu{
+    display: inline;
+}
+.menu--lista{
+    display: inline-flex;
+    justify-content: space-around;
+    gap: 2em;
+}
+.lista--item{
+    display: inline;
+}
+.item--link{
+    text-decoration: none;
+    color: black;
+}
+.rodape{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+}

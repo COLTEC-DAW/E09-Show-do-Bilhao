@@ -1,22 +1,20 @@
-<?php require "perguntas.inc";?>
+<?php require "dadosPerguntas.inc";?>
 <?php 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     global $alternativas;
-    $resposta = $_POST["opcao"];
-    $pergunta = $_POST["pergunta"];
+    $resposta =  htmlspecialchars($_POST["opcao"]);
+    $pergunta = htmlspecialchars($_POST["pergunta"]);
 
     if($resposta==$alternativasCorretas[$pergunta]){
         if($pergunta==4){
-            header("Location: http://localhost:8000/voceGanhou.html");
-            exit;
+            require "voceGanhou.html";
         }else{
-            $proximaPagina=$pergunta+1;
-            header("Location: http://localhost:8000/perguntas.php?id=$proximaPagina");
-            exit;
-
+            $id=$pergunta+1;
+            $pergunta= carregaPerguntas($id);
+            require "pergunta.inc";
         }
     }else{
-        header("Location: http://localhost:8000/gameOver.html");
+        require "gameOver.html";
     }
 }
 ?>
