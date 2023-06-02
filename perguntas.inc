@@ -1,17 +1,17 @@
 <?php
-    $gabarito = ["B", "B", "C", "D", "E"];
+    $gabarito = ["B", "C", "A", "D", "C"];
 
     $enunciados = ["Qual o maior sonho de Isagi Yoichi, de Blue Lock: ", 
-                    "enum 2", 
-                    "enun 3", 
-                    "enun 4", 
-                    "enun 5"];
+                    "Em Solo Leveling, qual foi o último monarca que Sung-Jinwoo enfrentou: ", 
+                    "Qual é o andar mais alto conquistado atualmente em Tower of God: ", 
+                    "O que ocorreu com o corpo do Rei das Maldições, Ryomen Sukuna, após sua morte: ", 
+                    "Kafka Hibino, se torna um Kaiju numerado após: "];
 
     $alternativas = [["Se tornar o melhor goleiro do mundo.", "Se tornar o melhor atancante do mundo.", "Se tornar o melhor ala do mundo.", "Se tornar o melhor assassino do mundo."],
-                    ["alt 1 p2", "alt 2 p2", "alt 3 p2", "alt 4 p2"],
-                    ["alt 1 p3", "alt 2 p3", "alt 3 p3", "alt 4 p3"],
-                    ["alt 1 p4", "alt 2 p4", "alt 3 p4", "alt 4 p4"],
-                    ["alt 1 p5", "alt 2 p5", "alt 3 p5", "alt 4 p5"]];
+                    ["O monarca das sombras.", "O monarca das feras.", "O monarca dos dragões.", "O monarca das gelo."],
+                    ["134° Andar.", "68° Andar.", "756° Andar.", "228° Andar."],
+                    ["Foi destruido.", "Desapareceu.", "Foi separado e isolado em diversos lugares.", "Foi selado em uma montanha."],
+                    ["Ser mordido por um Kaiju.", "Matar um Daikaiju.", "Engolir um Kaiju.", "Passar por experimentos de laboratórios."]];
 
 
     function carregaPergunta($id){
