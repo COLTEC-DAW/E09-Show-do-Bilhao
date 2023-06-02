@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <data>
-    <question id=0>
+    <question id="0">
         <sentence>Qual é o item que deve ser obtido na Twilight Forest para fazer um motor a vapor?</sentence>
         <alternatives answer="c">
             <alt id="a">A) Naga Scale</alt>
@@ -9,7 +9,7 @@
             <alt id="d">D) Knigthly Ingot</alt>
         </alternatives>
     </question>
-    <question id=1>
+    <question id="1">
         <sentence>Como você desbloqueia a era 1 no SevTech: Ages?</sentence>
         <alternatives answer="b">
             <alt id="a">A) Matando o boss to Totemic</alt>
@@ -18,7 +18,7 @@
             <alt id="d">D) Fazendo sua primeira Crafting Table</alt>
         </alternatives>
     </question>
-    <question id=2>
+    <question id="2">
         <sentence>Qual é a progressão dos materiais metálicos?</sentence>
         <alternatives answer="a">
             <alt id="a">A) Cobre -> Ferro -> Bronze</alt>
@@ -27,7 +27,7 @@
             <alt id="d">D) Cobre -> Bronze -> Ferro</alt>
         </alternatives>
     </question>
-    <question id=3>
+    <question id="3">
         <sentence>Qual é o mod responsável pela customização de equipamento?</sentence>
         <alternatives answer="b">
             <alt id="a">A) Astral Sorcery</alt>

@@ -1,5 +1,5 @@
 <?php
-    require('question.inc');
+    require('question.inc.php');
     $data = array(
     new Question(
         'Como você desbloqueia a era 1 no SevTech: Ages?',
