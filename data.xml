@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<data>
+    <question id=0>
+        <sentence>Qual é o item que deve ser obtido na Twilight Forest para fazer um motor a vapor?</sentence>
+        <alternatives answer="c">
+            <alt id="a">A) Naga Scale</alt>
+            <alt id="b">B) Stroganoff</alt>
+            <alt id="c">C) Carmite Reactor</alt>
+            <alt id="d">D) Knigthly Ingot</alt>
+        </alternatives>
+    </question>
+    <question id=1>
+        <sentence>Como você desbloqueia a era 1 no SevTech: Ages?</sentence>
+        <alternatives answer="b">
+            <alt id="a">A) Matando o boss to Totemic</alt>
+            <alt id="b">B) Construindo um forno de fundição</alt>
+            <alt id="c">C) Terminado o ritual do AbyssalCraft</alt>
+            <alt id="d">D) Fazendo sua primeira Crafting Table</alt>
+        </alternatives>
+    </question>
+    <question id=2>
+        <sentence>Qual é a progressão dos materiais metálicos?</sentence>
+        <alternatives answer="a">
+            <alt id="a">A) Cobre -> Ferro -> Bronze</alt>
+            <alt id="b">B) Bronze -> Cobre -> Ferro</alt>
+            <alt id="c">C) Ferro -> Bronze -> Cobre</alt>
+            <alt id="d">D) Cobre -> Bronze -> Ferro</alt>
+        </alternatives>
+    </question>
+    <question id=3>
+        <sentence>Qual é o mod responsável pela customização de equipamento?</sentence>
+        <alternatives answer="b">
+            <alt id="a">A) Astral Sorcery</alt>
+            <alt id="b">B) Tinker's Construct</alt>
+            <alt id="c">C) Spartan Weaponry</alt>
+            <alt id="d">D) Immersive Engineering</alt>
+            <alt id="e">E) Better With Mods</alt>
+        </alternatives>
+    </question>
+</data>
