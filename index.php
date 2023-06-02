@@ -9,15 +9,18 @@
 <body>
     <?php
 
-        require "questions.php";
-        $d = 0;
-        $file = json_decode(file_get_contents("dados.json"));
-        
-        foreach ($file as $f){
-            new Perguntas($f[$d]->question, $f[$d]->options, $f[$d]->answer);
-        }
+    require "questions.inc";
 
-        $this->PrintQuestions();
+    $id = 0;
+
+    $file_json = json_decode(file_get_contents("dados.json"));
+
+    foreach($file_json as $f){
+        $q = new Perguntas($file_json[$id]->question, $file_json[$id]->options, $file_json[$id]->answer);
+        $q->PrintQuestions($id);
+        $id++;
+    }
+
 
     ?>
 </body>
