@@ -46,6 +46,7 @@
                 if($row["senha"] == $senha){
                     setcookie("login", $user);
                     echo "<p>usuario autenticado: " . $user . "</p>";
+                    $conn->close();
                     header('Location:  /?' . http_build_query($dados));
                 }else{
                     setcookie("login", NULL);
@@ -53,8 +54,7 @@
                 }
             }
             else{
-                setcookie("login", NULL);
-                echo "Usuário ou senha incorretos";
+                setcookie("login", NULL);  
             }
         }
     } else {
@@ -62,16 +62,16 @@
         echo "No records found";
     }
 
-    $dados = array('login' => $user);
-
     echo $_COOKIE["login"];
+
+    echo "Usuário ou senha incorretos"; 
     
     // Close the connection*/
     $conn->close();
 ?>
 
-<a href="/create.php">
-    <button>Create user</button>
+<a href="/">
+    <button>Voltar</button>
 </a>
 
 

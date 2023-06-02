@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(206, 206, 206);
+}
+
+.box{
+    text-align: center;
+    margin: 20% auto;
+    background-color: rgb(180, 177, 177);
+    max-width: 15%;
+    padding: 1%;
+}
+
+input[type="submit"]{
+    background-color: rgb(13, 179, 13);
+    border-radius: 1000px;
+    text-align: center;
+    margin: 4px auto;
+}
+
+input[type="submit"]:hover{
+    transform: scale(1.2);
+}

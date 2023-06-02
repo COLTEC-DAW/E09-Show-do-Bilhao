@@ -19,8 +19,10 @@
             
         }
         else{
-            echo "A ultima vez que você jogou foi ". $_COOKIE["time"];
-            echo "  e sua pontuação foi " . $_COOKIE["last"];
+            if($_COOKIE["last"] != NULL){
+                echo "A ultima vez que você jogou foi ". $_COOKIE["time"];
+                echo "  e sua pontuação foi " . $_COOKIE["last"];
+            }
             $out = carregarPergunta($id);
             $resp = $out[1];
             echo "<h1>$out[0]</h1>";
