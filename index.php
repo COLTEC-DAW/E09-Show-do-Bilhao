@@ -41,49 +41,9 @@
     ?>
 
     <?php include "perguntas.php"; ?>
-    <h2><?php $pergunta = carregaPergunta($id)[0]; echo $pergunta; ?></h2>
 
-    <form>
-        <div class="pergunta">
-            <label>
-                <input type="radio" name="pergunta"> <?php 
-                $alt1 = carregaPergunta($id)[2];
-                echo $alt1;?>
-            </label>
-        </div>
-        <div class="pergunta">
-            <label>
-                <input type="radio" name="pergunta"> <?php 
-                $alt2 = carregaPergunta($id)[3];
-                echo $alt2;?>
-            </label>
-        </div>
-        <div class="pergunta">
-            <label>
-                <input type="radio" name="pergunta"> <?php 
-                $alt3 = carregaPergunta($id)[4];
-                echo $alt3;?>
-            </label>
-        </div>
-        <div class="pergunta">
-            <label>
-                <input type="radio" name="pergunta"> <?php 
-                $alt4 = carregaPergunta($id)[5];
-                echo $alt4;?>
-            </label>
-        </div>
 
-        <input class="pergunta" type="submit" name="resp">
-
-        <?php 
-        // $resposta = $_POST["resp"];
-        // $alternativa=carregaPergunta($id)[1];
-        // if($resposta == $alternativa){
-            
-        // }
-        ?>
-    </form>
-
+    
     <?php include "rodape.inc"; ?>
 </body>
 </html>
