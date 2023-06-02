@@ -37,13 +37,15 @@
     <?php include "menu.inc"; ?>
 
     <?php
-    $id= $_GET["id"];
+    if(count($_GET)==0){
+        $id=1;
+    } else{
+        $id= $_GET["id"];
+    }
     ?>
 
     <?php include "perguntas.php"; ?>
 
-
-    
     <?php include "rodape.inc"; ?>
 </body>
 </html>
