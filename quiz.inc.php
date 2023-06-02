@@ -5,24 +5,25 @@
         echo '<div class="error"> <h2>Ops! A pergunta que você procura não existe :(</h2> </div>';
     }
 
-    function LoadFromXML($id)
+    function LoadFromXML($pos)
     {
-        $id = $id != null ? $id : 0;
+        $pos = $pos != null ? $pos : 0;
 
         $file = simplexml_load_file("data.xml")
             or die("Erro ao abir XML das perguntas");
         $options = [];
 
-        if(isset($file->question[$id]) == false)
+        if(isset($file->question[$pos]) == false)
         {
             QuestionNotFound();
             return null;
         }
                 
         return new Question(
-            $file->question[$id]->sentence,
-            $file->question[$id]->alternatives->children(),
-            $file->question[$id]->alternatives['answer']
+            (int)$pos,
+            $file->question[$pos]->sentence,
+            $file->question[$pos]->alternatives->children(),
+            $file->question[$pos]->alternatives['answer']
         );
     }
 ?>

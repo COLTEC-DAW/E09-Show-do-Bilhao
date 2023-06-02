@@ -8,9 +8,16 @@
     <br>
     <?php
         // include('menu.inc.php');
-        
+
         require('quiz.inc.php');
-        $quest = LoadFromXML((int)$_GET['id']);
+        $id = 0;
+        if($_POST['next_id'] != null)
+        {
+            $id = (int)$_POST['next_id'];
+            LoadFromXML($id-1)->CheckQuestion($_POST['answer']);
+        }
+
+        $quest = LoadFromXML($id);
         if($quest != null)
             $quest->ShowQuestion();
         
