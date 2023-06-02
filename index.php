@@ -1,17 +1,13 @@
  <!DOCTYPE html>
     <html>
-        <body style="color:white; background-color:black; font-family:'Courier New'">
+    <link rel="stylesheet" href="style.css">
+
+        <body>
             <?php
                 require('pergunta.inc');
                 require('definirPerguntas.inc');
 
-                function printPerguntas(array $perguntas) {
-                    foreach($perguntas as $perguntaAtual) {
-                        $perguntaAtual->printPergunta();
-                    }
-                }
-
-                printPerguntas($perguntas);
+                carregaPergunta($perguntas, intval($_GET["id"]));
             ?>
     </body>
 </html>

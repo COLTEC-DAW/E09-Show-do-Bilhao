@@ -33,8 +33,18 @@
         }
 
         public function printPergunta() {
-            echo "<b>" . $this->id . ") " . $this->stringPergunta . "</b><br/>";
+            echo "<h2> Questão " . $this->id . "<br/></h2><h3>" . $this->stringPergunta . "</h3>";
             $this->printRespostas();
         }
+    }
+
+    function printTodasPerguntas(array $perguntas) {
+        foreach($perguntas as $perguntaAtual) {
+            $perguntaAtual->printPergunta();
+        }
+    }
+
+    function carregaPergunta(array $perguntas, int $id) {
+        $perguntas[$id]->printPergunta();
     }
 ?>
