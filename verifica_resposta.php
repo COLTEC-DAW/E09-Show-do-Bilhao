@@ -5,12 +5,34 @@ include 'perguntas.inc';
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Verifica Resposta</title>
+    <style>
+    body, li, ul, p{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        font-size: 1.2em;
+        font-family: Calibri, sans-serif;
+    } 
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container p{
+        margin-bottom: 20px;
+    }
+    </style>
 </head>
 <body>
 
 <?php include 'menu.inc'; ?>
 
+<div class="container">
 <h1>Verifica Resposta</h1>
 
 <?php
@@ -88,6 +110,8 @@ include 'perguntas.inc';
         unset($_SESSION['respostas']);
     }
 ?>
+
+</div>
 
 <?php include 'rodape.inc'; ?>
 
