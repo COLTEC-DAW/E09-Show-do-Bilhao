@@ -10,7 +10,7 @@
         </alternatives>
     </question>
     <question id="1">
-        <sentence>Como você desbloqueia a era 1 no SevTech: Ages?</sentence>
+        <sentence>Como você desbloqueia a era I no SevTech: Ages?</sentence>
         <alternatives answer="b">
             <alt id="a">A) Matando o boss to Totemic</alt>
             <alt id="b">B) Construindo um forno de fundição</alt>
@@ -27,7 +27,7 @@
             <alt id="d">D) Cobre -> Bronze -> Ferro</alt>
         </alternatives>
     </question>
-    <question id="3">
+    <question id="4">
         <sentence>Qual é o mod responsável pela customização de equipamento?</sentence>
         <alternatives answer="b">
             <alt id="a">A) Astral Sorcery</alt>
@@ -35,6 +35,46 @@
             <alt id="c">C) Spartan Weaponry</alt>
             <alt id="d">D) Immersive Engineering</alt>
             <alt id="e">E) Better With Mods</alt>
+        </alternatives>
+    </question>
+    <question id="5">
+        <sentence>Qual o mascote do modpack?</sentence>
+        <alternatives answer="e">
+            <alt id="a">A) Pinguim</alt>
+            <alt id="b">C) Guerreiro espartano</alt>
+            <alt id="c">D) Homem de Ferro</alt>
+            <alt id="d">E) He-Man</alt>
+            <alt id="e">B) Mike Wazaslki azul</alt>
+            <alt id="f">F) Nyan Cat</alt>
+            <alt id="g">G) Júlio César</alt>
+        </alternatives>
+    </question>
+    <question id="6">
+        <sentence>Qual a versão atual (Maio 2023) do modpack?</sentence>
+        <alternatives answer="a">
+            <alt id="a">A) 3.2.3</alt>
+            <alt id="b">B) 2.3.3</alt>
+            <alt id="c">C) 1.0</alt>
+            <alt id="d">D) 4.0</alt>
+            <alt id="e">E) 3.3.4</alt>
+        </alternatives>
+    </question>
+    <question id="7">
+        <sentence>Qual é o principal mod na progressão da era II?</sentence>
+        <alternatives answer="d">
+            <alt id="a">D) Flan's mod</alt>
+            <alt id="b">B) Tinker's Construct</alt>
+            <alt id="c">C) Traverse</alt>
+            <alt id="d">A) Twilight Forest</alt>
+            <alt id="e">E) Ice and Fire</alt>
+        </alternatives>
+    </question>
+    <question id="8">
+        <sentence>Quantas vezes por semana Bongo e Caio conseguem jogar juntos?</sentence>
+        <alternatives answer="b">
+            <alt id="a">A) 3.75</alt>
+            <alt id="b">B) 0.5</alt>
+            <alt id="c">C) 1</alt>
         </alternatives>
     </question>
 </data>
