@@ -1,10 +1,10 @@
 <?php
-    include "Alternativa.inc"
+    require "Alternativa.inc";
 
     class Pergunta{
         // Atributos
-        $enunciado;
-        $alternativas;
+        public $enunciado;
+        public $alternativas;
         
         // Construtor
         public function __construct($textoEnunciado, $textosAlternativas, $indexResposta) {
@@ -15,6 +15,7 @@
             $contAlternativa = 0;
 
             foreach($textosAlternativas as $alternativa) {
+                // Adiciona pergunta na ultima posição do array
                 $this->alternativas[] = new Alternativa($letras[$contAlternativa], $textosAlternativas[$contAlternativa], false);
 
                 $contAlternativa++;
