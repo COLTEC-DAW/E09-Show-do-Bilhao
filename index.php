@@ -26,17 +26,20 @@
             $out = carregarPergunta($id);
             $resp = $out[1];
             echo "<h1>$out[0]</h1>";
-            echo "<ui>";
-            for($i = 0; $i < count($resp); $i++){
-                echo "<li><a href='/points.php?id=" .$id ."&op=" . $resp[$i] ."'>
-                $resp[$i] </a></li>";
-            }
-            echo "</ui>";
+            echo '<form action="/points.php/?id=' .$id .'" method="POST">';
         }
-
-    ?>
-    <button>
-        <a href="/logout.php">Logout</a>
-    </button>
-</body>
+?>
+            <ul>
+                <?php
+                    for($i = 0; $i < count($resp); $i++){
+                        echo '<input type="radio" id=", '. $resp[$i]. '" name="options" value="'.  $resp[$i] .'"><label for="' . $resp[$$i] .'">'.$resp[$i] .'</label><br>';
+                    }
+                ?>
+            </ul>
+            <input type="submit" value="responder">
+        </form>
+        <button>
+            <a href="/logout.php">Logout</a>
+        </button>
+    </body>
 </html>
