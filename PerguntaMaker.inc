@@ -19,5 +19,21 @@
             $this->perguntas[] = new Pergunta("Quinto enunciado", $alternativasProvisorias, 0);
             
         }
+    
+        public function carregaPergunta($id) {
+            $perguntaAtual = $this->perguntas[$id];
+
+            $nQuestao = $id+1;
+
+            echo "<h2>Questão $nQuestao</h2>";
+            echo "<p>$perguntaAtual->enunciado</p>";
+                        
+            foreach($perguntaAtual->alternativas as $alternativa){
+                echo "<div>";
+                echo "<input type='radio' name='resp' value='$alternativa->letra'>";
+                echo "$alternativa->letra) $alternativa->resposta";
+                echo "</div>";
+            }
+        }
     }
 ?>

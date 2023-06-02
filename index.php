@@ -1,5 +1,5 @@
 <!-- Importações -->
-<?php require "PerguntaMaker.inc"; ?>
+<?php require "PerguntaMaker.inc" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,18 +12,23 @@
 <body>
     <?php
         $game = new PerguntaMaker();
-        $count = 1;
 
-        foreach($game->perguntas as $pergunta) {
-            echo "<h2>Questão $count</h2>";
-            echo "<p>$pergunta->enunciado</p>";
-            
-            foreach($pergunta->alternativas as $alternativa){
-                echo "<p>$alternativa->letra) $alternativa->resposta</p>";
-            }
-
-            $count++;
+        if(isset($_GET["id"])) {
+            $id = $_GET["id"];
+        }
+        else {
+            $id = 0;
         }
     ?>
+    
+    <form action="index.php?id=<?php echo $id+1?>" method="POST">
+        <label for="resp">
+            <?php
+                $game->carregaPergunta($id);
+            ?>
+        </label>
+        
+        <input type="submit" name="Confirmar resposta" id="BotaoEnviar">
+    </form>
 </body>
 </html>
