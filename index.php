@@ -10,6 +10,7 @@
 ?>
 
 <?php require "questions-function.inc" ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
