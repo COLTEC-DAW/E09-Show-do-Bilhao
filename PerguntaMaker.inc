@@ -27,12 +27,27 @@
 
             echo "<h2>Questão $nQuestao</h2>";
             echo "<p>$perguntaAtual->enunciado</p>";
-                        
+            
+            echo "<form action='index.php?id=$nQuestao' method='POST'>";
+            echo "<label for='resp'>";
+
             foreach($perguntaAtual->alternativas as $alternativa){
                 echo "<div>";
                 echo "<input type='radio' name='resp' value='$alternativa->letra'>";
                 echo "$alternativa->letra) $alternativa->resposta";
                 echo "</div>";
+            }
+            echo "</label>";
+        
+            echo "<input type='submit' name='Confirmar resposta' id='BotaoEnviar'>";
+            echo "</form>";
+        }
+
+        public function buscaAlternativaCorreta($id) {
+            foreach($this->perguntas[$id]->alternativas as $alternativa) {
+                if($alternativa->ehCorreta) {
+                    return $alternativa->letra;
+                }
             }
         }
     }
