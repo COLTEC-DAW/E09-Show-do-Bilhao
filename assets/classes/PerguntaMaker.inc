@@ -25,21 +25,24 @@
 
             $nQuestao = $id+1;
 
-            echo "<h2>Questão $nQuestao</h2>";
-            echo "<p>$perguntaAtual->enunciado</p>";
+            echo "<h2 class='pergunta--titulo'>Questão $nQuestao</h2>";
+            echo "<p class='pergunta--enunciado'>$perguntaAtual->enunciado</p>";
             
             echo "<form action='index.php?id=$nQuestao' method='POST'>";
-            echo "<label for='resp'>";
+            $count = 0;
 
             foreach($perguntaAtual->alternativas as $alternativa){
-                echo "<div>";
-                echo "<input type='radio' name='resp' value='$alternativa->letra'>";
+                echo "<label for='resp$count'>";
+                echo "<div class='alternativa'>";
+                echo "<input type='radio' name='resp' id='resp$count' value='$alternativa->letra'>";
                 echo "$alternativa->letra) $alternativa->resposta";
                 echo "</div>";
+                echo "</label>";
+            
+                $count++;
             }
-            echo "</label>";
         
-            echo "<input type='submit' name='Confirmar resposta' id='BotaoEnviar'>";
+            echo "<input type='submit' value='Confirmar resposta' id='BotaoEnviar'>";
             echo "</form>";
         }
 
