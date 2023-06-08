@@ -19,11 +19,7 @@
         <form method="post">
 
             <?php 
-                if(validadeAnswer()){
-                    loadCurrentQuestion();
-                }else{
-                    loadLoseScreen();
-                }
+                validadeAnswer();
             ?>
             
         </form>

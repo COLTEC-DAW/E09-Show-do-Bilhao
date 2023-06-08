@@ -48,16 +48,22 @@
             if($question->alternativaCertaLetter == $_POST["selectOption"]){
                 global $game;
                 $game->score++;
+                
+                if($game->score == count($game->questions)){
+                    //TODO: fazer uma tela de vitória
+                    echo"<h1>Você chegou ao fim!</h1>";
+                    return;
+                }
 
                 $_POST["PlayerScore"] = $game->score;
-
                 $_POST["currentQuestionId"]++;
-
-                return true;
+                
+                loadCurrentQuestion();
             }else{
-                return false;
+                loadLoseScreen();
             }
+        }else{
+            loadCurrentQuestion();
         }
-        return true;
     }
 ?>
