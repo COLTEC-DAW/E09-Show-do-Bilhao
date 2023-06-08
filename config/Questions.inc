@@ -1,4 +1,5 @@
 <?php
+    
     //Questions
     $question1 = new Question();
     $question1->enunciado = "Enum1";
@@ -8,7 +9,7 @@
         new Alternativa(2, "c", "Alternativa3"),
         new Alternativa(3, "d", "Alternativa4")
     ];
-    $question1->alternativaCertaIndex = 3;
+    $question1->alternativaCertaLetter = 'd';
 
     $question2 = new Question();
     $question2->enunciado = "Enum2";
@@ -18,7 +19,7 @@
         new Alternativa(2, "c", "Alternativa3"),
         new Alternativa(3, "d", "Alternativa4")
     ];
-    $question2->alternativaCertaIndex = 1;
+    $question2->alternativaCertaLetter = 'b';
 
     $question3 = new Question();
     $question3->enunciado = "Enum3";
@@ -28,7 +29,7 @@
         new Alternativa(2, "c", "Alternativa3"),
         new Alternativa(3, "d", "Alternativa4")
     ];
-    $question3->alternativaCertaIndex = 0;
+    $question3->alternativaCertaLetter = 'a';
 
     $question4 = new Question();
     $question4->enunciado = "Enum4";
@@ -38,7 +39,7 @@
         new Alternativa(2, "c", "Alternativa3"),
         new Alternativa(3, "d", "Alternativa4")
     ];
-    $question4->alternativaCertaIndex = 0;
+    $question4->alternativaCertaLetter = 'a';
 
     $question5 = new Question();
     $question5->enunciado = "Enum5";
@@ -48,5 +49,5 @@
         new Alternativa(2, "c", "Alternativa3"),
         new Alternativa(3, "d", "Alternativa4")
     ];
-    $question5->alternativaCertaIndex = 2;
+    $question5->alternativaCertaLetter = 'c';
 ?>

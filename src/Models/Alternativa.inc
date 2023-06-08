@@ -10,16 +10,4 @@
             $this->enunciado = $enun;
         }
     }
-
-    class Question{
-        public $enunciado;
-        public $alternativas;
-        public $alternativaCertaIndex;
-    }
-
-    class Game{
-        public $questions;
-        public $currentQuestionId = 0;
-        public $score = 1;
-    }
 ?>
