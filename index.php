@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <?php 
     require "perguntas.inc";
-    include "menu.inc";
-    if(isset($_GET["id"]) && isset($_POST["resposta"])) {
+    
+    if(isset($_GET["id"])) {
         $id = $_GET["id"];
-        $resposta = htmlspecialchars($_POST["resposta"]) ;
     } else {
         $id = 0;
-        $resposta = NULL;
     }
 ?>
 
@@ -20,10 +18,13 @@
 </head>
 
 <body>
+    <?php include "menu.inc"; ?>
+
     <h1>Show do Bilhão</h1>
-    <form action="<?= verificaResposta($resposta, $id) ?>" method="POST">
-        <?php carregaPergunta($id);?>
+    <form action="index.php?id=<?= $id+1 ?>" method="POST">
+        <?php verificaResposta($id);?>
     </form>
+    
     <?php include "rodape.inc";?>
 </body>
 </html>
