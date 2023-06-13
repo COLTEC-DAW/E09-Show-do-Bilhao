@@ -10,9 +10,9 @@
 <body>
     <h1>Jogo do Bixo</h1>
 
-    <form action="Perguntas.php" method="get">
+    <form action="Perguntas.php" method="post">
         <input type="submit" value="Jogar">
-        <input type="hidden" name="pergunta" value="1">
+        <input type="hidden" name="pergunta" value="0">
     </form>
 
 </body>

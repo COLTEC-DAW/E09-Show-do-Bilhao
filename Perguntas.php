@@ -1,17 +1,13 @@
 <?php
-    require "question.inc.php";
-    define("NUMERO_PERGUNTAS", 4);
+    require "question.inc";
+    $id = $_POST['pergunta'];
+    $escolha = $_POST['escolha'];
+    $resposta = $_POST['resposta'];
 
-    if($questao->answer == $_POST['alternativa'])
-    {
-        $acertos = $_POST['pergunta'] + 1;
-        setcookie($acertos, $acertos);
-        if($_POST['pergunta'] == NUMERO_PERGUNTAS)
-        {
-            echo 'ganhou';
-            exit(1);
-        }
-        $questao = load_question($_POST['pergunta'] + 1, "perguntas.json");
+    if($escolha == $resposta){
+        $questao = load_question($id,"perguntas.json");
+    }else{
+        echo 'perdeu';
     }
 ?>
 
@@ -28,11 +24,12 @@
 <h2><?= $questao->question ?></h2>
 
 <form action="Perguntas.php" method="post">
-<input hidden name="pergunta" value=<?=$_POST["pergunta"] + 1?>>
+<input hidden name="pergunta" value=<?=$id + 1?>>
+<input hidden name="resposta" value=<?=$questao->answer?>>
     <?php 
-    for ($i=0; $i < sizeof($questao->options); $i++) { 
+    for ($i=1; $i <= sizeof($questao->options); $i++) { 
 
-        echo "<div><input type='radio' id='{$i}' name='alter' value='{$i}'><label for='{$i}'>{$questao->options[$i]}</label></div>";
+        echo "<div><input type='radio' id='{$i}' name='escolha' value='{$i}'><label for='{$i}'>{$questao->options[$i-1]}</label></div>";
     }
     ?>
         <input type="submit" value="Enviar">
