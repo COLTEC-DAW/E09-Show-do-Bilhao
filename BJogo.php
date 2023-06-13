@@ -1,13 +1,19 @@
 <?php
-    require "question.inc";
+    require "AloadQuestion.inc";
     $id = $_POST['pergunta'];
     $escolha = $_POST['escolha'];
     $resposta = $_POST['resposta'];
 
+    $file = json_decode(file_get_contents("APerguntas.json"));
+    $numPerguntas = count($file);
+
+    if($numPerguntas == $id){
+        header("Location: BGanhou.php");
+    }
     if($escolha == $resposta){
-        $questao = load_question($id,"perguntas.json");
+        $questao = load_question($id,"APerguntas.json");
     }else{
-        echo 'perdeu';
+        header("Location: BPerdeu.php");
     }
 ?>
 
@@ -17,13 +23,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Firula/MainPage.css">
     <title>Document</title>
 </head>
 
 <body>
+    <h1>Pergunta <?= $id + 1?></h1>
 <h2><?= $questao->question ?></h2>
 
-<form action="Perguntas.php" method="post">
+<form action="BJogo.php" method="post">
 <input hidden name="pergunta" value=<?=$id + 1?>>
 <input hidden name="resposta" value=<?=$questao->answer?>>
     <?php 

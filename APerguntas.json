@@ -1,0 +1,72 @@
+[
+    {
+        "question": "Qual animal da fauna brasileira está retratado na nota de R$ 10,00?",
+        "options": [
+            "Onça",
+            "Arara",
+            "Garça",
+            "Beija-flor"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Quanto é sen(π/3)?",
+        "options": [
+            "√2/2",
+            "1",
+            "0",
+            "√3/2"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "Quem ganhou a Copa do Mundo de 2006?",
+        "options": [
+            "Itália",
+            "Alemanha",
+            "Portugal",
+            "França"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Quando começou e quando terminou a Primeira Guerra Mundial?",
+        "options": [
+            "1914 - 1918",
+            "1902 - 1908",
+            "1920 - 1927",
+            "1912 - 1915"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Qual destes nomes caracteriza uma estreita faixa de terra que liga duas áreas maiores?",
+        "options": [
+            "Península",
+            "Golfo",
+            "Estreito",
+            "Istmo"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "Qual destes é o provérbio alemão favorito de Alex Fabiani?",
+        "options": [
+            "Para bom entendedor, meia palavra basta",
+            "Nós temos dois olhos e uma boca",
+            "Água mole, pedra dura, tanto bate até que fura",
+            "Cada macaco no seu galho"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Qual destes é um macaco do velho mundo?",
+        "options": [
+            "Sagui pigmeu",
+            "Mandril",
+            "Bugio",
+            "Macaco-prego"
+        ],
+        "answer": 2
+    }
+]
