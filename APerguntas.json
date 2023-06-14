@@ -7,7 +7,7 @@
             "Garça",
             "Beija-flor"
         ],
-        "answer": 3
+        "answer": 2
     },
     {
         "question": "Quanto é sen(π/3)?",
@@ -53,7 +53,7 @@
         "question": "Qual destes é o provérbio alemão favorito de Alex Fabiani?",
         "options": [
             "Para bom entendedor, meia palavra basta",
-            "Nós temos dois olhos e uma boca",
+            "Nós temos dois ouvidos e uma boca",
             "Água mole, pedra dura, tanto bate até que fura",
             "Cada macaco no seu galho"
         ],

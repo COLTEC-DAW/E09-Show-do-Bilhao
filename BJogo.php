@@ -1,11 +1,18 @@
 <?php
     require "AloadQuestion.inc";
-    $id = $_POST['pergunta'];
-    $escolha = $_POST['escolha'];
-    $resposta = $_POST['resposta'];
 
     $file = json_decode(file_get_contents("APerguntas.json"));
     $numPerguntas = count($file);
+
+    $id = $_POST['pergunta'];
+
+    if (isset($_POST['escolha'])) {
+        $escolha = $_POST['escolha'];
+    }
+
+    if (isset($_POST['resposta'])) {
+        $resposta = $_POST['resposta'];
+    }
 
     if($numPerguntas == $id){
         header("Location: BGanhou.php");
