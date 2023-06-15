@@ -1,6 +1,6 @@
 <?php
 
-require(SITE_ROOT."\Perguntas\Question.php");
+require("Question.php");
 
 function load_question($id, $fileName){
     $file = json_decode(file_get_contents($fileName));

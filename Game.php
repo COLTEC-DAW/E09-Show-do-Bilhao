@@ -1,10 +1,7 @@
 <?php
-//
-    define("SITE_ROOT", realpath("..\..\E09-Show-do-Bilhao"));
-    require (SITE_ROOT."\Perguntas\loadQuestion.inc.php");
+    require ("loadQuestion.inc.php");
 
-    //
-    $numPerguntas = count(json_decode(file_get_contents(SITE_ROOT."\Perguntas\Perguntas.json")));
+    $numPerguntas = count(json_decode(file_get_contents("Perguntas.json")));
 
     $id = $_GET['pergunta'] - 1;
 
@@ -27,7 +24,7 @@
     }
 
     //
-    $questao = load_question($id,SITE_ROOT."/Perguntas/Perguntas.json");
+    $questao = load_question($id,"Perguntas.json");
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +33,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="css/MainPage.css">
     <title>Document</title>
 </head>
 

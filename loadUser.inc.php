@@ -1,9 +1,6 @@
 <?php
-define("SITE_ROOT", realpath("..\..\E09-Show-do-Bilhao"));
-require(SITE_ROOT."\Usuarios\User.php");
+require("User.php");
 
-    $obj = new User("Léo da ZN","djonga.com.br","Salveee","fffdsdsc");
-    register_user($obj);
 
 
 function register_user($obj){

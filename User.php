@@ -15,13 +15,14 @@
             $this->highscore = 0;
     }
 
-    public function jsonSerialize():mixed{
+    public function jsonSerialize(){
             return ['name' => $this->name,
                     'email' => $this->email,
                     'login' => $this->login,
                     'password' => $this->password,
                     'highscore' => $this->highscore];
     }
+
 }
 
 ?>
