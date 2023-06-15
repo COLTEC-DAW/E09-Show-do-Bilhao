@@ -29,4 +29,10 @@
 
     }
 
+    function retornaGabarito(){
+        global $gabarito;
+
+        return $gabarito;
+    }
+
 ?>

@@ -15,8 +15,8 @@ $pergunta = $dadosPergunta[0];
 $alt = $dadosPergunta[1];
 $resposta = $dadosPergunta[2];
 
-$gabarito = ["A", "B", "C", "D"];
-$resp_usuario = $gabarito[$_POST["alt"]];
+$gab = ["A", "B", "C", "D"];
+$resp_usuario = $gab[$_POST["alt"]];
 
 
 ?>
@@ -39,11 +39,12 @@ $resp_usuario = $gabarito[$_POST["alt"]];
         <?php include "menu.inc"?>
 
         <?php 
-        if($id != 0 && $resp_usuario != carregaPergunta($id)[2]){
+        if($id != 0 && $resp_usuario != retornaGabarito()[$id-1]){
             
             include "game-over.inc";
+
             echo "X".$resp_usuario;
-            echo "X".carregaPergunta($id)[2];
+            echo "X".retornaGabarito()[$id-1];
             echo $id;
 
         }else{
@@ -51,8 +52,9 @@ $resp_usuario = $gabarito[$_POST["alt"]];
             include "questoes.inc";
 
             echo "X".$resp_usuario;
-            echo "X".carregaPergunta($id)[2];
+            echo "X".retornaGabarito()[$id-1];
             echo $id;
+
 
 
         } ?>
