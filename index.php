@@ -10,17 +10,20 @@
         // include('menu.inc.php');
 
         require('quiz.inc.php');
-        $id = 0;
-        if($_POST['next_id'] != null)
+        $id = isset($_POST['next_id']) ? (int)$_POST['next_id'] : 0;
+
+        if($id == 0 or LoadFromXML($id-1)->CheckQuestion($_POST['answer']))
         {
-            $id = (int)$_POST['next_id'];
-            LoadFromXML($id-1)->CheckQuestion($_POST['answer']);
+            $quest = LoadFromXML($id);
+            if($quest != null)
+                $quest->ShowQuestion();
+            else WinScreen();
+        }
+        else 
+        {
+            LoseScreen();
         }
 
-        $quest = LoadFromXML($id);
-        if($quest != null)
-            $quest->ShowQuestion();
-        
         include('footer.inc.php');
     ?>
 </body>

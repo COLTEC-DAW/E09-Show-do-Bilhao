@@ -1,8 +1,21 @@
 <?php
     require('question.inc.php');
+
     function QuestionNotFound()
     {
         echo '<div class="error"> <h2>Ops! A pergunta que você procura não existe :(</h2> </div>';
+    }
+    function WinScreen()
+    {
+        echo '<div class="box">';
+        echo '<h1>ACERTOU!</h1>';
+        echo '</div>';
+    }
+    function LoseScreen()
+    {
+        echo '<div class="box">';
+        echo '<h1>ERROOOUU!</h1>';
+        echo '</div>';
     }
 
     function LoadFromXML($pos)

@@ -28,7 +28,6 @@
                 echo '<input type="radio" id="'. $this->id .'" name="answer" value="'. chr($i+97).' ">';
                 echo '<label for="'. $this->id .'"> '. $choice .' </label><br>';
             }
-            // echo '<input type="hidden" name="correct_Answer" value="'. $this->correctAnswer .'">';
             echo '<input type="hidden" name="next_id" value="'. $nextId.'">';
             echo '<input class="submit-btn" type="submit" value="Responder">';
             echo '</form>';
@@ -37,12 +36,10 @@
 
         function CheckQuestion($answer)
         {
-            echo '<div class="box"> <h1>';
-            if(strcmp($answer, $this->correctAnswer))
-                echo 'ACERTOU!';
+            if(trim($answer) == trim($this->correctAnswer))
+                return true;
             else
-                echo 'ERROOOOOOOOOOUUUUUUUUUU!';
-            echo '</h1> </div>';
+                return false;
         }
     }
 ?>
