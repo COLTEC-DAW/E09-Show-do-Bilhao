@@ -20,11 +20,11 @@
     </question>
     <question id="2">
         <sentence>Qual é a progressão dos materiais metálicos?</sentence>
-        <alternatives answer="a">
-            <alt id="a">A) Cobre -> Ferro -> Bronze</alt>
-            <alt id="b">B) Bronze -> Cobre -> Ferro</alt>
-            <alt id="c">C) Ferro -> Bronze -> Cobre</alt>
-            <alt id="d">D) Cobre -> Bronze -> Ferro</alt>
+        <alternatives answer="d">
+            <alt id="a">A) Cobre - Ferro - Bronze</alt>
+            <alt id="b">B) Bronze - Cobre - Ferro</alt>
+            <alt id="c">C) Ferro - Bronze - Cobre</alt>
+            <alt id="d">D) Cobre - Bronze - Ferro</alt>
         </alternatives>
     </question>
     <question id="4">
