@@ -19,21 +19,23 @@
         }
 
         public function printRespostas() {
-            $indexResposta = 'a';
-            echo "<div style='margin-left:30px;'>"; 
-            // Código de div cortesia do grande Thales Davi
+            $indexResposta = 0;
+            echo "<div class='indentacao-alternativas'>";
+            // Código de div cortesia do grande Thales Davi. Dá uma leve indentação pras alternativas.
 
             foreach($this->respostas as $respostaAtual) {
-                echo $indexResposta . ") " . $respostaAtual . "<br/>";
-                $indexResposta++; 
-                // O StackOverflow disse que aritmética de caractere não funciona assim em PHP, mas o StackOverflow não manda em mim
+                echo "<input type='radio' id='alternativa-" . $indexResposta . "' name='perguntaAtual' value='" . $indexResposta . "'>";
+                // Cria um input de radio com id e valor iguais ao índice atual de resposta
+                echo "<label for='alternativa-" . $indexResposta . "'>" . $respostaAtual . "</label><br>";
+
+                $indexResposta++;
             }
 
             echo "</div><br/>";
         }
 
         public function printPergunta() {
-            echo "<h2> Questão " . $this->id . "<br/></h2><h3>" . $this->stringPergunta . "</h3>";
+            echo "<h1> Questão " . $this->id . "<br/></h2><h3>" . $this->stringPergunta . "</h3>";
             $this->printRespostas();
         }
     }

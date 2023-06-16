@@ -3,5 +3,10 @@ body {
     background-color:#222423; 
     font-family:'Courier New';
     font-size: 18px;
-    
+    margin: 90px auto;
+    max-width: 700px;
+}
+
+.indentacao-alternativas {
+    margin-left:30px;
 }

@@ -3,7 +3,7 @@
         new pergunta(
             "Para funcionar, um computador precisa de:", 
             [
-                "Carvão", 
+                "Vapor", 
                 "Eletricidade", 
                 "Energia nuclear", 
                 "Fé"
@@ -48,8 +48,8 @@
             "A diferença entre árvores binárias e quadtrees é:", 
             [
                 "Um nodo de uma árvore binária possui 2 galhos, enquanto um nodo de uma quadtree possui 4", 
-                "Árvores binárias foram inventadas em 1406 por Sir Jonathan Binário III, enquanto quadtrees foram descobertas nas inscrições das paredes de um templo maia 2 anos atrás", 
-                "Quadtrees, quando usadas em qualquer aplicação exceto sites de música, fazem o computador explodir ao compilar o programa", 
+                "Árvores binárias foram inventadas em 1406 por Sir Jonathan Binário III, enquanto quadtrees foram descobertas inscritas nas paredes de um templo maia 2 anos atrás", 
+                "Quadtrees, quando usadas em qualquer aplicação exceto sites de música, fazem o computador explodir violentamente ao compilar o programa", 
                 "Árvores binárias são cerca de 10^51 vezes mais radioativas do que quadtrees"
             ],
             0

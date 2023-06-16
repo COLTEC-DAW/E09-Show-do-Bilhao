@@ -2,12 +2,12 @@
     <html>
     <link rel="stylesheet" href="style.css">
 
-        <body>
-            <?php
-                require('pergunta.inc');
-                require('definirPerguntas.inc');
+    <body>
+        <?php
+            require('pergunta.inc.php');
+            require('definirPerguntas.inc.php');
 
-                carregaPergunta($perguntas, intval($_GET["id"]));
-            ?>
+            carregaPergunta($perguntas, intval($_GET["id"]));
+        ?>
     </body>
 </html>
