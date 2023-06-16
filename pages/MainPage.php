@@ -1,6 +1,5 @@
 <?php
-    require_once("loadUser.inc.php");
-    require_once("User.php");
+    require "../users/loadUser.inc.php";
 
     if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['name']) && isset($_POST['password'])) {
 
@@ -25,9 +24,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Bilhão</title>
-    <link rel="stylesheet" href="css/MainPage.css">
+    <link rel="stylesheet" href="../css/MainPage.css">
 </head>
 <body>
+
+<img src="../images/SBT.png" alt="">
     <h1>Jogo do Bixo</h1>
 
     <form action="Game.php" method="get">

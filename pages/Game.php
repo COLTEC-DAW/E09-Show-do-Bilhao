@@ -1,7 +1,7 @@
 <?php
-    require ("loadQuestion.inc.php");
+    require "../questions/loadQuestion.inc.php";
 
-    $numPerguntas = count(json_decode(file_get_contents("Perguntas.json")));
+    $numPerguntas = count(json_decode(file_get_contents("../questions/Perguntas.json")));
 
     $id = $_GET['pergunta'] - 1;
 
@@ -23,8 +23,7 @@
         }
     }
 
-    //
-    $questao = load_question($id,"Perguntas.json");
+    $questao = load_question($id,"../questions/Perguntas.json");
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +32,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/MainPage.css">
+    <link rel="stylesheet" href="../css/MainPage.css">
     <title>Document</title>
 </head>
 

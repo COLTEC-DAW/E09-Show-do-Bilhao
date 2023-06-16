@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Leonardo",
+        "email": "leopraoli@gmail.com",
+        "login": "Leonardo Prado",
+        "password": "segredo",
+        "highscore": 0
+    },
+    {
+        "name": "Roberto_Angelo",
+        "email": "reidelas12@gmail.com",
+        "login": "Xx_Dark4ngel_xX",
+        "password": "senha123",
+        "highscore": 0
+    }
+]

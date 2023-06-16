@@ -15,6 +15,7 @@
             $this->highscore = 0;
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
             return ['name' => $this->name,
                     'email' => $this->email,
