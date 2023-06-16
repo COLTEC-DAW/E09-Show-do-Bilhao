@@ -1,8 +1,5 @@
 <?php 
-include "pergunt.php";
-include "menu.inc";
-include "rodape.inc";
-
+require "perguntas.inc";
 ?>
 
 <!DOCTYPE html> 
@@ -40,7 +37,6 @@ include "rodape.inc";
                     
                     echo "<br>Resposta correta: $this->gabarito";
                     echo "<br>";
-        
                 }
                     
             }
@@ -60,12 +56,21 @@ include "rodape.inc";
             );
 
             $gabarito = array("1","3","3","2","0");
+
+            $question = new Questoes($perguntas[$i], $alternativas[$i], $gabarito[$i]);
+
+
+            carregaPergunta($id);
+
+
+
             /*
             for ($i = 0; $i < count($perguntas); $i++) {
                 $question = new Questoes($perguntas[$i], $alternativas[$i], $gabarito[$i]);
                 $question->ImprimiQuestoes();
             }*/
-            
+              
         ?>
+
     </body>
 </html>
