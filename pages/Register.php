@@ -13,6 +13,7 @@ Login <input type="text" name="login" id="" required><br><br>
 Senha <input type="password" name="password" id="" required><br><br>
 Email <input type="email" name="email" id="" required><br><br>
 Nome <input type="text" name="name" id="" required><br><br>
+<input type="hidden" name="register">
 
 <input type="submit" value="Registrar">
 </form>

@@ -1,0 +1,5 @@
+Css
+Criptografia de Senha
+Mexer com o login e registro
+Contagem da pontuação do usuário
+Perguntas aleatórias

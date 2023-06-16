@@ -1,10 +1,9 @@
 <?php
-    require "../users/loadUser.inc.php";
-
-    if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['name']) && isset($_POST['password'])) {
-        $obj = new User($_POST['login'],$_POST['email'],$_POST['name'],$_POST['password']);
-        register_user($obj);
+    require "../users/register.php";
+    if (isset($_POST['register'])) {
+        $obj = new register($_POST['login'],$_POST['email'],$_POST['name'],$_POST['password']);
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +22,7 @@
 <img src="../images/Coltec.png" alt="">
 <img src="../images/Coltec2.png" alt="">
     <h1>Jogo do Bixo</h1>
+
 
     <form action="Game.php" method="get">
         <input type="submit" value="Jogar">

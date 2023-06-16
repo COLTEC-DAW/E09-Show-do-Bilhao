@@ -1,30 +1,9 @@
 [
     {
-        "name": "Leonardo",
-        "email": "leopraoli@gmail.com",
-        "login": "Leonardo Prado",
-        "password": "segredo",
-        "highscore": 0
-    },
-    {
-        "name": "Roberto_Angelo",
-        "email": "reidelas12@gmail.com",
-        "login": "Xx_Dark4ngel_xX",
-        "password": "senha123",
-        "highscore": 0
-    },
-    {
-        "name": "Linus",
-        "email": "linux@gmail.com",
-        "login": "Linux4Ever",
-        "password": "Amo o meu arch linux",
-        "highscore": 0
-    },
-    {
-        "name": "Joab",
-        "email": "JoabContato@gmail.com",
-        "login": "Joab Manoel Gomis",
-        "password": "canetinha azul",
+        "name": "Djonga",
+        "email": "Djonga@gmail.com",
+        "login": "Dj onga",
+        "password": "$2y$10$zwVa5L7EHbwnYqw7ucot5urLXgSApEUVPaTc4w4a0Lnpqcu.0ak1.",
         "highscore": 0
     }
 ]
