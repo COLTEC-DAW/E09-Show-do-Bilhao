@@ -1,8 +1,6 @@
 <?php
-    $perguntas= ["quest1","quest2",
-    "quest3","quest4",
-    "quest5"];
-    $respostas=["a", "d","c","b","a"];
+    $perguntas= ["quest1","quest2","quest3","quest4","quest5"];
+    $respostas=[1,4,3,2,1];
 
     $perg1=["resp1","resp2","resp3","resp4"];
     $perg2=["resp1","resp2","resp3","resp4"];
@@ -16,27 +14,31 @@
         global $perguntas;
         global $alternativas;
         $id--;
+        $resp_usuario = $_POST["pergunta"];
+        
         echo "<div class='form'>";
         echo "<h2> $perguntas[$id] </h2>";
-        echo "<form action='index.php?id=$id' class='pergunta' method='POST'>";
-        for($i=0;$i<=3;$i++){
-            $alternativa = $alternativas[$id][$i];
+        echo "<form action='index.php?id=$id' method='POST'>";
+        for($i=1;$i<=4;$i++){
+            $alternativa = $alternativas[$id][$i-1];
             echo "<div class='pergunta'>";
-            echo "<label> <input type='radio' name='pergunta' value='a'> $alternativa </label>";
+            echo "<label> <input type='radio' name='pergunta' value='$i'> $alternativa </label>";
             echo "</div>";
         }
         echo "<input class='pergunta' type='submit' name='resp'>";
 
-        
+        return $resp_usuario;
     }
 
     function verificaPergunta($id, $resp_usuario){
         global $respostas;
         $i=$id--;
-        if($id<5 && $resp_usuario == $respostas[$i]){
-            return $id= $id+1;
+        echo"$respostas[$i]";
+        echo"$resp_usuario";
+        if($resp_usuario == $respostas[$i]){
+            return $id+1;
         } else{
-            return $id=6;
+            return 6;
         } 
     }
 ?>

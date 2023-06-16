@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +9,34 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <?php include "menu.inc"; ?>
-
-    <?php
-    if(count($_GET)==0){
-        $id=1;
-    } else{
-        $id= $_GET["id"];
-    }
-    ?>
-
-    <?php
-        include "perguntas.inc";
-        carregaPergunta($id);
-    ?>
-
     <?php 
+        include "./inc/menu.inc"; 
+
+        if(count($_GET)==0){
+            $id=1;
+        } else{
+            $id= $_GET["id"];
+        }
+
+        include "./inc/perguntas.inc";
         
+        if($id!=1){
+            $id=verificaPergunta($id, $resp);
+            echo "$id";
+            if($id!=6){
+                $resp=carregaPergunta($id);
+            } else{
+                if($id==6){
+                    echo "<h2> GAME OVER </h2>";
+                }
+            }
+        } else{
+            $resp=carregaPergunta($id);
+            
+        }
+        echo"resp $resp";
+
+        include "./inc/rodape.inc"; 
     ?>
-
-
-    <?php include "rodape.inc"; ?>
 </body>
 </html>
