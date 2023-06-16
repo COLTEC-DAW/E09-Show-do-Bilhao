@@ -1,0 +1,47 @@
+body{
+    background-color: #D7E0D3;
+}
+.menu{
+    background-color:#84947C;
+    height: 80px;
+}
+.menu h1{
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+    font-size: 32px;
+    color: #84947C;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+}
+.pergunta{
+    margin-top: 10px;
+}
+.form{
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+.rodape{
+    background-color: #84947C;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.rodape p{
+    padding-top: 15px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight:500;
+    font-family: 'Times New Roman', Times, serif;
+}

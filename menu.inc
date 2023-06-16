@@ -1,3 +1,3 @@
-<div>
-    <h1>Show do Bilhão - Taylor Swift</h1>
+<div class="menu">
+    <h1>Show do Bilhão</h1>
 </div>
