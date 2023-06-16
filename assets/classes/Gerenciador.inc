@@ -1,14 +1,16 @@
 <?php
     require "Pergunta.inc";
 
-    class PerguntaMaker {
+    class Gerenciador {
         // Atributos
         public $perguntas;
+        public $pontuacao;
 
         // Construtor
         public function __construct() {
             // inicia array de perguntas
             $this->perguntas = [];
+            $this->pontuacao = 0;
 
             $alternativasProvisorias = ["Alternativa a","Alternativa b","Alternativa c","Alternativa d","Alternativa e"];
 
@@ -32,18 +34,20 @@
             $count = 0;
 
             foreach($perguntaAtual->alternativas as $alternativa){
-                echo "<label for='resp$count'>";
                 echo "<div class='alternativa'>";
-                echo "<input type='radio' name='resp' id='resp$count' value='$alternativa->letra'>";
+                echo "<label for='resp$count'>";
+                echo "<input type='radio' name='resp' id='resp$count' value='$alternativa->letra' class = 'input--alternativa'>";
                 echo "$alternativa->letra) $alternativa->resposta";
-                echo "</div>";
                 echo "</label>";
+                echo "</div>";
             
                 $count++;
             }
         
             echo "<input type='submit' value='Confirmar resposta' id='BotaoEnviar'>";
             echo "</form>";
+
+            $this->pontuacao = $id;
         }
 
         public function buscaAlternativaCorreta($id) {

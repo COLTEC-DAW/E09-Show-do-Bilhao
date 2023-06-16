@@ -1,8 +1,8 @@
 <!-- Importações -->
-<?php require "./assets/classes/PerguntaMaker.inc" ?>
+<?php require "./assets/classes/Gerenciador.inc" ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,17 @@
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="./assets/javascript/main.js" ></script>
     
     <title>Show do Bilhão</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <img src="./assets/img/logo.png" alt="Logo show do Bilhão" class="cabecalho--img">
-    </header>
+    <?php include "./assets/partials/menu.inc"?>
 
     <main>
         <div class="pergunta">
             <?php
-                $game = new PerguntaMaker();
+                $game = new Gerenciador();
 
                 // Se id veio na requisição a variavel assume tal valor
                 if(isset($_GET["id"])) {
@@ -41,12 +40,17 @@
                 }
                 // se errou carrega pagina de gameover
                 else {
-                    echo "GAME OVER";
+                    echo "<h3 class='game_over'>GAME OVER</h3>";
+                    $game->pontuacao = $id - 1;
                 }
             ?>
 
         </div>
     </main>
 
+    <?php 
+        include "./assets/partials/rodape.inc";
+        rodape($game->pontuacao);
+    ?>
 </body>
 </html>
