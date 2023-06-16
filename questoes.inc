@@ -1,5 +1,5 @@
 <main>
-    <form class="questao" action="index.php?id=<?php echo $id + 1; ?>" method="POST">
+    <form class="questao" action="perguntas.php?id=<?php echo $id + 1; ?>" method="POST">
         <h2 class="enunciado"> <?php echo $pergunta ?> </h2>
 
         <div class="alternativas">
@@ -18,5 +18,4 @@
         
     </form>
 
-    
 </main>

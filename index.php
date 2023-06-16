@@ -1,22 +1,40 @@
 
 <?php
-require "perguntas.inc";
 
-if(count($_GET) == 0){
-    $id = 0;
-}else{
-    $id = $_GET['id'];
+session_start();
+
+
+function autenticar($usuario, $senha) {
+    return true;
 }
 
 
-$dadosPergunta = carregaPergunta($id);
+if (!isset($_SESSION["autenticado"])) {
+   
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"], $_POST["senha"])) {
+        $usuario = $_POST["usuario"];
+        $senha = $_POST["senha"];
 
-$pergunta = $dadosPergunta[0];
-$alt = $dadosPergunta[1];
-$resposta = $dadosPergunta[2];
+     
+        if (autenticar($usuario, $senha)) {
+            $_SESSION["usuario"] = $usuario;
 
-$gab = ["A", "B", "C", "D"];
-$resp_usuario = $gab[$_POST["alt"]];
+
+            $_SESSION["autenticado"] = true;
+            $_SESSION["n_acertos"] = 0;
+            header("Location: perguntas.php?id=0"); 
+
+        } else {
+            $erroLogin = "Usuário ou senha inválidos.";
+        }
+    }
+} elseif (isset($_GET["logout"])) {
+   
+    session_unset();
+    session_destroy();
+    setcookie("n_acertos"); 
+    header("Location: index.php"); 
+}
 
 
 ?>
@@ -29,7 +47,7 @@ $resp_usuario = $gab[$_POST["alt"]];
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pergunta <?php echo ($id + 1) ?> - Show dos Otakus</title>
+        <title>Show dos Otakus</title>
 
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
@@ -38,26 +56,34 @@ $resp_usuario = $gab[$_POST["alt"]];
     <body>
         <?php include "menu.inc"?>
 
-        <?php 
-        if($id != 0 && $resp_usuario != retornaGabarito()[$id-1]){
+        <main style="flex-direction:column">
+            <h2>Login</h2>
+
+            <?php if (isset($erroLogin)){ ?>
+                <p><?php echo $erroLogin; ?></p>
+            <?php } ?>
             
-            include "game-over.inc";
+            <?php if (!isset($_SESSION["autenticado"])){ ?>
+                <form method="post" action="index.php">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" name="usuario" required><br>
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" required><br>
+                    <input type="submit" value="Entrar">
+                </form>
+            <?php } else { ?>
+                <p>Você está autenticado como <?php echo $_SESSION["usuario"]; ?></p>
+                <p>Última vez logado: <?php echo $_COOKIE["ultimo_acesso"]; ?></p>
+                <p>Última pontuação: <?php echo $_COOKIE["n_acertos"]; ?></p>
+                
+                <a href="perguntas.php?id=0">Iniciar o jogo</a><br>
+                <a href="?logout">Logout</a>
 
-            echo "X".$resp_usuario;
-            echo "X".retornaGabarito()[$id-1];
-            echo $id;
 
-        }else{
-
-            include "questoes.inc";
-
-            echo "X".$resp_usuario;
-            echo "X".retornaGabarito()[$id-1];
-            echo $id;
-
-
-
-        } ?>
+                <?php setcookie("n_acertos");?>
+            <?php } ?>
+        
+        </main>
 
         <?php include "rodape.inc"?>
     </body>
