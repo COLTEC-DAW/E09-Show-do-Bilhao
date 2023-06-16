@@ -22,16 +22,19 @@
             $indexResposta = 0;
             echo "<div class='indentacao-alternativas'>";
             // Código de div cortesia do grande Thales Davi. Dá uma leve indentação pras alternativas.
+            
+            echo "<form method='POST' action='checaResposta.php'>";
+                foreach($this->respostas as $respostaAtual) {
+                    echo "<input type='radio' id='alternativa-$indexResposta' name='perguntaAtual' value='$indexResposta'>";
+                    // Cria um input de radio com id e valor iguais ao índice atual de resposta
+                    echo "<label for='alternativa-" . $indexResposta . "'>" . $respostaAtual . "</label><br>";
 
-            foreach($this->respostas as $respostaAtual) {
-                echo "<input type='radio' id='alternativa-" . $indexResposta . "' name='perguntaAtual' value='" . $indexResposta . "'>";
-                // Cria um input de radio com id e valor iguais ao índice atual de resposta
-                echo "<label for='alternativa-" . $indexResposta . "'>" . $respostaAtual . "</label><br>";
+                    $indexResposta++;
+                }
 
-                $indexResposta++;
-            }
-
-            echo "</div><br/>";
+                echo "</div><br/>";
+                echo "<input type='submit' value='Submeter resposta' name='submeter'";
+            echo "</form>";
         }
 
         public function printPergunta() {
