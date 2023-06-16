@@ -12,5 +12,19 @@
         "login": "Xx_Dark4ngel_xX",
         "password": "senha123",
         "highscore": 0
+    },
+    {
+        "name": "Linus",
+        "email": "linux@gmail.com",
+        "login": "Linux4Ever",
+        "password": "Amo o meu arch linux",
+        "highscore": 0
+    },
+    {
+        "name": "Joab",
+        "email": "JoabContato@gmail.com",
+        "login": "Joab Manoel Gomis",
+        "password": "canetinha azul",
+        "highscore": 0
     }
 ]
