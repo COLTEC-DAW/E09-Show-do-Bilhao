@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <?php include "menu.inc";?>
-    <?php include "rodape.inc";?>
+    <?php include "Components/menu.inc";?>
+    <?php include "Components/rodape.inc";?>
 </body>
 </html>

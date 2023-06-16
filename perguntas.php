@@ -13,7 +13,7 @@
         $id= htmlspecialchars($_GET["id"]);
         $idPergunta=$id+1;
         $pergunta=carregaPerguntas($id);
-        require "pergunta.inc";
+        require "Components/pergunta.inc";
     ?>
     
 </body>

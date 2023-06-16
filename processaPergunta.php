@@ -7,14 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
     if($resposta==$alternativasCorretas[$pergunta]){
         if($pergunta==4){
-            require "voceGanhou.html";
+            require "Pages/voceGanhou.html";
         }else{
             $id=$pergunta+1;
             $pergunta= carregaPerguntas($id);
-            require "pergunta.inc";
+            require "Components/pergunta.inc";
         }
     }else{
-        require "gameOver.html";
+        require "Pages/gameOver.html";
     }
 }
 ?>
