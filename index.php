@@ -10,21 +10,16 @@
 ?>
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show do Bilhão</title>
-</head>
-
 <body>
-    <?php include "menu.inc"; ?>
+    <?php include "menu.php"; ?>
 
-    <h1>Show do Bilhão</h1>
-    <form action="index.php?id=<?= $id+1 ?>" method="POST">
-        <?php verificaResposta($id);?>
-    </form>
+    <div class="wrapper">
+        <h1>Show do Bilhão</h1>
+        <form action="index.php?id=<?= $id+1 ?>" method="POST">
+            <?php verificaResposta($id);?>
+        </form>
+    </div>
     
-    <?php include "rodape.inc";?>
+    <?php include "rodape.php";?>
 </body>
 </html>

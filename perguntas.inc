@@ -16,30 +16,27 @@
     ];
 
     $respostas = [1, 0, 0, 2, 3];
-    $acertos = 0; 
 
     function carregaPergunta($id) {
         global $enunciados;
         global $alternativas;
         
-        echo "<h3>" . $enunciados[$id] . "</h3>";
+        echo "<h3 class='questao'>" . $enunciados[$id] . "</h3>";
         
         for($i = 0; $i < 4; $i++) {
-            echo "<input type='radio' name='resposta' value='". $i ."'> " . $alternativas[$id][$i] . "<br>";
+            echo "<input class='op' type='radio' name='resposta' value='". $i ."'> " . $alternativas[$id][$i] . "<br>";
         }
         echo "<button type='submit'>Enviar</button>";
         echo "<p>Acertos: ". $id ."/5 </p>";
     }
 
-    function gameover() {
-        global $acertos;
-
-        if ($acertos == 5) {
+    function gameover($id) {
+        if ($id == 5) {
             echo "<p>Parabéns!</p> <p>Você Ganhou!</p>";
         } else {
             echo "<p>Você Perdeu!</p>";
         }
-        echo "<p>Acertos: ". $acertos ."/5 </p>";
+        echo "<p>Acertos: ". $id ."/5 </p>";
     }
     
     function verificaResposta($id) {
@@ -54,7 +51,7 @@
                 carregaPergunta($id);
                 $acertos++;
             } else {
-                gameover();
+                gameover($id);
             }
             
 
@@ -62,7 +59,7 @@
             if ($id < 5) {
                 carregaPergunta($id);
             } else {
-                gameover();
+                gameover($id);
             }
         }
     }

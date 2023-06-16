@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+/* MENU DE NAVEGAÇÃO */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00FFAB;
+}
+
+.logo img{
+    height: 70px;
+}
+
+.login-icon {
+    margin-right: 7%;
+}
+
+/* PERGUNTAS */
+.wrapper {
+    text-align: center;
+    background-color: #EDF1D6;
+}
+
+.wrapper h1 {
+    margin: 0;
+    padding: 21px 0 0 0;
+}
+
