@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../dadosPerguntas.inc";
 
 function ConfereLogin(){
@@ -9,7 +10,8 @@ function ConfereLogin(){
     global $senhaUsuarioAutorizado;
 
     if($nome == $usuarioAutorizado && $senha == $senhaUsuarioAutorizado){
-        require "../Pages/PaginaInicial.html";
+        $_SESSION["autenticado"] = true;
+        require "../Pages/PaginaInicial.php";
     }else{
         require "../index.php";
     }

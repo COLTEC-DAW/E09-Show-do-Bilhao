@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../Styles/styles.css">
 </head>
 <body>
+    <?php 
+    session_start();
+    
+    ?>
     <?php include "../Components/menu.inc";?>
     <?php include "../Components/rodape.inc";?>
 </body>
