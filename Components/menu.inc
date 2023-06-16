@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../Styles/">
 </head>
 
 <h1 class="menu--titulo">Show do Bilhão</h1>
