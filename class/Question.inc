@@ -1,6 +1,14 @@
 <?php
+    
 class Question
 {
+    public static function genRandomQuestion()
+    {
+        $perguntas = json_decode(file_get_contents(__DIR__ . "/../data/perguntas.json"));
+        return $perguntas[array_rand($perguntas, 1)];
+    }
+
+
     // Properties
     public $enunciado;
     public $alternativas;
@@ -15,4 +23,5 @@ class Question
         $this->alternativa_correta = $alternativa_correta;
     }
 }
+
 ?>
