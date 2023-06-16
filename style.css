@@ -1,18 +1,34 @@
 body{
-    background-color: rgb(206, 206, 206);
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
 }
 
-h1{
+h1 {
+    color: #ff8800;
+    font-size: 36px;
     text-align: center;
     margin: 0 auto;
 }
 
 .box{
+    background-color: #ffffff;
+    border: 2px solid #ff8800;
+    border-radius: 10px;
     text-align: center;
     margin: 10% auto;
-    background-color: rgb(180, 177, 177);
     max-width: 15%;
     padding: 1%;
+}
+
+.box:hover{
+    background-color: #ff8800;
+    color: #ffffff;
+}
+
+.box:hover h1{
+    color: #ffffff;
 }
 
 input[type="submit"]{
@@ -24,4 +40,20 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     transform: scale(1.2);
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff0909c0;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+button:hover {
+    background-color: #c02c2188;
 }
