@@ -3,6 +3,7 @@
     $id = $_GET["id"];
     $op = $_POST["options"];
     if(!isset($_SESSION['point']) || $id == 0){
+        session_start();
         $_SESSION['point'] = 0;
     }
     include("perguntas.php");
@@ -33,6 +34,8 @@
         
         $prox = $id + 1;
     }
+
+    echo "<p>Sua ultima pontuação foi " . $_COOKIE["last"] . " às " . $_COOKIE["time"] . "</p>";
 
     echo '<p><a href="/?id=' . $prox. '">
     Próxima
