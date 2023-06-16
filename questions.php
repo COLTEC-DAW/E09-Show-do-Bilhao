@@ -1,5 +1,5 @@
 <?php
-    require "../src/Controllers/QuestionsController.inc";
+    require "./src/Controllers/QuestionsController.inc";
 
 ?>
 
@@ -12,7 +12,7 @@
     <title>Show do Bilhão</title>
 </head>
 <body>
-    <?php include "../templates/header.inc" ?>
+    <?php include "./templates/header.inc" ?>
     
     <div>
         <h2>Questions</h2>
@@ -27,6 +27,6 @@
     </div>
 
 
-    <?php include "../templates/footer.inc" ?>
+    <?php include "./templates/footer.inc" ?>
 </body>
 </html>

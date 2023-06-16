@@ -1,6 +1,6 @@
 <?php
-    require "../src/Models/ModelsLoad.inc";
-    require "../config/Game.inc";
+    require "./src/Models/ModelsLoad.inc";
+    require "./config/Game.inc";
 
 
     function loadQuestion(int $id){

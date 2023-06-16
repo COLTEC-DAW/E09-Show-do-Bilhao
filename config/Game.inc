@@ -1,6 +1,6 @@
 <?php
+    require("./config/Questions.inc");
 
-    require("../config/Questions.inc");
     //Game
     $playerScore = 0;
     if(!empty($_POST["PlayerScore"])){
