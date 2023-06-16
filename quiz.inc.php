@@ -1,5 +1,5 @@
 <?php
-    require('question.inc.php');
+    require('auth.inc.php');
 
     function QuestionNotFound()
     {

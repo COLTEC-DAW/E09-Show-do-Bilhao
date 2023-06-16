@@ -2,6 +2,7 @@
     class Question
     {
         public static $_numQuest = 0;
+        public static $_atQuestion = 0;
         public $id;
         public $question;
         public $answers = [];  
