@@ -31,7 +31,8 @@
             QuestionNotFound();
             return null;
         }
-                
+        
+        Question::$_numQuest = $file['size'];
         return new Question(
             (int)$pos,
             $file->question[$pos]->sentence,

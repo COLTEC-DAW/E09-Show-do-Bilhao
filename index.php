@@ -16,7 +16,10 @@
         {
             $quest = LoadFromXML($id);
             if($quest != null)
+            {
+                $quest->ShowProgress();
                 $quest->ShowQuestion();
+            }
             else WinScreen();
         }
         else 

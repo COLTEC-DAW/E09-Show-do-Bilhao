@@ -1,7 +1,7 @@
 <?php
     class Question
     {
-        private static $_numQuest = 0;
+        public static $_numQuest = 0;
         public $id;
         public $question;
         public $answers = [];  
@@ -9,7 +9,6 @@
 
         function __construct($id, $question, $answers, $correctAnswer)
         {
-            self::$_numQuest++;
             $this->id = $id;
             $this->question = $question;
             $this->answers = $answers;
@@ -31,6 +30,13 @@
             echo '<input type="hidden" name="next_id" value="'. $nextId.'">';
             echo '<input class="submit-btn" type="submit" value="Responder">';
             echo '</form>';
+            echo '</div>';
+        }
+
+        function ShowProgress()
+        {
+            echo '<div class="bar">';
+            echo '<h1>' . ($this->id+1) . ' de ' . (self::$_numQuest-1) . '</h1>';
             echo '</div>';
         }
 
