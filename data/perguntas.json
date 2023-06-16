@@ -1,0 +1,29 @@
+[
+    
+    {
+        "enunciado": "Em que estado brasileiro nasceu a apresentadora Xuxa?",
+        "alternativas": ["Rio de Janeiro", "Rio Grande do Sul", "Santa Catarina", "Goiás"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Qual é o nome dado ao estado da água em forma de gelo?",
+        "alternativas": ["Líquido", "Sólido", "Gasoso", "Vaporoso"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Às margens de que riacho foi proclamada a Independência do Brasil?",
+        "alternativas": ["Cambuci", "Sacomã", "Ipiranga", "São Francisco"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Em que estado norte-americano fica a cidade de Miami?",
+        "alternativas": ["Alasca", "Nova York", "Flórida", "Califórnia"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Em que cidade foram realizados os jogos olímpicos de 2000?",
+        "alternativas": ["Munique", "Sidney", "Tóquio", "Atlanta"],
+        "resposta": 2
+    }
+    
+]
