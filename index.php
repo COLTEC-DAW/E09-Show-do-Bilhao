@@ -3,6 +3,7 @@
 <head>
 	<title>PHP</title>
 	<meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<?php
@@ -25,6 +26,7 @@
             }
             $out = carregarPergunta($id);
             $resp = $out[1];
+            echo '<div class="box">';
             echo "<h1>$out[0]</h1>";
             echo '<form action="/points.php/?id=' .$id .'" method="POST">';
         }
@@ -41,5 +43,6 @@
         <button>
             <a href="/logout.php">Logout</a>
         </button>
+        </div>
     </body>
 </html>

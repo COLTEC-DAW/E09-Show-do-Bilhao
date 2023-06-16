@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "mySuperDB";
+    $username = "user";
+    $password = "afbtorres";
+    $database = "mySData";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
@@ -15,7 +15,7 @@
 
 
     // Create table
-    $sql = "CREATE TABLE IF NOT EXISTS example_table (
+    $sql = "CREATE TABLE IF NOT EXISTS mySTable (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         user VARCHAR(30) NOT NULL,
         senha VARCHAR(30) NOT NULL,

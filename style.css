@@ -2,9 +2,14 @@ body{
     background-color: rgb(206, 206, 206);
 }
 
+h1{
+    text-align: center;
+    margin: 0 auto;
+}
+
 .box{
     text-align: center;
-    margin: 20% auto;
+    margin: 10% auto;
     background-color: rgb(180, 177, 177);
     max-width: 15%;
     padding: 1%;
