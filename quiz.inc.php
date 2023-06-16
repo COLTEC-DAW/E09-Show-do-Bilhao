@@ -8,13 +8,13 @@
     function WinScreen()
     {
         echo '<div class="box">';
-        echo '<h1>ACERTOU!</h1>';
+        echo '<h1>Vitória!</h1>';
         echo '</div>';
     }
     function LoseScreen()
     {
         echo '<div class="box">';
-        echo '<h1>ERROOOUU!</h1>';
+        echo '<h1>Perdeste</h1>';
         echo '</div>';
     }
 

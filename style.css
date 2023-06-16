@@ -41,7 +41,7 @@ body{
 
 .quest{
     position: absolute;
-    min-width: 40%;
+    min-width: 450px;
     width: 40%;
     left: 30%;
     height: 40%;
@@ -50,7 +50,7 @@ body{
 }
 .quest form input.submit-btn{
     position: relative;
-    left: 12.5vw;
+    left: 31%;
     margin-top: 30px;
     text-align: center;
     font-size: 150%;
@@ -86,16 +86,19 @@ body{
 }
 
 .box{
+    min-width: 750px;
     background-color: rgb(25, 90, 110);
+    padding-bottom: 6%;
+    width: 75%;
     z-index: 15;
-    font-size: 10vh;
+    font-size: 75px;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 40%;
+    top: 47.5%;
+    text-align: center;
 }
 .box h1{
-    margin-bottom: 200px;
     background-color: inherit;
 }
 
