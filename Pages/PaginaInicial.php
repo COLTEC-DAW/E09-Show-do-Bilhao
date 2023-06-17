@@ -10,9 +10,13 @@
 <body>
     <?php 
     session_start();
-    
+    if(isset($_SESSION['user'])){
+
+        include "C:\Users\julia\OneDrive\Documentos\GitHub\E09-Show-do-Bilhao\Components/menu.inc";
+        include "C:\Users\julia\OneDrive\Documentos\GitHub\E09-Show-do-Bilhao\Components/rodape.inc";
+    }else{
+        require "../index.php";
+    }
     ?>
-    <?php include "../Components/menu.inc";?>
-    <?php include "../Components/rodape.inc";?>
 </body>
 </html>

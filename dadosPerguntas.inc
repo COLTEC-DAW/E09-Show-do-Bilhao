@@ -22,7 +22,7 @@ class Pergunta{
         $pergunta->enunciado=$enunciados[$id];
         $pergunta->alternativas=$alternativas[$id];
         $pergunta->indiceAlternativaCorreta=$alternativasCorretas[$id];
-
+        
         return $pergunta;
     }
 ?>

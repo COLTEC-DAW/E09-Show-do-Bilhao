@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="Styles/styles.css">
 </head>
 <body>
+    <?php 
+    session_start();
+    if(isset($_SESSION['user'])){
+        require "Pages/PaginaInicial.php";
+    }
+    ?>
     <form method="POST" action="/Services/ConfereLogin.php">
         <input type="text" name="login" id="login" 
         placeholder="Nome de usuário">

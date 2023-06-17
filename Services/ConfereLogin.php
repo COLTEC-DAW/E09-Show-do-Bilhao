@@ -10,7 +10,7 @@ function ConfereLogin(){
     global $senhaUsuarioAutorizado;
 
     if($nome == $usuarioAutorizado && $senha == $senhaUsuarioAutorizado){
-        $_SESSION["autenticado"] = true;
+        $_SESSION["user"] = $nome;
         require "../Pages/PaginaInicial.php";
     }else{
         require "../index.php";
