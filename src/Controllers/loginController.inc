@@ -12,6 +12,26 @@
         }
     }
 
+    function loadRightForm(){
+        if(isset($_POST['register'])){
+            loadRegisterForm();
+            unset($_POST['register']);
+        }else{
+            loadLoginForm();
+        }
+    }
+
+    function loadLoginForm(){
+        echo "<form action='post'>";
+        echo "    <input type='text' name='login' placeholder='login...' required /> <br/>";
+        echo "    <input type='text' name='passowrd' placeholder='Password...' required /> <br/>";
+        echo "    <input type='submit' value='Login' />";
+        echo "</form>";
+        echo "<form method='post' action='login.php'>";
+        echo "    <input type='submit' name='register' value='Register' />";
+        echo "</form>";
+    }
+
     function loadRegisterForm(){
         echo "<div>";
         echo "  <form method='post'>";
@@ -25,6 +45,9 @@
         echo "        <input type='text' name='password-confirm' required/><br/>";
         echo "        <input type='submit' value='Register' required/>";
         echo "  </form>";
+        echo "<form method='post' action='login.php'>";
+        echo "    <input type='submit' value='Login' />";
+        echo "</form>";
         echo "</div>";
     }
 

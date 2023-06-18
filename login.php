@@ -18,7 +18,7 @@
     
     <?php
         if(!isset($_SESSION['user'])){
-            loadRegisterForm();
+            loadRightForm();
         }else{
             loadBackToHomeScreen();
         }
