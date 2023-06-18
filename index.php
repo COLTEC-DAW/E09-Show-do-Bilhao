@@ -16,6 +16,7 @@
     <?php include "./templates/header.inc" ?>
     
     <?php
+        
         loadScreen();
     ?>
     
