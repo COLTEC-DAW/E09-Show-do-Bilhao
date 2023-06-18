@@ -18,13 +18,11 @@
     
     <?php
         if(isset($_POST['warning'])){
-            echo "<h1>" . $_POST['warning'] . "</h1>";
+            include "./templates/warningTemplate.inc";
         }
 
         if(!isset($_SESSION['user'])){
             loadRightForm();
-        }else{
-            loadBackToHomeScreen();
         }
     ?>
     

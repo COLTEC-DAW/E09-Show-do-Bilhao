@@ -6,7 +6,13 @@
     if(isset($_POST["selectOption"]) && isset($_POST["currentQuestionId"])){
         $question = loadQuestion($_POST["currentQuestionId"]);
 
+        // If user lose the game
         if($question->alternativaCertaLetter != $_POST["selectOption"]){
+            setcookie('lastScore', strval($game->score));
+            setcookie('lastTimePlayed', strval(date('d/m/Y')));
+        
+        }// If user win the game
+        elseif(($game->score + 1) == count($game->questions)){
             setcookie('lastScore', strval($game->score));
             setcookie('lastTimePlayed', strval(date('d/m/Y')));
         }
@@ -17,41 +23,17 @@
         return $game->questions[$id];
     }
 
-    function questionToHtml($id){
-        global $game;
-        $question = loadQuestion($id);
-        
-        echo "<h2>$question->enunciado</h2>";
-        echo "<input type='hidden' name='currentQuestionId' value='$id' />";
-        echo "<input type='hidden' name='PlayerScore' value='$game->score' />";
-
-        foreach($question->alternativas as $alternativa){
-            echo "<input type='radio' name='selectOption' value='$alternativa->letter' />";
-            echo "<span>[$alternativa->letter] $alternativa->enunciado</span> <br/>";
-        }
-        
-        echo "<input type='submit' value='Responder'>";
-    }
-
     function loadCurrentQuestion(){
-        $questionId = $_POST["currentQuestionId"];
-        if($questionId != null){
-            questionToHtml($questionId);
+        if(isset($_POST["currentQuestionId"])){
+            include "./templates/questionTemplate.inc";
         }else{
             echo("<h1>Something went wrong!</h1>");
             echo("<button><a href='index.php'>Go home</a></button>");
         }
     }
 
-    function loadLoseScreen(){
-        global $game;
-        echo("<h1>Sorry, você errou!</h1>");
-        echo("<p>Voce acertou: $game->score</p>");
-        echo("<button><a href='index.php'>Go home</a></button>");
-    }
-
-    function validadeAnswer(){
-        if(!empty($_POST["selectOption"])){
+    function loadScreen(){
+        if(isset($_POST["selectOption"])){
             $question = loadQuestion($_POST["currentQuestionId"]);
 
             if($question->alternativaCertaLetter == $_POST["selectOption"]){
@@ -63,14 +45,18 @@
                     echo"<h1>Você chegou ao fim!</h1>";
                     return;
                 }
-
+                
                 $_POST["PlayerScore"] = $game->score;
                 $_POST["currentQuestionId"]++;
-                
+                $game->currentQuestionId = $_POST["currentQuestionId"];
+
                 loadCurrentQuestion();
+                
             }else{
-                loadLoseScreen();
+                include "./templates/loseScreenTemplate.inc";
+            
             }
+
         }else{
             loadCurrentQuestion();
         }

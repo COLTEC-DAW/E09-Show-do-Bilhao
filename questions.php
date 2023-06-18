@@ -17,13 +17,8 @@
     
     <div>
         <h2>Questions</h2>
-        <form method="post">
 
-            <?php 
-                validadeAnswer();
-            ?>
-            
-        </form>
+        <?php loadScreen(); ?>
 
     </div>
 

@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require "./src/Controllers/homeController.inc";
     require "./src/Common/Functions.inc";
+    require "./src/Controllers/homeController.inc";
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,6 @@
     <?php include "./templates/header.inc" ?>
     
     <?php
-        
         loadScreen();
     ?>
     

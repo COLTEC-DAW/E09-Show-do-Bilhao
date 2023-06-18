@@ -8,5 +8,9 @@
         public function __construct($sc) {
             $this->score = $sc;
         }
+
+        function getCurrentQuestion(){
+            return $this->questions[$this->currentQuestionId];
+        }
     }
 ?>
