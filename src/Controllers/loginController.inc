@@ -2,18 +2,14 @@
     require "./src/Models/User.inc";
     $loginPath = './src/Storage/Users.json';
 
-    function existUser(){
+    function existUser($login){
         global $loginPath;
-
-        $login = $_POST['login'];
 
         $loginPointer = fopen($loginPath, 'r');
         $logins = fread($loginPointer, filesize($loginPath));
         $logins = json_decode($logins);
         foreach($logins as $user){
             if(strcmp($user->login, $login) == 0){
-                $_POST['warning'] = 'This login already exists';
-                $_POST['register'] = 'register';
                 return true;
             }
         }
@@ -51,6 +47,34 @@
         fclose($loginPointer);
     }
 
+    function loginUser(){
+        global $loginPath;
+
+        $loginPointer = fopen($loginPath, 'r');
+        if(filesize($loginPath) > 0){
+            $logins = fread($loginPointer, filesize($loginPath));
+            $logins = json_decode($logins);
+
+            foreach ($logins as $user) {
+                if($user->login == $_POST['login']){
+                    if(strcmp($user->password, $_POST['password']) == 0){
+                        $_SESSION['user'] = serialize($user);
+                    }else{
+                        $_POST['warning'] = "Wrong password";
+                    }
+                    return;
+                }
+            }
+            if(!isset($_SESSION['user'])){
+                $_POST['warning'] = "User not found";
+            }
+        }else{
+            $_POST['warning'] = "No users registered yeat";
+        }
+
+        fclose($loginPointer);
+    }
+
     function validateLogin(){
         global $loginPath;
         
@@ -59,41 +83,18 @@
                 $_POST['warning'] = "Passwords aren't equal";
                 $_POST['register'] = 'register';
             }else{
-                if(!existUser()){
+                if(!existUser($_POST['login'])){
                     createUser();
+                }else{
+                    $_POST['warning'] = 'This login already exists';
+                    $_POST['register'] = 'register';
                 }
             }
         }
         elseif(!isset($_SESSION['user']) && isset($_POST['login'])){
-
-            $loginPointer = fopen($loginPath, 'r');
-            if(filesize($loginPath) > 0){
-                $logins = fread($loginPointer, filesize($loginPath));
-                // TODO: terminar de testar o sistema de login
-                foreach ($logins as $user) {
-                    if($user->login == $_POST['login']){
-                        echo "Tem esse login";
-                        $_SESSION['user'] = $user;
-                    }
-                }
-                if(!isset($_SESSION['user'])){
-                    $_POST['warning'] = "User not found";
-                }
-            }else{
-                $_POST['warning'] = "No users registered yeat";
-            }
-
-            fclose($loginPointer);
+            loginUser();
         }
 
-        // if(!isset($_SESSION['user']) && isset($_POST['username'])){
-        //     $username = $_POST['username'];
-        //     $email = $_POST['email'];
-        //     $password = $_POST['password'];
-            
-        //     $user = new User($username, $email, $password);
-        //     $_SESSION['user'] = serialize($user);
-        // }
     }
 
     function loadRightForm(){
@@ -108,7 +109,7 @@
     function loadLoginForm(){
         echo "<form method='post'>";
         echo "    <input type='text' name='login' placeholder='login...' required /> <br/>";
-        echo "    <input type='text' name='passowrd' placeholder='Password...' required /> <br/>";
+        echo "    <input type='password' name='password' placeholder='Password...' required /> <br/>";
         echo "    <input type='submit' value='Login' />";
         echo "</form>";
         echo "<form method='post' action='login.php'>";
