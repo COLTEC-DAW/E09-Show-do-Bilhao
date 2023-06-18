@@ -6,14 +6,18 @@
         global $loginPath;
 
         $loginPointer = fopen($loginPath, 'r');
-        $logins = fread($loginPointer, filesize($loginPath));
-        $logins = json_decode($logins);
-        foreach($logins as $user){
-            if(strcmp($user->login, $login) == 0){
-                return true;
+
+        if(filesize($loginPath)){
+            $logins = fread($loginPointer, filesize($loginPath));
+            $logins = json_decode($logins);
+            foreach($logins as $user){
+                if(strcmp($user->login, $login) == 0){
+                    return true;
+                }
             }
         }
 
+        fclose($loginPointer);
         return false;
     }
 
@@ -23,7 +27,7 @@
         $login = $_POST['login'];
         $email = $_POST['email'];
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $newUser = new User($username, $email, $password, $login);
 
@@ -56,8 +60,8 @@
             $logins = json_decode($logins);
 
             foreach ($logins as $user) {
-                if($user->login == $_POST['login']){
-                    if(strcmp($user->password, $_POST['password']) == 0){
+                if(strcmp($user->login, $_POST['login']) == 0){
+                    if(password_verify($_POST['password'], $user->password)){
                         $_SESSION['user'] = serialize($user);
                         header("Refresh:0; url=index.php");
                     }else{
