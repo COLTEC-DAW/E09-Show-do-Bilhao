@@ -9,6 +9,7 @@
     $game = new Game($playerScore);
 
     $questionsPath = './src/Storage/Questions.json';
+    
     if(file_exists($questionsPath)){
         $json = fopen($questionsPath, "r");
         $alternativas = fread($json, filesize($questionsPath)); 
@@ -17,18 +18,4 @@
         fclose($json);
     }
     
-    
-    
-    // $questionsPath = './src/Storage/Questions.json';
-    // if(!file_exists($questionsPath)){
-    //     $alternativaTest = $game->questions;
-    //     $json = fopen($questionsPath, "w");
-    //     fwrite($json, json_encode($alternativaTest));
-    //     fclose($json);
-    // }else{
-    //     $json = fopen($questionsPath, "r");
-    //     $alternativaTest = fread($json, filesize($questionsPath)); 
-    //     $alternativaTest = json_decode($alternativaTest);
-    //     fclose($json);
-    // }
 ?>

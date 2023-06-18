@@ -13,6 +13,7 @@
     ?>
     <form action='./questions.php' method='post'>
         <input type='hidden' name='currentQuestionId' value='0'>
+        <input type='hidden' name='PlayerScore' value='0'>
         <input type='submit' value='Começar?'>
     </form>
 </div>

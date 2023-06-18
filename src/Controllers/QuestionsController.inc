@@ -13,7 +13,9 @@
         
         }// If user win the game
         elseif(($game->score + 1) == count($game->questions)){
-            setcookie('lastScore', strval($game->score));
+            // score + 1 because the add occur in loadScreen() function
+            setcookie('lastScore', strval($game->score + 1));
+
             setcookie('lastTimePlayed', strval(date('d/m/Y')));
         }
     }
