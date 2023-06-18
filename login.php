@@ -17,6 +17,10 @@
     <?php include "./templates/header.inc" ?>
     
     <?php
+        if(isset($_POST['warning'])){
+            echo "<h1>" . $_POST['warning'] . "</h1>";
+        }
+
         if(!isset($_SESSION['user'])){
             loadRightForm();
         }else{
