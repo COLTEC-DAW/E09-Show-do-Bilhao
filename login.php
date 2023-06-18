@@ -1,7 +1,7 @@
 <?php
-    require "./src/Controllers/loginController.inc";
     session_start();
-
+    require "./src/Controllers/loginController.inc";
+    require "./src/Common/Functions.inc";
     validateLogin();
 ?>
 

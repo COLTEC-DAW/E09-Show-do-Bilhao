@@ -1,7 +1,16 @@
 <?php
     require "./src/Models/ModelsLoad.inc";
     require "./config/Game.inc";
+    
+    //Saving the last score and last time played of the user
+    if(isset($_POST["selectOption"]) && isset($_POST["currentQuestionId"])){
+        $question = loadQuestion($_POST["currentQuestionId"]);
 
+        if($question->alternativaCertaLetter != $_POST["selectOption"]){
+            setcookie('lastScore', strval($game->score));
+            setcookie('lastTimePlayed', strval(date('d/m/Y')));
+        }
+    }
 
     function loadQuestion(int $id){
         global $game;

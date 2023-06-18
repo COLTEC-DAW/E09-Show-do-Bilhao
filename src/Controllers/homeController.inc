@@ -13,9 +13,16 @@
 
     function loadStartButton(){
         global $user;
+
         echo "<div>";
         echo "    <h2>Seja Bem-vindo ao Show do Bilhão</h2>";
         echo "    <h4>Jogando como: " . $user->username . "</h4>";
+        if(isset($_COOKIE['lastScore'])){
+            echo "<p>Última pontuação:" . $_COOKIE["lastScore"] . "</p>";
+        }
+        if(isset($_COOKIE['lastTimePlayed'])){
+            echo "<p>Última vez que jogou:" . $_COOKIE["lastTimePlayed"] . "</p>";
+        }
         echo "    <form action='./questions.php' method='post'>";
         echo "        <input type='hidden' name='currentQuestionId' value='0'>";
         echo "        <input type='submit' value='Começar?'>";

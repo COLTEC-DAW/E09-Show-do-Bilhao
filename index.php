@@ -1,6 +1,7 @@
 <?php
     session_start();
     require "./src/Controllers/homeController.inc";
+    require "./src/Common/Functions.inc";
 ?>
 
 <!DOCTYPE html>
