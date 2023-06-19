@@ -4,17 +4,17 @@
 ?>
 
 <header>
-    <span>Show do Bilhão</span>
+    <h2>Show do Bilhão</h2>
     <ul>
         <?php
             if(!isset($_SESSION['user'])){
-                echo "<a href='./login.php'>Login</a>";
+                echo "<a class='btn' href='./login.php'>Login</a>";
             }
         ?>
         <form method="post">
             <?php
                 if(isset($_SESSION['user'])){
-                    echo "<input type='submit' name='logout' value='Logout' />";
+                    echo "<input class='btn' type='submit' name='logout' value='Logout' />";
                 }
             ?>
         </form>

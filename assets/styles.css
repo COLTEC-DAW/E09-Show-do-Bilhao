@@ -1,0 +1,43 @@
+.title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    
+    color: #4ba4da;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.3rem;
+
+    background-color: #081721;
+    padding: 15px;
+}
+
+header > h2 {
+    font-size: 1.6rem;
+    color: #48c0fb;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+
+    padding: 10px;
+}
+
+.btn{
+    background-color: #172040;
+    border: 0;
+    border-radius: 3px;
+    padding: 3px 12px 3px 12px;
+
+    transition: ease-in 0.3s;
+}
+
+.btn:hover{
+    background-color: #3e7bd1;
+    color: #081721;
+    cursor: pointer;
+}

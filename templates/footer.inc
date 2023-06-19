@@ -1,4 +1,3 @@
 <footer>
-    <!-- TODO: Fazer o footer -->
-    <h4>Footer</h4>
+    <h4>&copy; Thales Davi de Souza</h4>
 </footer>
