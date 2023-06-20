@@ -2,7 +2,6 @@
     <link rel="stylesheet" href="../Styles/">
 </head>
 
-
 <h1 class="menu--titulo">Show do Bilhão</h1>
 <nav class="menu">
     <ul class="menu--lista">

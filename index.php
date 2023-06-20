@@ -10,15 +10,19 @@
 <body>
     <?php 
     session_start();
+    session_start();
     if(isset($_SESSION['user'])){
-        require "Pages/PaginaInicial.php";
+        include "Componentes/menu.inc";
+        include "Componentes/rodape.inc";
+    }else{
+        require "Componentes/login.inc";
+        //require "../index.php";
     }
+    /*if(isset($_SESSION['user'])){
+        require "Pages/PaginaInicial.php";
+    }else{
+    }*/
     ?>
-    <form method="POST" action="/Services/ConfereLogin.php">
-        <input type="text" name="login" id="login" 
-        placeholder="Nome de usuário">
-        <input type="password" name="senha" id="senha">
-        <button type= "submit">Fazer login</button>
-    </form>
+  
 </body>
 </html>

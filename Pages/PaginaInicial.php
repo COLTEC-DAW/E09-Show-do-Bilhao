@@ -11,9 +11,8 @@
     <?php 
     session_start();
     if(isset($_SESSION['user'])){
-
-        include "C:\Users\julia\OneDrive\Documentos\GitHub\E09-Show-do-Bilhao\Components/menu.inc";
-        include "C:\Users\julia\OneDrive\Documentos\GitHub\E09-Show-do-Bilhao\Components/rodape.inc";
+        include "../Componentes/menu.inc";
+        include "../Componentes/rodape.inc";
     }else{
         require "../index.php";
     }
