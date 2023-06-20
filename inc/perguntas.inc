@@ -1,6 +1,6 @@
 <?php
     $perguntas= ["quest1","quest2","quest3","quest4","quest5"];
-    $respostas=[1,4,3,2,1];
+    $respostas=["1","4","3","2","1"];
 
     $perg1=["resp1","resp2","resp3","resp4"];
     $perg2=["resp1","resp2","resp3","resp4"];
@@ -13,6 +13,7 @@
     function carregaPergunta($id){
         global $perguntas;
         global $alternativas;
+        global $respostas;
         $id--;
         $resp_usuario = $_POST["pergunta"];
         
@@ -27,18 +28,13 @@
         }
         echo "<input class='pergunta' type='submit' name='resp'>";
 
-        return $resp_usuario;
-    }
-
-    function verificaPergunta($id, $resp_usuario){
-        global $respostas;
-        $i=$id--;
-        echo"$respostas[$i]";
-        echo"$resp_usuario";
-        if($resp_usuario == $respostas[$i]){
-            return $id+1;
+        echo "usuario" + $resp_usuario;
+        echo "resp" + $respostas[$id];
+        if($resp_usuario == $respostas[$id]){
+            return $id+2;
         } else{
             return 6;
         } 
     }
+
 ?>

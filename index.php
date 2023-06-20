@@ -19,22 +19,8 @@
         }
 
         include "./inc/perguntas.inc";
-        
-        if($id!=1){
-            $id=verificaPergunta($id, $resp);
-            echo "$id";
-            if($id!=6){
-                $resp=carregaPergunta($id);
-            } else{
-                if($id==6){
-                    echo "<h2> GAME OVER </h2>";
-                }
-            }
-        } else{
-            $resp=carregaPergunta($id);
-            
-        }
-        echo"resp $resp";
+
+        $id=carregaPergunta($id);
 
         include "./inc/rodape.inc"; 
     ?>
