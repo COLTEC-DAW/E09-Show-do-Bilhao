@@ -12,18 +12,25 @@ if(isset($_SESSION['user'])){
 
     }else if($_SERVER["REQUEST_METHOD"] === "POST"){
         global $alternativas;
+        global $enunciados;
         $resposta =  htmlspecialchars($_POST["opcao"]);
         $pergunta = htmlspecialchars($_POST["pergunta"]);
-    
+
         if($resposta==$alternativasCorretas[$pergunta]){
-            if($pergunta==4){
+            if($pergunta==sizeof($enunciados)-1){
                 require "Pages/voceGanhou.php";
-            }else{
+            }
+            else{
                 $id=$pergunta+1;
                 $pergunta= carregaPerguntas($id);
                 require "Components/pergunta.inc";
             }
-        }else{
+        }else if($pergunta==0){
+            $id=0;
+            $pergunta= carregaPerguntas($id);
+            require "Components/pergunta.inc";
+        }
+        else{
             require "Pages/gameOver.html";
         }
     }
