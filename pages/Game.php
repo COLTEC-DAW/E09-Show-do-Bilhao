@@ -30,7 +30,7 @@
     if (isset($_POST['escolha']) && isset($_POST['resposta'])) {
         if($escolha != $resposta){
             $user->setHighscore($id - 1);
-            header("Location: Lose.php?score=".$id-1);
+            header("Location: Lose.php?score=".($id-1));
         }
     }
 
