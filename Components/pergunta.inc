@@ -13,12 +13,14 @@
     <h2><?php echo "$pergunta->enunciado"?></h2>
     <form action="perguntas.php" method="post">
         <?php
+        echo $pontuacao;
         for($i=0;$i<count($pergunta->alternativas);$i++){
             echo "<input type='radio' name='opcao' value=$i>";
             echo "<label>".$pergunta->alternativas[$i]."</label>";
         }
         ?>
         <input type='hidden' name="pergunta" value="<?php echo $id?>"/>
+        <input type='hidden' name="pontuacao" value="<?php echo $pontuacao?>"/>
         <button type= "submit">Enviar resposta</button>
     </form>
 </body>
