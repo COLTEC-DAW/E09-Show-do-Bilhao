@@ -46,7 +46,7 @@
         "email": "p@p",
         "login": "p",
         "password": "$2y$10$kcPKbPskqsGbmJtgb6RVTuwFoJ5PN8BA8Kp6KVbDVErY5VXHsOMii",
-        "highscore": 3
+        "highscore": 0
     },
     {
         "name": "a",
@@ -54,5 +54,12 @@
         "login": "Leonardo",
         "password": "$2y$10$OfH\/9Av3rnHv7il44hHqtegzXBUXFEqgDj0ohytP7\/T3n3vKbd9su",
         "highscore": 7
+    },
+    {
+        "name": "u",
+        "email": "u@u",
+        "login": "u",
+        "password": "$2y$10$6Vr1F9aX8ATKDXYIfIdaGegRb\/CXRRBz1i9GIRB7khfbOaklUiJFK",
+        "highscore": 6
     }
 ]
