@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    if(isset($_GET['msgL']))
+    {
+        $messageL = "Alguém já tem esse usuário, escolha outro";
+        echo $messageL;
+    }
+
+    if(isset($_GET['msgE']))
+    {
+        $messageE = "Email já cadastrado, escolha outro";
+        echo $messageE;
+    }
+
+    //Existe apenas para evitar login sobre login
+    if(isset($_SESSION["user"])){
+        header("Location: MainPage.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,9 +28,10 @@
 </head>
 <body>
 
+
 <form action="MainPage.php" method="post">
-Login <input type="text" name="login" id="" required><br><br>
-Senha <input type="password" name="password" id="" required><br><br>
+Login <input type="text" name="new_login" id="" required><br><br>
+Senha <input type="password" name="new_password" id="" required><br><br>
 Email <input type="email" name="email" id="" required><br><br>
 Nome <input type="text" name="name" id="" required><br><br>
 <input type="hidden" name="register">

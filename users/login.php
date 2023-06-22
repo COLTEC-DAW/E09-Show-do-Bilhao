@@ -1,11 +1,8 @@
-
 <?php
-class LoginUser
+class login
 {
     private $login;
     private $password;
-    public $error;
-    public $success;
     private $storage = "../users/Usuarios.json";
     private $stored_users;
 
@@ -17,19 +14,19 @@ class LoginUser
         $this->login();
     }
 
-
     private function login()
     {
-        foreach ($this->stored_users as $user) {
-            if ($user['login'] == $this->login) {
-                if (password_verify($this->password, $user['password'])) {
+        for ($i=0; $i < count($this->stored_users); $i++) {
+			if(!strcmp($this->login, $this->stored_users[$i]['login'])){
+                if (password_verify($this->password, $this->stored_users[$i]['password'])) {
                     session_start();
                     $_SESSION['user'] = $this->login;
                     header("location: ../pages/MainPage.php");
                     exit();
                 }
-            }
-        }
-        return $this->error = "Nome de usuário ou senha errados";
+			}
+		}
+        header("location: ../pages/Login.php?msg");
+
     }
 }

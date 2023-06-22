@@ -1,5 +1,10 @@
 <?php
+    session_start();
     require "../questions/loadQuestion.inc.php";
+
+    if (!isset($_SESSION["user"])) {
+        header("Location: MainPage.php?msg");
+    }
 
     $numPerguntas = count(json_decode(file_get_contents("../questions/Perguntas.json")));
 

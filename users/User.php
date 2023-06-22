@@ -8,13 +8,14 @@
         private $score;
 
     public function __construct($name, $email, $login, $password){
-            $this->name = htmlspecialchars($name);
-            $this->email = htmlspecialchars($email);
-            $this->login = htmlspecialchars($login);
-            $this->password = htmlspecialchars($password);
+            $this->name = $name;
+            $this->email = $email;
+            $this->login = $login;
+            $this->password = $password;
             $this->highscore = 0;
     }
 
+    //Apenas para formatação do objeto em .JSON
     #[\ReturnTypeWillChange]
     public function jsonSerialize(){
             return ['name' => $this->name,
@@ -25,5 +26,4 @@
     }
 
 }
-
 ?>

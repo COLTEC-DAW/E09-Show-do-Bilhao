@@ -1,9 +1,51 @@
 [
     {
-        "name": "Djonga",
-        "email": "Djonga@gmail.com",
-        "login": "Dj onga",
-        "password": "$2y$10$zwVa5L7EHbwnYqw7ucot5urLXgSApEUVPaTc4w4a0Lnpqcu.0ak1.",
+        "name": "Leo",
+        "email": "leopraoli@gmail.com",
+        "login": "Leonardo Prado",
+        "password": "$2y$10$Bdh1UqJYV4DXUbFH8HswhOKUH3PipVlatHZkvRbgg2q1eUCira7dC",
+        "highscore": 0
+    },
+    {
+        "name": "b",
+        "email": "b@b",
+        "login": "b",
+        "password": "$2y$10$nT6FGh0xS6Hwqj30d6PWBOkkWrz45h60aU3AeUBVx5rYmd3MwcAlC",
+        "highscore": 0
+    },
+    {
+        "name": "Teste da Silva",
+        "email": "teste@gmail.com",
+        "login": "Teste",
+        "password": "$2y$10$j6Nmggtu8ZarLA5iLxMUVOpbMuFRKHMQIWED2Ba3LM1dx4XV2.wVC",
+        "highscore": 0
+    },
+    {
+        "name": "t",
+        "email": "t@t",
+        "login": "t",
+        "password": "$2y$10$.okxoBWQ9FFWYIHypGtUY.us3AyjVVn2IJ7FmKgs6mRdY7Z.YiNja",
+        "highscore": 0
+    },
+    {
+        "name": "f",
+        "email": "f@f",
+        "login": "f",
+        "password": "$2y$10$l1fgLN4.99obja6PKt847ubw3QJTG.kl94SJjEJPUpWDnUSM8EjRm",
+        "highscore": 0
+    },
+    {
+        "name": "j",
+        "email": "j@j",
+        "login": "j",
+        "password": "$2y$10$EGIRxd3Ej1eNGIK2hP0UFOMaIFLg3yRFBVPyQvPErJ9S5WBD21yVK",
+        "highscore": 0
+    },
+    {
+        "name": "p",
+        "email": "p@p",
+        "login": "p",
+        "password": "$2y$10$kcPKbPskqsGbmJtgb6RVTuwFoJ5PN8BA8Kp6KVbDVErY5VXHsOMii",
         "highscore": 0
     }
 ]
