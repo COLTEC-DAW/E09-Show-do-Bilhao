@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Perdeu!!!!!!!!!!!!!!!!!</h1>
+    <h2>Seu score foi: <?=$_GET['score']?></h2>
 </body>
 </html>

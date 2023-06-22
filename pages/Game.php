@@ -1,10 +1,14 @@
 <?php
     session_start();
     require "../questions/loadQuestion.inc.php";
+    require "../users/User.php";
 
     if (!isset($_SESSION["user"])) {
         header("Location: MainPage.php?msg");
     }
+
+    $username =  $_SESSION["user"];
+    $user = new User(null, null, $username, null);
 
     $numPerguntas = count(json_decode(file_get_contents("../questions/Perguntas.json")));
 
@@ -19,12 +23,14 @@
     }
 
     if($numPerguntas == $id){
+        $user->setHighscore($id);
         header("Location: Win.php");
     }
 
     if (isset($_POST['escolha']) && isset($_POST['resposta'])) {
         if($escolha != $resposta){
-            header("Location: Lose.php");
+            $user->setHighscore($id - 1);
+            header("Location: Lose.php?score=".$id-1);
         }
     }
 

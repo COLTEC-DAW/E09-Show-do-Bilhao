@@ -11,7 +11,7 @@
         "email": "b@b",
         "login": "b",
         "password": "$2y$10$nT6FGh0xS6Hwqj30d6PWBOkkWrz45h60aU3AeUBVx5rYmd3MwcAlC",
-        "highscore": 0
+        "highscore": 4
     },
     {
         "name": "Teste da Silva",
@@ -25,7 +25,7 @@
         "email": "t@t",
         "login": "t",
         "password": "$2y$10$.okxoBWQ9FFWYIHypGtUY.us3AyjVVn2IJ7FmKgs6mRdY7Z.YiNja",
-        "highscore": 0
+        "highscore": 7
     },
     {
         "name": "f",
@@ -46,6 +46,13 @@
         "email": "p@p",
         "login": "p",
         "password": "$2y$10$kcPKbPskqsGbmJtgb6RVTuwFoJ5PN8BA8Kp6KVbDVErY5VXHsOMii",
-        "highscore": 0
+        "highscore": 3
+    },
+    {
+        "name": "a",
+        "email": "liunarduu@gmail.com",
+        "login": "Leonardo",
+        "password": "$2y$10$OfH\/9Av3rnHv7il44hHqtegzXBUXFEqgDj0ohytP7\/T3n3vKbd9su",
+        "highscore": 7
     }
 ]
