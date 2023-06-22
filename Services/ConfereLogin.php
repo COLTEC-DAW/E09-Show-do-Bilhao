@@ -11,6 +11,7 @@ function ConfereLogin(){
 
     if($nome == $usuarioAutorizado && $senha == $senhaUsuarioAutorizado){
         $_SESSION["user"] = $nome;
+        $_SESSION["senha"] = $senha;
         require "../index.php";
     }else{
         require "../index.php";

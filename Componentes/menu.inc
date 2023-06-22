@@ -7,10 +7,3 @@
     <input type='hidden' name="pergunta" value="0"/>
     <button type="submit">Jogar</button>
 </form>
-<?php
-    require "../dadosPerguntas.inc";
-    $id=0;
-    $pergunta= carregaPerguntas($id);
-    require "Components/pergunta.inc";
-    
-?>
