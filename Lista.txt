@@ -1,2 +1,4 @@
+O que ainda falta:
 Contagem da pontuação do usuário
-Perguntas aleatórias
+Sistema de perguntas aleatórias
+Toda a estilização
