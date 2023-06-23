@@ -6,17 +6,18 @@
     if(isset($_POST["selectOption"]) && isset($_POST["currentQuestionId"])){
         $question = loadQuestion($_POST["currentQuestionId"]);
 
+        $user = unserialize($_SESSION['user']);
         // If user lose the game
         if($question->alternativaCertaLetter != $_POST["selectOption"]){
-            setcookie('lastScore', strval($game->score));
-            setcookie('lastTimePlayed', strval(date('d/m/Y')));
+            setcookie($user->login . '-lastScore', strval($game->score));
+            setcookie($user->login . '-lastTimePlayed', strval(date('d/m/Y')));
         
         }// If user win the game
         elseif(($game->score + 1) == count($game->questions)){
             // score + 1 because the add occur in loadScreen() function
-            setcookie('lastScore', strval($game->score + 1));
+            setcookie($user->login . '-lastScore', strval($game->score + 1));
 
-            setcookie('lastTimePlayed', strval(date('d/m/Y')));
+            setcookie($user->login . '-lastTimePlayed', strval(date('d/m/Y')));
         }
     }
 
