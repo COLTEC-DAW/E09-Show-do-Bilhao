@@ -75,7 +75,7 @@
         </div>
     <?php endif; ?>
 
-    <?php include "templates/footer.inc.php"; ?>
+    <?php include "templates/footer.inc"; ?>
 </div>
 </body>
 </html>
