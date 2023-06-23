@@ -21,7 +21,7 @@
             $nextId = $this->id + 1;
             echo '<div class="quest">';
             echo '<h1>' . $this->question . '</h1>';
-            echo '<form action="/index.php" method="post">';
+            echo '<form action="/game.php" method="post">';
             for($i = 0; $i < count($this->answers); $i++)
             {
                 $choice = $this->answers[$i];
@@ -41,9 +41,9 @@
             echo '</div>';
         }
 
-        function CheckQuestion($answer)
+        function CheckQuestion()
         {
-            if(trim($answer) == trim($this->correctAnswer))
+            if((!isset($_POST['answer'])) or trim($_POST['answer']) == trim($this->correctAnswer))
                 return true;
             else
                 return false;

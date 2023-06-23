@@ -4,7 +4,7 @@
     {
         echo '<div class="box login">';
         echo '<h2>Login</h2>';
-        echo '<form action="/game.php" method="post">';
+        echo '<form action="/index.php" method="post">';
         echo '<label for="log">Usuario</label><br>';
         echo '<input type="text" id="username" name="username">';
         echo '<br>';
@@ -16,21 +16,20 @@
         echo '</div>';
     }
 
-    function ValidateLogIn()
+    function IsLogged()
     {
         $user = trim($_POST['username']);
-        if(empty($user))
-        {
-            return false;
-        }
 
-        if(!isset($_SESSION['atQuestion']) || !isset($_SESSION['username']))
+        if(!isset($_SESSION['username']))
         {
-            $_SESSION['name'] = $user;
-            $_SESSION['atQuestion'] = 0;
+            if(empty($user)) return false;
+            else
+            {
+                $_SESSION['username'] = $user;
+                $_SESSION['atQuestion'] = 0;
+            }
         }
         Question::$_atQuestion = $_SESSION['atQuestion'];
-        echo 'morreu';
         return true;
     }
 ?>

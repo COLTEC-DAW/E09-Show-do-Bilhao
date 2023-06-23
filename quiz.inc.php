@@ -10,12 +10,14 @@
         echo '<div class="box">';
         echo '<h1>Vitória!</h1>';
         echo '</div>';
+        session_destroy();
     }
     function LoseScreen()
     {
         echo '<div class="box">';
         echo '<h1>Perdeste</h1>';
         echo '</div>';
+        session_destroy();
     }
 
     function LoadFromXML($pos)
