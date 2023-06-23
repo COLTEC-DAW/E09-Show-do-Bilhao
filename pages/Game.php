@@ -24,7 +24,7 @@
 
     if($numPerguntas == $id){
         $user->setHighscore($id);
-        header("Location: Win.php");
+        header("Location: Win.html");
     }
 
     if (isset($_POST['escolha']) && isset($_POST['resposta'])) {
