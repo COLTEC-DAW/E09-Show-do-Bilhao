@@ -11,7 +11,7 @@
     <h1>Pergunta <?php echo $id+1 ?> </h1>
     <p>Acertos: <?php echo "$id/5" ?></p>
     <h2><?php echo "$pergunta->enunciado"?></h2>
-    <form action="perguntas.php" method="post">
+    <form action="/Controllers/perguntas.php" method="post">
         <?php
         echo $pontuacao;
         for($i=0;$i<count($pergunta->alternativas);$i++){

@@ -11,6 +11,10 @@
     a
     <h1>Você Perdeu!</h1>
     <h2> Não desista!</h2>
-    <a href="http://localhost:8000">Tente de novo</a>
+    <a href="../index.php">Tente de novo</a>
+    <form action="../index.php" method="post">
+    <input type='hidden' name="pergunta" value="0"/>
+    <button type="submit">Jogar</button>
+</form>
 </body>
 </html>

@@ -10,10 +10,10 @@
 <body>
     <?php 
     session_start();
-    session_start();
     if(isset($_SESSION['user'])){
-        include "Componentes/menu.inc";
-        include "Componentes/rodape.inc";
+        /*require "Componentes/menu.inc";
+        require "Componentes/rodape.inc";*/
+        require "Pages/paginaInicial.php";
     }else{
         require "Componentes/login.inc";
         //require "../index.php";
