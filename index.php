@@ -1,9 +1,7 @@
-<?php require('auth.inc.php');
+<?php
+    require('auth.inc.php');
     session_start();
-    if(IsLogged() == true)
-    {
-        header("Refresh:0; url=game.php");
-    }
+    RedirectIfLogged()
 ?>
 
 <html>

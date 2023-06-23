@@ -1,5 +1,4 @@
 <?php
-    require("question.inc.php");
     function LogIn()
     {
         echo '<div class="box login">';
@@ -16,7 +15,7 @@
         echo '</div>';
     }
 
-    function IsLogged()
+    function RedirectIfLogged()
     {
         $user = trim($_POST['username']);
 
@@ -29,13 +28,12 @@
                 $_SESSION['atQuestion'] = 0;
             }
         }
-        Question::$_atQuestion = $_SESSION['atQuestion'];
+        header("Refresh:0; url=game.php");
         return true;
     }
 
     function CheckLogout()
     {
-        echo 'TESTE';
         if(isset($_POST['logout']))
         {
             unset($_POST['logout']);
