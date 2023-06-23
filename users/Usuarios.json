@@ -8,30 +8,6 @@
         "foto": 7
     },
     {
-        "name": "i",
-        "email": "i@i",
-        "login": "i",
-        "password": "$2y$10$431cjg3bp1pviRxyq05RuO9fAamZrryOSXOuqVNKtWs34Axzv4U2i",
-        "highscore": 0,
-        "foto": 3
-    },
-    {
-        "name": "x",
-        "email": "x@x",
-        "login": "XXXTentacaoXXX",
-        "password": "$2y$10$BxQrvx.TkBDVHJmJCGfEFetjLmoIRfWvb9b208TFBSBCakW1w\/HkW",
-        "highscore": 0,
-        "foto": 7
-    },
-    {
-        "name": "p",
-        "email": "p@p",
-        "login": "p",
-        "password": "$2y$10$Fmvo6UjGhmnFOFevX2NepeznsaI11VAm3fFBHaQNba\/8jL7iOQPYO",
-        "highscore": 2,
-        "foto": 8
-    },
-    {
         "name": "o",
         "email": "o@o",
         "login": "Leonardo Prado",
@@ -46,5 +22,69 @@
         "password": "$2y$10$NHsA2XD3MJka3a8nDdf91u.6IwB9pOxXaY23qJYJb05Wp6p4uQwx.",
         "highscore": 7,
         "foto": 6
+    },
+    {
+        "name": "Djonga",
+        "email": "Djonga@gmail.com",
+        "login": "Djonga",
+        "password": "$2y$10$LDFhbvGzex\/0XHFXClSKBeY\/cphRN0A2GmG0\/tlPItL98L2m9yEFG",
+        "highscore": 0,
+        "foto": 2
+    },
+    {
+        "name": "a",
+        "email": "a@a",
+        "login": "a",
+        "password": "$2y$10$R3cFLwpvPGV6A6NLOwncGOV8ykblswSEx5busXmEakmec\/MOg0fQy",
+        "highscore": 0,
+        "foto": 5
+    },
+    {
+        "name": "b",
+        "email": "b@b",
+        "login": "b",
+        "password": "$2y$10$umv0X6lfHmBIXQDfqdKBGOwaW42IxN4iFhc5NU5wLpVEygn88Lqk2",
+        "highscore": 0,
+        "foto": 8
+    },
+    {
+        "name": "c",
+        "email": "c@c",
+        "login": "c",
+        "password": "$2y$10$YfUIKVXSYzUDNA3Q8NfHreg7OyTz12raaRNZ6Uw\/KbArimcWTvBQa",
+        "highscore": 0,
+        "foto": 17
+    },
+    {
+        "name": "d",
+        "email": "d@d",
+        "login": "d",
+        "password": "$2y$10$EVZLzNW3UFSA18oTDwGFo.aHEX64Vo6CcTZNvchgHzEGDdVB6cThS",
+        "highscore": 0,
+        "foto": 17
+    },
+    {
+        "name": "e",
+        "email": "e@e",
+        "login": "e",
+        "password": "$2y$10$h4yGkx5PlKT.0U9utdLJI.dfKT14T3Fql8ia1JNolNXb4g1gl4l0i",
+        "highscore": 0,
+        "foto": 5
+    },
+    {
+        "name": "f",
+        "email": "f@f",
+        "login": "f",
+        "password": "$2y$10$MJn9ZqOgVbcRAqiZyasYB.4zP5UH6hpRwrP1g695kBtcgMA1C7DaK",
+        "highscore": 0,
+        "foto": 1
+    },
+    {
+        "name": "r",
+        "email": "r@r",
+        "login": "r",
+        "password": "$2y$10$Cw7aOQb2QRw4JLdRYACcY.JecA1aZmbAoXG5HsrGGweNwUsLWsAqi",
+        "highscore": 0,
+        "foto": 10
     }
 ]

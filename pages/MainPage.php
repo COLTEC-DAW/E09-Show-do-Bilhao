@@ -42,7 +42,7 @@
 
         <div class="user">
             <?php if (isset($login)): ?>
-            <?php require "getFoto.php"?>
+            <?php require "../users/getFoto.php"?>
             <img src="../images/<?=getFoto($login)?>.png" alt="">
             <div class="name"><?=$login?></div>
             <?php endif; ?>

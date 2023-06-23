@@ -16,7 +16,7 @@
             $this->login = $login;
             $this->password = $password;
             $this->highscore = 0;
-            $this->foto = rand(0, 9);
+            $this->foto = rand(0, 17);
             $this->stored_users = json_decode(file_get_contents($this->storage), true);
     }
 
