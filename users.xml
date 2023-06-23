@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<data size="3">
+    <user>
+        <name>Exemplo</name>
+        <passwd>1234</passwd>
+        <atQuestion>2</atQuestion>
+    </user>
+    <user>
+        <name>Starter</name>
+        <passwd>1234</passwd>
+        <atQuestion>0</atQuestion>
+    </user>
+    <user>
+        <name>Foo</name>
+        <passwd>abc</passwd>
+        <atQuestion>1</atQuestion>
+    </user>
+</data>

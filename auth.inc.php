@@ -1,4 +1,5 @@
 <?php
+    require('user.inc.php');
     function LogIn()
     {
         echo '<div class="box login">';

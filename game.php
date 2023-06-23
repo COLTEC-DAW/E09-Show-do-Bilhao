@@ -3,7 +3,7 @@
     require('quiz.inc.php');
     require('auth.inc.php');
     require('question.inc.php');
-    
+
     include('menu.inc.php'); 
     include('footer.inc.php');
     CheckLogout();

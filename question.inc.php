@@ -55,7 +55,6 @@
 
             $file = simplexml_load_file("data.xml")
                 or die("Erro ao abir XML das perguntas");
-            $options = [];
 
             if(isset($file->question[$pos]) == false)
             {
