@@ -1,4 +1,7 @@
 <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     //Registro
     require "../users/register.php";
     if (isset($_POST['register'])) {
@@ -17,6 +20,9 @@
         $message = "Você precisa estar logado para jogar, doidão!";
     }
 
+    if(isset($_SESSION['user'])){
+        $login = $_SESSION['user'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +38,19 @@
 
 <div class="page-wrapper">
     <nav class="navbar">
+        <div class="user">
+            <?php if (isset($login)): ?>
+            <?php require "getFoto.php"?>
+            <img src="../images/<?=getFoto($login)?>.png" alt="">
+            <div class="name"><?=$login?></div>
+            <?php endif; ?>
+        </div>
+
+        <div class="menu">
         <a href="Login.php">Entrar</a>
         <a href="Register.php">Cadastrar</a>
-        <div class="line"></div>
+        <a href="logout.php">Sair</a>
+        </div>
     </nav>
 
     <main>
@@ -46,16 +62,17 @@
     </form>
     </main>
 
-    <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?=$message?>
-    </div>
+    <?php if (isset($message)): ?>
+        <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <?=$message?>
+        </div>
+    <?php endif; ?>
 
     <footer>
         <img height="50%" src="../images/Coltec.png" alt="">
         <img height="50%" src="../images/SBT.png" alt="">
     </footer>
-
 
 </div>
 </body>

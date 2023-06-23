@@ -5,6 +5,7 @@
         private $login;
         private $password;
         private $highscore;
+        private $foto;
         private $storage = "../users/Usuarios.json";
         private $stored_users;
     
@@ -15,6 +16,7 @@
             $this->login = $login;
             $this->password = $password;
             $this->highscore = 0;
+            $this->foto = rand(0, 9);
             $this->stored_users = json_decode(file_get_contents($this->storage), true);
     }
 
@@ -25,7 +27,8 @@
                     'email' => $this->email,
                     'login' => $this->login,
                     'password' => $this->password,
-                    'highscore' => $this->highscore];
+                    'highscore' => $this->highscore,
+                    'foto' => $this->foto];
     }
 
     public function setHighscore($score){

@@ -24,7 +24,7 @@ class register
 	//um login diferente, será alertado sobre o email
 	private function loginExists(){
 		for ($i=0; $i < count($this->stored_users); $i++) { 
-			if(!strcmp($this->login, $this->stored_users[$i]['login'])){
+			if($this->login == $this->stored_users[$i]['login']){
 				header("location: ../pages/Register.php?msgL");
 				return true;
 			}
@@ -34,7 +34,7 @@ class register
 
 	private function emailExists(){
 		for ($i=0; $i < count($this->stored_users); $i++) { 
-			if(!strcmp($this->email, $this->stored_users[$i]['email'])){
+			if($this->email == $this->stored_users[$i]['email']){
 				header("location: ../pages/Register.php?msgE");
 				return true;
 			}
@@ -48,7 +48,6 @@ class register
             $json_arr = json_decode($data, true);
             $json_arr[] = $this->new_user;
 			if(file_put_contents('../users/Usuarios.json', json_encode($json_arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE))){
-				session_start();
 				$_SESSION['user'] = $this->login;
 				return 0;
 			}else{

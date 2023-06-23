@@ -17,9 +17,8 @@ class login
     private function login()
     {
         for ($i=0; $i < count($this->stored_users); $i++) {
-			if(!strcmp($this->login, $this->stored_users[$i]['login'])){
+			if($this->login == $this->stored_users[$i]['login']){
                 if (password_verify($this->password, $this->stored_users[$i]['password'])) {
-                    session_start();
                     $_SESSION['user'] = $this->login;
                     header("location: ../pages/MainPage.php");
                     exit();

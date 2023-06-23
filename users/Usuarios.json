@@ -1,72 +1,18 @@
 [
     {
-        "name": "Leo",
-        "email": "leopraoli@gmail.com",
-        "login": "Leonardo Prado",
-        "password": "$2y$10$Bdh1UqJYV4DXUbFH8HswhOKUH3PipVlatHZkvRbgg2q1eUCira7dC",
-        "highscore": 0
+        "name": "l",
+        "email": "l@l",
+        "login": "l",
+        "password": "$2y$10$jHNz2hjl32egs69lRdGfjekn5oAnO85TBB.Rw\/QrGPW83fH0\/eaJ6",
+        "highscore": 0,
+        "foto": 7
     },
     {
-        "name": "b",
-        "email": "b@b",
-        "login": "b",
-        "password": "$2y$10$nT6FGh0xS6Hwqj30d6PWBOkkWrz45h60aU3AeUBVx5rYmd3MwcAlC",
-        "highscore": 7
-    },
-    {
-        "name": "Teste da Silva",
-        "email": "teste@gmail.com",
-        "login": "Teste",
-        "password": "$2y$10$j6Nmggtu8ZarLA5iLxMUVOpbMuFRKHMQIWED2Ba3LM1dx4XV2.wVC",
-        "highscore": 0
-    },
-    {
-        "name": "t",
-        "email": "t@t",
-        "login": "t",
-        "password": "$2y$10$.okxoBWQ9FFWYIHypGtUY.us3AyjVVn2IJ7FmKgs6mRdY7Z.YiNja",
-        "highscore": 7
-    },
-    {
-        "name": "f",
-        "email": "f@f",
-        "login": "f",
-        "password": "$2y$10$l1fgLN4.99obja6PKt847ubw3QJTG.kl94SJjEJPUpWDnUSM8EjRm",
-        "highscore": 0
-    },
-    {
-        "name": "j",
-        "email": "j@j",
-        "login": "j",
-        "password": "$2y$10$EGIRxd3Ej1eNGIK2hP0UFOMaIFLg3yRFBVPyQvPErJ9S5WBD21yVK",
-        "highscore": 0
-    },
-    {
-        "name": "p",
-        "email": "p@p",
-        "login": "p",
-        "password": "$2y$10$kcPKbPskqsGbmJtgb6RVTuwFoJ5PN8BA8Kp6KVbDVErY5VXHsOMii",
-        "highscore": 0
-    },
-    {
-        "name": "a",
-        "email": "liunarduu@gmail.com",
-        "login": "Leonardo",
-        "password": "$2y$10$OfH\/9Av3rnHv7il44hHqtegzXBUXFEqgDj0ohytP7\/T3n3vKbd9su",
-        "highscore": 7
-    },
-    {
-        "name": "u",
-        "email": "u@u",
-        "login": "u",
-        "password": "$2y$10$6Vr1F9aX8ATKDXYIfIdaGegRb\/CXRRBz1i9GIRB7khfbOaklUiJFK",
-        "highscore": 6
-    },
-    {
-        "name": "coltecano",
-        "email": "coltec@gmail.com",
-        "login": "Coltec",
-        "password": "$2y$10$L\/l931vAMRCvSuvT0r96he1kWPOyZEb2oJKh142wSfP0gfOrpaxIa",
-        "highscore": 7
+        "name": "i",
+        "email": "i@i",
+        "login": "i",
+        "password": "$2y$10$431cjg3bp1pviRxyq05RuO9fAamZrryOSXOuqVNKtWs34Axzv4U2i",
+        "highscore": 0,
+        "foto": 3
     }
 ]
