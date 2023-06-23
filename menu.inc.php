@@ -1,3 +1,13 @@
-<php?
-  echo '<div class="footer"> <h3>Caio César [CostaCesar] 2023©</h3> </div>';
+<?php
+  echo '<div class="menu">';
+
+  if(isset($_SESSION['username']))
+  {
+    echo'
+    <form method="post">
+      <input class="btn" type="submit" name="logout" value="Sair" />
+    </form>';
+  }
+
+  echo '</div>';
 ?>

@@ -1,6 +1,9 @@
 <?php
     session_start();
     require('quiz.inc.php');
+    include('menu.inc.php'); 
+    include('footer.inc.php');
+    CheckLogout();
 ?>
     
 <html>
@@ -28,9 +31,6 @@
             else WinScreen();
         }
         else LoseScreen();
-
-        // include('menu.inc.php'); 
-        include('footer.inc.php');
     ?>
 </body>
 </html>

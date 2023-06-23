@@ -32,4 +32,15 @@
         Question::$_atQuestion = $_SESSION['atQuestion'];
         return true;
     }
+
+    function CheckLogout()
+    {
+        echo 'TESTE';
+        if(isset($_POST['logout']))
+        {
+            unset($_POST['logout']);
+            session_destroy();
+            header("Refresh:0; url=index.php");
+        }
+    }
 ?>
