@@ -35,10 +35,8 @@
 
             foreach($perguntaAtual->alternativas as $alternativa){
                 echo "<div class='alternativa'>";
-                echo "<label for='resp$count'>";
                 echo "<input type='radio' name='resp' id='resp$count' value='$alternativa->letra' class = 'input--alternativa'>";
-                echo "$alternativa->letra) $alternativa->resposta";
-                echo "</label>";
+                echo "<p class='non-selected'>$alternativa->letra) $alternativa->resposta</p>";
                 echo "</div>";
             
                 $count++;

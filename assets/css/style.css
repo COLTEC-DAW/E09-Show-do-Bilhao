@@ -91,3 +91,7 @@ input[type="radio"] {
     border-radius: 30px;
     border: black solid 2px;
 }
+
+.non-selected {
+    user-select: none;
+}

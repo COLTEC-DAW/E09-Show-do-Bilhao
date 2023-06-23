@@ -40,7 +40,9 @@
                 }
                 // se errou carrega pagina de gameover
                 else {
-                    echo "<h3 class='game_over'>GAME OVER</h3>";
+                    ?>
+                        <h3 class='game_over'>GAME OVER</h3>
+                    <?php
                     $game->pontuacao = $id - 1;
                 }
             ?>
