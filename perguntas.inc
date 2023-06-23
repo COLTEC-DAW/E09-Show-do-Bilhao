@@ -13,4 +13,19 @@ function carregaPergunta($id) {
     //retorna a pergunta relacionada a posição da variavel id
     return $perguntas[$id] ?? null;
 }
+
+
+ public function verificaResposta($id, $resposta) {
+    if ($resposta === $this->questaocerta) {
+        $proximoId = $id + 1;
+        if (isset($perguntas[$proximoId])) {
+            return $proximoId; // Retorna o próximo ID se a resposta estiver correta
+        } else {
+            return 'gameover'; // Retorna 'gameover' se não houver mais perguntas
+        }
+    } else {
+        return 'gameover'; // Retorna 'gameover' se a resposta estiver incorreta
+    }
+}
+
 ?>
