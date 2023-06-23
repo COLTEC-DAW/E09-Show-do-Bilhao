@@ -11,7 +11,7 @@
         "email": "b@b",
         "login": "b",
         "password": "$2y$10$nT6FGh0xS6Hwqj30d6PWBOkkWrz45h60aU3AeUBVx5rYmd3MwcAlC",
-        "highscore": 4
+        "highscore": 7
     },
     {
         "name": "Teste da Silva",
@@ -61,5 +61,12 @@
         "login": "u",
         "password": "$2y$10$6Vr1F9aX8ATKDXYIfIdaGegRb\/CXRRBz1i9GIRB7khfbOaklUiJFK",
         "highscore": 6
+    },
+    {
+        "name": "coltecano",
+        "email": "coltec@gmail.com",
+        "login": "Coltec",
+        "password": "$2y$10$L\/l931vAMRCvSuvT0r96he1kWPOyZEb2oJKh142wSfP0gfOrpaxIa",
+        "highscore": 7
     }
 ]
