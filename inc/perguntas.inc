@@ -14,27 +14,36 @@
         global $perguntas;
         global $alternativas;
         global $respostas;
-        $id--;
         $resp_usuario = $_POST["pergunta"];
-        
-        echo "<div class='form'>";
-        echo "<h2> $perguntas[$id] </h2>";
-        echo "<form action='index.php?id=$id' method='POST'>";
-        for($i=1;$i<=4;$i++){
-            $alternativa = $alternativas[$id][$i-1];
-            echo "<div class='pergunta'>";
-            echo "<label> <input type='radio' name='pergunta' value='$i'> $alternativa </label>";
-            echo "</div>";
+        $proxPag = $id + 1;
+
+        if($id != 0) {
+            if($respostas[$id - 1] == $resp_usuario) {
+                echo "<div class='form'>";
+                echo "<h2> $perguntas[$id] </h2>";
+                echo "<form action='index.php?id=$proxPag' method='POST'>";
+                for($i=1;$i<=4;$i++){
+                    $alternativa = $alternativas[$id][$i-1];
+                    echo "<div class='pergunta'>";
+                    echo "<label> <input type='radio' name='pergunta' value='$i'> $alternativa </label>";
+                    echo "</div>";
+                }
+                echo "<input class='pergunta' type='submit' name='resp'>";
+            } else {
+                echo "<h2 class='gameover'> GAME OVER </h2>";
+            }
         }
-        echo "<input class='pergunta' type='submit' name='resp'>";
-
-        echo "usuario" + $resp_usuario;
-        echo "resp" + $respostas[$id];
-        if($resp_usuario == $respostas[$id]){
-            return $id+2;
-        } else{
-            return 6;
-        } 
+        else {
+            echo "<div class='form'>";
+            echo "<h2> $perguntas[$id] </h2>";
+            echo "<form action='index.php?id=$proxPag' method='POST'>";
+            for($i=1;$i<=4;$i++){
+                $alternativa = $alternativas[$id][$i-1];
+                echo "<div class='pergunta'>";
+                echo "<label> <input type='radio' name='pergunta' value='$i'> $alternativa </label>";
+                echo "</div>";
+            }
+            echo "<input class='pergunta' type='submit' name='resp'>";
+        }
     }
-
 ?>

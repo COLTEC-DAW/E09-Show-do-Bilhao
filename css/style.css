@@ -21,8 +21,20 @@ h2{
     font-family: 'Times New Roman', Times, serif;
     padding-bottom: 20px;
 }
+.gameover{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 50px;
+    color: #84947C;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+}
 .pergunta{
     margin-top: 10px;
+}
+.login{
+    margin: 10px;
 }
 .form{
     padding-top: 100px;
