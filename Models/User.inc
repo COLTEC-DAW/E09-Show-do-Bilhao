@@ -30,7 +30,7 @@ if (isset($_COOKIE['cookie'])) {
 function criaUsuarioECookie( $nome, $senha, $pontuacao){
     $usuario = new User($nome, $senha, $pontuacao);
     
-    setcookie("usuario-{$nome}",json_encode($usuario),  time()+3600);
+    setcookie("usuario-{$nome}",json_encode($usuario),  time()+3600, "/");
 }
 
 ?>

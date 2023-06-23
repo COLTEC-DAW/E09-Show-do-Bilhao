@@ -19,11 +19,10 @@ if(isset($_SESSION['user'])){
         $pontuacao = htmlspecialchars($_POST["pontuacao"]);
 
         if($resposta==null){
-
             $id=0;
             $pontuacao=0;
             $pergunta= carregaPerguntas($id);
-            require "../Components/pergunta.inc";
+            require "../Componentes/pergunta.inc";
 
         }else if($resposta==$alternativasCorretas[$pergunta]){
 
@@ -36,7 +35,7 @@ if(isset($_SESSION['user'])){
             else{
                 $id=$pergunta+1;
                 $pergunta= carregaPerguntas($id);
-                require "../Components/pergunta.inc";
+                require "../Componentes/pergunta.inc";
             }
         }else{
             criaUsuarioECookie($_SESSION["user"],$_SESSION["senha"], $pontuacao );
