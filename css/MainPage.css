@@ -34,10 +34,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: right;
+    text-align: left;
     display: grid;
-    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-columns: 64px 1fr;
 }
+
 
 .name{
     color: #ffffff;
