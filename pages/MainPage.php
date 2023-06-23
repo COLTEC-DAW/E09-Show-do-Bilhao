@@ -15,7 +15,6 @@
     if(isset($_GET['msg']))
     {
         $message = "Você precisa estar logado para jogar, doidão!";
-        echo $message;
     }
 
 ?>
@@ -26,26 +25,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show do Milhão</title>
+    <title>Show do Bilhão</title>
     <link rel="stylesheet" href="../css/MainPage.css">
 </head>
 <body>
 
-<img src="../images/SBT.png" alt="">
-<img src="../images/show_do_milhao.png" alt="">
-<img src="../images/Coltec.png" alt="">
-<img src="../images/Coltec2.png" alt="">
-    <h1>Jogo do Bixo</h1>
+<div class="page-wrapper">
+    <nav class="navbar">
+        <a href="Login.php">Entrar</a>
+        <a href="Register.php">Cadastrar</a>
+        <div class="line"></div>
+    </nav>
 
-    <h2><a href="Logout.php">Sair</a></h2>
-    <h2><a href="Login.php">Entrar</a></h2>
-    <h2><a href="Register.php">Registrar</a></h2>
-
+    <main>
+    <h1>Show do Bilhão</h1>
 
     <form action="Game.php" method="get">
         <input type="submit" value="Jogar">
         <input type="hidden" name="pergunta" value="1">
     </form>
+    </main>
 
+    <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?=$message?>
+    </div>
+
+    <footer>
+        <img height="50%" src="../images/Coltec.png" alt="">
+        <img height="50%" src="../images/SBT.png" alt="">
+    </footer>
+
+
+</div>
 </body>
 </html>
