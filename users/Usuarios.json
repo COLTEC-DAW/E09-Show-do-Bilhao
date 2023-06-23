@@ -30,5 +30,21 @@
         "password": "$2y$10$Fmvo6UjGhmnFOFevX2NepeznsaI11VAm3fFBHaQNba\/8jL7iOQPYO",
         "highscore": 2,
         "foto": 8
+    },
+    {
+        "name": "o",
+        "email": "o@o",
+        "login": "Leonardo Prado",
+        "password": "$2y$10$XJQRjw7NDQeGsY5CDSVS3OZ7fW.umD1GgixZjZCZ2fGigZkquinXq",
+        "highscore": 0,
+        "foto": 3
+    },
+    {
+        "name": "k",
+        "email": "k@k",
+        "login": "k",
+        "password": "$2y$10$NHsA2XD3MJka3a8nDdf91u.6IwB9pOxXaY23qJYJb05Wp6p4uQwx.",
+        "highscore": 7,
+        "foto": 6
     }
 ]

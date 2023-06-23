@@ -37,7 +37,9 @@
 <body>
 
 <div class="page-wrapper">
+
     <nav class="navbar">
+
         <div class="user">
             <?php if (isset($login)): ?>
             <?php require "getFoto.php"?>
@@ -47,10 +49,14 @@
         </div>
 
         <div class="menu">
+        <?php if (!isset($login)): ?>
         <a href="Login.php">Entrar</a>
         <a href="Register.php">Cadastrar</a>
+        <?php else: ?>
         <a href="logout.php">Sair</a>
+        <?php endif; ?>
         </div>
+
     </nav>
 
     <main>
@@ -69,11 +75,7 @@
         </div>
     <?php endif; ?>
 
-    <footer>
-        <img height="50%" src="../images/Coltec.png" alt="">
-        <img height="50%" src="../images/SBT.png" alt="">
-    </footer>
-
+    <?php include "templates/footer.inc"; ?>
 </div>
 </body>
 </html>
