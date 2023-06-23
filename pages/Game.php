@@ -5,6 +5,8 @@
 
     if (!isset($_SESSION["user"])) {
         header("Location: MainPage.php?msg");
+    }else{
+        $login = $_SESSION["user"];
     }
 
     $username =  $_SESSION["user"];
@@ -24,7 +26,7 @@
 
     if($numPerguntas == $id){
         $user->setHighscore($id);
-        header("Location: Win.html");
+        header("Location: Win.php");
     }
 
     if (isset($_POST['escolha']) && isset($_POST['resposta'])) {
@@ -48,22 +50,25 @@
 </head>
 
 <body>
+    <div class="page-wrapper">
+    <?php include "templates/header.inc"; ?>
 
+    <main>
     <h1>Pergunta <?= $id + 1?></h1>
     <h2><?= $questao->question ?></h2>
+        <form action="Game.php?pergunta=<?php echo $_GET['pergunta']+1?>" method="post">
+        <input hidden name="resposta" value=<?=$questao->answer?>>
+        <?php
+        for ($i=1; $i <= sizeof($questao->options); $i++) {
+            echo "<div><input type='radio' id='{$i}' name='escolha' value='{$i}' required><label for='{$i}'>{$questao->options[$i-1]}</label></div>";
+        }
+        ?>
+        <input type="submit" value="Enviar">
+        </form>
+    </main>
 
-    <form action="Game.php?pergunta=<?php echo $_GET['pergunta']+1?>" method="post">
-    <input hidden name="resposta" value=<?=$questao->answer?>>
-
-    <?php 
-    for ($i=1; $i <= sizeof($questao->options); $i++) { 
-        echo "<div><input type='radio' id='{$i}' name='escolha' value='{$i}' required><label for='{$i}'>{$questao->options[$i-1]}</label></div>";
-    }
-    ?>
-
-    <input type="submit" value="Enviar">
-
-</form>
     
+    <?php include "templates/footer.inc"; ?>
+</div>
 </body>
 </html>

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', Verdana, Tahoma, sans-serif;
+    box-sizing: border-box;
+    background-color: #1E1E1E;
+}
+
+.page-wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.05fr 1fr 0.001fr;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    border-bottom: 4px solid #ffffff;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+}
+
+.name{
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 20px;
+    padding: 20px 16px;
+    text-align: left;
+    justify-content: center;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: 200;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 16px;
+}
+
+/*Mudar esse laranja se pá*/
+nav a:hover {
+    color: #eb594c;
+}
+
+footer{
+    padding: 0 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer .Coltec{
+    justify-self: start;
+}
+
+footer .SBT{
+    justify-self: end;
+
+}
+
+footer a{
+    text-decoration: none;
+    margin: 0;
+    justify-self: center;
+    color: #ffffff;
+}
+
+footer a:hover{
+    color: #eb594c;
+}

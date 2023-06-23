@@ -1,5 +1,7 @@
 <footer>
+
     <img class="Coltec" src="../images/Coltec.png" alt="">
-    <p>Leonardo P. Oliveira</p>
+    <a target="_blank" href="https://github.com/LeoPradoOliveira">Leonardo P. Oliveira</a>
     <img class="SBT" src="../images/SBT.png" alt="">
+
 </footer>

@@ -2,14 +2,12 @@
     session_start();
     if(isset($_GET['msgL']))
     {
-        $messageL = "Alguém já tem esse usuário, escolha outro";
-        echo $messageL;
+        $message = "Alguém já tem esse usuário, escolha outro";
     }
 
     if(isset($_GET['msgE']))
     {
-        $messageE = "Email já cadastrado, escolha outro";
-        echo $messageE;
+        $message = "Email já cadastrado, escolha outro";
     }
 
     //Existe apenas para evitar login sobre login
@@ -27,7 +25,7 @@
     <title>Show do Milhão</title>
 </head>
 <body>
-
+<?php include "templates/message.inc"; ?>
 
 <form action="MainPage.php" method="post">
 Login <input type="text" name="new_login" id="" required><br><br>

@@ -110,10 +110,15 @@ footer .SBT{
 
 }
 
-footer p{
+footer a{
+    text-decoration: none;
     margin: 0;
     justify-self: center;
     color: #ffffff;
+}
+
+footer a:hover{
+    color: #eb594c;
 }
 
 .alert {
