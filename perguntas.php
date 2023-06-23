@@ -1,7 +1,16 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do bilhão</title>
+</head>
 <body>
     
-    <?php
+</body>
+</html>
+      <?php
+    include 'perguntas.inc';
 
     //pega o id e armazena ele na posição id, 
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
@@ -30,34 +39,21 @@
                 echo $questao."<br>";
             }
             echo ("a alternativa certa é a:" .$this->questaocerta."<br>");  
-        }
-
-        
+        } 
     }
-    
-   
-    //construindo as questões com posições fixas 
-    $perguntas = array(
-        1=> new questions("qual o tamanho do meu pau?","A 15 cm","B 22 cm","C 5 cm","D 6 cm","a"),
-        2=> new questions("qual o nome do presidente do Brasil?", "Fernando Henrique Cardoso","Lula","Michal Temer","Bolsomito 2022","b"),
-        3=>new questions("qual o objeto que se bebe café?", "garrafa vodka","bbb","ccc","ddd","a"),
-        4=>new questions("qual o objeto que se bebe café?", "garrafa vodka","bbb","ccc","ddd","a"),
-        5=>new questions("qual o objeto que se bebe café?", "garrafa vodka","bbb","ccc","ddd","a")
-    );
-    
-    
-    //exibe cada pergunda de acordo com o id da página
-    
+    include 'menu.inc';
+    $pergunta=carregaPergunta($id);
 
-    $pergunta = $perguntas[$id] ?? null;
     if ($pergunta) {
         $pergunta->MostraQuestões($id);
     } else {
         echo "Pergunta não encontrada.";
     }
+    include 'rodape.inc';
 
   //  for ($i = 1; $i <= count($perguntas); $i++) {
        // $perguntas[$i]->MostraQuestões($i);
       //  }
     ?>  
-
+</body>
+</html>
