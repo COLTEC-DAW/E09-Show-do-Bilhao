@@ -12,7 +12,7 @@
 
     //Existe apenas para evitar login sobre login
     if(isset($_SESSION["user"])){
-        header("Location: MainPage.php");
+        header("Location: index.php");
     }
 ?>
 
@@ -27,7 +27,7 @@
 <body>
 <?php include "templates/message.inc"; ?>
 
-<form action="MainPage.php" method="post">
+<form action="index.php" method="post">
 Login <input type="text" name="new_login" id="" required><br><br>
 Senha <input type="password" name="new_password" id="" required><br><br>
 Email <input type="email" name="email" id="" required><br><br>

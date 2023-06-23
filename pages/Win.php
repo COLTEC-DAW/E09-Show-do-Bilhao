@@ -15,7 +15,7 @@
     <?php include "templates/header.inc"; ?>
     <h1>Ganhou!!!!!!</h1>
     <h2>Seu score foi: 7</h2>
-    <h2><a href="MainPage.php">Voltar</a></h2>
+    <h2><a href="index.php">Voltar</a></h2>
     <?php include "templates/footer.inc"; ?>
     </div>
 </body>
