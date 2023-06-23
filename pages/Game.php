@@ -4,7 +4,7 @@
     require "../users/User.php";
 
     if (!isset($_SESSION["user"])) {
-        header("Location: index.php?msg");
+        header("Location: MainPage.php?msg");
     }else{
         $login = $_SESSION["user"];
     }

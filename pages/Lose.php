@@ -16,7 +16,7 @@
         <h1>Perdeu!!!!!!!!!!!!!!!!!</h1>
         <h2>Seu score foi: <?=$_GET['score']?></h2>
         <h2>Seu recorde é: <?=getHighscore($login)?></h2>
-        <h2><a href="index.php">Voltar</a></h2>
+        <h2><a href="MainPage.php">Voltar</a></h2>
         <?php include "templates/footer.inc"; ?>
     </div>
 </body>
