@@ -1,21 +1,15 @@
 <?php
     class pergunta 
     {
-        public static $numPerguntas = 1;
         private $stringPergunta;
         public $respostas = [];
         public $respostaCorreta;
         public $id;
 
         public function __construct(string $stringPergunta, array $respostas, int $respostaCorreta) {
-            $this->numPerguntas = self::$numPerguntas;
-
             $this->stringPergunta = $stringPergunta;
             $this->respostas = $respostas;
             $this->respostaCorreta = $respostaCorreta;
-
-            $this->id = self::$numPerguntas;
-            self::$numPerguntas++;
         }
 
         public function printRespostas() {
@@ -23,7 +17,7 @@
             echo "<div class='indentacao-alternativas'>";
             // Código de div cortesia do grande Thales Davi. Dá uma leve indentação pras alternativas.
             
-            echo "<form method='POST' action='checaResposta.php'>";
+            echo "<form method='POST'>";
                 foreach($this->respostas as $respostaAtual) {
                     echo "<input type='radio' id='alternativa-$indexResposta' name='perguntaAtual' value='$indexResposta'>";
                     // Cria um input de radio com id e valor iguais ao índice atual de resposta
@@ -31,15 +25,26 @@
 
                     $indexResposta++;
                 }
+                echo "<input type='hidden' value='$this->respostaCorreta' name='respostaCerta' />";
 
-                echo "</div><br/>";
-                echo "<input type='submit' value='Submeter resposta' name='submeter'";
+                echo "<input type='submit' value='Submeter resposta' name='submeter' />";
             echo "</form>";
+            echo "</div><br/>";
+
+            $this->checarResposta($this->respostaCorreta);
         }
 
         public function printPergunta() {
             echo "<h1> Questão " . $this->id . "<br/></h2><h3>" . $this->stringPergunta . "</h3>";
             $this->printRespostas();
+        }
+
+        function checarResposta(int $respostaCorreta) {
+            if(isset($_POST['submeter'])) {
+                if($_POST['perguntaAtual'] == $respostaCorreta){
+                    $_POST['correto'] = true;
+                }
+            }
         }
     }
 
@@ -49,7 +54,8 @@
         }
     }
 
-    function carregaPergunta(array $perguntas, int $id) {
-        $perguntas[$id]->printPergunta();
+    function carregaPergunta(array $perguntas, int $idPergunta) {
+        $perguntas[$idPergunta]->id = $idPergunta + 1;
+        $perguntas[$idPergunta]->printPergunta();
     }
 ?>
