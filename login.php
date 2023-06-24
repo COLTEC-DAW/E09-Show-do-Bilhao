@@ -30,7 +30,12 @@
         }
 
         if(!isset($_SESSION['user'])){
-            loadRightForm();
+            if(isset($_POST['register'])){
+                include './templates/registerForm.inc';
+                unset($_POST['register']);
+            }else{
+                include './templates/loginForm.inc';
+            }
         }
     ?>
     

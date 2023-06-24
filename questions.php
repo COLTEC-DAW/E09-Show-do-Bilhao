@@ -26,7 +26,29 @@
     <div>
         <h2>Questions</h2>
 
-        <?php loadScreen(); ?>
+        <?php 
+            prepareScreen(); 
+            if($game->score == count($game->questions))
+            {
+                //TODO: fazer uma tela de vitória
+                echo"<h1>Você chegou ao fim!</h1>";
+            }
+            elseif($loseGame)
+            {
+                include "./templates/loseScreenTemplate.inc";
+            }
+            elseif(isset($_POST["currentQuestionId"]))
+            {
+                include "./templates/questionTemplate.inc";
+            }
+            else
+            {
+                echo("<h1>Something went wrong!</h1>");
+                echo("<button><a href='index.php'>Go home</a></button>");
+            }
+            
+
+        ?>
 
     </div>
 

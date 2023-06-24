@@ -2,6 +2,8 @@
     require "./src/Models/ModelsLoad.inc";
     require "./config/Game.inc";
     
+    $loseGame = false;
+
     //Saving the last score and last time played of the user
     if(isset($_POST["selectOption"]) && isset($_POST["currentQuestionId"])){
         $question = loadQuestion($_POST["currentQuestionId"]);
@@ -14,7 +16,7 @@
         
         }// If user win the game
         elseif(($game->score + 1) == count($game->questions)){
-            // score + 1 because the add occur in loadScreen() function
+            // score + 1 because the add occur in prepareScreen() function
             setcookie($user->login . '-lastScore', strval($game->score + 1));
 
             setcookie($user->login . '-lastTimePlayed', strval(date('d/m/Y')));
@@ -26,16 +28,8 @@
         return $game->questions[$id];
     }
 
-    function loadCurrentQuestion(){
-        if(isset($_POST["currentQuestionId"])){
-            include "./templates/questionTemplate.inc";
-        }else{
-            echo("<h1>Something went wrong!</h1>");
-            echo("<button><a href='index.php'>Go home</a></button>");
-        }
-    }
 
-    function loadScreen(){
+    function prepareScreen(){
         if(isset($_POST["selectOption"])){
             $question = loadQuestion($_POST["currentQuestionId"]);
 
@@ -43,25 +37,14 @@
                 global $game;
                 $game->score++;
                 
-                if($game->score == count($game->questions)){
-                    //TODO: fazer uma tela de vitória
-                    echo"<h1>Você chegou ao fim!</h1>";
-                    return;
-                }
-                
                 $_POST["PlayerScore"] = $game->score;
                 $_POST["currentQuestionId"]++;
                 $game->currentQuestionId = $_POST["currentQuestionId"];
-
-                loadCurrentQuestion();
-                
             }else{
-                include "./templates/loseScreenTemplate.inc";
-            
+                global $loseGame;
+                $loseGame = true;
             }
 
-        }else{
-            loadCurrentQuestion();
         }
     }
 ?>

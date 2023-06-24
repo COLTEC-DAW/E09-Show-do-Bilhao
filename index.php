@@ -24,7 +24,11 @@
     <?php include "./templates/header.inc" ?>
     
     <?php
-        loadScreen();
+        if(!isset($_SESSION['user'])){
+            include "./templates/redirectToLogin.inc";
+        }else{
+            include "./templates/startButton.inc";
+        }
     ?>
     
     <?php include "./templates/footer.inc" ?>
