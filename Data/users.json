@@ -22,5 +22,17 @@
         "login": "wawa",
         "senha": "juju2005",
         "email": "wanesssa@wanessa"
+    },
+    {
+        "nome": "teste2",
+        "login": "testeteste2",
+        "senha": "jaja",
+        "email": "teste2@teste"
+    },
+    {
+        "nome": "viginia mota",
+        "login": "vivi",
+        "senha": "1111",
+        "email": "virginia@vivi"
     }
 ]

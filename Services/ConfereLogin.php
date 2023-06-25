@@ -1,24 +1,29 @@
 <?php
 session_start();
-include "../Models/Perguntas.inc";
-
 function ConfereLogin(){
-    $nome = $_POST["login"];
+    $login = $_POST["login"];
     $senha = $_POST["senha"];
-
-    global $usuarioAutorizado;
-    global $senhaUsuarioAutorizado;
-    global $usuarioAutorizado2;
-    global $senhaUsuarioAutorizado2;
     
+    $nomeArquivo = $_SERVER['DOCUMENT_ROOT'] . '/Data/users.json';
 
-    if(($nome == $usuarioAutorizado ||$nome == $usuarioAutorizado2) && ($senha == $senhaUsuarioAutorizado ||$senha == $senhaUsuarioAutorizado2 )){
-
-        $_SESSION["user"] = $nome;
-        $_SESSION["senha"] = $senha;
-
-        require "../Pages/PaginaInicial.php";
-
+    $usersJson = file_get_contents($nomeArquivo);
+    $usersArray = json_decode($usersJson, true);
+    $autenticado = false;
+    
+    foreach($usersArray as $user){
+        if($login == $user['login']){
+            if($senha == $user['senha']){
+                $_SESSION["user"] = $login;
+                $_SESSION["senha"] = $senha;
+                break;
+            }else{
+                $autenticado=false;
+            }
+        }
+    }
+    
+    if($autenticado){
+        require "../Pages/paginaInicial.php";
     }else{
         require "../index.php";
     }

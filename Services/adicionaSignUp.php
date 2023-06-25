@@ -17,4 +17,5 @@ array_push($usersArray, $novoUser);
 $data = json_encode($usersArray, JSON_PRETTY_PRINT); 
 
 file_put_contents($nomeArquivo, $data);
+require "../Componentes/login.inc";
 ?>
