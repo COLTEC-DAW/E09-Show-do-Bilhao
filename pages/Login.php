@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/Login.css">
     <title>Show do Milhão</title>
 </head>
 <body>
@@ -28,6 +28,8 @@ Senha <input type="password" name="password" id="" required><br><br>
 <input type="hidden" name="log">
 <input type="submit" value="Login">
 </form>
-    
+
+
+<?php include "templates/footer.inc"; ?>    
 </body>
 </html>

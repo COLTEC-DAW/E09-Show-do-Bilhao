@@ -4,7 +4,16 @@
         <?php if (isset($login)): ?>
         <?php require "../users/gets.php"?>
         <img src="../images/<?=getFoto($login)?>.png" alt="">
-        <div class="name"><?=$login?></div>
+        <?php
+        if(strlen($login) > 20){
+            $strCurta = substr($login, 0, 24)."...";
+        }else{
+            $strCurta = $login;
+        }
+        ?>
+        <div class="name"><?=$strCurta?></div>
+        <div class="lstSession">Última sessão: <?=getLastSession($login)?><br>
+        Recorde: <?=getHighscore($login)?></div>
         <?php endif; ?>
     </div>
 
