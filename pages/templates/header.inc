@@ -6,7 +6,7 @@
         <img src="../images/<?=getFoto($login)?>.png" alt="">
         <?php
         if(strlen($login) > 20){
-            $strCurta = substr($login, 0, 24)."...";
+            $strCurta = substr($login, 0, 20)."...";
         }else{
             $strCurta = $login;
         }
