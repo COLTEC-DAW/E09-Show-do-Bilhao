@@ -1,3 +1,60 @@
+body {
+    background-color: #1E1E1E;
+    font-family: 'Quicksand', Verdana, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    color:#ffffff;
+  }
+  
+  /* Estilos para o formulário de login */
+  form {
+    background-color: #1E1E1E;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin: 50px auto;
+    max-width: 300px;
+    padding: 20px;
+  }
+  
+  form input[type="text"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  form input[type="submit"]:focus {
+    outline: none;
+  }
+  
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  form span {
+    color: red;
+    font-size: 12px;
+  }
+
 footer{
     padding: 0 10px 10px 10px;
     justify-content: center;
