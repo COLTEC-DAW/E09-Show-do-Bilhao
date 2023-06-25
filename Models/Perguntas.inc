@@ -11,6 +11,9 @@ class Pergunta{
     
     $usuarioAutorizado = "julia";
     $senhaUsuarioAutorizado="123";
+    
+    $usuarioAutorizado2 = "joao";
+    $senhaUsuarioAutorizado2="321";
 
     function carregaPerguntas($id){
         global $enunciados;

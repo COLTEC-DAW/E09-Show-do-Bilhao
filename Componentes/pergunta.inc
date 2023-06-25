@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<?php
+require "../Componentes/menu.inc";
+?>
     <h1>Pergunta <?php echo $id+1 ?> </h1>
     <p>Acertos: <?php echo "$pontuacao/5" ?></p>
     <h2><?php echo "$pergunta->enunciado"?></h2>
@@ -22,4 +25,7 @@
         <input type='hidden' name="pontuacao" value="<?php echo $pontuacao?>"/>
         <button type= "submit">Enviar resposta</button>
     </form>
+    <?php
+require "../Componentes/rodape.inc";
+?>
 </body>

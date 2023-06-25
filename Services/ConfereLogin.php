@@ -8,13 +8,16 @@ function ConfereLogin(){
 
     global $usuarioAutorizado;
     global $senhaUsuarioAutorizado;
+    global $usuarioAutorizado2;
+    global $senhaUsuarioAutorizado2;
+    
 
-    if($nome == $usuarioAutorizado && $senha == $senhaUsuarioAutorizado){
+    if(($nome == $usuarioAutorizado ||$nome == $usuarioAutorizado2) && ($senha == $senhaUsuarioAutorizado ||$senha == $senhaUsuarioAutorizado2 )){
 
         $_SESSION["user"] = $nome;
         $_SESSION["senha"] = $senha;
 
-        require "../index.php";
+        require "../Pages/PaginaInicial.php";
 
     }else{
         require "../index.php";

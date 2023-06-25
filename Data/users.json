@@ -1,0 +1,26 @@
+[
+    {
+        "nome": "julia luna",
+        "login": "julia",
+        "senha": "1234",
+        "email": "julia@julia.com"
+    },
+    {
+        "nome": "joao montadon",
+        "login": "joao",
+        "senha": "4321",
+        "email": "joao@joao.com"
+    },
+    {
+        "nome": "teste teste",
+        "login": "teste",
+        "senha": "12345",
+        "email": "teste@teste.com"
+    },
+    {
+        "nome": "wanessa",
+        "login": "wawa",
+        "senha": "juju2005",
+        "email": "wanesssa@wanessa"
+    }
+]

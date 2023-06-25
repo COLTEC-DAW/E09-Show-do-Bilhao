@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado":"Qual bicho transmite a Doença de Chagas?", 
+        "alternativas":["abelha", "barata", "pulga", "barbeiro"], 
+        "resposta": 3
+    }, 
+    {
+        "enunciado":"Qual fruto é no Norte e Nordeste conhecido como jerimum?", 
+        "alternativas":["caju", "abobora", "chuchu", "côco"], 
+        "resposta": 1
+    }, 
+    {
+        "enunciado":"Qual é o coletivo de cães?", 
+        "alternativas":["matilha", "rebanho", "alcateia", "manada"], 
+        "resposta": 0
+    },
+    {
+        "enunciado":"Qual é o triângulo que tem todos os lados diferentes?", 
+        "alternativas":["equilátero", "isósceles", "escaleno", "trapézio"], 
+        "resposta": 2
+    },
+      {
+        "enunciado":"Quem compôs o hino da independência?", 
+        "alternativas":["Dom Pedro I.", "Manuel Bandeira", "Castro Alves", "Carlos Gomes"], 
+        "resposta": 0
+    }
+]

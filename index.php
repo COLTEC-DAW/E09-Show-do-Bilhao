@@ -11,17 +11,11 @@
     <?php 
     session_start();
     if(isset($_SESSION['user'])){
-        /*require "Componentes/menu.inc";
-        require "Componentes/rodape.inc";*/
-        require "Pages/paginaInicial.php";
-    }else{
-        require "Componentes/login.inc";
-        //require "../index.php";
-    }
-    /*if(isset($_SESSION['user'])){
         require "Pages/PaginaInicial.php";
     }else{
-    }*/
+        require "Componentes/login.inc";
+        echo "<a href='/Pages/SignUp.html'>deseja criar conta?</a>";
+    }
     ?>
   
 </body>

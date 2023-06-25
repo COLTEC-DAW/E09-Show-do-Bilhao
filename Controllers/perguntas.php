@@ -9,22 +9,20 @@ require "../Models/User.inc";
 
 session_start();
 if(isset($_SESSION['user'])){
-
     if($_SERVER["REQUEST_METHOD"] === "POST"){
         global $alternativas;
         global $enunciados;
-
-        $resposta =  htmlspecialchars($_POST["opcao"]);
-        $pergunta = htmlspecialchars($_POST["pergunta"]);
-        $pontuacao = htmlspecialchars($_POST["pontuacao"]);
-
-        if($resposta==null){
+        if(!isset($_POST["opcao"])){
             $id=0;
             $pontuacao=0;
             $pergunta= carregaPerguntas($id);
             require "../Componentes/pergunta.inc";
-
-        }else if($resposta==$alternativasCorretas[$pergunta]){
+            
+        }else {
+            $resposta =  htmlspecialchars($_POST["opcao"]);
+            $pergunta = htmlspecialchars($_POST["pergunta"]);
+            $pontuacao = htmlspecialchars($_POST["pontuacao"]);
+            if($resposta==$alternativasCorretas[$pergunta]){
 
             $pontuacao++;
        
@@ -40,6 +38,7 @@ if(isset($_SESSION['user'])){
         }else{
             criaUsuarioECookie($_SESSION["user"],$_SESSION["senha"], $pontuacao );
             require "../Pages/gameOver.php";
+        }
         }
     }
 }else{
