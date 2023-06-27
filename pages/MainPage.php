@@ -27,6 +27,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,24 +35,26 @@
     <title>Show do Bilhão</title>
     <link rel="stylesheet" href="../css/MainPage.css">
 </head>
+
 <body>
 
-<div class="page-wrapper">
+    <div class="page-wrapper">
 
-    <?php include "templates/header.inc"; ?>
+        <?php include "templates/header.inc"; ?>
 
-    <main>
-    <h1>Show do Bilhão</h1>
+        <main>
+            <h1>Show do Bilhão</h1>
 
-    <form action="Game.php" method="get">
-        <input type="submit" value="Jogar">
-        <input type="hidden" name="pergunta" value="1">
-    </form>
-    </main>
+            <form action="Game.php" method="get">
+                <input type="submit" value="Jogar">
+                <input type="hidden" name="pergunta" value="1">
+            </form>
+        </main>
 
-    <?php include "templates/message.inc"; ?>
+        <?php include "templates/message.inc"; ?>
 
-    <?php include "templates/footer.inc"; ?>
-</div>
+        <?php include "templates/footer.inc"; ?>
+    </div>
 </body>
+
 </html>

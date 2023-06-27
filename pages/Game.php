@@ -41,34 +41,39 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/Game.css">
     <title>Show do Milhão</title>
 </head>
 
 <body>
     <div class="page-wrapper">
-    <?php include "templates/header.inc"; ?>
+        <?php include "templates/header.inc"; ?>
 
-    <main>
-    <h1>Pergunta <?= $id + 1?></h1>
-    <h2><?= $questao->question ?></h2>
-        <form action="Game.php?pergunta=<?php echo $_GET['pergunta']+1?>" method="post">
-        <input hidden name="resposta" value=<?=$questao->answer?>>
-        <?php
+        <main>
+            <div class="pergunta">
+                <h1>Pergunta <?= $id + 1?></h1>
+                <h2><?= $questao->question ?></h2>
+            </div>
+            <form action="Game.php?pergunta=<?php echo $_GET['pergunta']+1?>" method="post">
+                <input hidden name="resposta" value=<?=$questao->answer?>>
+                <?php
         for ($i=1; $i <= sizeof($questao->options); $i++) {
-            echo "<div><input type='radio' id='{$i}' name='escolha' value='{$i}' required><label for='{$i}'>{$questao->options[$i-1]}</label></div>";
+            echo "<div class='alternativa'><input type='radio' id='{$i}' name='escolha' value='{$i}' required>
+            <label for='{$i}'>{$questao->options[$i-1]}</label></div>";
         }
         ?>
-        <input type="submit" value="Enviar">
-        </form>
-    </main>
+                <input type="submit" value="Enviar">
+            </form>
+        </main>
 
-    
-    <?php include "templates/footer.inc"; ?>
-</div>
+
+        <?php include "templates/footer.inc"; ?>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

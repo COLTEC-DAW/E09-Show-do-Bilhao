@@ -12,8 +12,8 @@
         }
         ?>
         <div class="name"><?=$strCurta?></div>
-        <div class="lstSession">Última sessão: <?=getLastSession($login)?><br>
-        Recorde: <?=getHighscore($login)?></div>
+        <div class="lstSession">Última sessão: <?=getLastSession($login)?></div>
+        <div class="recorde">Recorde: <?=getHighscore($login)?></div>
         <?php endif; ?>
     </div>
 
