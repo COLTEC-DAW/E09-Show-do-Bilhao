@@ -38,7 +38,7 @@
     public function setHighscore($score){
         for ($i=0; $i < count($this->stored_users); $i++) {
 			if($this->stored_users[$i]['login'] == $this->login){
-                if($score >= $this->highscore){
+                if($score >= $this->stored_users[$i]['highscore']){
                     $this->stored_users[$i]['highscore'] = $score;
                     file_put_contents('../users/Usuarios.json', json_encode($this->stored_users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
                 }

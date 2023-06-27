@@ -160,10 +160,9 @@ footer a {
     color: #ffffff;
 }
 
-footer a:hover{
+footer a:hover {
     animation: rainbow 3s linear 0s infinite;
 }
-
 
 /*Mensagem de erro*/
 .alert {

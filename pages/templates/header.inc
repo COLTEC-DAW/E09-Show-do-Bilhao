@@ -22,7 +22,7 @@
         <a href="Login.php">Entrar</a>
         <a href="Register.php">Cadastrar</a>
         <?php else: ?>
-        <a href="logout.php">Sair</a>
+        <a href="Logout.php">Sair</a>
         <?php endif; ?>
     </div>
 

@@ -62,11 +62,11 @@
             <form action="Game.php?pergunta=<?php echo $_GET['pergunta']+1?>" method="post">
                 <input hidden name="resposta" value=<?=$questao->answer?>>
                 <?php
-        for ($i=1; $i <= sizeof($questao->options); $i++) {
-            echo "<div class='alternativa'><input type='radio' id='{$i}' name='escolha' value='{$i}' required>
-            <label for='{$i}'>{$questao->options[$i-1]}</label></div>";
-        }
-        ?>
+                for ($i=1; $i <= sizeof($questao->options); $i++) {
+                    echo "<div class='alternativa'><input type='radio' id='{$i}' name='escolha' value='{$i}' required>
+                    <label for='{$i}'>{$questao->options[$i-1]}</label></div>";
+                }
+                ?>
                 <input type="submit" value="Enviar">
             </form>
         </main>
@@ -74,6 +74,5 @@
 
         <?php include "templates/footer.inc"; ?>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

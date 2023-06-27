@@ -52,9 +52,7 @@
         </main>
 
         <?php include "templates/message.inc"; ?>
-
         <?php include "templates/footer.inc"; ?>
     </div>
 </body>
-
 </html>

@@ -8,16 +8,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/Win.css">
     <title>Show do Milhão</title>
 </head>
 
 <body>
     <div class="page-wrapper">
         <?php include "templates/header.inc"; ?>
-        <h1>Ganhou!!!!!!</h1>
-        <h2>Seu score foi: 7</h2>
-        <h2><a href="MainPage.php">Voltar</a></h2>
+        <main>
+            <h1>Você ganhou!</h1>
+            <h2>Seu score foi: 7</h2>
+            <img height="100%" src="../images/Parabens.gif" alt="">
+            <a href="MainPage.php">Voltar</a>
+        </main>
         <?php include "templates/footer.inc"; ?>
     </div>
 </body>

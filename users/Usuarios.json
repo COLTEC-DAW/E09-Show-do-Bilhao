@@ -24,7 +24,7 @@
         "password": "$2y$10$\/87dFfSL.4pkrtbutxRJ1OfT1B7XzoG2QCPe.mzdsoQ5\/YVXqh0xK",
         "highscore": 0,
         "foto": 15,
-        "last_session": "25\/06\/23 13:42"
+        "last_session": "27\/06\/23 17:27"
     },
     {
         "name": "p",
@@ -40,8 +40,35 @@
         "email": "leo@leo",
         "login": "Leonardo Prado",
         "password": "$2y$10$UBVfSsoENVZXtpJliWNyeuAa8hMHajlHY5AuxEo2MaJQJxNe75zfS",
-        "highscore": 0,
+        "highscore": 7,
         "foto": 0,
-        "last_session": "27\/06\/23 14:52"
+        "last_session": "27\/06\/23 17:30"
+    },
+    {
+        "name": "Testando",
+        "email": "7@7",
+        "login": "Teste Da Silva",
+        "password": "$2y$10$GawKwh4gPif27dBaBF9nEOM\/H30lKj7Nb.He5gJT.votp0WtyNiAi",
+        "highscore": 7,
+        "foto": 4,
+        "last_session": "27\/06\/23 17:20"
+    },
+    {
+        "name": "ç",
+        "email": "3@3",
+        "login": "ç",
+        "password": "$2y$10$pN1NpJz6GKeG419wdOq8u.qF8o0dIpEHgRphvWiI9G22OdTqmpdBy",
+        "highscore": 7,
+        "foto": 0,
+        "last_session": "27\/06\/23 17:28"
+    },
+    {
+        "name": "u",
+        "email": "u@u",
+        "login": "u",
+        "password": "$2y$10$R6Mm5SBXJCWEcpTPHQufNexTPmwD0cHnADwzk4qSCXpfMgt1gSjYe",
+        "highscore": 7,
+        "foto": 11,
+        "last_session": "27\/06\/23 17:33"
     }
 ]

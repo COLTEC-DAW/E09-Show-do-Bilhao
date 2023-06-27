@@ -38,5 +38,4 @@
         <?php include "templates/footer.inc"; ?>
     </div>
 </body>
-
 </html>
