@@ -4,6 +4,7 @@
 session_start();
 
 
+
 function autenticar($usuario, $senha) {
     return true;
 }

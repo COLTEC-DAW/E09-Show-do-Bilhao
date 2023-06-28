@@ -1,0 +1,29 @@
+[
+    {
+        "enunciado": "Qual o maior sonho de Isagi Yoichi, de Blue Lock: ",
+        "alternativas": ["Se tornar o melhor goleiro do mundo.", "Se tornar o melhor atancante do mundo.", "Se tornar o melhor ala do mundo.", "Se tornar o melhor assassino do mundo."],
+        "gabarito": "B"
+    },
+    {
+        "enunciado": "Em Solo Leveling, qual foi o último monarca que Sung-Jinwoo enfrentou: ",
+        "alternativas": ["O monarca das sombras.", "O monarca das feras.", "O monarca dos dragões.", "O monarca das gelo."],
+        "gabarito": "C"
+    },
+    {
+        "enunciado": "Qual é o andar mais alto conquistado atualmente em Tower of God: ",
+        "alternativas": ["134° Andar.", "68° Andar.", "756° Andar.", "228° Andar."],
+        "gabarito": "A"
+    },
+    {
+        "enunciado": "O que ocorreu com o corpo do Rei das Maldições, Ryomen Sukuna, após sua morte: ",
+        "alternativas": ["Foi destruido.", "Desapareceu.", "Foi separado e isolado em diversos lugares.", "Foi selado em uma montanha."],
+        "gabarito": "D"
+    },
+    {
+        "enunciado": "Kafka Hibino, se torna um Kaiju numerado após: ",
+        "alternativas": ["Ser mordido por um Kaiju.", "Matar um Daikaiju.", "Engolir um Kaiju.", "Passar por experimentos de laboratórios."],
+        "gabarito": "C"
+    }
+
+
+]

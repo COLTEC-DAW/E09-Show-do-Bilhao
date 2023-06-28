@@ -10,9 +10,9 @@ if(count($_GET) == 0){
 
 $dadosPergunta = carregaPergunta($id);
 
-$pergunta = $dadosPergunta[0];
-$alt = $dadosPergunta[1];
-$resposta = $dadosPergunta[2];
+$pergunta = $dadosPergunta->enunciado;
+$alt = $dadosPergunta->alternativas;
+$resposta = $dadosPergunta->gabarito;
 
 $gab = ["A", "B", "C", "D"];
 $resp_usuario = $gab[$_POST["alt"]];

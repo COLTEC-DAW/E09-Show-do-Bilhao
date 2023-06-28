@@ -1,36 +1,42 @@
 <?php
-    $gabarito = ["B", "C", "A", "D", "C"];
+    
+    class Pergunta{
+        public $enunciado;
+        public $alternativas;
+        public $gabarito;
 
-    $enunciados = ["Qual o maior sonho de Isagi Yoichi, de Blue Lock: ", 
-                    "Em Solo Leveling, qual foi o último monarca que Sung-Jinwoo enfrentou: ", 
-                    "Qual é o andar mais alto conquistado atualmente em Tower of God: ", 
-                    "O que ocorreu com o corpo do Rei das Maldições, Ryomen Sukuna, após sua morte: ", 
-                    "Kafka Hibino, se torna um Kaiju numerado após: "];
 
-    $alternativas = [["Se tornar o melhor goleiro do mundo.", "Se tornar o melhor atancante do mundo.", "Se tornar o melhor ala do mundo.", "Se tornar o melhor assassino do mundo."],
-                    ["O monarca das sombras.", "O monarca das feras.", "O monarca dos dragões.", "O monarca das gelo."],
-                    ["134° Andar.", "68° Andar.", "756° Andar.", "228° Andar."],
-                    ["Foi destruido.", "Desapareceu.", "Foi separado e isolado em diversos lugares.", "Foi selado em uma montanha."],
-                    ["Ser mordido por um Kaiju.", "Matar um Daikaiju.", "Engolir um Kaiju.", "Passar por experimentos de laboratórios."]];
+        public function __construct($enum, $alter, $gab){
+            $this->enunciado = $enum;
+            $this->alternativas = $alter;
+            $this->gabarito = $gab;
+        }
+
+    }
+
 
 
     function carregaPergunta($id){
-        global $enunciados;
-        global $alternativas;
-        global $gabarito;
+        
+        $perguntasJson = file_get_contents("perguntas.json");
+        $perguntas = json_decode($perguntasJson, true);
 
-        $pergunta = $enunciados[$id];
-        $alt = $alternativas[$id];
-        $resposta = $gabarito[$id];
+        $pergunta = new Pergunta($perguntas[$id]["enunciado"], $perguntas[$id]["alternativas"], $perguntas[$id]["gabarito"]);
 
-        $dados = [$pergunta, $alt, $resposta];
-
-        return $dados;
+        return $pergunta;
 
     }
 
     function retornaGabarito(){
-        global $gabarito;
+        $perguntasJson = file_get_contents("perguntas.json");
+        $perguntas = json_decode($perguntasJson, true);
+
+        $gabarito = [];
+
+        foreach($perguntas as $pergunta){
+            array_push($gabarito, $pergunta["gabarito"]);
+        
+        }
 
         return $gabarito;
     }
