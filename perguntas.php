@@ -10,7 +10,7 @@
 </body>
 </html>
 
-      <?php
+    <?php
     //chama o arquivo perguntas.inc, so roda o site se ele existir 
     require 'perguntas.inc';
 
@@ -49,6 +49,43 @@
     //cria a variavel pergunta e chama para ela a função carregaPergunta (presente em perguntas.inc) essa função retorna uma pergunta de acordo com o id 
     $pergunta=carregaPergunta($id);
 
+$total_perguntas = count($perguntas);
+$id = isset($_GET['id']) ? $_GET['id'] : 1;
+
+if ($id <= $total_perguntas) {
+    $pergunta_atual = $perguntas[$id];
+    
+    echo '<h1>Pergunta ' . $id . '</h1>';
+    echo '<p>' . $pergunta_atual['pergunta'] . '</p>';
+    
+    // Verifica se foi submetida uma resposta
+    if (isset($_POST['resposta'])) {
+        $resposta = $_POST['resposta'];
+        
+        // Verifica se a resposta está correta
+        if ($resposta == $pergunta_atual['resposta_correta']) {
+            echo '<p>Resposta correta!</p>';
+            
+            // Incrementa o ID para carregar a próxima pergunta
+            $proximo_id = $id + 1;
+            if ($proximo_id <= $total_perguntas) {
+                echo '<a href="?id=' . $proximo_id . '">Próxima pergunta</a>';
+            } else {
+                echo '<p>Parabéns! Você respondeu todas as perguntas.</p>';
+            }
+        } else {
+            echo '<p>Resposta incorreta!</p>';
+        }
+    } else {
+        // Formulário para submeter a resposta
+        echo '<form method="POST" action="">';
+        echo '<input type="text" name="resposta" placeholder="Digite sua resposta">';
+        echo '<input type="submit" value="Enviar">';
+        echo '</form>';
+    }
+} else {
+    echo '<p>Pergunta inválida!</p>';
+}
     //iprime as perguntas
     if ($pergunta) {
         $pergunta->MostraQuestões($id);
