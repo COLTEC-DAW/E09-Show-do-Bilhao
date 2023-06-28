@@ -9,8 +9,12 @@
 <body>
     <?php
 
+        session_start();
+
         //requires
         require "questions.inc";
+        require "user.inc";
+        require "header.inc";
 
         //variaveis
         $id = 0;

@@ -3,7 +3,6 @@
 
         if(isset($_POST["registrar"]))
         {
-            echo "passei aqui";
             $user = new User($_POST["login"], $_POST["password"]);
             $arquivo = fopen("users.json", "r+");
             if(filesize('users.json') == 0){
@@ -15,12 +14,37 @@
             }
             fclose($arquivo);
         }
+        
+        if(isset($_POST["logar"])){
+            $arquivo = json_decode(file_get_contents("users.json"));
+            $searchLogin = $_POST["login"];
+            $searchPasswod = $_POST["password"];
 
+            foreach($arquivo as $a){
+                if($a->userName == $searchLogin){
+                    if($a->password == $searchPasswod){
+                        $_SESSION['user'] = new User($searchLogin, $searchPasswod);
 
-        if(isset($_POST['register'])){
-            RegisterForm();
-        }else{
+                        $searchLogin = null;
+                        $searchPasswod = null;
+                        
+                        unset($_POST["logar"]);
+                        unset($_POST["login"]);
+                        unset($_POST["password"]);
+                        return;
+                    }
+                }
+            }
             LoginForm();
+            echo"<p style='color:red'>Username or password incorrect</p>";
+
+
+        }else{
+            if(isset($_POST['register'])){
+                RegisterForm();
+            }else{
+                LoginForm();
+            }
         }
     }
 

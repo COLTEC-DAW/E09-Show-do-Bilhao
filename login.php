@@ -8,23 +8,24 @@
 </head>
 <body>
     <?php
-
         session_start();
 
         //requires
         require "user.inc";
         require "loginFunctions.inc";
+        
+        
+        
+        if(!isset($_SESSION['user'])){
+            rightForm();
+        }
+        require "header.inc";
 
         if(isset($_SESSION['user']))
         {
-            echo "Você esta logado!!!";
-            echo "<a href='index.php'>Voltar</a>";
+            echo "Você esta logado!!!</br>";
+            echo "<a href='index.php'>Iniciar questionario</a>";
         }
-        else
-        {
-            rightForm();
-        }
-
     ?>
 </body>
 </html>
