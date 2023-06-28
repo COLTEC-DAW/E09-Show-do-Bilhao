@@ -15,12 +15,12 @@
         if(count($_GET)==0){
             $id=0;
         } else{
-            $id= $_GET["id"];
+            $id= $_GET["id"]; 
         }
 
-        // session_start();
-        // if(!isset($_SESSION["login"]) &&  !isset($_SESSION["senha"])){ ?>
-        <!--     <div class='form'>
+        session_start();
+        if(!isset($_SESSION["login"]) &&  !isset($_SESSION["senha"])){ ?>
+             <div class='form'>
              <h2> LOGIN </h2>
              <form action='index.php?' method='POST'>
              <div class='login'>
@@ -29,14 +29,15 @@
              <div class='login'>
              <label> <input type='text' name='senha'> Digite a senha </label>
              </div>
-             <input class='pergunta' type='submit' name='resp'>-->
+             <input class='pergunta' type='submit' name='resp'>
         <?php
-        //     $_SESSION["login"]=$POST["login"];
-        //     $_SESSION["senha"]=$POST["senha"];
-        // } else{
+            $_SESSION["login"]=$_POST["login"];
+            $_SESSION["senha"]=$_POST["senha"];
+        } else{
             include "./inc/perguntas.inc";
+            setcookie("ultimo jogo", date("d/m/Y H:i:s"));
             carregaPergunta($id);
-        //}
+        }
 
         include "./inc/rodape.inc"; 
     ?>
