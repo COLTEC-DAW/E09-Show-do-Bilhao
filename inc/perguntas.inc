@@ -28,38 +28,22 @@
 
     function carregaPergunta($id){
         global $perguntas;
+
         $resp_usuario = $_POST["pergunta"];
-        $proxPag = $id + 1;
-        $pergunta = $perguntas[$id]->pergunta;
-        if($id != 0) {
-            if($perguntas[$id-1]->resposta == $resp_usuario && $id<5) {
-                echo "<div class='form'>";
-                echo "<h2> $pergunta </h2>";
-                echo "<form action='index.php?id=$proxPag' method='POST'>";
-                for($i=1;$i<=4;$i++){
-                    $alternativa = $perguntas[$id]->alternativas[$i-1];
-                    echo "<div class='pergunta'>";
-                    echo "<label> <input type='radio' name='pergunta' value='$i'> $alternativa </label>";
-                    echo "</div>";
-                }
-                echo "<input class='pergunta' type='submit' name='resp'>";
-            } elseif($id>4 && $perguntas[$id-1]->resposta == $resp_usuario){
-                echo "<h2 class='resultado'> VENCEDOR!! </h2>";
-            } else{
-                echo "<h2 class='resultado'> GAME OVER </h2>";
-            }
-        }
-        else {
-            echo "<div class='form'>";
-                echo "<h2> $pergunta </h2>";
-                echo "<form action='index.php?id=$proxPag' method='POST'>";
-                for($i=1;$i<=4;$i++){
-                    $alternativa = $perguntas[$id]->alternativas[$i-1];
-                    echo "<div class='pergunta'>";
-                    echo "<label> <input type='radio' name='pergunta' value='$i'> $alternativa </label>";
-                    echo "</div>";
-                }
-                echo "<input class='pergunta' type='submit' name='resp'>";
-        }
+        return $perguntas[$id];
+    }
+
+    function verificaPergunta($id, $resp_usuario){
+        echo $resp_usuario;
+        $resposta = carregaPergunta($id);
+        echo $resposta->resposta;
+        echo $id;
+        
+        if($resp_usuario == $resposta->resposta){
+        return $id+1;
+        } else{
+            return 6;
+        } 
+        
     }
 ?>

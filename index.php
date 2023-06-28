@@ -30,15 +30,48 @@
              <label> <input type='text' name='senha'> Digite a senha </label>
              </div>
              <input class='pergunta' type='submit' name='resp'>
-        <?php
+             <?php
+            if(!isset($_COOKIE["ultimo jogo"])){ ?>
+                <p> <?php  echo $_COOKIE["ultimo jogo"] ?> </p>
+            <?php 
+            }
+            
             $_SESSION["login"]=$_POST["login"];
             $_SESSION["senha"]=$_POST["senha"];
-        } else{
-            include "./inc/perguntas.inc";
-            setcookie("ultimo jogo", date("d/m/Y H:i:s"));
-            carregaPergunta($id);
-        }
 
+        } else{
+
+            include "./inc/perguntas.inc";
+
+            if(!isset($_COOKIE["pontuacao"])){
+                setcookie("pontuacao", 0);
+            }
+            setcookie("ultimo jogo", date("d/m/Y H:i:s"));
+
+            
+
+            $pergunta = carregaPergunta($id);
+            $resp_usuario = $_POST["pergunta"];
+            
+
+            
+            $id= verificaPergunta($id-1, $resp_usuario);
+
+            ?>
+
+            <div class="form" >
+            <h2> <?php echo $pergunta->pergunta ?> </h2>
+            <form action="index.php?id=<?php echo $id; ?>" method="POST">
+            <?php for($i=1;$i<=4;$i++){
+                $alternativa = $pergunta->alternativas[$i-1]; ?>
+                <div class="pergunta">
+                <label> <input type="radio" name="pergunta" value="<?php echo $i ?>"> <?php echo $alternativa ?> </label>
+                </div>
+            <?php } ?>
+            <input class="pergunta" type="submit" name="resp">
+            
+            <?php
+        }
         include "./inc/rodape.inc"; 
     ?>
 </body>
