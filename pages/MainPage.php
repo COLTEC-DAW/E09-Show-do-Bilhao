@@ -17,7 +17,7 @@
     //Impede anônimo de jogar
     if(isset($_GET['msg']))
     {
-        $message = "Você precisa estar logado para jogar, doidão!";
+        $message = "Você precisa estar logado para jogar!";
     }
 
     if(isset($_SESSION['user'])){
@@ -32,6 +32,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/104566026?v=4" type="image/x-icon">
     <title>Show do Bilhão</title>
     <link rel="stylesheet" href="../css/MainPage.css">
 </head>

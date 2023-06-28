@@ -70,5 +70,23 @@
         "highscore": 7,
         "foto": 11,
         "last_session": "27\/06\/23 17:33"
+    },
+    {
+        "name": "0",
+        "email": "0@0",
+        "login": "Thayrelan",
+        "password": "$2y$10$wPmZECwM2SRdPG0yoh6bIeyOJfB7ylGNj8WU.T4qtejKJTEAAmVJW",
+        "highscore": 7,
+        "foto": 7,
+        "last_session": "28\/06\/23 12:19"
+    },
+    {
+        "name": "Smonilinski",
+        "email": "s@s",
+        "login": "s",
+        "password": "$2y$10$AWouttDy02IT3u7h.8R.kuuAYafn00atXPe.ui2RMKS43kh8xymqG",
+        "highscore": 0,
+        "foto": 11,
+        "last_session": "28\/06\/23 12:20"
     }
 ]
