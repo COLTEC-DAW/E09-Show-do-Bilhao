@@ -9,6 +9,8 @@
 <body>
     <?php
 
+        var_dump($_POST["play"]);
+
         session_start();
 
         //requires
@@ -17,10 +19,11 @@
         require "header.inc";
 
         //variaveis
-        $id = 0;
         $q = [];
 
         $file_json = json_decode(file_get_contents("dados.json"));//atribui os dados que estão no .json
+
+       
 
         foreach($file_json as $f){
             array_push($q ,new Perguntas($f->question, $f->options, $f->answer));
@@ -35,17 +38,19 @@
         if(isset($_POST['answer'])){
             if(intval($_POST['answer']) == intval($q[$_POST['idQuestion']]->correctAnswer)){
                 //Go to next question
-                // echo "Post: " . $_POST['idQuestion'];
                 $_POST['idQuestion']++;
-                $_POST['Score']++;
-                // echo "Post: " . $_POST['idQuestion'];
 
+                $_POST['Score']++;
+                
+            
             }else{
                 $_POST['lose'] = true;
             }
         }
 
-        if(!isset($_POST['lose'])){
+        if($_POST["idQuestion"] > 4){
+            $q[4]->PrintEndGame();
+        }elseif(!isset($_POST['lose'])){
             $q[$_POST['idQuestion']]->PrintQuestions($_POST['idQuestion']);
         }else{
             echo "You lose";

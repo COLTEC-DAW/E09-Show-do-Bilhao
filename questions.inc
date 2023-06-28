@@ -34,15 +34,26 @@
         }
         
         function PrintQuestions($id){
-            echo "<b>" . $id+1 . "-" . $this->question . "<b/><br/>";
-            
-            if(isset($_POST["Score"])){
-                echo "<p>Pontuação atual:" . $_POST["Score"] .  "</p>";
+            if($id < 5){
+                echo "<b>" . $id+1 . "-" . $this->question . "<b/><br/>";
+                
+                $this->PrintScore();
+                
+                $this->PrintAnswers($id);
             }
-            
-            $this->PrintAnswers($id);
         }
 
+        function PrintScore(){
+            if(isset($_POST["Score"])){
+                echo "<p>Pontuação:" . $_POST["Score"] .  "</p>";
+            }
+        }
+
+        function PrintEndGame(){
+            
+            $this->PrintScore();
+            echo "<a href='login.php'>voltar ao inicio</a>";
+        }
 
 
     }

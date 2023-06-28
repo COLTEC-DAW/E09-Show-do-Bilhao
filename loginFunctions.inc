@@ -24,13 +24,6 @@
                 if($a->userName == $searchLogin){
                     if($a->password == $searchPasswod){
                         $_SESSION['user'] = new User($searchLogin, $searchPasswod);
-
-                        $searchLogin = null;
-                        $searchPasswod = null;
-                        
-                        unset($_POST["logar"]);
-                        unset($_POST["login"]);
-                        unset($_POST["password"]);
                         return;
                     }
                 }
@@ -72,6 +65,6 @@
         echo "</form>";
     }
 
-
+    
 
 ?>
