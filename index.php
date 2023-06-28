@@ -11,7 +11,7 @@
 
 <html lang="en">
 <body>
-    <?php include "menu.php"; ?>
+    <?php include "menu.html"; ?>
 
     <div class="wrapper">
         <h1>Show do Bilhão</h1>
@@ -20,6 +20,6 @@
         </form>
     </div>
     
-    <?php include "rodape.php";?>
+    <?php include "rodape.html";?>
 </body>
 </html>
