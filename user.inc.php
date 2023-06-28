@@ -11,13 +11,20 @@
             $this->passwd = $passwd;
             $this->atQuestion = $atQuestion;
         }
-        function WriteUser($user)
+        public static function WriteUser($user)
         {
-            
-        }
-        public static function LoadUser($pos)
-        {
+            $file = simplexml_load_file("users.xml")
+            or die("Erro ao abir XML das perguntas");
+            $nOfUsers = (int) $file['size'];
+            echo $nOfUsers;
+            $file['size'] = $nOfUsers++;
 
+            $newUser = $file->addChild("user");
+            $newUser->addChild("name", $user->username);
+            $newUser->addChild("passwd", password_hash($user->passwd, PASSWORD_DEFAULT));
+            $newUser->addChild("atQuestion", $user->atQuestion);
+
+            $file->asXML("users.xml");
         }
         private static function LoadUserFromFile($pos, $file)
         {
@@ -34,17 +41,41 @@
             or die("Erro ao abir XML das perguntas");
             User::$nOfUsers = $file['size'];
             $list = [];
-            echo User::$nOfUsers;
 
             for($i = 0; $i < User::$nOfUsers; $i++)
             {
                 $list[$i] = User::LoadUserFromFile($i, $file);
-                echo $list[$i]->username;
-                echo $list[$i]->passwd;
-                echo $list[$i]->atQuestion;
             }
             
             return $list;
+        }
+
+        public function SaveUser()
+        {
+            $file = simplexml_load_file("users.xml");
+            for($i = 0; $i < User::$nOfUsers; $i++)
+            {
+                $user = User::LoadUserFromFile($i, $file);
+                if($this->CheckName($user->username) and $this->CheckPasswd($user->passwd))
+                {
+                    $file->user[$i]->atQuestion = $this->atQuestion;
+                    return;
+                }
+            }
+            return;
+        }
+
+        public function CheckPasswd($input)
+        {
+            echo password_verify($input, $this->passwd);
+            
+            return password_verify($input, $this->passwd);
+        }
+        public function CheckName($input)
+        {
+            echo trim($input) == $this->username;
+            
+            return trim($input) == $this->username;
         }
     } 
 ?>

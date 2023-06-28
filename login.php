@@ -1,22 +1,21 @@
 <?php
-    session_start();
-    
     require('auth.inc.php');
-    $atMenu = true;
-    Check_SignUp();
-    Check_LogIn();
+    $atMenu = false;
+    session_start();
+    LogUser();
 ?>
 
 <html>
 <head>
-	<title>Sevtech: Quiz</title>
+	<title>My first PHP script</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 class="title"> Show do Item Não Familiar </h1>
+    <br>
     <?php
-        include('menu.inc.php');
-        echo $atMenu;
+        // include('menu.inc.php');
+        LogScreen();
         include('footer.inc.php');
     ?>
 </body>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<data size="3">
+<data size="4">
     <user>
         <name>Exemplo</name>
         <passwd>1234</passwd>
@@ -15,4 +15,4 @@
         <passwd>abc</passwd>
         <atQuestion>1</atQuestion>
     </user>
-</data>
+<user><name>teste</name><passwd>$2y$10$Wg4yHGwm1x8yKfk0eqUrHuOQOFtezyFS8E553G6kvPcT82.TgrGRq</passwd><atQuestion>0</atQuestion></user><user><name>leonardo</name><passwd>$2y$10$oaSfF6oiE.ZAvOvCDuNHZuQSUqE.jxcasarukB2Q.ovKaFpOcijOC</passwd><atQuestion>0</atQuestion></user></data>
