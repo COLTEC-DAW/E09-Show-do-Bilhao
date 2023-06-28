@@ -3,8 +3,8 @@
 
     class Pergunta{
         // Atributos
-        public $enunciado;
-        public $alternativas;
+        var $enunciado;
+        var $alternativas;
         
         // Construtor
         public function __construct($textoEnunciado, $textosAlternativas, $indexResposta) {

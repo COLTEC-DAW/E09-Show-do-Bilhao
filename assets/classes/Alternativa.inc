@@ -1,8 +1,8 @@
 <?php
     class Alternativa{
         // Atributos
-        public $letra;
-        public $resposta;
+        var $letra;
+        var $resposta;
         // Booleano que fala se é ou não a alternativa certa
         public $ehCorreta;
 

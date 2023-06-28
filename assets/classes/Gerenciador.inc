@@ -3,8 +3,8 @@
 
     class Gerenciador {
         // Atributos
-        public $perguntas;
-        public $pontuacao;
+        var $perguntas;
+        var $pontuacao;
 
         // Construtor
         public function __construct() {
@@ -23,29 +23,7 @@
         }
     
         public function carregaPergunta($id) {
-            $perguntaAtual = $this->perguntas[$id];
-
-            $nQuestao = $id+1;
-
-            echo "<h2 class='pergunta--titulo'>Questão $nQuestao</h2>";
-            echo "<p class='pergunta--enunciado'>$perguntaAtual->enunciado</p>";
-            
-            echo "<form action='index.php?id=$nQuestao' method='POST'>";
-            $count = 0;
-
-            foreach($perguntaAtual->alternativas as $alternativa){
-                echo "<div class='alternativa'>";
-                echo "<input type='radio' name='resp' id='resp$count' value='$alternativa->letra' class = 'input--alternativa'>";
-                echo "<p class='non-selected'>$alternativa->letra) $alternativa->resposta</p>";
-                echo "</div>";
-            
-                $count++;
-            }
-        
-            echo "<input type='submit' value='Confirmar resposta' id='BotaoEnviar'>";
-            echo "</form>";
-
-            $this->pontuacao = $id;
+            return $this->perguntas[0];
         }
 
         public function buscaAlternativaCorreta($id) {
