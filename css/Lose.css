@@ -58,7 +58,7 @@ nav {
     align-items: center;
     text-align: left;
     display: grid;
-    grid-template-columns: 64px 262.5px 140px 120px;
+    grid-template-columns: 64px 1fr 1fr 1fr;
 }
 
 .name {
