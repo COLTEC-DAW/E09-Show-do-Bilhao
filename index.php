@@ -11,7 +11,7 @@
     <?php 
     session_start();
     if(isset($_SESSION['user'])){
-        require "Pages/PaginaInicial.php";
+        require "Pages/paginaInicial.php";
     }else{
         require "Componentes/login.inc";
         echo "<a href='/Pages/SignUp.html'>deseja criar conta?</a>";

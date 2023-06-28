@@ -34,5 +34,11 @@
         "login": "vivi",
         "senha": "1111",
         "email": "virginia@vivi"
+    },
+    {
+        "nome": "erick",
+        "login": "bj",
+        "senha": "bj1234",
+        "email": "erick@bj.org"
     }
 ]

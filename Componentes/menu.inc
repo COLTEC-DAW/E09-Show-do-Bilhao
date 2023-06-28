@@ -4,7 +4,8 @@
 if(isset($_COOKIE["usuario-{$_SESSION["user"]}"])){
     $obj = json_decode($_COOKIE["usuario-{$_SESSION["user"]}"]);
     echo "Usuario: {$obj->nome}";
-    echo "Última Pontuacao: {$obj->pontuacao}";
+    echo "Última pontuação: {$obj->pontuacao}";
+    echo "Último acesso: {$obj->ultimoAcesso}";
 }
 
 

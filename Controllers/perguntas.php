@@ -1,47 +1,41 @@
-<?php 
+<?php
 require "../Models/Perguntas.inc";
 ?>
-<?php 
+<?php
 require "../Models/User.inc";
 ?>
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['user'])){
-    if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+if (isset($_SESSION['user'])) {
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
         global $alternativas;
         global $enunciados;
         global $perguntas;
-        if(!isset($_POST["opcao"])){
-            $id=0;
-            $pontuacao=0;
-            $pergunta= carregaPerguntas($id, $perguntas);
-            require "../Componentes/pergunta.inc";
-            
-        }else {
-            $resposta =  htmlspecialchars($_POST["opcao"]);
-            $pergunta = htmlspecialchars($_POST["pergunta"]);
-            $pontuacao = htmlspecialchars($_POST["pontuacao"]);
+        $resposta =  htmlspecialchars($_POST["opcao"]);
+        $perguntaPost = htmlspecialchars($_POST["pergunta"]);
+        $pontuacao = htmlspecialchars($_POST["pontuacao"]);
 
-            if($resposta==$perguntas[$pergunta]['resposta']){
-
+        if ($resposta == $perguntas[$perguntaPost]['resposta']) {
             $pontuacao++;
-       
-            if($pergunta==sizeof($perguntas)-1){
-                criaUsuarioECookie($_SESSION["user"],$_SESSION["senha"], $pontuacao );
+            if ($perguntaPost == sizeof($perguntas) - 1) {
+                criaUsuarioECookie($_SESSION["user"], date('d/m/Y h:i:s'), $pontuacao);
                 require "../Pages/voceGanhou.php";
+            } else {
+                $id = $perguntaPost + 1;
+                $pergunta = carregaPerguntas($id, $perguntas);
             }
-            else{
-                $id=$pergunta+1;
-                $pergunta= carregaPerguntas($id, $perguntas);
-                require "../Componentes/pergunta.inc";
-            }
-        }else{
-            criaUsuarioECookie($_SESSION["user"],$_SESSION["senha"], $pontuacao );
+        } else {
+            criaUsuarioECookie($_SESSION["user"], date('d/m/Y h:i:s'), $pontuacao);
             require "../Pages/gameOver.php";
         }
-        }
+    } else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        $id = 0;
+        $pontuacao = 0;
+        $pergunta = carregaPerguntas($id, $perguntas);
     }
-}else{
+} else {
     require "../index.php";
 }
 ?>

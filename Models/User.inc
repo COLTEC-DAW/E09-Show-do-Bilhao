@@ -1,19 +1,19 @@
 <?php 
 class User{
     public $nome;
-    public $senha;
+    public $ultimoAcesso;
     public $pontuacao;
 
-    public function __construct($nome, $senha, $pontuacao){
+    public function __construct($nome, $ultimoAcesso, $pontuacao){
         $this->nome = $nome;
-        $this->senha = $senha;
+        $this->ultimoAcesso = $ultimoAcesso;
         $this->pontuacao = $pontuacao;
     }
 }
 
 
-function criaUsuarioECookie( $nome, $senha, $pontuacao){
-    $usuario = new User($nome, $senha, $pontuacao);
+function criaUsuarioECookie( $nome, $ultimoAcesso, $pontuacao){
+    $usuario = new User($nome, $ultimoAcesso, $pontuacao);
     
     setcookie("usuario-{$nome}",json_encode($usuario),  time()+3600, "/");
 }
