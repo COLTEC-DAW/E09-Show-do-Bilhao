@@ -10,8 +10,16 @@ function autenticar($usuario, $senha) {
 
 
 if (!isset($_SESSION["autenticado"])) {
-   
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"], $_POST["senha"])) {
+    
+    if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"], $_POST["email"], $_POST["login"], $_POST["senha"]) ){
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $login = $_POST["login"];
+        $senha = $_POST["senha"];
+
+
+
+    }else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"], $_POST["senha"])) {
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
 
@@ -28,6 +36,10 @@ if (!isset($_SESSION["autenticado"])) {
             $erroLogin = "Usuário ou senha inválidos.";
         }
     }
+
+
+
+
 } elseif (isset($_GET["logout"])) {
    
     session_unset();
@@ -65,12 +77,16 @@ if (!isset($_SESSION["autenticado"])) {
             
             <?php if (!isset($_SESSION["autenticado"])){ ?>
                 <form method="post" action="index.php">
-                    <label for="usuario">Usuário:</label>
+
+                    <label for="usuario">Login:</label>
                     <input type="text" name="usuario" required><br>
                     <label for="senha">Senha:</label>
                     <input type="password" name="senha" required><br>
                     <input type="submit" value="Entrar">
+
                 </form>
+
+                <a href="cadastro.php">Cadastre-se</a>
             <?php } else { ?>
                 <p>Você está autenticado como <?php echo $_SESSION["usuario"]; ?></p>
                 <p>Última vez logado: <?php echo $_COOKIE["ultimo_acesso"]; ?></p>
