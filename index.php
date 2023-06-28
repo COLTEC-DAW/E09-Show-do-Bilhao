@@ -9,23 +9,33 @@
             require('paginaResultado.inc.php');
 
             $idPagina = intval($_GET["id"]);
+            $numPerguntas = 5;      
+            $_SESSION['numPerguntas'] = $numPerguntas;
 
-            if(isset($_POST['submeter'])){
-                $respostaCorretaAtual = $perguntas[$idPagina]->respostaCorreta;
-                $stringRespostaCorretaAtual = $perguntas[$idPagina]->respostas[$respostaCorretaAtual];
+            function carregaResultado () {
+                global $perguntas;
+                global $idPagina;
 
-                if(isset($_POST['respostaCerta'])){
-                    $perguntas[$idPagina]->checarResposta($_POST['respostaCerta']);
-                }
-                if (isset($_POST['correto'])) {
-                    respostaCorreta($idPagina, $respostaCorretaAtual, $stringRespostaCorretaAtual);
+                if ($perguntas[$idPagina]->checarResposta()) {
+                    respostaCorreta($idPagina);
                 }
                 else {
-                    respostaErrada($idPagina, $respostaCorretaAtual, $stringRespostaCorretaAtual);
+                    $respostaCorreta = $perguntas[$idPagina]->respostaCorreta;
+                    $stringRespostaCorreta = $perguntas[$idPagina]->respostas[$respostaCorreta];
+                    
+                    respostaErrada($idPagina, $respostaCorreta, $stringRespostaCorreta);
                 }
+            }
+
+            if(isset($_POST['submeter'])){
+                carregaResultado();
             }
             else {
                 carregaPergunta($perguntas, $idPagina);
+            }
+
+            if (isset($_SESSION['loginAtual'])) {
+
             }
         ?>
     </body>

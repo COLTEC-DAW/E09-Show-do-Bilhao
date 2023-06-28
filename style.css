@@ -10,3 +10,8 @@ body {
 .indentacao-alternativas {
     margin-left:30px;
 }
+
+a {
+    color: #8EECBD;
+    font-size: 20px;
+}

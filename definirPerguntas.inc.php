@@ -12,7 +12,7 @@
         ),
 
         new pergunta(
-            "Qual é a definição de \"algoritmo\"?", 
+            "Qual é a definição de 'algoritmo'?", 
             [
                 "Uma pequena criatura que vive dentro do gabinete e faz cálculos para você", 
                 "O coração do computador, que precisa ser alimentado com as almas dos inocentes", 

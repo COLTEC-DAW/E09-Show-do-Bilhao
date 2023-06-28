@@ -31,19 +31,17 @@
             echo "</form>";
             echo "</div><br/>";
 
-            $this->checarResposta($this->respostaCorreta);
+            $this->checarResposta();
         }
 
         public function printPergunta() {
-            echo "<h1> Questão " . $this->id . "<br/></h2><h3>" . $this->stringPergunta . "</h3>";
+            echo "<h1> Questão " . $this->id . " de ". $_SESSION['numPerguntas'] . "<br/></h2><h3>" . $this->stringPergunta . "</h3>";
             $this->printRespostas();
         }
 
-        function checarResposta(int $respostaCorreta) {
+        function checarResposta() {
             if(isset($_POST['submeter'])) {
-                if($_POST['perguntaAtual'] == $respostaCorreta){
-                    $_POST['correto'] = true;
-                }
+                return $_POST['perguntaAtual'] == $this->respostaCorreta;
             }
         }
     }
