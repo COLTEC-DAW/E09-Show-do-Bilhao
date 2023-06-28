@@ -1,92 +1,11 @@
 [
     {
-        "name": "t",
-        "email": "t@t",
-        "login": "t",
-        "password": "$2y$10$oy4uf5dfwCXX7vBacuX2He3NxyGDgK1.XNyKjLdJbfCw4sNFq7z5O",
-        "highscore": 0,
-        "foto": 14,
-        "last_session": "25-06-23 13:32:15"
-    },
-    {
-        "name": "a",
-        "email": "a@a",
-        "login": "a",
-        "password": "$2y$10$r\/Gy\/bcQE\/5zQI\/k0vb8su9zT732XHdhrS.DIYzOEIlyOmygci.1S",
-        "highscore": 0,
-        "foto": 8,
-        "last_session": "25\/06\/23 13:39"
-    },
-    {
-        "name": "f",
-        "email": "f@f",
-        "login": "f",
-        "password": "$2y$10$\/87dFfSL.4pkrtbutxRJ1OfT1B7XzoG2QCPe.mzdsoQ5\/YVXqh0xK",
-        "highscore": 0,
-        "foto": 15,
-        "last_session": "27\/06\/23 17:27"
-    },
-    {
-        "name": "p",
-        "email": "p@p",
-        "login": "http:\/\/localhost:3000\/E09-Show-do-Bilhao-master\/pages\/Register.php",
-        "password": "$2y$10$uqW6TRwz6rgazCx7yfzxhOBTi\/AXWUNOMiDN.AsP1sXuh1xB46LUG",
-        "highscore": 2,
-        "foto": 9,
-        "last_session": "25\/06\/23 13:55"
-    },
-    {
         "name": "leo",
         "email": "leo@leo",
         "login": "Leonardo Prado",
-        "password": "$2y$10$UBVfSsoENVZXtpJliWNyeuAa8hMHajlHY5AuxEo2MaJQJxNe75zfS",
-        "highscore": 7,
-        "foto": 0,
-        "last_session": "27\/06\/23 17:30"
-    },
-    {
-        "name": "Testando",
-        "email": "7@7",
-        "login": "Teste Da Silva",
-        "password": "$2y$10$GawKwh4gPif27dBaBF9nEOM\/H30lKj7Nb.He5gJT.votp0WtyNiAi",
-        "highscore": 7,
-        "foto": 4,
-        "last_session": "27\/06\/23 17:20"
-    },
-    {
-        "name": "ç",
-        "email": "3@3",
-        "login": "ç",
-        "password": "$2y$10$pN1NpJz6GKeG419wdOq8u.qF8o0dIpEHgRphvWiI9G22OdTqmpdBy",
-        "highscore": 7,
-        "foto": 0,
-        "last_session": "27\/06\/23 17:28"
-    },
-    {
-        "name": "u",
-        "email": "u@u",
-        "login": "u",
-        "password": "$2y$10$R6Mm5SBXJCWEcpTPHQufNexTPmwD0cHnADwzk4qSCXpfMgt1gSjYe",
-        "highscore": 7,
-        "foto": 11,
-        "last_session": "27\/06\/23 17:33"
-    },
-    {
-        "name": "0",
-        "email": "0@0",
-        "login": "Thayrelan",
-        "password": "$2y$10$wPmZECwM2SRdPG0yoh6bIeyOJfB7ylGNj8WU.T4qtejKJTEAAmVJW",
-        "highscore": 7,
-        "foto": 7,
-        "last_session": "28\/06\/23 12:19"
-    },
-    {
-        "name": "Smonilinski",
-        "email": "s@s",
-        "login": "s",
-        "password": "$2y$10$AWouttDy02IT3u7h.8R.kuuAYafn00atXPe.ui2RMKS43kh8xymqG",
+        "password": "$2y$10$TSlnNAW2L8SfdFRtnbHkzu9HGSzkFSQ0Jg2WHhE5L5nIoDQwibNlS",
         "highscore": 0,
-        "foto": 11,
-        "last_session": "28\/06\/23 12:20"
+        "foto": 17,
+        "last_session": "28\/06 14:26"
     }
 ]
