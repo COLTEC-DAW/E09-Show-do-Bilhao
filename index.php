@@ -1,12 +1,19 @@
+<?php 
+    session_start();
+?>
+ 
  <!DOCTYPE html>
     <html>
     <link rel="stylesheet" href="style.css">
 
     <body>
         <?php
+            
             require('pergunta.inc.php');
             require('definirPerguntas.inc.php');
             require('paginaResultado.inc.php');
+
+            include('header.inc');
 
             $idPagina = intval($_GET["id"]);
             $numPerguntas = 5;      
@@ -27,15 +34,16 @@
                 }
             }
 
-            if(isset($_POST['submeter'])){
-                carregaResultado();
+            if (isset($_SESSION['loginAtual'])) {
+                if(isset($_POST['submeter'])){
+                    carregaResultado();
+                }
+                else {
+                    carregaPergunta($perguntas, $idPagina);
+                }
             }
             else {
-                carregaPergunta($perguntas, $idPagina);
-            }
-
-            if (isset($_SESSION['loginAtual'])) {
-
+                header ("Location:login.php");
             }
         ?>
     </body>
