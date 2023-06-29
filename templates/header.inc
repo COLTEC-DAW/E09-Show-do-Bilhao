@@ -12,7 +12,7 @@
         }
         ?>
         <div class="name"><?=$strCurta?></div>
-        <div class="lstSession">Última sessão: <?=isset($_COOKIE['last_session']) ? $_COOKIE['last_session'] : ''?></div>
+        <div class="lstSession">Última sessão: <?=getLastSession($login)?></div>
         <div class="recorde">Recorde: <?=getHighscore($login)?></div>
         <?php endif; ?>
     </div>
