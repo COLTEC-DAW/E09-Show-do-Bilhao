@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/game-win.css">
+    <link rel="stylesheet" href="assets/css/rodape.css">
     <title>Show do Bilhão</title>
 </head>
 
@@ -19,6 +20,8 @@
     <h2>Game Win</h2>
     <p>Parabéns, você acertou tudo seu merda!</p>
     <a href="/perguntas.php" class="reset-button">Resetar</a>
+
+    <?php require "partials/rodape.inc"; ?>
 
 </body>
 

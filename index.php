@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/rodape.css">
     <title>Show do Bilhão</title>
 </head>
 
@@ -20,6 +21,8 @@
 
     <a href="perguntas.php" class="botao-jogar">JOGAR</a>
 
+
+    <?php require "partials/rodape.inc"; ?>
 
 </body>
 

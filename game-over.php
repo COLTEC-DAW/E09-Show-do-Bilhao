@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/game-over.css">
+    <link rel="stylesheet" href="assets/css/rodape.css">
     <title>Show do Bilhão</title>
 </head>
 
@@ -20,6 +21,7 @@
     <p>Mermão, voce perdeu seu merda. Seu lixo humano. Vai comer uma vaca.</p>
     <a href="/perguntas.php" class="reset-button">Resetar</a>
 
+    <?php require "partials/rodape.inc"; ?>
 </body>
 
 </html>

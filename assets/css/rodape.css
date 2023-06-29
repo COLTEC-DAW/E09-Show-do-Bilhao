@@ -1,0 +1,17 @@
+footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.rodape-container {
+    font-size: 14px;
+    color: #555;
+}
+
+.rodape-container p {
+    margin: 0;
+}
