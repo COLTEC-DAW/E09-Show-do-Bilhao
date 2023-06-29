@@ -46,7 +46,7 @@
 		}
     }
 
-    public function getHighscore($score){
+    public function getHighscore(){
         for ($i=0; $i < count($this->stored_users); $i++) {
 			if($this->stored_users[$i]['login'] == $this->login){
                 return $this->stored_users[$i]['highscore'];
