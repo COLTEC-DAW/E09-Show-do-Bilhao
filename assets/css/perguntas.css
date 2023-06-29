@@ -57,3 +57,16 @@ body {
     margin-top: 10px;
     font-weight: bold;
 }
+
+.progress-bar {
+    background-color: #f8f8f8;
+    height: 10px;
+    position: relative;
+}
+
+.progress {
+    background-color: green;
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}

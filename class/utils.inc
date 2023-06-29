@@ -13,10 +13,14 @@ function echoPergunta($questionId){
 
 function gameOver(){
     header("Location: ../game-over.php");
+    setcookie('numeroAcertos', 0);
+    $questionId = 0;
 }
 
 
 function gameWin(){
     header("Location: ../game-win.php");
+    setcookie('numeroAcertos', 0);
+    $questionId = 0;
 }
 ?>
