@@ -41,6 +41,11 @@ h2{
     width: 100%;
     text-align: center;
 }
+.botao{
+    padding: 890px;
+    text-align: center;
+    color: black;
+}
 .rodape{
     background-color: #84947C;
     width: 100%;
@@ -49,11 +54,18 @@ h2{
     bottom: 0;
     left: 0;
 }
-.rodape p{
-    padding-top: 15px;
+.rodape div{
+    padding-top: 5px;
     color: white;
     text-align: center;
     font-size: 16px;
     font-weight:600;
     font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+}
+.infos{
+    margin-left: 730px;
+}
+.logout{
+    margin-left: 50px;
 }

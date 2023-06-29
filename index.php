@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php 
-        include "./inc/menu.inc"; 
+    include "./inc/interface/menu.inc"; 
 
         if(count($_GET)==0){
             $id=0;
@@ -19,18 +19,9 @@
         }
 
         session_start();
-        if(!isset($_SESSION["login"]) &&  !isset($_SESSION["senha"])){ ?>
-             <div class='form'>
-             <h2> LOGIN </h2>
-             <form action='index.php?' method='POST'>
-             <div class='login'>
-             <label> <input type='text' name='login'> Digite seu nome </label>
-             </div>
-             <div class='login'>
-             <label> <input type='text' name='senha'> Digite a senha </label>
-             </div>
-             <input class='pergunta' type='submit' name='resp'>
-             <?php
+        if(!isset($_SESSION["login"]) &&  !isset($_SESSION["senha"])){ 
+            include "./inc/interface/login.inc";
+
             if(!isset($_COOKIE["ultimo jogo"])){ ?>
                 <p> <?php  echo $_COOKIE["ultimo jogo"] ?> </p>
             <?php 
@@ -48,31 +39,20 @@
             }
             setcookie("ultimo jogo", date("d/m/Y H:i:s"));
 
-            
-
-            $pergunta = carregaPergunta($id);
             $resp_usuario = $_POST["pergunta"];
-            
+            $verificar= verificaPergunta($id, $resp_usuario);
 
-            
-            $id= verificaPergunta($id-1, $resp_usuario);
-
-            ?>
-
-            <div class="form" >
-            <h2> <?php echo $pergunta->pergunta ?> </h2>
-            <form action="index.php?id=<?php echo $id; ?>" method="POST">
-            <?php for($i=1;$i<=4;$i++){
-                $alternativa = $pergunta->alternativas[$i-1]; ?>
-                <div class="pergunta">
-                <label> <input type="radio" name="pergunta" value="<?php echo $i ?>"> <?php echo $alternativa ?> </label>
-                </div>
-            <?php } ?>
-            <input class="pergunta" type="submit" name="resp">
-            
-            <?php
+            if($verificar == true && $id<=4 || $id==0){
+                include "./inc/interface/form.inc";
+            } elseif($id>4){ 
+                setcookie("pontuacao");           
+                include "./inc/result/vencedor.inc";
+            } else{
+                setcookie("pontuacao"); 
+                include "./inc/result/gameover.inc";
+            }
         }
-        include "./inc/rodape.inc"; 
+    include "./inc/interface/rodape.inc"; 
     ?>
 </body>
 </html>

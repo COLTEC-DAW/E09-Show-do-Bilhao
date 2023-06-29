@@ -28,21 +28,18 @@
 
     function carregaPergunta($id){
         global $perguntas;
-
-        $resp_usuario = $_POST["pergunta"];
         return $perguntas[$id];
     }
 
     function verificaPergunta($id, $resp_usuario){
-        echo $resp_usuario;
-        $resposta = carregaPergunta($id);
-        echo $resposta->resposta;
-        echo $id;
-        
+
+        $resposta = carregaPergunta($id-1);
+
         if($resp_usuario == $resposta->resposta){
-        return $id+1;
+            setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
+            return true;
         } else{
-            return 6;
+            return false;
         } 
         
     }
