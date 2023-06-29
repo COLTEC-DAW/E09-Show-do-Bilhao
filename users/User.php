@@ -46,14 +46,6 @@
 		}
     }
 
-    public function getHighscore(){
-        for ($i=0; $i < count($this->stored_users); $i++) {
-			if($this->stored_users[$i]['login'] == $this->login){
-                return $this->stored_users[$i]['highscore'];
-			}
-		}
-    }
-
     public function setLastSession(){
         for ($i=0; $i < count($this->stored_users); $i++) {
 			if($this->stored_users[$i]['login'] == $this->login){
