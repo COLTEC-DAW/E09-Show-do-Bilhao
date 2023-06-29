@@ -15,6 +15,11 @@ class Question
         return new Question($pergunta["enunciado"], $pergunta["alternativas"], $pergunta["resposta"]);
     }
 
+    public static function getCountPerguntas(){
+        $perguntas = (array) json_decode(file_get_contents(__DIR__ . "/../data/perguntas.json"));
+        return sizeof($perguntas);
+    }
+
 
     // Properties
     public $enunciado;
