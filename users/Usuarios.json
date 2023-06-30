@@ -1,11 +1,50 @@
 [
     {
-        "name": "leo",
-        "email": "leo@leo",
-        "login": "Leonardo Prado",
-        "password": "$2y$10$TSlnNAW2L8SfdFRtnbHkzu9HGSzkFSQ0Jg2WHhE5L5nIoDQwibNlS",
+        "name": "l",
+        "email": "l@l",
+        "login": "l",
+        "password": "$2y$10$\/y65HssKO7Bsju\/vLMqFnOHbRn.6fNtMNABFYVxYTL4Pg..zBhRim",
         "highscore": 0,
-        "foto": 17,
-        "last_session": "28\/06 14:26"
+        "foto": 7
+    },
+    {
+        "name": "a",
+        "email": "a@a",
+        "login": "a",
+        "password": "$2y$10$2QBkOOIq1PGUYr0.h9mKSOoJWD8InOKbiQPmKHQuu2SZZ.hVl70By",
+        "highscore": 0,
+        "foto": 11
+    },
+    {
+        "name": "b",
+        "email": "b@b",
+        "login": "b",
+        "password": "$2y$10$8GY7D\/o1ZIBBo0gAcsC0ueAZatXfPsCJyOTjP8T9YaBusH3i\/qAKK",
+        "highscore": 0,
+        "foto": 9
+    },
+    {
+        "name": "i",
+        "email": "i@i",
+        "login": "i",
+        "password": "$2y$10$X6tCGmM7GD7EVknV9RqT5exWbwSyAAMcmVUk7I3.CPoXSBudcnNxu",
+        "highscore": 0,
+        "foto": 1
+    },
+    {
+        "name": "u",
+        "email": "u@u",
+        "login": "u",
+        "password": "$2y$10$xFhHLX3sLPI.wy5aGoH3Nekl.8JaQ2IBMnH\/rkR7cUF.veQC1yj0a",
+        "highscore": 0,
+        "foto": 13
+    },
+    {
+        "name": "r",
+        "email": "r@r",
+        "login": "r",
+        "password": "$2y$10$ydclyvYLh7vBTdzpfbv6VuLZspMZytAxuVxtRKHyuEcA.4LAc09uq",
+        "highscore": 0,
+        "foto": 3
     }
 ]

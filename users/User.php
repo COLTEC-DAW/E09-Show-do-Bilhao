@@ -7,7 +7,6 @@
         private $password;
         private $highscore;
         private $foto;
-        private $last_session;
         private $storage = "../users/Usuarios.json";
         private $stored_users;
     
@@ -19,7 +18,7 @@
             $this->password = $password;
             $this->highscore = 0;
             $this->foto = rand(0, 17);
-            $this->last_session = date('d/m H:i');
+            setcookie($login, date('d/m H:i'), time() + 86400);
             $this->stored_users = json_decode(file_get_contents($this->storage), true);
     }
 
@@ -31,8 +30,7 @@
                     'login' => $this->login,
                     'password' => $this->password,
                     'highscore' => $this->highscore,
-                    'foto' => $this->foto,
-                    'last_session' => $this->last_session];
+                    'foto' => $this->foto];
     }
 
     public function setHighscore($score){
@@ -55,12 +53,7 @@
     }
 
     public function setLastSession(){
-        for ($i=0; $i < count($this->stored_users); $i++) {
-			if($this->stored_users[$i]['login'] == $this->login){
-                $this->stored_users[$i]['last_session'] = date('d/m H:i');
-                file_put_contents('../users/Usuarios.json', json_encode($this->stored_users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-			}
-		}
+        setcookie($login, date('d/m H:i'), time() + 86400);
     }
 }
 ?>

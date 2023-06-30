@@ -2,8 +2,7 @@
 require ("../users/User.php");
 session_start();
 $username =  $_SESSION["user"];
-$user = new User(null, null, $username, null);
-$user->setLastSession();
+setcookie($username, date('d/m H:i'), time() + 86400);
 session_destroy();
 header('Location: MainPage.php');
 exit();
