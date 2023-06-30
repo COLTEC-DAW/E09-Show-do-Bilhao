@@ -14,8 +14,8 @@
     <body>
         <?php include("Partials/menu.inc");?>
         <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
-            <label>Username</label><input type="text" name="username"><br>
-            <label>Password</label><input type="password" name="password">
+            <label>Username</label><input type="text" name="username" required><br>
+            <label>Password</label><input type="password" name="password" required>
             <button type="submit" name="submit">Login</button>
             <p class="message"><?php echo @$user->message ?></p>
         </form>
