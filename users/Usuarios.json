@@ -46,5 +46,13 @@
         "password": "$2y$10$ydclyvYLh7vBTdzpfbv6VuLZspMZytAxuVxtRKHyuEcA.4LAc09uq",
         "highscore": 0,
         "foto": 3
+    },
+    {
+        "name": "m",
+        "email": "m@m",
+        "login": "m",
+        "password": "$2y$10$vMZdTvJXrORoEWN3o65nVuI6c6kkUlvKIRjRIr3FlWiXKoqpW0LqC",
+        "highscore": 0,
+        "foto": 14
     }
 ]

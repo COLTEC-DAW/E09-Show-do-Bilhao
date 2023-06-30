@@ -6,9 +6,6 @@
     require "../users/register.php";
     if (isset($_POST['register'])) {
         $reg = new register(htmlspecialchars($_POST['new_login']),htmlspecialchars($_POST['email']),htmlspecialchars($_POST['name']),htmlspecialchars($_POST['new_password']));
-        //Cookies são carregados apenas após a próxima atualização de página :/
-        //Gambiarra na falta de algo melhor
-        header("Location: MainPage.php");
     }
 
     //Login
