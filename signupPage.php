@@ -15,13 +15,13 @@
         <?php include("Partials/menu.inc");?>
         <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
             <label>Nome</label>
-            <input type="text" name="name"><br>
+            <input type="text" name="name" required><br>
             <label>Email</label>
-            <input type="text" name="email"><br>
+            <input type="text" name="email" required><br>
             <label>Usuário</label>
-            <input type="text" name="username"><br>
+            <input type="text" name="username" required><br>
             <label>Senha</label>
-            <input type="password" name="password">
+            <input type="password" name="password" required>
             <button type="submit" name="submit">Registrar</button>
             <p class="message"><?php echo @$user->message ?></p>
         </form>
