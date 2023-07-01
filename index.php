@@ -1,22 +1,20 @@
+<?php
+    session_start();
+    include "header.inc";
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show do Bilhão</title>
-</head>
-<body>
-    <?php
-
-        var_dump($_POST["play"]);
-
-        session_start();
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Show do Bilhão</title>
+    </head>
+    <body>
+        <?php
         //requires
         require "questions.inc";
         require "user.inc";
-        require "header.inc";
 
         //variaveis
         $q = [];
@@ -53,7 +51,7 @@
         }elseif(!isset($_POST['lose'])){
             $q[$_POST['idQuestion']]->PrintQuestions($_POST['idQuestion']);
         }else{
-            echo "You lose";
+            $q[$_POST['idQuestion']]->PrintLoserScreen();
         }
 
     ?>
