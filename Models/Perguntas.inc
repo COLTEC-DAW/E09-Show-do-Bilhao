@@ -3,20 +3,17 @@ class Pergunta{
     public $enunciado;
     public $alternativas;
     public $indiceAlternativaCorreta;
+   public function carregaPerguntas($id, $perguntas){
+        
+        $this->enunciado=$perguntas[$id]['enunciado'];
+        $this->alternativas=$perguntas[$id]['alternativas'];
+        $this->indiceAlternativaCorreta=$perguntas[$id]['resposta'];
+
+    }
 }
 
     $nomeArquivo = $_SERVER['DOCUMENT_ROOT'] . '/Data/perguntas.json';
     $perguntasJson = file_get_contents($nomeArquivo);
     $perguntas = json_decode($perguntasJson, true);
 
-    function carregaPerguntas($id, $perguntas){
-
-        $pergunta = new Pergunta();
-        
-        $pergunta->enunciado=$perguntas[$id]['enunciado'];
-        $pergunta->alternativas=$perguntas[$id]['alternativas'];
-        $pergunta->indiceAlternativaCorreta=$perguntas[$id]['resposta'];
-        
-        return $pergunta;
-    }
 ?>

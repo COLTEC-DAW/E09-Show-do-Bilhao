@@ -1,25 +1,41 @@
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html{
+    background-color: #cbc2d8;
+}
 .menu--titulo{
     font-size: 2em;
-    margin: auto;
     display: inline;
 }
 .menu{
-    display: inline;
-}
-.menu--lista{
-    display: inline-flex;
+    display: flex;
     justify-content: space-around;
-    gap: 2em;
+    align-items: center;
 }
-.lista--item{
-    display: inline;
+.pergunta{
+    border-radius: 20px;
+    width: 60%;
+    margin: auto;
 }
-.item--link{
-    text-decoration: none;
-    color: black;
+.enunciado{
+    margin: 20px;
+    background-color: #d7d5db;
+    border: #8B65BF 5px solid;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}
+.alternativas{
+    display: flex;
+    flex-direction: column;
+}
+.alternativaItem{
+    font-size: 40px;
+    width: 40%;
 }
 .rodape{
     display: flex;

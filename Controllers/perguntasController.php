@@ -1,11 +1,8 @@
 <?php
 require "../Models/Perguntas.inc";
+require "../Models/UserCookie.inc";
 ?>
 <?php
-require "../Models/User.inc";
-?>
-<?php
-session_start();
 
 if (isset($_SESSION['user'])) {
 
@@ -24,7 +21,8 @@ if (isset($_SESSION['user'])) {
                 require "../Pages/voceGanhou.php";
             } else {
                 $id = $perguntaPost + 1;
-                $pergunta = carregaPerguntas($id, $perguntas);
+                $pergunta=new Pergunta();
+                $pergunta->carregaPerguntas($id, $perguntas);
             }
         } else {
             criaUsuarioECookie($_SESSION["user"], date('d/m/Y h:i:s'), $pontuacao);
@@ -33,7 +31,8 @@ if (isset($_SESSION['user'])) {
     } else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $id = 0;
         $pontuacao = 0;
-        $pergunta = carregaPerguntas($id, $perguntas);
+        $pergunta=new Pergunta();
+        $pergunta->carregaPerguntas($id, $perguntas);
     }
 } else {
     require "../index.php";

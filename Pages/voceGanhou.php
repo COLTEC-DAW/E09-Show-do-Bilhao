@@ -11,7 +11,7 @@
     <h1>Parabéns!</h1>
     <h2>Você acertou todas as 5 perguntas</h2>
     <?php
-    echo"<a href='../Services/destroiSessao.php'>Deseja fazer logout?</a>"
+    echo "<a href='../Services/destroiSessao.php'>Deseja fazer logout?</a>"
     ?>
 </body>
 </html>

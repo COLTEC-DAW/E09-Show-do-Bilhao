@@ -40,5 +40,23 @@
         "login": "bj",
         "senha": "bj1234",
         "email": "erick@bj.org"
+    },
+    {
+        "nome": "oi",
+        "login": "oioi",
+        "senha": "123",
+        "email": "oi@oi"
+    },
+    {
+        "nome": "mais",
+        "login": "maismais",
+        "senha": "0987",
+        "email": "mais@mais"
+    },
+    {
+        "nome": "eu",
+        "login": "eueu",
+        "senha": "1710",
+        "email": "eu@eu"
     }
 ]
