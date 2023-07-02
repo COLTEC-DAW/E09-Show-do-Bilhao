@@ -18,10 +18,15 @@ class Pergunta
 class Gerenciador_de_Pergunta
 {
     private $pergunta;
-
+    
     public function __construct($enun = 'Como vc esta?', $alter = null, $res = 'Otimo!')
     {
         $this->pergunta = new Pergunta($enun, $alter, $res);
+    }
+
+    public function __construct($textJSON)
+    {
+        $this->pergunta	= json_decode($textJSON);
     }
 
     public function obter_enunciado()
