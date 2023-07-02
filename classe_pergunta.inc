@@ -24,11 +24,6 @@ class Gerenciador_de_Pergunta
         $this->pergunta = new Pergunta($enun, $alter, $res);
     }
 
-    public function __construct($textJSON)
-    {
-        $this->pergunta	= json_decode($textJSON);
-    }
-
     public function obter_enunciado()
     {
 	    return $this->pergunta->enunciado;
@@ -46,12 +41,17 @@ class Gerenciador_de_Pergunta
 
     public function toJSON()
     {
-        return json_encode($this->pergunta)
+        return json_encode($this->pergunta);
     }
 
     public function setFromJSON($textJSON)
     {
         $this->pergunta	= json_decode($textJSON);
+    }
+
+    public function eh_res_correta($alternativa)
+    {
+        return $alternativa === $this->pergunta->alternativas[$this->pergunta->resposta_correta];
     }
 }
 
