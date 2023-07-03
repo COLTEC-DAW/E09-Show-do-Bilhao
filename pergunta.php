@@ -55,6 +55,8 @@ $answer = $quest->getAnswer($questID); ?>
             <label for="2"><?=$options[2]?></label><br>
             <input type="radio" name="option" value="3" id="">
             <label for="3"><?=$options[3]?></label><br>
+            <input type="radio" name="option" value="4" id="">
+            <label for="4"><?=$options[4]?></label><br>
             <input type="hidden" name="answer" value="<?=$answer?>">
             <input type="submit" value="Mandar">
         </form>
