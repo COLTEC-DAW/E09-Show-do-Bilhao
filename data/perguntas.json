@@ -1,0 +1,12 @@
+[
+    {
+        "pergunta": "Qual o principal apelido do Raphael",
+        "alternativas": ["PH", "Rapha", "Sertanejo", "Coach"],
+        "resposta": "3"
+    },
+    {
+        "pergunta": "Qual o sobrenome do Raphael",
+        "alternativas": ["Santos", "Augusto", "Henrique", "Coute"],
+        "resposta": "2"
+    }
+]
