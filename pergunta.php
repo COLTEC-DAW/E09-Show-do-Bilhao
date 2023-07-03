@@ -47,16 +47,10 @@ $answer = $quest->getAnswer($questID); ?>
         <?php include("Partials/menu.inc");?><br>
         <h2><?=$question?></h2>
         <form action="pergunta.php?id=<?=$questID+1?>" method="POST">
-            <input type="radio" name="option" value="0" id="">
-            <label for="0"><?=$options[0]?></label><br>
-            <input type="radio" name="option" value="1" id="">
-            <label for="1"><?=$options[1]?></label><br>
-            <input type="radio" name="option" value="2" id="">
-            <label for="2"><?=$options[2]?></label><br>
-            <input type="radio" name="option" value="3" id="">
-            <label for="3"><?=$options[3]?></label><br>
-            <input type="radio" name="option" value="4" id="">
-            <label for="4"><?=$options[4]?></label><br>
+        <?php for($i = 0; $i < 5; $i++){ ?>
+            <input type="radio" name="option" value="<?=$i?>" id="">
+            <label for="<?=$i?>"><?=$options[$i]?></label><br>
+        <?php } ?>
             <input type="hidden" name="answer" value="<?=$answer?>">
             <input type="submit" value="Mandar">
         </form>
