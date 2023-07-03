@@ -37,7 +37,7 @@
             if(!isset($_COOKIE["pontuacao"])){
                 setcookie("pontuacao", 0);
             }
-            setcookie("ultimo jogo", date("d/m/Y H:i:s"));
+            setcookie("ultimo-jogo", date("d/m/Y H:i:s"));
 
             $resp_usuario = $_POST["pergunta"];
             $verificar= verificaPergunta($id, $resp_usuario);

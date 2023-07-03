@@ -4,7 +4,7 @@
         var $alternativas;
         var $resposta;
 
-        function Perguntas($pergunta, $alternativas, $resposta){
+        function __construct($pergunta, $alternativas, $resposta){
             $this->pergunta= $pergunta;
             $this->alternativas= $alternativas;
             $this->resposta= $resposta;
@@ -32,7 +32,6 @@
     }
 
     function verificaPergunta($id, $resp_usuario){
-
         $resposta = carregaPergunta($id-1);
 
         if($resp_usuario == $resposta->resposta){

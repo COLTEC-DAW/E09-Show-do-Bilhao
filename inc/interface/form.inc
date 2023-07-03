@@ -1,4 +1,5 @@
-<?php $pergunta = carregaPergunta($id); ?>
+<?php
+$pergunta = carregaPergunta($id); ?>
 <div class="form" >
     <h2> <?php echo $pergunta->pergunta ?> </h2>
     <form action="index.php?id=<?php echo $id+1; ?>" method="POST">
