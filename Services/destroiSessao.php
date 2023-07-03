@@ -1,5 +1,5 @@
 <?php
     session_start();
     session_destroy();
-    require "../index.php";
+    require "../Pages/Login.html";
 ?>

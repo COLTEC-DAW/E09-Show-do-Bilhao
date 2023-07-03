@@ -17,11 +17,12 @@ if (isset($_SESSION['user'])) {
 
         if ($resposta == $perguntas[$perguntaPost]['resposta']) {
             $pontuacao++;
-            $imprimePergunta=true;
             if ($perguntaPost == sizeof($perguntas) - 1) {
+                $imprimePergunta=false;
                 criaUsuarioECookie($_SESSION["user"], date('d/m/Y h:i:s'), $pontuacao);
                 require "../Pages/voceGanhou.php";
             } else {
+                $imprimePergunta=true;
                 $id = $perguntaPost + 1;
                 $pergunta=new Pergunta();
                 $pergunta->carregaPerguntas($id, $perguntas);

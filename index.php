@@ -13,8 +13,7 @@
     if(isset($_SESSION['user'])){
         require "Pages/paginaInicial.php";
     }else{
-        require "Componentes/login.inc";
-        echo "<a href='/Pages/SignUp.html'>deseja criar conta?</a>";
+        require "Pages/Login.html";
     }
     ?>
   

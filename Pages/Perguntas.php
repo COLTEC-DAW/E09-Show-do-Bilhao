@@ -6,7 +6,6 @@ global $usuario;
 print_r($usuario->nome);
 require "../Controllers/perguntasController.php";
 
-
 if($imprimePergunta){
     require "../Componentes/pergunta.inc";
 }

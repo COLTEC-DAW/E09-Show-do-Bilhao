@@ -30,7 +30,4 @@
         <button type= "submit">Enviar resposta</button>
     </form>
 </div>
-<?php
-require "../Componentes/rodape.inc";
-?>
 </body>
