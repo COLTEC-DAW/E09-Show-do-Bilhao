@@ -1,0 +1,31 @@
+[
+    {
+        "enunciado": "Lipossomas são vesículas nanométricas, formadas de bicamadas esféricas e concêntricas em torno de um compartimento aquoso, que podem ser utilizadas como carreadores de fármacos. Lipossomas com ligantes sítio-específicos em sua superfície são capazes de distribuir o fármaco diretamente para a célula-alvo. A estrutura celular responsável pela especificidade no reconhecimento e adsorção dos lipossomas sítio-específicos é o:",
+        "alternativas" : ["Citoplasma", "Ribossomo", "Glicocálix", "Nucléolo"],
+        "resposta": "C"
+    },
+
+    {
+        "enunciado": "Tilacoides são formados por um complexo membranoso composto por pequenas bolsas discoidais achatadas, empilhadas e interligadas. O espaço entre essas membranas é preenchido pelo estroma, onde são encontrados DNA, RNA, ribossomos e enzimas. Essa estrutura descrita está presente no(a):",
+        "alternativas" : ["Retículo Endoplasmático Rugoso", "Réticulo Endoplasmático Liso", "Mitocôndria", "Cloroplasto"],
+        "resposta": "D"
+    },
+
+    {
+        "enunciado": "Os ursos, por não apresentarem uma hibernação verdadeira, acordam por causa da presença de termogenina, uma proteína mitocondrial que impede a chegada dos prótons até a ATP sintetase, gerando calor. Esse calor é importante para aquecer o organismo, permitindo seu despertar.",
+        "alternativas" : ["Glicólise", "Fosforolação oxidativa", "Ciclo do ácido cítrico", "Oxidação do piruvato"],
+        "resposta": "B"
+    },
+
+    {
+        "enunciado": "A terapia antirretroviral (TARV) consiste na associação de fármacos utilizados para o tratamento de doenças infecciosas causadas por retrovírus, com o objetivo de melhorar a qualidade de vida do paciente, preservar o sistema imunológico, reduzir a carga viral e diminuir as taxas de morbidade e mortalidade. Sabendo que muitos desses fármacos atuam como inibidores enzimáticos, a ação inicial da TARV contra o retrovírus impedirá a realização de síntese de:",
+        "alternativas" : ["DNA viral", "RNA viral", "Proteínas virais", "Fosfolipídios virais"],
+        "resposta": "A"
+    },
+
+    {
+        "enunciado": "De acordo com o fixismo, é correto afirmar que ",
+        "alternativas" : ["as espécies permanecem mutáveis ao longo do tempo.", "as variações do meio ambiente levam o indivíduo a sentir necessidade de se adaptar.", "as espécies vivas atualmente são idênticas às do passado.", "os organismos mais bem adaptados ao meio têm maiores chances de sobrevivência. "],
+        "resposta": "C"
+    }
+]
