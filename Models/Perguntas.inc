@@ -1,10 +1,11 @@
 <?php
 class Pergunta{
+    public $id;
     public $enunciado;
     public $alternativas;
     public $indiceAlternativaCorreta;
    public function carregaPerguntas($id, $perguntas){
-        
+        $this->id=$id;
         $this->enunciado=$perguntas[$id]['enunciado'];
         $this->alternativas=$perguntas[$id]['alternativas'];
         $this->indiceAlternativaCorreta=$perguntas[$id]['resposta'];
