@@ -23,30 +23,40 @@
             ?>
             <div class="cadastrar">
                 <form  action="" method="post">
-                    <input type="submit" name="cadastrar" value="cadastrar">
-                    <input type="submit" name="login" value="login">
+                    <input type="submit" name="Cadastro" value="Cadastro">
+                    <input type="submit" name="Login" value="Login">
                 </form>
             </div>
-            <?php if($_POST["cadastrar"]=="cadastrar"){
+            <?php 
+            
+
+            if($_POST["Cadastro"]=="Cadastro"){
                 include "./inc/interface/cadastro.inc";
+                cadastroUsuario($_POST["nome"],$_POST["email"],$_POST["login"],$_POST["senha"]);
             }
             
-            if($_POST["login"]=="login"){
+            if($_POST["Login"]=="Login"){
                 include "./inc/interface/login.inc";
+                // $login=conferirLogin($_POST["login"], $_POST["senha"]);
+                // if($login==false){
+                //     include "./inc/interface/cadastro.inc";
+                // }
             }
+
+            // if(isset($_POST["nome"]) && isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["senha"]) && $_POST["Cadastro"]=="Cadastro"){
+                
+            // } elseif(isset($_POST["login"]) && isset($_POST["senha"]) && $_POST["Login"]=="Login"){
+                
+            // }
 
             $_SESSION["login"]=$_POST["login"];
             $_SESSION["senha"]=$_POST["senha"];
-
-            $usuarios = fopen("usuarios.json", "r");
-            while(!feof($usuarios)){
-
-            }
 
             if(!isset($_COOKIE["ultimo jogo"])){ ?>
                 <p> <?php  echo $_COOKIE["ultimo jogo"] ?> </p>
             <?php 
             }
+
         } else{
 
             include "./inc/perguntas.inc";
@@ -62,7 +72,7 @@
             if($verificar == true && $id<=4 || $id==0){
                 include "./inc/interface/form.inc";
                 setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
-            } elseif($id>4){ 
+            } elseif($verificar == true && $id>4){ 
                 setcookie("pontuacao");           
                 include "./inc/result/vencedor.inc";
             } else{
@@ -70,6 +80,7 @@
                 include "./inc/result/gameover.inc";
             }
         }
+
     include "./inc/interface/rodape.inc"; 
     ?>
 </body>

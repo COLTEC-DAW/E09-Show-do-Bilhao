@@ -1,6 +1,6 @@
 <div class='form'>
     <h2> CADASTRO </h2>
-    <form action='index.php?id=0' method='POST'>
+    <form action='index.php?' method='POST'>
     <div class='login'>
         <label> <input type='text' name='nome'> Insira seu nome </label>
     </div>
@@ -14,9 +14,6 @@
         <label> <input type='text' name='senha'> Insira sua senha </label>
     </div>
     <input class='pergunta' type='submit' name='resp'>
-
-    <p>Último jogo: <?php echo $_COOKIE["ultimo-jogo"]; ?></p>
-    <p>Última pontuação: <?php echo $_COOKIE["ultPontuacao"]; ?></p>
 </div>
 
 <?php 
@@ -35,12 +32,11 @@
     }
     
     function cadastroUsuario($nome, $email, $login, $senha){
-        $usuariosCadastrados = file_get_contents("usuarios.json");
+        $arquivo = fopen("./json/usuarios.json", "a");
         $usuario = new Usuario($nome,$email,$login,$senha);
-        $usuarioJson = json_encode($usuario);
+        $info=json_encode($usuario);
+        fwrite($arquivo, $info);
+        fclose($arquivo);
     }
-
-    cadastroUsuario($_POST["nome"],$_POST["email"],$_POST["login"],$_POST["senha"]);
-
    
 ?>

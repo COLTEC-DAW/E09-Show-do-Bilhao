@@ -6,6 +6,7 @@
     </div>
     <?php if($_POST["logout"]=="LOGOUT"){
         session_destroy();
+        setcookie("pontuacao");
     }?>
     <div class="infos">
         <p> PONTUAÇÃO:<?php echo $_COOKIE["pontuacao"];?>/5</p>

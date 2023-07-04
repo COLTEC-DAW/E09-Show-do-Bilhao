@@ -13,3 +13,16 @@
     <p>Última pontuação: <?php echo $_COOKIE["ultPontuacao"]; ?></p>
 </div>
 
+<?php
+    function conferirLogin($loginUsuario, $senhaUsuario){
+        $arquivo = file_get_contents("./json/usuarios.json");
+        $usuarios= json_decode($arquivo);
+        foreach($usuarios as $user){
+            if($user["login"]== $loginUsuario && $user["senha"]==$senhaUsuario){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+?>
