@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include "header.inc";
     require "user.inc";
     require "loginFunctions.inc";
+    include "header.inc";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,11 +24,10 @@
     }
 
     if (isset($_SESSION['user'])) {
-        //$cookieValue = [];
         $cookieValue = UnpackCookie();
         echo "Você esta logado!!!</br>";
-        echo "Ultima vez logado foi:" . $cookieValue[1];
-        //echo "Sua ultima pontuação foi:" . $cookieValue[0] . "</br>";
+        echo "Sua ultima pontuação foi:" . $cookieValue[0] . "</br>";
+        echo "Ultima vez logado foi:" . $cookieValue[1] . "</br>";
         echo "<a href='index.php'>Iniciar questionario</a>";
     }
     ?>

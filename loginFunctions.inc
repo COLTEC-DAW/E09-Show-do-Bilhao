@@ -64,7 +64,4 @@
         echo "<input type = 'submit' value = 'Logar'>";
         echo "</form>";
     }
-
-    
-
 ?>

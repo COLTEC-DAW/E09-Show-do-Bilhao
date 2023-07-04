@@ -52,13 +52,15 @@
         function PrintEndGame(){
             
             $this->PrintScore();
-            SaveCookie($_POST["Score"]);
+            $data = UnpackCookie();
+            SaveCookie($_POST["Score"], $data[1]);
             echo "<a href='login.php'>voltar ao inicio</a>";
         }
 
         function PrintLoserScreen(){
             echo "<h3>You loose the game</h3>";
-            SaveCookie($_POST["Score"]);
+            $data = UnpackCookie();
+            SaveCookie($_POST["Score"], $data[1]);
             echo "<a href='login.php'>voltar ao inicio</a>";
         }
 

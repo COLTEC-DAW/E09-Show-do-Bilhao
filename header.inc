@@ -4,29 +4,28 @@
     {
         if(isset($_COOKIE["info"])){
             $valueCookie = explode(",", $_COOKIE["info"]);
-            echo $valueCookie;
             return $valueCookie;
         }
     }
 
     if (isset($_POST['logout'])) {
         if (isset($_SESSION['user'])) {
-            unset($_SESSION['user']);
             if(isset($_COOKIE["info"]) ){
-                echo "o cookie existe";
                 $cookie = UnpackCookie();
-                SaveCookie($cookie[1]);
+                SaveCookie($cookie[0],date('Y-M-d H:i'));
             }
             else{
-                echo "o cookie n existe";
-                SaveCookie(0);
+                SaveCookie(0,date('Y-M-d H:i'));
             }
+            unset($_SESSION['user']);
+            ob_start();
             header("location: login.php");
         }
     }
-    function SaveCookie($score)
+    function SaveCookie($score, $date)
     {
-        setcookie("info", $score . "," . time() , time() + (86400 * 30), "/");
+        
+        setcookie( $_SESSION['user']->userName , $score . "," .  date('Y-M-d H:i') , time() + (86400 * 30));
     }
     
 ?>
