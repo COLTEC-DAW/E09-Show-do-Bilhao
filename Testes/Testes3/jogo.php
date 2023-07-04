@@ -37,13 +37,14 @@
     
     <?php
         $questao = carregaPergunta($id);
+        $id++;
         
         echo $questao->enunciado . "<br><br>";
 
-        echo '<form action="jogo.php" method="post">';
+        echo '<form action="jogo.php?id=' . $id . '" method="post">';
         foreach ($questao->alternativas as $key => $alternativa) {
             if($key == $questao->resposta){
-                $id++;
+                
                 if ($id > 0) {
                     $acertos++;
                 }
