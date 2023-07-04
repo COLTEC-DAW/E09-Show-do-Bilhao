@@ -10,8 +10,8 @@
     <form method="POST">
         <?php
             if(isset($_SESSION['loginAtual'])) {
-                echo "Logado como" . $_SESSION['loginAtual'];
-                echo "<input type='submit' name='logout' value='Logout'/>";
+                echo "Logado como " . $_SESSION['loginAtual']->nome;
+                echo "</br><input type='submit' name='logout' value='Logout'/>";
             }
         ?>
     </form>

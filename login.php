@@ -15,29 +15,25 @@
     <h1> Fazer login </h1>
     <?php
         require('usuario.inc');
+
+        function postNaoVazio(string $nomePost) {
+            return (isset($_POST[$nomePost])) && (strlen($_POST[$nomePost]) > 0);
+        }
+
         echo "<form method='POST'/>";
             echo "<input type='text' name='nomeLogin' placeholder='Nome de usuário'/><br/>";
             echo "<input type='password' name='senhaLogin' placeholder='Senha'/><br/><br/>";
             echo "<input type='submit' value='Entrar' name='botaoLogin'/>";
             echo "<input type='submit' value='Registrar' name='botaoRegister'/>";
         echo "</form>";
-        
-        if(isset($_POST['nomeLogin'])){
-            header ("Location:index.php?id=0");
-        }
 
-        if(isset($_POST['botaoRegister'])) {
-            registraUsuario();
-        }
-        
-        if(isset($_POST['botaoLogin'])) {
-            $usuarioEncontrado = procuraUsuario();
-
-            if ($usuarioEncontrado) {
-                $_SESSION['loginAtual'] = $usuarioEncontrado;
+        if(postNaoVazio('nomeLogin') && postNaoVazio('senhaLogin')) {
+            if(isset($_POST['botaoRegister'])) {
+                registraUsuario();
             }
-            else {
-                echo "<script type='avisoNaoEncontrado'>alert('Usuário ou senha incorretos!')</script>";
+            
+            if(isset($_POST['botaoLogin'])) {
+                entraUsuario();
             }
         }
     ?>

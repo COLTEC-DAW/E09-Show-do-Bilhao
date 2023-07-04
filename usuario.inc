@@ -2,11 +2,39 @@
     class usuario {
         public $nome;
         public $senha;
+        public $pontuacaoMaxima;
 
         public function __construct(string $nome, string $senha) {
             $this->nome = $nome;
             $this->senha = $senha;
+            $this->pontuacaoMaxima = 0;
         }
+    }
+
+    function getUsuarios() {
+        $nomeArquivo = "usuarios.json";
+        $arquivo = fopen ($nomeArquivo, "r+");
+
+        $arrayUsuarios = json_decode(fread($arquivo, filesize($nomeArquivo)));
+
+        fclose($arquivo);
+        return $arrayUsuarios;
+    }
+
+    function procuraUsuario() {
+        $arrayUsuarios = getUsuarios();
+
+        foreach($arrayUsuarios as $usuarioAtual) {
+            if (($usuarioAtual->nome == $_POST['nomeLogin']) && ($usuarioAtual->senha == $_POST['senhaLogin'])) {
+                return $usuarioAtual;
+            }
+        }
+
+        return false;
+    }
+
+    function atualizaCookieUsuario() {
+        setcookie($_SESSION['loginAtual']->nome, $_SESSION['loginAtual']->pontuacaoMaxima, time() + TEMPO_DIA * 30, '/');
     }
 
     function registraUsuario() {
@@ -24,24 +52,17 @@
         fclose($arquivo);
     }
 
-    function getUsuarios() {
-        $arquivo = fopen ("usuarios.json", "r+");
+    function entraUsuario() {
+        $usuarioEncontrado = procuraUsuario();
+    
+        if ($usuarioEncontrado) {
+            $_SESSION['loginAtual'] = $usuarioEncontrado;
+            atualizaCookieUsuario();
 
-        $arrayUsuarios = json_decode(fread($arquivo, filesize($arquivo)));
-
-        fclose($arquivo);
-        return $arrayUsuarios;
-    }
-
-    function procuraUsuario() {
-        $arrayUsuarios = getUsuarios();
-
-        foreach($arrayUsuarios as $usuarioAtual) {
-            if (($usuarioAtual->nome == $_POST['nomeLogin']) && ($usuarioAtual->senha == $_POST['senhaLogin'])) {
-                return $usuarioAtual;
-            }
+            header ("Location:index.php?id=0");
         }
-
-        return false;
+        else {
+            echo "<br/>Usuário ou senha incorretos!";
+        }
     }
 ?>

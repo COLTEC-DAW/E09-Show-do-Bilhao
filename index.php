@@ -12,8 +12,11 @@
             require('pergunta.inc.php');
             require('definirPerguntas.inc.php');
             require('paginaResultado.inc.php');
+            require('usuario.inc');
 
             include('header.inc');
+
+            define("TEMPO_DIA", 60 * 60 * 24);
 
             $idPagina = intval($_GET["id"]);
             $numPerguntas = 5;      
