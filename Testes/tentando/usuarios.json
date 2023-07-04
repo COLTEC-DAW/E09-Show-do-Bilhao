@@ -1,0 +1,25 @@
+[
+    {
+        "email":"joaozin@gmail.com",
+        "username":"joaozin1601",
+        "senha":"imblue",
+        "primeira": false,
+        "lastSessao": 0
+    },
+        
+    {
+        "email":"marina@gmail.com",
+        "username":"marinaGameplays",
+        "senha":"dabudi",
+        "primeira": false,
+        "lastSessao": 0
+    },
+        
+    {
+        "email":"maluquin@gmail.com",
+        "username":"maluquin",
+        "senha":"dontwakeme",
+        "primeira": false,
+        "lastSessao": 0
+    }
+]
