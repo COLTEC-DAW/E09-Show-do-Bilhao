@@ -1,7 +1,10 @@
 <?php 
-
+/*
     $id = $_GET["id"];
     
+    $dadosJson = file_get_contents('questoes.json');
+    $dadosJsonDecode = json_decode($dadosJson, true);
+
     function carregaPergunta($id) {
 
         global $alternativas, $perguntas, $gabarito;
@@ -25,5 +28,5 @@
         
         echo "<br>Resposta correta: $gabarito";
         echo "<br>";
-    }
+    }*/
 ?>

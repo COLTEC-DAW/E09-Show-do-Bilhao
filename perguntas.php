@@ -1,5 +1,3 @@
-<?php
-require "perguntas.inc" ?>
 
 <!DOCTYPE html>
 <html>
@@ -13,23 +11,21 @@ require "perguntas.inc" ?>
 </head>
 
 <body>
-    <h1>Show do Bilhão</h1>
-    <?php
+    <h1>Show do Bilhao</h1>
 
+    <div>
+        <?php
+        require "questao.php";
+        
+        if (empty($_GET)) {
+            carregaPergunta(0);
+        }
+        else {
+            carregaPergunta($_GET['id']);
+        }
 
-
-    $question = new Questoes($perguntas[$i], $alternativas[$i], $gabarito[$i]);
-
-    //$questioncarregaPergunta($id);
-    //$question.carregaPergunta($id);
-
-
-    for ($i = 0; $i < count($perguntas); $i++) {
-        $question = new Questoes($perguntas[$i], $alternativas[$i], $gabarito[$i]);
-        ImprimiQuestoes();
-    }
-
-    ?>
+        ?>
+    </div>
 
 </body>
 

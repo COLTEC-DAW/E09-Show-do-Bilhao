@@ -1,27 +1,27 @@
 [
     {
-        "enunciado": "Quem é o melhor jogador de futebol do mundo atualmente?",
+        "perguntas": "Quem é o melhor jogador de futebol do mundo atualmente?",
         "alternativas": ["Cristiano Ronaldo", "Lionel Messi", "Neymar Júnior", "Kylian Mbappé"],
-        "resposta": 1
+        "gabarito": 1
     },
     {
-        "enunciado": "Quantas bolas de ouro do prêmio de melhor do mundo tem Cristiano Ronaldo?",
+        "perguntas": "Quantas bolas de ouro do prêmio de melhor do mundo tem Cristiano Ronaldo?",
         "alternativas": ["2", "3", "6", "5"],
-        "resposta": 3
+        "gabarito": 3
     },
     {
-        "enunciado": "Em qual país foi realizada as Olimpiedas de 2016?",
+        "perguntas": "Em qual país foi realizada as Olimpiedas de 2016?",
         "alternativas": ["Suíça", "Inglaterra", "França", "Brasil"],
-        "resposta": 3
+        "gabarito": 3
     },
     {
-        "enunciado":  "Qual é o melhor time de futebol do estado de Minas Gerais?",
+        "perguntas":  "Qual é o melhor time de futebol do estado de Minas Gerais?",
         "alternativas": ["Atlético Mineiro", "América", "Cruzeiro", "Vila Nova"],
-        "resposta": 2
-    }
+        "gabarito": 2
+    },
     {
-        "enunciado": "Qual é o jogador de futebol com mais gols marcados em jogos oficiais?",
+        "perguntas": "Qual é o jogador de futebol com mais gols marcados em jogos oficiais?",
         "alternativas": ["Cristiano Ronaldo", "Lionel Messi", "Pelé", "Josef Bican"],
-        "resposta": 0
+        "gabarito": 0
     }
 ]

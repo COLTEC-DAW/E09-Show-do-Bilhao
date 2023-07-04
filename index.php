@@ -1,6 +1,6 @@
 <?php 
 require "perguntas.inc";
-
+require "questao.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,26 +13,15 @@ require "perguntas.inc";
     </head>
     <body>
 
-
-        <?php 
-        echo "<h1>Show do Bilhão</h1>";
+    <div>
+        <?php ?>
+        <h1>Show do Bilhão</h1>
+        <form action="perguntas.php" method="get">
+            <input type="submit" value="Jogar">
+        </form>
         
-        if(isset($_GET["id"])){
-            $id = $_GET['id'];
-            $pergunta = carregaPergunta($id);
-            
-            echo "<p>Pergunta: </p>";
-
-            foreach ($this->alternativas as $indice => $alternativa) {
-                echo "<input type='radio' name='resposta_$indice' value='$indice'> $alternativa <br>";
-            }
-
-            echo "<form action='' method='POST'>
-                A: <input type='radio' name='id'> <br>
-            
-            </form>";
-        }
-      ?>
+    </div>
+    
     </body>
     </html>
 </html>
