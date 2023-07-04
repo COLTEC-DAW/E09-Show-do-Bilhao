@@ -40,9 +40,10 @@ if ($id <= count($perguntas)) {
     <title>Jogo do bilhão</title>
 </head>
 <body>
+    <h2> <?php echo " voce acertou ate agora ",$id-1," questões"?></h2>
     <h1>Pergunta <?php echo $id; ?></h1>
     <p><?php $pergunta_atual->enunciado($id); ?></p>
-   
+
     <?php if ($id <= count($perguntas)): ?>
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <?php foreach ($pergunta_atual->questões as $questao): ?>
