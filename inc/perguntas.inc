@@ -33,9 +33,7 @@
 
     function verificaPergunta($id, $resp_usuario){
         $resposta = carregaPergunta($id-1);
-
         if($resp_usuario == $resposta->resposta){
-            setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
             return true;
         } else{
             return false;

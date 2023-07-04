@@ -13,6 +13,9 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
+p{
+    padding-top: 7px;
+}
 h2{
     text-align: center;
     font-size: 32px;
@@ -31,7 +34,7 @@ h2{
     padding-bottom: 20px;
 }
 .pergunta{
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .login{
     margin: 10px;
@@ -55,7 +58,6 @@ h2{
     left: 0;
 }
 .rodape div{
-    padding-top: 5px;
     color: white;
     text-align: center;
     font-size: 16px;
@@ -68,4 +70,5 @@ h2{
 }
 .logout{
     margin-left: 50px;
+    padding-bottom: 500px;
 }

@@ -20,16 +20,33 @@
 
         session_start();
         if(!isset($_SESSION["login"]) &&  !isset($_SESSION["senha"])){ 
-            include "./inc/interface/login.inc";
+            ?>
+            <div class="cadastrar">
+                <form  action="" method="post">
+                    <input type="submit" name="cadastrar" value="cadastrar">
+                    <input type="submit" name="login" value="login">
+                </form>
+            </div>
+            <?php if($_POST["cadastrar"]=="cadastrar"){
+                include "./inc/interface/cadastro.inc";
+            }
+            
+            if($_POST["login"]=="login"){
+                include "./inc/interface/login.inc";
+            }
+
+            $_SESSION["login"]=$_POST["login"];
+            $_SESSION["senha"]=$_POST["senha"];
+
+            $usuarios = fopen("usuarios.json", "r");
+            while(!feof($usuarios)){
+
+            }
 
             if(!isset($_COOKIE["ultimo jogo"])){ ?>
                 <p> <?php  echo $_COOKIE["ultimo jogo"] ?> </p>
             <?php 
             }
-            
-            $_SESSION["login"]=$_POST["login"];
-            $_SESSION["senha"]=$_POST["senha"];
-
         } else{
 
             include "./inc/perguntas.inc";
@@ -44,6 +61,7 @@
 
             if($verificar == true && $id<=4 || $id==0){
                 include "./inc/interface/form.inc";
+                setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
             } elseif($id>4){ 
                 setcookie("pontuacao");           
                 include "./inc/result/vencedor.inc";
