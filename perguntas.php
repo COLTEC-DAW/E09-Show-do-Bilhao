@@ -1,19 +1,37 @@
 <?php
-    //chama o arquivo perguntas.inc e o menu.inc, so roda o site se ele existir 
-    require 'perguntas.inc';
-    require 'menu.inc';
-    //pega o id e armazena ele na posição id, isset verficia se o ide existe, e se ele existir retorna true, e o id é pego e armazenado em id, caso issso não aconteça ele armazena 1
-    $id = isset($_GET['id']) ? $_GET['id'] : 1;
-    //carrega as perguntas e usa essa função presente em perguntas .inc
-   //$pergunta=carregaPergunta($id,$perguntas);
+require 'perguntas.inc';
 
-   if ($id <= count($perguntas)) {
-       $pergunta_atual = $perguntas[$id];
-   } else {
-       $id = count($perguntas);
-       $pergunta_atual = "Fim das perguntas.";
-   }
-   ?>
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica se a resposta está correta
+    $resposta = $_POST['resposta'];
+    $id = $_POST['id'];
+    $questaoAtual = $perguntas[$id];
+
+    if ($resposta === $questaoAtual->questaocerta) {
+        // A resposta está correta, avança para a próxima pergunta
+        $id = isset($_POST['id']) ? $_POST['id'] + 1 : $id + 1;
+        if ($id <= count($perguntas)) {
+            $pergunta_atual = $perguntas[$id];
+        } else {
+            $id = count($perguntas);
+            $pergunta_atual = "Fim das perguntas.";
+        }
+    } else {
+        // A resposta está incorreta, exibe a tela de fim de jogo
+        echo "Fim do jogo. Sua resposta está incorreta.";
+        exit; // Termina o script para evitar a exibição do restante da página
+    }
+} else {
+    $id = isset($_GET['id']) ? $_GET['id'] : 1;
+}
+
+if ($id <= count($perguntas)) {
+    $pergunta_atual = $perguntas[$id];
+} else {
+    $id = count($perguntas);
+    $pergunta_atual = "Fim das perguntas.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,41 +40,22 @@
     <title>Jogo do bilhão</title>
 </head>
 <body>
+    <h1>Pergunta <?php echo $id; ?></h1>
+    <p><?php $pergunta_atual->enunciado($id); ?></p>
    
-       <h1>Pergunta <?php echo $id; ?></h1>
-       <p><?php $pergunta_atual->enunciado($id); ?></p>
-   
-       <?php if ($id < count($perguntas)): ?>
-        <form method="POST" action="perguntas.php">
-    <?php foreach ($pergunta_atual->questões as $questao): ?>
-        <input type="radio" name="resposta" value="<?php echo $questao; ?>">
-        <label><?php echo $questao; ?></label>
-        <br>
-    <?php endforeach; ?>
+    <?php if ($id <= count($perguntas)): ?>
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <?php foreach ($pergunta_atual->questões as $questao): ?>
+                <input type="radio" name="resposta" value="<?php echo $questao; ?>">
+                <label><?php echo $questao; ?></label>
+                <br>
+            <?php endforeach; ?>
 
-    <input type="submit" value="Enviar " >
-    </form>
-       <?php endif; ?>
-   
-       <script>
-           function proximaPergunta(id) {
-               id = id + 1;
-               window.location.href = 'perguntas.php?id=' + id;
-           }
-       </script>
-   </body>
-   </html>
-   <?php
-    //iprime as perguntas
-   // if ($pergunta) {
-     //   $pergunta->MostraQuestões($id);
-  //  } else {
-       // echo "Pergunta não encontrada.";
-   // }
+            <input type="submit" value="Enviar">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+        </form>
+    <?php endif; ?>
 
-    //chama o arquivo, mas se ele não existir o código roda independentemente
-    include 'rodape.inc';
-
-    ?>  
+    <?php include 'rodape.inc'; ?> 
 </body>
 </html>
