@@ -16,7 +16,7 @@ require 'perguntas.inc';
 //verifica se o metodo de requisição e post (uma resposta foi enviada) se a pergunta so for carregada o metodo é o get
 //_Server é uma variavel global que funciona no servidor, ela pega coisas uteis como o metodo de requisição e outras informações como url 
 // isset verifica se o post existe 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['resposta'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // if(isset($_POST['resposta']))
     // Verifica se a resposta está correta
     // POST é uma variavel global que pega todas as requisições post, nesse ele pega as variaveis id e resposta
