@@ -20,6 +20,13 @@
     <form method="post">
     <input class="btn" type="submit" name="logout" value="Sair" />
     </form>';
+
   }
   echo '</div>';
+  if($loggedIn == true)
+  {
+    echo'
+    <h1 class="info">Ultimo score: '. $_COOKIE[$_SESSION['username']]. '</h1>
+    ';
+  }
 ?>

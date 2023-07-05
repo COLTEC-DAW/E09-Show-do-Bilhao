@@ -56,14 +56,14 @@
             $file = simplexml_load_file("data.xml")
                 or die("Erro ao abrir XML das perguntas");
 
-            echo $file->question[0]->sentence.' ';
+            //echo $file->question[0]->sentence.' ';
             if(isset($file->question[$pos]) == false)
             {
                 echo '<div class="error"> <h2>Ops! A pergunta que você procura não existe :(</h2> </div>';
                 return null;
             }
             
-            Question::$_numQuest = $file['size'];
+            Question::$_numQuest = (int)$file['size'];
             return new Question(
                 (int)$pos,
                 $file->question[$pos]->sentence,

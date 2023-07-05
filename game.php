@@ -16,15 +16,22 @@
 
     function WinScreen()
     {
+        $_SESSION['atQuestion'] = ((int)$_SESSION['atQuestion'] -1);
+        $user = User::GetUser(trim($_SESSION['username']));
+        setcookie($user->username, date('Y/M/d-H:i') ." >> ". Question::$_numQuest-1, time() + (60 * 60 * 24 * 30));
         echo '<div class="box">';
         echo '<h1>Vitória!</h1>';
         echo '</div>';
     }
     function LoseScreen()
     {
+        $_SESSION['atQuestion'] = ((int)$_SESSION['atQuestion'] -1);
+        $user = User::GetUser(trim($_SESSION['username']));
+        setcookie($user->username, date('Y/M/d-H:i') ." >> ". $_SESSION['atQuestion'] , time() + (60 * 60 * 24 * 30));
         echo '<div class="box">';
         echo '<h1>Perdeste</h1>';
         echo '</div>';
+        $_SESSION['atQuestion'] = 0;
     }
 ?>
     
@@ -53,7 +60,7 @@
             else if($id > Question::$_atQuestion)
                 WinScreen();
         }
-        else LoseScreen();
+        else LoseScreen($id);
     ?>
 </body>
 </html>

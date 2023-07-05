@@ -63,7 +63,7 @@
         $user = User::GetUser($username);
         $_SESSION['username'] = $user->username.'';
         $_SESSION['atQuestion'] = $user->atQuestion.'';
-        
+
         header("location:game.php");
     }
 

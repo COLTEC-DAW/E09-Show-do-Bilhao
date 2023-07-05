@@ -19,6 +19,23 @@ body h1.warning{
     color: rgb(255, 255, 255);
 }
 
+@keyframes example {
+    from {
+        color: #6666ff;
+      }
+      10% {
+        color: #0099ff;
+      }
+      50% {
+        color: #00ff00;
+      }
+      75% {
+        color: #ff3399;
+      }
+      100% {
+        color: #6666ff;
+      }
+  }  
 .animated{
     text-align: center;
     position: absolute;
@@ -28,6 +45,11 @@ body h1.warning{
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 180px;
+
+    color: red;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
 body{
     height: 0vh;
@@ -190,4 +212,13 @@ form{
     width: 20%;
     left: 40%;
     top: 7vh;
+}
+
+.info
+{
+    z-index: 30;
+    position: absolute;
+    background-color: rgb(25, 90, 110);
+    top: 0;
+    left: 70%;
 }
