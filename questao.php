@@ -33,7 +33,7 @@
             $dadosJsonDecode[$id]["gabarito"]
         );
 
-        echo ("<form action='index.php' method='post'>");
+        echo ("<form action='progresso.php' method='post'>");
         echo $pergunta->GetPerguntas() . "<br>";
         echo "<input hidden name='resposta' value=<?=$pergunta->gabarito()?>";
 

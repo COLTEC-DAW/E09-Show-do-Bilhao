@@ -11,11 +11,12 @@
 
     if ($alternativas == $gabarito) {
         $_SESSION['pontuacao']++;
-        if (($id + 1) == count($dadosJsonDecode[$id]["alternativas"])) {
-            header("Location: zerou.php");
+        if (($id+1) == count($dadosJsonDecode)) {
+            // header("Location: zerou.php");
+            echo "<button><a href='./zerou.php'>Ir para tela de vitoria</a></button>";
         }
         else {
-            header("Location: perguntas.php?id=". $id + 1);
+            header("Location: perguntas.php?id=". ($id + 1));
         }
     }
     else {

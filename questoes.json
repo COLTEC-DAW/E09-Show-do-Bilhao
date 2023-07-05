@@ -8,6 +8,7 @@
         "perguntas": "Quantas bolas de ouro do prêmio de melhor do mundo tem Cristiano Ronaldo?",
         "alternativas": ["2", "3", "6", "5"],
         "gabarito": 3
+
     },
     {
         "perguntas": "Em qual país foi realizada as Olimpiedas de 2016?",
