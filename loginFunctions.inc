@@ -18,12 +18,13 @@
         if(isset($_POST["logar"])){
             $arquivo = json_decode(file_get_contents("users.json"));
             $searchLogin = $_POST["login"];
-            $searchPasswod = $_POST["password"];
+            $searchPassword = $_POST["password"];
 
             foreach($arquivo as $a){
                 if($a->userName == $searchLogin){
-                    if($a->password == $searchPasswod){
-                        $_SESSION['user'] = new User($searchLogin, $searchPasswod);
+                    if($a->password == $searchPassword){
+                        $newUser = new User($searchLogin, $searchPassword);
+                        $_SESSION['user'] = serialize($newUser);
                         return;
                     }
                 }

@@ -37,30 +37,28 @@
             if($id < 5){
                 echo "<b>" . $id+1 . "-" . $this->question . "<b/><br/>";
                 
+                
                 $this->PrintScore();
                 
                 $this->PrintAnswers($id);
             }
         }
-
+        
         function PrintScore(){
             if(isset($_POST["Score"])){
                 echo "<p>Pontuação:" . $_POST["Score"] .  "</p>";
+                SaveCookie($_POST["Score"]);
             }
         }
 
         function PrintEndGame(){
             
             $this->PrintScore();
-            $data = UnpackCookie();
-            SaveCookie($_POST["Score"], $data[1]);
             echo "<a href='login.php'>voltar ao inicio</a>";
         }
 
         function PrintLoserScreen(){
             echo "<h3>You loose the game</h3>";
-            $data = UnpackCookie();
-            SaveCookie($_POST["Score"], $data[1]);
             echo "<a href='login.php'>voltar ao inicio</a>";
         }
 

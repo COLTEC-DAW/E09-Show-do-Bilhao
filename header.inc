@@ -3,29 +3,32 @@
     function UnpackCookie()
     {
         if(isset($_COOKIE["info"])){
-            $valueCookie = explode(",", $_COOKIE["info"]);
+            $user = unserialize($_SESSION['user']);
+            $valueCookie = explode(",", $_COOKIE[$user->userName]);
             return $valueCookie;
         }
     }
 
     if (isset($_POST['logout'])) {
         if (isset($_SESSION['user'])) {
-            if(isset($_COOKIE["info"]) ){
+            $user = unserialize($_SESSION['user']);
+            if(isset($_COOKIE[$user->userName]) ){
                 $cookie = UnpackCookie();
-                SaveCookie($cookie[0],date('Y-M-d H:i'));
+                SaveCookie($cookie[0]);
             }
             else{
-                SaveCookie(0,date('Y-M-d H:i'));
+                SaveCookie(0);
             }
             unset($_SESSION['user']);
             ob_start();
             header("location: login.php");
         }
     }
-    function SaveCookie($score, $date)
+    function SaveCookie($score)
     {
+        $user = unserialize($_SESSION['user']);
         
-        setcookie( $_SESSION['user']->userName , $score . "," .  date('Y-M-d H:i') , time() + (86400 * 30));
+        setcookie($user->userName , $score . "," .  date('Y-M-d H:i') , time() + (86400 * 30));
     }
     
 ?>
