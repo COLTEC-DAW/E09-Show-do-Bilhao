@@ -1,11 +1,10 @@
 <?php
     session_start();
-    require('quiz.inc.php');
     require('auth.inc.php');
     require('question.inc.php');
     if(!isset($_SESSION['username']))
     {
-        header("Location:index.php");
+        header("location:index.php");
     }
 
     $loggedIn = true;
@@ -14,6 +13,19 @@
     include('footer.inc.php');
     CheckLogout();
     Question::$_atQuestion = (int)$_SESSION['atQuestion'];
+
+    function WinScreen()
+    {
+        echo '<div class="box">';
+        echo '<h1>Vitória!</h1>';
+        echo '</div>';
+    }
+    function LoseScreen()
+    {
+        echo '<div class="box">';
+        echo '<h1>Perdeste</h1>';
+        echo '</div>';
+    }
 ?>
     
 <html>
@@ -38,7 +50,8 @@
                 $quest->ShowProgress();
                 $quest->ShowQuestion();
             }
-            else WinScreen();
+            else if($id > Question::$_atQuestion)
+                WinScreen();
         }
         else LoseScreen();
     ?>

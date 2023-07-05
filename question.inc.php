@@ -59,7 +59,7 @@
             echo $file->question[0]->sentence.' ';
             if(isset($file->question[$pos]) == false)
             {
-                QuestionNotFound();
+                echo '<div class="error"> <h2>Ops! A pergunta que você procura não existe :(</h2> </div>';
                 return null;
             }
             

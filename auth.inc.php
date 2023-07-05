@@ -54,7 +54,7 @@
         $_SESSION['username'] = $user->username.'';
         $_SESSION['atQuestion'] = $user->atQuestion.'';
         
-        header("Location:game.php");
+        header("location:game.php");
     }
 
     function CheckLogout()
@@ -66,7 +66,6 @@
             unset($_POST['logout']);
             User::SaveUser(trim($_SESSION['username']));
             session_destroy();
-            ob_start();
             header("location:index.php");
         }
     }
@@ -81,7 +80,6 @@
         if(Check_UserExists($user, $pswd) == true) return false;
 
         User::WriteUser(new User($user, $pswd));
-        ob_start();
         header("location:index.php");
     }
 
@@ -100,7 +98,6 @@
     {
         if(isset($_POST['cadastrar']))
         {
-            ob_start();
             header("location:singup.php");
             return true;
         }
@@ -110,7 +107,6 @@
     {
         if(isset($_POST['entrar']))
         {
-            ob_start();
             header("location:login.php");
             return true;
         }
