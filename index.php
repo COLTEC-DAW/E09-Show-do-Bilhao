@@ -8,10 +8,8 @@
 
     <body>
         <?php
-            
             require('usuario.inc');
             require('pergunta.inc.php');
-            require('definirPerguntas.inc.php');
             require('paginaResultado.inc.php');
 
             include('header.inc');
@@ -40,8 +38,18 @@
                 }
             }
 
+            function getPerguntas() {
+                $arquivoPerguntas = fopen("perguntas.json", "r+");
+                $arrayPerguntas = json_decode(fread($arquivoPerguntas, filesize("perguntas.json")));
+                fclose($arquivoPerguntas);
+
+                return $arrayPerguntas;
+            }
+
             if (isset($_SESSION['loginAtual'])) {
-                if(isset($_POST['submeter'])){
+                $perguntas = inicializaPerguntas(getPerguntas());
+
+                if(isset($_POST['submeter'])) {
                     carregaResultado();
                 }
                 else {

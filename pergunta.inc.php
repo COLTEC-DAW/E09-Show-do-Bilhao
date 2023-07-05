@@ -1,7 +1,7 @@
 <?php
     class pergunta 
     {
-        private $stringPergunta;
+        public $stringPergunta;
         public $respostas = [];
         public $respostaCorreta;
         public $id;
@@ -55,5 +55,19 @@
     function carregaPergunta(array $perguntas, int $idPergunta) {
         $perguntas[$idPergunta]->id = $idPergunta + 1;
         $perguntas[$idPergunta]->printPergunta();
+    }
+
+    function criaPergunta(stdClass $objPergunta) {
+        return new pergunta($objPergunta->stringPergunta, $objPergunta->respostas, $objPergunta->respostaCorreta);
+    }
+
+    function inicializaPerguntas(array $arrayOriginal) {
+        $arrayPerguntas = array();
+
+        foreach ($arrayOriginal as $perguntaAtual) {
+            array_push($arrayPerguntas, criaPergunta($perguntaAtual));
+        }
+
+        return $arrayPerguntas;
     }
 ?>
