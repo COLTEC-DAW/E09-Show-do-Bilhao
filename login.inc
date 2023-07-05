@@ -1,15 +1,19 @@
 <?php 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
+
 if($_POST['registrar']){
     registrar();
 }
+
 if($_POST['logar']){
     login();
 }
+
 if ($_POST['logOut']) {
     unset($_SESSION['user']);
 }
+
 function registrar(){
 
     $login = $_POST['login'];
@@ -21,11 +25,22 @@ function registrar(){
     }else{
         $lerArquivo = array();
     }
+    $usuarioJaExiste = false;
+    foreach ($lerArquivo as $usuario) {
+        if ($usuario->login == $login) {
+            $usuarioJaExiste = true;
+            break;
+        }
+    }
 
-    array_push($lerArquivo, new User($login, $senha));
-    fseek($arquivo, 0, SEEK_SET);
-    fwrite($arquivo, json_encode($lerArquivo));
-    fclose($arquivo);
+    if(!$usuarioJaExiste){
+        array_push($lerArquivo, new User($login, $senha));
+        fseek($arquivo, 0, SEEK_SET);
+        fwrite($arquivo, json_encode($lerArquivo));
+        fclose($arquivo);
+    }else {
+        echo "Usuario já existe meu mano";
+    }
 }
 
 function login(){

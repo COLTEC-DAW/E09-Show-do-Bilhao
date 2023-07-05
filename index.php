@@ -7,13 +7,13 @@
 <html lang="pt-br">
 
     <head>
-        <title> Show do Bilhao </title>
+        <title> Show do Bilão </title>
         <meta charset="UTF-8">
     </head>
 
     <body>
-        <h1> Show do Bilhao </h1>
-        <p> Seja bem vindo ao jogo <strong>Show do Bilhao do PrateEnlouquecer</strong>! </p>
+        <h1> Show do Bilão </h1>
+        <p> Seja bem vindo ao jogo <strong><br>Show do Bilhao do PrateEnlouquecer</strong>! </p>
         <div style="<?php
             if(isset($_SESSION['user'])){
                 echo "display:none;";
@@ -33,15 +33,11 @@
                 echo "display:none;";
             }
         ?>">
-            <p> <em> explicação <em>: O Show do Bilhão é um programa idealizado pela emissora SBT (Sistema Belo-Horizontino de Televisão). Neste programa, um candidato
-                escolhido da audiência é submetido a uma sequência de 5 perguntas de conhecimento geral. A medida em que o candidato responde 
-                cada pergunta ele avança no jogo. O jogo termina quando o candidato responde uma pergunta incorretamente. Após o término do jogo
-                o sistema calcula a pontuação final do candidato. Sua pontuação é dada pela quantidade de perguntas respondidas corretamente pelo
-                candidato. O proprietário da emissora requisitou que você desenvolvesse uma aplicação web que gerencie as perguntas do jogo. 
-                Mais especificamente, esse sistema irá fazer o controle das respostas do jogo.
+            <p><strong>Esse é Show do Bilão do Pratudo</strong>, onde se você acerta tudo, ganha <strong>nada!</strong> <br>E se vc acerta nada, ganha <strong>nada</strong> também :)
             </p>    
             <form action="perguntas.php" method="POST">
                 <input type="submit" value="Jogar">
+                <br><br>
                 <input type="hidden" name="numQuestao" value="0">
             </form>            
             <form method="POST">

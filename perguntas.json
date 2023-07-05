@@ -1,52 +1,43 @@
 [
     {
-        "question": "Qual o nome do zinchenko?",
-        "options": [
-            "a) Artur",
-            "b) Arthur",
-            "c) Maciel",
-            "d) Josué"
-        ],
-        "answer": 1
-    },
-    {
-        "question": "Qual o nome do prates?",
-        "options": [
-            "a) Pratis",
-            "b) Daniel",
-            "c) Fred+10",
-            "d) Josué"
-        ],
-        "answer": 1
-    },
-    {
-        "question": "Qual o nome do waltin?",
-        "options": [
-            "a) Alisson",
-            "b) Horta",
-            "c) Fred+10",
-            "d) Josué"
+        "question": "Qual animal come banana?",
+        "options": ["A) O macaco<br>", 
+                    "B) A Girafa<br>", 
+                    "C) A Abelha<br>", 
+                    "D) O Passaro"
         ],
         "answer": 0
     },
     {
-        "question": "Qual o nome do tm?",
-        "options": [
-            "a) Tales Mendes",
-            "b) Thales Morais",
-            "c) Fred+10",
-            "d) Josué"
-        ],
+        "question": "Onde se localiza Machu Picchu?",
+        "options": ["A) Colômbia<br>", 
+                    "B) Peru<br>", 
+                    "C) China<br>", 
+                    "D) Bolívia<br>"],
         "answer": 1
     },
     {
-        "question": "Qual o nome do butao?",
-        "options": [
-            "a) Valter",
-            "b) Daniel",
-            "c) Fred+10",
-            "d) Guilherme"
-        ],
+        "question": "Que país tem o formato de uma bota?",
+        "options": ["A) Brasil<br>",
+                    "B) Portugal<br>",
+                    "C) Itália<br>",
+                    "D) México"],
+        "answer": 2
+    },
+    {
+        "question": "A que temperatura a água ferve?",
+        "options": ["A) 200 ºC<br>",
+                    "B) 180 ºC<br>",
+                    "C) 0 ºC<br>",
+                    "D) 100 ºC"],
         "answer": 3
+    },
+    {
+        "question": "Quantos ossos temos no nosso corpo?",
+        "options": ["A) 126<br>",
+                    "B) 206<br>",
+                    "C) 300<br>",
+                    "D) 200"],
+        "answer": 1
     }
 ]
