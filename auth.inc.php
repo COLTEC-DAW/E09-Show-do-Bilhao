@@ -7,7 +7,7 @@
         echo '<div class="box login">';
         echo '<h2>Login</h2>';
         echo '<form action="/login.php" method="post">';
-        echo '<label for="log">Usuario</label><br>';
+        echo '<label for="log">Nome de login</label><br>';
         echo '<input type="text" id="username" name="username">';
         echo '<br>';
         echo '<label for="log">Senha</label><br>';
@@ -22,10 +22,20 @@
         echo '<div class="box login">';
         echo '<h2>Cadastrar</h2>';
         echo '<form action="/singup.php" method="post">';
-        echo '<label for="log">Usuario</label><br>';
+        echo '<label for="log">Nome de jogo</label>';
+        echo '<br>';
+        echo '<input type="text" id="nickname" name="nickname">';
+        echo '<br>';
+        echo '<label for="log">Nome de login</label>';
+        echo '<br>';
         echo '<input type="text" id="username" name="username">';
         echo '<br>';
-        echo '<label for="log">Senha</label><br>';
+        echo '<label for="log">Email</label>';
+        echo '<br>';
+        echo '<input type="text" id="email" name="email">';
+        echo '<br>';
+        echo '<label for="log">Senha</label>';
+        echo '<br>';
         echo '<input type="password" id="password" name="passwd">';
         echo '<br>';
         echo '<input class="submit-btn" type="submit" value="Registrar">';
@@ -72,14 +82,23 @@
 
     function SingUp()
     {
-        $user = trim($_POST['username']);
-        if(empty($user)) return false;
+        $name = trim($_POST['username']);
+        if(empty($name)) return 0;
 
+        $nick = trim($_POST['nickname']);
+        if(empty($nick)) return 1;
+        $email = trim($_POST['email']);
+        if(empty($email)) return 1;
         $pswd = trim($_POST['passwd']);
-        if(empty($pswd)) return false;
-        if(Check_UserExists($user, $pswd) == true) return false;
+        if(empty($pswd)) return 1;
 
-        User::WriteUser(new User($user, $pswd));
+        $users = User::LoadUsers();
+        foreach($users as $user)
+        {
+            if($user->CheckName($name)) return 2;
+        }
+
+        User::WriteUser(new User($name, $nick, $email, $pswd));
         header("location:index.php");
     }
 
@@ -90,25 +109,6 @@
         {
             if($user->CheckName($username) and $user->CheckPasswd($passwd))
                 return true;
-        }
-        return false;
-    }
-
-    function Check_SignUp()
-    {
-        if(isset($_POST['cadastrar']))
-        {
-            header("location:singup.php");
-            return true;
-        }
-        return false;
-    }
-    function Check_LogIn()
-    {
-        if(isset($_POST['entrar']))
-        {
-            header("location:login.php");
-            return true;
         }
         return false;
     }

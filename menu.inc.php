@@ -6,11 +6,11 @@
   if($atMenu == true)
   {
     echo'
-    <form method="post">
+    <form action="/login.php" method="post">
       <input class="btn" type="submit" name="entrar" value="Entrar" />
     </form>';
     echo'
-    <form method="post">
+    <form action="/singup.php" method="post">
       <input class="btn" type="submit" name="cadastrar" value="Criar Conta" />
     </form>';
   }

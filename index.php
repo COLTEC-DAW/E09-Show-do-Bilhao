@@ -3,8 +3,6 @@
     require('auth.inc.php');
     $loggedIn = false;
     $atMenu = true;
-    Check_SignUp();
-    Check_LogIn();
 ?>
 
 <html>

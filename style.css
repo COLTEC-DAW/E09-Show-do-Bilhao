@@ -8,6 +8,17 @@
     background-color: rgb(33, 159, 168) ;
 }
 
+body h1.warning{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 85px;
+    height: 50px;
+    z-index: 30;
+    color: rgb(255, 255, 255);
+}
+
 body{
     height: 0vh;
 }
@@ -120,7 +131,7 @@ form{
 .box{
     min-width: 750px;
     background-color: rgb(25, 90, 110);
-    padding-bottom: 6%;
+    padding-bottom: 3%;
     width: 75%;
     z-index: 15;
     font-size: 75px;
@@ -138,6 +149,7 @@ form{
     width: 50%;
 }
 .box h2{
+    margin: 20px 0 20px 0;
     font-size: 50px;
     background-color: inherit;
 }
@@ -146,7 +158,7 @@ form{
 }
 .box form label{
     background-color: inherit;
-    font-size: 35px;
+    font-size: 25px;
 }
 .box form input:not(.submit-btn){
     background-color: rgb(55, 120, 140);

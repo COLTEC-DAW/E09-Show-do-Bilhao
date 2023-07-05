@@ -2,24 +2,30 @@
     class User
     {
         public $username;
+        public $nickname;
+        public $email;
         private $passwd;
         public $atQuestion;
         public static $nOfUsers;
-        function __construct($username, $passwd, $atQuestion = 0)
+        function __construct($username, $nickname, $email, $passwd, $atQuestion = 0)
         {
             $this->username = $username;
             $this->passwd = $passwd;
+            $this->nickname = $nickname;
+            $this->email = $email;
             $this->atQuestion = $atQuestion;
         }
         public static function WriteUser($user)
         {
             $file = simplexml_load_file("users.xml")
-            or die("Erro ao abir XML das perguntas");
+            or die("Erro ao abir XML do usuario");
             $size = (int) $file['size'];
             $file['size'] = (++$size);
 
             $newUser = $file->addChild("user");
-            $newUser->addChild("name", $user->username);
+            $newUser->addChild("username", $user->username);
+            $newUser->addChild("nickname", $user->nickname);
+            $newUser->addChild("email", $user->email);
             $newUser->addChild("passwd", password_hash($user->passwd, PASSWORD_DEFAULT));
             $newUser->addChild("atQuestion", $user->atQuestion);
 
@@ -28,7 +34,9 @@
         private static function LoadUserFromFile($pos, $file)
         {
             $user = new User(
-                $file->user[$pos]->name,
+                $file->user[$pos]->username,
+                $file->user[$pos]->nickname,
+                $file->user[$pos]->email,
                 $file->user[$pos]->passwd,
                 (int)$file->user[$pos]->atQuestion,
             );
@@ -37,7 +45,7 @@
         public static function LoadUsers()
         {
             $file = simplexml_load_file("users.xml")
-            or die("Erro ao abir XML das perguntas");
+            or die("Erro ao abir XML do usuario");
             User::$nOfUsers = (int)$file['size'];
             $list = [];
 
@@ -51,7 +59,7 @@
         public static function GetUser($username)
         {
             $file = simplexml_load_file("users.xml")
-            or die("Erro ao abir XML das perguntas");
+            or die("Erro ao abir XML do usuario");
             User::$nOfUsers = (int)$file['size'];
             $user = null;
 
