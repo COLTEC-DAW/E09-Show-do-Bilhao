@@ -1,15 +1,23 @@
 <?php
+//não roda o codigo caso perguntas.inc não exista 
 require 'perguntas.inc';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//verifica se o metodo de requisição e post (uma resposta foi enviada) se a pergunta so for carregada o metodo é o get
+//_Server é uma variavel global que funciona no servidor, ela pega coisas uteis como o metodo de requisição e outras informações como url 
+// isset verifica se o post existe 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['resposta'])) {
+    // if(isset($_POST['resposta']))
     // Verifica se a resposta está correta
+    // POST é uma variavel global que pega todas as requisições post, nesse ele pega as variaveis id e resposta
     $resposta = $_POST['resposta'];
     $id = $_POST['id'];
-    $questaoAtual = $perguntas[$id];
+    $questaoAtual = $perguntas[$id]; //cria uma varia questão atual e coloca a questão armazenada na posição id
 
+    //se a resposta marcada for igual a questão certa ele entra nesse if
     if ($resposta === $questaoAtual->questaocerta) {
-        // A resposta está correta, avança para a próxima pergunta
-        $id = isset($_POST['id']) ? $_POST['id'] + 1 : $id + 1;
+        $id = isset($_POST['id']) ? $_POST['id'] + 1 : $id + 1; //verifica se id existe (isset), se existir atualiza o id
+
+        //se o id for menor que a quantidade de perguntas entra aqui e exibe a pergunta [id], se não ele exibe fim das perguntas
         if ($id <= count($perguntas)) {
             $pergunta_atual = $perguntas[$id];
         } else {
@@ -21,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Fim do jogo. Sua resposta está incorreta.";
         exit; // Termina o script para evitar a exibição do restante da página
     }
+    //se o metodo não for post imprime a questão incicial, por isso esse else
 } else {
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
 }
@@ -32,6 +41,7 @@ if ($id <= count($perguntas)) {
     $pergunta_atual = "Fim das perguntas.";
 }
 ?>
+<!-- inicia o html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,19 +50,25 @@ if ($id <= count($perguntas)) {
     <title>Jogo do bilhão</title>
 </head>
 <body>
+    <!-- abre o php para imprimir a variavel id-->
     <h2> <?php echo " voce acertou ate agora ",$id-1," questões"?></h2>
     <h1>Pergunta <?php echo $id; ?></h1>
+    <!--imprime o enunciado-->
     <p><?php $pergunta_atual->enunciado($id); ?></p>
 
     <?php if ($id <= count($perguntas)): ?>
+        <!-- define qual o metodo do formulario, e define para qual arquvio eles vão ser enviados php sel representa que vai ser no proórprio arquivo-->
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <?php foreach ($pergunta_atual->questões as $questao): ?>
+        <!-- pega a pergunta e vai nas alternativas dela, criando uma resposta do formulario para cada colocando no value, a alternativa enviada vai ser o valor de resposta-->
+           <!-- define o valor (input) e o texto associado (label)como o texto da questao-->
+        <?php foreach ($pergunta_atual->questões as $questao): ?>
                 <input type="radio" name="resposta" value="<?php echo $questao; ?>">
                 <label><?php echo $questao; ?></label>
                 <br>
             <?php endforeach; ?>
 
             <input type="submit" value="Enviar">
+            <!--manda o id como escondido-->
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
     <?php endif; ?>
