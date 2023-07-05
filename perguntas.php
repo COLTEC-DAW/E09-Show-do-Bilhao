@@ -1,4 +1,15 @@
 <?php
+session_start();
+?>
+<?php
+if (!isset($_SESSION['jogador'])) {
+    // O jogador não está autenticado, redireciona para a página de login
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<?php
 //não roda o codigo caso perguntas.inc não exista 
 require 'perguntas.inc';
 
@@ -52,6 +63,7 @@ if ($id <= count($perguntas)) {
 <body>
     <!-- abre o php para imprimir a variavel id-->
     <h2> <?php echo " voce acertou ate agora ",$id-1," questões"?></h2>
+    <h2><?php echo "Você está jogando como: " . $_SESSION['jogador']; ?></h2>
     <h1>Pergunta <?php echo $id; ?></h1>
     <!--imprime o enunciado-->
     <p><?php $pergunta_atual->enunciado($id); ?></p>
@@ -71,6 +83,8 @@ if ($id <= count($perguntas)) {
             <!--manda o id como escondido-->
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
+        <a href="logout.php">Sair</a>
+
     <?php endif; ?>
 
     <?php include 'rodape.inc'; ?> 
