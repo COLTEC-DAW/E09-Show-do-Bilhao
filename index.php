@@ -1,6 +1,7 @@
 <?php 
     require("user.php");
     require("login.inc");
+    require("menu.inc");
 ?>
 <!DOCTYPE html>
 
@@ -12,21 +13,34 @@
     </head>
 
     <body>
-        <h1> Show do Bilão </h1>
-        <p> Seja bem vindo ao jogo <strong><br>Show do Bilhao do PrateEnlouquecer</strong>! </p>
         <div style="<?php
             if(isset($_SESSION['user'])){
                 echo "display:none;";
             }
         ?>">
-            <form method="POST">
+            <form method="POST" id="login">
                 <label>LOGIN :<br></label>
                 <input type="text" name="login">
                 <label><br><br> SENHA :<br></label>
                 <input type="password" name="senha"><br><br>
                 <input type="submit" name="logar" value="Login">
-                <input type="submit" name="registrar" value="Resgistrar">
             </form>  
+            <form method="POST" id="registrar" style='display:none;'>
+                <label><h3>Registro</h3></label>
+                <label><br> NOME :<br></label>
+                <input type="text" name="nome">
+                <label><br><br> LOGIN :<br></label>
+                <input type="text" name="login">
+                <label><br><br> EMAIL :<br></label>
+                <input type="text" name="email">
+                <label><br><br> SENHA :<br></label>
+                <input type="password" name="senha"><br><br>
+                <input type="submit" name="registrar" value="Resgistrar">
+            </form> 
+            <div>
+                <br><h4><strong>Se ainda não tiver conta:</strong></h4>
+                <button onclick="abrirRegistrar()">Registrar</button><br><br>
+            </div>
         </div>
         <div style="<?php
             if(!isset($_SESSION['user'])){
@@ -44,6 +58,19 @@
                 <input type="submit" name="logOut" value="Deslogar">
             </form>
         </div>
+        <script>
+            function abrirLogin(){
+                document.querySelector('#login').style.display = 'block';
+                document.querySelector('#registrar').style.display = 'none';
+            }
 
+            function abrirRegistrar(){
+                document.querySelector('#login').style.display = 'none';
+                document.querySelector('#registrar').style.display = 'block';
+            }
+        </script>
     </body>
+    <?php 
+    require("rodape.inc");
+    ?>
 </html>

@@ -2,8 +2,7 @@
   require("perguntas.inc");
 
   $numQuestao = htmlspecialchars($_POST["numQuestao"]);
-  $questao = load_question($numQuestao,"perguntas.json");
-
+  $questao = carregaPergunta($numQuestao,"perguntas.json");
   $respostaCorreta = htmlspecialchars($_POST["respostaCorreta"]);
   $respostaInserida = htmlspecialchars($_POST["questao"]);
 
@@ -31,7 +30,7 @@
 
   <form action="perguntas.php" method="POST">
     <fieldset>
-      <h3>Você está na questao </h3>
+      <h3>Você está na questão <?=$numQuestao+1?>/5 </h3>
       <p>
         <label><?=$questao->question?></label>
       </p>
