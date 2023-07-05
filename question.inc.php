@@ -54,8 +54,9 @@
             $pos = $pos != null ? $pos : 0;
 
             $file = simplexml_load_file("data.xml")
-                or die("Erro ao abir XML das perguntas");
+                or die("Erro ao abrir XML das perguntas");
 
+            echo $file->question[0]->sentence.' ';
             if(isset($file->question[$pos]) == false)
             {
                 QuestionNotFound();

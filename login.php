@@ -1,23 +1,23 @@
 <?php
-    require('auth.inc.php');
-    $atMenu = false;
     session_start();
-    LogUser();
+    require('auth.inc.php');
+    $saida = LogUser();
 ?>
 
 <html>
-<head>
-	<title>My first PHP script</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1 class="title"> Show do Item Não Familiar </h1>
-    <br>
-    <?php
-        // include('menu.inc.php');
-        LogScreen();
-        include('footer.inc.php');
-    ?>
-</body>
+    <head>
+        <title>My first PHP script</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="title"> Show do Item Não Familiar </h1>
+        <?php
+            include('menu.inc.php');
+            $atMenu = true;
+            $loggedIn = false;
+            LogScreen();
+            include('footer.inc.php');
+        ?>
+    </body>
 </html>
 

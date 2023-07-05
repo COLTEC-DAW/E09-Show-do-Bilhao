@@ -36,44 +36,38 @@
     function LogUser()
     {
         global $loggedIn;
-        echo 'a';
         if(!isset($_POST['username'])) return false;
-        echo 'b';
-        
+
         $user = trim($_POST['username']);
         $pswd = trim($_POST['passwd']);
-        echo 'c';
         if(Check_UserExists($user, $pswd) == true)
         {
-            echo 'd';
             $loggedIn = true;
             RedirectToGame($user);
         }
+        else return "Usuario inexistente!";
     }
-    function RedirectToGame($user)
+    function RedirectToGame($username)
     {
-        if(!isset($_SESSION['username']))
-        {
-            if(empty($user)) return false;
-            else
-            {
-                $_SESSION['username'] = $user;
-                $_SESSION['atQuestion'] = 0;
-            }
-        }
-        header("Refresh:0; url=game.php");
-        return true;
+        global $atMenu;
+        $user = User::GetUser($username);
+        $_SESSION['username'] = $user->username.'';
+        $_SESSION['atQuestion'] = $user->atQuestion.'';
+        
+        header("Location:game.php");
     }
 
     function CheckLogout()
     {
         global $loggedIn;
+        global $atMenu;
         if(isset($_POST['logout']))
         {
             unset($_POST['logout']);
-            $loggedIn = false;
+            User::SaveUser(trim($_SESSION['username']));
             session_destroy();
-            header("Refresh:0; url=index.php");
+            ob_start();
+            header("location:index.php");
         }
     }
 
@@ -87,16 +81,15 @@
         if(Check_UserExists($user, $pswd) == true) return false;
 
         User::WriteUser(new User($user, $pswd));
-        header("Refresh:0; url=index.php");
+        ob_start();
+        header("location:index.php");
     }
 
     function Check_UserExists($username, $passwd)
     {
         $users = User::LoadUsers();
-        echo '1';
         foreach($users as $user)
         {
-            echo '2';
             if($user->CheckName($username) and $user->CheckPasswd($passwd))
                 return true;
         }
@@ -107,7 +100,8 @@
     {
         if(isset($_POST['cadastrar']))
         {
-            header("Refresh:0; url=singup.php");
+            ob_start();
+            header("location:singup.php");
             return true;
         }
         return false;
@@ -116,7 +110,8 @@
     {
         if(isset($_POST['entrar']))
         {
-            header("Refresh:0; url=login.php");
+            ob_start();
+            header("location:login.php");
             return true;
         }
         return false;

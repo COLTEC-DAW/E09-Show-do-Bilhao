@@ -1,7 +1,6 @@
 <?php
-    require('auth.inc.php');
-    $atMenu = false;
     session_start();
+    require('auth.inc.php');
     SingUp();
 ?>
 
@@ -12,9 +11,10 @@
 </head>
 <body>
     <h1 class="title"> Show do Item Não Familiar </h1>
-    <br>
     <?php
-        // include('menu.inc.php');
+        include('menu.inc.php');
+        $atMenu = true;
+        $loggedIn = false;
         SingScreen();
         include('footer.inc.php');
     ?>

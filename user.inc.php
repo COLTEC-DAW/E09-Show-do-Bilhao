@@ -15,9 +15,8 @@
         {
             $file = simplexml_load_file("users.xml")
             or die("Erro ao abir XML das perguntas");
-            $nOfUsers = (int) $file['size'];
-            echo $nOfUsers;
-            $file['size'] = $nOfUsers++;
+            $size = (int) $file['size'];
+            $file['size'] = (++$size);
 
             $newUser = $file->addChild("user");
             $newUser->addChild("name", $user->username);
@@ -39,26 +38,46 @@
         {
             $file = simplexml_load_file("users.xml")
             or die("Erro ao abir XML das perguntas");
-            User::$nOfUsers = $file['size'];
+            User::$nOfUsers = (int)$file['size'];
             $list = [];
 
             for($i = 0; $i < User::$nOfUsers; $i++)
             {
                 $list[$i] = User::LoadUserFromFile($i, $file);
             }
-            
+
             return $list;
         }
-
-        public function SaveUser()
+        public static function GetUser($username)
         {
-            $file = simplexml_load_file("users.xml");
+            $file = simplexml_load_file("users.xml")
+            or die("Erro ao abir XML das perguntas");
+            User::$nOfUsers = (int)$file['size'];
+            $user = null;
+
             for($i = 0; $i < User::$nOfUsers; $i++)
             {
                 $user = User::LoadUserFromFile($i, $file);
-                if($this->CheckName($user->username) and $this->CheckPasswd($user->passwd))
+                if($user->CheckName($username))
                 {
-                    $file->user[$i]->atQuestion = $this->atQuestion;
+                    return $user;
+                }
+            }
+            
+            return null;
+        }
+
+        public static function SaveUser($username)
+        {
+            $file = simplexml_load_file("users.xml");
+            User::$nOfUsers = (int)$file['size'];
+            for($i = 0; $i < User::$nOfUsers; $i++)
+            {
+                $user = User::LoadUserFromFile($i, $file);
+                if($user->CheckName($username))
+                {
+                    $file->user[$i]->atQuestion = $_SESSION['atQuestion'];
+                    $file->asXML("users.xml");
                     return;
                 }
             }
@@ -67,14 +86,10 @@
 
         public function CheckPasswd($input)
         {
-            echo password_verify($input, $this->passwd);
-            
             return password_verify($input, $this->passwd);
         }
         public function CheckName($input)
         {
-            echo trim($input) == $this->username;
-            
             return trim($input) == $this->username;
         }
     } 

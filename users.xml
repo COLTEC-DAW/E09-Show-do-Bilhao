@@ -1,18 +1,8 @@
 <?xml version="1.0"?>
-<data size="4">
-    <user>
-        <name>Exemplo</name>
-        <passwd>1234</passwd>
-        <atQuestion>2</atQuestion>
-    </user>
-    <user>
-        <name>Starter</name>
-        <passwd>1234</passwd>
-        <atQuestion>0</atQuestion>
-    </user>
-    <user>
-        <name>Foo</name>
-        <passwd>abc</passwd>
-        <atQuestion>1</atQuestion>
-    </user>
-<user><name>teste</name><passwd>$2y$10$Wg4yHGwm1x8yKfk0eqUrHuOQOFtezyFS8E553G6kvPcT82.TgrGRq</passwd><atQuestion>0</atQuestion></user><user><name>leonardo</name><passwd>$2y$10$oaSfF6oiE.ZAvOvCDuNHZuQSUqE.jxcasarukB2Q.ovKaFpOcijOC</passwd><atQuestion>0</atQuestion></user></data>
+<data size="1">
+<user>
+    <name>def</name>
+    <passwd>$2y$10$tc67/x3JUSLpkW.E34HcaeLbwdd9Cg87TsXsArwOVmUger4hwZqY.</passwd>
+    <atQuestion>3</atQuestion>
+</user>
+</data>

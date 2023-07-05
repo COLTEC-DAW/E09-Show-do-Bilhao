@@ -3,11 +3,17 @@
     require('quiz.inc.php');
     require('auth.inc.php');
     require('question.inc.php');
+    if(!isset($_SESSION['username']))
+    {
+        header("Location:index.php");
+    }
 
+    $loggedIn = true;
+    $atMenu = false;
     include('menu.inc.php'); 
     include('footer.inc.php');
     CheckLogout();
-    Question::$_atQuestion = $_SESSION['atQuestion'];
+    Question::$_atQuestion = (int)$_SESSION['atQuestion'];
 ?>
     
 <html>
@@ -19,10 +25,10 @@
     <h1 class="title"> Show do Item Não Familiar </h1>
     <br>
     <?php
-        $id = isset($_POST['next_id']) ? (int)$_POST['next_id'] : $_SESSION['atQuestion'];
+        $id = isset($_POST['next_id']) ? (int)$_POST['next_id'] : Question::$_atQuestion;
         $_SESSION['atQuestion'] = $id;
 
-        if($id == 0 or Question::LoadQuestion($id-1)->CheckQuestion())
+        if(($id == 0) or Question::LoadQuestion($id-1)->CheckQuestion())
         {
             if(isset($_POST['answer'])) unset($_POST['answer']);
             
