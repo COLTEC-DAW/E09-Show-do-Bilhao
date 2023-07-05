@@ -4,7 +4,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prova</title>
-    </head>
+    <style>
+        .page {
+            display: none;
+        }
+    </style>
+    <script>
+        function showPage(pageNumber) {
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+            document.getElementById("page" + pageNumber).style.display = "block";
+        }
+    </script>
+</head>
 <body>
     <h1>Prova de Conceito</h1>
     <?php
@@ -27,8 +41,9 @@
 
     $alternativaCorreta = array(2, 0, 0, 0, 1); // Índice da alternativa correta para cada pergunta
 
-    // Loop para carregar e exibir as perguntas
+    // Loop para carregar e exibir as perguntas em páginas separadas
     for ($i = 0; $i < count($questoes); $i++) {
+        echo '<div class="page" id="page' . ($i + 1) . '">';
         echo "<h3>Pergunta " . ($i + 1) . ":</h3>";
         echo "<p>" . $questoes[$i] . "</p>";
         echo "<ul>";
@@ -38,7 +53,14 @@
         echo "</ul>";
         echo "<p>Alternativa correta: " . $alternativas[$i][$alternativaCorreta[$i]] . "</p>";
         echo "<hr>";
+        if ($i < count($questoes) - 1) {
+            echo '<button onclick="showPage(' . ($i + 2) . ')">Próxima pergunta</button>';
+        }
+        echo '</div>';
     }
     ?>
+    <script>
+        showPage(1);
+     </script>
 </body>
 </html>
