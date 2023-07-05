@@ -5,10 +5,9 @@ session_start();
 
 
 
-function autenticar($usuario, $senha) {
-    return true;
-}
 
+
+include "login.php";
 
 if (!isset($_SESSION["autenticado"])) {
     
@@ -18,7 +17,7 @@ if (!isset($_SESSION["autenticado"])) {
         $login = $_POST["login"];
         $senha = $_POST["senha"];
 
-
+        cadastraAluno($nome, $email, $login, $senha);
 
     }else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"], $_POST["senha"])) {
         $usuario = $_POST["usuario"];

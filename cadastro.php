@@ -23,9 +23,9 @@
                 <label for="usuario">Nome:</label>
                 <input type="text" name="nome" required><br>
                 <label for="senha">Email:</label>
-                <input type="password" name="email" required><br>
+                <input type="text" name="email" required><br>
                 <label for="senha">Login:</label>
-                <input type="password" name="login" required><br>
+                <input type="text" name="login" required><br>
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" required><br>
                 <input type="submit" value="Cadastrar">
