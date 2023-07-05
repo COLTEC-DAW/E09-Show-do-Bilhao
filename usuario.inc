@@ -1,4 +1,6 @@
 <?php
+    define("TEMPO_DIA", 60 * 60 * 24);
+    
     class usuario {
         public $nome;
         public $senha;

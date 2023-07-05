@@ -16,8 +16,6 @@
 
             include('header.inc');
 
-            define("TEMPO_DIA", 60 * 60 * 24);
-
             $idPagina = intval($_GET["id"]);
             $numPerguntas = 5;      
             $_SESSION['numPerguntas'] = $numPerguntas;
