@@ -1,10 +1,13 @@
 <?php
     function respostaCorreta(int $idPagina) {
-        echo("<h1>Resposta correta!</h1>");
-        echo("<a href='index.php?id=0'>Reiniciar jogo</a>");
-
         if($idPagina < $_SESSION['numPerguntas'] - 1) {
+            echo("<h1>Resposta correta!</h1>");
+            echo("<a href='index.php?id=0'>Reiniciar jogo</a>");
             echo("</br></br><a href='index.php?id=" . $idPagina+1 . "'>Próxima pergunta ===></a>");
+        }
+        else {
+            echo("<h1>Você venceu!</h1>");
+            echo("<a href='index.php?id=0'>Reiniciar jogo</a>");
         }
     }
 

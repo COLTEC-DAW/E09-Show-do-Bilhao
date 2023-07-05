@@ -20,22 +20,41 @@
             return (isset($_POST[$nomePost])) && (strlen($_POST[$nomePost]) > 0);
         }
 
+        function formNaoVazio(array $camposRequeridos) {
+            foreach($camposRequeridos as $campoAtual) {
+                if (!postNaoVazio($campoAtual)) return false;
+            }
+
+            return true;
+        }
+
         echo "<form method='POST'/>";
-            echo "<input type='text' name='nomeLogin' placeholder='Nome de usuário'/><br/>";
+            echo "<input type='text' name='nomeLogin' placeholder='Nome de login'/><br/>";
             echo "<input type='password' name='senhaLogin' placeholder='Senha'/><br/><br/>";
             echo "<input type='submit' value='Entrar' name='botaoLogin'/>";
+        echo "</form>";
+
+        echo "<br/><br/><h1>Registrar novo usuário</h1>";
+
+        echo "<form method='POST'/>";
+            echo "<input type='text' name='nomeRealRegistro' placeholder='Nome de usuário'/><br/>";
+            echo "<input type='password' name='senhaRegistro' placeholder='Senha'/><br/>";
+            echo "<input type='text' name='email' placeholder='Email'/><br/>";
+            echo "<input type='text' name='nomeRegistro' placeholder='Nome de login'/><br/><br/>";
             echo "<input type='submit' value='Registrar' name='botaoRegister'/>";
         echo "</form>";
 
-        if(postNaoVazio('nomeLogin') && postNaoVazio('senhaLogin')) {
-            if(isset($_POST['botaoRegister'])) {
-                registraUsuario();
-            }
-            
-            if(isset($_POST['botaoLogin'])) {
+        if(isset($_POST['botaoLogin'])) 
+            if (formNaoVazio(array('nomeLogin', 'senhaLogin')))
                 entraUsuario();
-            }
-        }
+            else
+                echo "<br/><p class='mensagem-erro'>Todos os campos devem ser preenchidos!</p>";
+
+        if (isset($_POST['botaoRegister']))
+            if(formNaoVazio(array('nomeRealRegistro', 'senhaRegistro', 'email', 'nomeRegistro')))
+                registraUsuario();
+            else
+                echo "<br/><p class='mensagem-erro'>Todos os campos devem ser preenchidos!</p>";
     ?>
 </body>
 </html>

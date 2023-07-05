@@ -2,13 +2,17 @@
     define("TEMPO_DIA", 60 * 60 * 24);
     
     class usuario {
-        public $nome;
+        public $nomeReal;
         public $senha;
+        public $email;
+        public $nome;
         public $pontuacaoMaxima;
 
-        public function __construct(string $nome, string $senha) {
-            $this->nome = $nome;
+        public function __construct(string $nomeReal, string $senha, string $email, string $nome) {
+            $this->nomeReal = $nomeReal;
             $this->senha = $senha;
+            $this->email = $email;
+            $this->nome = $nome;
             $this->pontuacaoMaxima = 0;
         }
 
@@ -28,11 +32,11 @@
         return $arrayUsuarios;
     }
 
-    function procuraUsuario() {
+    function procuraLogin(string $login) {
         $arrayUsuarios = getUsuarios();
 
         foreach($arrayUsuarios as $usuarioAtual) {
-            if (($usuarioAtual->nome == $_POST['nomeLogin']) && ($usuarioAtual->senha == $_POST['senhaLogin'])) {
+            if (($usuarioAtual->nome == $login)) {
                 return $usuarioAtual;
             }
         }
@@ -40,13 +44,27 @@
         return false;
     }
 
+    function procuraUsuario() {
+        $usuarioEncontrado = procuraLogin($_POST['nomeLogin']);
+
+        if ($usuarioEncontrado->senha == $_POST['senhaLogin']) {
+            return $usuarioEncontrado;
+        }
+        else return false;
+    }
+
     function atualizaCookieUsuario() {
         setcookie($_SESSION['loginAtual']->nome, $_SESSION['loginAtual']->pontuacaoMaxima, time() + TEMPO_DIA * 30, '/');
     }
 
     function registraUsuario() {
+        if(filesize('usuarios.json') && procuraLogin($_POST['nomeRegistro'])) {
+            echo "<br/><p class='mensagem-erro'>Já existe um usuário com esse nome de login!</p>";
+            return false;
+        }
+
         $arquivo = fopen("usuarios.json", "r+");
-        $novoUsuario = new usuario($_POST['nomeLogin'], $_POST['senhaLogin']);
+        $novoUsuario = new usuario($_POST['nomeRealRegistro'], $_POST['senhaRegistro'], $_POST['email'], $_POST['nomeRegistro']);
 
         if (filesize("usuarios.json") == 0) {
             fwrite($arquivo, json_encode(array($novoUsuario)));
@@ -69,7 +87,7 @@
             header ("Location:index.php?id=0");
         }
         else {
-            echo "<br/>Usuário ou senha incorretos!";
+            echo "<br/><p class='mensagem-erro'>Usuário ou senha incorretos!</p>";
         }
     }
 
@@ -78,7 +96,6 @@
 
         foreach($usuarios as $u) {
             if ($u->pontuacaoMaxima != $_COOKIE[$u->nome]) {
-                echo "euhfueh";
                 $u->pontuacaoMaxima = $_COOKIE[$u->nome];
             }
         }

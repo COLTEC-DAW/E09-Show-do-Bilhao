@@ -11,6 +11,14 @@ body {
     margin-left:30px;
 }
 
+.mensagem-erro {
+    font-size: 21px;
+    margin-top: 1%;
+    color: white;
+    background-color: #EB5E4E;
+    display: inline-block;
+}
+
 a {
     color: #8EECBD;
     font-size: 20px;
