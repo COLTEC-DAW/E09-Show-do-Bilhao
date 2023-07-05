@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1 class="title"> Show do Item Não Familiar </h1>
+    <h1 class="animated"> Sevtech Quiz </h1>
     <?php
         include('menu.inc.php');
         include('footer.inc.php');

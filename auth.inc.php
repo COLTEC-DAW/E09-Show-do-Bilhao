@@ -46,7 +46,7 @@
     function LogUser()
     {
         global $loggedIn;
-        if(!isset($_POST['username'])) return false;
+        if(!isset($_POST['username'])) return 0;
 
         $user = trim($_POST['username']);
         $pswd = trim($_POST['passwd']);
@@ -55,7 +55,7 @@
             $loggedIn = true;
             RedirectToGame($user);
         }
-        else return "Usuario inexistente!";
+        else return 1;
     }
     function RedirectToGame($username)
     {

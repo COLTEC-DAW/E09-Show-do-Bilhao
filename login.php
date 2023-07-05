@@ -1,7 +1,7 @@
 <?php
     session_start();
     require('auth.inc.php');
-    $saida = LogUser();
+    $output = LogUser();
 ?>
 
 <html>
@@ -16,6 +16,8 @@
             $atMenu = true;
             $loggedIn = false;
             LogScreen();
+            if($output == 1)
+                echo '<h1 class="warning">Usuario invalido</h1>';
             include('footer.inc.php');
         ?>
     </body>

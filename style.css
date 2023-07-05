@@ -1,10 +1,10 @@
 @font-face {
-    font-family: "Qaranta";
-    src: url('fonts/QarantaBold.otf');
+    font-family: "OdinRounded";
+    src: url('fonts/Odin Rounded - Bold.otf');
 }
 
 * {
-    font-family: "Qaranta";
+    font-family: "OdinRounded";
     background-color: rgb(33, 159, 168) ;
 }
 
@@ -19,6 +19,16 @@ body h1.warning{
     color: rgb(255, 255, 255);
 }
 
+.animated{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 180px;
+}
 body{
     height: 0vh;
 }
@@ -37,6 +47,7 @@ form{
     height: 7vh;
     background-color: rgb(25, 90, 110);
     margin-top: 0;
+    padding-top: 1vh;
 }
 
 .menu{
@@ -62,7 +73,6 @@ form{
     background-color: rgb(55, 120, 140);
     font-size: 2vh;
 
-    padding-bottom: 2vh; 
     margin-left: 5px;
 }
 
@@ -80,6 +90,7 @@ form{
     margin-bottom: 1vh;
     background-color: inherit;
     font-size: 4vh;    
+    padding-top: 1vh;
 }
 
 .quest{
@@ -99,7 +110,6 @@ form{
     font-size: 150%;
     height: 55px;
     width: 200px;
-    padding-bottom: 32px;
     background-color: rgb(29, 111, 136);
 }
 .quest > * h1 {
@@ -131,7 +141,6 @@ form{
 .box{
     min-width: 750px;
     background-color: rgb(25, 90, 110);
-    padding-bottom: 3%;
     width: 75%;
     z-index: 15;
     font-size: 75px;
@@ -140,6 +149,7 @@ form{
     left: 50%;
     top: 47.5%;
     text-align: center;
+    padding-bottom: 20px;
 }
 .box h1{
     background-color: inherit;
@@ -166,12 +176,11 @@ form{
     font-size: 30px;
     margin-top: 10px;
     margin-bottom: 30px;
-    padding-top: 5px;
 }
 .box form input.submit-btn{
     background-color: inherit;
     font-size: 30px;
-    padding: 0 15px 20px 15px;
+    padding: 0 15px 0px 15px;
 }
 
 .bar{
@@ -180,5 +189,5 @@ form{
     z-index: 1;
     width: 20%;
     left: 40%;
-    top: 5vh;
+    top: 7vh;
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <data size="4">
 <user>
-    <name>def</name>
+    <username>def</username>
+    <nickname>DEFAULT</nickname>
+    <email>@</email>
     <passwd>$2y$10$tc67/x3JUSLpkW.E34HcaeLbwdd9Cg87TsXsArwOVmUger4hwZqY.</passwd> <!-- Senha: 123 -->
     <atQuestion>0</atQuestion>
 </user>
