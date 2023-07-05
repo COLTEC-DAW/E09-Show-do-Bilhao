@@ -1,3 +1,32 @@
 [
-    
+    {
+        "name": "a",
+        "username": "a",
+        "email": "b@v.com",
+        "password": "aa"
+    },
+    {
+        "name": "a",
+        "username": "a",
+        "email": "b@v.com",
+        "password": "aa"
+    },
+    {
+        "name": "rafael",
+        "username": "rafaelrep12",
+        "email": "rafael12@gmail.com",
+        "password": "rafael12"
+    },
+    {
+        "name": "simone",
+        "username": "simone",
+        "email": "simone@gmail.com",
+        "password": "a"
+    },
+    {
+        "name": "pingola de tarado",
+        "username": "pingola",
+        "email": "pingola@gma.a",
+        "password": "e"
+    }
 ]

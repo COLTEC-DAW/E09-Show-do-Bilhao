@@ -1,4 +1,4 @@
-<!-- <?php session_start(); ?> -->
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,15 +14,27 @@
 </head>
 
 <body>
+    <!-- Cabeçalho -->
     <div class="header">
-        <h1>Show do Bilhão</h1>
-        <?php require "partials/menu.inc"; ?>
+        <h1><a href="index.php">Show do Bilhão</a></h1>
+        <?php require_once "partials/menu.inc"; ?>
     </div>
 
-    <a href="perguntas.php" class="botao-jogar">JOGAR</a>
+    <?php
+    if (isset($_SESSION['logado'])) {
+        ?>
+        <a href="perguntas.php" class="botao-jogar">JOGAR</a>
+        <?php
+    } else {
+        echo "Se quiser jogar tem que logar.";
+    }
 
 
-    <?php require "partials/rodape.inc"; ?>
+    ?>
+    <?php require_once "partials/rodape.inc"; ?>
+
+
+
 
 </body>
 

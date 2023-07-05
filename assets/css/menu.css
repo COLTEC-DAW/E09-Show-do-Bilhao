@@ -20,6 +20,14 @@
     padding: 14px 16px;
     text-decoration: none;
   }
+
+  .menu li p {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
   
   .menu li a:hover {
     background-color: #ddd;

@@ -1,9 +1,18 @@
 <?php
+
 session_start();
+
+if (!isset($_SESSION['logado'])) {
+    header('location: login.php');
+}
 
 require_once "class/Question.inc";
 require_once "class/User.inc";
 require_once "class/utils.inc";
+
+
+// Tratando a requisição
+$method = $_SERVER['REQUEST_METHOD'];
 
 if (!isset($totalPerguntas)) {
     $totalPerguntas = Question::getCountPerguntas();
@@ -16,6 +25,57 @@ if (!isset($_COOKIE['numeroAcertos'])) {
     $numeroAcertos = $_COOKIE['numeroAcertos'];
 }
 
+
+if(isset($_COOKIE['lastScore'])){
+    $lastScore = $_COOKIE['lastScore'];
+}
+else{
+    $lastScore = 0;
+    setcookie('lastScore', 0);
+}
+
+if ($method == 'POST') {
+    $questionId = $_POST['questionId'];
+
+
+    if (isset($_POST['alternativa'])) {
+
+        // Checa se o usuário acertou
+        if ($_POST['alternativa'] + 1 === Question::carregaPergunta($questionId)->alternativa_correta) {
+            $numeroAcertos++;
+            setcookie('numeroAcertos', $numeroAcertos);
+
+            //Checa se o usuário já finalizou o quiz
+            goToNextQuestion($questionId);
+        } else {
+            setcookie('lastScore', $numeroAcertos);
+            $lastScore = $numeroAcertos;
+            gameOver();
+        }
+
+        //Checa se o usuário já finalizou o quiz
+        if ($questionId + 1 >= Question::getCountPerguntas()) {
+            setcookie('lastScore', $numeroAcertos);
+            $lastScore = $numeroAcertos;
+            gameWin();
+        }
+    } else {
+        $questionId = $_POST['questionId'];
+    }
+} elseif ($method == 'GET') {
+    if (isset($_GET['questionId'])) {
+        $questionId = $_GET['questionId'];
+    } else {
+        $questionId = 0;
+
+        setcookie('numeroAcertos', 0);
+        $numeroAcertos = 0;
+
+
+    }
+
+
+}
 
 ?>
 
@@ -35,7 +95,7 @@ if (!isset($_COOKIE['numeroAcertos'])) {
 <body>
     <!-- Cabeçalho -->
     <div class="header">
-        <h1>Show do Bilhão</h1>
+        <h1><a href="index.php">Show do Bilhão</a></h1>
         <?php require_once "partials/menu.inc"; ?>
     </div>
 
@@ -49,63 +109,16 @@ if (!isset($_COOKIE['numeroAcertos'])) {
 
     <!-- Perguntas -->
 
-    <?php
-    if (isset($_GET['questionId'])) {
-        // Primeira vez que o usuario abre o site
-        setcookie('numeroAcertos', 0);
-        $numeroAcertos = 0;
+    <?php echoPergunta($questionId); ?>
+    <script>atualizarBarraProgresso(<?php echo $numeroAcertos . ", " . $totalPerguntas; ?>)</script>
 
-        $questionId = $_GET['questionId'];
-        echoPergunta($questionId);
+    <p>Sua última pontuação foi:
+        <?php echo $lastScore; ?>
+    </p>
 
-    } elseif (isset($_POST['questionId'])) {
-        // Respondeu alguma pergunta
-        $questionId = $_POST['questionId'];
 
-        ?>
-        <!-- // Atualiza a barra -->
-        <script>atualizarBarraProgresso(<?php echo $numeroAcertos . ", " . $totalPerguntas ?>)</script>
-        <?php
-
-        if (isset($_POST['alternativa'])) {
-            // Checa se o usuario acertou
-            if ($_POST['alternativa'] + 1 === Question::carregaPergunta($questionId)->alternativa_correta) {
-
-                $numeroAcertos++;
-                setcookie('numeroAcertos', $numeroAcertos);
-
-                ?>
-                <!-- // Atualiza a barra -->
-                <script>atualizarBarraProgresso(<?php echo $numeroAcertos . ", " . $totalPerguntas ?>)</script>
-                <?php
-
-                // Checa se o usuário já realizou todas as questões
-                if ($questionId + 1 >= Question::getCountPerguntas()) {
-                    gameWin();
-                } else {
-                    $questionId++;
-                    echoPergunta($questionId);
-                }
-            } else {
-                // Se ele errou manda pro game over
-                setcookie('numeroAcertos', 0);
-                $numeroAcertos = 0;
-                gameOver();
-            }
-        } else {
-            echoPergunta($questionId);
-        }
-
-    } else {
-        // vAGABUNDO
-        setcookie('numeroAcertos', 0);
-        $questionId = 0;
-        echoPergunta($questionId);
-    }
-
-    ?>
-
-    <?php require "partials/rodape.inc"; ?>
+    <!-- Rodape -->
+    <?php require_once "partials/rodape.inc"; ?>
 
 </body>
 

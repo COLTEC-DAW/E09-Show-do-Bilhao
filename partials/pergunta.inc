@@ -1,6 +1,7 @@
 <div class="pergunta">
     <form method="POST" action="">
         <h2>
+            <?php echo $questionId + 1 . ") "; ?>
             <?php echo $pergunta->enunciado; ?>
         </h2>
 

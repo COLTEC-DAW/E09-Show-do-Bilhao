@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <html>
 
 <head>
@@ -11,17 +13,18 @@
 </head>
 
 <body>
+    <!-- Cabeçalho -->
     <div class="header">
-        <h1>Show do Bilhão</h1>
-        <?php require "partials/menu.inc"; ?>
+        <h1><a href="index.php">Show do Bilhão</a></h1>
+        <?php require_once "partials/menu.inc"; ?>
     </div>
 
     <!-- Perguntas -->
     <h2>Game Win</h2>
     <p>Parabéns, você acertou tudo seu merda!</p>
-    <a href="/perguntas.php" class="reset-button">Resetar</a>
+    <a href="/perguntas.php?" class="reset-button">Resetar</a>
 
-    <?php require "partials/rodape.inc"; ?>
+    <?php require_once "partials/rodape.inc"; ?>
 
 </body>
 
