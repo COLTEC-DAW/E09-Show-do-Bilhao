@@ -1,4 +1,5 @@
 <?php
+    // COloca o botão de logout caso o usuário esteja logado
     if(isset($_POST['logout']) && isset($_SESSION['loginAtual'])) {
         atualizaArquivoUsuario();
         logoutUsuario();

@@ -16,10 +16,12 @@
     <?php
         require('usuario.inc');
 
+        // Retorna se um post não é vazio
         function postNaoVazio(string $nomePost) {
             return (isset($_POST[$nomePost])) && (strlen($_POST[$nomePost]) > 0);
         }
 
+        // Retorna se um form tem todos os seus posts preenchidos
         function formNaoVazio(array $camposRequeridos) {
             foreach($camposRequeridos as $campoAtual) {
                 if (!postNaoVazio($campoAtual)) return false;

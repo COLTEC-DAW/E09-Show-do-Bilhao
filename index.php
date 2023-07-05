@@ -18,6 +18,7 @@
             $numPerguntas = 5;      
             $_SESSION['numPerguntas'] = $numPerguntas;
 
+            // Carrega a página correspondente ao resultado da resposta
             function carregaResultado () {
                 global $perguntas;
                 global $idPagina;
@@ -25,7 +26,6 @@
                 if ($perguntas[$idPagina]->checarResposta()) {
                     $usuarioAtual = $_SESSION['loginAtual'];
 
-                    // $usuarioAtual->atualizaPontuacaoMaxima($idPagina+1); 
                     atualizaPontuacaoMaxima($usuarioAtual, $idPagina+1);  
                     atualizaCookieUsuario();
                     respostaCorreta($idPagina);
@@ -38,6 +38,7 @@
                 }
             }
 
+            // Lê as perguntas do arquivo perguntas.json
             function getPerguntas() {
                 $arquivoPerguntas = fopen("perguntas.json", "r+");
                 $arrayPerguntas = json_decode(fread($arquivoPerguntas, filesize("perguntas.json")));

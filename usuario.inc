@@ -17,11 +17,14 @@
         }
 
     }
+
+    // Aumenta a pontuação máxima caso tenha atingido um novo máximo
     function atualizaPontuacaoMaxima(stdClass $usuario,int $novaPontuacao) {
         if($usuario->pontuacaoMaxima < $novaPontuacao) 
             $usuario->pontuacaoMaxima = $novaPontuacao;
     }
     
+    // Pega o array de usuários
     function getUsuarios() {
         $nomeArquivo = "usuarios.json";
         $arquivo = fopen ($nomeArquivo, "r+");
@@ -32,6 +35,7 @@
         return $arrayUsuarios;
     }
 
+    // Procura se exiate um usuário com o login especificado
     function procuraLogin(string $login) {
         $arrayUsuarios = getUsuarios();
 
@@ -44,6 +48,7 @@
         return false;
     }
 
+    // Procura um usuário com um login e senha específicos
     function procuraUsuario() {
         $usuarioEncontrado = procuraLogin($_POST['nomeLogin']);
 
@@ -53,10 +58,12 @@
         else return false;
     }
 
+    // Cria ou atualiza o cookie de um usuário
     function atualizaCookieUsuario() {
         setcookie($_SESSION['loginAtual']->nome, $_SESSION['loginAtual']->pontuacaoMaxima, time() + TEMPO_DIA * 30, '/');
     }
 
+    // Cria um usuário e registra ele no arquivo usuarios.json
     function registraUsuario() {
         if(filesize('usuarios.json') && procuraLogin($_POST['nomeRegistro'])) {
             echo "<br/><p class='mensagem-erro'>Já existe um usuário com esse nome de login!</p>";
@@ -77,6 +84,7 @@
         fclose($arquivo);
     }
 
+    // Dá o login com um usuário e cria o cookie dele
     function entraUsuario() {
         $usuarioEncontrado = procuraUsuario();
     
@@ -91,6 +99,7 @@
         }
     }
 
+    // Atualiza a pontuação máxima dos usuários do arquivo
     function atualizaArquivoUsuario() {
         $usuarios = getUsuarios();
 
@@ -106,6 +115,7 @@
         fclose($arquivo);
     }
 
+    // Sai do usuário atual
     function logoutUsuario() {
         unset($_SESSION['loginAtual']);
     }
