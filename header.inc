@@ -1,8 +1,7 @@
 <?php
-    if(isset($_POST['logout'])) {
-        if(isset($_SESSION['loginAtual'])) {
-            unset($_SESSION['loginAtual']);
-        }
+    if(isset($_POST['logout']) && isset($_SESSION['loginAtual'])) {
+        atualizaArquivoUsuario();
+        logoutUsuario();
     }
 ?>
 
@@ -10,7 +9,7 @@
     <form method="POST">
         <?php
             if(isset($_SESSION['loginAtual'])) {
-                echo "Logado como " . $_SESSION['loginAtual']->nome;
+                echo "Logado como " . $_SESSION['loginAtual']->nome . " (Pontuação máxima: " . $_SESSION['loginAtual']->pontuacaoMaxima . ")";
                 echo "</br><input type='submit' name='logout' value='Logout'/>";
             }
         ?>

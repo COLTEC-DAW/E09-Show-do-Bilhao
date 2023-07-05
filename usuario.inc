@@ -11,8 +11,13 @@
             $this->senha = $senha;
             $this->pontuacaoMaxima = 0;
         }
-    }
 
+    }
+    function atualizaPontuacaoMaxima(stdClass $usuario,int $novaPontuacao) {
+        if($usuario->pontuacaoMaxima < $novaPontuacao) 
+            $usuario->pontuacaoMaxima = $novaPontuacao;
+    }
+    
     function getUsuarios() {
         $nomeArquivo = "usuarios.json";
         $arquivo = fopen ($nomeArquivo, "r+");
@@ -40,7 +45,7 @@
     }
 
     function registraUsuario() {
-        $arquivo = fopen ("usuarios.json", "r+");
+        $arquivo = fopen("usuarios.json", "r+");
         $novoUsuario = new usuario($_POST['nomeLogin'], $_POST['senhaLogin']);
 
         if (filesize("usuarios.json") == 0) {
@@ -66,5 +71,25 @@
         else {
             echo "<br/>Usuário ou senha incorretos!";
         }
+    }
+
+    function atualizaArquivoUsuario() {
+        $usuarios = getUsuarios();
+
+        foreach($usuarios as $u) {
+            if ($u->pontuacaoMaxima != $_COOKIE[$u->nome]) {
+                echo "euhfueh";
+                $u->pontuacaoMaxima = $_COOKIE[$u->nome];
+            }
+        }
+
+        $arquivo = fopen("usuarios.json", "w");
+
+        fwrite($arquivo, json_encode($usuarios));
+        fclose($arquivo);
+    }
+
+    function logoutUsuario() {
+        unset($_SESSION['loginAtual']);
     }
 ?>
