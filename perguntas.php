@@ -1,9 +1,10 @@
 <?php
 session_start();
 ?>
+<!-- após a seção ser iniciada, confere se o usuario existe, se ele não existir vai para a página login.php e fecha esse esse script
 <?php
-if (!isset($_SESSION['jogador'])) {
-    // O jogador não está autenticado, redireciona para a página de login
+if (!isset($_SESSION['usuario'])) {
+   
     header("Location: login.php");
     exit();
 }
@@ -13,18 +14,13 @@ if (!isset($_SESSION['jogador'])) {
 //não roda o codigo caso perguntas.inc não exista 
 require 'perguntas.inc';
 
-//verifica se o metodo de requisição e post (uma resposta foi enviada) se a pergunta so for carregada o metodo é o get
-//_Server é uma variavel global que funciona no servidor, ela pega coisas uteis como o metodo de requisição e outras informações como url 
-// isset verifica se o post existe 
+//verifica se o metodo de requisição e post (uma resposta foi enviada) se a pergunta so for carregada o metodo é o get  _Server é uma variavel global que funciona no servidor, ela pega coisas uteis como o metodo de requisição e outras informações como url 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // if(isset($_POST['resposta']))
-    // Verifica se a resposta está correta
     // POST é uma variavel global que pega todas as requisições post, nesse ele pega as variaveis id e resposta
     $resposta = $_POST['resposta'];
     $id = $_POST['id'];
     $questaoAtual = $perguntas[$id]; //cria uma varia questão atual e coloca a questão armazenada na posição id
-
-    //se a resposta marcada for igual a questão certa ele entra nesse if
     if ($resposta === $questaoAtual->questaocerta) {
         $id = isset($_POST['id']) ? $_POST['id'] + 1 : $id + 1; //verifica se id existe (isset), se existir atualiza o id
 
@@ -33,11 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pergunta_atual = $perguntas[$id];
         } else {
             $id = count($perguntas);
-            $pergunta_atual = "Fim das perguntas.";
+            header("location: venceu.php");
         }
-    } else {
-        // A resposta está incorreta, exibe a tela de fim de jogo
-        echo "Fim do jogo. Sua resposta está incorreta.";
+    } else { //se a resposta ta errada 
+        
+        header("location: perdeu.php");
+       
         exit; // Termina o script para evitar a exibição do restante da página
     }
     //se o metodo não for post imprime a questão incicial, por isso esse else
@@ -63,7 +60,7 @@ if ($id <= count($perguntas)) {
 <body>
     <!-- abre o php para imprimir a variavel id-->
     <h2> <?php echo " voce acertou ate agora ",$id-1," questões"?></h2>
-    <h2><?php echo "Você está jogando como: " . $_SESSION['jogador']; ?></h2>
+    <h2><?php echo "Você está jogando como: " . $_SESSION['usuario']; ?></h2>
     <h1>Pergunta <?php echo $id; ?></h1>
     <!--imprime o enunciado-->
     <p><?php $pergunta_atual->enunciado($id); ?></p>

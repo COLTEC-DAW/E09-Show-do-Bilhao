@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se o usuário já está autenticado, redireciona para a página de perguntas
 if (isset($_SESSION['usuario'])) {
-    header("Location: perguntas.php");
+    header("location: perguntas.php");
     exit();
 }
 
@@ -18,20 +18,8 @@ function verificarCredenciais($usuario, $senha) {
     return false; // Credenciais incorretas
 }
 
-// function verificarCredenciais($usuario, $senha) {
-//     //le o arquivo usuarios.json e ignora caracteres de quebra de linha como o /n
-//     $usuarios = file('usuarios.json', FILE_IGNORE_NEW_LINES);
-//     foreach ($usuarios as $linha) {
-//         // pega o que esta armazenado em $linha quebra ele no ponto : e armazena a primeira parte em usuarioArmazenado e a outra em senha 
-//         list($usuarioArmazenado, $senhaArmazenada) = explode(':', $linha);
-//         if ($usuario === $usuarioArmazenado && $senha === $senhaArmazenada) {
-//             return true; // Credenciais corretas
-//         }
-//     }
-//     return false; // Credenciais incorretas
-// }
 
-// Verifica se o método de requisição é POST e se as informações de login foram enviadas
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($_POST['senha'])) {
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
@@ -39,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($
     // Verifica as credenciais do usuário
     if (verificarCredenciais($usuario, $senha)) {
         $_SESSION['usuario'] = $usuario;
-        header("Location: perguntas.php");
+        header("location: perguntas.php");
         exit();
     } else {
         $erroLogin = true; // Credenciais incorretas, exibe mensagem de erro
@@ -67,6 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($
         <input type="submit" value="Entrar">
     </form>
     <p>Ainda não tem uma conta? <a href="criarConta.php">Criar nova conta</a></p>
+    <p><a href="index.php">volte para a página inicial</a></p>
+   
+   
 </body>
 </html>
 
