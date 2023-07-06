@@ -1,7 +1,9 @@
 <?php 
+    session_start();
     require("user.php");
     require("login.inc");
     require("menu.inc");
+
 ?>
 <!DOCTYPE html>
 
@@ -39,7 +41,7 @@
             </form> 
             <div>
                 <br><h4><strong>Se ainda não tiver conta:</strong></h4>
-                <button onclick="abrirRegistrar()">Registrar</button><br><br>
+                <button onclick="abrirRegistrar()">Cadastrar</button><br><br>
             </div>
         </div>
         <div style="<?php
@@ -47,8 +49,9 @@
                 echo "display:none;";
             }
         ?>">
-            <p><strong>Esse é Show do Bilão do Pratudo</strong>, onde se você acerta tudo, ganha <strong>nada!</strong> <br>E se vc acerta nada, ganha <strong>nada</strong> também :)
-            </p>    
+            <p><strong>Esse é Show do Bilão do Pratudo</strong>, onde se você acerta tudo, ganha <strong>nada!</strong> <br>E se vc acerta nada, ganha <strong>nada</strong> também :)</p>
+            
+
             <form action="perguntas.php" method="POST">
                 <input type="submit" value="Jogar">
                 <br><br>

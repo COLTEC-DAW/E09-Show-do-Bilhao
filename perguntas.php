@@ -1,5 +1,7 @@
 <?php
+  session_start();
   require("perguntas.inc");
+  require("user.php");
 
   $numQuestao = htmlspecialchars($_POST["numQuestao"]);
   $questao = carregaPergunta($numQuestao,"perguntas.json");
@@ -8,7 +10,12 @@
 
   if(trim($respostaInserida) != trim($respostaCorreta))
   {
+
+    $user = unserialize($_SESSION['user']);
     echo"Resposta errada burrrrro";
+    echo "<button><a href='./index.php'>Tente denovo meu mano</a></button>";
+    setcookie($user->login . "-lastTimePlayed", date('d-M-Y'));
+    setcookie($user->login. "-lastPoints", $numQuestao);
     return;
   }
 
@@ -55,7 +62,7 @@
         <input type="submit" name="Enviar" id="enviar" value="enviar">
     </fieldset>
   </form>
-
+  
 
     
 </body>

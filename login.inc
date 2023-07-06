@@ -50,16 +50,15 @@ function login(){
     $login = trim($_POST['login']);
     $senha = trim($_POST['senha']);
     
-    $loginErrado = false;
+    $loginErrado = true;
     $arquivo = fopen("users.json", "r");
     $lerArquivo = json_decode(fread($arquivo, filesize("users.json")));
 
     foreach ($lerArquivo as $usuario) {
         if ($usuario->login == $login && $usuario->senha == $senha) {
-            $_SESSION['user'] = $usuario;
+            $_SESSION['user'] = serialize($usuario);
+            $loginErrado = false;
             break;
-        }else{
-            $loginErrado = true;
         }
     }
 
