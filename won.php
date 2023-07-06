@@ -11,11 +11,13 @@ setcookie($_SESSION['user'] . "-max", 5); ?>
 
     <body>
         <div>
+            <?php include("Partials/menu.inc");?><br>            
             <p>Não, você não vai receber o parabéns, até porque você é LITERALMENTE e NÃO IRONICAMENTE assim:</p>
             <img src="nerd.jpg">
             <div>
                 <a href="pergunta.php">Restart</a>
             </div>
+            <?php include("Partials/rodape.inc");?>            
         </div>
     </body>
 </html>
