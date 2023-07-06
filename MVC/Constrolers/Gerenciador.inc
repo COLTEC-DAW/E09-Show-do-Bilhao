@@ -23,7 +23,7 @@
         }
     
         public function carregaPergunta($id) {
-            return $this->perguntas[0];
+            return $this->perguntas[$id];
         }
 
         public function buscaAlternativaCorreta($id) {
