@@ -7,7 +7,7 @@
             "Revolução Francesa",
             "Revolução Americana"
         ],
-        "respostas": 2
+        "resposta": 3
     },
     {
         "enunciado": "Qual foi a principal causa da Revolução Industrial na Europa?",
@@ -17,7 +17,7 @@
             "Unificação política",
             "Expansão do comércio marítimo"
         ],
-        "respostas": 1
+        "resposta": 2
     },
     {
         "enunciado": "Qual revolução resultou na independência de diversos países da América Latina?",
@@ -27,7 +27,7 @@
             "Revolução Pernambucana",
             "Revolução Haitiana"
         ],
-        "respostas": 3
+        "resposta": 4
     },
     {
         "enunciado": "Qual foi a revolução que ocorreu na Inglaterra no século XVII?",
@@ -37,7 +37,7 @@
             "Revolução Gloriosa",
             "Revolução Russa"
         ],
-        "respostas": 2
+        "resposta": 3
     },
     {
         "enunciado": "Qual foi a revolução que estabeleceu o socialismo na Rússia?",
@@ -47,6 +47,6 @@
             "Revolução Russa",
             "Revolução Pernambucana"
         ],
-        "respostas": 2
+        "resposta": 3
     }
 ]

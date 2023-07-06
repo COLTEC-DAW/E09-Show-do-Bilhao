@@ -1,6 +1,6 @@
 <?php
     session_start();
-    setcookie($_SESSION["user"] . "-lastLogin", time());
+    setcookie($_SESSION["user"] . "-lastLogin", date("d/m/Y H:i:s"));
     session_destroy();
-    require "~/index.php";
+    header('location: ../../index.php');
 ?>

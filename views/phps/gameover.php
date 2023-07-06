@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <?php include "views/ncs/menu.inc"; ?>
+    <?php include "../incs/menu.inc"; ?>
 
     <h1>Você Perdeu...</h1>
     <div><a href="perguntas.php">Recomeçar</a></div>
