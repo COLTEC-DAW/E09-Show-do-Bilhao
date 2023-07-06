@@ -1,6 +1,6 @@
 <div class='form'>
     <h2> LOGIN </h2>
-    <form action='index.php?id=0' method='POST'>
+    <form action='../../gerenciadores/cadastroLogin.php' method='POST'>
     <div class='login'>
         <label> <input type='text' name='login'> Digite seu login </label>
     </div>
@@ -13,16 +13,3 @@
     <p>Última pontuação: <?php echo $_COOKIE["ultPontuacao"]; ?></p>
 </div>
 
-<?php
-    function conferirLogin($loginUsuario, $senhaUsuario){
-        $arquivo = file_get_contents("./json/usuarios.json");
-        $usuarios= json_decode($arquivo);
-        foreach($usuarios as $user){
-            if($user["login"]== $loginUsuario && $user["senha"]==$senhaUsuario){
-                return true;
-            }
-        }
-        return false;
-    }
-    
-?>

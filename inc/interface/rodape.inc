@@ -1,6 +1,6 @@
 <footer class="rodape">
     <div class="logout">
-        <form  action="" method="post">
+        <form  action="../../index.php" method="post">
             <input type="submit" name="logout" value="LOGOUT">
         </form>
     </div>
