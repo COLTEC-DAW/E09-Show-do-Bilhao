@@ -5,8 +5,7 @@ class User{
     public $login;
     public $senha;
     public $email;
-
-
+    
     public function __construct($nome, $login, $senha, $email){
 
         $this->nome = $nome;
@@ -15,4 +14,6 @@ class User{
         $this->email = $email;
     }
 }
+
+$user;
 ?>

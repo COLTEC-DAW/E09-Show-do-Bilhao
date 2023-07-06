@@ -28,7 +28,7 @@ if (isset($_SESSION['user'])) {
                 $pergunta->carregaPerguntas($id, $perguntas);
             }
         } else {
-            criaUsuarioECookie($_SESSION["user"], date('d/m/Y h:i:s'), $pontuacao);
+            criaUsuarioECookie($_SESSION["user"]["login"], date('d/m/Y h:i:s'), $pontuacao);
             require "../Pages/gameOver.php";
         }
     } else if ($_SERVER['REQUEST_METHOD'] == 'GET') {

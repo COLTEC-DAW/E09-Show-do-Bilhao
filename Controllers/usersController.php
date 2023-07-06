@@ -2,7 +2,6 @@
 require "../Models/User.inc";
 
 session_start();
-$usuario;
 function adicionaSignUp(){
     $nome = $_POST["nome"];
     $login = $_POST["login"];
@@ -14,19 +13,19 @@ function adicionaSignUp(){
     $usersArray = json_decode($usersJson, true);
     
     $novoUser = new  User($nome, $login, $senha, $email);
-    print_r($novoUser);
+
 
     array_push($usersArray, $novoUser);
     $data = json_encode($usersArray, JSON_PRETTY_PRINT); 
 
     file_put_contents($nomeArquivo, $data);
-    require "../Componentes/login.inc";
+    require "../Pages/Login.php";
     }
 
     function confereLogin(){
         $login = $_POST["login"];
         $senha = $_POST["senha"];
-        global $usuario;
+        global $user;
         
         $nomeArquivo = $_SERVER['DOCUMENT_ROOT'] . '/Data/users.json';
     
@@ -37,9 +36,7 @@ function adicionaSignUp(){
         foreach($usersArray as $user){
             if($login == $user['login']){
                 if($senha == $user['senha']){
-                    $_SESSION["user"] = $login;
-                    $_SESSION["senha"] = $senha;
-                    $usuario=new User($user['nome'], $user['login'], $user['senha'], $user['email']);
+                    $_SESSION["user"]=$user;
                     $autenticado=true;
                     break;
                 }else{
@@ -54,7 +51,7 @@ function adicionaSignUp(){
             require "../index.php";
         }
     }
-
+   
    
 ?>
 

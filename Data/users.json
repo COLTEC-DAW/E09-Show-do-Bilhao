@@ -12,12 +12,6 @@
         "email": "joao@joao.com"
     },
     {
-        "nome": "teste teste",
-        "login": "teste",
-        "senha": "12345",
-        "email": "teste@teste.com"
-    },
-    {
         "nome": "wanessa",
         "login": "wawa",
         "senha": "juju2005",
@@ -48,15 +42,21 @@
         "email": "oi@oi"
     },
     {
-        "nome": "mais",
-        "login": "maismais",
-        "senha": "0987",
-        "email": "mais@mais"
+        "nome": "alguem",
+        "login": "algm",
+        "senha": "1111",
+        "email": "alguem@alguem"
     },
     {
-        "nome": "eu",
-        "login": "eueu",
-        "senha": "1710",
-        "email": "eu@eu"
+        "nome": "teste",
+        "login": "tst",
+        "senha": "12345",
+        "email": "TT@TT"
+    },
+    {
+        "nome": "ola",
+        "login": "olaola",
+        "senha": "1234",
+        "email": "ola@ola"
     }
 ]

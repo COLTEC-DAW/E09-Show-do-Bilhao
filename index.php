@@ -13,7 +13,7 @@
     if(isset($_SESSION['user'])){
         require "Pages/paginaInicial.php";
     }else{
-        require "Pages/Login.html";
+        require "Pages/Login.php";
     }
     ?>
   

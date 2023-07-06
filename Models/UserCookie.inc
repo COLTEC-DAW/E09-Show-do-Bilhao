@@ -13,6 +13,7 @@ class UserCookie{
 
 
 function criaUsuarioECookie( $nome, $ultimoAcesso, $pontuacao){
+    print_r($nome);
     $usuario = new UserCookie($nome, $ultimoAcesso, $pontuacao);
     
     setcookie("usuario-{$nome}",json_encode($usuario),  time()+3600, "/");

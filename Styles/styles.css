@@ -12,6 +12,16 @@ html{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 60%;
+    margin: auto;
+}
+.botaoJogar{
+    margin: auto;
+    width: 20%;
+    padding: 0.5em;
+    font-size: 24px;
+    border-radius: 12px;
+    background-color:  #8B65BF;
 }
 .pergunta{
     border-radius: 20px;
@@ -35,7 +45,7 @@ html{
 }
 .alternativaItem{
     font-size: 40px;
-    width: 40%;
+    width: 10%;
 }
 .rodape{
     display: flex;
