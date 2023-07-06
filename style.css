@@ -23,3 +23,15 @@ a {
     color: #8EECBD;
     font-size: 20px;
 }
+
+footer {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: #303331;
+    padding: 1%;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+}

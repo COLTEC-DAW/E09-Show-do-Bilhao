@@ -9,10 +9,11 @@
     <body>
         <?php
             require('usuario.inc');
-            require('pergunta.inc.php');
-            require('paginaResultado.inc.php');
+            require('pergunta.inc');
+            require('paginaResultado.inc');
 
-            include('header.inc');
+            include('menu.inc');
+            include('rodape.inc');
 
             $idPagina = intval($_GET["id"]);
             $numPerguntas = 5;      
@@ -27,7 +28,10 @@
                     $usuarioAtual = $_SESSION['loginAtual'];
 
                     atualizaPontuacaoMaxima($usuarioAtual, $idPagina+1);  
-                    atualizaCookieUsuario();
+
+                    atualizaCookiePontuacaoMaxima();
+                    atualizaCookieUltimoHorario();
+
                     respostaCorreta($idPagina);
                 }
                 else {

@@ -59,8 +59,34 @@
     }
 
     // Cria ou atualiza o cookie de um usuário
-    function atualizaCookieUsuario() {
-        setcookie($_SESSION['loginAtual']->nome, $_SESSION['loginAtual']->pontuacaoMaxima, time() + TEMPO_DIA * 30, '/');
+    function atualizaCookiePontuacaoMaxima() {
+        setcookie($_SESSION['loginAtual']->nome . "PontuacaoMaxima", $_SESSION['loginAtual']->pontuacaoMaxima, time() + TEMPO_DIA * 30, '/');
+    }
+
+    function atualizaCookieUltimaPontuacao(int $novaPontuacao) {
+        setcookie($_SESSION['loginAtual']->nome . "UltimaPontuacao", $novaPontuacao, time() + TEMPO_DIA * 30, '/');
+    }
+
+    function atualizaCookieUltimoHorario() {
+        setcookie($_SESSION['loginAtual']->nome . "UltimoHorario", time(), time() + TEMPO_DIA * 30, '/');
+    }
+
+    function getPontuacaoMaxima() {
+        return $_SESSION['loginAtual']->pontuacaoMaxima;
+    }
+
+    function getUltimaPontuacao() {
+        if (isset($_COOKIE[$_SESSION['loginAtual']->nome . "UltimaPontuacao"]))
+            return $_COOKIE[$_SESSION['loginAtual']->nome . "UltimaPontuacao"];
+        else
+            return "[Sem dados]";
+    }
+
+    function getUltimoHorario() {
+        if (isset($_COOKIE[$_SESSION['loginAtual']->nome . "UltimoHorario"]))
+            return date('d/m/Y', $_COOKIE[$_SESSION['loginAtual']->nome . "UltimoHorario"]);
+        else
+            return "[Sem dados]";
     }
 
     // Cria um usuário e registra ele no arquivo usuarios.json
@@ -90,7 +116,7 @@
     
         if ($usuarioEncontrado) {
             $_SESSION['loginAtual'] = $usuarioEncontrado;
-            atualizaCookieUsuario();
+            atualizaCookiePontuacaoMaxima();
 
             header ("Location:index.php?id=0");
         }
@@ -104,8 +130,8 @@
         $usuarios = getUsuarios();
 
         foreach($usuarios as $u) {
-            if ($u->pontuacaoMaxima != $_COOKIE[$u->nome]) {
-                $u->pontuacaoMaxima = $_COOKIE[$u->nome];
+            if ($u->pontuacaoMaxima != $_COOKIE[$u->nome . "PontuacaoMaxima"]) {
+                $u->pontuacaoMaxima = $_COOKIE[$u->nome . "PontuacaoMaxima"];
             }
         }
 
