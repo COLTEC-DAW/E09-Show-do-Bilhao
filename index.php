@@ -8,8 +8,10 @@
 
     <body>
         <?php include("Partials/menu.inc");?>
-        <a href="loginPage.php">Entrar</a><br>
-        <a href="signupPage.php">Registrar</a>
+        <div class="box">
+            <a href="loginPage.php">Entrar</a><br>
+            <a href="signupPage.php">Registrar</a>
+        </div>
         <?php include("Partials/rodape.inc");?>
     </body>
 </html>

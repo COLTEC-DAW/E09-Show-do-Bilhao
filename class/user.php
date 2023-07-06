@@ -69,4 +69,16 @@
     public function __getPont(){
         return $this->pontMax;
     }
+
+    public function __getAtual(){
+        return $this->pontAtual;
+    }
+
+    public function __setLast(){
+        setcookie($this->username."pont", $this->pontAtual, time() + 86400);
+    }
+
+    public function __getName(){
+        return $this->username;
+    }
 }

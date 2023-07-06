@@ -20,10 +20,12 @@ if(isset($_POST['answer'])){
     if($prevAnswer == $prevOption) $user->aumentaPontA();
     if($user->checaPont()==true) $user->aumentaPontM();
     if($prevAnswer != $prevOption){
+        $user->__setLast();
         $user->zeraPont();
         header("Location: lost.php");
         exit();
     }else if($questID == 5 && $prevAnswer == $prevOption){
+        $user->__setLast();
         $user->zeraPont();
         header("Location: won.php");
         exit();
@@ -56,6 +58,12 @@ $answer = $quest->getAnswer($questID); ?>
         </form>
 
         <h2><a href="logout.php">Sair</a></h2>
+        <?php if(isset($_COOKIE[$user->__getName()."last"])){
+            echo "<h4>Seu último login foi em: ".$_COOKIE[$user->__getName()."last"]."</h4>";
+        }
+        if(isset($_COOKIE[$user->__getName()."pont"])){
+            echo "<h4>Sua última pontuação foi: ".$_COOKIE[$user->__getName()."pont"]."</h4>";
+        }?>
         <?php include("Partials/rodape.inc");?>
     </body>
 </html>

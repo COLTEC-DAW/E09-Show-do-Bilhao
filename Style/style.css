@@ -38,3 +38,24 @@ form{
 #loginBtn{
     font-weight: 450;
 }
+
+.box{
+    background: crimson;
+    padding:2% 2% 3% 2%;
+    border-radius: 5px;
+    box-shadow:10px 10px black;
+    font-size: 25px;
+    color: black;
+}
+
+.box a{
+    text-decoration: none;
+}
+
+.box a:hover{
+    text-decoration: underline;
+}
+
+.box a:visited{
+    color: black;
+}
