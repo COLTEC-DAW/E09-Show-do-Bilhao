@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "pcc",
+        "email": "pcc@ufmg.org",
+        "login": "pcc",
+        "senha": "pcc"
+    },
+    {
+        "nome": "Bernardo",
+        "email": "Bernardo@hot.com",
+        "login": "Bernardo",
+        "senha": "Bernardo"
+    }
+]
