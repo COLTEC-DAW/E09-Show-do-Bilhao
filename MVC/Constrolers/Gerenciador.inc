@@ -1,5 +1,5 @@
 <?php
-    require "Pergunta.inc";
+    require "MVC/Models/Pergunta.inc";
 
     class Gerenciador {
         // Atributos

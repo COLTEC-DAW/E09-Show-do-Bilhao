@@ -1,5 +1,5 @@
 <!-- Importações -->
-<?php require "./assets/classes/Gerenciador.inc" ?>
+<?php require "MVC/Constrolers/Gerenciador.inc" ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,7 +16,7 @@
     <title>Show do Bilhão</title>
 </head>
 <body>
-    <?php include "./assets/partials/menu.inc"?>
+    <?php include "MVC/Views/menu.inc"?>
 
     <main>
         <div class="pergunta">
@@ -33,68 +33,55 @@
                     $id = 0;
                 }
 
-                $perguntaAtual = $game->carregaPergunta($id);                
+                $perguntaAtual = $game->carregaPergunta($id);
+                if(isset($_POST["pontuacao"])) {
+                    $game->pontuacao = $_POST["pontuacao"];
+                }
             ?>
 
             <?php           
-                // Se não tem login ou senha aparece a pagina de login
-                if(!(isset($_SESSION["login"])) || !(isset($_SESSION["senha"]))) {
+                // Se não está logado carrega a pagina de login
+                if((isset($_SESSION["login"]))) {
+                    require "./login.php";
+                } 
+                // primeira pergunta ou acertou a anterior
+                else if($id == 0 || $game->buscaAlternativaCorreta($id - 1) == $_POST["resp"]) {
+                    $game->pontuacao++;
+                    $nQuestao = $id+1;
+                    $game->pontuacao = $id;
                     ?>
                         <!-- =============== -->
-                        <h1>Login</h1>
-
-                        <form action="index.php" method="POST">
-                            <label for="nome">Nome: </label>
-                            <input type="text">
-
-                            <label for="nome">Senha: </label>
-                            <input type="password">
-
-                            <input type="submit">
+                        <h2 class="pergunta--titulo">Questão <?= $nQuestao ?></h2>
+                        <p class="pergunta--enunciado"><?= $perguntaAtual->enunciado ?></p>
+                        
+                        <form action="index.php?id=<?= $nQuestao ?>" method="POST">
+                        <!-- =============== -->                        
+                    <?php
+                    foreach($perguntaAtual->alternativas as $alternativa){
+                        ?>
+                            <!-- =============== -->                            
+                            <div class="alternativa">
+                            <input type="radio" name="resp" value="<?= $alternativa->letra ?>" class = "input--alternativa">
+                            <p class="non-selected"><?= $alternativa->letra ?>) <?= $alternativa->resposta ?></p>
+                            </div>
+                            <!-- =============== -->                            
+                        <?php
+                    }
+                    ?>
+                        <!-- =============== -->
+                        <input type="hidden" name="pontuacao" value="<?= $game->pontuacao?>">
+                        <input type="submit" value="Confirmar resposta" id="BotaoEnviar">
                         </form>
                         <!-- =============== -->
+                    <?php            
+                }
+                // se errou carrega pagina de gameover
+                else {
+                    ?>
+                        <!-- =============== -->
+                            <h3 class="game_over">GAME OVER</h3>
+                        <!-- =============== -->
                     <?php
-                } else {
-                    // primeira pergunta ou acertou a anterior
-                    if($id == 0 || $game->buscaAlternativaCorreta($id - 1) == $_POST["resp"]) {
-                        $nQuestao = $id+1;
-                        $count = 0;
-                        $game->pontuacao = $id;
-                        ?>
-                            <!-- =============== -->
-                            <h2 class='pergunta--titulo'>Questão <?= $nQuestao ?></h2>
-                            <p class='pergunta--enunciado'><?= $perguntaAtual->enunciado ?></p>
-                            
-                            <form action='index.php?id=<?= $nQuestao ?>' method='POST'>
-                            <!-- =============== -->                        
-                        <?php
-                        foreach($perguntaAtual->alternativas as $alternativa){
-                            ?>
-                                <!-- =============== -->                            
-                                <div class='alternativa'>
-                                <input type='radio' name='resp' id='resp$count' value='<?= $alternativa->letra ?>' class = 'input--alternativa'>
-                                <p class='non-selected'><?= $alternativa->letra ?>) <?= $alternativa->resposta ?></p>
-                                </div>
-                                <!-- =============== -->                            
-                            <?php
-                            $count++;
-                        }
-                        ?>
-                            <!-- =============== -->
-                            <input type='submit' value='Confirmar resposta' id='BotaoEnviar'>
-                            </form>
-                            <!-- =============== -->
-                        <?php
-                    }
-                    // se errou carrega pagina de gameover
-                    else {
-                        $game->pontuacao = $id - 1;
-                        ?>
-                            <!-- =============== -->
-                                <h3 class='game_over'>GAME OVER</h3>
-                            <!-- =============== -->
-                        <?php
-                    }
                 }
 
             ?>
@@ -103,7 +90,7 @@
     </main>
 
     <?php 
-        include "./assets/partials/rodape.inc";
+        include "MVC/Views/rodape.inc";
         rodape($game->pontuacao);
     ?>
 </body>
