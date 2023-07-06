@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "header.inc";
+    include "menu.inc";
 ?>
 <!DOCTYPE html>
 <html lang="en">

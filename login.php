@@ -2,7 +2,8 @@
     session_start();
     require "user.inc";
     require "loginFunctions.inc";
-    include "header.inc";
+    include "menu.inc";
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +31,7 @@
         echo "Ultima vez logado foi:" . $cookieValue[1] . "</br>";
         echo "<a href='index.php'>Iniciar questionario</a>";
     }
+    require "rodape.inc"
     ?>
 </body>
 

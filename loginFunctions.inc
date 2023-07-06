@@ -3,7 +3,7 @@
 
         if(isset($_POST["registrar"]))
         {
-            $user = new User($_POST["login"], $_POST["password"]);
+            $user = new User($_POST["login"], $_POST["password"], $_POST["email"], $_POST["name"]);
             $arquivo = fopen("users.json", "r+");
             if(filesize('users.json') == 0){
                 fwrite($arquivo, '[' . json_encode($user) . ']');
@@ -23,7 +23,7 @@
             foreach($arquivo as $a){
                 if($a->userName == $searchLogin){
                     if($a->password == $searchPassword){
-                        $newUser = new User($searchLogin, $searchPassword);
+                        $newUser = new User($searchLogin, $searchPassword,$a->email,$a->name);
                         $_SESSION['user'] = serialize($newUser);
                         return;
                     }
@@ -57,6 +57,8 @@
     function RegisterForm()
     {
         echo "<form action='' method='post'>";
+        echo "<input type='text' name='name' placeholder='Enter your name' required /><br>";
+        echo "<input type='text' name='email' placeholder='Enter your email' required /><br>";
         echo "<input type = 'text' name = 'login' placeholder='Enter a User Name' required /><br>";
         echo "<input type = 'password' name = 'password' placeholder='Set a Password' required /><br>";
         echo "<input type = 'submit' value = 'Submit' name = 'registrar'/><br>";
