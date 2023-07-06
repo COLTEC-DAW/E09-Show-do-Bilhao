@@ -1,5 +1,5 @@
 <?php
-    class Questao{
+    class Question{
         public $question;
         public $options;
         public $answer;
