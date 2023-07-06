@@ -13,6 +13,12 @@
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" class="form-field">
 
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-field">
+
+            <label for="login">Login</label>
+            <input type="text" name="login-nome" id="login" class="form-field">
+
             <label for="pwd">Senha</label>
             <input type="text" name="senha" id="pwd" class="form-field">
 

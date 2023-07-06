@@ -1,26 +1,10 @@
 <?php
-    $enunciados = [
-        "Qual fruto é conhecido no Norte e Nordeste como 'jerimum'?",
-        "Qual é o coletivo de cães?",
-        "Quem compôs o Hino da Independência?",
-        "Qual é o antônimo de 'malograr'?",
-        "Em que país nasceu Carmem Miranda?",
-    ];
-
-    $alternativas = [
-        ["Caju", "Abóbora", "Chuchu", "Côco"],
-        ["Matilha", "Rebanho", "Alcateia", "Manada"],
-        ["Dom Pedro I", "Manuel Bandeira", "Castro Alvez", "Carlos Gomes"],
-        ["Perder", "Fracassar", "Conseguir", "Desprezar"],
-        ["Brasil", "Espanha", "Argentina", "Portugal"],
-    ];
-
-    $respostas = [1, 0, 0, 2, 3];
 
     function carregaPergunta($id) {
-        global $enunciados;
+        $perguntas = lePerguntas();
         global $alternativas;
-        
+        global $enunciados;
+
         echo "<h3 class='questao'>" . $enunciados[$id] . "</h3>";
         echo "<div class='options'>";
         for($i = 0; $i < 4; $i++) {
@@ -29,6 +13,8 @@
         echo "</div>";
         echo "<button type='submit'>Enviar</button>";
         echo "<p>Acertos: ". $id ."/5 </p>";
+
+        fclose($perguntas);
     }
 
     function gameover($id) {
@@ -41,9 +27,21 @@
         } 
     }
     
+    function lePerguntas() {
+        $arquivo = fopen("perguntas.json", "r");
+        $array = [];
+        $array = json_decode(fread($arquivo, filesize("perguntas.json")));
+        return $array;
+    }
+
     function verificaResposta($id) {
-        global $respostas;
-        global $acertos;
+        $perguntas = lePerguntas();
+        $respostas = [];
+
+        foreach($perguntas as $pergunta) {
+            
+        }
+
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if(isset($_POST["resposta"])) {
@@ -55,7 +53,6 @@
             // primeira pergunta ou acertou a anterior
             if($id < 5 && ($resposta == $respostas[$id-1])) {
                 carregaPergunta($id);
-                $acertos++;
             } else {
                 gameover($id);
             }
@@ -67,5 +64,7 @@
                 gameover($id);
             }
         }
+
+        fclose($perguntas);
     }
 ?>

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <?php 
     require "perguntas.inc";
-    require "session.inc";
+    require "user.inc";
     
     if(isset($_GET["id"])) {
         $id = $_GET["id"];
     } else {
         $id = 0;
     }
-
-    if(isset($_POST["login"])) {
-        $nome = $_POST["nome"];
-        $senha = $_POST["senha"];
-        validaLogin();
-    } else {
-        header("location: index.php");
+    if(!isset($_POST["resposta"])){
+        if(isset($_POST["login"])) {
+            Login();
+        } else {
+            header("location: index.php");
+        }
     }
 ?>
 

@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Qual fruto é conhecido no Norte e Nordeste como 'jerimum?",
+        "opcoes": ["Caju", "Abóbora", "Chuchu", "Côco"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual é o coletivo de cães?",
+        "opcoes": ["Matilha", "Rebanho", "Alcateia", "Manada"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Quem compôs o Hino da Independência?",
+        "opcoes": ["Dom Pedro I", "Manuel Bandeira", "Castro Alvez", "Carlos Gomes"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual é o antônimo de 'malograr'?",
+        "opcoes": ["Perder", "Fracassar", "Conseguir", "Desprezar"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Em que país nasceu Carmem Miranda?",
+        "opcoes": ["Brasil", "Espanha", "Argentina", "Portugal"],
+        "resposta": 3
+    }
+] 

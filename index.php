@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    require "user.inc";
+    salvaUser();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +16,8 @@
     <div class="login">
         <h1>Login</h1>
         <form class="login-form" method="POST" action="perguntas.php">
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-field">
+            <label for="login-nome">Login</label>
+            <input type="text" name="login-nome" id="nome" class="form-field">
 
             <label for="pwd">Senha</label>
             <input type="text" name="senha" id="pwd" class="form-field">
