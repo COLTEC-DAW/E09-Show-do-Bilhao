@@ -1,0 +1,27 @@
+[
+    {
+        "pergunta":"Quanto é 1+1",
+        "alternativas":["1","3","2","4"],
+        "resposta":2
+    },
+    {
+        "pergunta":"Quanto é 1+2",
+        "alternativas":["1","3","2","4"],
+        "resposta":1
+    },
+    {
+        "pergunta":"Quanto é 1+3",
+        "alternativas":["1","3","2","4"],
+        "resposta":3
+    },
+    {
+        "pergunta":"Quanto é 5-2",
+        "alternativas":["1","3","2","4"],
+        "resposta":1
+    },
+    {
+        "pergunta":"Quanto é 3-2",
+        "alternativas":["1","3","2","4"],
+        "resposta":0
+    }
+]

@@ -1,14 +1,23 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>perguntas</title>
-</head>
-    <body>
-    <form action="index.php" method="get">
-    
+<?php 
 
-    </form>
-    </body>
-</html>
+$perguntas = [
+
+    "Quanto é 1+1",
+    "Quanto é 1+2",
+    "Quanto é 1+3",
+    "Quanto é 5-2",
+    "Quanto é 3-2"
+        
+];
+$alternativas = [
+
+    ["1","3","2","4"],
+    ["1","3","2","4"],
+    ["1","3","2","4"],
+    ["1","3","2","4"],
+    ["1","3","2","4"]
+
+];
+$respostas = [2,1,3,1,0];
+
+?>
