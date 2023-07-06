@@ -6,7 +6,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <form action="perguntas.php">
+    <form action="perguntas.php" method="post">
         Nome <input type="text" name="nome"><br>
         Email <input type="email" name="email"><br>
         Login <input type="text" name="login"><br>
