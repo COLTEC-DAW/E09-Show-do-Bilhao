@@ -46,7 +46,11 @@
         global $acertos;
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $resposta = htmlspecialchars($_POST["resposta"]);
+            if(isset($_POST["resposta"])) {
+                $resposta = htmlspecialchars($_POST["resposta"]);
+            } else {
+                $resposta = "";
+            }
 
             // primeira pergunta ou acertou a anterior
             if($id < 5 && ($resposta == $respostas[$id-1])) {
@@ -56,7 +60,6 @@
                 gameover($id);
             }
             
-
         } else {
             if ($id < 5) {
                 carregaPergunta($id);
