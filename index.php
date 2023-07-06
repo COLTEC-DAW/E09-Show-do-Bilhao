@@ -1,5 +1,8 @@
 <!-- Importações -->
-<?php require "MVC/Constrolers/Gerenciador.inc" ?>
+<?php 
+    require "MVC/Constrolers/Gerenciador.inc";
+    require "MVC\Models\Usuario.inc";
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,39 +35,46 @@
                 else {
                     $id = 0;
                 }
-
                 $perguntaAtual = $game->carregaPergunta($id);
                 if(isset($_POST["pontuacao"])) {
                     $game->pontuacao = $_POST["pontuacao"];
                 }
+                
+                // Inicializa a sessão
+                session_start();
+                if(isset($_POST["login"])) {
+                    $usuario = new Usuario($_POST["login"], $_POST["senha"], $_POST["user"], $_POST["email"]);
+                    $_SESSION["usuario"] = $usuario;
+                }
+                require "./MVC/Constrolers/logout.inc";
             ?>
 
             <?php           
                 // Se não está logado carrega a pagina de login
-                if((isset($_SESSION["login"]))) {
+                if(!(isset($_SESSION["usuario"]))) {
                     require "./login.php";
                 } 
                 // primeira pergunta ou acertou a anterior
                 else if($id == 0 || $game->buscaAlternativaCorreta($id - 1) == $_POST["resp"]) {
                     $game->pontuacao++;
-                    $nQuestao = $id+1;
                     $game->pontuacao = $id;
+
                     ?>
                         <!-- =============== -->
-                        <h2 class="pergunta--titulo">Questão <?= $nQuestao ?></h2>
+                        <h2 class="pergunta--titulo">Questão <?= $id+1 ?></h2>
                         <p class="pergunta--enunciado"><?= $perguntaAtual->enunciado ?></p>
                         
-                        <form action="index.php?id=<?= $nQuestao ?>" method="POST">
+                        <form action="index.php?id=<?= $id+1 ?>" method="POST">
                         <!-- =============== -->                        
                     <?php
                     foreach($perguntaAtual->alternativas as $alternativa){
                         ?>
-                            <!-- =============== -->                            
+                            <!-- =============== -->
                             <div class="alternativa">
                             <input type="radio" name="resp" value="<?= $alternativa->letra ?>" class = "input--alternativa">
                             <p class="non-selected"><?= $alternativa->letra ?>) <?= $alternativa->resposta ?></p>
                             </div>
-                            <!-- =============== -->                            
+                            <!-- =============== -->               
                         <?php
                     }
                     ?>
@@ -81,7 +91,15 @@
                         <!-- =============== -->
                             <h3 class="game_over">GAME OVER</h3>
                         <!-- =============== -->
+                        
                     <?php
+                    // ------------------------------------- TESTE -------------------------------------
+                    $teste = $_SESSION["usuario"];
+                    echo "login: $teste->login ";
+                    echo "senha: $teste->senha ";
+                    echo "user: $teste->user ";
+                    echo "email: $teste->email ";
+                    // ------------------------------------- TESTE -------------------------------------
                 }
 
             ?>
