@@ -16,9 +16,23 @@ require "questao.php";
     <div>
         <?php ?>
         <h1>Show do Bilhão</h1>
-        <form action="perguntas.php" method="get">
-            <input type="submit" value="Jogar">
-        </form>
+        <form method="POST" action="login.php">
+        <fieldset>
+            <p>
+                <label> Login </label>
+            </p>
+            <input type="text" name="login" id="login" value="">
+            <p>
+                <label> Senha </label>
+            </p>
+            <input type="password" name="senha" id="senha" value="">
+            <br>
+            <br>
+            <input type="submit" name="logar" value="Login">
+            <input type="submit" name="registrar" value="Resgistrar">
+
+        </fieldset>
+    </form>
         
     </div>
     
