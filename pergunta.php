@@ -47,16 +47,7 @@ $answer = $quest->getAnswer($questID); ?>
 
     <body>
         <?php include("Partials/menu.inc");?><br>
-        <h2><?=$question?></h2>
-        <form action="pergunta.php?id=<?=$questID+1?>" method="POST">
-        <?php for($i = 0; $i < 5; $i++){ ?>
-            <input type="radio" name="option" value="<?=$i?>" id="">
-            <label for="<?=$i?>"><?=$options[$i]?></label><br>
-        <?php } ?>
-            <input type="hidden" name="answer" value="<?=$answer?>">
-            <input type="submit" value="Mandar">
-        </form>
-
+        <?php include("Partials/pergunta.inc");?>
         <h2><a href="logout.php">Sair</a></h2>
         <?php if(isset($_COOKIE[$user->__getName()."last"])){
             echo "<h4>Seu último login foi em: ".$_COOKIE[$user->__getName()."last"]."</h4>";
