@@ -7,7 +7,7 @@
         var $alternativas;
         
         // Construtor
-        public function __construct($textoEnunciado, $textosAlternativas, $indexResposta) {
+        public function __construct($textoEnunciado, $textosAlternativas) {
             $this->enunciado = $textoEnunciado;
             $this->alternativas = [];
 
@@ -16,13 +16,10 @@
 
             foreach($textosAlternativas as $alternativa) {
                 // Adiciona pergunta na ultima posição do array
-                $this->alternativas[] = new Alternativa($letras[$contAlternativa], $textosAlternativas[$contAlternativa], false);
-
+                $this->alternativas[] = new Alternativa($letras[$contAlternativa], $alternativa["resposta"], $alternativa["ehCorreta"]);
+                
                 $contAlternativa++;
             }
-
-            // Define a alternativa certa de acordo com o index
-            $this->alternativas[$indexResposta]->ehCorreta = true;
         }
     }
 ?>

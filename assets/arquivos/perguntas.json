@@ -1,0 +1,131 @@
+[
+    {
+        "enunciado" : "primeiro enunciado",
+        "alternativas" :  
+        [ 
+            {
+            "resposta" : "alternativa a",
+            "ehCorreta" : true
+            },
+
+            {
+            "resposta" : "alternativa b",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa c",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa d",
+            "ehCorreta" : false
+        }
+    ]
+},
+
+{
+    "enunciado" : "segundo enunciado",
+    "alternativas" :  
+    [ 
+            {
+            "resposta" : "alternativa a",
+            "ehCorreta" : true
+            },
+
+            {
+            "resposta" : "alternativa b",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa c",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa d",
+            "ehCorreta" : false
+            }
+        ]
+    },
+
+    {
+        "enunciado" : "terceiro enunciado",
+        "alternativas" :  
+        [ 
+            {
+            "resposta" : "alternativa a",
+            "ehCorreta" : true
+            },
+
+            {
+            "resposta" : "alternativa b",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa c",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa d",
+            "ehCorreta" : false
+            }
+        ]
+    },
+
+    {
+        "enunciado" : "quarto enunciado",
+        "alternativas" :  
+        [ 
+            {
+            "resposta" : "alternativa a",
+            "ehCorreta" : true
+            },
+
+            {
+            "resposta" : "alternativa b",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa c",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa d",
+            "ehCorreta" : false
+            }
+        ]
+    },
+
+    {
+        "enunciado" : "quinto enunciado",
+        "alternativas" :  
+        [ 
+            {
+            "resposta" : "alternativa a",
+            "ehCorreta" : true
+            },
+
+            {
+            "resposta" : "alternativa b",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa c",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "alternativa d",
+            "ehCorreta" : false
+            }
+        ]
+    }
+]

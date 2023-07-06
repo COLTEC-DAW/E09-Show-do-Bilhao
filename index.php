@@ -1,7 +1,7 @@
 <!-- Importações -->
 <?php 
     require "MVC/Constrolers/Gerenciador.inc";
-    require "MVC\Models\Usuario.inc";
+    require "MVC/Models/Usuario.inc";
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,6 @@
     <main>
         <div class="pergunta">
             <?php
-                //Processamento
                 $game = new Gerenciador();
 
                 // Se id veio na requisição a variavel assume tal valor
@@ -43,8 +42,12 @@
                 // Inicializa a sessão
                 session_start();
                 if(isset($_POST["login"])) {
-                    $usuario = new Usuario($_POST["login"], $_POST["senha"], $_POST["user"], $_POST["email"]);
-                    $_SESSION["usuario"] = $usuario;
+                    // Verifica se o usuario existe
+                    if($game->autentica($_POST["login"], $_POST["senha"])) {
+                        $usuario = new Usuario($_POST["login"], $_POST["senha"], $_POST["user"], $_POST["email"]);
+                        $_SESSION["usuario"] = $usuario;
+                    }
+
                 }
                 require "./MVC/Constrolers/logout.inc";
             ?>
@@ -56,34 +59,7 @@
                 } 
                 // primeira pergunta ou acertou a anterior
                 else if($id == 0 || $game->buscaAlternativaCorreta($id - 1) == $_POST["resp"]) {
-                    $game->pontuacao++;
-                    $game->pontuacao = $id;
-
-                    ?>
-                        <!-- =============== -->
-                        <h2 class="pergunta--titulo">Questão <?= $id+1 ?></h2>
-                        <p class="pergunta--enunciado"><?= $perguntaAtual->enunciado ?></p>
-                        
-                        <form action="index.php?id=<?= $id+1 ?>" method="POST">
-                        <!-- =============== -->                        
-                    <?php
-                    foreach($perguntaAtual->alternativas as $alternativa){
-                        ?>
-                            <!-- =============== -->
-                            <div class="alternativa">
-                            <input type="radio" name="resp" value="<?= $alternativa->letra ?>" class = "input--alternativa">
-                            <p class="non-selected"><?= $alternativa->letra ?>) <?= $alternativa->resposta ?></p>
-                            </div>
-                            <!-- =============== -->               
-                        <?php
-                    }
-                    ?>
-                        <!-- =============== -->
-                        <input type="hidden" name="pontuacao" value="<?= $game->pontuacao?>">
-                        <input type="submit" value="Confirmar resposta" id="BotaoEnviar">
-                        </form>
-                        <!-- =============== -->
-                    <?php            
+                    require "./questao.php";
                 }
                 // se errou carrega pagina de gameover
                 else {
@@ -93,6 +69,8 @@
                         <!-- =============== -->
                         
                     <?php
+
+
                     // ------------------------------------- TESTE -------------------------------------
                     $teste = $_SESSION["usuario"];
                     echo "login: $teste->login ";
@@ -101,7 +79,6 @@
                     echo "email: $teste->email ";
                     // ------------------------------------- TESTE -------------------------------------
                 }
-
             ?>
 
         </div>
