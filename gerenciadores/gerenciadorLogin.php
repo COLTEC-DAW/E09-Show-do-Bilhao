@@ -19,4 +19,5 @@
         include "../inc/interface/login.inc";
     }
     
+    include "../inc/interface/rodape.inc"; 
 ?>

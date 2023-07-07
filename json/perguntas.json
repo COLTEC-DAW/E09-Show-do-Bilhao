@@ -21,7 +21,7 @@
     },
     {
         "pergunta" : "Quem compôs o Hino da Independência?",
-        "alternativas" : ["Dom Pedro I", "Manoel Bandeira", "Carlos Gomez", "alt4"],
+        "alternativas" : ["Dom Pedro I", "Manoel Bandeira", "Carlos Gomez", "Dom Pedro II"],
         "resposta" : "1"
     }
 ]
