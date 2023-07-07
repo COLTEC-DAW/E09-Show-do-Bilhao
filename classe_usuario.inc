@@ -26,11 +26,6 @@ class Gerenciador_de_Usuario
        $this->usuario = new Usuario($nome, $email, $login, $senha);
     }
 
-    public function __construct($textJSON)
-    {
-        $this->usuario	= json_decode($textJSON);
-    }
-
     public function obter_nome()
     {
 	    return $this->usuario->nome;
