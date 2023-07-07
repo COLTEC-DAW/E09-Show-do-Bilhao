@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>SHOW DO PILÃO</title>
+        <title>Show do Pilão</title>
         <link rel="stylesheet" href="Style/style.css">
         <link rel="shortcut icon" href="gallery/berti.jpg" type="image/x-icon">
     </head>
