@@ -5,6 +5,8 @@
         $usuarios =json_decode($usuariosJson);
         foreach($usuarios as $user){
             if($user->login== $loginUsuario && $user->senha==$senhaUsuario){
+                print_r($user->login);
+                print_r($user->senha);
                 return true;
             }
         }
