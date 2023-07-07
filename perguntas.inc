@@ -31,11 +31,11 @@
  //construindo as questões com posições fixas de 1 a 5 
 
     $perguntas = array(
-        1 => new questions("qual o tamanho do meu pau?", "A 15 cm", "B 22 cm", "C 5 cm", "D 6 cm", "A 15 cm"),
+        1 => new questions("qual o tamanho de um metro em centimetros?", "A 100 cm", "B 10 cm", "C 25 cm", "D 15 cm", "A 100 cm"),
         2 => new questions("qual o nome do presidente do Brasil?", "A) Fernando Henrique Cardoso"," B) Lula","C) Michal Temer","D) Bolsomito 2022"," B) Lula"),
         3 => new questions("qual o objeto que se bebe café?", "garrafa vodka", "copo", "xicara", "nas mãos", "xicara"),
         4 => new questions("qual é uma dupla sertaneja", "Ze neto e Cristiano", "Jose Beto e Luciano", "Heberto e Cristiano", "Mercelo e Juliano", "Ze neto e Cristiano"),
-        5 => new questions("qual o objeto que se bebe café?", "garrafa vodka", "bbb", "ccc", "ddd", "garrafa vodka")
+        5 => new questions("qual objeto usado para digitar", "lapis", "teclado", "garrafa vodka", " anel", "teclado")
     );
 
 function carregaPergunta($id,$perguntas) {    

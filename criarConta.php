@@ -8,22 +8,21 @@ session_start();
  }
 
 // Função para verificar se um usuário já existe, pega usuario e o arquivo com todos os usuarios, e ve um por um, compara o usuario com o argumento usuario do arquivo
-function usuarioExiste($usuario, $usuarios) {
+function usuarioExiste($usuario, $usuarios, $email, $nome) {
     foreach ($usuarios as $usuarioArmazenado) {
-        if ($usuario === $usuarioArmazenado['usuario']) {
+        if ($usuario === $usuarioArmazenado['usuario'] || $usuario === $usuarioArmazenado['email'] || $usuario === $usuarioArmazenado['nome']) {
             return true;
         }
     }
     return false;
 }
 
+require 'usuarios.inc';
 // Função para adicionar um novo usuário, pega o usuario difitado a senha e o arquivo de todos os usuarios. verifica o arquivo e ve se o usuario é igual a algum 
-function adicionarUsuario($usuario, $senha, $usuarios) {
-    $novoUsuario = array(
-        'usuario' => $usuario,
-        'senha' => $senha
-    );
-    $usuarios[] = $novoUsuario;
+function adicionarUsuario($usuario, $senha,$email,$nome, $usuarios) {
+    array_push($usuarios, new Usuario($usuario,$nome,$senha,$email));
+
+  
     return $usuarios;
 }
 
@@ -36,15 +35,17 @@ if (!file_exists('usuarios.json')) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($_POST['senha'])) {
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
 
     // le e armazena em usuarias existentes do arquivo JSON
     $usuarios = json_decode(file_get_contents('usuarios.json'), true)['usuarios'];
 
     // Verifica se o usuário já existe, se não existir adiciona um novo usuario, e substitui todo o arquivo json pelo novo 
-    if (usuarioExiste($usuario, $usuarios)) {
+    if (usuarioExiste($usuario, $usuarios,$email,$nome)) {
         $erroCriarConta = "Usuário já existe. Escolha outro nome de usuário.";
     } else {
-        $usuarios = adicionarUsuario($usuario, $senha, $usuarios);
+        $usuarios = adicionarUsuario($usuario, $senha, $email,$nome,$usuarios);
         // Salva os usuários no arquivo JSON
         file_put_contents('usuarios.json', json_encode(array('usuarios' => $usuarios)));
 
@@ -75,6 +76,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($
         <br>
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha" required>
+        <br>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <br>
+        <label for="email">email:</label>
+        <input type="email" name="email" id="email" required>
         <br>
         <input type="submit" value="Criar Conta">
     </form>
