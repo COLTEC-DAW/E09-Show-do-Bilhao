@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    font-family: 'Staatliches', cursive, sans-serif;
+    color: white;
+    text-align: center;
+    background-color: #0C1C26;
+    font-size: 30px;
+    margin-top: 10%;
+}
+
+input {
+    background-color: #0C1C26;
+    color: white;
+    box-shadow: 0 0 10px #8cc8df;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+}

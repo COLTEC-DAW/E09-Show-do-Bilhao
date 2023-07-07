@@ -1,0 +1,31 @@
+[
+    {
+        "text": "Qual o nome do homem-aranha principal do filme 'Homem-Aranha no Aranhaverso?'",
+        "alternatives" : ["Milly Kilometers", "Miles Morales", "Hobie Brown", "Peter Parker"],
+        "answer": 1
+    },
+
+    {
+        "text": "Em que ano foi lançado o album 'Flower Boy', de Tyler, the creator?",
+        "alternatives" : ["2000", "1994", "2017", "1976"],
+        "answer": 2
+    },
+
+    {
+        "text": "No jogo Minecraft, qual é o jeito mais fácil de conseguir uma colméia sem ser atacado pelas fofinhas abelhas?",
+        "alternatives" : ["Usando um machado com toque suave e alimentando as abelinhas com flores", "Usando uma picareta de diamante", "Pedindo com educação", "Colocando fogo nas abelhas"],
+        "answer": 0
+    },
+
+    {
+        "text": "Qual o nome do quarto hokage da vila da folha?",
+        "alternatives" : ["Kakashi Hatake", "Neji Hyuga", "Hashirama Senju", "Minato Namikaze"],
+        "answer": 3
+    },
+
+    {
+        "text": "Qual o nome do professor absolutamente insano que anda absurdamente rápido e abandona adolescentes no meio do mato em serras distantes?",
+        "alternatives" : ["João Paulino", "Zé Du", "Honda", "Eliezer"],
+        "answer": 2
+    }
+]
