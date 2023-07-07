@@ -1,10 +1,12 @@
 body {
     background-color: rgb(39, 115, 214);
+    overflow-y: hidden;
 }
 
 .pergunta {
     width: 60%;
-    margin: 20px auto;
+    margin: 5vh auto;
+    margin-bottom: 20vh;
     background-color: rgba(57, 57, 58, 0.5);
     text-align: center;
     border: 2px black solid;
@@ -12,9 +14,9 @@ body {
     padding: 30px;
 }
 
-.pergunta--titulo {
+.pergunta--titulo, .login--label {
     font-weight: 700;
-    font-size: 3em;
+    font-size: 2.5em;
     color: #ffee00;
 }
 
@@ -58,16 +60,18 @@ input[type="radio"] {
 
 .cabecalho {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .cabecalho--img {
     height: 70%;
-    margin: 10px auto;
+    margin: 10px 0;
 }
 
 /* Rodape */
 .rodape {
-    position: static;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -79,7 +83,7 @@ input[type="radio"] {
     font-weight: 600;
 }
 
-/* Game over */
+/* Game over e vencedor */
 .tela_final {
     color: #ffee00;
     font-size: 3em;
@@ -98,4 +102,56 @@ input[type="radio"] {
 
 .non-selected {
     user-select: none;
+}
+
+/* Pagina de login */
+.login {
+	width: 100%;
+}
+
+.login--input {
+	display: block;
+	margin: 35px auto;
+    border-radius: 30px;
+    border: solid 2px #ffee00;
+    background-color: rgba(2, 2, 56, 0.6);
+    font-size: 1.5em;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.login--botao, .botao--logout {
+    display: inline;
+    color: #FFFFFF;
+    width: 150px;
+    padding: 10px 0;
+    margin: 10px;
+    background-color: rgba(1, 1, 43, 09);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login--botao:hover, .botao--logout:hover {
+    background-color: #ffee00;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* ultimo jogador */
+.ultimo_jogador {
+    border: 1px solid #ffee00;
+    background-color: rgba(2, 2, 56, 0.6);
+    padding: 5px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+.ultimo_jogador h4, .ultimo_jogador p {
+    margin: 2px 0;
 }
