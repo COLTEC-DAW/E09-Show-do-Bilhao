@@ -10,5 +10,4 @@
             $this->answer = $answer;
         }    
     }
-
 ?>
