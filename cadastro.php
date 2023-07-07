@@ -26,23 +26,24 @@
         fseek($arquivo, 0, SEEK_SET);
         fwrite($arquivo, json_encode($lerArquivo));
         fclose($arquivo);
+        $_SESSION['Usuarios'] = new Usuarios($nome, $email, $login, $senha);
         $usuarioCriado = true;
     } else {
         echo "
-                <form action='index.php' method='POST'>
-                    <p> Usuario já existe. Realize o login. </p>
-                    <input type='submit' value='Voltar para pagina de login'>
+            <form action='index.php' method='POST'>
+                <p> Este usuário já existe. Realize o login. </p>
+                <input type='submit' value='Voltar para logar'>
                 </form>
             ";
     }
 
     if ($usuarioCriado) {
         echo "
-                <form action='perguntas.php' method='GET'>
-                    <p> Tudo Certo, podemos jogar! </p>
-                    <input type='submit' value='Jogar'>
-                    <input type='hidden' name='id' value='0'>
-                </form>
+            <form action='perguntas.php' method='GET'>
+                <p> Sucesso, vamos ao jogo :) </p>
+                <input type='submit' value='Jogar'>
+                <input type='hidden' name='id' value='0'>
+            </form>
             ";
     }
 

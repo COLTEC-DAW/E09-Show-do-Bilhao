@@ -9,7 +9,7 @@
     <body>
         <div>
             <h1>Você é o novo bilionário</h1>
-            <form action="logoff.php">
+            <form action="logout.php">
             <button type="submit">Logout</button>
             </form>
             <form method="get" action="perguntas.php">

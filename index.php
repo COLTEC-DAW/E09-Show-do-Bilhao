@@ -14,25 +14,24 @@ require "questao.php";
     <body>
 
     <div>
-        <?php ?>
-        <h1>Show do Bilhão</h1>
-        <form method="POST" action="login.php">
-        <fieldset>
-            <p>
-                <label> Login </label>
-            </p>
-            <input type="text" name="login" id="login" value="">
-            <p>
-                <label> Senha </label>
-            </p>
-            <input type="password" name="senha" id="senha" value="">
-            <br>
-            <br>
-            <input type="submit" name="logar" value="Login">
-            <input type="submit" name="registrar" value="Resgistrar">
+        <?php 
+        if (isset($_GET["$id"])) {
+               if ($_GET["$id"] == 1) {
+                   echo "<h3>Login ou senha incorretos</h3>";
+               }
+        }
+        else {
+            echo "<h1>Bem vindo ao Show do Bilhão</h1>";
+        }
+        ?>
 
-        </fieldset>
-    </form>
+        <form action="login.php" method="post">
+            Login <input type="text" name="login" id="login" ><br>
+            Senha <input type="password" name="senha" id="senha" ><br>
+            <input type="submit" name="logar" value="Entrar">
+            <input type="submit" name="registrar" value="Cadastrar">
+        </form>
+
         
     </div>
     

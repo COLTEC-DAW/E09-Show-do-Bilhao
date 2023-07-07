@@ -12,19 +12,6 @@
             $this->login = $login;
             $this->senha = $senha;
         }
-        public function GetNome() {
-            return $this->nome;
-        }
-        public function GetEmail() {
-            return $this->email;
-        }
-        public function GetLogin() {
-            return $this->login;
-        }
-        public function GetSenha() {
-            return $this->senha;
-        }
-
     }
 
 ?>

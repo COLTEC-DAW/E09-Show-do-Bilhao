@@ -1,3 +1,10 @@
+ <?php
+    // if (isset($_SESSION['Usuarios'])) {
+    //     header("Location: perguntas.php");
+    //     exit();
+    // }
+    ?> 
+
 <?php
 include("menu.inc");
 session_start();
@@ -13,39 +20,29 @@ if ($_POST['logar']) {
     login();
 }
 
-if ($_POST['logOut']) {
-    unset($_SESSION['Usuarios']);
-    header("Location: index.php");
-}
-
 function registrar()
 {
 
     echo "
-    <form method='POST' action='cadastro.php'>
-    
-        <fieldset>
-
-                <p>
-                    <label> Nome </label>
-                </p>
-                    <input type='text' name='nome' id='nome' value=''>
-                <p>
-                    <label> Email </label>
-                </p>
-                    <input type='email' name='email' id='email' value=''>
-                <p>
-                    <label> Login </label>
-                </p>
-                    <input type='text' name='login' id='login' value=''>
-                <p>
-                    <label> Senha </label>
-                </p>
-                <input type='password' name='senha' id='senha' value=''>
-                <input type='submit' name='registrar' value='Resgistrar'>
-
-        </fieldset>
-    </form>
+        <form method='POST' action='cadastro.php'>
+            <p>
+                <label> Nome </label>
+            </p>
+                <input type='text' name='nome' id='nome' value='' >
+            <p>
+                <label> Email </label>
+            </p>
+                <input type='email' name='email' id='email' value='' >
+            <p>
+                <label> Login </label>
+            </p>
+                <input type='text' name='login' id='login' value='' >
+            <p>
+                <label> Senha </label>
+            </p>
+            <input type='password' name='senha' id='senha' value='' >
+            <input type='submit' name='registrar' value='Resgistrar'>
+        </form>
     ";
 }
 

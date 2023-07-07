@@ -10,7 +10,7 @@
     $dadosJsonDecode = json_decode($dadosJson, true);
 
     if ($alternativas == $gabarito) {
-        $_SESSION['pontuacao']++;
+        $pontuacao = $_POST["id"];
         if (($id+1) == count($dadosJsonDecode)) {
             header("Location: zerou.php");
             //echo "<button><a href='./zerou.php'>Ir para tela de vitoria</a></button>";
