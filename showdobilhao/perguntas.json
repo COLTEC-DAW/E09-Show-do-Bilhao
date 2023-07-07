@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "Quantos anos o Thayrelan tem",
+        "alternativas": ["A) 15 anos", "B) 16 anos", "C) 14 anos", "D) 17 anos"],
+        "respostaCorreta": 3
+    },
+    {
+        "enunciado": "Bluepen é uma composição artistica feita por qual cantor",
+        "alternativas": ["A) Michael Jackson", "B) Pitty", "C) Tim Maia", "D) Emanuel Gomes"],
+        "respostaCorreta": 3
+    },
+    {
+        "enunciado": "Qual meu arco favorito em jojo bizarre adventure",
+        "alternativas": ["A) Stone Ocean", "B) Diamond is unbreakable", "C) Phantom blood", "D) Golden Wind"],
+        "respostaCorreta": 0
+    },
+    {
+        "enunciado": "Qualera o meu (thayrelan) jogo favorito quando criança",
+        "alternativas": ["A) Sly Cooper 3", "B) Ratchet and Clank", "C) GTA San Andreas", "D) God of War"],
+        "respostaCorreta": 0
+    },
+    {
+        "enunciado": "O que o zé felipe fez ao criticarem sua esposa",
+        "alternativas": ["A) Entrou com uma ação na justiça", "B) Fez um rap", "C) Fez uma thread no twitter", "D) Não fez nada"],
+        "respostaCorreta": 1
+    }
+]
