@@ -1,0 +1,24 @@
+.cc{
+    color: darkgoldenrod;
+    font-size: 30px;
+    align-self: center;
+}
+
+.i{
+    transition: 500ms;
+}
+.i:hover{
+    transform: scale(1.2);
+}
+
+a{
+    text-decoration: none;
+}
+
+.p{
+    color: white;
+    transition: 300ms;
+}
+.p:hover{
+    text-decoration: underline white;
+}

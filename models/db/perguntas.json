@@ -1,0 +1,52 @@
+[
+    {
+        "enunciado": "Qual foi a revolução que ocorreu na França em 1789?",
+        "alternativas": [
+            "Revolução Industrial",
+            "Revolução Gloriosa",
+            "Revolução Francesa",
+            "Revolução Americana"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual foi a principal causa da Revolução Industrial na Europa?",
+        "alternativas": [
+            "Descoberta de novas terras",
+            "Invenção da máquina a vapor",
+            "Unificação política",
+            "Expansão do comércio marítimo"
+        ],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Qual revolução resultou na independência de diversos países da América Latina?",
+        "alternativas": [
+            "Revolução Industrial",
+            "Revolução Cubana",
+            "Revolução Pernambucana",
+            "Revolução Haitiana"
+        ],
+        "resposta": 4
+    },
+    {
+        "enunciado": "Qual foi a revolução que ocorreu na Inglaterra no século XVII?",
+        "alternativas": [
+            "Revolução Industrial",
+            "Revolução Francesa",
+            "Revolução Gloriosa",
+            "Revolução Russa"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual foi a revolução que estabeleceu o socialismo na Rússia?",
+        "alternativas": [
+            "Revolução Industrial",
+            "Revolução Cubana",
+            "Revolução Russa",
+            "Revolução Pernambucana"
+        ],
+        "resposta": 3
+    }
+]
