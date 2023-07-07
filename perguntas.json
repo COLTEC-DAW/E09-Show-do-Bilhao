@@ -1,0 +1,31 @@
+[
+    {
+        "questoes": "Qual o nome completo da Beyoncé?'",
+        "opcoes" : ["Beyoncé Giselle Knowles", "Beyoncé Glaucia Knowles", "Beyoncé Giselle Knoles Carolline Almeida Marcelino", "Beyoncé Geane Knowles"],
+        "alternativacorreta": 0
+    },
+
+    {
+        "questoes": "Qual foi a primeira mulher a ganhar um GRAMMY?",
+        "opcoes" : ["Lauryn Hill com o grupo The Fugees ", "Cardi B", "Astrud Gilberto", "Anitta"],
+        "alternativacorreta": 2
+    },
+
+    {
+        "questoes": "Qual o primeiro filme brasileiro a ser ganhar ao Oscar?",
+        "opcoes" : ["É Fada", "Meu Pé de Laranja Lima", "Cidade de Deus", "Nenhum"],
+        "alternativacorreta": 3
+    },
+
+    {
+        "questoes": "Na 63 edição do GRAMMY de 2021 qual foi o artista vencedor da categoria artista revelação?",
+        "opcoes" : ["Jack Harlow", "Megan Thee Stallion", "Anitta", "Naruto Saske"],
+        "alternativacorreta": 1
+    },
+
+    {
+        "questoes": "Qual o nome do último album da pabllo Vittar",
+        "opcoes" : ["Batidão Tropical", "111", "Noitada", "Boiadeira"],
+        "alternativacorreta": 2
+    }
+]
