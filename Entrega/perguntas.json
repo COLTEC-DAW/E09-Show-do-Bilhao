@@ -6,7 +6,7 @@
     },
 
     {
-        "enunciado": "O que é Linux ?",
+        "enunciado": "O que é de fato Linux ?",
         "alternativas" : ["Kernel","Hardware Computacional" ,"Sistema Operacional", "Software Open Source"],
         "resposta": 0
     },
