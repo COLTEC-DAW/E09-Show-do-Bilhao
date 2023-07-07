@@ -1,4 +1,5 @@
-<?php include "./inc/perguntas.inc";
+<?php 
+include "./inc/perguntas.inc";
 
 if(!isset($_COOKIE["pontuacao"])){
     setcookie("pontuacao", 0);

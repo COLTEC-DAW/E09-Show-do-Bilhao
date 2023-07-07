@@ -1,9 +1,10 @@
 <?php
     function conferirLogin($loginUsuario, $senhaUsuario){
-        $arquivo = file_get_contents("./json/usuarios.json");
-        $usuarios= json_decode($arquivo);
+        $nomeArquivo = $_SERVER['DOCUMENT_ROOT'] . '/json/usuarios.json';
+        $usuariosJson= file_get_contents($nomeArquivo);
+        $usuarios =json_decode($usuariosJson);
         foreach($usuarios as $user){
-            if($user["login"]== $loginUsuario && $user["senha"]==$senhaUsuario){
+            if($user->login== $loginUsuario && $user->senha==$senhaUsuario){
                 return true;
             }
         }
@@ -25,11 +26,11 @@
     }
     
     function cadastroUsuario($nome, $email, $login, $senha){
-        $arquivo = fopen("./json/usuarios.json", "r+");
+        $nomeArquivo = $_SERVER['DOCUMENT_ROOT'] . '/json/usuarios.json';
+        $usuariosJson= file_get_contents($nomeArquivo);
+        $usuarios =json_decode($usuariosJson);
         $usuario = new Usuario($nome,$email,$login,$senha);
-        $info=json_encode($usuario);
-        fseek($arquivo, 0, SEEK_SET);
-        fwrite($arquivo, $info);
-        fclose($arquivo);
+        array_push($usuarios, $usuario);
+        file_put_contents($nomeArquivo, json_encode($usuarios));
     }
 ?>

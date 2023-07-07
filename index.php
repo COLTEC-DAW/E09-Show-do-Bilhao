@@ -10,16 +10,15 @@
 </head>
 <body>
     <?php 
+    session_start();
     include "./inc/interface/menu.inc"; 
-
         if(count($_GET)==0){
             $id=0;
         } else{
             $id= $_GET["id"]; 
         }
 
-        session_start();
-        if(isset($_SESSION["login"]) &&  isset($_SESSION["senha"])){ 
+        if(isset($_SESSION["login"])){ 
             require "./gerenciadores/perguntas.php";
         }else{
             include "./inc/interface/opcoesLogin.inc";
