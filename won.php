@@ -1,6 +1,3 @@
-<?php session_start();
-setcookie($_SESSION['user'] . "-max", 5); ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +17,7 @@ setcookie($_SESSION['user'] . "-max", 5); ?>
             <div>
                 <a href="pergunta.php">Restart</a>
             </div>
+            <h2><a href="logoutLostWon.php">Sair</a></h2>
             <?php include("Partials/rodape.inc");?>            
         </div>
     </body>
