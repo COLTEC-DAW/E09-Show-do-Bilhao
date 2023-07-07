@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-// Verifica se o jogador (na outra é usuario) já está autenticado, redireciona para a página de perguntas
-if (isset($_SESSION['jogador'])) {
-    header("Location: perguntas.php");
-    exit();
-}
+ //Verifica se o jogador (na outra é usuario) já está autenticado, redireciona para a página de perguntas
+    if (isset($_SESSION['usuario'])) {
+       header("Location: perguntas.php");
+     exit();
+ }
 
 // Função para verificar se um usuário já existe, pega usuario e o arquivo com todos os usuarios, e ve um por um, compara o usuario com o argumento usuario do arquivo
 function usuarioExiste($usuario, $usuarios) {
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($
         file_put_contents('usuarios.json', json_encode(array('usuarios' => $usuarios)));
 
        //cria a sessão jogador e fala que ela tem o nome do usario 
-        $_SESSION['jogador'] = $usuario;
+        $_SESSION['usuario'] = $usuario;
 
         // Redireciona para a página de perguntas mas como ela busca por usuario ela joga pro login 
         header("Location: perguntas.php");

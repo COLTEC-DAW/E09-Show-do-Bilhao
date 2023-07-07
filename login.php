@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario']) && isset($
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
 
-   //se as credenciais forem válidas (true), inicia a sessão com  o nome do usuario e manda para perguntas.php, saindo do resto do código
+   //se as credenciais forem válidas (true), inicia a sessão com  o nome do usuario e manda para perguntas.php, saindo do resto do código, cria uma sessao para armazenar a última pontuação
     if (verificarCredenciais($usuario, $senha)) {
         $_SESSION['usuario'] = $usuario; 
         header("location: perguntas.php");

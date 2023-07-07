@@ -23,16 +23,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $questaoAtual = $perguntas[$id]; //cria uma varia questão atual e coloca a questão armazenada na posição id
     if ($resposta === $questaoAtual->questaocerta) {
         $id = isset($_POST['id']) ? $_POST['id'] + 1 : $id + 1; //verifica se id existe (isset), se existir atualiza o id
-
         //se o id for menor que a quantidade de perguntas entra aqui e exibe a pergunta [id], se não ele exibe fim das perguntas
         if ($id <= count($perguntas)) {
             $pergunta_atual = $perguntas[$id];
         } else {
             $id = count($perguntas);
             header("location: venceu.php");
+            $usuarioc = $_SESSION['usuario']; 
+            // setcookie($usuarioc . "-lastTimePlayed", date('d-M-Y'));
+            // setcookie($usuarioc. "-lastPoints", $id);
+
         }
     } else { //se a resposta ta errada 
-        
+        $usuarioc = $_SESSION['usuario']; 
+        // setcookie($usuarioc . "-lastTimePlayed", date('d-M-Y'));
+        // setcookie($usuarioc. "-lastPoints", $id-1);
         header("location: perdeu.php");
        
         exit; // Termina o script para evitar a exibição do restante da página
@@ -81,6 +86,10 @@ if ($id <= count($perguntas)) {
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
         <a href="logout.php">Sair</a>
+        <p> ultima vez que voce jogou <?php $_COOKIE[ $_SESSION['usuario']."lastTimePlayed"]?> </p>
+   <p> Sua ultima pontuação <?php $_COOKIE[ $_SESSION['usuario']."lastPoints"]?> </p>
+    
+   
 
     <?php endif; ?>
 
