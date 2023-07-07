@@ -7,7 +7,7 @@ session_start();
 
 
 
-include "login.php";
+require "processing/login.php";
 
 if (!isset($_SESSION["autenticado"])) {
     
@@ -29,8 +29,8 @@ if (!isset($_SESSION["autenticado"])) {
 
 
             $_SESSION["autenticado"] = true;
-            $_SESSION["n_acertos"] = 0;
-            header("Location: perguntas.php?id=0"); 
+            setcookie("n_acertos", 0);
+            header("Location: /pages/perguntas.php?id=0"); 
 
         } else {
             $erroLogin = "Usuário ou senha inválidos.";
@@ -44,7 +44,8 @@ if (!isset($_SESSION["autenticado"])) {
    
     session_unset();
     session_destroy();
-    setcookie("n_acertos"); 
+    setcookie("n_acertos");
+    
     header("Location: index.php"); 
 }
 
@@ -61,12 +62,12 @@ if (!isset($_SESSION["autenticado"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Show dos Otakus</title>
 
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/style.css">
     </head>
 
     <body>
-        <?php include "menu.inc"?>
+        <?php include "templates/menu.inc"?>
 
         <main style="flex-direction:column">
             <h2>Login</h2>
@@ -86,22 +87,22 @@ if (!isset($_SESSION["autenticado"])) {
 
                 </form>
 
-                <a href="cadastro.php">Cadastre-se</a>
+                <a href="pages/cadastro.php">Cadastre-se</a>
             <?php } else { ?>
                 <p>Você está autenticado como <?php echo $_SESSION["usuario"]; ?></p>
                 <p>Última vez logado: <?php echo $_COOKIE["ultimo_acesso"]; ?></p>
                 <p>Última pontuação: <?php echo $_COOKIE["n_acertos"]; ?></p>
+
+                <?php setcookie('n_acertos'); ?>
                 
-                <a href="perguntas.php?id=0">Iniciar o jogo</a><br>
+                <a href="pages/perguntas.php?id=0">Iniciar o jogo</a><br>
                 <a href="?logout">Logout</a>
 
-
-                <?php setcookie("n_acertos");?>
             <?php } ?>
         
         </main>
 
-        <?php include "rodape.inc"?>
+        <?php include "templates/rodape.inc"?>
     </body>
 
 </html>

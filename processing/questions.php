@@ -18,7 +18,7 @@
 
     function carregaPergunta($id){
         
-        $perguntasJson = file_get_contents("perguntas.json");
+        $perguntasJson = file_get_contents("../data/perguntas.json");
         $perguntas = json_decode($perguntasJson, true);
 
         $pergunta = new Pergunta($perguntas[$id]["enunciado"], $perguntas[$id]["alternativas"], $perguntas[$id]["gabarito"]);
@@ -28,7 +28,7 @@
     }
 
     function retornaGabarito(){
-        $perguntasJson = file_get_contents("perguntas.json");
+        $perguntasJson = file_get_contents("../data/perguntas.json");
         $perguntas = json_decode($perguntasJson, true);
 
         $gabarito = [];

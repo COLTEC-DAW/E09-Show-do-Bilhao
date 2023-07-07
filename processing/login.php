@@ -19,7 +19,7 @@
 
     function cadastraAluno($nome, $email, $login, $senha){
 
-        $usersJson = file_get_contents("users.json");
+        $usersJson = file_get_contents("data/users.json");
         $users = json_decode($usersJson, true);
 
         $user = new User($nome, $email, $login, $senha);
@@ -31,14 +31,14 @@
         }
 
         $usersJson = json_encode($users, true);
-        file_put_contents("users.json", $usersJson);
+        file_put_contents("data/users.json", $usersJson);
 
         return true;
     }
 
 
     function autenticar($usuario, $senha) {
-        $usersJson = file_get_contents("users.json");
+        $usersJson = file_get_contents("data/users.json");
         $users = json_decode($usersJson, true);
 
         foreach($users as $u){

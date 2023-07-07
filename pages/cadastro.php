@@ -7,18 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Show dos Otakus</title>
 
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style/reset.css">
+        <link rel="stylesheet" href="../style/style.css">
     </head>
 
     <body>
-        <?php include "menu.inc"?>
+        <?php include "../templates/menu.inc"?>
 
         <main style="flex-direction:column">
             <h2>cadastro</h2>
           
             
-            <form method="post" action="index.php">
+            <form method="post" action="../index.php">
 
                 <label for="usuario">Nome:</label>
                 <input type="text" name="nome" required><br>
@@ -35,7 +35,7 @@
         
         </main>
 
-        <?php include "rodape.inc"?>
+        <?php include "../templates/rodape.inc"?>
     </body>
 
 </html>

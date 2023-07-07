@@ -1,5 +1,5 @@
 <?php
-require "perguntas.inc";
+require "../processing/questions.php";
 
 if(count($_GET) == 0){
     $id = 0;
@@ -35,7 +35,6 @@ if( !isset($_COOKIE["n_acertos"]) ){
 }
 
 setcookie("n_acertos", $nAcertos);
-$_SESSION["n_acertos"] = $nAcertos;
 
 ?>
 
@@ -49,26 +48,30 @@ $_SESSION["n_acertos"] = $nAcertos;
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pergunta <?php echo ($id + 1) ?> - Show dos Otakus</title>
 
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style/reset.css">
+        <link rel="stylesheet" href="../style/style.css">
     </head>
 
     <body>
-        <?php include "menu.inc"?>
+        <?php include "../templates/menu.inc"?>
 
         <?php 
         if($id != 0 && $resp_usuario != retornaGabarito()[$id-1]){
             
-            setcookie("ultimo_acesso", date("d/m/Y H:i:s"));
-            include "game-over.inc";
+            setcookie("ultimo_acesso", date("d/m/Y H:i:s"), 0 , "/");
+            include "../templates/game-over.inc";
+
+        }else if($id >= 5){
+
+            setcookie("ultimo_acesso", date("d/m/Y H:i:s"), 0 , "/");
+            include "../templates/winner.inc";  
 
         }else{
-
-            include "questoes.inc";
+            include "../templates/questoes.inc";
 
         } ?>
 
-        <?php include "rodape.inc"?>
+        <?php include "../templates/rodape.inc"?>
     </body>
 
 </html>
