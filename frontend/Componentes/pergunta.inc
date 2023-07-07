@@ -16,7 +16,7 @@
             </div>
             <h2><?php echo "$pergunta->enunciado"?></h2>
         </div>
-        <form action="/Pages/Perguntas.php" method="post" >
+        <form action="/frontend/Pages/Perguntas.php" method="post" >
             <div class="alternativas">
             <?php
         for($i=0;$i<count($pergunta->alternativas);$i++){

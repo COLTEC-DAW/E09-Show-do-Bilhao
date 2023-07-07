@@ -2,14 +2,11 @@
 <?php
 
 if (isset($_SESSION['user'])) {
-    require "../Models/Perguntas.inc";
-    require "../Models/UserCookie.inc";
+    require "../../backend/Models/Perguntas.inc";
+    require "../../backend/Models/UserCookie.inc";
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $imprimePergunta = false;
-        global $alternativas;
-        global $enunciados;
-        global $perguntas;
 
         $resposta =  htmlspecialchars($_POST["opcao"]);
         $perguntaPost = htmlspecialchars($_POST["pergunta"]);
@@ -19,7 +16,7 @@ if (isset($_SESSION['user'])) {
             $pontuacao++;
             if ($perguntaPost == sizeof($perguntas) - 1) {
                 $imprimePergunta=false;
-                criaUsuarioECookie($_SESSION["user"], date('d/m/Y h:i:s'), $pontuacao);
+                criaUsuarioECookie($_SESSION["user"]["login"], date('d/m/Y h:i:s'), $pontuacao);
                 require "../Pages/voceGanhou.php";
             } else {
                 $imprimePergunta=true;
@@ -39,7 +36,6 @@ if (isset($_SESSION['user'])) {
         $pergunta->carregaPerguntas($id, $perguntas);
     }
 } else {
-    require "../index.php";
+    require "../../index.php";
 }
-
 ?>

@@ -19,7 +19,7 @@ function adicionaSignUp(){
     $data = json_encode($usersArray, JSON_PRETTY_PRINT); 
 
     file_put_contents($nomeArquivo, $data);
-    require "../Pages/Login.php";
+    require "../../frontend/Pages/Login.php";
     }
 
     function confereLogin(){
@@ -46,9 +46,9 @@ function adicionaSignUp(){
         }
         
         if($autenticado){
-            require "../Pages/paginaInicial.php";
+            require "../../frontend/Pages/paginaInicial.php";
         }else{
-            require "../index.php";
+            require "../../index.php";
         }
     }
    

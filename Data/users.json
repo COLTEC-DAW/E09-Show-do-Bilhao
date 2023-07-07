@@ -36,27 +36,9 @@
         "email": "erick@bj.org"
     },
     {
-        "nome": "oi",
-        "login": "oioi",
-        "senha": "123",
-        "email": "oi@oi"
-    },
-    {
-        "nome": "alguem",
-        "login": "algm",
-        "senha": "1111",
-        "email": "alguem@alguem"
-    },
-    {
-        "nome": "teste",
-        "login": "tst",
-        "senha": "12345",
-        "email": "TT@TT"
-    },
-    {
-        "nome": "ola",
-        "login": "olaola",
+        "nome": "joao",
+        "login": "jemaf",
         "senha": "1234",
-        "email": "ola@ola"
+        "email": "joa@joao"
     }
 ]

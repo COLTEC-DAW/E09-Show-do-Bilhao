@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-require "../Controllers/usersController.php";
-require "../Controllers/perguntasController.php";
+require "../../backend/Controllers/perguntasController.php";
 
 if($imprimePergunta){
     require "../Componentes/menu.inc";

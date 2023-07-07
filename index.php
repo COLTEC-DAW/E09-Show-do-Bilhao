@@ -11,9 +11,9 @@
     <?php 
     session_start();
     if(isset($_SESSION['user'])){
-        require "Pages/paginaInicial.php";
+        require "frontend/Pages/paginaInicial.php";
     }else{
-        require "Pages/Login.php";
+        require "frontend/Pages/Login.php";
     }
     ?>
   
