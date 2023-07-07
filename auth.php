@@ -19,8 +19,6 @@ if($user == $t0->obter_login() && $t0->senha_correta($senha))
 else
     echo "Falha na autenticacao! Tente novamente.<br>\n";
 
-echo "<a href='index.php'>Pagina Inicial</a><br>\n";
-
 ?>
 
 <?php include 'rodape.inc'; ?>
