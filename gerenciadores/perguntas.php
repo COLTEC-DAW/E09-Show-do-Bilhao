@@ -12,9 +12,12 @@ $verificar= verificaPergunta($id, $resp_usuario);
 if($verificar == true && $id>4){ 
     setcookie("pontuacao");           
     include "./inc/result/vencedor.inc";
+    setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
 }elseif($verificar == true || $id==0){
     include "./inc/interface/form.inc";
-    setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
+    if($id!=0){
+        setcookie("pontuacao", $_COOKIE["pontuacao"]+1);
+    }
 }else{
     setcookie("pontuacao"); 
     include "./inc/result/gameover.inc";
