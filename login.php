@@ -12,12 +12,13 @@ if ($method === 'POST') {
         header('location: index.php');
     } else {
         ?>
-        <p style="foreground: red;">Dados inválidos, tente novamente.</p>
+        <p>Dados inválidos, tente novamente.</p>
 
         <?php
     }
 }
 ?>
+
 <html>
 
 <head>

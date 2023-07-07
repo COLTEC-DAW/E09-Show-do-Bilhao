@@ -26,7 +26,7 @@
         <a href="perguntas.php" class="botao-jogar">JOGAR</a>
         <?php
     } else {
-        echo "Se quiser jogar tem que logar.";
+        echo "Se quiser jogar tem que logar, zé ruela.";
     }
 
 

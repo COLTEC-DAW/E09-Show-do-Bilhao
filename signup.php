@@ -11,7 +11,7 @@ if ($method === 'POST') {
         header('location: index.php');
     } else {
         ?>
-        <p style="foreground: red;">Username ou email já foram utilizados.</p>
+        <p>Username ou email já foram utilizados.</p>
 
         <?php
     }
@@ -20,12 +20,12 @@ if ($method === 'POST') {
 <html>
 
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
-    <link rel="stylesheet" href="assets/css/menu.css">
-    <link rel="stylesheet" href="assets/css/signup.css">
-    <link rel="stylesheet" href="assets/css/rodape.css">
-    <title>Show do Bilhão</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+<link rel="stylesheet" href="assets/css/menu.css">
+<link rel="stylesheet" href="assets/css/signup.css">
+<link rel="stylesheet" href="assets/css/rodape.css">
+<title>Show do Bilhão</title>
 </head>
 
 <body>

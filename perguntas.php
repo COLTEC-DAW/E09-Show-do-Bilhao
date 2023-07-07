@@ -18,6 +18,7 @@ if (!isset($totalPerguntas)) {
     $totalPerguntas = Question::getCountPerguntas();
 }
 
+
 if (!isset($_COOKIE['numeroAcertos'])) {
     setcookie('numeroAcertos', 0);
     $numeroAcertos = 0;
@@ -26,10 +27,9 @@ if (!isset($_COOKIE['numeroAcertos'])) {
 }
 
 
-if(isset($_COOKIE['lastScore'])){
+if (isset($_COOKIE['lastScore'])) {
     $lastScore = $_COOKIE['lastScore'];
-}
-else{
+} else {
     $lastScore = 0;
     setcookie('lastScore', 0);
 }
@@ -44,8 +44,6 @@ if ($method == 'POST') {
         if ($_POST['alternativa'] + 1 === Question::carregaPergunta($questionId)->alternativa_correta) {
             $numeroAcertos++;
             setcookie('numeroAcertos', $numeroAcertos);
-
-            //Checa se o usuário já finalizou o quiz
             goToNextQuestion($questionId);
         } else {
             setcookie('lastScore', $numeroAcertos);
@@ -59,8 +57,6 @@ if ($method == 'POST') {
             $lastScore = $numeroAcertos;
             gameWin();
         }
-    } else {
-        $questionId = $_POST['questionId'];
     }
 } elseif ($method == 'GET') {
     if (isset($_GET['questionId'])) {
@@ -73,8 +69,6 @@ if ($method == 'POST') {
 
 
     }
-
-
 }
 
 ?>

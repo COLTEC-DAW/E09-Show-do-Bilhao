@@ -17,7 +17,6 @@
         </ul>
         <input type="hidden" id="questionId" name="questionId" value="<?php echo $questionId ?>">
         <button type="submit" class="check-button">Checar Resposta</button>
-        <button type="button" class="reset-button">Resetar</button>
         <p class="result-message"></p>
     </form>
 

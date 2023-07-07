@@ -22,5 +22,11 @@
         "username": "simone",
         "email": "simone@gmail.com",
         "password": "a"
+    },
+    {
+        "name": "maria",
+        "username": "maria",
+        "email": "maria@g.c",
+        "password": "maria"
     }
 ]

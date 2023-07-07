@@ -2,12 +2,6 @@
 
 class Question
 {
-    public static function genRandomQuestion()
-    {
-        $perguntas = (array) json_decode(file_get_contents(__DIR__ . "/../data/perguntas.json"));
-        $pergunta = (array) $perguntas[array_rand($perguntas, 1)];
-        return new Question($pergunta["enunciado"], $pergunta["alternativas"], $pergunta["resposta"]);
-    }
 
     public static function carregaPergunta($questionId)
     {
@@ -15,7 +9,8 @@ class Question
         return new Question($pergunta["enunciado"], $pergunta["alternativas"], $pergunta["resposta"]);
     }
 
-    public static function getCountPerguntas(){
+    public static function getCountPerguntas()
+    {
         $perguntas = (array) json_decode(file_get_contents(__DIR__ . "/../data/perguntas.json"));
         return sizeof($perguntas);
     }
@@ -35,7 +30,5 @@ class Question
         $this->alternativa_correta = $alternativa_correta;
     }
 }
-
-// echo json_encode(Question::carregaPergunta(4));
 
 ?>

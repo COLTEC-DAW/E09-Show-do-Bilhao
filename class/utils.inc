@@ -33,27 +33,12 @@ function goToNextQuestion($questionId)
     }
 }
 
-function resetScore()
-{
-    setcookie('numeroAcertos', 0);
-}
 
 
 function createUserSession($user)
 {
     $_SESSION['logado'] = json_encode($user);
 }
-
-
-function checkUserSession()
-{
-    if (isset($_SESSION['logado'])) {
-        return $_SESSION['logado'];
-    }else{
-        return false;
-    }
-}
-
 
 
 
