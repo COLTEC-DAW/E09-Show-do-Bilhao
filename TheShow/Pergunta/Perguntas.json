@@ -1,0 +1,52 @@
+[
+    {
+        "enunciado": "Qual é a menor unidade de medida de tempo?",
+        "alternativas": [
+            "Zeptosegundo",
+            "Microsegundo",
+            "Picosegundo",
+            "Nanosegundo"
+        ],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Quantos elementos quimicos existem na tabela periódica?",
+        "alternativas": [
+            "108",
+            "112",
+            "118",
+            "126"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Quando começou e terminou a primeira guera mundial?",
+        "alternativas": [
+            "1914 - 1918",
+            "1912 - 1915",
+            "1902 - 1908",
+            "1920 - 1930"
+        ],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Quantos noves tem de 0 a 100?",
+        "alternativas": [
+            "10",
+            "11",
+            "20",
+            "21"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual tipo de pedra foi usada na construção da estutua do Cristo Redentor?",
+        "alternativas": [
+            "Ardósia",
+            "Mármore",
+            "Granito",
+            "Pedra-Sabão"
+        ],
+        "resposta": 4
+    }
+]

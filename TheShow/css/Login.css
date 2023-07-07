@@ -1,0 +1,37 @@
+@font-face {
+    font-family: loginFont;
+    src: url(fontes/Mars\ Brands.ttf);
+}
+
+.LogarContainer{
+    height: 800px;
+}
+
+body{
+    font-family: loginFont;
+    background-color: rgb(123, 179, 192);
+}
+
+.loginBox{
+    padding: 6em;
+    padding-top: 8em;
+    padding-bottom: 8em;
+    border-radius: 0.5em;
+    border: solid black;
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+.formPage{
+    border: solid black;
+    border-radius: 1.2em;
+    border-width: 0.12em;
+    padding: 0.5em;
+}
+
+.theFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: aquamarine;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

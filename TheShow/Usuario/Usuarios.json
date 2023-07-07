@@ -1,0 +1,16 @@
+[
+    {
+        "login": "gaias",
+        "senha": "$2y$10$W9ugD5BT.Dqg4EFQbG.SvuhFsaT50XgVnHDuK75h64BRsNvSmwEZe",
+        "nome": "gabi",
+        "email": "a@g",
+        "recorde": 5
+    },
+    {
+        "login": "gabi",
+        "senha": "$2y$10$QA.tOmJdqhsc7qEo1Pg.TeQivZcdLBlJJ0u6UsiL1nNCGVE0BiFHC",
+        "nome": "Gabi Costa",
+        "email": "gabi@gmail",
+        "recorde": 0
+    }
+]
