@@ -28,10 +28,10 @@
 
         <?php 
             prepareScreen(); 
+            
             if($game->score == count($game->questions))
             {
-                //TODO: fazer uma tela de vitória
-                echo"<h1>Você chegou ao fim!</h1>";
+                include "./templates/winScreen.inc";
             }
             elseif($loseGame)
             {
@@ -43,8 +43,7 @@
             }
             else
             {
-                echo("<h1>Something went wrong!</h1>");
-                echo("<button><a href='index.php'>Go home</a></button>");
+                include "./templates/errorScreen.inc";
             }
             
 

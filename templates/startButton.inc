@@ -5,14 +5,15 @@
 
     <div class="start-body">
         <h4>Jogando como: <?= $user->username ?> </h4>
-        <?php
-            if(isset($_COOKIE[$user->login . '-lastScore'])){
-                echo "<p>Última pontuação: " . $_COOKIE[$user->login . "-lastScore"] . "</p>";
-            }
-            if(isset($_COOKIE[$user->login . "-lastTimePlayed"])){
-                echo "<p>Última vez que jogou: " . $_COOKIE[$user->login . "-lastTimePlayed"] . "</p>";
-            }
-        ?>
+
+        <?php if(isset($_COOKIE[$user->login . '-lastScore'])) : ?>
+            <p>Última pontuação: <?= $_COOKIE[$user->login . "-lastScore"] ?> </p>
+        <?php endif; ?>
+
+        <?php if(isset($_COOKIE[$user->login . "-lastTimePlayed"])): ?>
+            <p>Última vez que jogou: <?= $_COOKIE[$user->login . "-lastTimePlayed"] ?> </p>
+        <?php endif; ?>
+        
         <form action='./questions.php' method='post'>
             <input type='hidden' name='currentQuestionId' value='0'>
             <input type='hidden' name='PlayerScore' value='0'>
