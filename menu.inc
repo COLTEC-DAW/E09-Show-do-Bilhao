@@ -2,8 +2,8 @@
     
     function UnpackCookie()
     {
-        if(isset($_COOKIE["info"])){
-            $user = unserialize($_SESSION['user']);
+        $user = unserialize($_SESSION['user']);
+        if(isset($_COOKIE[$user->userName])){
             $valueCookie = explode(",", $_COOKIE[$user->userName]);
             return $valueCookie;
         }
@@ -17,7 +17,6 @@
                 SaveCookie($cookie[0]);
             }
             else{
-                SaveCookie(0);
             }
             unset($_SESSION['user']);
             ob_start();

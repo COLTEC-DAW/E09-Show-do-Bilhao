@@ -1,0 +1,59 @@
+html {
+    padding: 0 1% 0 1%;
+    width: 100%;
+    max-width: 1920px;
+    font-size: 16px;
+    margin-top: 5%;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #191919;
+    color: white;
+}
+
+
+footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1%;
+    background-color: #d8ccc0;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #d8ccc0;
+    padding: 1%;
+}
+
+input[type=submit] {
+    background-color: inherit;
+    border: none;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 16px;
+}
+input[type=text], input[type=password]{
+    margin: 5px;
+    font-size: 16px;
+}
+
+abbr, a {
+    color: red;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

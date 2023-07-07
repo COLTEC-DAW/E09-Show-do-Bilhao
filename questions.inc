@@ -52,13 +52,13 @@
         }
 
         function PrintEndGame(){
-            
+            echo "<h2>  Parabéns você ganhou!!!! </h2>";
             $this->PrintScore();
             echo "<a href='login.php'>voltar ao inicio</a>";
         }
 
         function PrintLoserScreen(){
-            echo "<h3>You loose the game</h3>";
+            echo "<h2>You loose the game</h2>";
             echo "<a href='login.php'>voltar ao inicio</a>";
         }
 
