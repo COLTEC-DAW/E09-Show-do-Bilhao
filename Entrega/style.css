@@ -1,0 +1,81 @@
+*
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color:#ffffff;
+    background-color: rgb(43, 43, 43);
+}
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.content
+{
+    max-width: 500px;
+    margin: auto;
+}
+
+.content > h1, .acabou-bem, .acabou-mal
+{
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+    border-radius: 15px;
+    text-align: left;
+    padding: 40px;
+    margin-top: -20px;
+}
+.content > h1 { text-decoration-color: tomato;}
+.acabou-bem { text-decoration-color: rgb(95, 255, 71);}
+.acabou-mal { text-decoration-color: rgb(255, 71, 120);}
+
+.enunciado-questao 
+{
+    display: inline-block;
+    font-weight: bold;
+
+    padding: 7px 12px 7px 12px;
+
+    color:rgb(43, 43, 43);
+    background-color: #ffffff;
+}
+
+.opcoes
+{
+    text-align: left;
+}
+
+.to_be_continue, .reiniciar
+{
+    margin: 10px;
+    padding: 10px;
+    padding-left: 320px;
+
+    border: none;
+    outline: none;
+    font-weight: bold;
+
+    text-decoration: underline;
+    text-decoration-thickness: 7px;
+
+    background-color: rgb(43, 43, 43);
+    text-decoration-color: rgb(237, 230, 100);
+}
+
+input[type='radio'] {
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  border: 3px solid white;
+  width: 10px;
+  height: 10px;
+  margin: 15px 10px 0px 10px; 
+}
+
+input[type='radio']:checked {
+  background: #333;
+}

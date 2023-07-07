@@ -1,0 +1,31 @@
+[
+    {
+        "enunciado": "\"de perto ninguém é normal\" essa frase é de:",
+        "alternativas" : ["Raul Seixas", "Caetano Veloso", "Renato Russo", "Maria Bethânia"],
+        "resposta": 1
+    },
+
+    {
+        "enunciado": "O que é Linux ?",
+        "alternativas" : ["Kernel","Hardware Computacional" ,"Sistema Operacional", "Software Open Source"],
+        "resposta": 0
+    },
+
+    {
+        "enunciado": "Qual desses eventos não é próprio do COLTEC ?",
+        "alternativas" : ["Senta&Toca", "Na Tora", "Torneio Início", "Coltrekking"],
+        "resposta": 1
+    },
+
+    {
+        "enunciado": "O estado brasileiro com o maior número de municípios é:",
+        "alternativas" : ["Minas Gerais", "São Pauto", "Amazonas", "Sergipe"],
+        "resposta": 0
+    },
+
+    {
+        "enunciado": "Qual desses não é um aluno da turma 303 de 2023 do COLTEC:",
+        "alternativas" : ["Marceneiro", "Zichampignon", "Bongo", "Coach"],
+        "resposta": 1
+    }
+]
