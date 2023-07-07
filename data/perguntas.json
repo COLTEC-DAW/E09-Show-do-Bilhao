@@ -1,12 +1,22 @@
 [
     {
-        "pergunta": "Qual o principal apelido do Raphael",
+        "pergunta": "Qual o principal apelido do Raphael?",
         "alternativas": ["PH", "Rapha", "Sertanejo", "Coach"],
         "resposta": "3"
     },
     {
-        "pergunta": "Qual o sobrenome do Raphael",
-        "alternativas": ["Santos", "Augusto", "Henrique", "Coute"],
+        "pergunta": "Qual o maior campeao da Copa do Brasil?",
+        "alternativas": ["Flamengo", "Palmeiras", "Cruzeiro", "Gremio"],
+        "resposta": "2"
+    },
+    {
+        "pergunta": "Qual a idade do Raphael?",
+        "alternativas": ["17 anos", "18i anos", "19 anos", "(38-20) anos"],
+        "resposta": "3"
+    },
+    {
+        "pergunta": "Qual perda saiu mais caro para o Cruzeiro na era Ronaldo?",
+        "alternativas": ["Edu", "Fabio", "Vitor Roque", "Zé Ivaldo"],
         "resposta": "2"
     }
 ]

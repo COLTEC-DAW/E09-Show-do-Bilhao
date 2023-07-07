@@ -1,0 +1,11 @@
+// Anotacoes so para eu lembrar de corrigir algumas coisas no meu codigo posteriormente à correção;
+
+
+- Organizar meu codigo melhor dps da correção;
+- Remover echos;
+- Criar algo para tirar o peso q to dando pro meu index;
+- Personalizar class;
+- Resolver bug do menu fixo no topo;
+- Outros...
+
+-> Raphael Henrique, 07/07/2023, 13:40 hrs, COLTEC.
