@@ -1,0 +1,46 @@
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(90vh - 60px); 
+}
+
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    display: inline-block;
+    padding: 18px 20px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: darkgoldenrod;
+    color: #05060a;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button a {
+    color: #05060a;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: goldenrod;
+}

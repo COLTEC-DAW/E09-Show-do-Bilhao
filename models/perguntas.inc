@@ -2,13 +2,13 @@
     class Perguntas{
         public $enunciado;
         public $alternativas;
-        public $alternativa_correta;
-
-        function __construct($enunciado, $alternativas, $alternativa_correta)
+        public $resposta;
+        
+        function __construct($enunciado, $alternativas, $resposta)
         {
             $this->enunciado = $enunciado;
             $this->alternativas = $alternativas;
-            $this->alternativa_correta = $alternativa_correta;
+            $this->resposta = $resposta;
         }
 
         public static function carregaPergunta($id)

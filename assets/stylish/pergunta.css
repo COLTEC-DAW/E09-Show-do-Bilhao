@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    margin: auto;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.container ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding-left: 0;
+    list-style: none;
+    margin-top: 20  px;
+}
+
+.container ul li {
+    display: flex;
+    background-color: goldenrod;
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center; /* Adicionado para centralizar verticalmente o radio button e a label */
+}
+
+.container ul li input[type="radio"] {
+    margin-right: 10px;
+}
+
+.container .check-button {
+    margin-top: 15px;
+}
+
+button[type="submit"] {
+    width: 70%;
+    padding: 16px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: darkgoldenrod;
+    color: #05060a;
+    cursor: pointer;
+}
+
+
+
+
+.err{
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+    text-align: center;
+    background: rgba(12, 12, 12, 0.5); 
+    color: white; 
+    display: block; 
+    margin:  24%; 
+    margin-top: 35.46%;
+    padding: 10px; 
+    font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
+}

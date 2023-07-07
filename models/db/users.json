@@ -1,20 +1,20 @@
 [
     {
-        "name": "carlinhos maia",
-        "nickname": "carlostxt",
-        "email": "carlin@hotmail.com",
-        "password": "123"
-    },
-    {
-        "name": "rafaelrat",
-        "nickname": "rafapo",
-        "email": "rafinha@hotmail.com",
-        "password": "789"
-    },
-    {
         "name": "bernardu",
         "nickname": "alvinn",
         "email": "alvim@bol.com.br",
         "password": "1"
+    },
+    {
+        "name": "macacoplays23",
+        "nickname": "reidelas",
+        "email": "freefireking@gmail.com",
+        "password": "eusougay"
+    },
+    {
+        "name": "joao",
+        "nickname": "jemaf",
+        "email": "joao@gmail.com",
+        "password": "123"
     }
 ]
