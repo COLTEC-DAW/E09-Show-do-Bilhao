@@ -1,0 +1,25 @@
+[
+    {
+        "enunciado": "Qual é o nome da filha Beyoncé?'",
+        "alternativas" : ["North West", "Blue Ivy", "Stormi Wolf", "Bruna Cavalcanti"],
+        "resposta": 1
+    },
+
+    {
+        "enunciado": "Quem é a rainha do sertanejo?",
+        "alternativas" : ["Marilia Mendonça", "Mari Fernandes", "Nayara Azevedo", "Humberto Honda"],
+        "resposta": 0
+    },
+
+    {
+        "enunciado": "Quem é o rei da comédia em Hollywood?",
+        "alternativas" : ["João Pessoa", "Michael Jackson", "Tiririca", "Adam Sandler"],
+        "resposta": 3
+    },
+
+    {
+        "enunciado": "Quantos netos Kris Jenner tem?",
+        "alternativas" : ["4", "13", "12", "8"],
+        "resposta": 2
+    }
+]

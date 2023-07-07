@@ -1,0 +1,104 @@
+body {
+  background-color: #5085cb;
+  color: aliceblue;
+  font-family: Trebuchet MS;
+  text-align: center;
+}
+
+div.bloco-login {
+  background-color: #3b67a1;
+  height: auto;
+  display: block;
+  margin-top: 90px;
+  margin-left: 320px;
+  margin-right: 320px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px #294d7b;
+  border: solid 6px #3b67a1;
+}
+
+div.primeira-parte {
+  background-color: #3b67a1;
+  height: auto;
+  display: block;
+  margin-top: 90px;
+  margin-left: 320px;
+  margin-right: 320px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px #294d7b;
+  border: solid 7px #3b67a1;
+}
+
+img {
+  max-width: 35%;
+  width: auto;
+  height: auto;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+input.iniciar {
+  font-family: Trebuchet MS;
+  font-size: 18px;
+  text-shadow: 0.1em 0.1em 0.2em #3cb9b7;
+
+  border-radius: 10px;
+  background-color: #3b67a1;
+  color: #ffffff;
+}
+
+input.iniciar:hover {
+  background-color: #335178;
+}
+
+button.jogar {
+  font-family: Trebuchet MS;
+  font-size: 18px;
+  text-shadow: 0.1em 0.1em 0.2em #3cb9b7;
+
+  border-radius: 10px;
+  background-color: #3b67a1;
+  color: #ffffff;
+}
+
+button.jogar.hover {
+  background-color: #335178;
+}
+
+div.ItensLogin {
+  font-size: 20px;
+  text-shadow: 0.1em 0.1em 0.2em #3cb9b7;
+  color: #ffffff;
+}
+
+input {
+  color: rgb(11, 34, 54);
+  font-size: 20px;
+}
+
+div.pergunta {
+  background-color: #3b67a1;
+  box-shadow: 0px 5px 15px #294d7b;
+
+  height: auto;
+  display: block;
+  margin-top: 90px;
+  margin-left: 320px;
+  margin-right: 320px;
+  border: solid 6px #3b67a1;
+
+  font-size: 20px;
+  text-shadow: 0.1em 0.1em 0.2em #3cb9b7;
+  color: #ffffff;
+}
+
+h1.msgGanhador {
+  font-size: 30px;
+  text-shadow: 0.1em 0.1em 0.2em #3cb9b7;
+}
+
+h2.msg {
+  font-size: 20px;
+}
