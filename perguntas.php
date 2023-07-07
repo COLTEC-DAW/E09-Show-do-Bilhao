@@ -1,18 +1,36 @@
 <?php
 session_start();
-?>
-<!-- após a seção ser iniciada, confere se o usuario existe, se ele não existir vai para a página login.php e fecha esse esse script
-<?php
+
 if (!isset($_SESSION['usuario'])) {
-   
     header("Location: login.php");
+    exit();
+}
+
+require 'perguntas.inc';
+
+$perguntas = array();
+
+// Lê as perguntas do arquivo JSON
+$perguntasJSON = file_get_contents('perguntas.json');
+$perguntasArray = json_decode($perguntasJSON, true);
+
+if (isset($perguntasArray['perguntas'])) {
+    foreach ($perguntasArray['perguntas'] as $pergunta) {
+        $enunciado = $pergunta['enunciado'];
+        $alternativas = $pergunta['alternativas'];
+        $respostaCorreta = $pergunta['respostaCorreta'];
+
+        $perguntas[] = new questions($enunciado, $alternativas['1'], $alternativas['2'], $alternativas['3'], $alternativas['4'], $respostaCorreta);
+    }
+} else {
+    header("Location: erro.php");
     exit();
 }
 ?>
 
+
 <?php
-//não roda o codigo caso perguntas.inc não exista 
-require 'perguntas.inc';
+
 
 //verifica se o metodo de requisição e post (uma resposta foi enviada) se a pergunta so for carregada o metodo é o get  _Server é uma variavel global que funciona no servidor, ela pega coisas uteis como o metodo de requisição e outras informações como url 
 
@@ -21,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resposta = $_POST['resposta'];
     $id = $_POST['id'];
     $questaoAtual = $perguntas[$id]; //cria uma varia questão atual e coloca a questão armazenada na posição id
+
     if ($resposta === $questaoAtual->questaocerta) {
         $id = isset($_POST['id']) ? $_POST['id'] + 1 : $id + 1; //verifica se id existe (isset), se existir atualiza o id
         //se o id for menor que a quantidade de perguntas entra aqui e exibe a pergunta [id], se não ele exibe fim das perguntas
@@ -30,14 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = count($perguntas);
             header("location: venceu.php");
             $usuarioc = $_SESSION['usuario']; 
-            // setcookie($usuarioc . "-lastTimePlayed", date('d-M-Y'));
-            // setcookie($usuarioc. "-lastPoints", $id);
+             setcookie($usuarioc . "-lastTimePlayed", date('d/M/Y h:i:s'));
+             setcookie($usuarioc . "-lastPoints", $id);
 
         }
     } else { //se a resposta ta errada 
         $usuarioc = $_SESSION['usuario']; 
-        // setcookie($usuarioc . "-lastTimePlayed", date('d-M-Y'));
-        // setcookie($usuarioc. "-lastPoints", $id-1);
+        setcookie($usuarioc . "-lastTimePlayed", date('d/M/Y h:i:s'));
+        setcookie($usuarioc . "-lastPoints", $id-1);
         header("location: perdeu.php");
        
         exit; // Termina o script para evitar a exibição do restante da página
@@ -86,8 +105,8 @@ if ($id <= count($perguntas)) {
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
         <a href="logout.php">Sair</a>
-        <p> ultima vez que voce jogou <?php $_COOKIE[ $_SESSION['usuario']."lastTimePlayed"]?> </p>
-   <p> Sua ultima pontuação <?php $_COOKIE[ $_SESSION['usuario']."lastPoints"]?> </p>
+        <?php echo "<p> ultima vez que voce jogou " . $_COOKIE[ $_SESSION['usuario'] . "-lastTimePlayed"] . "</p>" ?>
+        <?php echo " <p> Sua ultima pontuação " . $_COOKIE[ $_SESSION['usuario'] . "-lastPoints"] . "</p>" ?>
     
    
 

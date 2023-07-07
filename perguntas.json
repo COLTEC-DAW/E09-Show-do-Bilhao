@@ -1,0 +1,55 @@
+{
+    "perguntas": [
+      {
+        "enunciado": "qual o tamanho de um metro em centimetros?",
+        "alternativas": {
+          "1": "A 100 cm",
+          "2": "B 10 cm",
+          "3": "C 25 cm",
+          "4": "D 15 cm"
+        },
+        "respostaCorreta": "A 100 cm"
+      },
+      {
+        "enunciado": "qual o nome do presidente do Brasil?",
+        "alternativas": {
+          "1": "A) Fernando Henrique Cardoso",
+          "2": "B) Lula",
+          "3": "C) Michal Temer",
+          "4": "D) Bolsomito 2022"
+        },
+        "respostaCorreta": "B) Lula"
+      },
+      {
+        "enunciado": "qual o objeto que se bebe café?",
+        "alternativas": {
+          "1": "A) garrafa vodka",
+          "2": "B) copo",
+          "3": "C) xicara",
+          "4": "D) nas mãos"
+        },
+        "respostaCorreta": "C) xicara"
+      },
+      {
+        "enunciado": "qual é uma dupla sertaneja",
+        "alternativas": {
+          "1": "A) Ze neto e Cristiano",
+          "2": "B) Jose Beto e Luciano",
+          "3": "C) Heberto e Cristiano",
+          "4": "D) Mercelo e Juliano"
+        },
+        "respostaCorreta": "A) Ze neto e Cristiano"
+      },
+      {
+        "enunciado": "qual objeto usado para digitar",
+        "alternativas": {
+          "1": "A) lapis",
+          "2": "B) teclado",
+          "3": "C) garrafa vodka",
+          "4": "D) anel"
+        },
+        "respostaCorreta": "B) teclado"
+      }
+    ]
+  }
+  
