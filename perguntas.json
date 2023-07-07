@@ -1,27 +1,27 @@
 [
     {
-        "pergunta":"Quanto é 1+1",
-        "alternativas":["1","3","2","4"],
+        "pergunta":"Qual o mais bonito da 303",
+        "alternativas":["Waltin","TM7","Inaue","Prates"],
         "resposta":2
     },
     {
-        "pergunta":"Quanto é 1+2",
-        "alternativas":["1","3","2","4"],
+        "pergunta":"Quem tem o maior bigode da 303",
+        "alternativas":["TM7","Zinca","Inaue","KaiocomK"],
         "resposta":1
     },
     {
-        "pergunta":"Quanto é 1+3",
-        "alternativas":["1","3","2","4"],
+        "pergunta":"Quem mais vem a aula (frequencia)",
+        "alternativas":["KaiocomK","Prates","BernardocomB","Thaileran"],
         "resposta":3
     },
     {
-        "pergunta":"Quanto é 5-2",
-        "alternativas":["1","3","2","4"],
+        "pergunta":"Quem usa o tal do chimas",
+        "alternativas":["Sophis.pvd","Smola","Igu","BUtão"],
         "resposta":1
     },
     {
-        "pergunta":"Quanto é 3-2",
-        "alternativas":["1","3","2","4"],
+        "pergunta":"Quanto é 3-2 segundo a Maze",
+        "alternativas":["lim-1","1","2","4"],
         "resposta":0
     }
 ]

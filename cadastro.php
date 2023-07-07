@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h1>Bem vindo ao Show do Bilhão</h1>
+    <h1>Welcome to TM's Billion</h1>
     <h3>Cadastro</h3>
 
     <div>

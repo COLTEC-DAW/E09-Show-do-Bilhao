@@ -37,7 +37,7 @@
 
     ?>
 
-    <h1>Bem vindo ao Show do Bilhão</h1>
+    <h1>Welcome to TM's Billion</h1>
     <h3><?= $texto ?></h3>
 
     

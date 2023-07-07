@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="jogo_bilhao.css">
     <title>Document</title>
 </head>
 <body>
@@ -21,7 +20,7 @@
 
         if($resposta != $respostaCerta){
             setcookie("ultima_pontuacao", $pontuacao);
-            header("Location: fimJogo.php");
+            header("Location: gameover.php");
 
         }
 
@@ -38,17 +37,13 @@
         $dados = carregaQuestao($numPergunta, "perguntas.json");
         $_SESSION["resposta"] = $dados->resposta;
         $nome = $_SESSION["nome"];
-
         ?>
         
-        <h1>Show do Bilhão</h1>
-
+        <h1>TM's Billion</h1>
         <h3><?= $dados->pergunta?></h3>
-
         <div>
             <div>
             <div>
-
                 <div>
 
                 <form action="proximaPagina.php" method="POST">
@@ -61,10 +56,7 @@
                 <button type="submit">ENVIAR</button>
             
                 </div>
-            
                 </form>
-            </div>
-            <div>
                 <div>
 
                     <h5>Olá <?= $nome?></h5><br>
@@ -79,7 +71,6 @@
             </div>
             </div>
         </div>
-
-    
+ 
 </body>
 </html>

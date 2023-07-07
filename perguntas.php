@@ -1,23 +1,22 @@
 <?php 
+    $perguntas = [
 
-$perguntas = [
-
-    "Quanto é 1+1",
-    "Quanto é 1+2",
-    "Quanto é 1+3",
-    "Quanto é 5-2",
-    "Quanto é 3-2"
+    "Qual o mais bonito da 303",
+    "Quem tem o maior bigode da 303",
+    "Quem mais vem a aula (frequencia)",
+    "Quem usa o tal do chimas",
+    "Quanto é 3-2 segundo a Maze"
         
-];
-$alternativas = [
+    ];
+    $alternativas = [
 
-    ["1","3","2","4"],
-    ["1","3","2","4"],
-    ["1","3","2","4"],
-    ["1","3","2","4"],
-    ["1","3","2","4"]
+    ["Waltin","TM7","Inaue","Prates"],
+    ["TM7","Zinca","Inaue","KaiocomK"],
+    ["KaiocomK","Prates","BernardocomB","Thaileran"],
+    ["Sophis.pvd","Smola","Igu","Butão"],
+    ["lim -1","1","2","4"],
 
-];
-$respostas = [2,1,3,1,0];
+    ];
+    $respostas = [2,1,3,1,0];
 
 ?>

@@ -12,7 +12,7 @@
 <h1> Login ou Email já cadastrado </h1>
 
 <br><br>
-<a href="login.php"><button type="button" >Cadastro</button></a>
+<button type="button" ><a href="login.php">Cadastro</button></a>
 
 </body>
 </html>

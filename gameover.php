@@ -11,15 +11,12 @@
     
 <?php
 
-session_start();
-session_destroy();
-
 ?>   
 
-<h1> Perdestes </h1>
+<h1> Loser meu fih </h1>
 
 <br><br>
-<a href="login.php"><button type="button">Menu principal</button></a>
+<a href="./jogo_bilhao.php"><button type="button">Restart</button></a>
 
 </body>
 </html>

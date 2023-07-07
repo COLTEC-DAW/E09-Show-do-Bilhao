@@ -1,6 +1,6 @@
 <?php 
     
-    require "questao.php";
+    require_once "questao.php";
 
     function carregaQuestao($num_pergunta, $arquivoEndereco){
 
