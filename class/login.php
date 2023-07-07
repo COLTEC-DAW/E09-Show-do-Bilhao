@@ -20,7 +20,6 @@
                     $_SESSION['user'] = $this->username;
                     setcookie($username."pont", date('d/m H:i'), time() + 86400);
                     header("Location: pergunta.php");
-                    return $this->message = "Sucesso!";
                 }
             }
         }

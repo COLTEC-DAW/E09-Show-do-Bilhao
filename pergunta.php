@@ -23,12 +23,10 @@ if(isset($_POST['answer'])){
         $user->__setLast();
         $user->zeraPont();
         header("Location: lost.php");
-        exit();
     }else if($questID == 5 && $prevAnswer == $prevOption){
         $user->__setLast();
         $user->zeraPont();
         header("Location: won.php");
-        exit();
     }
 }
 
@@ -43,18 +41,19 @@ $answer = $quest->getAnswer($questID); ?>
         <meta charset="utf-8">
         <title>Show do Pilão</title>
         <link rel="stylesheet" href="Style/style.css">
+        <link rel="shortcut icon" href="gallery/berti.jpg" type="image/x-icon">
     </head>
 
     <body>
         <?php include("Partials/menu.inc");?><br>
         <?php include("Partials/pergunta.inc");?>
         <h2><a href="logout.php">Sair</a></h2>
-        <?php if(isset($_COOKIE[$user->__getName()."last"])){
-            echo "<h4>Seu último login foi em: ".$_COOKIE[$user->__getName()."last"]."</h4>";
-        }
-        if(isset($_COOKIE[$user->__getName()."pont"])){
-            echo "<h4>Sua última pontuação foi: ".$_COOKIE[$user->__getName()."pont"]."</h4>";
-        }?>
+        <?php if(isset($_COOKIE[$user->__getName()."last"])){ ?>
+            <h4>Seu último login foi em: <?=$_COOKIE[$user->__getName()."last"]?></h4>
+        <?php } ?>
+        <?php if(isset($_COOKIE[$user->__getName()."pont"])){ ?>
+            <h4>Sua última pontuação foi: <?=$_COOKIE[$user->__getName()."pont"]?></h4>
+        <?php } ?>
         <?php include("Partials/rodape.inc");?>
     </body>
 </html>

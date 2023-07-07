@@ -6,16 +6,15 @@ body{
 }
 
 h1{
-    font-weight: 900;
+    font-weight: 450;
     font-size: 40px;
-    padding: 0;
-    margin: 0;
     color:midnightblue;
+    font-family: 'Lobster', cursive;
 }
 
 ul{
     background: crimson;
-    padding:2% 2% 3% 2%;
+    padding:2% 2% 1% 2%;
     border-radius: 5px;
     box-shadow:10px 10px black;
     list-style-type: none;
@@ -26,36 +25,65 @@ li{
     padding-bottom: 2px;
 }
 
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover{
+    text-decoration: underline;
+}
+
+li a:visited{
+    color: black;
+}
+
+.indexList li{
+    font-size: 30px;
+    padding-bottom: 0.5%;
+}
+
 form{
     background: crimson;
-    padding:2% 2% 3% 2%;
+    padding:2% 2% 1% 2%;
     border-radius: 5px;
     box-shadow:10px 10px black;
     font-size: 20px;
     font-weight: 450;
 }
 
-#loginBtn{
+form div{
+    padding-bottom: 1%;
+}
+
+.button, button{
     font-weight: 450;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.button:hover, button:hover{
+    background-color: rgb(145, 140, 140);
+    text-decoration: underline;
+}
+
+.blue{
+    max-height: 450px;
+    width: 100%;
+}
+
+.option{
+    font-size: 25px;
+}
+
+.option label{
+    padding-left: 1%;
 }
 
 .box{
     background: crimson;
-    padding:2% 2% 3% 2%;
+    padding:2% 2% 1% 2%;
     border-radius: 5px;
     box-shadow:10px 10px black;
-    font-size: 25px;
-    color: black;
-}
-
-.box a{
-    text-decoration: none;
-}
-
-.box a:hover{
-    text-decoration: underline;
-}
-
-.box a:visited{
-    color: black;
+    margin-bottom: 1%;
 }

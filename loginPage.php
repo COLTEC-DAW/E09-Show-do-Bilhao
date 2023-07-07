@@ -10,14 +10,14 @@
         <meta charset="utf-8">
         <title>Show do Pilão</title>
         <link rel="stylesheet" href="Style/style.css">
+        <link rel="shortcut icon" href="gallery/berti.jpg" type="image/x-icon">
     </head>
     <body>
         <?php include("Partials/menu.inc");?>
         <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
-            <label>Username</label><input type="text" name="username" required><br>
-            <label>Password</label><input type="password" name="password" required>
+            <div><label>Username: </label><input type="text" name="username" required></div>
+            <div><label>Password: </label><input type="password" name="password" required></div>
             <button type="submit" name="submit">Login</button>
-            <p class="message"><?php echo @$user->message ?></p>
         </form>
         <h2><a href="signupPage.php">Registrar</a></h2>
         <?php include("Partials/rodape.inc");?>

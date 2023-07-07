@@ -25,21 +25,7 @@
         "pontMax" => $this->pontMax,
         "pontAtual" => $this->pontAtual];
 
-        if($this->isValid()){
-            $this->insertUser();
-        }
-    }
-
-    private function isValid(){
-        if(empty($this->name) 
-        || empty($this->email) 
-        || empty($this->username) 
-        || empty($this->password)){
-            $this->message = "Algum campo não foi preenchido";
-            return false;
-        } else {
-            return true;
-        }
+        $this->insertUser();
     }
 
     private function insertUser(){
