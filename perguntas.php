@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
-    require "perguntas.inc";
-    require "user.inc";
+    require "control/perguntas.inc";
+    require "control/user.inc";
     
     if(isset($_GET["id"])) {
         $id = $_GET["id"];
@@ -12,14 +12,14 @@
         if(isset($_POST["login"])) {
             Login();
         } else {
-            header("location: index.php");
+            echo "<script>window.location='index.php'</script>";
         }
     }
 ?>
 
 <html lang="en">
 <body>
-    <?php include "menu.html"; ?>
+    <?php include "menu.php"; ?>
 
     <div class="wrapper">
         <h1>Show do Bilhão</h1>

@@ -2,19 +2,17 @@
 
     function carregaPergunta($id) {
         $perguntas = lePerguntas();
-        global $alternativas;
-        global $enunciados;
+        $enunciado = $perguntas[$id]->enunciado;
+        $opcoes = $perguntas[$id]->opcoes;
 
-        echo "<h3 class='questao'>" . $enunciados[$id] . "</h3>";
+        echo "<h3 class='questao'>" . $enunciado . "</h3>";
         echo "<div class='options'>";
         for($i = 0; $i < 4; $i++) {
-            echo "<input class='op' type='radio' name='resposta' value='". $i ."'> " . $alternativas[$id][$i] . "<br>";
+            echo "<input class='op' type='radio' name='resposta' value='". $i ."'> " . $opcoes[$i] . "<br>";
         }
         echo "</div>";
         echo "<button type='submit'>Enviar</button>";
         echo "<p>Acertos: ". $id ."/5 </p>";
-
-        fclose($perguntas);
     }
 
     function gameover($id) {
@@ -28,9 +26,10 @@
     }
     
     function lePerguntas() {
-        $arquivo = fopen("perguntas.json", "r");
+        $arquivo = fopen("json/perguntas.json", "r");
         $array = [];
-        $array = json_decode(fread($arquivo, filesize("perguntas.json")));
+        $array = json_decode(fread($arquivo, filesize("json/perguntas.json")));
+        fclose($arquivo);
         return $array;
     }
 
@@ -39,11 +38,10 @@
         $respostas = [];
 
         foreach($perguntas as $pergunta) {
-            
+            array_push($respostas, $pergunta->resposta);
         }
 
-
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] === "POST" && $id!=0) {
             if(isset($_POST["resposta"])) {
                 $resposta = htmlspecialchars($_POST["resposta"]);
             } else {
@@ -64,7 +62,5 @@
                 gameover($id);
             }
         }
-
-        fclose($perguntas);
     }
 ?>
