@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.php" method="POST">
+    <form action="../../index.php" method="POST">
         <label for="login">Login: </label>
         <input type="text" name="cadastro_login">
 

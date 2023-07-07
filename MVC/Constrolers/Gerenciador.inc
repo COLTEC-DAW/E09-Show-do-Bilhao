@@ -5,6 +5,7 @@
         // Atributos
         var $perguntas;
         var $pontuacao;
+        var $nPerguntas;
 
         // Construtor
         public function __construct() {
@@ -14,6 +15,8 @@
 
             $arquivoJSON = file_get_contents("assets/arquivos/perguntas.json");
             $perguntasJSON = json_decode($arquivoJSON, true);
+
+            $this->nPerguntas = count($perguntasJSON, 0);
 
             foreach($perguntasJSON as $p) {
                 $this->perguntas[] = new Pergunta($p["enunciado"], $p["alternativas"]);
@@ -38,13 +41,11 @@
 
             foreach($usuariosJSON as $u) {
                 if($u["login"] == $login && $u["senha"] == $senha) {
-                    // retorna verdadeiro se o login e senha são iguais
-                    return true;
+                    // Se o login e senha estiverem certos cria o usuario na sessão
+                    $usuario = new Usuario($u["login"],$u["senha"],$u["user"],$u["email"]);
+                    $_SESSION["usuario"] = $usuario;
                 }
             }
-
-            // retorna falso se não acha o usuario
-            return false;
         }
     }
 ?>

@@ -1,7 +1,7 @@
 <h1>Login</h1>
-<?php  
+<?php
     if(isset($_POST["cadastro_login"])) {
-        $caminhoArquivo = "./assets/arquivos/usuarios.json";
+        $caminhoArquivo = "assets/arquivos/usuarios.json";
         $usuarios = json_decode(file_get_contents($caminhoArquivo), true);
     
         // Adiciona o novo usuario no array
@@ -19,28 +19,16 @@
         unset($_POST["cadastro"]);
     }
 ?>
-<form action="index.php" method="POST">
+<form action="../../index.php" method="POST">
     <label for="login">Login: </label>
     <input type="text" name="login">
 
     <label for="senha">Senha: </label>
     <input type="password" name="senha">
-
-    <?php
-        if(isset($_POST["cadastro_login"])) {
-            
-    ?>
-        <!-- =============== -->
-        <input type="hidden" name="user" value=" <?= $_POST["cadastro_user"] ?>">
-        <input type="hidden" name="email" value="<?= $_POST["cadastro_email"] ?>">
-        <!-- =============== -->
-    <?php
-        }            
-    ?>
-
+    
     <input type="submit">
 </form>
 
 <button>
-    <a href="cadastro.php">cadastrar</a>
+    <a href="MVC/Views/cadastro.php">cadastrar</a>
 </button>

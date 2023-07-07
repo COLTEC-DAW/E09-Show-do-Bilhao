@@ -38,46 +38,50 @@
                 if(isset($_POST["pontuacao"])) {
                     $game->pontuacao = $_POST["pontuacao"];
                 }
-                
+
                 // Inicializa a sessão
                 session_start();
                 if(isset($_POST["login"])) {
-                    // Verifica se o usuario existe
-                    if($game->autentica($_POST["login"], $_POST["senha"])) {
-                        $usuario = new Usuario($_POST["login"], $_POST["senha"], $_POST["user"], $_POST["email"]);
-                        $_SESSION["usuario"] = $usuario;
-                    }
-
+                    $game->autentica($_POST["login"], $_POST["senha"]);
                 }
                 require "./MVC/Constrolers/logout.inc";
             ?>
 
-            <?php           
+            <?php
                 // Se não está logado carrega a pagina de login
                 if(!(isset($_SESSION["usuario"]))) {
-                    require "./login.php";
-                } 
+                    require "./MVC/Views/login.php";
+                }
+                else if($id+1 > $game->nPerguntas) {
+                    $game->pontuacao++;
+                    ?>
+                        <!-- =============== -->
+                            <h3 class="tela_final">PARABENS VOCE VENCEU</h3>
+                        <!-- =============== -->
+                    <?php
+
+                    // Seta o cookie de pontos
+                    setcookie("pontos", $game->pontuacao);
+                    setcookie("user", $_SESSION["usuario"]->user);
+                }
                 // primeira pergunta ou acertou a anterior
                 else if($id == 0 || $game->buscaAlternativaCorreta($id - 1) == $_POST["resp"]) {
-                    require "./questao.php";
+                    if($id != 0) {
+                        $game->pontuacao++;
+                    }
+                    require "./MVC/Views/questao.php";
                 }
                 // se errou carrega pagina de gameover
                 else {
                     ?>
                         <!-- =============== -->
-                            <h3 class="game_over">GAME OVER</h3>
+                            <h3 class="tela_final">GAME OVER</h3>
                         <!-- =============== -->
-                        
                     <?php
 
-
-                    // ------------------------------------- TESTE -------------------------------------
-                    $teste = $_SESSION["usuario"];
-                    echo "login: $teste->login ";
-                    echo "senha: $teste->senha ";
-                    echo "user: $teste->user ";
-                    echo "email: $teste->email ";
-                    // ------------------------------------- TESTE -------------------------------------
+                    // Seta o cookie de pontos
+                    setcookie("pontos", $game->pontuacao);
+                    setcookie("user", $_SESSION["usuario"]->user);
                 }
             ?>
 
@@ -86,7 +90,6 @@
 
     <?php 
         include "MVC/Views/rodape.inc";
-        rodape($game->pontuacao);
     ?>
 </body>
 </html>

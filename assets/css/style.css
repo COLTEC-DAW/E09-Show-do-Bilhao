@@ -56,6 +56,10 @@ input[type="radio"] {
     height: 15vh;
 }
 
+.cabecalho {
+    display: flex;
+}
+
 .cabecalho--img {
     height: 70%;
     margin: 10px auto;
@@ -76,7 +80,7 @@ input[type="radio"] {
 }
 
 /* Game over */
-.game_over {
+.tela_final {
     color: #ffee00;
     font-size: 3em;
     font-weight: 600;
