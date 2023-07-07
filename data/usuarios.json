@@ -28,5 +28,11 @@
         "username": "maria",
         "email": "maria@g.c",
         "password": "maria"
+    },
+    {
+        "name": "ad",
+        "username": "ad",
+        "email": "rafaesdlr@adsf.d",
+        "password": "a"
     }
 ]

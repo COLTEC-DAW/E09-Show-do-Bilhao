@@ -21,7 +21,7 @@
 
     <!-- Perguntas -->
     <h2>Game Over</h2>
-    <p>Mermão, voce perdeu seu merda. Seu lixo humano. Vai comer uma vaca.</p>
+    <p>Mermão, voce perdeu.</p>
     <a href="/perguntas.php" class="reset-button">Resetar</a>
 
     <?php require_once "partials/rodape.inc"; ?>

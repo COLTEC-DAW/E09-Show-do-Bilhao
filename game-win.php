@@ -21,7 +21,7 @@
 
     <!-- Perguntas -->
     <h2>Game Win</h2>
-    <p>Parabéns, você acertou tudo seu merda!</p>
+    <p>Parabéns, você acertou tudo!</p>
     <a href="/perguntas.php?" class="reset-button">Resetar</a>
 
     <?php require_once "partials/rodape.inc"; ?>
