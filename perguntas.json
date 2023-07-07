@@ -1,0 +1,27 @@
+[
+    {
+        "enunciado": "De acordo com as escrituras, qual foi o animal que Deus enviou para engolir o profeta Jonas?",
+        "alternativas": ["A) Grande Peixe", "B) Tubarão", "C) Baleia", "D) Golfinho"],
+        "respostaCorreta": 0
+    },
+    {
+        "enunciado": "Quem foi o apóstolo que escreveu a maior parte do Novo Testamento da Bíblia?",
+        "alternativas": ["A) Paulo", "B) João", "C) Pedro", "D) Lucas"],
+        "respostaCorreta": 0
+    },
+    {
+        "enunciado": "Qual foi o nome da mulher que se tornou esposa de Abraão após a morte de Sara?",
+        "alternativas": ["A) Quetura", "B) Rebeca", "C) Raquel", "D) Rute"],
+        "respostaCorreta": 0
+    },
+    {
+        "enunciado": "Quem foi o filho de Davi que se tornou rei após sua morte?",
+        "alternativas": ["A) Salomão", "B) Absalão", "C) Jeú", "D) José"],
+        "respostaCorreta": 0
+    },
+    {
+        "enunciado": "Qual foi o local onde Jesus foi crucificado?",
+        "alternativas": ["A) Gólgota", "B) Cafarnaum", "C) Belém", "D) Sinai"],
+        "respostaCorreta": 0
+    }
+]
