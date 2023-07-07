@@ -1,8 +1,12 @@
 <?php
-    // COloca o botão de logout caso o usuário esteja logado
+    // Coloca o botão de logout caso o usuário esteja logado
     if(isset($_POST['logout']) && isset($_SESSION['loginAtual'])) {
-        atualizaArquivoUsuario();
-        atualizaCookieUltimaPontuacao(intval($_GET["id"])+1);
+        // Previne um erro bem raro que acontece se o arquivo de usuários é deletado enquanto tem alguém logado
+        if(filesize('usuarios.json')) { 
+            atualizaArquivoUsuario();
+            atualizaCookieUltimaPontuacao(intval($_GET["id"])+1);
+        }
+            
         logoutUsuario();
     }
 ?>
