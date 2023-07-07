@@ -15,7 +15,7 @@
         </div>
         <div class="icons">
             <a href="index.php"><img src="images/perfil.png" alt="Icon de Perfil"></a>
-            <a href="<?= Logout()?>"><img class="icons-logout" src="images/logout.png" alt="Icon de Perfil"></a>
+            <a href="logout.php"><img class="icons-logout" src="images/logout.png" alt="Icon de Perfil"></a>
         </div>
     </nav>
     

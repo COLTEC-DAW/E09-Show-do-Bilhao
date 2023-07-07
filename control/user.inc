@@ -1,4 +1,5 @@
 <?php
+session_start();
     class User {
         public $nome;
         public $login;
@@ -42,7 +43,7 @@
             $array = json_decode(fread($arquivo, filesize("json/users.json")));
             foreach($array as $user) {
                 if(($user->login === $_POST["login-nome"]) && ($user->senha === $_POST["senha"])) {
-                    $_SESSION["user"] = serialize("user");
+                    $_SESSION["user"] = serialize($user);
                     fclose($arquivo);
                     return true;
                 }
@@ -52,10 +53,5 @@
             return false;
         }
         fclose($arquivo);
-    }
-
-    function Logout() {
-        unset($_SESSION["user"]);
-        return "index.php";
     }
 ?>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php 
+<?php
+    session_start();
     require "control/perguntas.inc";
     require "control/user.inc";
     
@@ -8,13 +9,14 @@
     } else {
         $id = 0;
     }
+
     if(!isset($_POST["resposta"])){
         if(isset($_POST["login"])) {
             Login();
-        } else {
-            echo "<script>window.location='index.php'</script>";
         }
     }
+
+    $user=unserialize($_SESSION["user"]);
 ?>
 
 <html lang="en">
@@ -26,6 +28,10 @@
         <form action="perguntas.php?id=<?= $id+1 ?>" method="POST">
             <?php verificaResposta($id);?>
         </form>
+        <?php if($id == 0 && isset($_SESSION["user"])) :?>
+            <p>Ultima Pontuação: <?= ($_COOKIE[$user->login . "_ultimapontuacao"])?></p>
+            <p>Ultimo login: <?= $_COOKIE[$user->login . "_ultimologin"]?></p>
+        <?php endif;?>
     </div>
     
     <?php include "rodape.html";?>

@@ -1,5 +1,4 @@
-<?php 
-    session_start();
+<?php
     require "control/user.inc";
     salvaUser();
 ?>
@@ -22,12 +21,14 @@
     
                 <label for="pwd">Senha</label>
                 <input type="password" name="senha" id="pwd" class="form-field">
+
+                <input type='hidden' name='pontuacao' value='0'>
     
                 <button type="submit" name="login" class="form-btn">Entrar</button>
     
                 <p>Não está registrado? <a href="cadastro.php">Crie uma conta</a></p>
             </form>
-            </div>
+        </div>
     </div>
     
 </body>
