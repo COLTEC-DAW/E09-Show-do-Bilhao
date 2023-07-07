@@ -15,6 +15,7 @@
             $this->correctAnswer = $json_correctAnswer;
         }
         
+        //Mostra as respostas
         public function PrintAnswers($id){
 
             echo "<div style='margin-left:30px;'>";
@@ -33,10 +34,10 @@
             echo "</div><br/>";
         }
         
+        //imprime as questões e chama a função que mostra o Score e Alternativas
         function PrintQuestions($id){
             if($id < 5){
                 echo "<b>" . $id+1 . "-" . $this->question . "<b/><br/>";
-                
                 
                 $this->PrintScore();
                 
@@ -44,6 +45,7 @@
             }
         }
         
+        //mostra a pontuação na tela e salva a pontuação atual no cookie
         function PrintScore(){
             if(isset($_POST["Score"])){
                 echo "<p>Pontuação:" . $_POST["Score"] .  "</p>";
@@ -51,6 +53,7 @@
             }
         }
 
+        //Telas de fim de jogo
         function PrintEndGame(){
             echo "<h2>  Parabéns você ganhou!!!! </h2>";
             $this->PrintScore();
