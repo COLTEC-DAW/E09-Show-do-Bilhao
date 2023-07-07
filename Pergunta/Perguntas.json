@@ -1,0 +1,52 @@
+[
+    {
+        "enunciado": "Qual é o antônimo de \"malograr?\"",
+        "alternativas": [
+            "Perder",
+            "Fracassar",
+            "Conseguir",
+            "Desprezar"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Em que país nasceu Fernando Pessoa?",
+        "alternativas": [
+            "Espanha",
+            "Brasil",
+            "Portugal",
+            "Holanda"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual é a obra do artista norueguês Edvard Munch que o faz ser reconhecido até nos dias de hoje?",
+        "alternativas": [
+            "O Grito",
+            "Guernica",
+            "Noite Estrelada",
+            "Última Ceia"
+        ],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Descubra a palavra que tem hífen",
+        "alternativas": [
+            "Micro-ondas",
+            "Mal-humorado",
+            "Auto-retrato",
+            "Erva-mate"
+        ],
+        "resposta": 4
+    },
+    {
+        "enunciado": "Valendo UM BILHÃO de reais!! A coberta de pelinhos vai por cima ou por baixo do edredom??",
+        "alternativas": [
+            "Por cima",
+            "Por baixo",
+            "Ao lado",
+            "Todas as alternativas anteriores"
+        ],
+        "resposta": 2
+    }
+]
