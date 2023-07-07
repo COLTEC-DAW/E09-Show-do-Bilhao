@@ -28,7 +28,6 @@ if (isset($perguntasArray['perguntas'])) {
 }
 ?>
 
-
 <?php
 
 
@@ -64,6 +63,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //se o metodo não for post imprime a questão incicial, por isso esse else
 } else {
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
+}session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+//não roda o codigo caso perguntas.inc não exista 
+require 'perguntas.inc';
+
+$perguntas = array();
+
+// Lê as perguntas do arquivo JSON
+$perguntasJSON = file_get_contents('perguntas.json');
+$perguntasArray = json_decode($perguntasJSON, true);
+
+if (isset($perguntasArray['perguntas'])) {
+    foreach ($perguntasArray['perguntas'] as $pergunta) {
+        $enunciado = $pergunta['enunciado'];
+        $alternativas = $pergunta['alternativas'];
+        $respostaCorreta = $pergunta['respostaCorreta'];
+
+        $perguntas[] = new questions($enunciado, $alternativas['1'], $alternativas['2'], $alternativas['3'], $alternativas['4'], $respostaCorreta);
+    }
+} else {
+    header("Location: erro.php");
+    exit();
 }
 
 if ($id <= count($perguntas)) {
