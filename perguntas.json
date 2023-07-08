@@ -1,0 +1,29 @@
+[
+    {   
+        "pergunta": "Quando o Cruzeiro foi fundado: ",
+        "opcoes": ["A 1955 ", "B 1921 ", "C 2003 ", "D 2022 "],
+        "resposta": 1
+    },
+    {
+        "pergunta": "Quando o Cruzeiro ganhou a tripice coroa: ",
+        "opcoes": ["A 2003 ", "B 2000 ", "C 1997 ", "D 2022 "],
+        "resposta": 0
+    },
+    {
+        "pergunta": "Contra quem o Cruzeiro ganhou a Copa do Brasil em 2018: ",
+        "opcoes": ["A Flamengo ", "B Corintians ", "C Palmeiras ", "D Internacional "],
+        "resposta": 1
+    },
+    {
+        "pergunta": "Contra qual time o ex-jogador Sassá deu um soco no rosto do jogador rival: ",
+        "opcoes": ["A Flamengo ", "B Corintians ", "C Palmeiras ", "D Internacional <br>"],
+        "resposta": 2
+    },
+    {
+        "pergunta": "Qual o nome da maior torcida organizada do Cruzeiro: ",
+        "opcoes": ["A Pavilão Independete ", "B Mafia Azul", "C China Azul " , "D Cachazeiros "],
+        "resposta": 2 
+    }
+
+
+]
