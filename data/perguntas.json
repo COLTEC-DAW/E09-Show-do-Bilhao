@@ -1,0 +1,52 @@
+[
+    {
+        "pergunta": "Qual é o professor de DAW?",
+        "alternativas": [
+            "a) Jemaf",
+            "b) João",
+            "c) Prates",
+            "d) Daniel"
+        ],
+        "resposta": 1
+    },
+    {
+        "pergunta": "Qual é a cor do céu?",
+        "alternativas": [
+            "a) Preto",
+            "b) Branco",
+            "c) Amarelo",
+            "d) Azul"
+        ],
+        "resposta": 4
+    },
+    {
+        "pergunta": "Quantos dígitos tem um CEP?",
+        "alternativas": [
+            "a) 0",
+            "b) 8",
+            "c) 6",
+            "d) 12"
+        ],
+        "resposta": 2
+    },
+    {
+        "pergunta": "Quem é Zinchenko?",
+        "alternativas": [
+            "a) Virgínia",
+            "b) Thales",
+            "c) Arthur",
+            "d) Gabi"
+        ],
+        "resposta": 3
+    },
+    {
+        "pergunta": "Tem cabaré essa noite?",
+        "alternativas": [
+            "a) Claro",
+            "b) Talvez",
+            "c) Não sei",
+            "d) Não"
+        ],
+        "resposta": 1
+    }
+]
