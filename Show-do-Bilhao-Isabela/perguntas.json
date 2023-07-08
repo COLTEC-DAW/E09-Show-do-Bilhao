@@ -1,0 +1,55 @@
+{
+  "perguntas": [
+    {
+      "pergunta": "Em qual ano o Vasco foi rebaixado pela primeira vez?",
+      "alternativas": [
+        "2006",
+        "2007",
+        "2008",
+        "2009"
+      ],
+      "resposta": 2
+    },
+    {
+      "pergunta": "Em qual time o Pelé foi revelado aos 15 anos?",
+      "alternativas": [
+        "Santos",
+        "Bahia",
+        "Flamengo",
+        "São Paulo"
+        
+      ],
+      "resposta": 0
+    },
+    {
+      "pergunta": "Por quantos anos o goleiro Fábio atuou no cruzeiro?",
+      "alternativas": [
+        "17 anos",
+        "5 anos",
+        "12 anos",
+        "8 anos"
+      ],
+      "resposta": 0
+    },
+    {
+      "pergunta": "Em qual ano o clube Atlético Mineiro sofreu uma goleada de 6 x 1 para o Cruzeiro na última rodada do Campeonato Brasileiro?",
+      "alternativas": [
+        "2008",
+        "2009",
+        "2011",
+        "2010"
+      ],
+      "resposta": 2
+    },
+    {
+      "pergunta": "Quem é o maior artilheiro da história do futebol em jogos oficiais?",
+      "alternativas": [
+        "Messi",
+        "Pelé",
+        "Cristiano Ronaldo",
+        "Romário"
+      ],
+      "resposta": 2
+    }
+  ]
+}
