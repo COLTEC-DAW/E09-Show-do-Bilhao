@@ -13,7 +13,6 @@
 
     if ($id != 5) {
     
-    
     $perg = carregaPergunta($id);
 
     $pergunta = $perg->pergunta;
@@ -42,7 +41,7 @@
 <?php include "menu.inc"?>
 
 <?php 
-//abre o arquivo inc para pegar as perguntas 
+
     include "perguntas.inc.php";
     
 ?>

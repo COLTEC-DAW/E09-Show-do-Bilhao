@@ -1,10 +1,12 @@
 <?php 
-    $pontuacao = $_COOKIE['nacertos'] + 1;
+    $_COOKIE['nacertos'] += 1;
+    $pontuacao = $_COOKIE['nacertos'];
 ?>
 <main>
     <h1>Deu Cruzeiro</h1>
     <p> Você está logado como: <?php echo $_SESSION['login'] ?></p>
     <p> Pontuação: <?php echo $pontuacao ?></p> 
-    <a href="login.php">Volte para a tela de login</a> 
+    <form action="logout.php" method="post">
+    <input type="submit" value="Logout">
 
 </main>

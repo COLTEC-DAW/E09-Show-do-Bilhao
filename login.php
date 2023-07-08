@@ -80,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
         <input type="password" id="login-password" name="login-password" required><br><br>
         <a href="registro.php">Clique aqui para fazer o registro</a>    <br><br>  
         <input type="submit" name="login" value="Login">
-        <p> Você está logado como: <?php echo $_SESSION['login'] ?></p>  
     </form>
 
 

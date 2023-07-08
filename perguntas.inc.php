@@ -23,7 +23,6 @@ if ($id == 5) {
 
 </main>
 <?php } else {
-    setcookie("ultima", date("d/m/Y H:i:s"));
     include "GameOver.php";
 }?>
     

@@ -4,17 +4,12 @@ if (isset($_COOKIE['nacertos'])) {
 } else {
     $pontuacao = 0;
 }
-
-$ultimaVezJogado = $_COOKIE["ultima"];
-
-
-
-// Saída HTML começa a partir daqui
+//joao tentei incrementar o cookie de horas porem não consegui
 ?>
 <main>
     <h1>FOI DE ATLETICO</h1>
     <p> Você está logado como: <?php echo $_SESSION['login'] ?></p>
     <p> Pontuação: <?php echo $pontuacao ?></p> 
-    <p>Ultima vez logado <?php echo $ultimaVezJogado ?></p>
-    <a href="login.php">Volte para a tela de login</a> 
+    <form action="logout.php" method="post">
+    <input type="submit" value="Logout">
 </main>
