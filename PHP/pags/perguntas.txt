@@ -1,0 +1,6 @@
+P: Qual é a capital do Brasil?
+A: Brasília
+A: São Paulo
+A: Rio de Janeiro
+A: Belo Horizonte
+C: Brasília
