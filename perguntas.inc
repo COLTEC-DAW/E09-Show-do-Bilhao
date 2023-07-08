@@ -1,32 +1,51 @@
 <?php 
-/*
-    $id = $_GET["id"];
-    
-    $dadosJson = file_get_contents('questoes.json');
-    $dadosJsonDecode = json_decode($dadosJson, true);
+
+    class Questoes {
+        public $perguntas;
+        public $alternativas;
+        public $gabarito;
+
+        function __construct($perguntas, $alternativas, $gabarito) {
+            $this->perguntas = $perguntas;
+            $this->alternativas = $alternativas;
+            $this->gabarito = $gabarito;
+        }
+        public function GetPerguntas() {
+            return $this->perguntas;
+        }
+        public function GetAlternativas() {
+            return $this->alternativas;
+        }
+        public function GetGabarito() {
+            return $this->gabarito;
+        }
+
+    }
 
     function carregaPergunta($id) {
 
-        global $alternativas, $perguntas, $gabarito;
+        $dadosJson = file_get_contents('questoes.json');
+        $dadosJsonDecode = json_decode($dadosJson, true);
 
-        if ($id < count($perguntas)) {
-            $pergunta = new Questoes($perguntas[$id], $alternativas[$id], $gabarito[$id]);
-            
-            return $perguntas;
+        $pergunta = new Questoes(
+            $dadosJsonDecode[$id]["perguntas"],
+            $dadosJsonDecode[$id]["alternativas"],
+            $dadosJsonDecode[$id]["gabarito"]
+        );
+
+        echo ("<form action='progresso.php' method='post'>");
+        echo $pergunta->GetPerguntas() . "<br>";
+        echo "<input hidden name='resposta' value=<?=$pergunta->gabarito()?>";
+
+        for($j = 0;$j<count($pergunta->GetAlternativas());$j++){
+            $alternativas_aux = $pergunta->GetAlternativas();
+            echo ("<input type = 'radio' id=". $j ." name = 'escolha' value=".$j." required>
+                    <label for = ".$j."> ".$alternativas_aux[$j]."</label><br>");
         }
+        echo ("<input type = 'hidden' name = 'id' value = " . $id . ">
+                <input type = 'hidden' name = 'resposta' value = " . $pergunta->GetGabarito() . ">
+                <input type = 'submit' value='Enviar'>
+                </form>");
     }
-    
-    function ImprimiQuestoes() {
-        
-        global $alternativas, $perguntas, $gabarito;
 
-        echo "<p>$$perguntas</p>";
-
-        foreach ($alternativas as $indice => $alternativa) {
-            echo "<input type='radio' name='resposta_$indice' value='$indice'> $alternativa <br>";
-        }
-        
-        echo "<br>Resposta correta: $gabarito";
-        echo "<br>";
-    }*/
 ?>

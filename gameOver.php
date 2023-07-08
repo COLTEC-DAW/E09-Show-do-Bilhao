@@ -2,19 +2,33 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameOver</title>
 </head>
 
 <body>
+    
     <div>
-        <h1>Não foi dessa vez :(</h1>
+        <h1>Game Over!!</h1>
 
-    <!-- <form action='login.php' method='POST'>
-        <input type='submit' name='logOut' id='logOut' value='Sair'>
-    </form> -->
+        <div>
+            <?php 
 
+                $pontuacao = $_GET['pontuacao'];
+                
+                setcookie('Pontuacao', $pontuacao);
+                setcookie('ultima_acesso', date('d/m/Y H:i:s'));
+                
+                echo "<p>Não foi dessa vez :( </p>";
+                echo "<br>";
+                echo "<p>Número de acertos: </p>" . $pontuacao;
+                echo "<br>";
+                echo "<p>Data e Horário: </p>" . $_COOKIE['ultima_acesso'];
+
+            ?>
+        </div>
 
         <form action="logout.php" method="post">
             <button type="submit">Logout</button>
@@ -23,15 +37,11 @@
         <form method="get" action="perguntas.php?">
             <button type="submit">Jogar novamente :)</button>
         </form>
-
-        <!-- <div>
-            <a href="logout.php">logout</a>
-        </div> -->
         
-    </div>
-    <?php 
+    </div> 
+
+    <?php include("rodape.inc");?>
     
-    ?>
 </body>
 
 </html>

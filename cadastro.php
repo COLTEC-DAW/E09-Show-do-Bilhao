@@ -1,4 +1,5 @@
 <?php
+
     include("menu.inc");
     require("usuarios.php");
 
@@ -8,36 +9,43 @@
     $email = $_POST['email'];
 
     $arquivo = fopen("usuarios.json", "r+");
+
     if (filesize("usuarios.json") > 0) {
-        $lerArquivo = json_decode(fread($arquivo, filesize("usuarios.json")));
-    } else {
-        $lerArquivo = array();
+        $ReadArquivo = json_decode(fread($arquivo, filesize("usuarios.json")));
+    } 
+    
+    else {
+        $ReadArquivo = array();
     }
-    $usuarioJaExiste = false;
-    foreach ($lerArquivo as $usuario) {
+
+    $UserExistente = false;
+
+    foreach ($ReadArquivo as $usuario) {
         if ($usuario->login == $login) {
-            $usuarioJaExiste = true;
+            $UserExistente = true;
             break;
         }
     }
 
-    if (!$usuarioJaExiste) {
-        array_push($lerArquivo, new Usuarios($nome, $email, $login, $senha));
+    if (!$UserExistente) {
+        array_push($ReadArquivo, new Usuarios($nome, $email, $login, $senha));
         fseek($arquivo, 0, SEEK_SET);
-        fwrite($arquivo, json_encode($lerArquivo));
+        fwrite($arquivo, json_encode($ReadArquivo));
         fclose($arquivo);
-        $_SESSION['Usuarios'] = new Usuarios($nome, $email, $login, $senha);
-        $usuarioCriado = true;
-    } else {
+        $_SESSION['User'] = new Usuarios($nome, $email, $login, $senha);
+        $UserCriado = true;
+    } 
+    
+    else {
         echo "
             <form action='index.php' method='POST'>
-                <p> Este usuário já existe. Realize o login. </p>
+                <p> Este usuário já existe -- Realize um login correto </p>
                 <input type='submit' value='Voltar para logar'>
                 </form>
             ";
     }
 
-    if ($usuarioCriado) {
+    if ($UserCriado) {
         echo "
             <form action='perguntas.php' method='GET'>
                 <p> Sucesso, vamos ao jogo :) </p>

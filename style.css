@@ -1,0 +1,24 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(5, 3, 85);
+    text-align: center; 
+}
+
+h1{
+    font-size: 40;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+
+h3{
+    padding-left: 1cm;
+    color: black;
+    font-weight: bolder;
+    margin: 2.5% 0;
+}
+
+p{
+    font-family: italic;
+    text-align: center;
+}

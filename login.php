@@ -1,87 +1,89 @@
- <?php
-    // if (isset($_SESSION['Usuarios'])) {
-    //     header("Location: perguntas.php");
-    //     exit();
-    // }
-    ?> 
-
 <?php
+
 include("menu.inc");
 session_start();
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-if ($_POST['registrar']) {
-    registrar();
-}
-
 if ($_POST['logar']) {
     login();
 }
 
-function registrar()
-{
+if ($_POST['registrar']) {
+    registrar();
+}
+function registrar() {
 
     echo "
         <form method='POST' action='cadastro.php'>
-            <p>
-                <label> Nome </label>
-            </p>
-                <input type='text' name='nome' id='nome' value='' >
-            <p>
-                <label> Email </label>
-            </p>
-                <input type='email' name='email' id='email' value='' >
-            <p>
-                <label> Login </label>
-            </p>
-                <input type='text' name='login' id='login' value='' >
-            <p>
-                <label> Senha </label>
-            </p>
-            <input type='password' name='senha' id='senha' value='' >
+            Nome <input type='text' name='nome' id='nome'><br>
+            Email <input type='email' name='email' id='email'><br>
+            Login <input type='text' name='login' id='login'><br>
+            Senha <input type='password' name='senha' id='senha'><br>
             <input type='submit' name='registrar' value='Resgistrar'>
         </form>
     ";
+
 }
 
+function login() {
 
-function login()
-{
-
-    $eUsuario = false;
+    $User = false;
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
     $arquivo = fopen("usuarios.json", "r");
-    $lerArquivo = json_decode(fread($arquivo, filesize("usuarios.json")));
+    
+    if ($arquivo) {
+        
+        $SizeArquivo = filesize("usuarios.json");
 
-    foreach ($lerArquivo as $usuario) {
-        if ($usuario->login == $login && $usuario->senha == $senha) {
-            $eUsuario = true;
-            $_SESSION['Usuarios'] = $usuario;
-            break;
+        if ($SizeArquivo > 0) {
+
+            $ReadArquivo = json_decode(fread($arquivo, filesize("usuarios.json")));
+        
+            foreach ($ReadArquivo as $usuario) {
+                if ($usuario->login == $login && $usuario->senha == $senha) {
+                    $User = true;
+                    $_SESSION['User'] = $usuario;
+                    break;
+                }
+
+                elseif($usuario->login == $login && $usuario->senha != $senha) {
+                    $SenhaIncorrect = true;
+                }
+            }
         }
     }
 
     fclose($arquivo);
 
-    if ($eUsuario == true) {
+    if ($User == true) {
         echo "
         <form action='perguntas.php' method='GET'>
-            <p> Tudo Certo, podemos jogar! </p>
+            <p> <- Sucesso, vamos ao jogo -> </p>
             <input type='submit' value='Jogar'>
             <input type='hidden' name='id' value='0'>
         </form>
         ";
-    } else {
-        echo "Usuario nao possui registro. Realize seu cadastro";
-        registrar();
+    } 
+    
+    elseif($SenhaIncorrect) {
+        echo "<p> Senha Incorreta </p>
+            <form action='index.php' method='POST'>
+            <input type='submit' name='logar' value='Logar Novamente'>
+            ";
     }
 
-    return;
+    else {
+        echo "<p> Usuário não possui cadastro, realize o seu: </p>
+        <form action='login.php' method='POST'>
+        <input type='submit' name='registrar' value='Cadastrar'>
+        ";
+    }
 }
 
 include("rodape.inc");
+
 ?>
