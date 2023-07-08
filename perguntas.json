@@ -1,0 +1,42 @@
+[
+    {
+
+        "enunciado": "Em que dia foi proclamada a independência do Brasil?",
+        "alternativas": ["05 de novembro de 1955", "28 de dezembro de 2001", "13 de dezembro de 1892", "07 de setembro de 1822"],
+        "indiceCorreta": 3
+
+    },
+
+    {
+
+        "enunciado": "Qual era o primeiro nome do biólogo ??????? Darwin?",
+        "alternativas": ["Albert", "Charles", "Isacc", "Rodrigo"],
+        "indiceCorreta": 1
+
+    },
+
+    {
+
+        "enunciado": "Na série estadunidense Star Trek, de 1966, qual o nome do capitão da USS Enterprise?",
+        "alternativas": ["Spock", "Christopher Pike", "James Tiberius Kirk", "Leonard McCoy"],
+        "indiceCorreta": 2
+
+    },
+
+    {
+
+        "enunciado": "Destes episódios de Steven Universo, qual o único que não apresenta o próprio Steven?",
+        "alternativas": ["Jungle Moon", "Mindful Education", "Beach City Drift", "Alone Together"],
+        "indiceCorreta": 0
+
+    },
+
+    {
+
+        "enunciado": "Qual é o único desses personagens de Avatar: A Lenda de Aang que possui um sobrenome?",
+        "alternativas": ["Aang", "Katara", "Sokka", "Toph"],
+        "indiceCorreta": 3
+
+    }
+
+]
