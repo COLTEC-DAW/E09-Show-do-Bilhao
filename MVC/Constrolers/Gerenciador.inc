@@ -44,8 +44,11 @@
                     // Se o login e senha estiverem certos cria o usuario na sessão
                     $usuario = new Usuario($u["login"],$u["senha"],$u["user"],$u["email"]);
                     $_SESSION["usuario"] = $usuario;
+                    return true;
                 }
             }
+
+            return false;
         }
 
         public function addUsuario() {

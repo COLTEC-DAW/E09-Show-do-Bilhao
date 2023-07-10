@@ -2,6 +2,7 @@
 <?php 
     require "MVC/Constrolers/Gerenciador.inc";
     require "MVC/Models/Usuario.inc";
+    require "MVC/Views/telaFinal.php";
 ?>
 
 <!DOCTYPE html>
@@ -24,42 +25,17 @@
     <main>
         <div class="pergunta">
             <?php
-                $game = new Gerenciador();
+                // Carrega informações e objetos utilizados
+                require "./MVC/Constrolers/loader.inc";
 
-                // Se id veio na requisição a variavel assume tal valor
-                if(isset($_GET["id"])) {
-                    $id = $_GET["id"];
-                }
-                // Se não, é a primeira questão
-                else {
-                    $id = 0;
-                }
-                $perguntaAtual = $game->carregaPergunta($id);
-                if(isset($_POST["pontuacao"])) {
-                    $game->pontuacao = $_POST["pontuacao"];
-                }
-
-                // Inicializa a sessão
-                session_start();
-                if(isset($_POST["login"])) {
-                    $game->autentica($_POST["login"], $_POST["senha"]);
-                }
-                require "./MVC/Constrolers/logout.inc";
-            ?>
-
-            <?php
                 // Se não está logado carrega a pagina de login
                 if(!(isset($_SESSION["usuario"]))) {
                     require "./MVC/Views/login.php";
                 }
                 else if($id+1 > $game->nPerguntas) {
                     $game->pontuacao++;
-                    ?>
-                        <!-- =============== -->
-                            <h3 class="tela_final">PARABENS VOCE VENCEU</h3>
-                        <!-- =============== -->
-                    <?php
-
+                    
+                    tela_final(true);
                     // Seta o cookie de pontos
                     setcookie("pontos", $game->pontuacao);
                     setcookie("user", $_SESSION["usuario"]->user);
@@ -73,12 +49,8 @@
                 }
                 // se errou carrega pagina de gameover
                 else {
-                    ?>
-                        <!-- =============== -->
-                            <h3 class="tela_final">GAME OVER</h3>
-                        <!-- =============== -->
-                    <?php
 
+                    tela_final(false);
                     // Seta o cookie de pontos
                     setcookie("pontos", $game->pontuacao);
                     setcookie("user", $_SESSION["usuario"]->user);

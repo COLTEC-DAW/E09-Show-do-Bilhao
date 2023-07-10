@@ -1,131 +1,131 @@
 [
     {
-        "enunciado" : "primeiro enunciado",
+        "enunciado" : "De quem é a famosa frase “Penso, logo existo”?",
         "alternativas" :  
         [ 
             {
-            "resposta" : "alternativa a",
+            "resposta" : "Platão",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "Galileu Galilei",
+            "ehCorreta" : false
+            },
+
+            {
+            "resposta" : "Descartes",
             "ehCorreta" : true
             },
 
             {
-            "resposta" : "alternativa b",
+            "resposta" : "Sócrates",
             "ehCorreta" : false
-            },
+            }
+        ]
+    },
 
-            {
-            "resposta" : "alternativa c",
-            "ehCorreta" : false
-            },
+    {
+        "enunciado" : "Quais o menor e o maior país do mundo?",
+        "alternativas" :  
+        [ 
+                {
+                "resposta" : "Vaticano e Rússia",
+                "ehCorreta" : true
+                },
 
-            {
-            "resposta" : "alternativa d",
-            "ehCorreta" : false
+                {
+                "resposta" : "Nauru e China",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Mônaco e Canadá",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Malta e Estados Unidos",
+                "ehCorreta" : false
+                }
+            ]
+        },
+
+        {
+            "enunciado" : "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
+            "alternativas" :  
+            [ 
+                {
+                "resposta" : "Jânio Quadros",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "João Figueiredo",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Getúlio Vargas",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "João Goulart",
+                "ehCorreta" : true
+                }
+            ]
+        },
+
+        {
+            "enunciado" : "Onde se localiza Machu Picchu?",
+            "alternativas" :  
+            [ 
+                {
+                "resposta" : "Colômbia",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Peru",
+                "ehCorreta" : true
+                },
+
+                {
+                "resposta" : "Bolívia",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Índia",
+                "ehCorreta" : false
+                }
+            ]
+        },
+
+        {
+            "enunciado" : "Qual o planeta mais próximo do Sol?",
+            "alternativas" :  
+            [ 
+                {
+                "resposta" : "Netuno",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Mercúrio",
+                "ehCorreta" : true
+                },
+
+                {
+                "resposta" : "Júpiter",
+                "ehCorreta" : false
+                },
+
+                {
+                "resposta" : "Marte",
+                "ehCorreta" : false
+                }
+            ]
         }
     ]
-},
-
-{
-    "enunciado" : "segundo enunciado",
-    "alternativas" :  
-    [ 
-            {
-            "resposta" : "alternativa a",
-            "ehCorreta" : true
-            },
-
-            {
-            "resposta" : "alternativa b",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa c",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa d",
-            "ehCorreta" : false
-            }
-        ]
-    },
-
-    {
-        "enunciado" : "terceiro enunciado",
-        "alternativas" :  
-        [ 
-            {
-            "resposta" : "alternativa a",
-            "ehCorreta" : true
-            },
-
-            {
-            "resposta" : "alternativa b",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa c",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa d",
-            "ehCorreta" : false
-            }
-        ]
-    },
-
-    {
-        "enunciado" : "quarto enunciado",
-        "alternativas" :  
-        [ 
-            {
-            "resposta" : "alternativa a",
-            "ehCorreta" : true
-            },
-
-            {
-            "resposta" : "alternativa b",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa c",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa d",
-            "ehCorreta" : false
-            }
-        ]
-    },
-
-    {
-        "enunciado" : "quinto enunciado",
-        "alternativas" :  
-        [ 
-            {
-            "resposta" : "alternativa a",
-            "ehCorreta" : true
-            },
-
-            {
-            "resposta" : "alternativa b",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa c",
-            "ehCorreta" : false
-            },
-
-            {
-            "resposta" : "alternativa d",
-            "ehCorreta" : false
-            }
-        ]
-    }
-]

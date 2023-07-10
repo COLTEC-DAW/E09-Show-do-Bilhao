@@ -2,7 +2,45 @@ body {
     background-color: rgb(39, 115, 214);
     overflow-y: hidden;
 }
+/* Pagina de login */
+.login {
+	width: 100%;
+}
 
+.login--input {
+	display: block;
+	margin: 35px auto;
+    border-radius: 30px;
+    border: solid 2px #ffee00;
+    background-color: rgba(2, 2, 56, 0.6);
+    font-size: 1.5em;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.login--botao, .botao--logout {
+    display: inline;
+    color: #FFFFFF;
+    width: 150px;
+    padding: 10px 0;
+    margin: 10px;
+    background-color: rgba(1, 1, 43, 09);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login--botao:hover, .botao--logout:hover {
+    background-color: #ffee00;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* Perguntas */
 .pergunta {
     width: 60%;
     margin: 5vh auto;
@@ -51,7 +89,7 @@ input[type="radio"] {
     display: none;
 }
 
-/* cabeçalho e rodape */
+/* cabeçalho */
 .cabecalho, .rodape{
     background: linear-gradient(60deg, rgba(2, 2, 10, 0.4) 0%, rgba(8, 7, 54, 0.4) 35%, rgba(21, 19, 145, 0.4) 100%);
     text-align: center;
@@ -69,6 +107,20 @@ input[type="radio"] {
     margin: 10px 0;
 }
 
+/* ultimo jogador */
+.ultimo_jogador {
+    border: 1px solid #ffee00;
+    background-color: rgba(2, 2, 56, 0.6);
+    padding: 5px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+.ultimo_jogador h4, .ultimo_jogador p {
+    margin: 2px 0;
+}
+
 /* Rodape */
 .rodape {
     position: fixed;
@@ -83,7 +135,7 @@ input[type="radio"] {
     font-weight: 600;
 }
 
-/* Game over e vencedor */
+/* tela final */
 .tela_final {
     color: #ffee00;
     font-size: 3em;
@@ -102,56 +154,4 @@ input[type="radio"] {
 
 .non-selected {
     user-select: none;
-}
-
-/* Pagina de login */
-.login {
-	width: 100%;
-}
-
-.login--input {
-	display: block;
-	margin: 35px auto;
-    border-radius: 30px;
-    border: solid 2px #ffee00;
-    background-color: rgba(2, 2, 56, 0.6);
-    font-size: 1.5em;
-    padding: 10px;
-    color: #FFFFFF;
-}
-
-.login--botao, .botao--logout {
-    display: inline;
-    color: #FFFFFF;
-    width: 150px;
-    padding: 10px 0;
-    margin: 10px;
-    background-color: rgba(1, 1, 43, 09);
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.login--botao:hover, .botao--logout:hover {
-    background-color: #ffee00;
-}
-
-a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-/* ultimo jogador */
-.ultimo_jogador {
-    border: 1px solid #ffee00;
-    background-color: rgba(2, 2, 56, 0.6);
-    padding: 5px;
-    color: #FFFFFF;
-    border-radius: 15px;
-    font-weight: 700;
-}
-
-.ultimo_jogador h4, .ultimo_jogador p {
-    margin: 2px 0;
 }
