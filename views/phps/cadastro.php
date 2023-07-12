@@ -15,6 +15,9 @@
         if (empty($name) || empty($nickname) || empty($email) || empty($password)) {
             echo "<div class='err'><p>Preencha todos os campos obrigatórios.</p></div>";
         } else {
+            if(isset($_SESSION['isLogged']))
+                setcookie($_SESSION["user"] . "-lastLogin", date("d/m/Y H:i:s"));
+
             if (User::criarUsuario($name, $nickname, $email, $password))
                 header('location: perguntas.php');
             else
@@ -32,7 +35,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="https://o.remove.bg/downloads/6b4a0072-18e4-44b5-b446-765e28e1cfe6/unnamed-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://m.media-amazon.com/images/I/81ncT+-1D1L.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/stylish/card.css">
     <link rel="stylesheet" href="../../assets/stylish/rodape.css">
     <title>Página de cadastro</title>

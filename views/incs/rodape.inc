@@ -17,7 +17,7 @@
             <div style="cursor: pointer">
                 <a href="https://www.github.com/alvimdev" target="_blank">
                     <img class="i" height="50px" alt="github" src="https://cdn.icon-icons.com/icons2/535/PNG/512/Github-Icon_icon-icons.com_52888.png">
-                    <p class="p">@alvimdev</p>
+                    <p class="p">#alvimdev</p>
                 </a>
             </div>
         </li>

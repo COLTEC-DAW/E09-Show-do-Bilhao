@@ -21,6 +21,7 @@
             $jsonData = json_encode($users, JSON_PRETTY_PRINT);
             file_put_contents(__DIR__ . "/db/users.json" , $jsonData);
             $_SESSION['isLogged'] = json_encode(new User($nickname, $email));
+            setcookie('ultimaPontuacao', 0);
             return true;
         }
 

@@ -1,10 +1,15 @@
-<?php session_start();
+<?php
+    session_start();
     require_once __DIR__ . "/../../models/user.inc";
 
     $method = $_SERVER['REQUEST_METHOD'];
 
     if ($method === 'POST') {
         if (User::loginValido($_POST['nickname'], $_POST['password'])) {
+
+            if(isset($_SESSION['isLogged']))
+                setcookie($_SESSION["user"] . "-lastLogin", date("d/m/Y H:i:s"));   
+
             $_SESSION['isLogged'] = json_encode(new User($_POST['nickname'], $_POST['password']));
             header('location: perguntas.php');
         } else echo "<div class='err'><p>Dados inválidos. Verifique-os e tente novamente</p></div>";
@@ -19,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/stylish/rodape.css">
     <link rel="stylesheet" href="../../assets/stylish/card.css">
+    <link rel="shortcut icon" href="https://m.media-amazon.com/images/I/81ncT+-1D1L.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

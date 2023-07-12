@@ -1,6 +1,8 @@
 <?php
+    session_start();
+
     if(!isset($_SESSION['isLogged']))
-        require "views/phps/login.php";
+        header('location: views/phps/login.php');
     else
-        require "views/phps/perguntas.php";
+        header('location: views/phps/perguntas.php');
 ?>
