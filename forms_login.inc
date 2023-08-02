@@ -8,3 +8,5 @@
         <input type='submit' value='Entrar' />
     </fieldset>
 </form>
+
+<p>Não tem conta? <a href='cadastro.php'>Crie a sua agora.</a></p>
