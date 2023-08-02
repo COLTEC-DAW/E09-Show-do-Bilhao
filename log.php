@@ -1,5 +1,6 @@
-<?php include 'init.inc' ?>
+<?php include 'init.inc'; ?>
 <?php include 'menu.inc'; ?>
+
 <?php
 
 if($_SESSION['autenticado'])
