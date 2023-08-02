@@ -1,0 +1,17 @@
+services:
+  app:
+    image: adhocore/lemp:8.0
+    container_name: site-show-do-bilhao
+    volumes:
+      - ./:/var/www/html
+      - db_data:/var/lib/mysql
+    ports:
+      - 3000:80
+    environment:
+      MYSQL_ROOT_PASSWORD: senha123
+      MYSQL_DATABASE: meu-db
+      MYSQL_USER: user123
+      MYSQL_PASSWORD: senha123
+
+volumes:
+  db_data: {}
