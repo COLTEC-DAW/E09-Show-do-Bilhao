@@ -3,8 +3,6 @@
 
 <?php
 
-//  EXEMPLO
-
 $usuario    = new Gerenciador_de_Usuario();
 $usuarios   = fopen('users.json', 'r');
 $user_name  = $_POST['user'];
