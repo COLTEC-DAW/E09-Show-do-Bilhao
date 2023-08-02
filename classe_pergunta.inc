@@ -19,7 +19,7 @@ class Gerenciador_de_Pergunta
 {
     private $pergunta;
     
-    public function __construct($enun = 'Como vc esta?', $alter = null, $res = 'Otimo!')
+    public function __construct($enun = 'Como vc esta?', $alter = [ "bem", "estou bem", "bem, e vc?", "estou otimo, obrigado! E voce?", "nao muito..." ], $res = 3)
     {
         $this->pergunta = new Pergunta($enun, $alter, $res);
     }
