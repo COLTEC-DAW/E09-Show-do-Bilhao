@@ -4,7 +4,7 @@
 <?php
 
 $usuario    = new Gerenciador_de_Usuario();
-$usuarios   = fopen('users.json', 'r');
+$usuarios   = fopen('users.txt', 'r');
 $user_name  = $_POST['user'];
 $senha      = $_POST['passwd'];
 

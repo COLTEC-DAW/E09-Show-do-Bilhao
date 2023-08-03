@@ -5,27 +5,30 @@
 
 $num       = $_GET['pergunta'];
 $pergunta  = new Gerenciador_de_Pergunta();
-$perguntas = fopen('perguntas.json', 'r');
+$perguntas = fopen('perguntas.txt', 'r');
 
 for($p = 0; $p < $num; $p++)
 {
   $pergunta->setFromJSON(fgets($perguntas));
         
-  if(feof($usuarios))
+  if(feof($perguntas))
     break;
 }
 
 fclose($perguntas);
 $n_mostrar = $num + 1;
 $enunciado = $pergunta->obter_enunciado();
+$resposta  = $pergunta->obter_res_correta();
 
 echo "<legend>Pergunta nº $n_mostrar</legend>";
-echo "<label for='pergunta'>$enunciado</label><br>";
+echo "<label for='alternativa'>$enunciado</label><br>";
 
-foreach($pergunta->obter_alternativas() as $alternativa)
+foreach($pergunta->obter_alternativas() as $alternativa => $texto)
 {
-  echo "<input type='radio' name='pergunta'>$alternativa</input><br>";
+  echo "<input type='radio' name='alternativa' value=$alternativa>$texto</input><br>";
 }
+
+echo "<input type='hidden' id='resposta' name='resposta' value=$resposta><br>";
 
 ?>
 
