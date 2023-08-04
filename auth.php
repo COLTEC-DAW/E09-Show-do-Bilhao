@@ -1,6 +1,4 @@
 <?php include 'init.inc'; ?>
-<?php include 'menu.inc'; ?>
-
 <?php
 
 $usuario    = new Gerenciador_de_Usuario();
@@ -36,5 +34,5 @@ if(!$_SESSION['autenticado'])
     echo "Falha na autenticacao! Tente novamente.<br>\n";    
 
 ?>
-
+<?php include 'menu.inc'; ?>
 <?php include 'rodape.inc'; ?>

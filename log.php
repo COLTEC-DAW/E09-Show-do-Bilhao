@@ -1,6 +1,4 @@
 <?php include 'init.inc'; ?>
-<?php include 'menu.inc'; ?>
-
 <?php
 
 if($_SESSION['autenticado'])
@@ -9,5 +7,5 @@ else
     include 'forms_login.inc';
 
 ?>
-
+<?php include 'menu.inc'; ?>
 <?php include 'rodape.inc'; ?>
