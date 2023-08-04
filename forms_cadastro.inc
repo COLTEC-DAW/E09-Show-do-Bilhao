@@ -1,3 +1,4 @@
+<hr>
 <form action='realizar_cadastro.php' method='POST'>
     <fieldset>
         <legend>Nova Conta</legend>
@@ -12,3 +13,4 @@
         <input type='submit' value='Criar' />
     </fieldset>
 </form>
+<hr>

@@ -1,3 +1,4 @@
+<hr>
 <form action='auth.php' method='POST'>
     <fieldset>
         <legend>Login</legend>
@@ -10,3 +11,4 @@
 </form>
 
 <p>Não tem conta? <a href='cadastro.php'>Crie a sua agora.</a></p>
+<hr>
