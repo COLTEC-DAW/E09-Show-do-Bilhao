@@ -1,4 +1,4 @@
 <?php include 'init.inc'; ?>
-<?php include 'sobre.inc'; ?>
-<?php include 'menu.inc'; ?>
-<?php include 'rodape.inc'; ?>
+<?php include 'trechos/sobre.inc'; ?>
+<?php include 'trechos/menu.inc'; ?>
+<?php include 'trechos/rodape.inc'; ?>

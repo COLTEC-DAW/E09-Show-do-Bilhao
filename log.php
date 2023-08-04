@@ -2,10 +2,10 @@
 <?php
 
 if($_SESSION['autenticado'])
-    include 'confirmacao_logout.inc';
+    include 'trechos/confirmacao_logout.inc';
 else
-    include 'forms_login.inc';
+    include 'forms/forms_login.inc';
 
 ?>
-<?php include 'menu.inc'; ?>
-<?php include 'rodape.inc'; ?>
+<?php include 'trechos/menu.inc'; ?>
+<?php include 'trechos/rodape.inc'; ?>

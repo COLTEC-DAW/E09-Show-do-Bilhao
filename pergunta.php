@@ -1,15 +1,25 @@
 <?php include 'init.inc'; ?>
 <?php
-
-if($_COOKIE['errou_' . $_SESSION['user']->obter_login()] == "true")
+if($_SESSION['autenticado'])
 {
-    include 'pagina_erro.inc';
+    if($_COOKIE['errou_' . $_SESSION['user']->obter_login()] == "true")
+    {
+        include 'trechos/pagina_erro.inc';
+    }
+    elseif($_COOKIE['pontuacao_' . $_SESSION['user']->obter_login()] == 5)
+    {
+        include 'trechos/pagina_vitoria.inc';
+    }
+    else
+    {
+        include 'forms/forms_pergunta.inc';
+    }
 }
 else
 {
-    include 'forms_pergunta.inc';
+    include 'trechos/nao_autenticado.inc';
 }
 
 ?>
-<?php include 'menu.inc'; ?>
-<?php include 'rodape.inc'; ?>
+<?php include 'trechos/menu.inc'; ?>
+<?php include 'trechos/rodape.inc'; ?>
