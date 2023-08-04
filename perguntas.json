@@ -1,0 +1,52 @@
+[
+    {
+        "question": "Qual o nome do zinchenko?",
+        "options": [
+            "a) Artur",
+            "b) Arthur",
+            "c) Maciel",
+            "d) Josué"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Qual o nome do prates?",
+        "options": [
+            "a) Pratis",
+            "b) Daniel",
+            "c) Fred+10",
+            "d) Josué"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Qual o nome do waltin?",
+        "options": [
+            "a) Alisson",
+            "b) Horta",
+            "c) Fred+10",
+            "d) Josué"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Qual o nome do tm?",
+        "options": [
+            "a) Tales Mendes",
+            "b) Thales Morais",
+            "c) Fred+10",
+            "d) Josué"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Qual o nome do butao?",
+        "options": [
+            "a) Valter",
+            "b) Daniel",
+            "c) Fred+10",
+            "d) Guilherme"
+        ],
+        "answer": 3
+    }
+]
