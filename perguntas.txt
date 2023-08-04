@@ -1,0 +1,5 @@
+{"enunciado":"Como vc esta?","alternativas":["bem","estou bem","bem, e vc?","estou otimo, obrigado! E voce?","nao muito..."],"resposta_correta":3}
+{"enunciado":"O que eh o padrao MVC?","alternativas":["Model-View-Control","Milho Verde eh Caro","Movimento dos Vendedores de Caqui","nao sei","nenhuma das acima"],"resposta_correta":0}
+{"enunciado":"O que e um exemplo de tecnologia para back-end?","alternativas":["HTML", "PHP","CSS"],"resposta_correta":1}
+{"enunciado":"Qual e o principal protocolo utilizado para transferir com seguranca hipertexto na rede mundial de computadores?","alternativas":["HTTPS","DNS","ICMP","NTP","SMTP"],"resposta_correta":0}
+{"enunciado":"Quais sao os valores de x tal que x<sup>3</sup> - 7x<sup>2</sup> + 14x - 8 = 0?","alternativas":["-1, 0 e 1","0, 1 e 2","1, 2 e 4","4, 5, 6","nenhuma das acima"],"resposta_correta":2}
