@@ -2,9 +2,9 @@
 <?php
 
 if($_SESSION['autenticado'])
-    include 'trechos/confirmacao_logout.inc';
+    require 'trechos/confirmacao_logout.inc';
 else
-    include 'forms/forms_login.inc';
+    require 'forms/forms_login.inc';
 
 ?>
 <?php include 'trechos/menu.inc'; ?>

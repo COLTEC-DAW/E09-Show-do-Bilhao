@@ -4,15 +4,15 @@ if($_SESSION['autenticado'])
 {
     if($_COOKIE['errou_' . $_SESSION['user']->obter_login()] == "true")
     {
-        include 'trechos/pagina_erro.inc';
+        require 'trechos/pagina_erro.inc';
     }
     elseif($_COOKIE['pontuacao_' . $_SESSION['user']->obter_login()] == 5)
     {
-        include 'trechos/pagina_vitoria.inc';
+        require 'trechos/pagina_vitoria.inc';
     }
     else
     {
-        include 'forms/forms_pergunta.inc';
+        require 'forms/forms_pergunta.inc';
     }
 }
 else

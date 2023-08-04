@@ -34,12 +34,12 @@ if(isset($_POST['user']))
 
     if(!$_SESSION['autenticado'])
     {
-        include 'trechos/nao_autenticado.inc'; 
+        require 'trechos/nao_autenticado.inc'; 
     }
 }
 else
 {
-    include 'trechos/erro_dados.inc';
+    require 'trechos/erro_dados.inc';
 }
 
 ?>

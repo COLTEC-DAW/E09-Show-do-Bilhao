@@ -9,22 +9,22 @@ if($_SESSION['autenticado'])
 
     if($pontuacao == 5)
     {
-        include 'trechos/pagina_vitoria.inc';
+        require 'trechos/pagina_vitoria.inc';
     }
     elseif($alternativa == $resposta)
     {
         setcookie('pontuacao_' . $_SESSION['user']->obter_login(), $pontuacao + 1);
-        include 'trechos/pagina_acerto.inc';
+        require 'trechos/pagina_acerto.inc';
     }
     else
     {
         setcookie('errou_' . $_SESSION['user']->obter_login(), "true");
-        include 'trechos/pagina_erro.inc';
+        require 'trechos/pagina_erro.inc';
     }
 }
 else
 {
-    include 'trechos/nao_autenticado.inc';
+    require 'trechos/nao_autenticado.inc';
 }
 
 ?>

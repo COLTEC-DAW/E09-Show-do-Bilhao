@@ -10,11 +10,11 @@ if(isset($_POST['name']))
 
     setcookie('pontuacao_' . $novo_user->obter_login(), 0);
     setcookie('errou_' . $novo_user->obter_login(), "false");
-    include 'trechos/conta_criada.inc';
+    require 'trechos/conta_criada.inc';
 }
 else
 {
-    include 'trechos/erro_dados.inc';
+    require 'trechos/erro_dados.inc';
 }
 
 ?>
