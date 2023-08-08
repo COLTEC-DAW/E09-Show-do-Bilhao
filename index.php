@@ -1,8 +1,3 @@
-<?php
-/* para funcionar tem executar o PHP
-como root, por causa do mysql */
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
