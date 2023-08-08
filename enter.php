@@ -1,4 +1,5 @@
 <?php
+/* em vez de arquivos eu utilizei mysql*/
     session_start();
 
     $servername = "localhost";
