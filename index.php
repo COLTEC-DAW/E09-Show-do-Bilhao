@@ -11,6 +11,7 @@
         include("perguntas.php");
 
         if($_COOKIE["login"] == NULL){
+            //codigo que redireciona quando não tem login
             header("Location: /login.html");
         }
 

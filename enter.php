@@ -52,20 +52,21 @@
                     $conn->close();
                     header('Location:  /?' . http_build_query($dados));
                 }else{
-                    setcookie("login", NULL);
+                    setcookie("login", "a");
                     echo "Usuário ou senha incorretos";
                 }
             }
             else{
-                setcookie("login", NULL);  
+                setcookie("login", "a");  
             }
         }
     } else {
-        setcookie("login");
+        setcookie("login", "a");
         echo "No records found";
     }
 
     echo $_COOKIE["login"];
+    header('Location:  /?' . http_build_query($dados));
 
     echo "Usuário ou senha incorretos"; 
     
